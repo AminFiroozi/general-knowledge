@@ -1,0 +1,126 @@
+{
+  "topic": "network-flow",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-network-flow-001",
+      "q": "What is the max-flow min-cut theorem and what does it state?",
+      "options": [
+        "The maximum flow equals the number of edges in the graph",
+        "The maximum flow in a network from source s to sink t equals the minimum capacity of any cut separating s and t; a cut is a partition of vertices into (S, T) where s ∈ S, t ∈ T, and the cut's capacity is the sum of capacities of edges from S to T",
+        "Max-flow and min-cut are unrelated concepts",
+        "The minimum cut can be computed without finding the maximum flow"
+      ],
+      "answer": 1,
+      "explanation": "The max-flow min-cut theorem is fundamental in network flow theory. It states: for any flow network with source s and sink t, the value of the maximum flow from s to t equals the capacity of the minimum cut separating s and t. Proof: any flow from s to t must cross any cut at least once. Maximum flow is bounded above by minimum cut. The maximum flow algorithm (like Ford-Fulkerson) finds a flow saturating a minimum cut, achieving equality. Example: a network with a bottleneck (minimum cut) of capacity 10 has maximum flow 10. Cuts are enumential: 2^(v-2) possible cuts (excluding s and t); minimum cut can be found efficiently via max-flow algorithms."
+    },
+    {
+      "id": "algorithms-network-flow-002",
+      "q": "Describe the Ford-Fulkerson algorithm for computing maximum flow.",
+      "options": [
+        "It assigns flow values to edges in arbitrary order",
+        "Ford-Fulkerson iteratively finds augmenting paths from source s to sink t in the residual graph and pushes flow along the path; residual capacity r(u,v) = capacity(u,v) - flow(u,v); repeat until no augmenting path exists, at which point flow is maximum",
+        "Ford-Fulkerson always computes the maximum flow in polynomial time",
+        "The algorithm requires edge capacities to be integers"
+      ],
+      "answer": 1,
+      "explanation": "Ford-Fulkerson pseudocode: max_flow(G, s, t) { flow = 0; while augmenting path p from s to t in residual graph { bottleneck = min capacity on p; for each edge (u,v) in p { flow(u,v) += bottleneck; flow(v,u) -= bottleneck; } flow += bottleneck; } return flow; }. Residual graph: for each edge (u,v) with capacity c and flow f, add forward edge with residual capacity c - f and backward edge with residual capacity f. Augmenting path: path in residual graph with all positive capacities. Time depends on path selection: unbounded for arbitrary paths (irrational capacities lead to infinite loops); O(E · max_flow) if choosing max bottleneck path (Edmonds-Karp: O(VE²) with BFS)."
+    },
+    {
+      "id": "algorithms-network-flow-003",
+      "q": "What is the Edmonds-Karp algorithm and how does it improve upon Ford-Fulkerson?",
+      "options": [
+        "Edmonds-Karp is a synonym for Ford-Fulkerson with no algorithmic difference",
+        "Edmonds-Karp implements Ford-Fulkerson using BFS to find augmenting paths, ensuring the shortest path (fewest edges) is chosen; this bounds the number of augmentations to O(VE), giving total time O(VE²), guaranteeing termination even on irrational capacities",
+        "Edmonds-Karp only works on unit-capacity networks",
+        "Edmonds-Karp has exponential time complexity"
+      ],
+      "answer": 1,
+      "explanation": "Edmonds-Karp uses BFS (breadth-first search) to find the shortest augmenting path in the residual graph. Key insight: the shortest path distance from s to t in the residual graph is non-decreasing across iterations. Proof: if an edge (u,v) becomes unavailable (saturated), it must be on a shortest path; later when (v,u) is used in an augmenting path, the shortest path to u is at least 2 hops longer. Bounding: each edge can become saturated at most O(V) times → O(VE) augmentations. Each BFS is O(E). Total: O(VE²). Guarantees termination on irrational capacities (unlike Ford-Fulkerson). In practice, scaling or capacity-scaling algorithms are faster, but Edmonds-Karp's theoretical guarantee is valuable."
+    },
+    {
+      "id": "algorithms-network-flow-004",
+      "q": "What is the residual graph in the context of maximum flow, and why is it important?",
+      "options": [
+        "The residual graph is a backup copy of the original graph",
+        "The residual graph is constructed during max-flow computation: for each edge (u,v) with capacity c and current flow f, the residual graph contains forward edge (u,v) with residual capacity c-f and backward edge (v,u) with residual capacity f; backward edges allow rerouting flow (canceling previous flow), enabling algorithms to find augmenting paths and achieve the true maximum",
+        "The residual graph is the same as the original graph",
+        "Backward edges in the residual graph represent capacity on the original edge"
+      ],
+      "answer": 1,
+      "explanation": "Residual capacity: r(u,v) = capacity(u,v) - flow(u,v). Backward edge: r(v,u) = flow(u,v). The backward edge represents the flow already sent on (u,v) that can be canceled. Example: if (u,v) has capacity 5 and flow 3, then r(u,v) = 2 (can send 2 more units) and r(v,u) = 3 (can reroute 3 units). Augmenting paths in the residual graph may use backward edges, effectively rerouting flow. Without backward edges, the algorithm might miss augmenting paths and compute suboptimal flow. The residual graph evolves as flow is updated, enabling multiple iterations to refine the flow toward the maximum."
+    },
+    {
+      "id": "algorithms-network-flow-005",
+      "q": "How does the concept of bipartite matching relate to maximum flow?",
+      "options": [
+        "Bipartite matching and maximum flow are unrelated problems",
+        "A maximum matching in a bipartite graph (set of edges with no shared vertices) can be solved as a max-flow problem: create a source connected to left partition, right partition connected to sink, set all edge capacities to 1, and find maximum flow; flow value equals maximum matching size",
+        "Bipartite matching requires exponential time; maximum flow is polynomial",
+        "Maximum flow algorithms cannot be applied to bipartite graphs"
+      ],
+      "answer": 1,
+      "explanation": "Reduction: bipartite graph G = (L ∪ R, E). Flow network: add source s, sink t; add edges s → each vertex in L with capacity 1, each edge (u,v) in E with capacity ∞ (or 1), each vertex v in R → t with capacity 1. Maximum flow in this network = maximum matching in G. Proof: flow conservation ensures each vertex in L sends ≤1 unit (matched to ≤1 vertex in R) and each vertex in R receives ≤1 unit. Flow value = number of matched edges. Example: job assignment—workers (L) to jobs (R). Each worker can do 1 job; each job can be done by 1 worker. Maximum matching = maximum number of assignments. Solves in O(V·E) using Ford-Fulkerson or O(V·E²) using Edmonds-Karp."
+    },
+    {
+      "id": "algorithms-network-flow-006",
+      "q": "What is the min-cost max-flow problem and how does it extend maximum flow?",
+      "options": [
+        "Min-cost max-flow is the same as maximum flow with no modifications",
+        "Min-cost max-flow extends maximum flow by assigning a cost to each edge; the problem is to find the maximum flow from s to t while minimizing the total cost of the flow; solved by iteratively finding the minimum-cost augmenting path (using Bellman-Ford or Dijkstra on the residual graph) instead of any augmenting path",
+        "Min-cost max-flow is only defined for acyclic graphs",
+        "Minimizing cost reduces the maximum flow achievable"
+      ],
+      "answer": 1,
+      "explanation": "Min-cost max-flow: edge (u,v) has capacity c(u,v) and cost d(u,v). Objective: maximize flow while minimizing Σ (flow on (u,v) × d(u,v)). Algorithm: repeatedly find the minimum-cost augmenting path in the residual graph, push maximum flow along it. Residual edge (u,v) has cost d(u,v); backward edge (v,u) has cost -d(u,v). Use Bellman-Ford (O(VE)) or cost-scaling for non-negative costs. Time: O(VE·max_flow) with Bellman-Ford per iteration, or O(V²·E) with optimal algorithm. Applications: transportation, routing, circulation. Related: min-cost circulation (no source/sink, find circulation minimizing cost). Example: shipping goods at minimal total cost."
+    },
+    {
+      "id": "algorithms-network-flow-007",
+      "q": "How can the maximum flow algorithm be adapted to handle multiple sources and sinks?",
+      "options": [
+        "Run the maximum flow algorithm separately for each source-sink pair and sum the flows",
+        "Create a super-source connected to all sources and a super-sink connected from all sinks, both with infinite capacity; compute maximum flow from super-source to super-sink; the flow value equals the maximum flow that all sources can collectively supply to all sinks",
+        "Multiple sources and sinks require a different algorithm entirely",
+        "Multiple sources reduce the maximum flow compared to a single source"
+      ],
+      "answer": 1,
+      "explanation": "Reduction: given sources s₁, s₂, ..., sₖ and sinks t₁, t₂, ..., tₗ. Create super-source s and super-sink t. Add edges s → sᵢ with capacity ∞ (or a bound on source i's supply) and tⱼ → t with capacity ∞ (or a bound on sink j's demand). Run max-flow from s to t. The flow value = total flow from all sources to all sinks. Flow decomposition: the resulting flow can be decomposed into paths from sources to sinks. Example: data centers (sources) routing data to data centers (sinks). Each source has a supply limit; each sink has a demand limit. Max-flow computes the maximum total data transferred. Extends naturally to supply-demand networks with min-cost objectives."
+    },
+    {
+      "id": "algorithms-network-flow-008",
+      "q": "What is a circulation in a flow network and how does it differ from maximum flow?",
+      "options": [
+        "A circulation is the same as maximum flow",
+        "A circulation is a flow where every vertex (except source and sink) has flow conservation; max-flow specifies a source and sink with net outflow/inflow. A network without a source/sink is a circulation problem: find flow satisfying capacity constraints and conservation. Circulation exists iff for every subset S of vertices, the demand in S does not exceed the maximum capacity of edges leaving S",
+        "Circulation requires all edges to have unit capacity",
+        "Circulation problems are always infeasible"
+      ],
+      "answer": 1,
+      "explanation": "Circulation: each vertex v has a demand d(v) (positive = supply, negative = demand). Flow must satisfy: (1) capacity constraints: 0 ≤ f(u,v) ≤ c(u,v); (2) conservation: Σ flow out of v - Σ flow into v = d(v). Reduction to max-flow: create source s and sink t; for each v with d(v) > 0, add s → v with capacity d(v); for each v with d(v) < 0, add v → t with capacity -d(v). Feasible circulation exists iff max-flow from s to t saturates all source and sink edges. Theorem: circulation exists iff for every subset S, Σ d(v) for v ∈ S ≤ capacity of edges leaving S. Applications: routing, traffic flow. Min-cost circulation: find circulation minimizing cost, solved similarly to min-cost max-flow."
+    },
+    {
+      "id": "algorithms-network-flow-009",
+      "q": "How is the maximum bipartite matching extended to the assignment problem (weighted matching)?",
+      "options": [
+        "Weighted matching is solved using maximum flow on unweighted bipartite graphs",
+        "Assignment problem: assign n workers to n jobs to maximize total profit (or minimize cost); model as min-cost max-flow: bipartite graph with workers (L) and jobs (R); edge (i,j) has capacity 1 and cost -profit(i,j) (negative for minimization); constraint edges s → workers and jobs → t with capacity 1; min-cost max-flow yields the optimal assignment",
+        "Assignment problem requires exponential time; bipartite matching is polynomial",
+        "Assignment problem is only solvable via brute-force enumeration"
+      ],
+      "answer": 1,
+      "explanation": "Assignment problem: n workers, n jobs, profit matrix P[i][j]. Objective: find a one-to-one assignment maximizing total profit. Reduction to min-cost max-flow: create bipartite graph with workers on left, jobs on right. For each (worker i, job j), add edge with capacity 1 and cost -P[i][j]. Add source s → each worker with capacity 1, each job → sink t with capacity 1. Find min-cost max-flow. The flow value is n (complete assignment); minimum cost is -max profit. Hungarian algorithm solves assignment directly in O(n³), but min-cost max-flow is more general. Extended version: if workers and jobs don't match 1-1, use capacities and demands flexibly. Applications: scheduling, resource allocation, vehicle routing."
+    },
+    {
+      "id": "algorithms-network-flow-010",
+      "q": "What is the distinction between unit-capacity networks and general-capacity networks in maximum flow?",
+      "options": [
+        "Unit-capacity and general-capacity networks have identical maximum flow algorithms and time complexity",
+        "Unit-capacity: all edges have capacity 1. General-capacity: edges have arbitrary capacities. For unit-capacity networks, Edmonds-Karp runs in O(V·E^(3/2)) (tighter bound), and the maximum flow is at most min(V, E/2). For general-capacity networks, Edmonds-Karp is O(VE²). Scaling algorithms exploit structure: if capacities are bounded by U, capacity scaling achieves O(VE log U)",
+        "Unit-capacity networks require a different algorithm",
+        "General-capacity networks have polynomial time; unit-capacity is exponential"
+      ],
+      "answer": 1,
+      "explanation": "Unit-capacity networks: every edge (u,v) has capacity 1. Maximum flow is at most the number of edge-disjoint paths from s to t; also at most min(out-degree(s), in-degree(t)). Edmonds-Karp bound: O(VE) augmentations × O(E) per BFS = O(VE²) generally, but for unit-capacity O(V·E^(3/2)) due to tighter analysis. General-capacity networks: capacities are arbitrary real numbers (or integers up to U). Edmonds-Karp: O(VE²). Capacity scaling: divide capacities into groups by powers of 2, process in decreasing order, achieving O(VE log U). Dinic's algorithm: O(V²E) for general, O(E√V) for unit-capacity. For very large capacities, scaling methods are faster."
+    }
+  ]
+}

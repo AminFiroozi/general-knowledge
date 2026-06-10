@@ -1,0 +1,126 @@
+{
+  "topic": "computational-geometry",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-computational-geometry-001",
+      "q": "What is the convex hull and which algorithm computes it most efficiently?",
+      "options": [
+        "The convex hull is the set of all points in a plane; computing it requires O(n²) time",
+        "The convex hull is the smallest convex polygon containing all input points; Graham's scan and Andrew's monotone chain compute it in O(n log n) time by sorting points and scanning to identify extreme points; Jarvis march is O(n·h) where h is hull size",
+        "Convex hull is only defined for 3D points",
+        "Finding the convex hull has exponential time complexity"
+      ],
+      "answer": 1,
+      "explanation": "Graham scan: (1) find the lowest point (seed); (2) sort other points by polar angle from seed; (3) scan sorted list, maintaining a stack; for each point, pop stack while the top two stack points and current point make a right turn (cross product ≤ 0). The stack contains hull vertices. Time: O(n log n) for sorting, O(n) for scan. Andrew's monotone chain: sort by x-coordinate (O(n log n)), build lower hull left-to-right, then upper hull right-to-left, each using O(n) scanning. Jarvis march: start from leftmost point, repeatedly find the next point with the smallest polar angle; O(n·h) where h = hull size. Graham/Andrew are O(n log n) regardless of h, preferred for large n."
+    },
+    {
+      "id": "algorithms-computational-geometry-002",
+      "q": "How is the orientation of three points (clockwise, counterclockwise, or collinear) determined?",
+      "options": [
+        "Compute distances between all pairs and compare them",
+        "Compute the cross product of vectors (q-p) and (r-q): cp = (q.x - p.x)(r.y - q.y) - (q.y - p.y)(r.x - q.x). If cp > 0, counterclockwise; cp < 0, clockwise; cp = 0, collinear. Cross product's sign determines orientation without computing angles",
+        "Orientation requires computing trigonometric functions",
+        "Orientation is only defined for points in 3D"
+      ],
+      "answer": 1,
+      "explanation": "For three points p, q, r: vectors u = q - p and v = r - q. Cross product u × v = u.x·v.y - u.y·v.x gives a scalar (z-component of 3D cross product). Geometrically, cp > 0 means counterclockwise (left turn), cp < 0 means clockwise (right turn), cp = 0 means collinear. Example: p=(0,0), q=(1,0), r=(1,1). u=(1,0), v=(0,1), cp = 1·1 - 0·0 = 1 > 0 → counterclockwise. Used in convex hull, line segment intersection, point-in-polygon tests. Avoids floating-point trigonometry, speeding up computation and improving robustness by using only arithmetic operations."
+    },
+    {
+      "id": "algorithms-computational-geometry-003",
+      "q": "How does the sweep line algorithm solve geometric problems like finding the closest pair of points?",
+      "options": [
+        "Sweep line randomly samples points and checks distances",
+        "Sweep line maintains a vertical line sweeping left to right across the plane; at each event (e.g., a point), process events in order, maintaining active points in a window of width d (current minimum distance); active points are sorted by y-coordinate, enabling O(1) nearest neighbor checks per point since points are close in y-coordinate",
+        "Sweep line requires a hash table of all point pairs",
+        "Sweep line has exponential time complexity"
+      ],
+      "answer": 1,
+      "explanation": "Sweep line for closest pair: (1) sort points by x-coordinate; (2) maintain a set S of points within the sweep line window [x - d, x] where d = current minimum distance; (3) for each point p in sorted order, check if any point in S is closer than d; update d if a closer pair is found. (4) add p to S and remove points outside the window. Key: points in the window span a vertical strip of width d; by sorting S by y-coordinate, each point p only needs to check ~6 points in S (geometric packing bound). Time: O(n log n) for sorting + O(n log n) for processing (set operations) = O(n log n) total. Space O(n). Without sweep line optimization, closest pair is O(n²)."
+    },
+    {
+      "id": "algorithms-computational-geometry-004",
+      "q": "What is the point-in-polygon problem and how is it solved using ray casting?",
+      "options": [
+        "Point-in-polygon is to determine if a point is at the exact vertex of a polygon",
+        "Ray casting: cast a ray from the point p to infinity (e.g., horizontally to the right); count intersections of the ray with polygon edges. If count is odd, p is inside; if even, p is outside. Handles edge cases: if ray passes through a vertex, count carefully (use consistent convention for shared endpoints); if ray is collinear with an edge, increment count only at one endpoint",
+        "Point-in-polygon is only defined for convex polygons",
+        "Ray casting has exponential time complexity"
+      ],
+      "answer": 1,
+      "explanation": "Ray casting algorithm: from point p, cast a ray to (∞, p.y) (horizontal ray). For each edge of the polygon, check if the ray intersects it. Intersection occurs if: (1) edge's y-coordinates span p.y (one endpoint below, one above), and (2) x-coordinate of intersection is ≥ p.x. Parity check: odd count → inside, even → outside. Example: p inside triangle ABC, ray intersects all 3 edges → odd intersections → inside. Handles edge cases: if ray passes through a vertex v, only count it if one adjacent edge is above and one below p.y (consistent endpoint rule). Works for non-convex, self-intersecting polygons. Time: O(n) per query, O(n log n) preprocessing for sorted edges, enabling binary search on y-coordinate for faster queries."
+    },
+    {
+      "id": "algorithms-computational-geometry-005",
+      "q": "How is the intersection of two line segments determined using computational geometry?",
+      "options": [
+        "Find the equations of both lines and solve the system of equations",
+        "For segments (p1,p2) and (p3,p4), compute orientations: o1 = orientation(p1,p2,p3), o2 = orientation(p1,p2,p4), o3 = orientation(p3,p4,p1), o4 = orientation(p3,p4,p2). Segments intersect if (o1 ≠ o2 and o3 ≠ o4) or if collinear points overlap on the segments",
+        "Line segment intersection requires computing the angle between segments",
+        "Two segments always intersect if their endpoints are close"
+      ],
+      "answer": 1,
+      "explanation": "Orientation-based approach: (1) segments (p1,p2) and (p3,p4); (2) compute orientations of (p1,p2,p3) and (p1,p2,p4); (3) compute orientations of (p3,p4,p1) and (p3,p4,p2). General case: if orientations differ (o1 ≠ o2 and o3 ≠ o4), segments intersect. Collinear case: if all four points are collinear, check if segments overlap using bounding boxes (intervals). Example: p1=(0,0), p2=(2,2), p3=(0,2), p4=(2,0). o1=orientation(0,0,2,2,0,2)=left turn, o2=orientation(0,0,2,2,2,0)=right turn → o1≠o2. o3=orientation(0,2,2,0,0,0)=right turn, o4=orientation(0,2,2,0,2,2)=left turn → o3≠o4. Segments intersect. Avoids floating-point equations; uses only cross products and integer arithmetic."
+    },
+    {
+      "id": "algorithms-computational-geometry-006",
+      "q": "What is the Voronoi diagram and how is it related to the Delaunay triangulation?",
+      "options": [
+        "Voronoi diagram and Delaunay triangulation are unrelated concepts",
+        "Voronoi diagram partitions the plane into cells where each cell contains all points closer to a specific site than to any other site; Delaunay triangulation is the dual graph of the Voronoi diagram—two sites are connected in Delaunay iff their Voronoi cells share an edge. Both can be computed in O(n log n) time",
+        "Voronoi diagram is only defined for 2D points",
+        "Delaunay triangulation has exponential time complexity"
+      ],
+      "answer": 1,
+      "explanation": "Voronoi cell V(p) = {all points closer to p than to any other site}. Voronoi diagram partitions the plane into n cells (for n sites). Delaunay triangulation: connect two sites if their Voronoi cells share an edge. Duality: each Voronoi vertex corresponds to a Delaunay circumcircle (the circle passing through three sites forms a Delaunay triangle). Properties: Delaunay maximizes the minimum angle of triangles (avoids slivers). Both can be computed in O(n log n): Voronoi via Fortune's sweep line, Delaunay via incremental insertion or divide-and-conquer. Applications: nearest neighbor queries (Voronoi), mesh generation (Delaunay), motion planning. Example: n=3 sites A,B,C; Voronoi has 3 cells and 1 vertex; Delaunay is the triangle ABC."
+    },
+    {
+      "id": "algorithms-computational-geometry-007",
+      "q": "How does the cross product of two vectors determine their relative orientation?",
+      "options": [
+        "Cross product is only defined in 3D; it has no use in 2D geometry",
+        "In 2D, for vectors u=(u.x, u.y) and v=(v.x, v.y), the cross product (z-component) is u.x*v.y - u.y*v.x. The sign indicates orientation: positive = counterclockwise, negative = clockwise, zero = collinear. Magnitude |u × v| = |u||v| sin(θ) where θ is the angle between u and v",
+        "Cross product is the same as the dot product",
+        "Cross product requires computing angles explicitly"
+      ],
+      "answer": 1,
+      "explanation": "2D cross product: u × v = u.x·v.y - u.y·v.x (scalar, z-component of 3D cross product). Interpretation: (1) sign reveals orientation—positive counterclockwise, negative clockwise, zero collinear; (2) magnitude = area of parallelogram spanned by u and v; (3) used to compute signed area of polygon (shoelace formula), test segment intersection (orientation), and sort points by polar angle (relative orientation of vectors from a pivot). Example: u=(1,0), v=(0,1). u × v = 1·1 - 0·0 = 1 > 0 → counterclockwise. Avoids trigonometry; uses only arithmetic. Fundamental in computational geometry algorithms."
+    },
+    {
+      "id": "algorithms-computational-geometry-008",
+      "q": "What is the convex hull of a set of line segments, and how does it differ from the convex hull of points?",
+      "options": [
+        "Convex hull of segments is the same as convex hull of points",
+        "Convex hull of points is the smallest polygon containing all points. Convex hull of line segments is the smallest convex polygon that contains all segments (not just endpoints). Key difference: segments can extend outside the point convex hull; the hull must enclose the entire segments, so it may have vertices on segment interiors, not just at segment endpoints",
+        "Convex hull of segments is only defined for horizontal and vertical segments",
+        "Convex hull of segments cannot be computed in polynomial time"
+      ],
+      "answer": 1,
+      "explanation": "Example: three segments forming a triangle with one segment protruding outward. Convex hull of endpoints may not contain the protruding segment. Convex hull of segments must enclose the entire protruding segment, so it extends beyond the endpoint convex hull. Algorithm: (1) for each segment, consider all points on it (implicitly by storing the segment); (2) compute the convex hull considering not just endpoints but also potential intersections with hull boundaries. More complex than point convex hull. Practical approach: sample points densely along segments and compute point convex hull; for exact solution, use segment-aware algorithms (e.g., checking if each segment is contained in the convex hull). Applications: robotics (workspace envelopes), CAD (part boundaries)."
+    },
+    {
+      "id": "algorithms-computational-geometry-009",
+      "q": "How is the area of a polygon computed using the shoelace formula?",
+      "options": [
+        "Area is computed by dividing the polygon into rectangles and summing their areas",
+        "Shoelace formula: Area = 0.5 × |Σ (x[i]·y[i+1] - x[i+1]·y[i])| for vertices i=0 to n-1 (with wraparound). Sum = 2 × (signed area); positive if vertices are ordered counterclockwise, negative if clockwise. Works for any simple polygon (convex or non-convex)",
+        "Area computation requires triangulating the polygon first",
+        "Shoelace formula only works for triangles"
+      ],
+      "answer": 1,
+      "explanation": "Shoelace (or cross-product sum) formula: Area = 0.5 × |Σ (x[i]·y[i+1] - x[i+1]·y[i])|. Each term is the z-component of cross product of consecutive vertices (relative to origin). Summation gives twice the signed area. Geometric intuition: each term x[i]·y[i+1] - x[i+1]·y[i] is twice the signed area of the triangle formed by origin and two consecutive vertices. Sum telescopes to give the total signed area. Example: triangle (0,0), (1,0), (0,1). Area = 0.5 × |0·0 - 1·0 + 1·1 - 0·0 + 0·0 - 0·1| = 0.5 × 1 = 0.5. Works for non-convex polygons and self-intersecting (winding) polygons. Time O(n), no triangulation needed."
+    },
+    {
+      "id": "algorithms-computational-geometry-010",
+      "q": "What is the algorithm for computing the intersection of a line with a circle?",
+      "options": [
+        "Substitute the line equation into the circle equation and solve the quadratic",
+        "For line parameterized as p(t) = p0 + t·d and circle centered at c with radius r: substitute to get |p0 + t·d - c|² = r². Expand: |d|²·t² + 2·d·(p0-c)·t + |p0-c|² - r² = 0 (quadratic in t). Discriminant Δ = b² - 4ac determines intersections: Δ > 0 → two intersections, Δ = 0 → tangent, Δ < 0 → no intersection. Solve for t, compute intersection points p(t)",
+        "Line-circle intersection requires checking if the line is vertical",
+        "The algorithm always produces exactly one intersection point"
+      ],
+      "answer": 1,
+      "explanation": "Line-circle intersection: line p(t) = p0 + t·d (p0 = start, d = direction, t ∈ ℝ). Circle: |center - point| = r. Substitution: |p0 + t·d - c|² = r². Expand: (d.x)²·t² + 2·d·(p0-c)·t + |p0-c|² - r² = 0. Coefficients: a = |d|², b = 2·d·(p0-c), c = |p0-c|² - r². Solve: t = (-b ± √(b² - 4ac)) / (2a). Cases: (1) Δ > 0: two distinct t values → two intersection points; (2) Δ = 0: one t → tangent point; (3) Δ < 0: no real t → no intersection. Compute points via p(t₁) and p(t₂). Works for any line orientation, no special cases for vertical lines. Time O(1)."
+    }
+  ]
+}

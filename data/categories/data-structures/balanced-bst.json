@@ -1,0 +1,126 @@
+{
+  "topic": "balanced-bst",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-balanced-bst-001",
+      "q": "Why are balanced binary search trees necessary if unbalanced BSTs already support search, insert, and delete?",
+      "options": [
+        "They use less memory",
+        "Unbalanced BSTs degrade to O(n) in worst case; balanced trees guarantee O(log n) for all operations",
+        "Balanced trees sort data automatically",
+        "Unbalanced trees cannot handle duplicate values"
+      ],
+      "answer": 1,
+      "explanation": "A skewed BST (e.g., inserting sorted data) becomes a linked list with O(n) search time. Balanced BSTs maintain height O(log n) through rotations and invariants, ensuring O(log n) for search, insert, and delete regardless of insertion order."
+    },
+    {
+      "id": "data-structures-balanced-bst-002",
+      "q": "In an AVL tree, what does a single rotation accomplish?",
+      "options": [
+        "It reverses all node values",
+        "It moves elements between levels to restore AVL balance property",
+        "It reorders the entire tree alphabetically",
+        "It removes the tallest node"
+      ],
+      "answer": 1,
+      "explanation": "An AVL rotation restructures a subtree to fix imbalance. A right rotation moves the left child up and the parent down, reducing left subtree height relative to right subtree. Rotations preserve BST property while restoring the balance factor (height difference ≤ 1)."
+    },
+    {
+      "id": "data-structures-balanced-bst-003",
+      "q": "What is the maximum height of an AVL tree with n nodes?",
+      "options": [
+        "log n",
+        "1.44 log n + O(1)",
+        "sqrt(n)",
+        "n / 2"
+      ],
+      "answer": 1,
+      "explanation": "AVL trees with n nodes have height at most 1.44 log₂(n) + O(1). This comes from the balance constraint and the Fibonacci sequence property of minimal AVL trees. The constant 1.44 ≈ log₂(φ) where φ is the golden ratio."
+    },
+    {
+      "id": "data-structures-balanced-bst-004",
+      "q": "What are the four types of imbalances that require rotations in an AVL tree?",
+      "options": [
+        "Left-left, left-right, right-right, right-left",
+        "Internal, external, deep, shallow",
+        "Red, black, blue, green",
+        "Single, double, triple, quad"
+      ],
+      "answer": 0,
+      "explanation": "The four imbalance cases are: left-left (one right rotation), left-right (left then right rotation), right-right (one left rotation), right-left (right then left rotation). Each requires a different fix to rebalance the subtree."
+    },
+    {
+      "id": "data-structures-balanced-bst-005",
+      "q": "How do red-black trees differ from AVL trees in their balance invariants?",
+      "options": [
+        "Red-black trees are always faster",
+        "AVL trees enforce stricter balance (height difference ≤ 1) while red-black trees use color properties (equal black-height on all root-to-leaf paths)",
+        "Red-black trees only have two levels",
+        "AVL trees support larger trees"
+      ],
+      "answer": 1,
+      "explanation": "AVL trees strictly enforce height balance (|height(left) - height(right)| ≤ 1). Red-black trees relax this: they enforce equal black-height (number of black nodes) on all root-to-leaf paths plus color rules (no red-red adjacencies). Red-black trees tolerate more imbalance but require fewer rotations."
+    },
+    {
+      "id": "data-structures-balanced-bst-006",
+      "q": "What is the maximum height of a red-black tree with n nodes?",
+      "options": [
+        "log n",
+        "2 log n + O(1)",
+        "n / 2",
+        "log(n²)"
+      ],
+      "answer": 1,
+      "explanation": "Red-black trees can be more skewed than AVL trees. The height bound is 2 log₂(n) + O(1), roughly twice that of AVL. This is because color constraints are weaker than strict height balance, allowing some height imbalance."
+    },
+    {
+      "id": "data-structures-balanced-bst-007",
+      "q": "What is a B-tree primarily designed for?",
+      "options": [
+        "Representing graphs",
+        "Efficient disk access in databases and file systems",
+        "Compression of text",
+        "Sorting numbers in parallel"
+      ],
+      "answer": 1,
+      "explanation": "B-trees minimize disk I/O by storing many keys per node (order m). A B-tree of order m has height O(log_m n), reducing tree traversal depth. This is critical for databases where disk access dominates, not CPU comparisons."
+    },
+    {
+      "id": "data-structures-balanced-bst-008",
+      "q": "In a B-tree of order m, what is the branching factor and minimum keys per node?",
+      "options": [
+        "m children, 1 key",
+        "m children, m-1 keys minimum",
+        "m children, ⌈m/2⌉-1 keys minimum",
+        "2m children, m keys"
+      ],
+      "answer": 2,
+      "explanation": "A B-tree of order m has: 1) up to m children per node, 2) 1 to m-1 keys in most nodes, 3) at least ⌈m/2⌉-1 keys per internal node (except root). This ensures high branching factor and logarithmic height."
+    },
+    {
+      "id": "data-structures-balanced-bst-009",
+      "q": "When inserting into an AVL tree causes an imbalance, can a single rotation always fix it?",
+      "options": [
+        "Yes, one rotation always suffices",
+        "No, left-right and right-left imbalances require two rotations (double rotation)",
+        "No, every imbalance needs three rotations",
+        "Depends on the value being inserted"
+      ],
+      "answer": 1,
+      "explanation": "Left-left and right-right imbalances need one rotation. Left-right (left child is heavy on right) and right-left (right child is heavy on left) need a double rotation: first rotate to convert to a single-rotation case, then rotate again."
+    },
+    {
+      "id": "data-structures-balanced-bst-010",
+      "q": "Why might red-black trees be preferred over AVL trees in practice despite looser balance?",
+      "options": [
+        "Red-black trees are always faster",
+        "Red-black trees require fewer rebalancing operations (fewer rotations) and are simpler to implement correctly",
+        "Red-black trees use less memory",
+        "AVL trees cannot handle insertions"
+      ],
+      "answer": 1,
+      "explanation": "Red-black trees require O(1) rotations per insertion on average, while AVL trees may need O(log n) rotations (though usually O(1)). The color rules are easier to maintain than AVL's strict invariant. Red-black trees are used in Java's TreeMap and C++ STL."
+    }
+  ]
+}

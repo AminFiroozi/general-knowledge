@@ -1,0 +1,126 @@
+{
+  "topic": "reductions",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-reductions-001",
+      "q": "A many-one reduction (Karp reduction) from language A to language B is a computable function f such that x is in A if and only if f(x) is in B. What does this imply about decidability?",
+      "options": [
+        "If A is undecidable and there is a reduction from A to B, then B is also undecidable",
+        "If B is decidable and there is a reduction from A to B, then A is decidable",
+        "Reductions preserve neither decidability nor complexity; they are purely structural",
+        "If A is decidable, then any reduction from A to B guarantees B is decidable"
+      ],
+      "answer": 1,
+      "explanation": "If A reduces to B via f (denoted A ≤_m B) and B is decidable, then A is decidable: to decide x in A, compute f(x) and decide if f(x) is in B. This is the contrapositive reasoning for undecidability proofs. Option 0 is backwards (if A ≤ B and A is undecidable, then B is undecidable, not the reverse). Option 1 correctly captures the decidability preservation property in the forward direction."
+    },
+    {
+      "id": "theory-of-computation-reductions-002",
+      "q": "Polynomial-time many-one reductions (denoted ≤_p) are central to NP-completeness. If A ≤_p B and B is in P, what can we conclude about A?",
+      "options": [
+        "A is definitely in P, because the reduction computes f in polynomial time",
+        "A is in NP, because non-determinism compensates for the reduction overhead",
+        "A might not be in P, because the reduction overhead could make A exponential overall",
+        "A is NP-hard if and only if B is NP-complete"
+      ],
+      "answer": 0,
+      "explanation": "If A ≤_p B via polynomial-time computable f, and B is in P (polynomial-time decidable), then A is in P: compute f(x) in poly(n) time, then decide if f(x) ∈ B in poly(|f(x)|) = poly(n) time. Polynomial composition remains polynomial. Option 0 is correct; option 1 introduces unnecessary non-determinism; option 2 ignores polynomial closure; option 3 misapplies completeness definitions."
+    },
+    {
+      "id": "theory-of-computation-reductions-003",
+      "q": "When proving that a decision problem is NP-complete, the standard approach is to show (1) the problem is in NP, and (2) an NP-complete problem reduces to it. What does step (2) prove?",
+      "options": [
+        "The problem is solvable in polynomial time on a non-deterministic Turing machine",
+        "The problem is at least as hard as every known NP problem, establishing NP-hardness",
+        "The problem is solvable in exponential time on a deterministic Turing machine",
+        "The problem can be reduced to 3-SAT, the canonical NP-complete problem"
+      ],
+      "answer": 1,
+      "explanation": "If SAT (known NP-complete) reduces to problem X, then by transitivity, every NP language reduces to X via SAT. This proves X is NP-hard. Combined with X ∈ NP, X is NP-complete. Option 1 establishes hardness; option 0 is step (1); option 2 is too pessimistic (NP-hard ≠ always exponential); option 3 is one example but not the general principle."
+    },
+    {
+      "id": "theory-of-computation-reductions-004",
+      "q": "The HALTING PROBLEM can be proven undecidable by reducing from a self-referential argument (diagonalization). Which reduction technique is being used?",
+      "options": [
+        "Many-one reduction from a known undecidable problem to HALTING",
+        "Turing reduction (oracle reduction), using a hypothetical halting decider to contradict itself",
+        "Polynomial-time reduction, exploiting time-bounded computations",
+        "Compile-time reduction, transforming the problem structure statically"
+      ],
+      "answer": 1,
+      "explanation": "The classic proof of HALTING's undecidability assumes a decider H exists, constructs a machine D that calls H on itself in a self-referential way (if D halts, make it loop; if D loops, make it halt), and derives a contradiction. This is a Turing reduction leveraging the hypothetical oracle. Option 1 uses Turing reduction implicitly; option 0 describes many-one but the direct proof is self-referential; option 2 is inapplicable to undecidability."
+    },
+    {
+      "id": "theory-of-computation-reductions-005",
+      "q": "Consider the reduction from 3-SAT to the CLIQUE problem, showing that CLIQUE is NP-complete. In this reduction, a Boolean formula with k clauses is mapped to a graph with how many vertices?",
+      "options": [
+        "3k vertices, one per literal in all clauses",
+        "2k vertices, one per clause paired with its negation",
+        "k^3 vertices, accounting for all possible clause combinations",
+        "3k vertices, where each vertex represents a clause-literal pair"
+      ],
+      "answer": 3,
+      "explanation": "The standard 3-SAT to CLIQUE reduction creates 3k vertices (one for each literal in each of the k clauses). Edges connect compatible vertices (from different clauses, non-conflicting literals). A k-clique in the graph corresponds to a satisfying assignment for the formula. Option 3 correctly identifies the construction; option 0 is slightly imprecise; options 1 and 2 miscount vertices."
+    },
+    {
+      "id": "theory-of-computation-reductions-006",
+      "q": "A problem is NP-hard if some NP-complete problem reduces to it. Notably, NP-hard problems need not be in NP. Which of the following statements is true?",
+      "options": [
+        "All NP-hard problems are undecidable because NP-hardness implies high computational cost",
+        "Some NP-hard problems are not in NP, such as optimization variants of decision problems",
+        "Every NP-hard problem is at least as difficult as the halting problem",
+        "NP-hard problems form a subset of PSPACE"
+      ],
+      "answer": 1,
+      "explanation": "NP-hard includes optimization problems like TSP (traveling salesman minimization), which is not a decision problem, hence not in NP by definition. However, NP-hard does NOT imply undecidability (option 0) or being harder than HALTING (option 2). NP-hard problems are not necessarily in PSPACE (option 3). Option 1 correctly distinguishes NP-hard from NP-complete."
+    },
+    {
+      "id": "theory-of-computation-reductions-007",
+      "q": "Rice's theorem states that any non-trivial property of recursively enumerable languages is undecidable. Which of the following is correctly characterized as non-trivial under Rice's theorem?",
+      "options": [
+        "The property 'a Turing machine has exactly 5 states'",
+        "The property 'a Turing machine accepts the empty language'",
+        "The property 'a Turing machine's input tape is over {0, 1}'",
+        "The property 'a Turing machine accepts at least one string'"
+      ],
+      "answer": 1,
+      "explanation": "Rice's theorem applies to properties of the language L(M) accepted by M, not structural properties of M. Option 0 is structural (number of states), not a language property. Option 1 is a language property: some TMs accept empty language, some do not—non-trivial and undecidable. Option 2 is structural. Option 3 is undecidable but the key distinction is Rice's focus on language properties."
+    },
+    {
+      "id": "theory-of-computation-reductions-008",
+      "q": "When reducing from the HALTING PROBLEM to prove a problem X is undecidable, the reduction maps an instance of HALTING to X such that the halting question is answered if and only if X can be decided. What relationship must hold?",
+      "options": [
+        "X must be a language problem, and no transformation of HALTING instances is allowed",
+        "The reduction must be computable but need not be polynomial-time, since undecidability does not concern complexity",
+        "A solution to X must directly answer the halting question without encoding information back",
+        "The reduction must be injective (one-to-one) to preserve the undecidability proof's validity"
+      ],
+      "answer": 1,
+      "explanation": "Reductions proving undecidability use computable functions but ignore polynomial time (undecidability is about existence of decision procedures, not efficiency). Injectivity (option 3) is not required; the same halting instance can map to multiple X instances. Option 1 correctly states that reducibility is computable but not necessarily polynomial. Options 0 and 2 impose unnecessary constraints."
+    },
+    {
+      "id": "theory-of-computation-reductions-009",
+      "q": "The Post Correspondence Problem (PCP) is known to be undecidable. A reduction from the HALTING PROBLEM to PCP would show that PCP is as hard as HALTING. Which type of reduction is typically used?",
+      "options": [
+        "Many-one reduction, because PCP instances are simpler than HALTING instances",
+        "Turing reduction, using a hypothetical PCP solver to decide halting indirectly",
+        "Many-one reduction via intermediate machines, mapping Turing machine behavior to domino sequences",
+        "Context-free grammar reduction, exploiting the generative nature of PCP"
+      ],
+      "answer": 2,
+      "explanation": "The classic reduction from HALTING to PCP constructs a sequence of domino pairs encoding the computation trace of a Turing machine. If PCP has a solution, the computation halts; if not, it loops infinitely. This is a many-one reduction but requires careful intermediate encoding of machine configurations. Option 2 correctly describes the technique; option 1 is too vague; option 3 uses Turing reduction unnecessarily."
+    },
+    {
+      "id": "theory-of-computation-reductions-010",
+      "q": "When proving completeness of a problem in a complexity class (e.g., NP-complete, PSPACE-complete), the hardness proof via reduction assumes the source problem is already known to be complete. Why is this bootstrapping approach valid?",
+      "options": [
+        "It is not valid; all completeness proofs must start from first principles",
+        "Transitivity of reductions: if A is C-complete and A reduces to B, and B is in C, then B is C-complete",
+        "The reduction encodes all hardness properties from the source problem into the target",
+        "Completeness is defined recursively, allowing self-referential proofs"
+      ],
+      "answer": 1,
+      "explanation": "Reducibility is transitive: A ≤_p B and A is NP-hard imply B is NP-hard (since any NP problem reducing to A also reduces to B). If B is in NP and is NP-hard, then B is NP-complete. Bootstrapping is valid because one complete problem (e.g., SAT for NP) is established, then others follow by reduction. Option 1 correctly applies transitivity; option 0 is false; option 2 and 3 misstate the mechanism."
+    }
+  ]
+}

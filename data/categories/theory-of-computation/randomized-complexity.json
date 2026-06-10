@@ -1,0 +1,126 @@
+{
+  "topic": "randomized-complexity",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-randomized-complexity-001",
+      "q": "The complexity class BPP (Bounded-Error Probabilistic Polynomial time) consists of languages recognizable by probabilistic Turing machines with error probability at most 1/3 on both accepting and rejecting paths. What is the significance of the 1/3 bound?",
+      "options": [
+        "The constant 1/3 is hardwired into the definition of BPP and cannot be changed",
+        "Any constant error probability less than 1/2 can be amplified to 1/3 by independent repetitions",
+        "Error probability 1/3 is optimal; smaller probabilities lead to undecidable problems",
+        "The 1/3 bound ensures that BPP algorithms run in deterministic polynomial time"
+      ],
+      "answer": 1,
+      "explanation": "By running a BPP algorithm k times and taking a majority vote, error probability drops exponentially (from p to roughly (1-p)^k). Any constant p < 1/2 can be amplified to any target probability including 1/3. The exact constant does not matter as long as it is less than 1/2. Option 1 correctly states the amplification principle; option 0 is false; option 2 conflates error with decidability; option 3 confuses randomized with deterministic computation."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-002",
+      "q": "A randomized algorithm for a decision problem is in RP (Randomized Polynomial time with one-sided error) if it runs in polynomial time and satisfies which condition?",
+      "options": [
+        "If the answer is YES, the algorithm outputs YES with probability at least 1/2; if the answer is NO, the algorithm always outputs NO",
+        "If the answer is YES, the algorithm always outputs YES; if the answer is NO, the algorithm outputs NO with probability at least 1/2",
+        "The algorithm outputs the correct answer with probability at least 2/3 on both YES and NO instances",
+        "The algorithm can be derandomized in polynomial time on a deterministic machine"
+      ],
+      "answer": 0,
+      "explanation": "RP has one-sided error: false negatives (saying NO when the answer is YES) occur with bounded probability, but false positives never occur (if the algorithm says YES, the answer is definitely YES). This makes RP useful for proving membership. Option 0 correctly describes one-sided error; option 1 is the dual (co-RP); option 2 describes BPP; option 3 is desirable but not definitional."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-003",
+      "q": "The relationship between the randomized complexity classes BPP, RP, and ZPP can be characterized as:",
+      "options": [
+        "RP is a subset of both BPP and ZPP; ZPP is a subset of BPP",
+        "RP and ZPP are subsets of BPP, but the relative ordering of RP and ZPP is unknown",
+        "BPP equals RP union co-RP, and ZPP is a subset of both",
+        "ZPP equals RP intersection co-RP, and both are subsets of BPP"
+      ],
+      "answer": 3,
+      "explanation": "ZPP (Zero-error Probabilistic Polynomial time) is the intersection RP ∩ co-RP: an algorithm that never errs (always outputs correct answer, but running time is probabilistic). ZPP ⊆ RP and ZPP ⊆ co-RP, both subsets of BPP. It is conjectured but unproven that BPP = RP ∪ co-RP. Option 3 correctly defines ZPP and the hierarchy; option 0 mis-orders the classes; option 1 is vague; option 2 is the conjecture, not proven fact."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-004",
+      "q": "A probabilistic Turing machine is a variant of a non-deterministic Turing machine where transitions are labeled with probabilities. For a language L to be in BPP, what must be true about the probability distribution of accepting paths?",
+      "options": [
+        "For every string x, the probability of reaching an accepting state is either 0 or 1",
+        "For strings in L, accept probability >= 2/3; for strings not in L, accept probability <= 1/3",
+        "The Turing machine must always produce the correct answer within the stated probability bound",
+        "The sum of probabilities of all paths must equal 1, ensuring a proper probability distribution"
+      ],
+      "answer": 1,
+      "explanation": "BPP requires that on any input x, the probability of accepting is at least 2/3 if x ∈ L and at most 1/3 if x ∉ L. This bounded error on both sides defines BPP. Option 1 precisely states the definition; option 0 describes deterministic behavior (probability 0 or 1), not randomized; option 2 is tautological; option 3 is a technical requirement of probability distributions but not distinctive to BPP."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-005",
+      "q": "A Las Vegas algorithm (related to ZPP) is characterized by which properties?",
+      "options": [
+        "It always produces the correct answer, but running time is probabilistic (variable but always correct)",
+        "It produces a correct answer with high probability but may fail silently with small probability",
+        "It uses randomization to speed up deterministic algorithms but occasionally gives wrong answers",
+        "It runs in expected polynomial time but with unbounded worst-case time"
+      ],
+      "answer": 0,
+      "explanation": "A Las Vegas algorithm never errs (always correct) but may take variable time. If the worst-case time is polynomial (Las Vegas), the expected time is polynomial, placing the algorithm in ZPP. Option 0 captures the correctness guarantee; option 1 describes Monte Carlo (BPP); option 2 conflates randomization with error; option 3 is partially true but less precise than option 0."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-006",
+      "q": "The Adleman theorem states that BPP is a subset of which deterministic complexity class?",
+      "options": [
+        "P, proving that randomization does not provide asymptotic advantage",
+        "P/poly, showing that BPP can be solved by circuits with polynomial size and advice",
+        "NP, because randomized algorithms can be encoded as non-deterministic choices",
+        "PSPACE, because the randomness introduces exponential state space"
+      ],
+      "answer": 1,
+      "explanation": "Adleman's theorem proves BPP ⊆ P/poly by showing that for any BPP machine, there exists an advice string (random string) of polynomial length that makes the machine deterministic. This does not contradict the possibility that BPP = P (which is unknown); it shows BPP has polynomial-size circuits with advice. Option 1 is correct; option 0 conflates BPP with P; option 2 misunderstands non-determinism; option 3 is false."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-007",
+      "q": "In the context of randomized algorithms, a 'polynomial-time derandomization' would imply which relationship between complexity classes?",
+      "options": [
+        "BPP = P, because every randomized algorithm could be simulated deterministically in polynomial time",
+        "NP = P, because randomization is equivalent to non-determinism",
+        "BPP ⊆ NP, because randomized algorithms are a special case of non-determinism",
+        "P = PSPACE, because derandomization requires exponential resources"
+      ],
+      "answer": 0,
+      "explanation": "If every BPP algorithm can be derandomized (converted to a deterministic P algorithm) while preserving polynomial time, then BPP = P. This is a major open problem; many believe BPP = P, but no proof exists. Option 0 correctly states the implication; option 1 conflates randomization and non-determinism; option 2 is backwards (BPP ⊆ P is suspected, not BPP ⊆ NP); option 3 is false."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-008",
+      "q": "The Schwartz-Zippel lemma is a probabilistic technique used to verify polynomial identities by random evaluation. How does it relate to randomized complexity?",
+      "options": [
+        "It is a BPP algorithm for polynomial identity testing, deciding if two polynomials are identical with small error",
+        "It proves that polynomial identity testing is NP-complete, establishing hardness",
+        "It shows that polynomial time computation can be derandomized completely",
+        "It is a Las Vegas algorithm that always correctly verifies polynomial identity"
+      ],
+      "answer": 0,
+      "explanation": "The Schwartz-Zippel lemma provides a randomized algorithm: evaluate both polynomials at random points; if they differ on any point, they are different polynomials with probability 1 - 1/|field|. This is a BPP algorithm (one-sided error for non-identity). Option 0 correctly describes the algorithm and its complexity class; option 1 overstates the result; option 2 is not what Schwartz-Zippel shows; option 3 misclassifies the algorithm."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-009",
+      "q": "A 'coin-flipping' randomized algorithm for a decision problem makes binary random choices during execution. To amplify error probability from p to p^k for k repetitions, what is required?",
+      "options": [
+        "Run the algorithm k times sequentially; no additional conditions are needed",
+        "Run the algorithm k times on independent random bits, then combine results (via majority vote for BPP)",
+        "Run the algorithm once but use k random bits instead of one",
+        "Repeat the algorithm k times, but the error does not necessarily amplify unless the original p < 1/2"
+      ],
+      "answer": 1,
+      "explanation": "Independent repetitions with majority voting amplify error: for a BPP algorithm with error p < 1/3, k repetitions reduce error to roughly p^k (by concentration inequalities). Using the same random bits or increasing bit count does not amplify. Option 1 correctly describes the amplification mechanism; option 0 is too vague; option 2 is ineffective; option 3 omits the crucial requirement p < 1/2."
+    },
+    {
+      "id": "theory-of-computation-randomized-complexity-010",
+      "q": "The relationship between BPP and NP is largely unknown, but what can be said with certainty?",
+      "options": [
+        "BPP = NP, proven by Adleman's theorem and amplification",
+        "BPP is a subset of co-NP, because randomization cannot exceed non-determinism",
+        "NP is a subset of BPP, meaning all NP problems are solvable probabilistically in polynomial time",
+        "The relationship is unknown; BPP and NP are incomparable in the current knowledge"
+      ],
+      "answer": 3,
+      "explanation": "It is open whether BPP ⊆ NP, NP ⊆ BPP, or neither. Most believe BPP and NP are incomparable (with possible exceptions like specific complete problems). Option 3 correctly reflects the open status of the relationship; option 0 is false (Adleman proves BPP ⊆ P/poly, not BPP = NP); option 1 is unjustified; option 2 contradicts standard hardness assumptions."
+    }
+  ]
+}

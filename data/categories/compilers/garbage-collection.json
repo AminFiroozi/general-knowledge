@@ -1,0 +1,126 @@
+{
+  "topic": "garbage-collection",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-garbage-collection-001",
+      "q": "What is the primary purpose of garbage collection in runtime systems?",
+      "options": [
+        "To automatically reclaim memory that is no longer accessible to the program",
+        "To optimize the speed of CPU instruction execution",
+        "To prevent compilation errors during the parsing phase",
+        "To allocate stack memory for function parameters"
+      ],
+      "answer": 0,
+      "explanation": "Garbage collection automatically frees memory that the program can no longer reach, eliminating manual memory management errors. CPU optimization, parsing, and stack allocation are unrelated to garbage collection."
+    },
+    {
+      "id": "compilers-garbage-collection-002",
+      "q": "In mark-sweep garbage collection, what is the 'mark' phase responsible for?",
+      "options": [
+        "Traversing all reachable objects from the root set and labeling them as live",
+        "Deallocating memory and compacting the heap into contiguous regions",
+        "Detecting cycles in reference graphs to break circular dependencies",
+        "Profiling object access patterns to predict future allocations"
+      ],
+      "answer": 0,
+      "explanation": "The mark phase identifies all live objects by traversing from roots (stack, globals). The sweep phase then frees unmarked objects. Compacting happens in mark-compact variants; cycle detection is separate; profiling is not part of the algorithm."
+    },
+    {
+      "id": "compilers-garbage-collection-003",
+      "q": "What is a key disadvantage of stop-the-world garbage collection?",
+      "options": [
+        "The entire application pauses while garbage collection runs, causing latency spikes",
+        "It requires objects to explicitly declare their memory dependencies",
+        "It cannot handle circular references between objects",
+        "It produces larger compiled code than reference counting approaches"
+      ],
+      "answer": 0,
+      "explanation": "Stop-the-world GC pauses execution to ensure heap consistency, creating noticeable delays in interactive applications. Explicit declarations, circular reference handling, and code size are not intrinsic disadvantages of stop-the-world collection."
+    },
+    {
+      "id": "compilers-garbage-collection-004",
+      "q": "How does generational garbage collection improve performance over full-heap collection?",
+      "options": [
+        "By assuming most objects die young and collecting young generations more frequently than old ones",
+        "By doubling the physical memory available for allocation",
+        "By eliminating the need for reference counting during runtime",
+        "By reducing the total number of objects that can exist in the heap"
+      ],
+      "answer": 0,
+      "explanation": "Generational GC exploits the weak generational hypothesis: most objects are garbage shortly after creation. Young generations are collected often (cheap) while old generations are collected rarely (expensive). Memory size, reference counting, and object limits are orthogonal to generational strategy."
+    },
+    {
+      "id": "compilers-garbage-collection-005",
+      "q": "What problem does reference counting face that tracing garbage collectors handle naturally?",
+      "options": [
+        "Circular references create memory leaks because objects in cycles never reach zero references",
+        "It cannot distinguish between heap and stack allocations",
+        "It requires stopping all threads during the collection phase",
+        "It produces incorrect type information for polymorphic objects"
+      ],
+      "answer": 2,
+      "explanation": "Reference counting cannot free objects in cycles because they reference each other indefinitely; tracing collectors detect unreachable cycles. Heap/stack distinction, thread stopping, and type information are separate concerns."
+    },
+    {
+      "id": "compilers-garbage-collection-006",
+      "q": "In reference counting, what is the immediate drawback compared to tracing collectors?",
+      "options": [
+        "Every object pointer modification requires incrementing or decrementing reference counts, adding runtime overhead",
+        "Reference counting cannot be implemented in garbage-collected languages",
+        "Tracing collectors always provide strictly faster heap access times",
+        "Reference counting fails completely on objects allocated on the stack"
+      ],
+      "answer": 0,
+      "explanation": "Reference counting incurs per-pointer overhead for count updates, creating high memory traffic. Tracing is incompatible with reference counting only in design; reference counting works in many GC languages; speed varies; stack allocation is orthogonal."
+    },
+    {
+      "id": "compilers-garbage-collection-007",
+      "q": "What is the 'root set' in the context of tracing garbage collection?",
+      "options": [
+        "The set of objects directly referenced by the program stack, globals, and CPU registers",
+        "The oldest objects in the heap that are guaranteed to be still alive",
+        "A cached list of frequently accessed objects to speed up allocation",
+        "The set of objects that must be serialized when saving program state"
+      ],
+      "answer": 0,
+      "explanation": "The root set comprises all initial reachable objects: local variables, global variables, and register values. Tracing starts from roots to find all live objects. Generational age, cache optimization, and serialization are unrelated to the root set definition."
+    },
+    {
+      "id": "compilers-garbage-collection-008",
+      "q": "What optimization does incremental garbage collection provide over stop-the-world approaches?",
+      "options": [
+        "Collection work is performed in small increments interleaved with application execution, reducing pause times",
+        "It automatically eliminates the need for reference counting",
+        "It guarantees that no objects will ever become garbage during collection",
+        "It increases memory throughput by using a wider CPU bus"
+      ],
+      "answer": 0,
+      "explanation": "Incremental GC performs collection work in steps between application execution, keeping pauses short for responsiveness. Reference counting, object immortality, and bus width are not properties of incremental collection."
+    },
+    {
+      "id": "compilers-garbage-collection-009",
+      "q": "Which of the following best explains why generational collectors use a 'write barrier'?",
+      "options": [
+        "To track when old-generation objects are modified to reference young-generation objects, enabling frequent young-generation collection without scanning the entire old generation",
+        "To prevent young objects from being promoted to the old generation",
+        "To limit the number of write operations performed on the heap per second",
+        "To segregate read-only objects from mutable ones during collection"
+      ],
+      "answer": 0,
+      "explanation": "Write barriers detect inter-generational pointers (old->young), allowing young-gen collection without full heap scans. They don't prevent promotion, limit writes arbitrarily, or segregate objects by mutability."
+    },
+    {
+      "id": "compilers-garbage-collection-010",
+      "q": "In concurrent garbage collection, what is the primary challenge that distinguishes it from incremental GC?",
+      "options": [
+        "The garbage collector must operate simultaneously with the mutator while maintaining heap consistency, requiring synchronization and handling of floating garbage",
+        "Concurrent collection always requires more memory than concurrent approaches",
+        "Only concurrent GC can handle objects that reference each other",
+        "Concurrent collection is incompatible with reference counting schemes"
+      ],
+      "answer": 0,
+      "explanation": "Concurrent GC runs alongside the mutating program, requiring careful synchronization and accepting some floating garbage (unreachable objects discovered after the trace completes). Memory overhead, circular references, and reference counting compatibility are not defining challenges of concurrency."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "pumping-lemma",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-pumping-lemma-001",
+      "q": "The pumping lemma for regular languages states that for any regular language L, there exists a pumping length p such that any string s in L with |s| >= p can be written as s = xyz where |xy| <= p, y is non-empty, and xy^i z is in L for all i >= 0. Which is the primary use of this lemma?",
+      "options": [
+        "To prove that a language is regular by constructing a DFA",
+        "To prove that a language is NOT regular by showing no valid decomposition exists",
+        "To minimize the number of states in a DFA",
+        "To convert a regular expression to an NFA"
+      ],
+      "answer": 1,
+      "explanation": "The pumping lemma is a necessary condition for regularity. If you can show that no valid decomposition exists (i.e., for any p, there exists a string s in L that cannot be pumped), then L is definitely not regular. The lemma does not prove regularity; it disproves it. Options 1, 3, and 4 describe different automata operations."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-002",
+      "q": "Consider the language L = {a^n b^n | n >= 0}. To prove L is not regular using the pumping lemma, which pumping value and string is most direct?",
+      "options": [
+        "Choose any pumping length p and any string with p 'a's and p 'b's",
+        "Choose pumping length p and string a^p b^p, then show that no valid decomposition xyz satisfies all pumping lemma conditions",
+        "Choose pumping length p and string a^{2p} b^{2p}, verifying that y must contain only 'a's",
+        "Any string a^i b^j with i != j will fail the pumping lemma"
+      ],
+      "answer": 1,
+      "explanation": "For a^p b^p, if y is non-empty and |xy| <= p, then y contains only 'a's. Pumping up (xy^2 z) creates more 'a's than 'b's, violating L. Pumping down (xy^0 z = xz) creates fewer 'a's, also violating L. This contradiction proves L is not regular. Option 2 correctly identifies the strategy; option 3 is imprecise about why the contradiction arises."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-003",
+      "q": "The pumping lemma for context-free languages differs from the pumping lemma for regular languages in that the decomposition of a string s is written as s = uvwxy instead of xyz. What does the additional structure in the CFG pumping lemma capture?",
+      "options": [
+        "It accounts for nested recursive structures in context-free grammars",
+        "It has the same expressive power as the regular pumping lemma but with more notation",
+        "It allows proving that all non-regular languages are context-free",
+        "It is used only for Chomsky Normal Form grammars"
+      ],
+      "answer": 0,
+      "explanation": "The CFG pumping lemma decomposes s = uvwxy where vwx is non-empty and either v or x (or both) are non-empty. This mirrors the recursive structure of parse trees: pumping v and x independently captures nested recursion in the grammar. The regular lemma's xyz cannot capture such nesting. Option 1 correctly identifies that CFLs have more complex recursive structure than regular languages."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-004",
+      "q": "Which of the following languages can be proven non-context-free using the pumping lemma for CFLs?",
+      "options": [
+        "L = {a^n b^n c^n | n >= 0}",
+        "L = {a^n b^n | n >= 0}",
+        "L = {ww | w in {a, b}*}",
+        "L = {a^i b^j c^k | i, j, k >= 0}"
+      ],
+      "answer": 0,
+      "explanation": "The language {a^n b^n c^n} requires counting three independent symbols, which exceeds the capabilities of a PDA (single stack). Using the CFG pumping lemma with s = a^p b^p c^p, any decomposition uvwxy where v and x are non-empty cannot simultaneously pump all three symbols in balance. Option 1 is not regular but is context-free (recognized by a PDA). Option 3 is clearly regular."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-005",
+      "q": "In proving {0^(2^n) | n >= 0} is not regular, you choose pumping length p. Which string in the language makes the non-regularity proof most direct?",
+      "options": [
+        "0^p, any string of length p",
+        "0^(2^p), a string whose length is exactly 2^p",
+        "0^(2^(p+1)), a string whose length is 2^(p+1)",
+        "Any string 0^k where k > p"
+      ],
+      "answer": 2,
+      "explanation": "For s = 0^(2^(p+1)) with |s| > p and |xy| <= p, pumping up yields 0^(2^(p+1) + r) for some 0 < r <= p. This length is strictly between 2^(p+1) and 2^(p+2), so it is not of the form 2^n for any n, violating L. Option 2 is clever but less direct; option 1 is too small and option 3 does not guarantee non-membership after pumping."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-006",
+      "q": "A colleague claims that the language L = {a^n b^(2n) | n >= 0} is not regular and attempts a pumping lemma proof with s = a^p b^(2p). However, the proof fails because a valid decomposition exists. Why does a valid decomposition exist?",
+      "options": [
+        "The language is actually context-free, not regular, so the pumping lemma does not apply",
+        "The string a^p b^(2p) can be decomposed with y = a^k for some k > 0, and pumping preserves the 1:2 ratio of 'a's to 'b's",
+        "The pumping lemma only works for languages with equal counts of symbols",
+        "The string is too long for the pumping lemma to distinguish patterns"
+      ],
+      "answer": 1,
+      "explanation": "L is actually regular (recognized by a DFA tracking state modulo 2). For s = a^p b^(2p), if y = a^k (a suffix of x when |xy| <= p), then xy^i z = a^(p+k(i-1)) b^(2p). For the 1:2 ratio to hold, we need p + k(i-1) = (2p)/2 = p only when i = 1, but since y is non-empty in the proof, this causes issues in understanding. Actually, decomposing differently (with y capturing part of 'b's) allows valid pumping. The language is regular."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-007",
+      "q": "The 'pumping constant' p in the pumping lemma is guaranteed to exist but is not uniquely determined by the language. What does this mean for a practical proof?",
+      "options": [
+        "You can choose any p you want in your proof; all choices are equally valid",
+        "You must find the smallest p for your language to make the proof rigorous",
+        "Your proof must work for ALL possible p values an adversary might choose; you cannot assume a specific p",
+        "The value of p depends on the specific DFA or PDA used to recognize L"
+      ],
+      "answer": 2,
+      "explanation": "To prove non-regularity using the pumping lemma, the argument must be universal: for ANY pumping length p that an adversary provides, you must exhibit a string s in L with |s| >= p that cannot be pumped. You do not get to choose p; the adversary does. Option 1 is backwards; option 3 correctly captures the adversarial nature of the proof. Option 2 misunderstands the existential quantification in the lemma."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-008",
+      "q": "For the context-free pumping lemma with s = uvwxy where |vwx| <= m and |vx| >= 1, what is guaranteed when you pump infinitely?",
+      "options": [
+        "The string uv^∞wx^∞y remains in the language, showing infinite growth",
+        "The language is infinite because infinitely many distinct strings can be generated",
+        "Some substring must be pumped infinitely to generate the entire language",
+        "The parse tree must contain a cycle, demonstrating recursive structure"
+      ],
+      "answer": 1,
+      "explanation": "Pumping u(vw^k x)^k y for increasing k generates infinitely many distinct strings (since |vx| >= 1), all in L if L is context-free. This proves L is infinite. The cycle in the parse tree (option 3) is the reason pumping works, but the key consequence of CFG pumping is infinite generation. Option 2 captures the main insight correctly."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-009",
+      "q": "To prove {w#w^R | w in {a, b}*} is not context-free using the CFG pumping lemma, choose s = a^p # a^p. When decomposing s = uvwxy with |vwx| <= m, which contradiction is most elegant?",
+      "options": [
+        "If both v and x span the # symbol, pumping changes the length of one side",
+        "If v is entirely from the left side of # (all 'a's), pumping v changes only the left side, breaking the symmetry w = w^R",
+        "The string cannot be decomposed validly because # is a separator",
+        "Pumping will always create more 'a's on one side than the other"
+      ],
+      "answer": 1,
+      "explanation": "For s = a^p # a^p with |vwx| <= m, at most m characters around the # are involved. If v is entirely left (all 'a's before #), then pumping up yields a^(p + k(|v|-1)) # a^p for k > 1, breaking the mirror property. If x is entirely right, pumping similarly breaks symmetry. Both v and x cannot span # because |vwx| <= m < 2p. Option 1 is less direct; options 2 and 3 miss the point."
+    },
+    {
+      "id": "theory-of-computation-pumping-lemma-010",
+      "q": "A student proves that language L = {0^a 1^b 0^c | a, b, c >= 0} is not context-free. However, L is actually context-free. What error did the student likely make in applying the pumping lemma?",
+      "options": [
+        "The student chose a string not in the language",
+        "The student failed to consider all possible decompositions s = uvwxy before concluding a contradiction",
+        "The student assumed p was fixed rather than quantified universally by the adversary",
+        "The student ignored the constraint |vwx| <= m in evaluating pumping possibilities"
+      ],
+      "answer": 1,
+      "explanation": "L is context-free (a PDA can generate it by pushing 0's, skipping 1's, then matching 0's during pop). The pumping lemma requires showing NO valid decomposition exists for ALL possible strings s in L with |s| >= m. If the student chose one string and found one decomposition causing contradiction, that is insufficient; there may be another valid decomposition for that string, or the student may have missed valid decompositions entirely. Option 1 is checking validity; option 2 is the actual error in proof methodology."
+    }
+  ]
+}

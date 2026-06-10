@@ -1,0 +1,126 @@
+{
+  "topic": "randomized-algorithms",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-randomized-algorithms-001",
+      "q": "What is the distinction between Monte Carlo and Las Vegas randomized algorithms?",
+      "options": [
+        "Monte Carlo and Las Vegas algorithms are the same; the names are interchangeable",
+        "Monte Carlo: always terminates in polynomial time, but may produce an incorrect result (with bounded probability); Las Vegas: always produces correct results, but running time is probabilistic (expected polynomial). Monte Carlo examples: randomized quicksort (may be slow), primality testing. Las Vegas examples: randomized quicksort with specific pivot rules, quickselect",
+        "Las Vegas always runs faster than Monte Carlo",
+        "Monte Carlo guarantees correctness; Las Vegas does not"
+      ],
+      "answer": 1,
+      "explanation": "Monte Carlo: guaranteed time, probabilistic correctness. Example: randomized primality test—outputs 'composite' with certainty (correct) or 'prime' with high probability (may be wrong, but probability error < 2^(-k) for k rounds). Las Vegas: guaranteed correctness, probabilistic time. Example: randomized quicksort with random pivot—always produces sorted array, but expected time is O(n log n) while worst-case is O(n²). Amplification: Monte Carlo errors can be reduced by repetition; Las Vegas time is inherently random but always correct. Choice depends on problem: primality testing prefers Monte Carlo (fast but probabilistic); sorting prefers Las Vegas (correct but expected time)."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-002",
+      "q": "How does randomized quicksort achieve O(n log n) expected time when worst-case is O(n²)?",
+      "options": [
+        "Randomized quicksort guarantees O(n²) in the worst-case",
+        "Randomized quicksort picks a random pivot instead of a fixed pivot (first, last, or median); random pivot avoids adversarial input. With probability 1/2, the pivot divides the array roughly evenly (at least 1/4 split). This makes the expected recursion depth O(log n). Expected time: E[T(n)] = Σ P(partition quality)·T(quality)·n → E[T(n)] = O(n log n) on any input; however, worst-case O(n²) occurs with low probability (exponentially small)",
+        "Randomized quicksort is slower than deterministic quicksort",
+        "Randomized quicksort requires pre-sorting the input"
+      ],
+      "answer": 1,
+      "explanation": "Randomized pivot: choose a random element as pivot. Analysis: let X_i = indicator variable for the i-th comparison. The element at rank i is compared to the pivot with probability 2/(i+1-i) = 2/|range|; this sums to O(log n) expected comparisons. Alternatively, recursion tree: at each level, a random split occurs. With probability ≥ 1/4, the split is at least 1/4 : 3/4. Expected depth: Σ (3/4)^k → O(log n). Worst-case O(n²) (pivot always extremal) occurs with probability 2^(-n) if pivots are random, making it negligible. Practical: randomized quicksort is fast in practice (better cache locality than merge sort), and randomization is simpler than finding true medians. Time O(n log n) expected, O(n²) worst-case (with low probability)."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-003",
+      "q": "What is the randomized quickselect algorithm and what is its expected time complexity?",
+      "options": [
+        "Randomized quickselect finds the median in O(n log n) time deterministically",
+        "Quickselect finds the k-th smallest element by partitioning around a random pivot and recursing on the partition containing the k-th element (only one subproblem); T(n) = T(n/2) + O(n) expected → T(n) = O(n) expected time, vs O(n log n) for sorting-based selection",
+        "Quickselect has exponential time complexity",
+        "Quickselect only finds the median, not arbitrary k-th elements"
+      ],
+      "answer": 1,
+      "explanation": "Quickselect: given array and rank k, pick a random pivot, partition into left and right. If pivot rank = k, return pivot. If pivot rank < k, recurse on right (rank k - pivot_rank). If pivot rank > k, recurse on left (rank k). Expected time: at each level, expect roughly half the elements are discarded (partition roughly splits 1:1 on average). T(n) = T(n/2) + O(n) → T(n) = O(n + n/2 + n/4 + ...) = O(2n) = O(n). Worst-case O(n²) if pivots are always extremal (unlikely with randomization). Deterministic version (median of medians): guaranteed O(n) worst-case but larger constants. Quickselect is practical and widely used (e.g., np.partition in NumPy)."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-004",
+      "q": "How is randomization used in hashing to achieve good average-case performance?",
+      "options": [
+        "Randomization in hashing is only theoretical; deterministic hashing is always better",
+        "Randomization: use a random hash function from a universal hash family to avoid adversarial inputs that cause collisions. With universal hash function h chosen uniformly at random, the expected number of collisions for any two keys is O(1). This ensures E[lookup time] = O(1) for hash tables, even if an adversary chooses the input. Without randomization, a clever adversary can construct n keys hashing to the same bucket, causing O(n) lookup time",
+        "Randomized hashing requires larger hash tables than deterministic hashing",
+        "Universal hash families guarantee zero collisions"
+      ],
+      "answer": 1,
+      "explanation": "Deterministic hash function: adversary chooses inputs hashing to the same bucket, causing Θ(n) collision chains. Universal hash family: a set H of hash functions where for any two keys x ≠ y and randomly chosen h ∈ H, P(h(x) = h(y)) ≤ 1/m (m = table size). Example: h(x) = (ax + b mod p) mod m for random a, b and prime p. With random h, any two keys collide with probability ≤ 1/m. Expected collisions per key: Σ P(h(k) = h(other key)) ≤ (n-1)/m. For m ≥ n, expected collisions ≤ 1. Lookup time O(1) expected on average over random hash function choice. This ensures robustness against adversarial input."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-005",
+      "q": "What is the randomized algorithm for testing primality, and why is it useful despite being Monte Carlo?",
+      "options": [
+        "Primality testing is always deterministic, not randomized",
+        "Fermat/Miller-Rabin test: for a number n, choose random a and check if a^(n-1) ≡ 1 (mod n) (Fermat) or if n - 1 = 2^s·d and a^d or a^(2^i·d) ≡ ±1 (mod n) (Miller-Rabin). If test fails, n is composite (correct). If test passes, n is probably prime (false positive with probability ≤ 1/4 per test). k rounds reduce error to ≤ 2^(-2k). Useful: deterministic test (AKS) is O(n^6), while Miller-Rabin is O(k log³ n), far faster in practice",
+        "Primality testing requires factorization",
+        "Miller-Rabin has false negatives (missing primes)"
+      ],
+      "answer": 1,
+      "explanation": "Fermat's Little Theorem: if p is prime and gcd(a,p)=1, then a^(p-1) ≡ 1 (mod p). Fermat test: check a^(n-1) mod n; if ≠ 1, n is composite (correct). If = 1, n might be prime (but Carmichael numbers pass despite being composite). Miller-Rabin improves: for n - 1 = 2^s·d, compute a^d, a^(2d), a^(4d), ..., a^(2^(s-1)·d) mod n. If first term ≠ ±1 and none of the subsequent terms ≡ -1, then n is composite. If test passes, n is prime with probability ≥ 3/4. Repeat k times: error ≤ 2^(-2k). For k=20, error < 10^(-12), practical certainty. Deterministic AKS: O(n^6) time, huge constants; Miller-Rabin: O(k log³ n) ≈ O(log⁴ n) for moderate k, practical."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-006",
+      "q": "How is randomization applied to skip lists, and what advantages do they offer over balanced trees?",
+      "options": [
+        "Skip lists use randomization to achieve balance; they have the same complexity as balanced trees but simpler implementation",
+        "Skip lists: probabilistically maintain balance using random heights per node. Each node has a random height (exponentially distributed); a level-k node participates in the level-k skip list (sparse linked list). Search/insert/delete: start at the highest level, skip right until overshot, drop down one level, repeat. Expected height O(log n), expected search/insert time O(log n). Simpler than AVL/RB trees (no rotation logic), easier to understand and implement, though not as tight worst-case guarantees",
+        "Skip lists are only theoretical with no practical use",
+        "Skip lists have O(n) expected time for search"
+      ],
+      "answer": 1,
+      "explanation": "Skip list construction: each node has height sampled from an exponential distribution (e.g., flip coins until heads, height = number of flips). Nodes with height ≥ k link at level k, forming a skip list of roughly n/2^k nodes (geometrically sparse). Search: start at the highest level of the topmost node. At each level k, scan right until overshot, drop to level k-1, repeat. Expected levels: log n. Expected nodes scanned at each level: O(1) (skip right until finding a node at current level; expected scans = 2). Total expected time: O(log n) levels × O(1) scans = O(log n). Advantages: (1) simpler implementation (no rotations); (2) naturally supports range queries and rank queries; (3) expected bounds are tight (vs worst-case for balanced trees). Used in: Memcached, LevelDB, Redis. Trade-off: randomization (skip list) vs determinism (balanced tree)."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-007",
+      "q": "What is the randomized algorithm for finding the minimum cut of a graph?",
+      "options": [
+        "Finding the minimum cut requires trying all possible cuts, which is exponential",
+        "Karger's algorithm: randomly contract edges; for each edge (u,v), merge u and v into a single supernode, redirect all edges incident to u or v to the new supernode, remove self-loops. Repeat until two supernodes remain; the cut size is the number of edges between them. A random contraction preserves the global minimum cut with probability ≥ 2/(n(n-1)). Running O(n² log n) random contractions in parallel yields the minimum cut with high probability",
+        "Randomized minimum cut has polynomial time complexity but very high constants",
+        "Minimum cut can only be found using deterministic algorithms"
+      ],
+      "answer": 1,
+      "explanation": "Karger's contraction algorithm: contract a random edge (u,v) by merging u and v. Continue until 2 nodes remain. Output: the cut size (edges between the two remaining supernodes). Analysis: let F be the global minimum cut (size f). When we contract a random edge, the probability it is NOT in F is (m - f) / m where m is current number of edges. After each contraction, m decreases; the minimum cut survives contraction with probability Π ≥ 2/(n(n-1)) (product of probabilities across all n-2 contractions). Running the algorithm O(n² log n) times and returning the minimum cut found, with high probability (1 - 1/poly(n)), yields the true minimum cut. Time: O(n² log n) runs × O(n+m) per run = O((n²+nm) log n) = O(n⁴ log n) for dense graphs. Space O(n)."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-008",
+      "q": "How is randomization used in Monte Carlo algorithms for numerical integration?",
+      "options": [
+        "Monte Carlo integration is only theoretical with no practical application",
+        "Monte Carlo integration: to integrate f over domain D, randomly sample points uniformly from D, evaluate f at each point, and average the results scaled by D's volume. E[estimate] = (volume of D) × (expected value of f) = ∫f. By the law of large numbers, the estimate converges to the true integral with probability 1. Error: O(1/√n) (much slower than deterministic methods for smooth functions, but faster for high-dimensional integrals where deterministic methods fail)",
+        "Monte Carlo integration always produces the exact integral",
+        "Monte Carlo integration only works for 1D integrals"
+      ],
+      "answer": 1,
+      "explanation": "Monte Carlo integration: estimate ∫_D f(x) dx by sampling n points uniformly from D, computing x̄ = (1/n) Σ f(x_i), and returning estimate = |D| × x̄ (where |D| = volume of D). Expected value: E[estimate] = |D| × E[f] = ∫_D f. Variance: Var[estimate] = |D|² × Var[f] / n. Standard error: σ ≈ √(Var[f]) / √n, decays as O(1/√n). Convergence rate independent of dimensionality d (deterministic numerical methods degrade exponentially with d). For high dimensions (d > 10), Monte Carlo is faster than grid-based methods. Disadvantage: slow convergence (need many samples for accuracy); advantage: black-box, works for any f. Applications: physics simulation (raytracing), option pricing (Brownian motion), finance."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-009",
+      "q": "What is the randomized algorithm for matrix multiplication verification and how does it save time?",
+      "options": [
+        "Matrix multiplication cannot be verified using randomization",
+        "Freivalds' algorithm: given matrices A, B, C, verify if AB = C in O(n²) time with high probability. Choose a random vector r ∈ {0,1}^n. Compute Ar (O(n²)), then (Ar)B (O(n²)), and Cr (O(n²)), comparing (AB)r with Cr. If AB = C, then (AB)r = Cr always. If AB ≠ C, then Pr[(AB)r = Cr] ≤ 1/2. Running k iterations reduces error to 2^(-k). Time O(kn²) for k iterations, far faster than computing AB itself (O(n^2.373))",
+        "Matrix multiplication verification requires O(n^3) time",
+        "Freivalds' algorithm guarantees exact correctness on first run"
+      ],
+      "answer": 1,
+      "explanation": "Freivalds' verification: given A, B, C (n×n matrices), verify AB = C. Algorithm: (1) choose random r ∈ {0,1}^n; (2) compute x = Ar in O(n²); (3) compute y = Bx in O(n²); (4) compute z = Cr in O(n²); (5) check if y = z. Correctness: if AB = C, then (AB)r = Cr (always equal). If AB ≠ C, let D = C - AB ≠ 0. Then (AB)r ≠ Cr iff Dr ≠ 0. If D has at least one nonzero entry d_ij, by choosing r uniformly at random, Pr[Dr = 0 | D ≠ 0] ≤ 1/2 (random variable r_j masks most non-zeros in D). Repeat k times: error ≤ 2^(-k). Total time O(kn²). Faster than computing AB (O(n^2.373) or O(n^3) naive)."
+    },
+    {
+      "id": "algorithms-randomized-algorithms-010",
+      "q": "What is the randomized algorithm for linear programming, and why is it efficient despite being probabilistic?",
+      "options": [
+        "Linear programming is always solved deterministically via simplex or interior-point methods",
+        "Clarkson's algorithm: for n constraints in d dimensions, randomized LP solves in expected O(d²n) time by iteratively removing a random constraint; if optimum changes, include the constraint; else, solve a smaller LP on d+1 constraints with recursion. Geometric insight: the current optimum is determined by ~d constraints; most constraints are irrelevant. Clarkson reduces to solving smaller sub-problems, with expected cost O(d⁶n) to O(d²n) depending on variant. Faster than simplex (O(n^d) worst-case) for large n",
+        "Randomized LP has exponential expected time",
+        "LP randomization guarantees optimal solution on first run"
+      ],
+      "answer": 1,
+      "explanation": "Clarkson's randomized LP: at optimum vertex, at most d constraints are tight (determine the vertex). Clarkson randomly samples constraints; if the sampled set is representative (contains the tight constraints), solve directly on the sample. Otherwise, the optimum is determined by a new constraint, which is added and recursion continues. Expected analysis: the number of iterations to include all tight constraints is O(log n) on average (coupon collector). Each iteration solves an LP on ~d constraints (deterministic algorithm on small sample). This distributes the hardness: instead of ~n constraints upfront, solve many small LPs. Recursive depth O(log n) × O(d²) cost per level → O(d² n) expected. Faster than simplex worst-case O(n^d), competitive with interior-point methods in practice."
+    }
+  ]
+}

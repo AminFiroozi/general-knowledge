@@ -1,0 +1,126 @@
+{
+  "topic": "tries",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-tries-001",
+      "q": "In a trie (prefix tree), what is the time complexity of searching for a string of length m in a trie with n strings?",
+      "options": [
+        "O(m) regardless of n",
+        "O(m log n)",
+        "O(n)",
+        "O(m × n)"
+      ],
+      "answer": 0,
+      "explanation": "Trie search is O(m) where m is the string length, independent of how many strings are stored (n). Each character requires following one edge, and there are at most m characters. Hash tables also achieve O(m) for search, but tries allow prefix-based operations."
+    },
+    {
+      "id": "data-structures-tries-002",
+      "q": "What is the space complexity of a trie storing n strings with alphabet size σ?",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n × σ) worst case for total characters",
+        "O(σ^n)"
+      ],
+      "answer": 2,
+      "explanation": "A trie uses O(total characters) space in the worst case, which is at most O(n × σ) where σ is the alphabet size (26 for English letters). Each node can have up to σ children. This is more space-efficient than hash tables when strings share prefixes."
+    },
+    {
+      "id": "data-structures-tries-003",
+      "q": "In an autocomplete system, which operation does a trie excel at that a hash table cannot efficiently do?",
+      "options": [
+        "Finding all strings with a given prefix",
+        "Checking if a string exists",
+        "Counting total strings",
+        "Deleting a string"
+      ],
+      "answer": 0,
+      "explanation": "Tries naturally support prefix queries by traversing to a node and collecting all descendants, which is O(prefix length + output size). Hash tables must check every string, requiring O(n) time. This makes tries ideal for autocomplete and IP routing."
+    },
+    {
+      "id": "data-structures-tries-004",
+      "q": "What is a compressed trie (or radix tree)?",
+      "options": [
+        "A trie where nodes with only one child are merged into single edges labeled with strings",
+        "A trie encoded using Huffman compression",
+        "A trie that only stores vowels and consonants separately",
+        "A trie with a maximum depth limit"
+      ],
+      "answer": 0,
+      "explanation": "A compressed trie merges chains of single-child nodes into edges labeled with substrings, reducing space to O(n) rather than O(n × σ) for n distinct strings. This improves space efficiency while maintaining O(m) search time."
+    },
+    {
+      "id": "data-structures-tries-005",
+      "q": "In a trie, to mark 'cat' as a complete word distinct from 'catch', what should you do?",
+      "options": [
+        "Delete the node for 't' in 'cat'",
+        "Mark the node representing 'cat' with an end-of-word flag",
+        "Create a separate trie for complete words",
+        "Store a pointer to the root in the 't' node"
+      ],
+      "answer": 1,
+      "explanation": "Each trie node needs a boolean flag indicating if it represents the end of a valid word. This allows 'cat' and 'catch' to coexist: both path paths exist, but only their respective nodes have the flag set."
+    },
+    {
+      "id": "data-structures-tries-006",
+      "q": "How do trie insertions compare to hash table insertions in worst-case time complexity?",
+      "options": [
+        "Trie insertion is O(1), hash table is O(m)",
+        "Both are O(m) where m is string length or hash computation time",
+        "Hash table is always faster",
+        "Trie is always faster"
+      ],
+      "answer": 1,
+      "explanation": "Trie insertion is O(m) to traverse m characters. Hash table insertion is also O(m) on average due to hashing the entire string. The difference is that trie insertion order doesn't affect structure (deterministic), while hash tables require a good hash function."
+    },
+    {
+      "id": "data-structures-tries-007",
+      "q": "What is the main disadvantage of tries compared to hash tables for exact string matching?",
+      "options": [
+        "Tries are slower for exact lookups",
+        "Tries use more memory than hash tables for non-overlapping strings",
+        "Tries cannot handle Unicode characters",
+        "Tries require rehashing when full"
+      ],
+      "answer": 1,
+      "explanation": "If strings share no common prefixes, tries waste space creating separate branches for each character. Hash tables hash directly to a bucket with O(1) average case. Tries excel when many strings share prefixes (common in natural language)."
+    },
+    {
+      "id": "data-structures-tries-008",
+      "q": "In a trie with strings 'car', 'card', 'care', 'careful', how many nodes are needed (counting root)?",
+      "options": [
+        "6 nodes",
+        "11 nodes",
+        "12 nodes",
+        "15 nodes"
+      ],
+      "answer": 2,
+      "explanation": "Root, then c(1), a(2), r(3), d(4-end), e(5), c(6), a(7), r(8), e(9), f(10), u(11), l(12-end). The branching happens after 'car': one branch to 'd', one to 'e'. Total including root: 12 nodes."
+    },
+    {
+      "id": "data-structures-tries-009",
+      "q": "For IP routing tables, why are tries (or radix trees) preferred over hash tables?",
+      "options": [
+        "Tries are faster than hash tables",
+        "Tries support longest-prefix matching, finding the most specific route for a given IP prefix",
+        "Hash tables cannot store IP addresses",
+        "Tries use less memory than any alternative"
+      ],
+      "answer": 1,
+      "explanation": "IP routing requires longest-prefix matching to find the most specific (longest matching) prefix for a destination IP. Tries naturally support this by traversing the tree. Hash tables cannot efficiently solve this because they match exact keys, not prefixes."
+    },
+    {
+      "id": "data-structures-tries-010",
+      "q": "What time complexity improvement does a ternary search tree (TST) offer over a standard trie with a large alphabet?",
+      "options": [
+        "O(m) to O(log m) for search",
+        "O(m) to O(m log σ) where σ is alphabet size, with better cache locality and space savings",
+        "No improvement in time complexity, only space",
+        "O(m) to O(1) amortized"
+      ],
+      "answer": 1,
+      "explanation": "A TST uses three child pointers (left, equal, right) instead of σ children, reducing space from O(σ) per node to O(1) and improving cache performance. Search is O(m log σ) in practice, but worst-case is still O(m). Useful when σ is large."
+    }
+  ]
+}

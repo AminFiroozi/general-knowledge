@@ -1,0 +1,126 @@
+{
+  "topic": "divide-and-conquer",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-divide-and-conquer-001",
+      "q": "What is a recurrence relation and what form does it take for divide-and-conquer algorithms?",
+      "options": [
+        "A formula that only applies to recursive functions, with no closed-form solution",
+        "A formula expressing the runtime T(n) in terms of T(smaller subproblems); for divide-and-conquer: T(n) = aT(n/b) + f(n), where a = number of subproblems, n/b = subproblem size, and f(n) = cost of dividing and combining",
+        "A recurrence is the same as a loop; there is no difference",
+        "Recurrences only apply to sorting algorithms"
+      ],
+      "answer": 1,
+      "explanation": "A recurrence relation is recursive: T(n) depends on T(smaller inputs). For divide-and-conquer, the form T(n) = aT(n/b) + f(n) is canonical. Example: merge sort has a=2 (divide into 2 halves), b=2 (each half is n/2), f(n)=n (merging costs n). Solving requires techniques: substitution, recursion tree, or Master Theorem. Base case: T(1) = O(1). The recursive structure directly mirrors the algorithm's logic: divide problem, solve subproblems, combine results."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-002",
+      "q": "State the Master Theorem and explain its three cases.",
+      "options": [
+        "The Master Theorem solves all recurrences, including non-polynomial functions",
+        "For T(n) = aT(n/b) + f(n), compare f(n) to n^(log_b a): (1) if f(n) = O(n^(log_b a - ε)) for ε>0, then T(n) = Θ(n^(log_b a)); (2) if f(n) = Θ(n^(log_b a)), then T(n) = Θ(n^(log_b a) log n); (3) if f(n) = Ω(n^(log_b a + ε)) for ε>0 and af(n/b) ≤ cf(n), then T(n) = Θ(f(n))",
+        "The Master Theorem is only useful for academic problems, not practical algorithms",
+        "The three cases depend on whether the recurrence is linear, quadratic, or exponential"
+      ],
+      "answer": 1,
+      "explanation": "The Master Theorem elegantly solves T(n) = aT(n/b) + f(n) by determining whether combining (f(n)) or solving subproblems (aT(n/b)) dominates. Case 1: subproblems dominate → T(n) = Θ(n^(log_b a)). Case 2: both contribute equally → T(n) = Θ(n^(log_b a) log n). Case 3: combining dominates → T(n) = Θ(f(n)). Example: merge sort (a=2, b=2, f(n)=n) falls into case 2 since n = Θ(n^1) → Θ(n log n). Does not apply if f(n) is irregular or the recurrence is non-standard."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-003",
+      "q": "How does merge sort partition the problem and what is its complexity?",
+      "options": [
+        "It sorts the array by repeatedly dividing it into single elements, then merging pairs in sorted order",
+        "Merge sort divides the array in half repeatedly (divide), recursively sorts each half (conquer), then merges the two sorted halves in O(n) time (combine); T(n) = 2T(n/2) + n solves to Θ(n log n) time and Θ(n) auxiliary space, stable and comparison-based",
+        "Merge sort is an in-place algorithm with O(1) extra space",
+        "Merge sort has worst-case complexity O(n²)"
+      ],
+      "answer": 1,
+      "explanation": "Merge sort exemplifies divide-and-conquer: divide array into halves until size 1 (depth log n), merge pairs bottom-up. Merging is two-pointer scanning of sorted subarrays, appending the smaller element; O(n) per merge, n comparisons total. Recurrence T(n) = 2T(n/2) + n satisfies Master Theorem case 2 → T(n) = Θ(n log n) guaranteed regardless of input. Stability: if elements are equal, left array element is chosen first, preserving relative order. Space: requires O(n) temporary array. Disadvantage: not in-place; advantage: predictable performance."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-004",
+      "q": "What distinguishes the average-case and worst-case complexity of quicksort, and why does randomization help?",
+      "options": [
+        "Quicksort always has O(n log n) complexity regardless of input",
+        "Quicksort achieves O(n log n) average-case by dividing roughly equally (random pivot), but O(n²) worst-case if pivot is always extremal (sorted input, unlucky choice); randomizing the pivot choice makes worst-case O(n²) unlikely (probability exponentially small), providing O(n log n) expected time with high probability",
+        "Quicksort is always O(n log n) on random inputs but O(n) on sorted inputs",
+        "Randomization in quicksort guarantees O(n log n) worst-case"
+      ],
+      "answer": 1,
+      "explanation": "Quicksort's complexity hinges on partition quality. Ideal: pivot splits array 1:n-1 or better → depth O(log n), time O(n log n). Worst: pivot always extremal → depth O(n), time O(n²). Deterministic pivot (first, last, median) can be adversarial on specific inputs (e.g., sorted data with first-element pivot). Randomized pivot: choosing uniformly at random makes the worst-case O(n²) with low probability (<2^(-n)). Expected recurrence: E[T(n)] = E[T(Left)] + E[T(Right)] + n → E[T(n)] = O(n log n) on any input. In-place O(log n) space (recursion depth)."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-005",
+      "q": "Explain the Karatsuba algorithm for integer multiplication and how it reduces complexity.",
+      "options": [
+        "Karatsuba replaces base-10 multiplication with base-2, reducing operations",
+        "Karatsuba divides two n-digit numbers X and Y into halves: X=a·2^(n/2)+b, Y=c·2^(n/2)+d, then computes ac, bd, and (a+b)(c+d) (3 recursive multiplications instead of 4), reducing complexity from O(n²) schoolbook multiplication to O(n^1.585)",
+        "Karatsuba is only faster for very large numbers (over 10⁶ digits)",
+        "Karatsuba uses FFT and is the same as fast polynomial multiplication"
+      ],
+      "answer": 1,
+      "explanation": "Schoolbook multiplication: X·Y = ac·2^n + (ad+bc)·2^(n/2) + bd requires 4 multiplications of (n/2)-digit numbers. Karatsuba computes: P1=ac, P2=bd, P3=(a+b)(c+d)=ac+ad+bc+bd; then ad+bc = P3-P1-P2, giving X·Y = P1·2^n + (P3-P1-P2)·2^(n/2) + P2 with only 3 multiplications. Recurrence: T(n) = 3T(n/2) + O(n) → T(n) = O(n^(log_2 3)) = O(n^1.585). Faster than O(n²) for large n. Practical for cryptography (thousands of digits); FFT (O(n log n)) dominates for very large numbers."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-006",
+      "q": "How does the closest-pair-of-points algorithm use divide-and-conquer to achieve O(n log n) time?",
+      "options": [
+        "It checks all pairs of points in O(n²) time, using no divide-and-conquer",
+        "It sorts points by x-coordinate, divides at the median x, recursively finds closest pairs in each half, then checks the strip of width 2d (d = current closest distance) around the dividing line; at most 6 points in the strip are close enough to be closer than d, limiting strip comparisons to O(n) per level → O(n log n) total",
+        "It uses a hash table to group nearby points",
+        "It requires points to be on a 2D grid with discrete coordinates"
+      ],
+      "answer": 1,
+      "explanation": "Naive closest pair is O(n²) brute force. Divide-and-conquer: sort by x, divide at median x = X_mid, recursively find d_L and d_R. Let d = min(d_L, d_R). Points closer than d across the dividing line must lie in a strip [X_mid - d, X_mid + d]. In this strip, sort points by y-coordinate; any point has at most 5-7 points within distance d (by a geometric packing argument: a d×2d rectangle contains at most 6 non-overlapping d×(d/2) rectangles). So the strip comparison is O(n). Recurrence T(n) = 2T(n/2) + O(n log n) [or O(n) if pre-sorted y-coordinates are maintained] → T(n) = O(n log² n) or O(n log n). Space O(n)."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-007",
+      "q": "What is the substitution method for solving recurrences, and when is it practical?",
+      "options": [
+        "Substitution method is only theoretical and never used in practice",
+        "Substitution method guesses a closed form T(n) = f(n), then proves it by induction showing T(n) ≤ f(n) (by inductive hypothesis on smaller inputs); practical when the form is obvious or conjectured from recursion tree analysis, but requires strong induction skills",
+        "Substitution method solves all recurrences automatically",
+        "Substitution is the same as the Master Theorem"
+      ],
+      "answer": 1,
+      "explanation": "Substitution method: (1) guess form, e.g., T(n) = O(n log n); (2) substitute back into recurrence and simplify; (3) prove by induction. Example: T(n) = 2T(n/2) + n. Guess T(n) ≤ cn log n. Inductive step: assume T(n/2) ≤ c(n/2) log(n/2), then T(n) = 2·c(n/2) log(n/2) + n ≤ cn log(n/2) + n = cn(log n - 1) + n ≤ cn log n for c ≥ 1. Works when the guess is correct; pitfall is guessing wrong, leading to failed induction. Often used with recursion tree analysis to form an educated guess first."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-008",
+      "q": "How does the recursion tree method provide intuition for solving recurrences?",
+      "options": [
+        "It builds an actual tree data structure to represent the recursion",
+        "It draws a tree where each node represents a subproblem with its cost f(n), levels correspond to recursion depth, and the total cost is the sum of all nodes; useful for visualizing the pattern and guessing the closed form before applying substitution or Master Theorem",
+        "It only works for binary divide-and-conquer algorithms",
+        "It gives exact solutions without needing further proof"
+      ],
+      "answer": 1,
+      "explanation": "For T(n) = 2T(n/2) + n, the tree has: (1) root with cost n; (2) two children each with cost n/2; (3) four grandchildren each with cost n/4; etc. At each level k (0 ≤ k ≤ log n), there are 2^k nodes with total cost 2^k · (n/2^k) = n. With log n levels, total cost = n · log n. This visually reveals the pattern without Master Theorem. For irregular recurrences (non-power subproblems, non-uniform costs), the tree method is invaluable. Once the pattern is evident from the tree, the induction (substitution method) is straightforward."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-009",
+      "q": "How does binary search exemplify divide-and-conquer, and what property of the input does it require?",
+      "options": [
+        "Binary search divides the array in half recursively, but requires a hash table for fast lookup",
+        "Binary search divides the sorted array in half, discarding the half that cannot contain the target, recursively searching the remaining half; requires the input to be sorted; T(n) = T(n/2) + O(1) → T(n) = O(log n), the fastest possible for comparison-based search",
+        "Binary search has the same time complexity as linear search",
+        "Binary search works on unsorted arrays if a random pivot is chosen"
+      ],
+      "answer": 1,
+      "explanation": "Binary search is minimal divide-and-conquer: divide by comparing target to the middle element. If equal, done. If target is smaller, recurse on left half; else, recurse on right half. This ensures each recursive call reduces the problem size by half. Recurrence: T(n) = T(n/2) + O(1) → T(n) = O(log n). Requires sorted input: if unsorted, we cannot safely discard the half. For a sorted list of 1 million elements, binary search needs at most log₂(10⁶) ≈ 20 comparisons vs 500,000 for linear search. Enables efficient searching in databases, arrays, and BSTs."
+    },
+    {
+      "id": "algorithms-divide-and-conquer-010",
+      "q": "What is the time complexity of strassen's algorithm for matrix multiplication and how does it improve upon the standard O(n³) algorithm?",
+      "options": [
+        "Strassen's algorithm is always slower than standard matrix multiplication",
+        "Standard algorithm: 8 recursive matrix multiplications of (n/2)×(n/2) blocks plus O(n²) addition → T(n) = 8T(n/2) + O(n²) = O(n³). Strassen's: 7 multiplications (via clever combinations) → T(n) = 7T(n/2) + O(n²) → T(n) = O(n^2.807), saving a factor of n^(3-2.807) ≈ n^0.193",
+        "Strassen's algorithm only works for 2×2 matrices",
+        "Both algorithms have the same asymptotic complexity; Strassen's has higher constant factors"
+      ],
+      "answer": 1,
+      "explanation": "Standard algorithm multiplies two n×n matrices by computing each element as a dot product (n operations per element, n² elements) → O(n³). Strassen (1969) divides matrices into 4 blocks, requires 7 multiplications and 18 additions instead of 8 multiplications. Recurrence: T(n) = 7T(n/2) + Θ(n²) solves to T(n) = Θ(n^(log_2 7)) ≈ Θ(n^2.807). Faster for large n but has higher constant factors and numerical stability issues. Modern improvements (Coppersmith-Winograd, etc.) approach Θ(n^2.373). In practice, standard algorithm is preferred for moderate matrix sizes due to better cache locality."
+    }
+  ]
+}

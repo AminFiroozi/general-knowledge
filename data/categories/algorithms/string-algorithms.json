@@ -1,0 +1,126 @@
+{
+  "topic": "string-algorithms",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-string-algorithms-001",
+      "q": "What is the key insight of the Knuth-Morris-Pratt (KMP) algorithm that allows it to avoid redundant comparisons?",
+      "options": [
+        "It uses a hash function to compare strings in O(1) time",
+        "It preprocesses the pattern to build a failure function that encodes longest proper prefixes which are also suffixes, enabling backtracking in the pattern only rather than the text",
+        "It divides the text into segments and searches each independently",
+        "It converts the pattern to a regular expression and uses regex matching"
+      ],
+      "answer": 1,
+      "explanation": "KMP builds a failure function (or prefix table) for the pattern: failure[i] = length of longest proper prefix of pattern[0..i] that is also a suffix. On mismatch at position j, instead of resetting to the start of the pattern, KMP jumps to failure[j-1], avoiding re-examining matched text. This reduces time complexity from O((n-m+1)m) in naive search to O(n+m). Example: pattern 'ABABC' has failure array [0,0,1,2,0]."
+    },
+    {
+      "id": "algorithms-string-algorithms-002",
+      "q": "How does the Rabin-Karp algorithm use hashing to enable fast string matching with multiple patterns?",
+      "options": [
+        "It hashes the entire text and pattern, then compares hashes in constant time",
+        "It computes a rolling hash of the text in O(n) time, comparing each window hash to the pattern hash; hash updates in O(1) per position allow O(n+m) expected time, and Rabin-Karp extends naturally to k patterns with k hash comparisons per position",
+        "It builds a hash table of all substrings of the text",
+        "It uses cryptographic hashing to guarantee correctness"
+      ],
+      "answer": 1,
+      "explanation": "Rabin-Karp maintains a rolling hash: hash(text[i..i+m-1]) → hash(text[i+1..i+m]) by removing text[i], shifting, and adding text[i+m], all in O(1). Text hash = (text[i]·b^(m-1) + text[i+1]·b^(m-2) + ... + text[i+m-1]) mod p. When hashes match, verify character-by-character to rule out collisions. For k patterns, maintain k rolling hashes. Expected time is O(n+m+km) = O(n+m) for small k, with worst-case O((n-m+1)m) if many false matches occur."
+    },
+    {
+      "id": "algorithms-string-algorithms-003",
+      "q": "What does the Z-algorithm compute and how is it applied to string matching?",
+      "options": [
+        "It computes the longest common substring of two strings",
+        "It computes the Z-array where Z[i] = length of longest substring starting from i that matches a prefix of the string; pattern matching is solved by prepending pattern + '|' + text and checking Z-array values ≥ pattern length",
+        "It finds all occurrences of a substring using a hash table",
+        "It sorts characters in the string to enable faster searching"
+      ],
+      "answer": 1,
+      "explanation": "The Z-array Z[i] is the length of the longest substring starting at position i that is also a prefix. For pattern P and text T, concatenate P + '|' + T (separator ensures no wraparound). Build Z-array in O(n+m) using a two-pointer technique and maintaining a 'Z-box' [L,R] of the rightmost matched segment. Positions i where Z[i] ≥ m indicate pattern matches at position i. This combines the benefits of KMP's O(n+m) guarantee with cleaner logic."
+    },
+    {
+      "id": "algorithms-string-algorithms-004",
+      "q": "What is a suffix array and what advantage does it offer over a suffix tree for string processing?",
+      "options": [
+        "A suffix array is a list of all substrings; it is faster than suffix trees because it uses less memory",
+        "A suffix array stores indices of all suffixes sorted lexicographically, requiring O(n log n) space vs O(n) for suffix trees, but offering better cache locality and practical performance; combined with an LCP (Longest Common Prefix) array, it enables all suffix tree queries",
+        "A suffix array is only useful for single-character alphabets",
+        "Suffix arrays are deprecated in favor of suffix trees"
+      ],
+      "answer": 1,
+      "explanation": "A suffix array SA is a permutation of [0, n-1] such that text[SA[0]..], text[SA[1]..], ... are in lexicographic order. Space: O(n) integers. A suffix tree requires O(n) space but has complex implementation (Ukkonen's algorithm). Suffix arrays with an LCP array provide equivalent query capabilities: LCP[i] = longest common prefix of SA[i] and SA[i+1]. Modern libraries often prefer suffix arrays for practical speed and simplicity. Binary search on suffix array is O(log n); answering range-minimum queries on LCP enables all suffix tree operations."
+    },
+    {
+      "id": "algorithms-string-algorithms-005",
+      "q": "How does the Aho-Corasick algorithm extend pattern matching to detect multiple patterns in a single pass?",
+      "options": [
+        "It runs KMP independently for each pattern, requiring O(n·k) time for k patterns",
+        "It builds a trie of all patterns, then constructs a finite state automaton with failure links (similar to KMP failure function) and output links to report matches, enabling O(n+m+z) time where z is the number of matches",
+        "It hashes all patterns and compares them to the text sequentially",
+        "It requires preprocessing the text for each pattern separately"
+      ],
+      "answer": 1,
+      "explanation": "Aho-Corasick constructs a trie from k patterns (total length m). Failure links point to the longest proper suffix that is also a prefix (like KMP). Output links skip to the next pattern match. The automaton processes the text in O(n) time; each match is reported via output links in O(z) additional time (z = number of matches). Example: patterns {he, she, his, hers} and text 'ushers' identifies 'she' at position 1 and 'he' at position 2 in one scan. Time O(n+m+z) is optimal for multiple pattern matching."
+    },
+    {
+      "id": "algorithms-string-algorithms-006",
+      "q": "What is the edit distance (Levenshtein distance) and how does dynamic programming solve it?",
+      "options": [
+        "The number of words that differ between two strings",
+        "The minimum number of single-character edits (insertions, deletions, substitutions) to transform one string into another; solved via DP with dp[i][j] = minimum edits to transform text[0..i-1] to pattern[0..j-1], using recurrence: if text[i-1] == pattern[j-1] then dp[i][j] = dp[i-1][j-1], else dp[i][j] = 1 + min(dp[i-1][j], dp[i][j-1], dp[i-1][j-1])",
+        "A hash value used to compare strings quickly",
+        "The longest common substring of two strings"
+      ],
+      "answer": 1,
+      "explanation": "Edit distance (Levenshtein distance) is fundamental to spell-checking and DNA sequence alignment. The DP table dp[i][j] represents the cost to transform text[0..i-1] to pattern[0..j-1]. Transitions: match (dp[i-1][j-1]), delete from text (dp[i-1][j]+1), insert into text (dp[i][j-1]+1), or substitute (dp[i-1][j-1]+1). Time O(nm), space O(nm) reducible to O(min(n,m)). Restricted versions: longest common subsequence (LCS) counts matches; Hamming distance requires equal length and counts mismatches."
+    },
+    {
+      "id": "algorithms-string-algorithms-007",
+      "q": "How does the Boyer-Moore algorithm use bad-character and good-suffix rules to skip large portions of the text?",
+      "options": [
+        "It relies on randomization to skip text positions",
+        "On mismatch at position i, the bad-character rule shifts the pattern right by the distance to the nearest occurrence of the mismatched character in the pattern; the good-suffix rule shifts by the distance to match a suffix of the matched portion, taking the maximum skip — often achieving sublinear time on average",
+        "It uses a hash table to store all pattern substrings",
+        "It preprocesses the text alphabetically"
+      ],
+      "answer": 1,
+      "explanation": "Boyer-Moore is a backward-scanning algorithm (right-to-left comparison). Bad-character rule: if text[i] does not match pattern[j], find the rightmost occurrence of text[i] in pattern; shift pattern so that occurrence aligns with text[i]. Good-suffix rule: if pattern[j..m-1] matched text[i..i+m-1-j] but pattern[j-1] does not match text[i-1], find the rightmost occurrence of pattern[j..m-1] as a suffix of pattern and shift there. Average-case time O(n/m) on random text; worst-case O(nm). Heavily used in practice (e.g., grep)."
+    },
+    {
+      "id": "algorithms-string-algorithms-008",
+      "q": "What is the relationship between the longest common subsequence (LCS) and longest increasing subsequence (LIS)?",
+      "options": [
+        "LCS and LIS are the same problem",
+        "LCS finds the longest subsequence common to two strings; LIS finds the longest increasing subsequence in a single sequence — LIS is a special case of LCS where the second sequence is the sorted version of the first, but LIS has an O(n log n) solution via binary search that LCS lacks",
+        "LIS is only defined on numeric sequences; LCS is for strings",
+        "They have no relationship"
+      ],
+      "answer": 1,
+      "explanation": "LCS(X, Y) is solvable in O(nm) via DP. LIS is a special case: LIS(A) = LCS(A, sorted(A)). However, LIS has a faster O(n log n) algorithm using patience sorting and binary search on a tails array, whereas LCS lacks such optimization. For LCS, dp[i][j] = dp[i-1][j-1]+1 if X[i-1]==Y[j-1], else max(dp[i-1][j], dp[i][j-1]). For LIS, maintain tails where tails[k] = smallest ending value of increasing sequences of length k; binary search finds the longest increasing subsequence ending at each position."
+    },
+    {
+      "id": "algorithms-string-algorithms-009",
+      "q": "How do suffix arrays enable efficient solutions to the longest repeated substring problem?",
+      "options": [
+        "By hashing all substrings and checking for duplicates",
+        "By sorting suffixes lexicographically, the longest repeated substring is found by computing the longest common prefix (LCP) of adjacent suffixes in the sorted array; the maximum LCP value gives the length of the longest repeated substring, and the suffix indices reveal its position",
+        "By building a trie and counting leaf nodes",
+        "By checking all pairs of positions in O(n²) time"
+      ],
+      "answer": 1,
+      "explanation": "The longest repeated substring is the maximum value in the LCP array. Since adjacent suffixes are lexicographically close, their LCP is typically large if a repetition exists. A suffix at position i and another at position j (i ≠ j) form a repeated substring if text[i..i+k-1] == text[j..j+k-1]. Sorting suffixes brings such pairs adjacent (when they share a long common prefix), so max(LCP) reveals the longest repetition. Construct LCP in O(n) time (Kasai's algorithm) after sorting suffixes, giving total time O(n log n) or O(n) with preprocessing."
+    },
+    {
+      "id": "algorithms-string-algorithms-010",
+      "q": "What does the AC automaton build during preprocessing and why does it handle pattern overlaps correctly?",
+      "options": [
+        "It builds a trie with failure links and output links",
+        "The Aho-Corasick automaton constructs a trie of all patterns, then adds failure links (pointing to longest-proper-suffix-that-is-also-a-prefix) and output links (skipping to previously matched patterns); output links correctly report all overlapping matches because failure links may land on suffixes that are themselves complete patterns, and output links ensure these patterns are reported without re-scanning",
+        "It uses a hash table with collision resolution",
+        "It converts patterns into a single combined regex"
+      ],
+      "answer": 1,
+      "explanation": "Example: patterns {ab, ba, aba} and text 'aba'. The trie has nodes for a, ab, b, ba, aba. On scanning 'aba': at node for 'ab' (match 'ab'), continue to 'aba' (match 'aba'). If a failure link is followed during scanning, the output link jumps to a node representing a pattern that shares a suffix. At the node for 'ba', the output link points to 'ba' (pattern match). Overlapping matches like 'ab' and 'aba' in 'aba' are all reported. Output links eliminate the need to backtrack or restart the scan; the automaton efficiently reports all occurrences in a single pass."
+    }
+  ]
+}

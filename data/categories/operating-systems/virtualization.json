@@ -1,0 +1,126 @@
+{
+  "topic": "virtualization",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-virtualization-001",
+      "q": "What is the primary difference between Type 1 and Type 2 hypervisors?",
+      "options": [
+        "Type 1 runs on a host OS while Type 2 runs directly on hardware",
+        "Type 1 runs directly on hardware as the primary OS; Type 2 runs as an application on a host OS",
+        "Type 1 is slower but more secure; Type 2 is faster but less secure",
+        "Type 1 only supports Windows VMs; Type 2 supports Linux VMs only"
+      ],
+      "answer": 1,
+      "explanation": "Type 1 (bare-metal) hypervisors like KVM and Hyper-V run directly on hardware with no host OS, providing better performance and isolation. Type 2 (hosted) hypervisors like VirtualBox and VMware Workstation run as applications on top of a host OS, adding a layer of indirection but easier to install. Type 1 is preferred for production servers; Type 2 for development and testing."
+    },
+    {
+      "id": "operating-systems-virtualization-002",
+      "q": "What is paravirtualization?",
+      "options": [
+        "A technique where guest VMs are aware they are virtualized and use optimized calls instead of full instruction emulation",
+        "A method of running two hypervisors in parallel on the same hardware",
+        "The process of converting a physical machine into a virtual machine",
+        "A security feature that prevents guests from accessing the hypervisor code"
+      ],
+      "answer": 0,
+      "explanation": "Paravirtualization allows guest operating systems to be aware of virtualization and use hypercalls (optimized special calls) to communicate with the hypervisor instead of trapping privileged instructions. This reduces overhead compared to full virtualization. Xen is a well-known paravirtual hypervisor. The trade-off is that guest OS kernels must be modified to support paravirtual interfaces."
+    },
+    {
+      "id": "operating-systems-virtualization-003",
+      "q": "What is hardware-assisted virtualization (HVM)?",
+      "options": [
+        "Using specialized CPU instructions to directly execute guest code with controlled exits to the hypervisor",
+        "Storing virtual machines on a dedicated hardware device",
+        "A backup method for disaster recovery of virtual machines",
+        "The process of allocating physical CPU cores to virtual machines"
+      ],
+      "answer": 0,
+      "explanation": "Hardware-assisted virtualization uses CPU extensions (Intel VT-x, AMD-V) that allow controlled execution of guest code in a special privileged mode with controlled exits to the hypervisor. This eliminates the need to trap and emulate all privileged instructions, significantly reducing overhead. Modern hypervisors like KVM and Hyper-V rely heavily on HVM support for performance."
+    },
+    {
+      "id": "operating-systems-virtualization-004",
+      "q": "How do containers differ from traditional virtual machines?",
+      "options": [
+        "Containers run full OS kernels while VMs share a single kernel",
+        "Containers share the host OS kernel and isolate processes; VMs run separate full OS instances with separate kernels",
+        "Containers are only for Linux; VMs work on any OS",
+        "Containers provide stronger isolation than VMs"
+      ],
+      "answer": 1,
+      "explanation": "Containers (Docker, Kubernetes) share the host kernel and use OS-level isolation (namespaces, cgroups) to separate processes, making them lightweight and fast. Virtual machines run full copies of an OS with their own kernel, providing stronger isolation but higher resource overhead. Containers are ideal for microservices and rapid deployment; VMs are better for running heterogeneous OSes or untrusted code."
+    },
+    {
+      "id": "operating-systems-virtualization-005",
+      "q": "What are CPU oversubscription and memory ballooning in virtualization?",
+      "options": [
+        "Methods to prevent VMs from accessing more resources than allocated",
+        "Techniques to allocate more virtual CPUs/memory to guests than physically available by time-slicing and dynamic adjustment",
+        "Security measures to limit guest OS capabilities",
+        "Monitoring tools to track resource usage of virtual machines"
+      ],
+      "answer": 1,
+      "explanation": "CPU oversubscription allows a hypervisor to schedule more vCPUs than physical cores exist, exploiting idle time in guests. Memory ballooning lets the hypervisor reclaim unused guest memory by inflating a balloon driver inside the guest, which is unmapped from the guest's page tables and freed on the host. Both increase resource efficiency but can impact performance under contention."
+    },
+    {
+      "id": "operating-systems-virtualization-006",
+      "q": "What is the purpose of IOMMU (Input/Output Memory Management Unit) in virtualization?",
+      "options": [
+        "To cache frequently accessed I/O data for faster access",
+        "To provide memory protection and address translation for direct device I/O, allowing guests to directly access devices safely",
+        "To synchronize memory between different virtual machines",
+        "To compress data being transferred between host and guest"
+      ],
+      "answer": 1,
+      "explanation": "An IOMMU provides address translation and access control for DMA (Direct Memory Access) from I/O devices. This allows guest VMs to be assigned physical I/O devices (PCI passthrough) while protecting host and other guest memory. Without IOMMU, a malicious guest could corrupt memory via DMA. IOMMU enables high-performance I/O for virtualization."
+    },
+    {
+      "id": "operating-systems-virtualization-007",
+      "q": "What is VM live migration and what are its key challenges?",
+      "options": [
+        "Moving a VM to another host while it continues running, with challenges in maintaining network connectivity and ensuring consistency",
+        "Permanently converting a VM to another hypervisor format",
+        "Creating a snapshot of a VM for backup purposes",
+        "The process of upgrading a guest OS inside a VM"
+      ],
+      "answer": 0,
+      "explanation": "Live migration transfers a running VM from one physical host to another without downtime. Key challenges include: copying the entire memory state (pre-copy or post-copy), maintaining network connectivity across hosts, ensuring data consistency during transfer, and minimizing visible downtime (often milliseconds for memory-to-memory connections). This requires sophisticated hypervisor support and shared storage."
+    },
+    {
+      "id": "operating-systems-virtualization-008",
+      "q": "What is the difference between full virtualization and paravirtualization in terms of guest OS modification?",
+      "options": [
+        "Full virtualization requires modifying the guest OS; paravirtualization does not",
+        "Full virtualization does not require guest OS modification; paravirtualization requires guest OS awareness and modification",
+        "Both require extensive modifications to the guest OS kernel",
+        "Neither method requires any guest OS changes"
+      ],
+      "answer": 1,
+      "explanation": "Full virtualization (with HVM) provides a complete virtual x86 environment, so unmodified guest OSes run without knowing they are virtualized. Paravirtualization requires the guest OS kernel to be aware of virtualization and modified to use hypercalls instead of privileged instructions. This trade-off means paravirtualization is faster but less portable, while full virtualization is slower but works with any unmodified OS."
+    },
+    {
+      "id": "operating-systems-virtualization-009",
+      "q": "What is a virtual switch in a virtualized environment?",
+      "options": [
+        "A physical switch that must be installed for networking between VMs",
+        "Software running on the hypervisor that forwards packets between VM virtual NICs, physical NICs, and other VMs",
+        "A feature of the host OS that blocks network traffic between VMs",
+        "A protocol used to transfer data between a VM and the hypervisor"
+      ],
+      "answer": 1,
+      "explanation": "A virtual switch is a software layer implemented in the hypervisor that acts like a physical Ethernet switch. It forwards frames between VMs' virtual network interfaces and the physical network interface, and can also connect VMs together. Virtual switches can be configured with VLANs, spanning trees, and QoS policies, similar to physical switches. Most hypervisors (KVM, VMware, Hyper-V) include virtual switching."
+    },
+    {
+      "id": "operating-systems-virtualization-010",
+      "q": "What are the security implications of VM escape attacks?",
+      "options": [
+        "An attack where a guest VM gains access to the hypervisor and other VMs, potentially compromising the entire virtualized system",
+        "A scheduled shutdown of one VM that causes neighboring VMs to stop",
+        "Network traffic being routed incorrectly between VMs",
+        "A guest OS refusing to shut down gracefully"
+      ],
+      "answer": 0,
+      "explanation": "A VM escape is a critical vulnerability where malicious code in a guest VM exploits a hypervisor bug to execute code in the hypervisor context, potentially accessing other VMs' memory and the host system. Famous examples include Spectre/Meltdown affecting Intel CPUs and hypervisors. VM escape is much more severe than a regular OS compromise because it breaks the hypervisor's isolation boundary. Vendors prioritize VM escape fixes."
+    }
+  ]
+}

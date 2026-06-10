@@ -1,0 +1,126 @@
+{
+  "topic": "jit-compilation",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-jit-compilation-001",
+      "q": "What is the primary difference between interpretation and JIT compilation?",
+      "options": [
+        "Interpretation executes bytecode on-the-fly while JIT compiles frequently-executed code to native machine code for faster execution",
+        "Interpretation is faster because it skips the compilation step entirely",
+        "JIT compilation only works with languages that have explicit type annotations",
+        "Interpretation allows programs to run before any compilation occurs"
+      ],
+      "answer": 0,
+      "explanation": "Interpreters execute bytecode immediately; JIT compilers dynamically compile hot code to native code, trading startup latency for better steady-state performance. Pure interpretation without compilation can be slower; JIT works with untyped languages; both pre-process code."
+    },
+    {
+      "id": "compilers-jit-compilation-002",
+      "q": "What is a 'hot path' in the context of JIT compilation?",
+      "options": [
+        "A frequently-executed code segment that accounts for a significant portion of runtime, making it a prime target for JIT optimization",
+        "The path taken by the garbage collector when freeing memory",
+        "A CPU cache line that stores recently-accessed instructions",
+        "The execution path taken during exception handling"
+      ],
+      "answer": 0,
+      "explanation": "Hot paths are code sections executed frequently; JIT focuses optimization effort here because the performance improvement is multiplied by frequency. GC paths, CPU caches, and exception handling are unrelated to hot path identification."
+    },
+    {
+      "id": "compilers-jit-compilation-003",
+      "q": "How does runtime profiling information enable JIT compilers to make better optimization decisions?",
+      "options": [
+        "Profiling reveals which code paths execute most frequently and what types flow through the code, enabling type-specific and branch-specific optimizations",
+        "Profiling eliminates the need for garbage collection during execution",
+        "Profiling determines the maximum memory allocation possible at program start",
+        "Profiling prevents all runtime errors from occurring"
+      ],
+      "answer": 0,
+      "explanation": "Profiling shows execution frequencies and data types, allowing JIT to specialize code with type guards, inline calls, and branch predictions. GC, memory limits, and error prevention are independent concerns."
+    },
+    {
+      "id": "compilers-jit-compilation-004",
+      "q": "What is 'deoptimization' in JIT compilation?",
+      "options": [
+        "Reverting to an unoptimized version of code when JIT assumptions (like type specializations) are violated at runtime",
+        "The process of removing optimization flags during compilation",
+        "Garbage collection of obsolete JIT-compiled code",
+        "A technique that reduces the speed of already-compiled code intentionally"
+      ],
+      "answer": 0,
+      "explanation": "Deoptimization discards an optimized version when its assumptions prove false (e.g., unexpected type), resuming with interpreter or a less-optimized version. It's not about flag removal, code cleanup, or intentional slowdown."
+    },
+    {
+      "id": "compilers-jit-compilation-005",
+      "q": "In tiered JIT compilation, what is the advantage of compiling code at multiple optimization levels?",
+      "options": [
+        "The interpreter or quick C1 compiler produces immediately-runnable code quickly, while slower C2 compilers optimize aggressively, balancing startup latency and peak performance",
+        "Multiple tiers ensure that every line of code eventually runs equally fast",
+        "Tiering eliminates all floating-point precision errors",
+        "Each tier handles a different CPU architecture automatically"
+      ],
+      "answer": 0,
+      "explanation": "Tiered JIT provides fast baseline compilation for quick execution, then aggressive optimization once code proves hot. Tiers don't guarantee equal speed, aren't about precision, and don't auto-target architectures."
+    },
+    {
+      "id": "compilers-jit-compilation-006",
+      "q": "What is speculative optimization in the context of JIT compilation?",
+      "options": [
+        "Optimizing based on observed runtime behavior patterns that are usually but not guaranteed to hold, allowing fast paths while keeping guards for edge cases",
+        "Random optimization applied without analyzing code structure",
+        "Optimizing code before the program execution has begun",
+        "Using machine learning to predict optimization opportunities"
+      ],
+      "answer": 0,
+      "explanation": "Speculative optimization assumes typical patterns (e.g., monomorphic calls) observed at runtime, adding guards to detect exceptions. It's not random, not pre-execution, and doesn't require ML."
+    },
+    {
+      "id": "compilers-jit-compilation-007",
+      "q": "Why might a JIT compiler inline a function call more aggressively than a static compiler?",
+      "options": [
+        "JIT compilers have runtime information showing the function is frequently called with predictable behavior, and can adjust inlining if assumptions prove wrong via deoptimization",
+        "Static compilers are prohibited from inlining by language standards",
+        "Inlining is only beneficial in JIT compilation, not static compilation",
+        "JIT compilers have unlimited memory for storing inlined code"
+      ],
+      "answer": 0,
+      "explanation": "JIT inlines based on profiling data and can deoptimize if wrong. Static compilers lack runtime info; both use inlining; memory isn't unlimited in JIT; standards don't prohibit static inlining."
+    },
+    {
+      "id": "compilers-jit-compilation-008",
+      "q": "What is the 'compilation threshold' in adaptive JIT compilation?",
+      "options": [
+        "The number of times a method must be invoked or a loop iteration completed before JIT compilation is triggered, balancing interpretation and compilation overhead",
+        "The maximum amount of memory available for compiled code storage",
+        "A security restriction preventing JIT from compiling untrusted code",
+        "The minimum improvement percentage required to trigger recompilation"
+      ],
+      "answer": 0,
+      "explanation": "Thresholds determine when code is hot enough to justify compilation costs. Memory limits, security, and improvement percentages are separate configuration concerns."
+    },
+    {
+      "id": "compilers-jit-compilation-009",
+      "q": "How does escape analysis assist JIT compilers in optimizing object allocation?",
+      "options": [
+        "By determining that objects don't escape a method scope, JIT can allocate them on the stack or eliminate them entirely through scalar replacement, reducing garbage collection pressure",
+        "Escape analysis measures how far objects travel in network communications",
+        "It ensures objects are never freed prematurely by garbage collection",
+        "It determines the optimal network topology for distributed object access"
+      ],
+      "answer": 0,
+      "explanation": "Escape analysis proves objects remain local; JIT optimizes to stack allocation or object elimination. It's not about networking, premature freeing, or distributed systems."
+    },
+    {
+      "id": "compilers-jit-compilation-010",
+      "q": "What tradeoff does JIT compilation introduce that static compilation avoids?",
+      "options": [
+        "JIT compilation adds startup latency and ongoing compilation overhead to achieve better peak performance through runtime-informed optimizations",
+        "JIT compilation eliminates all compilation overhead, making programs run instantly",
+        "Static compilation is always faster than JIT at every point in execution",
+        "JIT compilation requires more disk space for program binaries"
+      ],
+      "answer": 0,
+      "explanation": "JIT trades startup/compilation latency for better steady-state performance. It doesn't eliminate overhead; static isn't always faster; disk space isn't the primary tradeoff."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "dataflow-analysis",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-dataflow-analysis-001",
+      "q": "What is the primary purpose of dataflow analysis in compiler optimization?",
+      "options": [
+        "To determine which definitions of variables reach which uses, enabling optimizations like constant propagation, dead code elimination, and alias analysis",
+        "To measure the rate at which data flows through a program's network connections",
+        "To ensure that all variables are initialized before use, preventing undefined behavior",
+        "To allocate memory dynamically during program execution"
+      ],
+      "answer": 0,
+      "explanation": "Dataflow analysis tracks how values flow through the program to enable optimizations. Network throughput, initialization checking, and dynamic memory allocation are separate concerns."
+    },
+    {
+      "id": "compilers-dataflow-analysis-002",
+      "q": "What does 'reaching definitions' analysis determine in a program?",
+      "options": [
+        "For each use of a variable, which assignments (definitions) might have set its value, accounting for all possible control-flow paths",
+        "The memory address where each variable is stored",
+        "The optimal time to garbage collect unreachable objects",
+        "The order in which function parameters are evaluated"
+      ],
+      "answer": 0,
+      "explanation": "Reaching definitions identifies possible sources for each variable use across all paths. Address assignment, garbage collection, and parameter evaluation are unrelated."
+    },
+    {
+      "id": "compilers-dataflow-analysis-003",
+      "q": "What is 'liveness' analysis used for in compilers?",
+      "options": [
+        "Determining which variables are live (used before being overwritten) at each program point, enabling dead code elimination and register allocation decisions",
+        "Measuring how long a program has been running without errors",
+        "Detecting infinite loops in the source code",
+        "Verifying that all function calls have matching returns"
+      ],
+      "answer": 0,
+      "explanation": "Liveness identifies which variables must be preserved at each point. Uptime measurement, loop detection, and return matching are unrelated analyses."
+    },
+    {
+      "id": "compilers-dataflow-analysis-004",
+      "q": "What are 'available expressions' in dataflow analysis?",
+      "options": [
+        "Expressions whose values have been computed and are guaranteed not to be modified on all paths from their computation to a given program point, enabling common subexpression elimination",
+        "All expressions that can be evaluated without causing runtime errors",
+        "Expression syntax that is valid according to the language grammar",
+        "Expressions that have been cached in CPU registers"
+      ],
+      "answer": 0,
+      "explanation": "Available expressions are precomputed and unmodified; they enable CSE. Runtime safety, grammar validity, and register caching are separate concerns."
+    },
+    {
+      "id": "compilers-dataflow-analysis-005",
+      "q": "What is a 'fixed-point' in the context of iterative dataflow analysis algorithms?",
+      "options": [
+        "A state where the dataflow solution reaches a point where further iterations produce no changes, indicating the algorithm has converged to the correct solution",
+        "A memory address that cannot change during program execution",
+        "A floating-point number with a constant exponent",
+        "A point in the program where variables are forbidden from changing values"
+      ],
+      "answer": 0,
+      "explanation": "Fixed-point is algorithmic convergence. Memory addresses, floating-point representation, and variable constraints are unrelated meanings."
+    },
+    {
+      "id": "compilers-dataflow-analysis-006",
+      "q": "How do 'lattices' provide a mathematical framework for dataflow analysis?",
+      "options": [
+        "Lattices define partial orders on dataflow facts with join (least upper bound) and meet (greatest lower bound) operations, allowing multiple data facts to be safely merged and ensuring algorithms terminate",
+        "Lattices are physical structures that organize data in memory",
+        "Lattices ensure that all variables are distinct and independent",
+        "Lattices prevent circular dependencies in function calls"
+      ],
+      "answer": 0,
+      "explanation": "Lattices provide merge semantics for facts. Memory organization, variable distinctness, and function call cycles are unrelated."
+    },
+    {
+      "id": "compilers-dataflow-analysis-007",
+      "q": "What is the difference between 'forward' and 'backward' dataflow analyses?",
+      "options": [
+        "Forward analyses compute information flowing from program entry to exit (reaching definitions, available expressions), while backward analyses compute information flowing from exit to entry (liveness, use chains), depending on whether facts depend on predecessors or successors",
+        "Forward analyses are always more efficient than backward analyses",
+        "Backward analysis is only applicable to loops",
+        "Forward and backward analyses always produce identical results"
+      ],
+      "answer": 0,
+      "explanation": "Direction depends on data dependency: forward for predecessor-dependent facts, backward for successor-dependent facts. Efficiency varies; backward isn't loop-only; results differ."
+    },
+    {
+      "id": "compilers-dataflow-analysis-008",
+      "q": "What is 'may analysis' versus 'must analysis' in dataflow?",
+      "options": [
+        "May analysis computes an over-approximation (conservative: something MAY happen), while must analysis computes an under-approximation (something MUST happen); may enables conservative optimizations, must enables aggressive ones",
+        "May analysis always produces more accurate results than must analysis",
+        "Must analysis is only applicable in statically-typed languages",
+        "May and must analyses cannot be applied to the same problem"
+      ],
+      "answer": 0,
+      "explanation": "May (over-approximate) is safe for conservative optimizations; must (under-approximate) enables aggressive ones. Accuracy differs by use case; type systems vary; both apply to problems."
+    },
+    {
+      "id": "compilers-dataflow-analysis-009",
+      "q": "How does 'gen' and 'kill' terminology apply to basic block dataflow equations?",
+      "options": [
+        "Gen is the set of dataflow facts created (generated) within a basic block, and kill is the set of facts invalidated (destroyed), allowing composition: out[B] = gen[B] ∪ (in[B] - kill[B])",
+        "Gen and kill determine memory allocation and deallocation",
+        "Gen is the number of function calls; kill is the number of returns",
+        "Gen and kill apply only to optimization passes, not analysis"
+      ],
+      "answer": 0,
+      "explanation": "Gen/kill decompose blocks into created and invalidated facts. Memory allocation, call/return counting, and optimization-only application are mischaracterizations."
+    },
+    {
+      "id": "compilers-dataflow-analysis-010",
+      "q": "Why is iterative dataflow analysis guaranteed to converge to a fixed point?",
+      "options": [
+        "The lattice structure of dataflow facts has a finite height (finite number of levels); each iteration can only increase facts (for forward may analysis) or decrease them (for backward must analysis); eventually reaching a fixed point where no more changes occur",
+        "All programs terminate in finite time",
+        "Convergence is not guaranteed; algorithms may diverge",
+        "Convergence depends on the programming language used"
+      ],
+      "answer": 0,
+      "explanation": "Finite lattice height with monotonic iteration ensures convergence. Program termination, algorithm guarantees, and language independence are distinct properties."
+    }
+  ]
+}

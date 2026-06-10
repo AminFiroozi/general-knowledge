@@ -1,0 +1,126 @@
+{
+  "topic": "intermediate-representation",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-intermediate-representation-001",
+      "q": "What is the primary purpose of an intermediate representation (IR) in a compiler?",
+      "options": [
+        "To provide a language-independent representation that separates frontend parsing from backend code generation and enables target-independent optimizations",
+        "To store the final executable binary before linking",
+        "To cache parse trees for faster recompilation of unchanged code",
+        "To display error messages to the programmer"
+      ],
+      "answer": 0,
+      "explanation": "IR decouples frontend (source language) from backend (target machine), enabling optimization passes that are independent of both. Binaries, caching, and error display are separate compilation phases."
+    },
+    {
+      "id": "compilers-intermediate-representation-002",
+      "q": "What does 'three-address code' mean in compiler design?",
+      "options": [
+        "A low-level IR where each instruction has at most three operands: two sources and one destination, typically in the form x = y op z",
+        "Machine code that can address three distinct memory locations per instruction",
+        "A high-level language with three distinct scope levels for variables",
+        "An instruction set with exactly three conditional branches"
+      ],
+      "answer": 0,
+      "explanation": "Three-address code (TAC) breaks complex expressions into simple binary operations with explicit assignment. It's not about hardware addressing, scoping, or branching."
+    },
+    {
+      "id": "compilers-intermediate-representation-003",
+      "q": "What is 'Static Single Assignment' (SSA) form in IR design?",
+      "options": [
+        "An IR property where each variable is assigned exactly once, simplifying dataflow analysis and enabling powerful optimizations like constant propagation and dead code elimination",
+        "A guarantee that variables are never reassigned during program execution",
+        "An optimization that reduces the number of assembly instructions by 50 percent",
+        "A security property preventing buffer overflows by limiting variable assignments"
+      ],
+      "answer": 0,
+      "explanation": "SSA ensures each variable has a unique assignment; undefined variables use 'phi' functions at merge points. It doesn't prevent runtime reassignment, guarantee speedup percentage, or prevent overflows."
+    },
+    {
+      "id": "compilers-intermediate-representation-004",
+      "q": "What is a 'phi function' in SSA form and why is it necessary?",
+      "options": [
+        "A function used at control-flow merge points to select which of multiple reaching definitions should be live at that point, unifying variables assigned in different branches",
+        "A built-in function in functional programming languages for function composition",
+        "A performance optimization that eliminates unused loop iterations",
+        "A debugging utility that traces variable assignments"
+      ],
+      "answer": 0,
+      "explanation": "Phi functions merge multiple definitions from different control paths. They're not about functional composition, loop optimization, or debugging."
+    },
+    {
+      "id": "compilers-intermediate-representation-005",
+      "q": "What is a 'control-flow graph' (CFG) and how does it relate to IR?",
+      "options": [
+        "A graph representation of IR where nodes are basic blocks and edges represent possible execution flow, enabling analysis of program structure independent of the source language",
+        "A flowchart manually drawn to understand program execution before compilation",
+        "A diagram showing how CPU control signals propagate through hardware",
+        "A tool for visualizing only the call stack during program debugging"
+      ],
+      "answer": 0,
+      "explanation": "A CFG models program control flow as nodes (basic blocks) and edges (branches). It's not a manual flowchart, hardware diagram, or debugging-only tool."
+    },
+    {
+      "id": "compilers-intermediate-representation-006",
+      "q": "What is a 'basic block' in the context of IR and CFGs?",
+      "options": [
+        "A sequence of IR instructions with no branches except at the end, ensuring all instructions execute together if any execute, enabling efficient local analysis",
+        "The lowest-level assembly code after register allocation",
+        "A memory allocation unit in the runtime heap",
+        "The smallest unit of code that can be executed concurrently"
+      ],
+      "answer": 0,
+      "explanation": "A basic block is a straight-line sequence with branches only at the end. It's not about assembly, heap allocation, or concurrency."
+    },
+    {
+      "id": "compilers-intermediate-representation-007",
+      "q": "Why is IR design important for supporting multiple target platforms?",
+      "options": [
+        "A single IR allows the compiler to share optimization passes and only implement target-specific code generation, reducing engineering effort and increasing code reliability across platforms",
+        "IR design determines the programming language's syntax",
+        "Multiple target platforms require completely different IR designs from scratch",
+        "IR is irrelevant to platform portability"
+      ],
+      "answer": 0,
+      "explanation": "IR provides a common abstraction; optimizations are shared while backends differ. Language syntax is defined independently; platforms can share IR; IR is essential for portability."
+    },
+    {
+      "id": "compilers-intermediate-representation-008",
+      "q": "What problem does IRs with explicit CFG representation solve compared to linear IR sequences?",
+      "options": [
+        "Explicit CFGs make control-flow dependencies and loop structures obvious to analysis passes, enabling optimizations like loop invariant code motion and predicate-based execution transformations",
+        "Linear IR is always faster to process by optimization passes",
+        "CFGs eliminate the need for dataflow analysis",
+        "CFGs are smaller in representation size than linear IR"
+      ],
+      "answer": 0,
+      "explanation": "Explicit CFGs clarify structure for flow-sensitive analysis. Linear IR still requires CFG reconstruction; dataflow is needed with both; size is orthogonal."
+    },
+    {
+      "id": "compilers-intermediate-representation-009",
+      "q": "How does 'lowering' differ from 'raising' when transforming between IR levels?",
+      "options": [
+        "Lowering transforms high-level IR toward concrete details (e.g., virtual registers to physical registers), while raising abstracts away details; compilers primarily lower from source to target",
+        "Raising always happens before lowering in every compiler",
+        "Lowering and raising are identical operations with opposite names",
+        "Only interpreters use raising; compilers exclusively lower"
+      ],
+      "answer": 0,
+      "explanation": "Lowering adds detail; raising removes it. Compilers lower; order varies; they're opposites; both interpreters and compilers may use both directions."
+    },
+    {
+      "id": "compilers-intermediate-representation-010",
+      "q": "What advantage does using a typed IR provide for optimization and error detection?",
+      "options": [
+        "Type information in IR allows optimizations like specialization and virtual method inlining, and early detection of type mismatches without runtime overhead",
+        "Typed IR makes code generation slower but safer",
+        "Type information is only useful for runtime error checking",
+        "Untyped IR is more expressive than typed IR"
+      ],
+      "answer": 0,
+      "explanation": "Types enable specialization and type-directed optimization. Typed IR doesn't inherently slow code generation; types help compile-time checks; untyped IR is not more expressive."
+    }
+  ]
+}

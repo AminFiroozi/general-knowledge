@@ -1,0 +1,126 @@
+{
+  "topic": "protection-and-security",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-protection-and-security-001",
+      "q": "What are CPU privilege rings and why are they used?",
+      "options": [
+        "Hardware-enforced privilege levels (Ring 0=kernel, Ring 3=user) that restrict which instructions and memory regions each mode can access",
+        "Priority queues used to schedule process execution",
+        "Circular buffers used for inter-process communication",
+        "A mechanism to assign CPU cores to specific users"
+      ],
+      "answer": 0,
+      "explanation": "CPU rings (Ring 0 is most privileged, Ring 3 is least) are hardware-enforced privilege levels. Ring 0 (kernel mode) can execute all instructions and access all memory; Ring 3 (user mode) has restricted instructions and memory access. Switching between rings requires a mode switch (e.g., system call trap). This isolation prevents user programs from corrupting the kernel or each other. All modern x86, ARM, and MIPS processors support rings."
+    },
+    {
+      "id": "operating-systems-protection-and-security-002",
+      "q": "What is a capability in capability-based security?",
+      "options": [
+        "A boolean flag indicating whether a process is an administrator",
+        "A token representing permission to access a specific resource, unforgeable and revocable",
+        "A system call that allows the OS to check if a process has permission",
+        "An environment variable that determines process privileges"
+      ],
+      "answer": 1,
+      "explanation": "In capability-based security, a capability is an unforgeable token (often a pointer or secure handle) that grants permission to access a specific resource. Capabilities are more fine-grained than traditional access control lists. A process holds capabilities and can only access resources it holds capabilities for. Capabilities can be revoked, delegated, or restricted by the OS. Examples include UNIX file descriptors (which are a form of capability) and some microkernel OSes like seL4."
+    },
+    {
+      "id": "operating-systems-protection-and-security-003",
+      "q": "What is the principle of least privilege?",
+      "options": [
+        "Processes should run with the minimum necessary privileges to accomplish their task, reducing damage if compromised",
+        "Only privileged users can run any processes",
+        "Each process should have all available system privileges",
+        "Privilege levels should be determined randomly for security"
+      ],
+      "answer": 0,
+      "explanation": "The principle of least privilege states that code should run with only the minimum privileges needed to function. A web server need not run as root; it can run as an unprivileged user. If the server is compromised, the attacker gains only that limited privilege. Many privilege escalation exploits fail when code runs unprivileged. This principle applies to all security layers: file access, system calls, network access."
+    },
+    {
+      "id": "operating-systems-protection-and-security-004",
+      "q": "What is a security domain and how does it enforce access control?",
+      "options": [
+        "A network address range for internal communication",
+        "A set of resources and the access rights for a user or process; enforced by access control lists or capability matrices",
+        "A data structure used to cache permission checks",
+        "A cryptographic certificate for authentication"
+      ],
+      "answer": 1,
+      "explanation": "A security domain is a collection of resources (files, memory, devices) and the access rights granted for a specific user or process. Access control is typically enforced through: (1) Access Control Lists (ACLs)—list of subjects and their permissions for each object, or (2) Capability matrix—list of objects and capabilities held by each subject. The OS checks the domain before allowing access. Changing domains requires transitioning privilege levels."
+    },
+    {
+      "id": "operating-systems-protection-and-security-005",
+      "q": "What is the TOCTOU vulnerability (Time-of-Check-Time-of-Use) and how does it affect OS security?",
+      "options": [
+        "A race condition where a resource is accessed between the time it is checked for validity and the time it is used",
+        "A type of overflow vulnerability in the kernel stack",
+        "A cache coherency problem in multi-processor systems",
+        "A deadlock condition that occurs intermittently"
+      ],
+      "answer": 0,
+      "explanation": "TOCTOU is a race condition where between checking permissions (check-time) and accessing a resource (use-time), an attacker changes the resource, bypassing the check. Example: a program checks if a file is safe to delete, then deletes it—but the file could be swapped with a symlink to an important file between the check and deletion. TOCTOU is difficult to eliminate entirely but can be mitigated by atomic operations, holding locks, or using capability-based access control."
+    },
+    {
+      "id": "operating-systems-protection-and-security-006",
+      "q": "What is a domain transition and why is it needed in capability-based systems?",
+      "options": [
+        "A process changing from user mode to kernel mode temporarily",
+        "A controlled switch from one security domain to another, allowing a process to gain additional privileges for a specific operation",
+        "The movement of a process from one CPU core to another",
+        "A change in the process's memory address space"
+      ],
+      "answer": 1,
+      "explanation": "In capability systems, a domain transition is a controlled privilege increase allowing a process to temporarily operate in a different security context. For example, a user process might need to access a protected resource; it invokes a trusted intermediary (e.g., a library or trusted server) in a more privileged domain to perform the operation, then returns. This allows fine-grained delegation of privilege without giving the process permanent elevated rights."
+    },
+    {
+      "id": "operating-systems-protection-and-security-007",
+      "q": "What are the differences between discretionary and mandatory access control?",
+      "options": [
+        "Discretionary AC allows owners to decide permissions; mandatory AC enforces centralized security policies regardless of owner preference",
+        "Discretionary AC is only for files; mandatory AC is for all resources",
+        "Mandatory AC is more permissive than discretionary AC",
+        "They are functionally equivalent but with different names"
+      ],
+      "answer": 0,
+      "explanation": "Discretionary Access Control (DAC) lets resource owners (e.g., file owners) decide who can access their resources. Unix file permissions are DAC—a user can chmod their files as desired. Mandatory Access Control (MAC) enforces policies set by the system administrator that override owner discretion. Example: SELinux can prevent a user from making a file world-readable even if they own it. MAC is more restrictive and secure but less flexible."
+    },
+    {
+      "id": "operating-systems-protection-and-security-008",
+      "q": "What is privilege escalation and what are common vectors for it?",
+      "options": [
+        "A legitimate increase in privilege when a process is promoted to a higher priority",
+        "An unauthorized gain of higher privilege (e.g., user to root) through vulnerabilities like buffer overflows, TOCTOU, or misconfigurations",
+        "A system call that allows a process to request additional privileges",
+        "A scheduling technique to improve performance of critical processes"
+      ],
+      "answer": 1,
+      "explanation": "Privilege escalation is when an attacker gains higher privileges than intended. Vectors include: (1) Buffer overflows in setuid programs running as root, (2) TOCTOU races in system utilities, (3) Configuration errors (world-writable system directories), (4) Unpatched kernel vulnerabilities. Preventing escalation requires careful coding (bounds checking), minimal use of setuid, principle of least privilege, and regular security audits and patching."
+    },
+    {
+      "id": "operating-systems-protection-and-security-009",
+      "q": "What is a reference monitor and what properties must it have?",
+      "options": [
+        "A background process that monitors system calls for debugging purposes",
+        "A security mechanism that mediates all access requests to protected resources and must be complete, tamperproof, and efficient",
+        "A cache that stores recently granted permissions to speed up access checks",
+        "A user process that verifies authentication credentials"
+      ],
+      "answer": 1,
+      "explanation": "A reference monitor is the security kernel that controls access to resources. It must be: (1) Complete—all accesses go through it, (2) Tamperproof—cannot be bypassed or modified by subjects, (3) Efficient—adds minimal overhead. In practice, the entire kernel is the reference monitor for OS-level security. Ideally, reference monitors are small and formally verified. Microkernel OSes like seL4 have smaller, simpler reference monitors than monolithic kernels."
+    },
+    {
+      "id": "operating-systems-protection-and-security-010",
+      "q": "What is address space layout randomization (ASLR) and how does it improve security?",
+      "options": [
+        "A memory allocation strategy that optimizes performance by spreading memory across cores",
+        "Randomizing the memory addresses of code, stack, heap, and libraries to make it difficult for attacks like ROP exploits to work reliably",
+        "A virtual memory management technique to balance memory usage",
+        "An encryption scheme applied to process memory"
+      ],
+      "answer": 1,
+      "explanation": "ASLR randomizes the base addresses of executable code, shared libraries, heap, and stack at each process launch. This defeats many exploits that rely on known addresses (return-oriented programming, shellcode injection). An attacker must now either guess addresses, leak them through information disclosure, or adapt the exploit per target. ASLR is standard on modern OSes (Linux, Windows, macOS) and significantly raises the bar for exploitation, though it's not a complete defense."
+    }
+  ]
+}

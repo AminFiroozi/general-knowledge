@@ -1,0 +1,126 @@
+{
+  "topic": "suffix-structures",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-suffix-structures-001",
+      "q": "What is a suffix array?",
+      "options": [
+        "An array of all substrings of a text",
+        "An array of starting positions of all suffixes of a string, sorted lexicographically",
+        "An array representing a trie of suffixes",
+        "A compressed version of a suffix tree"
+      ],
+      "answer": 1,
+      "explanation": "A suffix array for string S is an array of indices where each index points to the start of a suffix, and suffixes are sorted in lexicographic order. For S='banana', suffixes are: 'a', 'ana', 'anana', 'banana', 'na', 'nana'. The suffix array contains the starting positions sorted by these suffixes."
+    },
+    {
+      "id": "data-structures-suffix-structures-002",
+      "q": "What is the space complexity of a suffix array for a string of length n?",
+      "options": [
+        "O(n²)",
+        "O(n log n)",
+        "O(n) for the array itself plus O(n log n) for LCP array, total O(n) with compression",
+        "O(log n)"
+      ],
+      "answer": 2,
+      "explanation": "A suffix array is just an array of n indices, so O(n) space. An LCP (Longest Common Prefix) array is often added (O(n) space) to enable efficient pattern matching. In contrast, a suffix tree uses O(n) space but has a larger constant factor."
+    },
+    {
+      "id": "data-structures-suffix-structures-003",
+      "q": "What is a suffix tree?",
+      "options": [
+        "A trie containing all suffixes of a string as paths from root to leaves",
+        "A balanced binary search tree of suffix indices",
+        "A compressed array of suffix pointers",
+        "A graph representing suffix relationships"
+      ],
+      "answer": 0,
+      "explanation": "A suffix tree is a trie where each path from root to a leaf represents a suffix of the string. To save space, consecutive single-child nodes are compressed into edges labeled with substrings (similar to a radix tree). A string of length n has n suffixes, creating a tree with n leaves."
+    },
+    {
+      "id": "data-structures-suffix-structures-004",
+      "q": "What is the time complexity of searching for a pattern p in a text t using a suffix array and LCP array?",
+      "options": [
+        "O(|p|)",
+        "O(|t|)",
+        "O(|p| log |t|) using binary search, or O(|p| + log |t|) with advanced techniques",
+        "O(|p| × |t|)"
+      ],
+      "answer": 2,
+      "explanation": "With a suffix array, you binary-search for the pattern (O(log |t|) comparisons), and each comparison takes O(|p|) time to check. Total is O(|p| log |t|). Using LCP arrays to skip redundant comparisons, you can achieve O(|p| + log |t|), faster for short patterns."
+    },
+    {
+      "id": "data-structures-suffix-structures-005",
+      "q": "What is an LCP (Longest Common Prefix) array and its primary use?",
+      "options": [
+        "An array storing the longest prefix of the entire string",
+        "An array where LCP[i] = length of longest common prefix between suffix array entries i and i-1, used to speed up pattern searches",
+        "An encoding of string characters",
+        "A list of prefixes sorted by length"
+      ],
+      "answer": 1,
+      "explanation": "LCP[i] stores the longest common prefix between sorted suffixes at positions i-1 and i. This lets you skip redundant character comparisons during binary search: if you've already matched k characters and LCP[mid] > k, you know the entire first k characters match without comparing them."
+    },
+    {
+      "id": "data-structures-suffix-structures-006",
+      "q": "How do suffix trees and suffix arrays compare in terms of space and time?",
+      "options": [
+        "Suffix trees are better in all metrics",
+        "Suffix arrays use less space (O(n) vs O(n) practical but higher constant), suffix trees slightly faster for pattern search (O(|p|) vs O(|p| log |t|))",
+        "Suffix arrays are always faster",
+        "They use identical space and time"
+      ],
+      "answer": 1,
+      "explanation": "Suffix trees achieve O(|p|) search time but use significant constant space per node. Suffix arrays with LCP arrays use less space overall and are easier to implement, trading slightly slower search (O(|p| log |t|) or O(|p| + log |t|)). Modern practice prefers suffix arrays."
+    },
+    {
+      "id": "data-structures-suffix-structures-007",
+      "q": "What problem can be efficiently solved using suffix structures that is hard with naive approaches?",
+      "options": [
+        "Sorting a list of numbers",
+        "Finding the longest repeated substring or all occurrences of a pattern in O(|p| + output size)",
+        "Adding elements to a set",
+        "Reversing a string"
+      ],
+      "answer": 1,
+      "explanation": "Suffix structures enable finding all pattern occurrences in O(|p| + occ) where occ is the output size, much faster than O(|text| × |pattern|) with naive search. They also find longest repeated substrings by examining the LCP array for maximum values, enabling pattern discovery in linear time."
+    },
+    {
+      "id": "data-structures-suffix-structures-008",
+      "q": "To build a suffix array, one common approach is to use a sorting algorithm. What is the typical time complexity?",
+      "options": [
+        "O(n)",
+        "O(n log n) using any comparison-based sort, or O(n) with specialized radix sorting of strings",
+        "O(n²)",
+        "O(n log² n)"
+      ],
+      "answer": 1,
+      "explanation": "Sorting n suffixes with standard comparison sorts (e.g., quicksort) takes O(n log n) comparisons × O(n) comparison time = O(n² log n) worst case, or O(n log² n) average. Advanced algorithms like DC3 (Difference Cover) build suffix arrays in O(n) linear time."
+    },
+    {
+      "id": "data-structures-suffix-structures-009",
+      "q": "What is suffix compression, and why is it important?",
+      "options": [
+        "Removing vowels from suffixes",
+        "In suffix trees, merging single-child paths into edges labeled with substrings, reducing space from O(n²) to O(n)",
+        "Encoding suffixes using Huffman coding",
+        "Removing duplicate suffixes"
+      ],
+      "answer": 1,
+      "explanation": "Without compression, a naive suffix tree stores every character of every suffix at every node, using O(n²) space. Compression (like in radix trees) merges edges: a single edge can be labeled with a substring instead of individual character edges, reducing space to O(n) while maintaining O(|p|) search time."
+    },
+    {
+      "id": "data-structures-suffix-structures-010",
+      "q": "In the context of suffix arrays, what property allows you to find the longest repeated substring by examining only the LCP array?",
+      "options": [
+        "The lexicographic order of suffixes guarantees identical substrings are adjacent",
+        "The maximum value in the LCP array equals the length of the longest repeated substring",
+        "Suffix positions in the array directly correspond to substring lengths",
+        "Only repeated substrings have non-zero LCP values"
+      ],
+      "answer": 1,
+      "explanation": "In a sorted suffix array, identical or overlapping prefixes appear adjacent (by definition of sorting). The LCP array records this prefix overlap. The maximum LCP value represents the longest substring that appears in at least two different positions of the text, which is the longest repeated substring."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "segment-trees",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-segment-trees-001",
+      "q": "What is the primary purpose of a segment tree?",
+      "options": [
+        "To store only leaf nodes of a binary tree",
+        "To efficiently answer range queries and support point updates on an array",
+        "To sort array elements in O(1) time",
+        "To compress arrays using entropy encoding"
+      ],
+      "answer": 1,
+      "explanation": "A segment tree is a binary tree where each node represents a range in the array. It enables range queries (like sum, min, max) and point updates in O(log n) time, much faster than naive O(n) approaches."
+    },
+    {
+      "id": "data-structures-segment-trees-002",
+      "q": "What is the space complexity of a segment tree for an array of size n?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(4n) or approximately O(n)",
+        "O(n²)"
+      ],
+      "answer": 2,
+      "explanation": "A segment tree for an array of size n requires O(4n) nodes in the worst case. If n is a power of 2, it uses exactly 2n - 1 nodes, but generally requires about 4n space for convenience. This is still linear space, like a heap."
+    },
+    {
+      "id": "data-structures-segment-trees-003",
+      "q": "In a segment tree, what is the time complexity for a range sum query?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 1,
+      "explanation": "A range query on a segment tree traverses from root to leaf, touching at most O(log n) nodes per level, and the tree has O(log n) levels. Each query combines results from O(log n) nodes, giving O(log n) total time."
+    },
+    {
+      "id": "data-structures-segment-trees-004",
+      "q": "What does lazy propagation do in a segment tree?",
+      "options": [
+        "Delays building the tree until the first query",
+        "Defers range updates by storing them at higher nodes and propagating only when needed",
+        "Randomly shuffles child nodes to avoid worst-case complexity",
+        "Removes duplicate entries in the tree"
+      ],
+      "answer": 1,
+      "explanation": "Lazy propagation defers applying range updates. Instead of updating all affected nodes immediately (O(n)), it marks a range update at an ancestor node and only propagates the update down when descendants are accessed. This reduces range update time to O(log n)."
+    },
+    {
+      "id": "data-structures-segment-trees-005",
+      "q": "In a segment tree with lazy propagation, what is the combined time complexity for a range update covering [l, r]?",
+      "options": [
+        "O(r - l)",
+        "O(log n)",
+        "O(n)",
+        "O((r - l) log n)"
+      ],
+      "answer": 1,
+      "explanation": "With lazy propagation, a range update is O(log n) regardless of range size. We push updates down the tree, marking segments and only propagating when necessary. Without lazy propagation, this would be O(r - l + log n) in the worst case."
+    },
+    {
+      "id": "data-structures-segment-trees-006",
+      "q": "How does a Fenwick tree (Binary Indexed Tree) differ from a segment tree?",
+      "options": [
+        "Fenwick trees are always slower",
+        "Fenwick trees use less space (O(n) vs O(4n)) and have simpler implementation, but support fewer operations",
+        "Segment trees and Fenwick trees are identical",
+        "Fenwick trees only work for arrays of size 2^k"
+      ],
+      "answer": 1,
+      "explanation": "Fenwick trees use O(n) space with implicit structure, while segment trees use O(4n). Both achieve O(log n) for point updates and prefix queries. Fenwick trees are simpler to code but segment trees extend to 2D and complex queries more naturally."
+    },
+    {
+      "id": "data-structures-segment-trees-007",
+      "q": "In segment tree construction, what is the time complexity to build the tree from an array of n elements?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(n log n)",
+        "O(n²)"
+      ],
+      "answer": 1,
+      "explanation": "Building a segment tree is O(n). Although we process O(4n) nodes, the work at each level totals O(n), giving O(n) overall. This is much faster than creating a tree and then performing n point updates which would be O(n log n)."
+    },
+    {
+      "id": "data-structures-segment-trees-008",
+      "q": "What type of queries can a segment tree answer beyond simple sums?",
+      "options": [
+        "Only range sums",
+        "Only min/max queries",
+        "Any associative operation like min, max, gcd, xor, product (with careful handling of overflow)",
+        "Arbitrary queries depending on the data type"
+      ],
+      "answer": 2,
+      "explanation": "Segment trees work with any associative binary operation. You can compute range min, max, gcd, xor, or product by storing the result of the operation at each node. Operations must be associative so you can combine left and right subtree results correctly."
+    },
+    {
+      "id": "data-structures-segment-trees-009",
+      "q": "If you have a segment tree for range-sum queries and want to support range updates (add a constant to all elements in a range), what must you add?",
+      "options": [
+        "A second segment tree for differences",
+        "Lazy propagation to defer updates",
+        "A hash table to track all updates",
+        "Nothing, segment trees inherently support this"
+      ],
+      "answer": 1,
+      "explanation": "Without lazy propagation, range updates are O(n). Lazy propagation stores pending updates at nodes and only pushes them down when necessary, reducing range updates to O(log n). This is essential for efficient range update and query."
+    },
+    {
+      "id": "data-structures-segment-trees-010",
+      "q": "When indexing a segment tree array, if the root is at index 1, where is the left child of node i located?",
+      "options": [
+        "Index i + 1",
+        "Index 2i",
+        "Index i - 1",
+        "Index 2i + 1"
+      ],
+      "answer": 1,
+      "explanation": "Using 1-based indexing (standard for segment trees), the left child of node i is at 2i and the right child is at 2i + 1. This implicit structure means you don't need explicit pointers. Zero-based indexing uses 2i + 1 and 2i + 2."
+    }
+  ]
+}

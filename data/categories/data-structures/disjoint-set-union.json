@@ -1,0 +1,126 @@
+{
+  "topic": "disjoint-set-union",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-disjoint-set-union-001",
+      "q": "What is the primary purpose of a disjoint-set (union-find) data structure?",
+      "options": [
+        "To sort elements in linear time",
+        "To efficiently manage sets that partition a universe, supporting fast union and find operations",
+        "To compress arrays using bit packing",
+        "To detect cycles in directed graphs only"
+      ],
+      "answer": 1,
+      "explanation": "Union-find maintains a partition of elements into disjoint sets. It answers 'are two elements in the same set?' and 'merge two sets' quickly. With path compression and union by rank, both operations approach O(1) amortized time."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-002",
+      "q": "What does path compression do in a union-find data structure?",
+      "options": [
+        "Reduces the array size by removing duplicates",
+        "During a find operation, points all visited nodes directly to the root, flattening the tree",
+        "Merges two sets by always attaching the smaller tree to the larger",
+        "Reverses the parent-child relationships in the tree"
+      ],
+      "answer": 1,
+      "explanation": "Path compression optimizes find by making each visited node point directly to the root. After finding the root, we update all parent pointers along the path. This dramatically reduces tree depth, making subsequent finds faster."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-003",
+      "q": "What does union by rank accomplish in union-find?",
+      "options": [
+        "It sorts sets by their size",
+        "It ensures the smaller tree is always attached to the larger tree, limiting tree height",
+        "It randomizes the union order",
+        "It prevents cycles by checking before every union"
+      ],
+      "answer": 1,
+      "explanation": "Union by rank (or union by size) attaches the tree with smaller height/size to the one with larger height/size. This keeps tree height logarithmic: O(log n). Combined with path compression, the amortized time approaches O(α(n)) ≈ O(1)."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-004",
+      "q": "What is the amortized time complexity of a union-find operation (union or find) using both path compression and union by rank?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(α(n)) where α is the inverse Ackermann function",
+        "O(n)"
+      ],
+      "answer": 2,
+      "explanation": "With both optimizations, the amortized time is O(α(n)), where α(n) is the inverse Ackermann function. For all practical purposes, α(n) ≤ 5, making it effectively constant. Without both optimizations, it degrades to O(log n)."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-005",
+      "q": "Which classic graph problem is solved efficiently using union-find?",
+      "options": [
+        "Finding shortest paths in weighted graphs",
+        "Detecting if a graph is bipartite",
+        "Finding minimum spanning trees using Kruskal's algorithm",
+        "Computing strongly connected components"
+      ],
+      "answer": 2,
+      "explanation": "Union-find is ideal for Kruskal's MST algorithm. You sort edges by weight and union components as you add edges, skipping edges that would create cycles (when both endpoints are already in the same set). This avoids the O(E log V) cost of other approaches."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-006",
+      "q": "In union-find, what does the 'find' operation return?",
+      "options": [
+        "The smallest element in the set",
+        "A representative (root) of the set containing the queried element",
+        "The size of the set",
+        "Whether the element exists in any set"
+      ],
+      "answer": 1,
+      "explanation": "Find returns a representative (canonical element/root) for the set containing the element. Two elements are in the same set if and only if find(a) == find(b). The specific element returned doesn't matter, only that it's consistent for the same set."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-007",
+      "q": "What is a weakness of union-find as typically implemented?",
+      "options": [
+        "It cannot handle more than 1000 elements",
+        "It does not support efficient 'split' operation (separating a set into two disjoint sets)",
+        "It requires O(n²) space",
+        "It cannot detect cycles"
+      ],
+      "answer": 1,
+      "explanation": "Union-find supports fast union and find but not efficient split. Separating a set back into two independent sets is not straightforward and would require rebuilding structures. This is a fundamental limitation not overcome by optimizations."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-008",
+      "q": "For detecting cycles in an undirected graph using union-find, when do you know a cycle exists?",
+      "options": [
+        "When find(u) equals find(v) before adding edge (u, v)",
+        "When the number of edges equals the number of vertices",
+        "When union(u, v) fails",
+        "When all vertices are in the same set"
+      ],
+      "answer": 0,
+      "explanation": "A cycle is detected when an edge connects two vertices already in the same set (find(u) == find(v)). Adding that edge would create a cycle. If they're in different sets, union them safely. This is the basis of cycle detection in Kruskal's algorithm."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-009",
+      "q": "What is the space complexity of a union-find data structure for n elements?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 2,
+      "explanation": "Union-find requires O(n) space to store the parent array (and optionally rank array) for n elements. Each element stores a parent pointer or rank value, leading to linear space regardless of optimization techniques."
+    },
+    {
+      "id": "data-structures-disjoint-set-union-010",
+      "q": "In the context of Kruskal's algorithm, why is union-find superior to repeatedly computing connected components?",
+      "options": [
+        "It's not superior; they have the same complexity",
+        "Union-find processes edges in O(α(n)) per edge instead of recomputing all components O(V+E) after each addition",
+        "Union-find works with directed graphs while DFS/BFS don't",
+        "Union-find requires less memory"
+      ],
+      "answer": 1,
+      "explanation": "Kruskal sorts edges (O(E log E)) then processes each edge in O(α(n)). Total is O(E log E + E α(n)) ≈ O(E log E). Recomputing components after each edge costs O(E(V+E)), which is much slower. Union-find's incremental approach is the key advantage."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "space-complexity",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-space-complexity-001",
+      "q": "Savitch's theorem establishes a relationship between non-deterministic and deterministic space complexity. Which statement correctly captures this relationship?",
+      "options": [
+        "NSPACE(f(n)) = DSPACE(f(n)), so non-determinism adds no power to space-bounded computation",
+        "NSPACE(f(n)) is a subset of DSPACE(f(n)^2), meaning deterministic simulation of NTMs requires squaring space",
+        "NSPACE(f(n)) requires exponential time but linear space, while DSPACE(f(n)) requires linear time",
+        "Deterministic Turing machines cannot simulate non-deterministic behavior with polynomial space overhead"
+      ],
+      "answer": 1,
+      "explanation": "Savitch's theorem proves NSPACE(f(n)) ⊆ DSPACE(f(n)^2), meaning any non-deterministic f(n)-space computation can be simulated deterministically using O(f(n)^2) space. This differs from time complexity, where non-determinism may provide exponential speedup. Option 1 is false; option 3 confuses space and time; option 4 is contradicted by Savitch's result."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-002",
+      "q": "The complexity class L (logarithmic space) is defined as DSPACE(log n). Which of the following statements is TRUE?",
+      "options": [
+        "L = NL, meaning logarithmic space is deterministically equivalent to non-deterministic logarithmic space",
+        "L is a subset of P, because any algorithm in L runs in polynomial time",
+        "L contains only the empty language and finite languages",
+        "Every language in L requires at least one work tape in addition to the input tape"
+      ],
+      "answer": 1,
+      "explanation": "Any L-algorithm uses O(log n) space, hence O(n^O(log n)) time (bounded by the number of configurations), which is polynomial time. Thus L ⊆ P. Option 1 is open; option 3 is false (L contains complex languages like PALINDROME). Option 4 confuses Turing machine models; standard definitions include work tapes."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-003",
+      "q": "NL (non-deterministic logarithmic space) is relevant to understanding the role of non-determinism in space-bounded computation. Which language is known to be NL-complete?",
+      "options": [
+        "SATISFIABILITY (SAT), the Boolean satisfiability problem",
+        "DIRECTED GRAPH REACHABILITY, deciding if there is a path from s to t in a directed graph",
+        "TRAVELING SALESMAN, finding a short tour visiting all vertices",
+        "HALTING PROBLEM, determining if a Turing machine halts on a given input"
+      ],
+      "answer": 1,
+      "explanation": "DIRECTED REACHABILITY is known to be NL-complete and in NL (guess path edges one at a time, store only current vertex in O(log n) space). SAT is NP-complete. TSP is NP-hard. HALTING PROBLEM is undecidable. Option 1 correctly identifies a classic NL-complete problem representing the difficulty of path-finding with minimal space."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-004",
+      "q": "PSPACE (polynomial space) is the union of DSPACE(n^k) over all constants k. How does PSPACE relate to NP and P?",
+      "options": [
+        "NP is a subset of PSPACE, and P equals PSPACE",
+        "NP is a subset of PSPACE, but it is unknown whether P = PSPACE",
+        "PSPACE is a subset of NP, which explains why NP-hard problems are difficult",
+        "P and NP are incomparable to PSPACE; they are different measurement dimensions"
+      ],
+      "answer": 1,
+      "explanation": "By Savitch's theorem, NP ⊆ NSPACE(poly) ⊆ DSPACE(poly^2) = PSPACE. Thus NP ⊆ PSPACE. Whether P = NP or P = PSPACE remains open. Option 1 assumes P = PSPACE, which is unproven. Option 2 correctly states the known relationships and open problems. Options 3 and 4 misstate the hierarchy."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-005",
+      "q": "Space and time complexity are governed by different tradeoffs. Which statement about the space-time tradeoff is MOST accurate?",
+      "options": [
+        "An algorithm can always reduce space by using more time, but this tradeoff has limits",
+        "Increasing time can never compensate for insufficient space in solving a problem",
+        "Space and time are independent; algorithms can optimize one without affecting the other",
+        "Time complexity is always more important than space complexity in practical computation"
+      ],
+      "answer": 0,
+      "explanation": "Many algorithms demonstrate space-time tradeoffs: memoization uses more space to save time; streaming algorithms use less space but more time. However, fundamental limits apply—if a problem requires exponential time, no space reduction helps. Option 0 captures the nuance that tradeoffs exist but are bounded by problem hardness. Option 1 is too absolute; option 2 ignores tradeoffs; option 3 is subjective and false."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-006",
+      "q": "The complexity class PSPACE-complete contains problems such as QUANTIFIED BOOLEAN FORMULA (QBF), where QBF is hardest in PSPACE. What distinguishes PSPACE-complete problems from NP-complete problems?",
+      "options": [
+        "PSPACE-complete problems are easier because they use less memory",
+        "PSPACE-complete problems often require alternation between existential and universal quantification, exceeding the capabilities of a single NP oracle",
+        "PSPACE-complete problems are always solvable in polynomial time with exponential space",
+        "NP-complete problems are more fundamental than PSPACE-complete problems"
+      ],
+      "answer": 1,
+      "explanation": "QBF with alternating quantifiers (∃∀∃...) cannot be reduced to SAT (which is purely existential) without exponential blowup. This alternation characterizes the AP hierarchy within PSPACE and distinguishes it from NP. Option 2 correctly identifies that alternation is the key difference. Option 0 is backwards; option 3 confuses solvability conditions; option 4 is opinion."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-007",
+      "q": "A problem is in co-NL if its complement is in NL. Given that NL = co-NL (proven by Immerman and Szelepcsényi), what is the significance of this result?",
+      "options": [
+        "Non-determinism in log-space computation is more balanced than in polynomial-time computation",
+        "The complement of any NL problem is also solvable in non-deterministic logarithmic space",
+        "Every NL-complete problem has a complement that is also NL-complete",
+        "Log-space computation is more powerful than polynomial-time computation"
+      ],
+      "answer": 1,
+      "explanation": "NL = co-NL means the class is closed under complementation. This is remarkable because P = co-P is trivial (just negate the answer), but for NP, it is unknown whether NP = co-NP. The non-deterministic reachability problem and its complement (non-reachability) are both in NL. Option 1 uses 'balanced' vaguely; option 2 precisely states the result; option 3 is stronger than necessary; option 4 confuses complexity classes."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-008",
+      "q": "In analyzing space-bounded computation, the linear space hierarchy theorem states that for space-constructible functions f and g with f(n) = o(g(n)), which relationship holds?",
+      "options": [
+        "DSPACE(f(n)) = DSPACE(g(n)), space-bounded classes collapse at different constructible rates",
+        "DSPACE(f(n)) is a proper subset of DSPACE(g(n)), providing hierarchy of increasingly powerful space classes",
+        "DSPACE(f(n)) and DSPACE(g(n)) are incomparable if f and g are not polynomially related",
+        "Space hierarchy theorems do not exist; all space-bounded classes collapse to regular languages"
+      ],
+      "answer": 1,
+      "explanation": "The space hierarchy theorem (for space-constructible f, g) proves DSPACE(f(n)) ⊂ DSPACE(g(n)) if f(n) = o(g(n)). This establishes a strict hierarchy: log(n) ⊂ log²(n) ⊂ ... ⊂ poly(n), unlike the time hierarchy which requires a log factor gap. Option 1 is false; option 2 correctly states the theorem; option 3 misunderstands constructibility; option 4 is false."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-009",
+      "q": "A deterministic Turing machine with multiple work tapes can be simulated by a single-tape machine with what space overhead?",
+      "options": [
+        "No overhead; single-tape and multi-tape machines have identical space complexity",
+        "O(n) overhead, because tape contents must be serialized sequentially",
+        "O(log n) overhead, using additional bits to track head positions",
+        "Polynomial overhead in the space bound itself, depending on the number of tapes"
+      ],
+      "answer": 2,
+      "explanation": "A multi-tape TM can be simulated on a single tape by interleaving the tape contents and storing head positions as part of the state or in O(log n) auxiliary space (since positions are integers in [1, n]). The simulation does not require O(n) serialization overhead for space accounting. Option 0 is incorrect due to state representation; option 2 is precise; option 3 overshoots."
+    },
+    {
+      "id": "theory-of-computation-space-complexity-010",
+      "q": "When analyzing the space complexity of recursive algorithms, what is the relationship between recursion depth and space used on the call stack?",
+      "options": [
+        "Recursion depth and stack space are independent; depth measures iterations while stack space measures memory",
+        "The call stack space is proportional to recursion depth times the space used per frame, which is critical in analyzing total space",
+        "Recursion depth has no bearing on space complexity because modern systems use dynamic memory allocation",
+        "Stack space is negligible compared to heap allocations in recursive algorithms"
+      ],
+      "answer": 1,
+      "explanation": "Each recursive call creates a stack frame storing local variables, parameters, and return addresses. Total stack space = recursion depth × average frame size. For example, tree recursion with depth O(log n) and O(1) per frame uses O(log n) stack space. Option 1 confuses concepts; option 2 correctly identifies the relationship; option 3 ignores stack memory; option 4 oversimplifies."
+    }
+  ]
+}

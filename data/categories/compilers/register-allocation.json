@@ -1,0 +1,126 @@
+{
+  "topic": "register-allocation",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-register-allocation-001",
+      "q": "What is the primary goal of register allocation in code generation?",
+      "options": [
+        "To assign variables and temporary values to CPU registers or memory locations, minimizing memory access because register operations are much faster than main memory",
+        "To determine the optimal number of CPU cores to use for parallel execution",
+        "To decide the maximum amount of stack memory available at runtime",
+        "To ensure all variables are stored in CPU caches"
+      ],
+      "answer": 0,
+      "explanation": "Register allocation maps values to limited fast storage (registers) or slower memory, balancing resource constraints. Parallelism, stack limits, and cache guarantees are separate concerns."
+    },
+    {
+      "id": "compilers-register-allocation-002",
+      "q": "What is a 'live range' in the context of register allocation?",
+      "options": [
+        "The span of code from where a variable is defined to where it is last used, indicating when the variable must occupy a register or memory location",
+        "The frequency at which a variable is accessed during program execution",
+        "The maximum value a variable can hold at runtime",
+        "The set of functions that access a particular variable"
+      ],
+      "answer": 0,
+      "explanation": "A live range spans from definition to final use; overlapping ranges require different storage. Frequency, value magnitude, and function scope are unrelated concepts."
+    },
+    {
+      "id": "compilers-register-allocation-003",
+      "q": "How does the 'graph coloring' approach solve the register allocation problem?",
+      "options": [
+        "Variables with overlapping live ranges are modeled as a graph where edges represent conflicts; colors represent registers, and the problem reduces to finding a k-coloring where k is the number of available registers",
+        "Graph coloring directly measures the performance of memory access patterns",
+        "Graph coloring eliminates the need for any runtime memory access",
+        "Graph coloring determines which code paths are executed most frequently"
+      ],
+      "answer": 0,
+      "explanation": "Graph coloring models conflicts as edges; finding a valid k-coloring assigns non-conflicting variables to the same register. Performance measurement, memory elimination, and path profiling are unrelated."
+    },
+    {
+      "id": "compilers-register-allocation-004",
+      "q": "What is 'spilling' in register allocation?",
+      "options": [
+        "Moving a value from a register to memory when there are more live variables than available registers, allowing allocation of the register to another variable",
+        "An error that occurs when a program tries to access uninitialized memory",
+        "The automatic freeing of memory by the garbage collector",
+        "An optimization technique that duplicates code to reduce branches"
+      ],
+      "answer": 0,
+      "explanation": "Spilling stores a register value to memory to free the register for other uses. It's not an error, garbage collection, or code duplication."
+    },
+    {
+      "id": "compilers-register-allocation-005",
+      "q": "Why is the register allocation problem NP-complete in the general case?",
+      "options": [
+        "Graph k-coloring is NP-complete, and finding the minimum registers needed is equivalent to finding the chromatic number of the conflict graph, which has no known polynomial-time algorithm",
+        "Memory access is fundamentally unpredictable, making optimization impossible",
+        "CPU registers are infinite in number but require exponential time to search",
+        "The problem is actually polynomial-time solvable but requires special hardware"
+      ],
+      "answer": 0,
+      "explanation": "Register allocation reduces to chromatic number (NP-complete). Memory predictability and infinite registers are unrelated; the problem is genuinely NP-complete."
+    },
+    {
+      "id": "compilers-register-allocation-006",
+      "q": "What is 'linear scan' register allocation and when is it preferred over graph coloring?",
+      "options": [
+        "Linear scan allocates registers by processing variables in a single linear pass based on live range endpoints, offering polynomial time and simplicity at the cost of sometimes using more registers than necessary, useful for just-in-time compilers needing fast allocation",
+        "Linear scan produces better code quality than all other allocation methods",
+        "Linear scan is incompatible with SSA form IR",
+        "Linear scan guarantees the minimal number of registers across all possible allocations"
+      ],
+      "answer": 0,
+      "explanation": "Linear scan trades optimality for speed and simplicity. It doesn't guarantee best quality; it works with SSA; it doesn't guarantee minimality."
+    },
+    {
+      "id": "compilers-register-allocation-007",
+      "q": "What is the role of 'preference' or 'affinity' in modern register allocators?",
+      "options": [
+        "When two variables frequently interact, allocators prefer assigning them to the same register to reduce move instructions, improving cache locality and register pressure",
+        "Preferences eliminate the need for spilling entirely",
+        "Affinity is a security property preventing unauthorized memory access",
+        "Preferences determine the order in which functions are compiled"
+      ],
+      "answer": 0,
+      "explanation": "Preferences minimize moves between related variables. They don't eliminate spilling, aren't security properties, and don't affect compilation order."
+    },
+    {
+      "id": "compilers-register-allocation-008",
+      "q": "How does register pressure affect the quality of register allocation decisions?",
+      "options": [
+        "High register pressure (many live variables relative to available registers) forces more spilling and move instructions, requiring allocators to make conservative trade-offs between code size and execution speed",
+        "Register pressure is independent of allocation decisions",
+        "Low register pressure always results in better code than high register pressure",
+        "Register pressure only affects floating-point computations"
+      ],
+      "answer": 0,
+      "explanation": "High pressure forces spilling and moves; allocators must balance quality. Pressure affects decisions; low pressure enables better allocation; pressure affects all data types."
+    },
+    {
+      "id": "compilers-register-allocation-009",
+      "q": "What is the 'coalescing' optimization in register allocation?",
+      "options": [
+        "Merging the live ranges of variables that are always assigned to each other (no interference), eliminating unnecessary move instructions between them",
+        "Combining multiple memory blocks into one larger block",
+        "Reducing the number of functions in a program",
+        "Aligning data structures to cache line boundaries"
+      ],
+      "answer": 0,
+      "explanation": "Coalescing eliminates moves between variables that share values. Memory blocks, function count, and cache alignment are unrelated optimizations."
+    },
+    {
+      "id": "compilers-register-allocation-010",
+      "q": "Why do advanced register allocators use 'global' allocation across entire functions rather than 'local' allocation within basic blocks?",
+      "options": [
+        "Global allocation considers live ranges and conflicts across the entire function, enabling better register reuse and reducing overall spilling, while local allocation only sees within one basic block and misses opportunities",
+        "Local allocation is always faster to compute than global allocation",
+        "Global allocation is required for all languages",
+        "Local allocation produces identical code quality to global allocation"
+      ],
+      "answer": 0,
+      "explanation": "Global scope enables cross-block optimization; local is faster but suboptimal. Speed trade-offs are real; not all languages require global; quality differs."
+    }
+  ]
+}

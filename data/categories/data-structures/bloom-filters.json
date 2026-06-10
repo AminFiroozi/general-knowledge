@@ -1,0 +1,126 @@
+{
+  "topic": "bloom-filters",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-bloom-filters-001",
+      "q": "What is a Bloom filter?",
+      "options": [
+        "A data structure that stores complete sets with O(n) space",
+        "A probabilistic data structure that answers 'is element x in the set?' with false positives but no false negatives",
+        "A sorting algorithm based on binary search",
+        "A tree structure for storing dates and time ranges"
+      ],
+      "answer": 1,
+      "explanation": "A Bloom filter is a space-efficient probabilistic set membership test. It can incorrectly report that an element is present (false positive) but never incorrectly report that an absent element is present (no false negatives). It uses k hash functions and a bit array."
+    },
+    {
+      "id": "data-structures-bloom-filters-002",
+      "q": "What is the fundamental tradeoff in Bloom filter design?",
+      "options": [
+        "Speed vs accuracy",
+        "Space usage vs false positive rate; smaller filter → higher false positive probability",
+        "Query time vs insertion time",
+        "Number of elements vs maximum size"
+      ],
+      "answer": 1,
+      "explanation": "Smaller bit arrays use less space but cause more hash collisions, increasing false positives. Larger arrays reduce collisions. The optimal false positive rate ≈ (1/2)^k where k is the number of hash functions, balanced against space constraints."
+    },
+    {
+      "id": "data-structures-bloom-filters-003",
+      "q": "How does a Bloom filter insert an element?",
+      "options": [
+        "It appends the element to a linked list",
+        "It computes k hash values of the element and sets the corresponding k bits in a bit array to 1",
+        "It stores the element in a balanced tree",
+        "It divides the element into k parts and stores each part separately"
+      ],
+      "answer": 1,
+      "explanation": "To insert element x: hash it with k different hash functions to get k bit positions (each hash function produces an independent position in the bit array). Set all k corresponding bits to 1. This takes O(k) time."
+    },
+    {
+      "id": "data-structures-bloom-filters-004",
+      "q": "Why can a Bloom filter not support deletion of elements?",
+      "options": [
+        "It can support deletion using counted Bloom filters",
+        "Deletion would corrupt the bit array: clearing bits might break membership tests for other elements that hash to the same bits",
+        "Deletion is not theoretically possible",
+        "Deletion is possible but requires O(n) time"
+      ],
+      "answer": 1,
+      "explanation": "Standard Bloom filters use single bits, not counters. If you clear a bit for deleted element x, you might clear a bit needed by another element y that shares that hash position. You'd incorrectly report y as not present. Counting Bloom filters use counters instead of bits to enable deletion."
+    },
+    {
+      "id": "data-structures-bloom-filters-005",
+      "q": "What is the space complexity of a Bloom filter with n elements and desired false positive rate p?",
+      "options": [
+        "O(n)",
+        "O(n log(1/p)) bits, approximately -1.44 n log₂(p) bits",
+        "O(n²)",
+        "O(log n)"
+      ],
+      "answer": 1,
+      "explanation": "The required bit array size is approximately -1.44 n log₂(p) bits. For example, with p = 0.01 and n = 10⁶, you need about 9.5 million bits (1.2 MB). This is much smaller than storing all n elements directly."
+    },
+    {
+      "id": "data-structures-bloom-filters-006",
+      "q": "What is the optimal number of hash functions k for a Bloom filter with bit array size m and n elements?",
+      "options": [
+        "k = 1 (minimizes computation)",
+        "k = m/n",
+        "k = (m/n) ln(2) ≈ 0.693 (m/n), which minimizes the false positive rate",
+        "k = n"
+      ],
+      "answer": 2,
+      "explanation": "The false positive rate is minimized when k = (m/n) ln(2). Too few hash functions leave bits unset (high collision probability). Too many cause most bits to be set (high false positive rate). The optimal k balances these forces."
+    },
+    {
+      "id": "data-structures-bloom-filters-007",
+      "q": "In what scenario is a Bloom filter most useful?",
+      "options": [
+        "When you need to store and retrieve all elements by key",
+        "When you need fast approximate membership testing with acceptable false positives (e.g., spell-checking, URL blacklisting, deduplication in pipelines)",
+        "When you need guaranteed exact answers",
+        "When working with very small datasets"
+      ],
+      "answer": 1,
+      "explanation": "Bloom filters excel in scenarios where false positives are acceptable and space is critical. Examples: detecting if a URL is in a blacklist (worst case: fetch and check anyway), spell-checking (suggest alternatives for words not in dictionary), avoiding duplicate web crawls."
+    },
+    {
+      "id": "data-structures-bloom-filters-008",
+      "q": "What is a counting Bloom filter?",
+      "options": [
+        "A Bloom filter that counts how many elements are in the set",
+        "A variant that replaces bits with counters, enabling deletion by decrementing counters instead of clearing bits",
+        "A Bloom filter optimized for very large sets",
+        "A Bloom filter with multiple bit arrays"
+      ],
+      "answer": 1,
+      "explanation": "A counting Bloom filter uses small counters (e.g., 4 bits per position) instead of single bits. Insertion increments k counters, deletion decrements them, and membership checks require all k counters > 0. This costs more space but enables deletion."
+    },
+    {
+      "id": "data-structures-bloom-filters-009",
+      "q": "How does a Bloom filter's false positive rate change as more elements are inserted?",
+      "options": [
+        "It decreases",
+        "It stays constant",
+        "It increases as more bits are set, approaching 1 - (1/2)^k for very full filters",
+        "It becomes random"
+      ],
+      "answer": 2,
+      "explanation": "Initially, false positives are low because few bits are set. As more elements are inserted, more bits become 1, increasing the probability that random element x hashes all k positions to 1 bits. The false positive probability approaches (1/2)^k as saturation occurs."
+    },
+    {
+      "id": "data-structures-bloom-filters-010",
+      "q": "Why might you use a Bloom filter before querying an expensive database?",
+      "options": [
+        "Bloom filters are faster than databases",
+        "To quickly filter out negative lookups (element definitely not in database) with minimal false positives, avoiding expensive DB queries for items not present",
+        "Bloom filters replace database queries",
+        "Databases cannot handle membership tests"
+      ],
+      "answer": 1,
+      "explanation": "A Bloom filter is a 'negative check': if membership returns false, the element is definitely not in the database (no DB query needed). If it returns true, you still query the database (may be a false positive). This saves DB queries for negative cases, which are often common in URL/IP filtering."
+    }
+  ]
+}

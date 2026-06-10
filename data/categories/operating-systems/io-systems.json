@@ -1,0 +1,126 @@
+{
+  "topic": "io-systems",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-io-systems-001",
+      "q": "What is an interrupt and what is its purpose in I/O operations?",
+      "options": [
+        "A signal from a device to the CPU to pause execution and handle an event, allowing asynchronous I/O instead of polling",
+        "A type of error condition in the kernel that requires immediate termination",
+        "A method of scheduling time-sharing between multiple processes",
+        "A hardware protection mechanism that prevents unauthorized memory access"
+      ],
+      "answer": 0,
+      "explanation": "An interrupt is a signal from an I/O device (or timer or software) that causes the CPU to pause execution, save state, and jump to an interrupt handler. Interrupts enable asynchronous I/O: a device can notify the CPU when data is ready without the CPU constantly polling. This is far more efficient than busy-waiting and allows the CPU to do useful work while I/O operations are in progress."
+    },
+    {
+      "id": "operating-systems-io-systems-002",
+      "q": "What is DMA (Direct Memory Access) and why is it important?",
+      "options": [
+        "A method where the CPU copies data between devices and memory byte-by-byte",
+        "A technique allowing I/O devices to access main memory directly without CPU intervention, reducing CPU overhead",
+        "A cache coherency protocol used in multi-processor systems",
+        "A scheduling algorithm that prioritizes I/O-intensive processes"
+      ],
+      "answer": 1,
+      "explanation": "DMA allows I/O controllers to read from or write to memory directly without CPU intervention. The CPU sets up a DMA transfer (source, destination, size) and then handles other work or goes idle. When the transfer completes, the DMA controller interrupts the CPU. DMA is crucial for high-performance I/O: without it, large transfers would consume the entire CPU moving data. Disks, network cards, and other high-bandwidth devices rely on DMA."
+    },
+    {
+      "id": "operating-systems-io-systems-003",
+      "q": "What is a device driver and what layer does it operate at?",
+      "options": [
+        "A user-space application that allows programs to access hardware directly",
+        "Kernel code that abstracts hardware-specific details and provides a standard interface to I/O devices",
+        "A CPU instruction set used to communicate with devices",
+        "A firmware module stored permanently on the device itself"
+      ],
+      "answer": 1,
+      "explanation": "A device driver is kernel code that handles communication with a specific hardware device (disk, network card, printer, etc.). It abstracts device-specific complexities and provides a standardized interface to user applications through the file system (e.g., /dev/sda) or character/block device APIs. Drivers run in kernel mode and handle interrupts, DMA setup, and protocol details. Without drivers, applications would need to know the low-level details of every device."
+    },
+    {
+      "id": "operating-systems-io-systems-004",
+      "q": "What is the purpose of I/O buffering in operating systems?",
+      "options": [
+        "To prevent devices from overheating by spacing out operations",
+        "To decouple the producer and consumer of data, hiding timing differences and improving throughput and latency",
+        "To encrypt data during I/O for security purposes",
+        "To store permanently backup copies of all transferred data"
+      ],
+      "answer": 1,
+      "explanation": "I/O buffering provides temporary storage between a fast producer (e.g., CPU) and slow consumer (e.g., disk). Buffers smooth out mismatches in data rates: the CPU can write to a buffer and continue working while the disk catches up. Multiple buffers (double buffering, circular buffers) allow overlapping of I/O and computation. Buffers also enable batch processing, reducing total I/O operations. Without buffering, speed mismatches would serialize operations."
+    },
+    {
+      "id": "operating-systems-io-systems-005",
+      "q": "What is the difference between programmed I/O and interrupt-driven I/O?",
+      "options": [
+        "Programmed I/O is faster but interrupt-driven I/O is more reliable",
+        "Programmed I/O has the CPU poll/busy-wait for device completion; interrupt-driven I/O allows the CPU to do other work until the device signals completion",
+        "Programmed I/O uses DMA; interrupt-driven I/O uses CPU data movement",
+        "They are functionally equivalent but have different software interfaces"
+      ],
+      "answer": 1,
+      "explanation": "Programmed (or polled) I/O has the CPU repeatedly check a device status register until the operation completes—wasteful of CPU cycles. Interrupt-driven I/O has the CPU issue a command and then continue executing other code; the device interrupts when done. Interrupt-driven is far more efficient, allowing the CPU to service multiple I/O operations concurrently. Most modern systems use interrupt-driven I/O combined with DMA for maximum efficiency."
+    },
+    {
+      "id": "operating-systems-io-systems-006",
+      "q": "What is a disk scheduling algorithm and why is SCAN (elevator algorithm) preferred over FCFS for disk access?",
+      "options": [
+        "SCAN minimizes total seek time by moving the disk head back and forth across the disk like an elevator, serving requests in order of position rather than arrival order",
+        "FCFS is more fair; SCAN is only for high-speed disks",
+        "SCAN prevents starvation of outer disk cylinders; FCFS serves all requests equally",
+        "They are equivalent; SCAN is just a newer name for FCFS"
+      ],
+      "answer": 0,
+      "explanation": "FCFS (First-Come-First-Served) disk scheduling serves requests in arrival order, leading to long seek times if requests are scattered across the disk. SCAN moves the read/write head across the disk in one direction, servicing all requests along the way, then reverses direction—like an elevator. This dramatically reduces average seek time and total disk latency compared to random seek patterns. LOOK is a variant that doesn't go to the disk end if no requests remain. SCAN is standard in modern disk controllers."
+    },
+    {
+      "id": "operating-systems-io-systems-007",
+      "q": "What is interrupt coalescing and when is it used?",
+      "options": [
+        "Combining multiple interrupts from the same device into a single interrupt notification to reduce interrupt overhead",
+        "Merging different types of interrupts into a single interrupt vector",
+        "A security feature to prevent interrupt storms from malicious devices",
+        "A protocol for synchronizing interrupts across multiple CPUs"
+      ],
+      "answer": 0,
+      "explanation": "Interrupt coalescing delays delivering an interrupt to the CPU and instead collects multiple events from a device, delivering them together in a single interrupt. This reduces interrupt overhead and context switches, which is critical for high-speed devices like network cards that can generate thousands of interrupts per second. The trade-off is slightly higher latency. Modern network drivers often use coalescing to balance throughput and latency."
+    },
+    {
+      "id": "operating-systems-io-systems-008",
+      "q": "What is the relationship between interrupt priority levels and interrupt nesting?",
+      "options": [
+        "Higher-priority interrupts can interrupt lower-priority interrupt handlers, allowing nested execution with careful stack management",
+        "All interrupts are processed sequentially with no nesting allowed",
+        "Interrupt priority only affects which device gets serviced first, never allowing interruption of handlers",
+        "Nested interrupts always cause deadlock"
+      ],
+      "answer": 0,
+      "explanation": "Interrupt handlers run at elevated priority levels. The processor allows higher-priority interrupts to interrupt lower-priority handlers (nesting). This ensures critical time-sensitive events (e.g., timer tick, hardware fault) are serviced quickly even if a lower-priority handler is running. However, nested interrupts complicate stack management and must be carefully designed to avoid stack overflow or corruption. Some systems disable interrupts during critical handlers to prevent nesting."
+    },
+    {
+      "id": "operating-systems-io-systems-009",
+      "q": "What is a device controller and how does it differ from a device driver?",
+      "options": [
+        "A device controller is hardware that interfaces a device to the bus; a driver is kernel software that controls the controller",
+        "A device controller is software running in user space; a driver is firmware on the device",
+        "They are synonymous terms for the same component",
+        "A device controller manages multiple devices; a driver manages only one"
+      ],
+      "answer": 0,
+      "explanation": "A device controller is hardware (e.g., a disk controller card) that sits between a device and the system bus, handling low-level protocols and electrical signaling. A device driver is kernel software that communicates with the controller through registers and interrupts, providing a high-level abstraction. The driver issues commands to the controller, and the controller manages the device. Together, they decouple device-specific hardware from the OS."
+    },
+    {
+      "id": "operating-systems-io-systems-010",
+      "q": "What is the purpose of a page cache in the I/O subsystem?",
+      "options": [
+        "To permanently store pages of virtual memory on disk for swapping",
+        "To cache disk blocks in memory to reduce disk I/O by serving repeated reads from cache",
+        "To prevent cache coherency issues in multi-processor systems",
+        "To increase the virtual address space of processes"
+      ],
+      "answer": 1,
+      "explanation": "A page cache (or buffer cache) keeps recently accessed disk blocks in memory. When a process reads from disk, the kernel caches the data; subsequent reads for the same block hit the cache and return immediately without disk I/O. The cache adapts dynamically, growing when memory is available and shrinking under memory pressure. The page cache is transparent to applications and is responsible for much of the OS's I/O performance—most file systems spend significant time in cache."
+    }
+  ]
+}

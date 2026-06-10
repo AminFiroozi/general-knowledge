@@ -1,0 +1,126 @@
+{
+  "topic": "deadlock",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-deadlock-001",
+      "q": "What are the four Coffman conditions necessary for deadlock to occur?",
+      "options": [
+        "Resource starvation, CPU exhaustion, memory fragmentation, and disk saturation",
+        "Mutual exclusion, hold and wait, no preemption, and circular wait",
+        "Race condition, infinite loop, thread starvation, and priority inversion",
+        "Unbounded queue, synchronization failure, resource leak, and mode switch delay"
+      ],
+      "answer": 1,
+      "explanation": "The four Coffman conditions, all of which must be true simultaneously for deadlock to occur, are: (1) Mutual exclusion—resources cannot be shared, (2) Hold and wait—processes hold allocated resources while waiting for others, (3) No preemption—the OS cannot forcibly reclaim resources, (4) Circular wait—a cycle exists in the resource allocation graph. Breaking any one condition prevents deadlock. Deadlock prevention strategies target these conditions directly."
+    },
+    {
+      "id": "operating-systems-deadlock-002",
+      "q": "What is a resource allocation graph and how is it used to detect deadlock?",
+      "options": [
+        "A graph where nodes are processes and edges are precedence constraints for scheduling",
+        "A graph where nodes are processes and resources; edges represent allocation or request relationships; a cycle indicates potential deadlock",
+        "A histogram showing resource usage over time",
+        "A priority queue used to allocate resources to processes"
+      ],
+      "answer": 1,
+      "explanation": "A resource allocation graph (RAG) has two types of nodes: processes and resources. An edge from resource to process means the resource is allocated to that process. An edge from process to resource means the process is waiting for that resource. If the RAG contains a cycle and each resource type has only one instance, then deadlock exists. If resources can have multiple instances, a cycle is necessary but not sufficient for deadlock; more complex algorithms (like cycle detection in a wait-for graph) are needed."
+    },
+    {
+      "id": "operating-systems-deadlock-003",
+      "q": "What is deadlock detection and what are the costs of detecting deadlock after it occurs?",
+      "options": [
+        "Preventing deadlock at compile time by analyzing code",
+        "Running periodic algorithms to detect cycles in resource allocation; costs include delay before detection, maintaining overhead, and resource waste while deadlocked processes hold resources",
+        "Using heuristics to predict if deadlock might occur in the future",
+        "Automatically terminating suspicious processes to avoid potential deadlock"
+      ],
+      "answer": 1,
+      "explanation": "Deadlock detection algorithms periodically examine the resource allocation state to find cycles. Advantages: allows more resource allocation than prevention (higher concurrency). Disadvantages: deadlock is detected only after it occurs (latency), detection algorithms have CPU overhead, and while deadlocked processes wait, they waste resources and cause application slowdown. Once detected, recovery requires terminating processes or preempting resources. Detection is practical when deadlocks are rare."
+    },
+    {
+      "id": "operating-systems-deadlock-004",
+      "q": "What is the Banker's Algorithm and what is its primary limitation?",
+      "options": [
+        "An algorithm that orders resource allocation to maximize utilization",
+        "A deadlock avoidance algorithm that grants resource requests only if the resulting state is safe, preventing deadlock proactively",
+        "An algorithm that detects deadlock by examining the resource graph",
+        "A scheduling algorithm that prioritizes banker processes"
+      ],
+      "answer": 1,
+      "explanation": "The Banker's Algorithm (Dijkstra) is a deadlock avoidance strategy. Before allocating a resource, it checks if the new state would be safe (all processes could complete without deadlock). Only safe allocations are granted. This prevents deadlock but is conservative: it may deny requests that would not actually cause deadlock, reducing concurrency. Major limitation: the algorithm requires advance knowledge of each process's maximum resource needs, which is impractical in real systems with dynamic requirements."
+    },
+    {
+      "id": "operating-systems-deadlock-005",
+      "q": "How can timeouts be used to handle potential deadlock in practice?",
+      "options": [
+        "By limiting how long a process can run before being terminated",
+        "By detecting timeout expiration as a sign of possible deadlock, then recovering by releasing resources and retrying",
+        "By ensuring all processes complete within a time limit regardless of conditions",
+        "By preventing processes from acquiring multiple resources simultaneously"
+      ],
+      "answer": 1,
+      "explanation": "In practice, systems often use timeouts as a simple deadlock recovery mechanism. If a process waiting for a resource times out, the assumption is deadlock occurred. The system releases some of the waiting process's resources, possibly undoing recent operations, and retries. This is pragmatic for production systems: timeouts are simple to implement and require no advance knowledge of resource needs. Trade-offs: false positives (timing out non-deadlocked waits) and loss of work."
+    },
+    {
+      "id": "operating-systems-deadlock-006",
+      "q": "What is circular wait and how does forcing resource ordering prevent it?",
+      "options": [
+        "A situation where processes alternate between using two resources in opposite orders; prevented by assigning unique IDs to resources",
+        "A deadlock condition where processes form a cycle in the wait-for graph; prevented by requiring processes to request resources in a fixed global order",
+        "A type of race condition in multi-threaded programs",
+        "A scheduling problem where processes are queued in a circle"
+      ],
+      "answer": 1,
+      "explanation": "Circular wait is the fourth Coffman condition: processes form a cycle waiting for each other. Classic example: process A holds resource 1 and waits for 2; process B holds 2 and waits for 1. Forcing a resource ordering (e.g., always request resource 1 before 2) prevents circular wait: processes will request resources in increasing order, preventing cycles. This is a deadlock prevention strategy that eliminates one Coffman condition. Trade-off: reduces flexibility in how processes can access resources."
+    },
+    {
+      "id": "operating-systems-deadlock-007",
+      "q": "What is the difference between deadlock prevention and deadlock avoidance?",
+      "options": [
+        "Prevention is impossible; avoidance is the only viable strategy in practice",
+        "Prevention eliminates one Coffman condition at design time; avoidance dynamically checks state before allocating resources to stay in safe states",
+        "Avoidance prevents deadlock before it occurs; prevention detects and recovers from deadlock",
+        "They are equivalent terms for the same concept"
+      ],
+      "answer": 1,
+      "explanation": "Deadlock prevention breaks a Coffman condition permanently. Examples: (1) Allow preemption (eliminate no preemption), (2) Allocate all resources at once (eliminate hold and wait), (3) Force resource ordering (eliminate circular wait). Avoidance does not eliminate conditions but dynamically avoids dangerous states. The Banker's Algorithm is avoidance: it checks if each allocation is safe before granting it. Prevention is simpler but wastes resources (context switches, preemption overhead); avoidance is more efficient but complex."
+    },
+    {
+      "id": "operating-systems-deadlock-008",
+      "q": "What happens when deadlock is detected and recovery is needed?",
+      "options": [
+        "The system automatically resolves deadlock by increasing the time quantum",
+        "Deadlock recovery typically involves terminating one or more deadlocked processes and possibly rolling back their work, or forcibly preempting their resources",
+        "Deadlock cannot be recovered from; the system must reboot",
+        "The OS prevents any new processes from starting until old ones complete"
+      ],
+      "answer": 1,
+      "explanation": "Once deadlock is detected, recovery options include: (1) Terminate all deadlocked processes (loses work), (2) Terminate deadlocked processes one at a time until the cycle breaks (find minimal set), (3) Preempt resources from deadlocked processes and reassign them (requires rollback to consistent state), (4) Request manual intervention. Each option has costs: process loss, rollback overhead, inconsistency. Recovery must be chosen carefully; the goal is to minimize total damage and restore system liveness."
+    },
+    {
+      "id": "operating-systems-deadlock-009",
+      "q": "Why is detecting and preventing deadlock in distributed systems more difficult than in single-node systems?",
+      "options": [
+        "Distributed systems have more processes, so deadlock is more likely to occur",
+        "No global clock or state view in distributed systems makes cycle detection difficult; communication delays and partial failures complicate avoidance strategies",
+        "Distributed systems use different synchronization primitives",
+        "Deadlock is actually easier to prevent in distributed systems"
+      ],
+      "answer": 1,
+      "explanation": "Single-node systems have a global view of all locks and processes, making detection/prevention tractable. Distributed systems lack this: there is no global state snapshot, no reliable global clock, and message delays mean the system's true state is unknown. Detecting a cycle in a distributed wait-for graph requires coordination and is expensive. Avoidance requires predicting system behavior across unreliable networks. Timeout-based recovery is pragmatic but may cause cascading failures. Distributed deadlock is an open research problem."
+    },
+    {
+      "id": "operating-systems-deadlock-010",
+      "q": "What is livelock and how does it differ from deadlock?",
+      "options": [
+        "Livelock is a less severe form of deadlock that resolves itself",
+        "Livelock is a state where processes are not blocked but continually retry and fail, making no progress, differing from deadlock where processes are blocked",
+        "Livelock only occurs in single-threaded systems",
+        "Livelock and deadlock are synonymous terms"
+      ],
+      "answer": 1,
+      "explanation": "Livelock occurs when processes are active but make no progress. Classic example: two people in a hallway try to pass each other, both stepping in the same direction simultaneously, repeatedly colliding. In systems: threads repeatedly acquire and release locks, roll back transactions, or retry without making progress. Unlike deadlock (blocked indefinitely), live-locked processes consume CPU. Solutions include exponential backoff with randomization or strict ordering. Livelock is less common than deadlock but harder to detect since processes appear to be running."
+    }
+  ]
+}

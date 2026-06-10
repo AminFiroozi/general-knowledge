@@ -1,0 +1,126 @@
+{
+  "topic": "backtracking",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-backtracking-001",
+      "q": "What is backtracking and how does it differ from a brute-force search?",
+      "options": [
+        "Backtracking and brute-force are the same algorithm with different names",
+        "Backtracking is a systematic exploration of the solution space using depth-first search with pruning: at each state, it checks constraints; if violated, it abandons the current branch and backtracks; brute-force explores all possibilities without pruning, making backtracking faster by avoiding infeasible branches",
+        "Backtracking uses memoization to cache results; brute-force does not",
+        "Backtracking only works for NP-complete problems"
+      ],
+      "answer": 1,
+      "explanation": "Backtracking prunes the search tree by testing constraints early. If a partial solution violates a constraint, all extensions of that state are skipped. Example: N-queens: place queens row by row; if a queen conflicts with prior queens, backtrack before exploring 8^n possibilities. Brute-force would enumerate all 8^n placements and test each. Pruning reduces the explored nodes exponentially. Pseudocode: if valid(state), recurse; else return; if goal(state), report solution; then backtrack. Effective for CSPs (constraint satisfaction problems), combinatorial optimization, and exhaustive search with early termination conditions."
+    },
+    {
+      "id": "algorithms-backtracking-002",
+      "q": "How does the N-queens problem use backtracking to place N non-attacking queens on an N×N board?",
+      "options": [
+        "Place all queens randomly and check if they attack; if yes, place them again",
+        "Place queens one row at a time, trying each column; for each queen, check if it conflicts with previously placed queens (same column or diagonal); if conflict, try the next column; if no valid column in the row, backtrack to the previous row and try the next column there",
+        "The problem is solved using only forward checking with no backtracking",
+        "N-queens cannot be solved algorithmically; only small cases can be solved by hand"
+      ],
+      "answer": 1,
+      "explanation": "N-queens algorithm: for each row, try columns 0 to N-1. For column c, check if a queen at (row, c) attacks prior queens: (1) columns occupied (unique per row); (2) diagonals—check all previous rows for queens at columns differing by the same row offset. If no attack, place queen and recurse to the next row. If all rows filled, found a solution. If no valid column, backtrack (undo the queen placement) and try the next column of the previous row. Example for N=4: solutions exist, e.g., (0,1), (1,3), (2,0), (3,2). Recursion tree is heavily pruned: most branches fail quickly due to diagonal conflicts."
+    },
+    {
+      "id": "algorithms-backtracking-003",
+      "q": "What is the role of constraint propagation in backtracking, and how does it improve efficiency?",
+      "options": [
+        "Constraint propagation is a theoretical concept with no practical application",
+        "Constraint propagation automatically reduces variable domains based on constraints before exploring branches; example: if variable X ∈ {1,2,5} must equal Y and Y ∈ {1,3}, propagation deduces X ∈ {1}; earlier domain reduction decreases backtracking by eliminating impossible branches early",
+        "Constraint propagation is the same as brute-force search",
+        "It only works for binary constraints"
+      ],
+      "answer": 1,
+      "explanation": "In constraint satisfaction problems (CSPs), domain reduction (constraint propagation) prevents wasted exploration. Techniques: arc consistency (AC-3 algorithm), forward checking, and backjumping. Example: Sudoku—if cell (i, j) must contain a value not in the row/column/box, eliminate those values from its domain. If domain becomes empty, backtrack immediately without exploring child states. If domain has one value, assign it and propagate to neighbors. Effective preprocessing reduces search depth and branching factor exponentially. Backtracking + constraint propagation (e.g., conflict-driven clause learning in SAT solvers) is standard for hard combinatorial problems."
+    },
+    {
+      "id": "algorithms-backtracking-004",
+      "q": "How are all permutations of a set generated using backtracking?",
+      "options": [
+        "Permutations cannot be generated using backtracking; they require dynamic programming",
+        "Backtracking generates permutations via recursive DFS: maintain a 'current' permutation and an 'available' set. At each level, choose an element from 'available', add it to 'current', remove from 'available', recurse; when 'available' is empty, 'current' is a complete permutation; backtrack by undoing the choice",
+        "All permutations are generated in lexicographic order only",
+        "Backtracking for permutations has exponential space complexity"
+      ],
+      "answer": 1,
+      "explanation": "Permutation generation: permute(current, available) { if (available is empty) { report current; return; } for each elem in available { current.push(elem); available.remove(elem); permute(current, available); available.add(elem); current.pop(); } }. Time: Θ(n! · n) (n! permutations, each taking O(n) to generate and output). Space: O(n) for recursion depth and current array. Example: {1,2,3} generates [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]. No extra domain reduction; backtracking is straightforward—each recursive call removes one choice and explores the rest."
+    },
+    {
+      "id": "algorithms-backtracking-005",
+      "q": "How does backtracking solve the subset-sum problem: given a set of integers and a target sum, find a subset summing to the target?",
+      "options": [
+        "Check all 2^n subsets using a loop; this is not backtracking",
+        "Backtracking explores subsets recursively: for each element, decide to include or exclude. Include: add element to current sum and recurse on remaining elements; if sum equals target, report the subset; if sum exceeds target, prune this branch. Exclude: recurse without the element. Time: O(2^n) worst-case, but pruning cuts branches early when sum exceeds target",
+        "The subset-sum problem is NP-complete and cannot be solved by backtracking",
+        "Backtracking requires all elements to be non-negative"
+      ],
+      "answer": 1,
+      "explanation": "Subset-sum pseudocode: solve(index, current_sum, target, current_subset) { if (current_sum == target) { report current_subset; return; } if (index == n or current_sum > target) { return; } // Prune if sum exceeds target (assuming non-negative elements) // Include element [index] current_subset.add(elements[index]); solve(index+1, current_sum + elements[index], target, current_subset); current_subset.pop(); // Exclude element [index] solve(index+1, current_sum, target, current_subset); }. Pruning: if current_sum > target, no extension of current_subset will work, so backtrack. With dynamic programming (DP), subset-sum is O(n·W) where W is the target, faster than backtracking's worst-case O(2^n)."
+    },
+    {
+      "id": "algorithms-backtracking-006",
+      "q": "What is the 0/1 knapsack problem and how does backtracking compare to dynamic programming for solving it?",
+      "options": [
+        "The 0/1 knapsack problem is to select items with maximum total value without exceeding weight capacity; backtracking and DP are equivalent in speed",
+        "The 0/1 knapsack problem is to select items (each at most once) with maximum total value subject to weight capacity; backtracking explores all 2^n subsets with pruning, achieving O(2^n) worst-case; DP is O(n·W) (pseudopolynomial), much faster when W is small, making DP the practical choice",
+        "Backtracking solves 0/1 knapsack in polynomial time",
+        "Dynamic programming cannot solve the knapsack problem"
+      ],
+      "answer": 1,
+      "explanation": "Backtracking for knapsack: for each item, include or exclude. If including item i, add value and weight, recurse on remaining capacity; if capacity exceeded, prune. If capacity allows, include the item's value in the running total. Exclude: recurse without item i. Track maximum value found. Time: O(2^n) without pruning, less with pruning. DP: dp[i][w] = maximum value using first i items and weight ≤ w. Recurrence: dp[i][w] = max(dp[i-1][w], dp[i-1][w-weight[i]] + value[i]). Time O(nW). DP is faster for practical W; backtracking is simpler conceptually but exponentially slower. For approximation algorithms, backtracking with aggressive pruning may suffice."
+    },
+    {
+      "id": "algorithms-backtracking-007",
+      "q": "How does the word-search problem use backtracking to find a target word in a 2D grid?",
+      "options": [
+        "Scan the grid linearly for the target word",
+        "Backtracking DFS: for each cell, if it matches the first letter of the target word, initiate DFS from that cell. At each DFS step, match the next letter in the grid's neighbors (up, down, left, right); if matched, mark the cell as visited and recurse on the next letter; if all letters matched, word found; if no unvisited neighbor matches, backtrack by unmarking the cell",
+        "Word search uses breadth-first search, not backtracking",
+        "The problem requires preprocessing the grid with a hash table"
+      ],
+      "answer": 1,
+      "explanation": "Word-search pseudocode: search(word) { for each cell (i, j) in grid { if grid[i][j] == word[0] { if dfs(i, j, 0, word) { return true; } } } return false; } dfs(i, j, index, word) { if index == word.length { return true; } if (i,j) out of bounds or visited or grid[i][j] != word[index] { return false; } mark (i, j) as visited; for each neighbor (ni, nj) { if dfs(ni, nj, index+1, word) { return true; } } unmark (i, j); return false; }. Time O(N·4^L) where N = grid cells, L = word length (4 directions per step). Space O(L) for recursion depth."
+    },
+    {
+      "id": "algorithms-backtracking-008",
+      "q": "What is the map coloring problem and how does backtracking apply to it?",
+      "options": [
+        "Map coloring is to color a map with as many colors as possible",
+        "Map coloring (graph coloring) is to assign colors to regions (nodes) such that no two adjacent regions have the same color, using the minimum number of colors; backtracking tries assigning colors sequentially: for each node, try available colors, assign, recurse on the next node; if no color is available, backtrack",
+        "Map coloring is only theoretical and has no practical application",
+        "Map coloring is NP-complete and cannot be solved by backtracking"
+      ],
+      "answer": 1,
+      "explanation": "Map coloring (or graph k-coloring) is a CSP: color(node) { if node == n { return true; } for color c in 1..k { if no neighbor of node has color c { assign color c to node; if color(node+1) { return true; } unassign color c; } } return false; }. k-colorability is NP-complete (for k ≥ 3), but backtracking with constraint propagation (e.g., maintaining available colors per node) solves practical instances. The chromatic polynomial counts colorings of a graph. 4-color theorem (every planar graph is 4-colorable) is proved by computer. Backtracking is useful for small graphs or graphs with special structure (e.g., bipartite graphs are 2-colorable in linear time)."
+    },
+    {
+      "id": "algorithms-backtracking-009",
+      "q": "How does the Sudoku solver use backtracking, and what optimizations (constraint propagation) can speed it up?",
+      "options": [
+        "Sudoku is solved by random guessing and checking",
+        "Backtracking: for each empty cell, try digits 1-9; if a digit satisfies row/column/box constraints, place it and recurse; if no digit works, backtrack. Optimizations: naked singles (cells with one possible digit), hidden singles (digits appearing in only one cell of a unit), and arc consistency reduce domains before backtracking, drastically cutting the search tree",
+        "Sudoku requires a special algorithm distinct from backtracking",
+        "Backtracking for Sudoku has exponential time complexity with no pruning benefit"
+      ],
+      "answer": 1,
+      "explanation": "Naive backtracking Sudoku: for each empty cell, try all 9 digits. Constraint propagation: maintain possible[cell] = set of feasible digits. Naked singles: if possible[cell] has one digit, assign it and propagate (remove that digit from all peers). Hidden singles: if a digit can only go in one cell of a row/column/box, assign it. These reduce branching drastically. With both techniques, most Sudoku puzzles are solved without backtracking (pure propagation); difficult puzzles require limited backtracking on heavily constrained cells. Examples: top solvers use constraint propagation first, then backtracking on cells with fewest possibilities (minimum remaining values heuristic). Time: practical O(n) for standard 9×9 puzzles."
+    },
+    {
+      "id": "algorithms-backtracking-010",
+      "q": "What is branch-and-bound and how does it improve upon basic backtracking for optimization problems?",
+      "options": [
+        "Branch-and-bound is a synonym for backtracking with no additional techniques",
+        "Branch-and-bound extends backtracking with bounding: maintain the best solution found so far (incumbent). For each partial solution, compute a lower bound on the optimal value in its subtree; if the bound is worse than the incumbent, prune the entire subtree. This dramatically reduces the search space for optimization problems like TSP and integer linear programs",
+        "Branch-and-bound only works for linear problems",
+        "Branch-and-bound eliminates the need for constraint propagation"
+      ],
+      "answer": 1,
+      "explanation": "Branch-and-bound combines backtracking with optimization pruning. Example: traveling salesman problem (TSP) with n cities. Backtrack: try next city. Bound: estimate minimum distance for remaining tour (e.g., minimum spanning tree of unvisited cities). If bound + current distance > incumbent (best tour found), prune this branch. As more solutions are found, the incumbent tightens, pruning more branches. Effective bounding is crucial; tight bounds prune aggressively. Techniques: linear programming relaxations (LP bound is ≤ optimal), greedy heuristics. Used in integer programming solvers, combinatorial optimization. Time: best-case O(n) with tight bounds; worst-case O(n!) without good bounds, but typically much better than naive backtracking."
+    }
+  ]
+}

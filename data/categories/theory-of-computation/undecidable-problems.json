@@ -1,0 +1,126 @@
+{
+  "topic": "undecidable-problems",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-undecidable-problems-001",
+      "q": "The HALTING PROBLEM asks: given a Turing machine M and input w, does M halt on w? This problem is proven undecidable using a self-referential argument known as:",
+      "options": [
+        "Reduction from the Entscheidungsproblem, showing all decision problems are undecidable",
+        "Diagonalization: assuming a halting decider H exists and deriving a contradiction",
+        "The pigeonhole principle applied to infinite tape configurations",
+        "Church's thesis, which defines computability in terms of lambda calculus"
+      ],
+      "answer": 1,
+      "explanation": "The classic proof assumes a decider H for halting, constructs a machine D that calls H(D, D) and contradicts H's behavior on D itself, proving no such H exists. This is diagonalization. Option 1 is correct; option 0 conflates HALTING with Entscheidungsproblem (the general decision problem); option 2 uses pigeonhole incorrectly; option 3 is related but not the proof technique."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-002",
+      "q": "Rice's theorem states that any non-trivial property of languages recognized by Turing machines is undecidable. Which of the following properties is non-trivial under Rice's theorem?",
+      "options": [
+        "The property that a Turing machine M accepts only strings of length at most 100",
+        "The property that a Turing machine M has a transition from state q1 to state q2",
+        "The property that the language L(M) is infinite",
+        "The property that a Turing machine M's alphabet is {0, 1}"
+      ],
+      "answer": 2,
+      "explanation": "Rice's theorem applies to properties of the language L(M) recognized by M, not structural properties of M itself. Option 0 and 3 are structural (depending on M's description, not L(M)). Option 1 is also structural. Option 2 is a language property (some TMs accept finite languages, others infinite), so it is non-trivial and undecidable by Rice's theorem."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-003",
+      "q": "The POST CORRESPONDENCE PROBLEM (PCP) involves finding a sequence of indices that match domino pairs. Why is PCP undecidable despite being a finite combinatorial problem?",
+      "options": [
+        "PCP is not actually undecidable; there exists a polynomial-time algorithm for it",
+        "The problem can encode arbitrary Turing machine computations, reducing from the Halting Problem",
+        "PCP has infinitely many instances, making exhaustive search impossible",
+        "The number of possible index sequences is exponential, exceeding computational limits"
+      ],
+      "answer": 1,
+      "explanation": "PCP reduces from the Halting Problem by encoding a TM's computation trace as domino pairs. If PCP has a solution (matching sequence), the computation halts; if not, it loops. This reduction shows PCP is undecidable. Option 1 correctly identifies the reduction technique; option 0 is false; option 2 is true but not the core reason for undecidability; option 3 confuses computational limits with undecidability."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-004",
+      "q": "A language is recognizable (recursively enumerable) if some Turing machine accepts all strings in the language, but may not halt on strings outside the language. Is HALTING recognizable?",
+      "options": [
+        "No, because HALTING is undecidable, so it cannot be recognizable either",
+        "Yes, but HALTING is not co-recognizable because its complement is not recognizable",
+        "No, HALTING is neither recognizable nor co-recognizable; it is completely outside the RE hierarchy",
+        "Yes, recognizability does not require decisiveness, so HALTING can be recognized by simulating and accepting if halting occurs"
+      ],
+      "answer": 3,
+      "explanation": "A Turing machine can recognize HALTING by simulating the input machine; if it halts, accept. If it loops infinitely, the recognizer never accepts that input. This is recognizability without decisiveness. Option 3 is correct; option 0 conflates undecidability with non-recognizability; option 1 is true but misses the recognizability answer; option 2 is false (HALTING is recognizable but not decidable)."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-005",
+      "q": "Which of the following problems is decidable, unlike the Halting Problem and Post Correspondence Problem?",
+      "options": [
+        "EQUIVALENCE: deciding if two Turing machines accept the same language",
+        "EMPTINESS: deciding if a context-free grammar accepts the empty language",
+        "MINIMALITY: deciding if a Turing machine has the minimal number of states for its language",
+        "PRODUCTIVITY: deciding if a Turing machine produces output on some input"
+      ],
+      "answer": 1,
+      "explanation": "EMPTINESS of context-free grammars is decidable: apply reachability algorithms to the grammar's production rules. EQUIVALENCE (option 0) and MINIMALITY (option 2) of TMs are undecidable by Rice's theorem. PRODUCTIVITY (option 3) is equivalent to 'language is non-empty' for TMs, hence undecidable. Option 1 is correct; it shows undecidability is problem-specific, not universal."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-006",
+      "q": "The set of all undecidable problems is infinite, but the set of Turing machines (and their descriptions) is countably infinite. Does this imply that most undecidable problems are not recognizable?",
+      "options": [
+        "Yes, because there are uncountably many languages but only countably many Turing machines",
+        "No, because recognizability and undecidability are independent properties",
+        "Yes, but most recognizable languages are actually decidable, contradicting Turing's result",
+        "No, because all undecidable problems are recognizable by definition"
+      ],
+      "answer": 0,
+      "explanation": "There are 2^∞ (uncountably many) languages over a finite alphabet, but only countably many Turing machines. Thus, most languages are not recognizable. Among the countably many recognizable languages, some are undecidable (e.g., HALTING). Option 0 correctly applies cardinality arguments; option 1 ignores the cardinality gap; option 2 is false; option 3 is false (some undecidable problems are not recognizable)."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-007",
+      "q": "The TERM REWRITING PROBLEM asks whether a string can be rewritten to another via a set of rewriting rules. Which statement about decidability is correct?",
+      "options": [
+        "The problem is decidable for all finite sets of rewriting rules",
+        "The problem is decidable for context-free grammars but undecidable for unrestricted rewriting systems",
+        "The problem becomes undecidable when rewriting rules can encode arbitrary Turing computations",
+        "The problem is always decidable because rewriting is deterministic"
+      ],
+      "answer": 2,
+      "explanation": "For unrestricted (Turing-complete) rewriting systems, the term rewriting problem reduces from the Halting Problem, making it undecidable. For restricted systems (e.g., context-free), it may be decidable. Option 2 correctly identifies that undecidability arises from expressive rewriting systems; option 0 is false for unrestricted systems; option 1 is too restrictive; option 3 conflates determinism with decidability."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-008",
+      "q": "The BUSY BEAVER problem asks: given n, what is the maximum number of steps a Turing machine with n states can take before halting? Why is this function uncomputable?",
+      "options": [
+        "Because finding the Busy Beaver number requires solving the Halting Problem for all n-state machines",
+        "Because the Busy Beaver function grows faster than any computable function",
+        "Because Turing machines are inherently non-deterministic and cannot be analyzed deterministically",
+        "Because the problem is NP-complete, and no polynomial-time algorithm exists"
+      ],
+      "answer": 0,
+      "explanation": "To compute Busy Beaver(n), one must determine the maximum halting time among all n-state machines, which requires deciding halting for each machine—a reduced instance of the Halting Problem. The uncomputability follows from this reduction. Option 0 is correct; option 1 is a consequence, not the cause; option 2 conflates determinism with computability; option 3 confuses complexity with uncomputability."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-009",
+      "q": "A language A is Turing-reducible to language B (denoted A ≤_T B) if a Turing machine can decide A using an oracle for B. If A is undecidable and A ≤_T B, what can we conclude about B?",
+      "options": [
+        "B is definitely undecidable, because A reduces to B",
+        "B is decidable only if A is also decidable, forming an equivalence",
+        "B is undecidable, because the reduction preserves the Halting Problem's difficulty",
+        "B must be undecidable, since a decider for B would give a decider for A via the reduction"
+      ],
+      "answer": 3,
+      "explanation": "If A is undecidable and A ≤_T B, then B must be undecidable. Proof by contrapositive: if B were decidable, then an oracle for B could be used to decide A via the reduction, contradicting A's undecidability. Option 3 correctly applies the contrapositive reasoning; options 0, 1, and 2 state the conclusion but less rigorously."
+    },
+    {
+      "id": "theory-of-computation-undecidable-problems-010",
+      "q": "Some undecidable problems, like the Halting Problem, are recognizable (in RE). Other undecidable problems, like the complement of Halting, are not recognizable. What distinguishes these two categories?",
+      "options": [
+        "Recognizable problems are simpler; non-recognizable problems are harder by definition",
+        "A language is recognizable if there exists a Turing machine that halts and accepts on positive instances, even if it may not halt on negative instances",
+        "All undecidable problems in RE must be NP-hard, while non-recognizable problems are in co-NP",
+        "The distinction is artificial; all undecidable problems are equally non-recognizable"
+      ],
+      "answer": 1,
+      "explanation": "Recognizability (RE) means a TM exists that accepts all strings in the language and halts; it may loop on strings outside the language. HALTING is in RE (simulate and accept if halting), but its complement (non-halting) is not in RE (no TM can verify non-halting in finite time). Option 1 defines recognizability precisely; option 0 conflates complexity with recognizability; option 2 misapplies NP to undecidable problems; option 3 is false."
+    }
+  ]
+}
