@@ -1,0 +1,76 @@
+{
+  "topic": "common-misconceptions",
+  "category": "general",
+  "questions": [
+    {
+      "id": "general-common-misconceptions-001",
+      "q": "Is it true that humans use only 10% of their brains?",
+      "options": ["Yes, we only use 10%", "No, we use virtually all of our brain", "Yes, but neuroscientists are unsure", "It depends on intelligence level"],
+      "answer": 1,
+      "explanation": "We use virtually all of our brain, and most of the brain is almost always active. Brain imaging studies show that even during sleep, all areas of the brain show some level of activity. This myth may stem from early neuroscience underestimating brain function."
+    },
+    {
+      "id": "general-common-misconceptions-002",
+      "q": "Do humans have a dominant hemisphere?",
+      "options": ["Yes, left brain is for logic, right brain for creativity", "No, both hemispheres work together equally", "Yes, right brain is dominant for creativity only", "Yes, dominance depends on handedness"],
+      "answer": 1,
+      "explanation": "While hemispheres have some specialized functions, they work together as an integrated whole. The strict 'left brain logic, right brain creative' dichotomy is a myth. Both hemispheres are active in all types of thinking."
+    },
+    {
+      "id": "general-common-misconceptions-003",
+      "q": "Is Napoleon famously short for his time?",
+      "options": ["Yes, he was unusually short", "No, he was average or slightly above average height", "Yes, he was about 5 feet tall", "No one really knows his actual height"],
+      "answer": 1,
+      "explanation": "Napoleon was approximately 5'7\", which was average or slightly above average for a French man of his era. British propaganda exaggerated his short stature, leading to the persistent myth of him being exceptionally small."
+    },
+    {
+      "id": "general-common-misconceptions-004",
+      "q": "Do we swallow spiders while sleeping?",
+      "options": ["Yes, several per night", "No, this is an urban legend", "Yes, but only small harmless ones", "Occasionally, but very rarely"],
+      "answer": 1,
+      "explanation": "This is an urban legend with no scientific basis. Spiders actively avoid humans, and the vibrations from breathing and heartbeat would deter them. There is no documented evidence of anyone swallowing spiders while asleep."
+    },
+    {
+      "id": "general-common-misconceptions-005",
+      "q": "Can touching a baby bird harm it through human scent?",
+      "options": ["Yes, parents will reject it", "No, birds have poor sense of smell", "Only if you leave visible marks", "Only with certain bird species"],
+      "answer": 1,
+      "explanation": "Birds have a poor sense of smell, so human scent does not cause them to reject their young. Most birds will continue caring for a touched nestling. Interfering with the bird directly might cause problems, but gentle handling and returning it to the nest is usually safe."
+    },
+    {
+      "id": "general-common-misconceptions-006",
+      "q": "Is sugar responsible for making children hyperactive?",
+      "options": ["Yes, sugar causes hyperactivity", "No, studies show no link between sugar and hyperactivity", "Only in excess quantities", "Only in children under 5 years old"],
+      "answer": 1,
+      "explanation": "Numerous scientific studies have found no direct link between sugar consumption and hyperactivity in children. Parental expectations and environmental factors explain the perceived connection. Hyperactivity is more associated with excitement and novelty."
+    },
+    {
+      "id": "general-common-misconceptions-007",
+      "q": "Does the Great Wall of China really extend 10,000 kilometers?",
+      "options": ["Yes, it is exactly 10,000 km", "No, it is only 8,850 kilometers", "Yes, but including all branches it exceeds 20,000 km", "No, it is only a few hundred kilometers"],
+      "answer": 2,
+      "explanation": "When including all branches and secondary sections, the Great Wall of China exceeds 21,000 kilometers. The commonly cited figure of about 8,850 kilometers refers only to the main wall structure."
+    },
+    {
+      "id": "general-common-misconceptions-008",
+      "q": "Is goldfish memory limited to only 3 seconds?",
+      "options": ["Yes, they forget almost immediately", "No, they can remember for months", "Yes, but they recognize their owners", "Only in certain conditions"],
+      "answer": 1,
+      "explanation": "Goldfish can remember for at least three months and can be trained to recognize shapes, colors, and sounds. They have better memory than the myth suggests, though their memory is still not exceptional compared to many other animals."
+    },
+    {
+      "id": "general-common-misconceptions-009",
+      "q": "Does cracking knuckles cause arthritis?",
+      "options": ["Yes, it definitely causes arthritis", "No, there is no scientific link between cracking knuckles and arthritis", "Only if done excessively", "Yes, but only in elderly people"],
+      "answer": 1,
+      "explanation": "Scientific studies have found no link between knuckle cracking and arthritis. A famous researcher even studied this on himself by cracking the knuckles of only one hand for years and found no difference in arthritis development."
+    },
+    {
+      "id": "general-common-misconceptions-010",
+      "q": "Did George Washington have wooden teeth?",
+      "options": ["Yes, his teeth were made of wood", "No, his dentures were made from various materials including ivory and metal", "Yes, but they were made from a special hardwood", "He never wore dentures"],
+      "answer": 1,
+      "explanation": "George Washington's dentures were made from hippopotamus ivory, human teeth, animal teeth, and metal, but not wood. The myth likely arose because wood was used in the base or frame of his dentures, but the teeth themselves were not wooden."
+    }
+  ]
+}

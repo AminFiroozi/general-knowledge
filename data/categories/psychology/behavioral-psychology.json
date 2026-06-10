@@ -1,0 +1,126 @@
+{
+  "topic": "behavioral-psychology",
+  "category": "psychology",
+  "questions": [
+    {
+      "id": "psychology-behavioral-psychology-001",
+      "q": "In Pavlov's classic conditioning experiments, what was the unconditioned stimulus?",
+      "options": [
+        "The bell that was rung",
+        "The meat powder that automatically elicited salivation",
+        "The dog's salivation response",
+        "The laboratory environment"
+      ],
+      "answer": 1,
+      "explanation": "In Pavlov's experiments, meat powder was the unconditioned stimulus because it naturally and automatically triggered salivation without any prior learning. The bell became a conditioned stimulus after pairing."
+    },
+    {
+      "id": "psychology-behavioral-psychology-002",
+      "q": "What is the primary difference between classical conditioning and operant conditioning?",
+      "options": [
+        "Classical conditioning involves reflexive responses while operant conditioning involves voluntary behavior modified by consequences",
+        "Classical conditioning is used for humans while operant conditioning is used for animals",
+        "Operant conditioning uses unconditioned stimuli while classical conditioning uses rewards",
+        "Classical conditioning is more effective than operant conditioning"
+      ],
+      "answer": 0,
+      "explanation": "Classical conditioning modifies involuntary reflexive responses through stimulus pairing, while operant conditioning shapes voluntary behavior through consequences. Both can be applied to humans and animals."
+    },
+    {
+      "id": "psychology-behavioral-psychology-003",
+      "q": "What is the difference between positive and negative reinforcement?",
+      "options": [
+        "Positive reinforcement adds something desirable to increase behavior; negative reinforcement removes something undesirable to increase behavior",
+        "Positive reinforcement is always more effective than negative reinforcement",
+        "Positive reinforcement is the same as punishment",
+        "Negative reinforcement means ignoring unwanted behavior"
+      ],
+      "answer": 0,
+      "explanation": "Both types of reinforcement increase behavior frequency. Positive reinforcement adds a desired consequence (praise, money), while negative reinforcement removes an aversive consequence (stopping nagging). Both strengthen behavior."
+    },
+    {
+      "id": "psychology-behavioral-psychology-004",
+      "q": "In B.F. Skinner's research, what is meant by shaping behavior?",
+      "options": [
+        "Reinforcing successive approximations toward a desired behavior",
+        "Punishing unwanted behaviors",
+        "Pairing a neutral stimulus with an unconditioned stimulus",
+        "Observing behavior patterns in natural settings"
+      ],
+      "answer": 0,
+      "explanation": "Shaping involves reinforcing behaviors that progressively approximate the target behavior. This technique breaks complex behaviors into manageable steps, with reinforcement gradually reserved for closer approximations."
+    },
+    {
+      "id": "psychology-behavioral-psychology-005",
+      "q": "What is extinction in classical conditioning?",
+      "options": [
+        "The gradual disappearance of a conditioned response when the conditioned stimulus is presented without the unconditioned stimulus",
+        "The loss of memory for a conditioned response",
+        "The permanent elimination of a learned behavior",
+        "The strengthening of a response through repeated pairing"
+      ],
+      "answer": 0,
+      "explanation": "Extinction occurs when the conditioned stimulus no longer predicts the unconditioned stimulus, causing the conditioned response to diminish. However, extinction doesn't erase the original learning, as spontaneous recovery can occur."
+    },
+    {
+      "id": "psychology-behavioral-psychology-006",
+      "q": "Which reinforcement schedule typically produces the highest rate of responding and greatest resistance to extinction?",
+      "options": [
+        "Fixed ratio schedule",
+        "Variable ratio schedule",
+        "Fixed interval schedule",
+        "Variable interval schedule"
+      ],
+      "answer": 1,
+      "explanation": "Variable ratio schedules (reinforcement after an unpredictable number of responses) produce the highest response rates and strongest resistance to extinction. This is why gambling is so compelling and behavior is so persistent."
+    },
+    {
+      "id": "psychology-behavioral-psychology-007",
+      "q": "What is the primary difference between punishment and negative reinforcement?",
+      "options": [
+        "Punishment decreases behavior while negative reinforcement increases behavior",
+        "Punishment uses physical pain while negative reinforcement doesn't",
+        "Punishment is only for children while negative reinforcement is for adults",
+        "They are the same thing but with different names"
+      ],
+      "answer": 0,
+      "explanation": "Punishment (adding or removing something) decreases the frequency of a behavior, while negative reinforcement (removing an aversive stimulus) increases behavior. The terms are often confused but have opposite effects on behavior."
+    },
+    {
+      "id": "psychology-behavioral-psychology-008",
+      "q": "In Pavlov's conditioning paradigm, what is a conditioned response?",
+      "options": [
+        "The learned response that occurs in reaction to the conditioned stimulus",
+        "The automatic response to the unconditioned stimulus",
+        "The stimulus that is paired with the unconditioned stimulus",
+        "The process of learning the association between stimuli"
+      ],
+      "answer": 0,
+      "explanation": "A conditioned response is the learned behavioral or physiological response that develops to the conditioned stimulus through repeated pairing with the unconditioned stimulus. In Pavlov's experiment, salivation to the bell was the conditioned response."
+    },
+    {
+      "id": "psychology-behavioral-psychology-009",
+      "q": "What does spontaneous recovery demonstrate about classical conditioning?",
+      "options": [
+        "That extinction does not erase the original learning but only suppresses it",
+        "That conditioned responses are permanent and cannot be reversed",
+        "That organisms quickly forget conditioned associations",
+        "That unconditioned responses are stronger than conditioned responses"
+      ],
+      "answer": 0,
+      "explanation": "Spontaneous recovery is the reappearance of a conditioned response after a rest period following extinction, showing that the original association remains in memory even when the response appears extinguished."
+    },
+    {
+      "id": "psychology-behavioral-psychology-010",
+      "q": "According to behavioral psychology, what is the key determinant of behavior change?",
+      "options": [
+        "The immediate consequences that follow the behavior",
+        "The person's internal motivations and thoughts",
+        "The person's childhood experiences",
+        "Social and cultural norms"
+      ],
+      "answer": 0,
+      "explanation": "Behavioral psychology emphasizes that behavior is controlled by its consequences. Reinforcement and punishment directly following behavior are the primary mechanisms for changing behavior patterns, rather than internal processes."
+    }
+  ]
+}

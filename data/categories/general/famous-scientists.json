@@ -1,0 +1,76 @@
+{
+  "topic": "famous-scientists",
+  "category": "general",
+  "questions": [
+    {
+      "id": "general-famous-scientists-001",
+      "q": "Albert Einstein developed which groundbreaking theory of physics?",
+      "options": ["The theory of gravity", "The theory of relativity", "The theory of quantum mechanics", "The theory of electromagnetism"],
+      "answer": 1,
+      "explanation": "Albert Einstein developed the theory of relativity, which includes special relativity (1905) and general relativity (1915). These theories fundamentally changed our understanding of space, time, and gravity."
+    },
+    {
+      "id": "general-famous-scientists-002",
+      "q": "What did Isaac Newton discover about motion and forces?",
+      "options": ["The laws of thermodynamics", "Newton's laws of motion", "The principles of buoyancy", "The conservation of energy"],
+      "answer": 1,
+      "explanation": "Isaac Newton formulated the three laws of motion, which describe how objects move and how forces affect them. These laws form the foundation of classical mechanics and remained the standard until Einstein's relativity."
+    },
+    {
+      "id": "general-famous-scientists-003",
+      "q": "Marie Curie won Nobel Prizes in which two fields?",
+      "options": ["Physics and Medicine", "Physics and Chemistry", "Chemistry and Medicine", "Physics and Biology"],
+      "answer": 1,
+      "explanation": "Marie Curie won Nobel Prizes in Physics (1903) and Chemistry (1911), making her the first person to win Nobel Prizes in two different sciences. Her research on radioactivity was groundbreaking."
+    },
+    {
+      "id": "general-famous-scientists-004",
+      "q": "Charles Darwin is famous for proposing which scientific theory?",
+      "options": ["The theory of evolution by natural selection", "The germ theory of disease", "The cell theory", "The big bang theory"],
+      "answer": 0,
+      "explanation": "Charles Darwin proposed the theory of evolution by natural selection, published in 'On the Origin of Species' in 1859. This theory explains how species adapt and change over time through competitive survival."
+    },
+    {
+      "id": "general-famous-scientists-005",
+      "q": "What was Nikola Tesla's primary area of scientific contribution?",
+      "options": ["Atomic physics", "Electromagnetism and wireless transmission", "Quantum mechanics", "Thermodynamics"],
+      "answer": 1,
+      "explanation": "Nikola Tesla made groundbreaking contributions to electromagnetism and developed alternating current (AC) technology. He also pioneered wireless transmission of electricity, though many of his later projects remained incomplete."
+    },
+    {
+      "id": "general-famous-scientists-006",
+      "q": "What major discovery did Stephen Hawking make regarding black holes?",
+      "options": ["They are impenetrable", "They emit radiation", "They are time machines", "They contain infinite matter"],
+      "answer": 1,
+      "explanation": "Stephen Hawking discovered that black holes emit radiation, now called Hawking radiation. This contradicted the previous belief that nothing could escape a black hole's gravitational pull."
+    },
+    {
+      "id": "general-famous-scientists-007",
+      "q": "Who developed the periodic table of elements?",
+      "options": ["John Dalton", "Dmitri Mendeleev", "Joseph Proust", "Antoine Lavoisier"],
+      "answer": 1,
+      "explanation": "Dmitri Mendeleev created the modern periodic table in 1869, organizing elements by atomic weight and leaving gaps for undiscovered elements. His system accurately predicted the properties of missing elements."
+    },
+    {
+      "id": "general-famous-scientists-008",
+      "q": "What is Richard Feynman known for in physics?",
+      "options": ["Discovering the neutron", "Developing quantum electrodynamics", "Inventing the cyclotron", "Proving the big bang theory"],
+      "answer": 1,
+      "explanation": "Richard Feynman made major contributions to quantum electrodynamics (QED) and won the Nobel Prize in Physics for his work. He was also renowned for his exceptional ability to explain complex concepts clearly."
+    },
+    {
+      "id": "general-famous-scientists-009",
+      "q": "What did Rosalind Franklin contribute to our understanding of molecular biology?",
+      "options": ["Discovery of DNA structure", "X-ray crystallography of DNA", "The central dogma of molecular biology", "The discovery of ribosomes"],
+      "answer": 1,
+      "explanation": "Rosalind Franklin used X-ray crystallography to produce images of DNA's structure, particularly the famous 'Photo 51'. Her work was crucial to Watson, Crick, and Wilkins' understanding of DNA's double helix structure."
+    },
+    {
+      "id": "general-famous-scientists-010",
+      "q": "What field did Jane Goodall revolutionize through her research?",
+      "options": ["Marine biology", "Primatology and animal behavior", "Botany", "Paleontology"],
+      "answer": 1,
+      "explanation": "Jane Goodall revolutionized primatology through her long-term field studies of wild chimpanzees in Tanzania starting in 1960. She demonstrated that chimpanzees use tools and have complex social behaviors."
+    }
+  ]
+}

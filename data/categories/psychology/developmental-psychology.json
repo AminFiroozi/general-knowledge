@@ -1,0 +1,126 @@
+{
+  "topic": "developmental-psychology",
+  "category": "psychology",
+  "questions": [
+    {
+      "id": "psychology-developmental-psychology-001",
+      "q": "In Piaget's theory, what is the primary characteristic of the concrete operational stage?",
+      "options": [
+        "Children can think symbolically and egocentrically",
+        "Children can think logically about concrete objects but not abstract concepts",
+        "Children understand conservation and can reverse operations",
+        "Children can engage in abstract reasoning and hypothetical thinking"
+      ],
+      "answer": 1,
+      "explanation": "During the concrete operational stage (approximately 7-11 years), children develop logical thinking but only for concrete, tangible objects. They begin to understand conservation and reversibility but struggle with purely abstract concepts."
+    },
+    {
+      "id": "psychology-developmental-psychology-002",
+      "q": "What does object permanence refer to in Piaget's sensorimotor stage?",
+      "options": [
+        "The ability to recognize that objects continue to exist even when out of sight",
+        "The understanding that objects have stable physical properties",
+        "The awareness that objects can be used for different purposes",
+        "The ability to categorize objects by their features"
+      ],
+      "answer": 0,
+      "explanation": "Object permanence is the understanding that objects exist independently and continue to exist when hidden from view. This milestone, typically achieved by 8-12 months, represents a major cognitive advance in the sensorimotor stage."
+    },
+    {
+      "id": "psychology-developmental-psychology-003",
+      "q": "What is Ainsworth's secure attachment characterized by?",
+      "options": [
+        "Dependence on the caregiver with anxiety about separation",
+        "Use of caregiver as a secure base for exploration with distress upon separation and joy upon reunion",
+        "Avoidance of the caregiver and minimal emotional response",
+        "Inconsistent and ambivalent responses to the caregiver"
+      ],
+      "answer": 1,
+      "explanation": "Secure attachment, identified through the Strange Situation paradigm, involves using the caregiver as a secure base for exploration, showing distress when separated, and warmth when reunited. This pattern predicts better long-term outcomes."
+    },
+    {
+      "id": "psychology-developmental-psychology-004",
+      "q": "According to Piaget, what cognitive limitation characterizes the preoperational stage?",
+      "options": [
+        "Inability to understand symbolic thought",
+        "Egocentrism and lack of conservation understanding",
+        "Inability to think logically about any topic",
+        "Lack of object permanence"
+      ],
+      "answer": 1,
+      "explanation": "In the preoperational stage (2-7 years), children are egocentric and lack conservation understanding—they believe that changing an object's appearance changes its properties. They cannot reverse operations mentally."
+    },
+    {
+      "id": "psychology-developmental-psychology-005",
+      "q": "What does the nature versus nurture debate in developmental psychology concern?",
+      "options": [
+        "Whether behavior is determined by biology or environmental factors",
+        "Whether children should be raised in cities or rural areas",
+        "Whether genetic factors are more important than intelligence",
+        "Whether attachment occurs naturally or must be learned"
+      ],
+      "answer": 0,
+      "explanation": "The nature versus nurture debate examines whether development is primarily driven by innate biological factors or environmental influences. Current consensus recognizes both contribute and interact throughout development."
+    },
+    {
+      "id": "psychology-developmental-psychology-006",
+      "q": "In Erikson's theory, what is the central task of adolescence?",
+      "options": [
+        "Developing autonomy and independence",
+        "Establishing identity versus role confusion",
+        "Building competence and avoiding inferiority",
+        "Achieving intimacy versus isolation"
+      ],
+      "answer": 1,
+      "explanation": "Erikson identified identity versus role confusion as the central psychosocial task of adolescence. Adolescents explore different identities and integrate experiences to develop a coherent sense of self."
+    },
+    {
+      "id": "psychology-developmental-psychology-007",
+      "q": "What is the primary finding of Harlow's research on attachment in infant monkeys?",
+      "options": [
+        "Attachment forms based on food provision alone",
+        "Attachment forms based on physical comfort and contact",
+        "Attachment is purely instinctual with no learning component",
+        "Infant monkeys prefer inanimate objects to attachment figures"
+      ],
+      "answer": 1,
+      "explanation": "Harlow's experiments with cloth and wire surrogate mothers demonstrated that infant monkeys preferred the soft cloth mother even when the wire mother provided food, proving that physical comfort is crucial for attachment formation."
+    },
+    {
+      "id": "psychology-developmental-psychology-008",
+      "q": "What is a critical period in development?",
+      "options": [
+        "A time when specific learning or development must occur or opportunities may be lost",
+        "A period of rapid physical growth",
+        "A stage when children become more social",
+        "The most difficult time for parents"
+      ],
+      "answer": 0,
+      "explanation": "A critical period is a biologically determined window of time during which exposure to specific experiences or stimuli is particularly important for normal development. Missing these periods can result in lasting deficits."
+    },
+    {
+      "id": "psychology-developmental-psychology-009",
+      "q": "According to Piaget, what is conservation?",
+      "options": [
+        "The understanding that the quantity of a substance remains constant despite changes in appearance",
+        "The tendency to preserve previous learning patterns",
+        "The ability to attend to multiple features of an object",
+        "The conservation of energy in physical systems"
+      ],
+      "answer": 0,
+      "explanation": "Conservation is the understanding that properties like mass, volume, and number remain constant even when the physical arrangement or appearance changes. Children in the preoperational stage lack this concept."
+    },
+    {
+      "id": "psychology-developmental-psychology-010",
+      "q": "What is the primary contribution of Bowlby's attachment theory?",
+      "options": [
+        "Children are born with predispositions to form attachments for survival",
+        "Attachment is purely learned through conditioning",
+        "Secure attachment is less important than independence",
+        "Attachment primarily develops after age five"
+      ],
+      "answer": 0,
+      "explanation": "Bowlby proposed that attachment is evolutionarily adaptive and children are biologically predisposed to form attachments with caregivers. These early bonds have lasting effects on emotional development and relationships."
+    }
+  ]
+}

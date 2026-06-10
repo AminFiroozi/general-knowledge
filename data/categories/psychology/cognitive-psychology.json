@@ -1,0 +1,126 @@
+{
+  "topic": "cognitive-psychology",
+  "category": "psychology",
+  "questions": [
+    {
+      "id": "psychology-cognitive-psychology-001",
+      "q": "What is the primary limitation of working memory in terms of the number of items it can hold?",
+      "options": [
+        "Approximately 3-4 items",
+        "Approximately 7 plus or minus 2 items",
+        "Approximately 12-15 items",
+        "Unlimited capacity but time-limited"
+      ],
+      "answer": 1,
+      "explanation": "George Miller's classic research identified that working memory has a capacity of about 7 plus or minus 2 items, though subsequent research suggests it may be closer to 3-4 chunks. The other options misrepresent this well-established finding."
+    },
+    {
+      "id": "psychology-cognitive-psychology-002",
+      "q": "In Atkinson-Shiffrin's model of memory, information must pass through which stage before reaching long-term memory?",
+      "options": [
+        "Sensory memory",
+        "Working memory",
+        "Procedural memory",
+        "Declarative memory"
+      ],
+      "answer": 1,
+      "explanation": "The modal model proposes a sequential flow: sensory memory → working memory (short-term) → long-term memory. Information must be actively processed in working memory to be consolidated into long-term storage."
+    },
+    {
+      "id": "psychology-cognitive-psychology-003",
+      "q": "What is the representativeness heuristic?",
+      "options": [
+        "A mental shortcut based on how similar something is to our mental prototype",
+        "A tendency to rely on easily recalled information when making decisions",
+        "The assumption that future events will resemble past patterns",
+        "The preference for certain outcomes over uncertain ones"
+      ],
+      "answer": 0,
+      "explanation": "The representativeness heuristic causes us to judge probability based on similarity to a category prototype. This can lead to ignoring base rates and other statistical information, leading to biased judgments."
+    },
+    {
+      "id": "psychology-cognitive-psychology-004",
+      "q": "Which type of attention allows you to focus on relevant information while ignoring irrelevant stimuli?",
+      "options": [
+        "Sustained attention",
+        "Selective attention",
+        "Divided attention",
+        "Arousal attention"
+      ],
+      "answer": 1,
+      "explanation": "Selective attention is the ability to concentrate on specific stimuli while filtering out distractions. This is demonstrated in the cocktail party effect, where you can focus on one conversation despite background noise."
+    },
+    {
+      "id": "psychology-cognitive-psychology-005",
+      "q": "What does the availability heuristic suggest about our judgments?",
+      "options": [
+        "We judge probability based on how easily examples come to mind",
+        "We overestimate the frequency of recent events",
+        "We process information systematically and rationally",
+        "We rely on expert opinions when uncertain"
+      ],
+      "answer": 0,
+      "explanation": "The availability heuristic causes us to estimate the likelihood of events based on how readily examples come to mind. Media coverage of dramatic events makes them seem more common than they actually are."
+    },
+    {
+      "id": "psychology-cognitive-psychology-006",
+      "q": "In Baddeley's model of working memory, what is the primary function of the central executive?",
+      "options": [
+        "To store visual-spatial information temporarily",
+        "To store phonological information and verbal material",
+        "To coordinate and control attention across subsystems",
+        "To maintain sensory information for several seconds"
+      ],
+      "answer": 2,
+      "explanation": "The central executive is responsible for attention allocation and coordination between the phonological loop and visuo-spatial sketchpad. It controls which information is processed and how resources are distributed."
+    },
+    {
+      "id": "psychology-cognitive-psychology-007",
+      "q": "Which problem-solving strategy involves trying different solutions systematically until one works?",
+      "options": [
+        "Trial and error",
+        "Algorithm",
+        "Heuristic",
+        "Means-end analysis"
+      ],
+      "answer": 0,
+      "explanation": "Trial and error is a straightforward approach where you attempt different solutions unsystematically or systematically until finding one that works. While sometimes effective, it's often inefficient compared to algorithms or heuristics."
+    },
+    {
+      "id": "psychology-cognitive-psychology-008",
+      "q": "What is the primacy effect in memory?",
+      "options": [
+        "The tendency to remember the first items in a list better than middle items",
+        "The tendency to remember the last items in a list better than earlier items",
+        "The tendency to remember emotionally salient items",
+        "The tendency to remember items similar to existing knowledge"
+      ],
+      "answer": 0,
+      "explanation": "The primacy effect demonstrates that items presented first are better remembered, likely due to more rehearsal and stronger encoding into long-term memory. The recency effect (last items remembered best) occurs with short retention intervals."
+    },
+    {
+      "id": "psychology-cognitive-psychology-009",
+      "q": "What is the framing effect?",
+      "options": [
+        "Making decisions differently based on how information is presented rather than its objective value",
+        "The tendency to frame problems in terms of gains rather than losses",
+        "The habit of using mental frames to organize information",
+        "The preference for positively framed options over negatively framed ones"
+      ],
+      "answer": 0,
+      "explanation": "The framing effect shows that people's decisions are influenced by whether options are presented in terms of gains or losses, even when the objective outcomes are identical. This classic finding challenges rational choice theory."
+    },
+    {
+      "id": "psychology-cognitive-psychology-010",
+      "q": "In dual-process theory, what characterizes System 1 thinking?",
+      "options": [
+        "Slow, deliberate, and requires conscious effort",
+        "Fast, automatic, and often accurate despite limited information",
+        "Always superior to System 2 thinking",
+        "Used only for mathematical and logical problems"
+      ],
+      "answer": 1,
+      "explanation": "System 1 operates quickly and automatically with minimal effort, though it's prone to heuristic biases. System 2 is slower but more deliberate and logical. Most daily decisions rely primarily on System 1."
+    }
+  ]
+}

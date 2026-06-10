@@ -1,0 +1,126 @@
+{
+  "topic": "famous-experiments",
+  "category": "psychology",
+  "questions": [
+    {
+      "id": "psychology-famous-experiments-001",
+      "q": "What was the primary purpose of Milgram's obedience experiments?",
+      "options": [
+        "To investigate how far people would go in obeying authority figures even when asked to harm others",
+        "To study the effects of punishment on learning",
+        "To examine the relationship between stress and obedience",
+        "To determine if people could accurately judge the suffering of others"
+      ],
+      "answer": 0,
+      "explanation": "Milgram's experiments investigated obedience by asking participants to administer electric shocks to confederates. The findings revealed that ordinary people would cause severe harm when ordered by an authority figure, challenging assumptions about human nature."
+    },
+    {
+      "id": "psychology-famous-experiments-002",
+      "q": "In the Stanford Prison Experiment, what role did the study assign participants?",
+      "options": [
+        "Half were randomly assigned as guards and half as prisoners",
+        "All were initially prisoners who competed for guard positions",
+        "Participants chose their roles before the study began",
+        "The roles were assigned based on personality assessments"
+      ],
+      "answer": 0,
+      "explanation": "Zimbardo randomly assigned healthy, normal college students to either guard or prisoner roles in a simulated prison. The study claimed to demonstrate how situational factors could transform behavior, though subsequent criticisms questioned the interpretation."
+    },
+    {
+      "id": "psychology-famous-experiments-003",
+      "q": "What did Asch's conformity line experiment demonstrate?",
+      "options": [
+        "People often conform to obviously wrong group answers despite clear evidence",
+        "People are inherently nonconformist and resistant to group pressure",
+        "Visual perception is highly subjective and unreliable",
+        "Majority rule is the most effective decision-making method"
+      ],
+      "answer": 0,
+      "explanation": "Asch's participants frequently gave obviously incorrect answers to match a unanimous group opinion, demonstrating the power of group conformity even when the objective reality contradicted the group consensus."
+    },
+    {
+      "id": "psychology-famous-experiments-004",
+      "q": "What was the primary finding of the Bobo doll experiment conducted by Albert Bandura?",
+      "options": [
+        "Children who observed aggressive behavior modeled that aggression toward the doll",
+        "Punishment is more effective than reward for shaping behavior",
+        "Children prefer violent toys over peaceful alternatives",
+        "Aggressive behavior is innate and cannot be learned through observation"
+      ],
+      "answer": 0,
+      "explanation": "In the Bobo doll experiment, children who observed an adult acting aggressively toward a doll subsequently imitated this aggressive behavior. The study demonstrated that aggression can be learned through observational learning."
+    },
+    {
+      "id": "psychology-famous-experiments-005",
+      "q": "In the Little Albert experiment, what conditioned response did John B. Watson establish?",
+      "options": [
+        "A fear response to a white rat through classical conditioning",
+        "A preference for soft objects through operant conditioning",
+        "Attachment to the experimenter through repeated interactions",
+        "Avoidance of loud noises through habituation"
+      ],
+      "answer": 0,
+      "explanation": "Watson paired a white rat with a loud noise, eventually conditioning Little Albert to fear the rat and similar stimuli. This landmark experiment demonstrated classical conditioning in humans and raised ethical concerns about psychological research."
+    },
+    {
+      "id": "psychology-famous-experiments-006",
+      "q": "What was the ethical concern that arose from the Tuskegee Syphilis Study?",
+      "options": [
+        "Researchers withheld treatment from subjects and deceived them about the study's purpose",
+        "Subjects were exposed to infectious diseases without consent",
+        "The study involved unnecessary surgical procedures",
+        "Researchers failed to maintain confidentiality about subjects' health conditions"
+      ],
+      "answer": 0,
+      "explanation": "In the Tuskegee study, African American men with syphilis were told they were receiving free medical care but were actually observed without treatment, even after penicillin became available. This scandal led to modern research ethics standards."
+    },
+    {
+      "id": "psychology-famous-experiments-007",
+      "q": "What did Festinger and Carlsmith's cognitive dissonance experiment reveal?",
+      "options": [
+        "People who were paid less to lie about a boring task reported liking the task more to reduce dissonance",
+        "People who were paid more to lie reported greater dissonance",
+        "Payment amount has no effect on attitude change",
+        "People naturally avoid situations that create cognitive dissonance"
+      ],
+      "answer": 0,
+      "explanation": "Participants paid $1 (insufficient external justification) to lie reported greater liking for a boring task than those paid $20. Those underpaid changed their attitudes to align with their behavior, reducing cognitive dissonance."
+    },
+    {
+      "id": "psychology-famous-experiments-008",
+      "q": "In Harlow's attachment experiments with rhesus monkeys, what surrogate mother did infants prefer when frightened?",
+      "options": [
+        "The cloth surrogate mother despite it providing no food",
+        "The wire surrogate mother that provided food",
+        "Whichever surrogate they had more experience with",
+        "Neither surrogate and instead sought human comfort"
+      ],
+      "answer": 0,
+      "explanation": "Infant monkeys preferred the soft cloth surrogate for comfort even though the wire surrogate provided food. This demonstrated that tactile comfort, not food provision, is primary in forming attachment bonds."
+    },
+    {
+      "id": "psychology-famous-experiments-009",
+      "q": "What was the primary conclusion of Sherif's Robbers Cave Experiment?",
+      "options": [
+        "Intergroup conflict could be reduced by cooperative goals requiring interdependence",
+        "Group conflict is inevitable and cannot be resolved",
+        "Physical competition always increases group cohesion",
+        "Shared environments automatically reduce prejudice without additional interventions"
+      ],
+      "answer": 0,
+      "explanation": "Sherif demonstrated that groups divided against each other could be reconciled through superordinate goals—objectives that required cooperation and interdependence. This finding has influenced modern approaches to conflict resolution."
+    },
+    {
+      "id": "psychology-famous-experiments-010",
+      "q": "What did the Implicit Association Test (IAT) developed by Greenwald and colleagues measure?",
+      "options": [
+        "Unconscious or implicit biases and preferences that people may not consciously acknowledge",
+        "Explicit attitudes that people consciously hold and can report",
+        "The strength of explicit verbal associations between words",
+        "The intelligence level of test takers"
+      ],
+      "answer": 0,
+      "explanation": "The IAT assesses implicit biases by measuring how quickly people associate concepts with categories. Faster associations suggest stronger implicit links, revealing unconscious attitudes that may differ from explicit beliefs."
+    }
+  ]
+}

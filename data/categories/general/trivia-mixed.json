@@ -1,0 +1,76 @@
+{
+  "topic": "trivia-mixed",
+  "category": "general",
+  "questions": [
+    {
+      "id": "general-trivia-mixed-001",
+      "q": "What is the smallest country in the world by area?",
+      "options": ["Monaco", "Vatican City", "San Marino", "Liechtenstein"],
+      "answer": 1,
+      "explanation": "Vatican City is an independent city-state within Rome covering just 0.44 square kilometers. Monaco is much larger, though still one of the smallest nations, and is located on the French Riviera."
+    },
+    {
+      "id": "general-trivia-mixed-002",
+      "q": "In what year did the Titanic sink?",
+      "options": ["1910", "1912", "1914", "1916"],
+      "answer": 1,
+      "explanation": "The RMS Titanic sank on April 15, 1912 after striking an iceberg in the North Atlantic. The disaster occurred during its maiden voyage, killing over 1,500 people."
+    },
+    {
+      "id": "general-trivia-mixed-003",
+      "q": "Which planet in our solar system has the most moons?",
+      "options": ["Saturn", "Jupiter", "Uranus", "Neptune"],
+      "answer": 1,
+      "explanation": "Jupiter has 95 known moons as of the latest count, more than any other planet. Saturn has 146 known moons, which actually surpassed Jupiter in recent discoveries."
+    },
+    {
+      "id": "general-trivia-mixed-004",
+      "q": "What is the capital of Australia?",
+      "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+      "answer": 2,
+      "explanation": "Canberra is Australia's capital city, specifically designed and built as the capital. Many people mistakenly think Sydney is the capital, as it is the largest and most famous Australian city."
+    },
+    {
+      "id": "general-trivia-mixed-005",
+      "q": "How many strings does a standard violin have?",
+      "options": ["4", "5", "6", "8"],
+      "answer": 0,
+      "explanation": "A standard violin has 4 strings tuned to G, D, A, and E. Some specialized violins may have additional strings, but the traditional orchestral violin has exactly 4 strings."
+    },
+    {
+      "id": "general-trivia-mixed-006",
+      "q": "What is the deepest ocean trench on Earth?",
+      "options": ["Java Trench", "Tonga Trench", "Mariana Trench", "Kuril-Kamchatka Trench"],
+      "answer": 2,
+      "explanation": "The Mariana Trench in the western Pacific Ocean is the deepest, reaching about 11,000 meters at its lowest point. The Java Trench is also very deep but is significantly shallower than the Mariana."
+    },
+    {
+      "id": "general-trivia-mixed-007",
+      "q": "Which element has the chemical symbol Au?",
+      "options": ["Silver", "Gold", "Aluminum", "Argon"],
+      "answer": 1,
+      "explanation": "Gold has the chemical symbol Au, derived from its Latin name 'aurum'. Silver has the symbol Ag, aluminum is Al, and argon is Ar."
+    },
+    {
+      "id": "general-trivia-mixed-008",
+      "q": "In what country was the game of chess believed to have originated?",
+      "options": ["Persia", "India", "China", "Egypt"],
+      "answer": 1,
+      "explanation": "Chess is believed to have originated in India around the 6th century, evolving from an earlier game called chaturanga. Some mistakenly attribute it to Persia or China, but historical evidence points to India as the birthplace."
+    },
+    {
+      "id": "general-trivia-mixed-009",
+      "q": "What is the largest desert in the world?",
+      "options": ["Sahara Desert", "Arabian Desert", "Antarctic Desert", "Kalahari Desert"],
+      "answer": 2,
+      "explanation": "Antarctica is technically the largest desert by area, classified as a polar desert due to its minimal precipitation. The Sahara is the largest hot desert, which leads many people to incorrectly identify it as the largest desert overall."
+    },
+    {
+      "id": "general-trivia-mixed-010",
+      "q": "How many bones are in the adult human body?",
+      "options": ["186", "206", "226", "246"],
+      "answer": 1,
+      "explanation": "An adult human body has 206 bones. Babies are born with more bones (about 270), but some fuse together as they grow and develop into adulthood."
+    }
+  ]
+}

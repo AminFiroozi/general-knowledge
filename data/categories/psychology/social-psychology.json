@@ -1,0 +1,126 @@
+{
+  "topic": "social-psychology",
+  "category": "psychology",
+  "questions": [
+    {
+      "id": "psychology-social-psychology-001",
+      "q": "What does the fundamental attribution error refer to?",
+      "options": [
+        "The tendency to overestimate internal factors and underestimate external factors when explaining others' behavior",
+        "The tendency to blame ourselves for others' misfortunes",
+        "The inability to make accurate attributions about behavior",
+        "The preference for making global rather than specific attributions"
+      ],
+      "answer": 0,
+      "explanation": "The fundamental attribution error causes people to attribute others' behavior to personality or disposition while ignoring situational factors. In contrast, people tend to attribute their own negative behavior to circumstances."
+    },
+    {
+      "id": "psychology-social-psychology-002",
+      "q": "What is the actor-observer bias?",
+      "options": [
+        "The tendency to attribute others' behavior to their personality while attributing our own to situations",
+        "The tendency to behave differently when being observed",
+        "The tendency to observe behavior without reacting to it",
+        "The preference for observational learning over direct experience"
+      ],
+      "answer": 0,
+      "explanation": "The actor-observer bias reflects opposite attributional patterns: we attribute others' behavior to their disposition but our own behavior to external circumstances. This is related to the fundamental attribution error but emphasizes perspective differences."
+    },
+    {
+      "id": "psychology-social-psychology-003",
+      "q": "In Asch's conformity experiments, approximately what percentage of trials did participants give obviously incorrect answers to match the group?",
+      "options": [
+        "5-10%",
+        "30-35%",
+        "50-60%",
+        "75-80%"
+      ],
+      "answer": 1,
+      "explanation": "In Asch's line judgment task, participants conformed to obviously wrong group answers about 30-35% of the time. This classic finding demonstrates the powerful influence of group pressure on conformity."
+    },
+    {
+      "id": "psychology-social-psychology-004",
+      "q": "What is cognitive dissonance?",
+      "options": [
+        "The discomfort experienced when holding contradictory attitudes or beliefs",
+        "The tendency to forget information that contradicts our worldview",
+        "The inability to process conflicting information simultaneously",
+        "The preference for harmony in groups despite logical inconsistencies"
+      ],
+      "answer": 0,
+      "explanation": "Cognitive dissonance is the psychological discomfort from holding contradictory cognitions. People are motivated to reduce this dissonance by changing attitudes, beliefs, or behaviors to restore consistency."
+    },
+    {
+      "id": "psychology-social-psychology-005",
+      "q": "What is the risky shift phenomenon?",
+      "options": [
+        "Groups tend to make riskier decisions than individuals typically would",
+        "People avoid risks when in groups",
+        "Risk tolerance decreases with group size",
+        "Group decisions are always more conservative than individual decisions"
+      ],
+      "answer": 0,
+      "explanation": "The risky shift demonstrates that groups often make riskier decisions than their individual members would alone. This occurs through group polarization where discussion amplifies initial tendencies."
+    },
+    {
+      "id": "psychology-social-psychology-006",
+      "q": "What does the bystander effect suggest about helping behavior?",
+      "options": [
+        "People are less likely to help when others are present",
+        "Bystanders always help in emergency situations",
+        "The presence of others increases helping behavior",
+        "Familiarity with others determines helping behavior"
+      ],
+      "answer": 0,
+      "explanation": "The bystander effect shows that people are less likely to help in emergencies when other people are present. Diffusion of responsibility—the belief that others will help—reduces individual likelihood of intervention."
+    },
+    {
+      "id": "psychology-social-psychology-007",
+      "q": "What is social facilitation?",
+      "options": [
+        "The enhancement of performance on simple tasks and impairment on complex tasks in the presence of others",
+        "The tendency to like people who are similar to us",
+        "The ability to work well in group settings",
+        "The improvement of performance in all tasks when others are present"
+      ],
+      "answer": 0,
+      "explanation": "Social facilitation describes how an audience enhances performance on well-learned tasks (dominant responses) but impairs performance on complex or newly learned tasks. The arousal caused by observation is key to this effect."
+    },
+    {
+      "id": "psychology-social-psychology-008",
+      "q": "What is the in-group bias?",
+      "options": [
+        "The tendency to favor members of one's own group and view them more positively",
+        "The tendency to view all group members as similar",
+        "The preference for joining groups with similar members",
+        "The likelihood of conforming within a group setting"
+      ],
+      "answer": 0,
+      "explanation": "In-group bias causes people to attribute positive qualities to their own group members and view out-group members less favorably. This bias occurs even in arbitrary or minimal group situations."
+    },
+    {
+      "id": "psychology-social-psychology-009",
+      "q": "According to social impact theory, what three factors influence the likelihood of conformity?",
+      "options": [
+        "Strength, immediacy, and number of group members",
+        "Intelligence, personality, and motivation",
+        "Age, gender, and cultural background",
+        "Experience, education, and socioeconomic status"
+      ],
+      "answer": 0,
+      "explanation": "Latané's social impact theory identifies three key factors: strength (how important the group is), immediacy (physical closeness), and number (size of the group). Greater values on these dimensions increase conformity pressure."
+    },
+    {
+      "id": "psychology-social-psychology-010",
+      "q": "What is the false consensus effect?",
+      "options": [
+        "The tendency to overestimate the extent to which others share our beliefs and behaviors",
+        "The belief that consensus cannot be achieved in groups",
+        "The tendency to change our opinions to match group consensus",
+        "The difficulty in identifying what most people actually believe"
+      ],
+      "answer": 0,
+      "explanation": "The false consensus effect leads people to believe their own opinions and behaviors are more common and normal than they actually are. This bias makes our views seem more shared than data typically supports."
+    }
+  ]
+}

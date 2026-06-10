@@ -1,0 +1,76 @@
+{
+  "topic": "world-records",
+  "category": "general",
+  "questions": [
+    {
+      "id": "general-world-records-001",
+      "q": "What is the highest mountain on Earth?",
+      "options": ["K2", "Mount Kilimanjaro", "Mount Everest", "Denali"],
+      "answer": 2,
+      "explanation": "Mount Everest is the highest mountain in the world at 8,848.86 meters above sea level. K2 is the second-highest, and Kilimanjaro and Denali are significantly lower."
+    },
+    {
+      "id": "general-world-records-002",
+      "q": "What is the largest ocean on Earth?",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean"],
+      "answer": 3,
+      "explanation": "The Pacific Ocean is the largest ocean, covering approximately 165 million square kilometers. It is larger than all other oceans combined and covers about 46% of the world's ocean surface."
+    },
+    {
+      "id": "general-world-records-003",
+      "q": "What is the fastest land animal?",
+      "options": ["Lion", "Greyhound", "Cheetah", "Pronghorn antelope"],
+      "answer": 2,
+      "explanation": "The cheetah is the fastest land animal, reaching speeds of up to 120 kilometers per hour in short bursts. The pronghorn antelope can sustain high speeds over longer distances."
+    },
+    {
+      "id": "general-world-records-004",
+      "q": "What is the largest living organism on Earth?",
+      "options": ["The blue whale", "The African elephant", "Pando forest", "The Great Barrier Reef"],
+      "answer": 2,
+      "explanation": "Pando, a clonal colony of quaking aspen trees in Utah, is the largest living organism by mass, weighing about 6,600 tons. While individual blue whales are heavier, Pando as a connected organism surpasses them in total biomass."
+    },
+    {
+      "id": "general-world-records-005",
+      "q": "What is the longest river in the world?",
+      "options": ["Amazon River", "Mississippi River", "Yangtze River", "Nile River"],
+      "answer": 3,
+      "explanation": "The Nile River is the longest river in the world at approximately 6,650 kilometers. The Amazon River is the second longest and discharges the most water into an ocean."
+    },
+    {
+      "id": "general-world-records-006",
+      "q": "What is the largest desert in the world by area?",
+      "options": ["Sahara", "Arabian Desert", "Antarctic Desert", "Gobi Desert"],
+      "answer": 2,
+      "explanation": "Antarctica is the largest desert by area, with over 14 million square kilometers of land. Though covered in ice and snow, it is classified as a desert due to its extremely low precipitation."
+    },
+    {
+      "id": "general-world-records-007",
+      "q": "What is the largest country in the world by land area?",
+      "options": ["Canada", "United States", "Russia", "China"],
+      "answer": 2,
+      "explanation": "Russia is the largest country in the world by land area, covering over 17 million square kilometers. It spans across Eastern Europe and northern Asia, covering multiple time zones."
+    },
+    {
+      "id": "general-world-records-008",
+      "q": "What is the tallest waterfall in the world?",
+      "options": ["Niagara Falls", "Victoria Falls", "Angel Falls", "Iguazu Falls"],
+      "answer": 2,
+      "explanation": "Angel Falls in Venezuela is the highest waterfall in the world at 979 meters. Niagara Falls is famous for its volume and power rather than its height."
+    },
+    {
+      "id": "general-world-records-009",
+      "q": "What is the largest island on Earth?",
+      "options": ["New Zealand", "Australia", "Greenland", "Borneo"],
+      "answer": 2,
+      "explanation": "Greenland is the largest island in the world, with an area of over 2.1 million square kilometers. Australia is a continent, not an island, though it is sometimes called the largest island continent."
+    },
+    {
+      "id": "general-world-records-010",
+      "q": "What is the most populous country in the world?",
+      "options": ["India", "United States", "Indonesia", "Brazil"],
+      "answer": 0,
+      "explanation": "India is currently the most populous country in the world with over 1.4 billion people, having recently surpassed China. Population rankings can shift over time due to different growth rates."
+    }
+  ]
+}

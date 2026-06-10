@@ -1,0 +1,76 @@
+{
+  "topic": "inventions",
+  "category": "general",
+  "questions": [
+    {
+      "id": "general-inventions-001",
+      "q": "Who is credited with inventing the telephone?",
+      "options": ["Nikola Tesla", "Alexander Graham Bell", "Thomas Edison", "Elisha Gray"],
+      "answer": 1,
+      "explanation": "Alexander Graham Bell patented the telephone in 1876, though Elisha Gray had similar designs. While others contributed to telephone technology, Bell's patent and public recognition made him the primary credited inventor."
+    },
+    {
+      "id": "general-inventions-002",
+      "q": "In what year was the printing press invented by Johannes Gutenberg?",
+      "options": ["1420", "1440", "1460", "1480"],
+      "answer": 1,
+      "explanation": "Johannes Gutenberg invented the movable type printing press around 1440 in Germany. This invention revolutionized the spread of knowledge and is considered one of the most important technological advances in history."
+    },
+    {
+      "id": "general-inventions-003",
+      "q": "Who invented the electric light bulb?",
+      "options": ["Nikola Tesla", "Thomas Edison", "Joseph Swan", "Humphry Davy"],
+      "answer": 1,
+      "explanation": "Thomas Edison developed a practical, long-lasting electric light bulb in 1879. Joseph Swan and others worked on similar technologies, but Edison's durable filament design was the first commercially viable option."
+    },
+    {
+      "id": "general-inventions-004",
+      "q": "What did James Watt improve to help power the Industrial Revolution?",
+      "options": ["The spinning wheel", "The steam engine", "The water wheel", "The windmill"],
+      "answer": 1,
+      "explanation": "James Watt significantly improved the steam engine in 1765 by adding a separate condenser, making it much more efficient. His improvements were crucial to powering machinery during the Industrial Revolution."
+    },
+    {
+      "id": "general-inventions-005",
+      "q": "Who invented the airplane?",
+      "options": ["Samuel Langley", "Otto Lilienthal", "The Wright brothers", "George Cayley"],
+      "answer": 2,
+      "explanation": "Orville and Wilbur Wright, the Wright brothers, made the first powered, controlled airplane flight in 1903. Others like George Cayley and Otto Lilienthal made important contributions to aviation, but the Wrights achieved the first sustained flight."
+    },
+    {
+      "id": "general-inventions-006",
+      "q": "In what year was the internet invented?",
+      "options": ["1969", "1975", "1983", "1989"],
+      "answer": 0,
+      "explanation": "The internet began as ARPANET in 1969, a network funded by the U.S. Department of Defense. While the World Wide Web came later in 1989, the underlying internet infrastructure was established in 1969."
+    },
+    {
+      "id": "general-inventions-007",
+      "q": "Who invented the microscope?",
+      "options": ["Robert Hooke", "Zacharias Janssen", "Antonie van Leeuwenhoek", "Isaac Newton"],
+      "answer": 1,
+      "explanation": "The earliest microscopes were invented around 1590 by Zacharias Janssen and his father Hans. While Robert Hooke and Leeuwenhoek made important improvements and discoveries, the Janssens created the first compound microscope."
+    },
+    {
+      "id": "general-inventions-008",
+      "q": "What did George Washington Carver primarily work on developing?",
+      "options": ["The light bulb", "Crop rotation and peanut products", "The cotton gin", "Rubber tires"],
+      "answer": 1,
+      "explanation": "George Washington Carver developed hundreds of products from peanuts, sweet potatoes, and soy, and promoted crop rotation to restore soil. His work revolutionized Southern agriculture and helped small farmers improve their livelihoods."
+    },
+    {
+      "id": "general-inventions-009",
+      "q": "Who invented the vaccine, revolutionizing disease prevention?",
+      "options": ["Louis Pasteur", "Edward Jenner", "Jonas Salk", "Albert Sabin"],
+      "answer": 1,
+      "explanation": "Edward Jenner created the first vaccine in 1796, inoculating people against smallpox using cowpox. His pioneering work established the principle of vaccination, though later scientists like Pasteur and Salk developed other important vaccines."
+    },
+    {
+      "id": "general-inventions-010",
+      "q": "What crucial technology did Guglielmo Marconi develop?",
+      "options": ["The television", "Wireless radio transmission", "The telegraph", "The telephone"],
+      "answer": 1,
+      "explanation": "Guglielmo Marconi developed practical wireless radio transmission in the 1890s, earning him a Nobel Prize. His invention enabled long-distance communication without cables and laid the foundation for modern wireless technology."
+    }
+  ]
+}
