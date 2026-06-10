@@ -52,7 +52,13 @@ function main() {
       process.exit(1)
     }
 
-    const meta = JSON.parse(fs.readFileSync(metaPath, "utf-8"))
+    let meta: Record<string, string>
+    try {
+      meta = JSON.parse(fs.readFileSync(metaPath, "utf-8"))
+    } catch (err) {
+      console.error(`ERROR: Invalid JSON in ${categorySlug}/_meta.json — ${err instanceof Error ? err.message : err}`)
+      process.exit(1)
+    }
     if (!meta.displayName || !meta.description) {
       console.error(`ERROR: _meta.json in ${categorySlug}/ must have displayName and description`)
       process.exit(1)
@@ -68,10 +74,16 @@ function main() {
     const topicFiles = globSync("*.json", { cwd: categoryDir }).filter((f) => f !== "_meta.json").sort()
 
     for (const topicFile of topicFiles) {
-      const topicSlug = topicFile.replace(".json", "")
+      const topicSlug = topicFile.replace(/\.json$/, "")
       const fullPath = path.join(categoryDir, topicFile)
-      const raw = fs.readFileSync(fullPath, "utf-8")
-      const data = JSON.parse(raw)
+      let data: Record<string, unknown>
+      try {
+        const raw = fs.readFileSync(fullPath, "utf-8")
+        data = JSON.parse(raw)
+      } catch (err) {
+        console.error(`ERROR: Invalid JSON in ${categorySlug}/${topicFile} — ${err instanceof Error ? err.message : err}`)
+        process.exit(1)
+      }
 
       validateQuestionFile(data, `${categorySlug}/${topicFile}`, seenIds)
 
@@ -93,9 +105,9 @@ function main() {
 
 import type { CategoryIndex, Question } from "../types"
 
-export const CATEGORIES: Record<string, CategoryIndex> = ${JSON.stringify(categories, null, 2)} as const
+export const CATEGORIES: Record<string, CategoryIndex> = ${JSON.stringify(categories, null, 2)}
 
-export const TOPIC_MAP: Record<string, Question[]> = ${JSON.stringify(topicMap, null, 2)} as const
+export const TOPIC_MAP: Record<string, Question[]> = ${JSON.stringify(topicMap, null, 2)}
 `
 
   fs.mkdirSync(path.dirname(outPath), { recursive: true })

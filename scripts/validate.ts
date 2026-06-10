@@ -10,6 +10,9 @@ export function validateQuestionFile(
   seenIds: Set<string>
 ): void {
   const d = data as Record<string, unknown>
+  if (typeof d !== "object" || d === null || Array.isArray(d)) {
+    throw new Error(`${filePath}: root must be a JSON object`)
+  }
 
   if (!d.topic || typeof d.topic !== "string") {
     throw new Error(`${filePath}: missing or invalid 'topic' field`)
@@ -80,7 +83,8 @@ function main() {
       validateQuestionFile(data, file, seenIds)
       console.log(`  OK  ${file} (${(data.questions as unknown[]).length} questions)`)
     } catch (err) {
-      console.error(`ERROR ${err instanceof Error ? err.message : err}`)
+      const msg = err instanceof Error ? err.message : String(err)
+      console.error(`ERROR ${fullPath}: ${msg}`)
       errors++
     }
   }
@@ -93,6 +97,6 @@ function main() {
   console.log(`\nAll ${files.length} files valid.`)
 }
 
-if (require.main === module || process.argv[1]?.endsWith("validate.ts")) {
+if (process.argv[1]?.endsWith("validate.ts")) {
   main()
 }
