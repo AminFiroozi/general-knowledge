@@ -1,44 +1,25 @@
-import type { Metadata, Viewport } from "next";
-import "./globals.css";
-import { ThemeProvider } from "@/components/ThemeProvider/ThemeProvider";
-import { Inter } from "next/font/google";
+import type { Metadata } from "next"
+import { Inter, Playfair_Display } from "next/font/google"
+import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-serif",
+})
 
 export const metadata: Metadata = {
-	title: {
-		template: "%s | App",
-		default: "App",
-	},
-	description: "App description",
-	robots: {
-		index: true,
-		follow: true,
-	},
-};
+  title: "GeneralKnowledge",
+  description: "Infinite quiz — 44 categories, from algorithms to biology",
+}
 
-export const viewport: Viewport = {
-	width: "device-width",
-	initialScale: 1,
-};
-
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
-	return (
-		<html lang="en" suppressHydrationWarning>
-			<body className={`${inter.variable} antialiased no-scrollbar`}>
-				<ThemeProvider
-					attribute="class"
-					defaultTheme="system"
-					enableSystem
-					disableTransitionOnChange
-				>
-					{children}
-				</ThemeProvider>
-			</body>
-		</html>
-	);
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body className={`${inter.variable} ${playfair.variable} bg-bg text-text-primary min-h-screen antialiased`}>
+        {children}
+      </body>
+    </html>
+  )
 }
