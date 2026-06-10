@@ -1,0 +1,126 @@
+{
+  "topic": "color-theory",
+  "category": "art-and-design",
+  "questions": [
+    {
+      "id": "art-and-design-color-theory-001",
+      "q": "The color wheel is organized around three primary colors. In the traditional RYB (Red-Yellow-Blue) model, what is NOT a primary color?",
+      "options": [
+        "Red",
+        "Yellow",
+        "Green",
+        "Blue"
+      ],
+      "answer": 2,
+      "explanation": "In the RYB model, green is a secondary color created by mixing yellow and blue. Red, yellow, and blue cannot be created by mixing other colors, making them primary."
+    },
+    {
+      "id": "art-and-design-color-theory-002",
+      "q": "Complementary colors sit opposite each other on the color wheel and create maximum contrast. Which pair are complementary?",
+      "options": [
+        "Red and orange",
+        "Blue and green",
+        "Red and cyan",
+        "Yellow and lime"
+      ],
+      "answer": 2,
+      "explanation": "Red and cyan (blue-green) are complementary opposites on the color wheel. Red-orange is an analogous pair (adjacent), blue-green are analogous, and yellow-lime are close neighbors."
+    },
+    {
+      "id": "art-and-design-color-theory-003",
+      "q": "RGB and CMYK are two color models used in different media. RGB is primarily used for which medium?",
+      "options": [
+        "Printed books and magazines",
+        "Digital screens and light-based displays",
+        "Oil paintings",
+        "Textile design"
+      ],
+      "answer": 1,
+      "explanation": "RGB (Red, Green, Blue) is additive color used by screens because light mixes those hues. CMYK (Cyan, Magenta, Yellow, Black) uses subtractive color for printing inks, while paintings and textiles use pigments."
+    },
+    {
+      "id": "art-and-design-color-theory-004",
+      "q": "Hue refers to the actual color (red, blue, yellow), while saturation measures the color's intensity or purity. A desaturated color appears how?",
+      "options": [
+        "More vibrant and intense",
+        "Lighter and brighter",
+        "More grayish, muted, and less intense",
+        "Darker with more black mixed in"
+      ],
+      "answer": 2,
+      "explanation": "Desaturated colors have gray mixed in, reducing their intensity and making them appear muted. Saturation removes vibrancy; value (brightness) is a separate property controlled by adding black or white."
+    },
+    {
+      "id": "art-and-design-color-theory-005",
+      "q": "Analogous colors are groups of colors that sit adjacent to each other on the color wheel. What is an advantage of using an analogous color scheme?",
+      "options": [
+        "It creates dramatic, high-contrast designs",
+        "It produces harmonious, cohesive, and peaceful compositions",
+        "It maximizes visual stimulation and eye strain",
+        "It simplifies printing costs"
+      ],
+      "answer": 1,
+      "explanation": "Analogous schemes create natural harmony because the colors share similar wavelengths and hues. This is soothing and unified, unlike complementary schemes which provide drama and tension."
+    },
+    {
+      "id": "art-and-design-color-theory-006",
+      "q": "A triadic color scheme uses three colors equally spaced around the color wheel. This scheme is known for being which of these?",
+      "options": [
+        "Subtle and understated",
+        "Highly saturated and visually balanced yet vibrant",
+        "Monochromatic",
+        "Cool and calming"
+      ],
+      "answer": 1,
+      "explanation": "Triadic schemes (e.g., red, yellow, blue) are vibrant and energetic while remaining balanced due to equal spacing. They avoid monotony and create dynamic, stimulating palettes."
+    },
+    {
+      "id": "art-and-design-color-theory-007",
+      "q": "Warm colors (reds, oranges, yellows) are associated with energy and warmth, while cool colors (blues, greens, purples) feel calm. Which is a typical psychological effect of warm colors?",
+      "options": [
+        "They make spaces feel larger and more expansive",
+        "They evoke feelings of energy, excitement, and appetite",
+        "They universally reduce eye strain",
+        "They have no psychological impact"
+      ],
+      "answer": 1,
+      "explanation": "Warm colors psychologically stimulate and energize, which is why they appear in food branding and entertainment. Cool colors, by contrast, calm and relax. Color psychology affects mood and perception."
+    },
+    {
+      "id": "art-and-design-color-theory-008",
+      "q": "The Munsell color system organizes colors using three dimensions: hue, value, and chroma. What does value represent?",
+      "options": [
+        "The cost of the pigment",
+        "How light or dark a color is",
+        "The saturation or intensity of color",
+        "The temperature (warm or cool) of the color"
+      ],
+      "answer": 1,
+      "explanation": "Value measures lightness and darkness, from black (0) to white (10). Hue is the color itself, chroma is saturation/intensity, and temperature describes warm/cool properties."
+    },
+    {
+      "id": "art-and-design-color-theory-009",
+      "q": "A monochromatic color scheme uses variations of a single hue with different values and saturations. What is a benefit of monochromatic design?",
+      "options": [
+        "It provides maximum visual contrast",
+        "It creates strong visual impact with minimal colors",
+        "It provides visual unity while allowing subtle variation through tints and shades",
+        "It is impossible to achieve in digital media"
+      ],
+      "answer": 2,
+      "explanation": "Monochromatic schemes are cohesive and sophisticated; varying the saturation and value of one hue creates depth without jarring color conflicts. This is elegant and professionally restful."
+    },
+    {
+      "id": "art-and-design-color-theory-010",
+      "q": "Color harmony refers to combinations that are pleasing to the eye. Which of the following is NOT a recognized color harmony scheme?",
+      "options": [
+        "Complementary",
+        "Analogous",
+        "Triadic",
+        "Diagonal"
+      ],
+      "answer": 3,
+      "explanation": "Complementary, analogous, and triadic are established harmony schemes based on color wheel geometry. Diagonal is not a recognized color harmony principle; harmony relates to hue relationships, not spatial arrangement."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "semantics-and-pragmatics",
+  "category": "linguistics",
+  "questions": [
+    {
+      "id": "linguistics-semantics-and-pragmatics-001",
+      "q": "What is semantic ambiguity?",
+      "options": [
+        "A single word or phrase having multiple distinct meanings",
+        "The inability to pronounce a word correctly",
+        "A grammatical error in sentence structure",
+        "The process of learning new vocabulary"
+      ],
+      "answer": 0,
+      "explanation": "Semantic ambiguity occurs when a linguistic form has multiple meanings (e.g., 'bank' for financial institution or riverbank). Option 2 refers to pronunciation issues, option 3 to syntax, and option 4 to vocabulary acquisition—none involve multiple meanings."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-002",
+      "q": "In the phrase 'visiting relatives can be tedious,' what creates the structural ambiguity?",
+      "options": [
+        "The verb phrase 'visiting relatives' can be interpreted two different ways syntactically",
+        "The word 'tedious' has multiple meanings",
+        "The subject and verb disagree in number",
+        "The sentence is missing a preposition"
+      ],
+      "answer": 0,
+      "explanation": "'Visiting relatives can be tedious' is structurally ambiguous: either you visit your relatives (relatives as object) or the act of relatives visiting you (relatives as subject). This is syntactic not semantic ambiguity. Options 2-4 don't describe the actual ambiguity present."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-003",
+      "q": "What is a scalar implicature?",
+      "options": [
+        "An implied meaning that something lower on a scale (like 'some') excludes higher values (like 'all')",
+        "A direct statement of fact without any hidden meaning",
+        "A grammatical rule about adjective ordering",
+        "A synonym for the word a speaker actually said"
+      ],
+      "answer": 0,
+      "explanation": "Scalar implicature is a pragmatic phenomenon: saying 'I ate some cookies' implicates (but doesn't assert) that you didn't eat all of them. Using a weaker term on a scale suggests higher terms don't apply. The other options describe literal meaning, grammatical rules, and synonymy respectively."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-004",
+      "q": "What is deixis?",
+      "options": [
+        "The dependence of meaning on context, as with 'I', 'here', or 'yesterday'",
+        "A synonym for metaphor or figurative language",
+        "The process of defining words using other words",
+        "An error in logic or reasoning"
+      ],
+      "answer": 0,
+      "explanation": "Deictic expressions have meanings that depend on the speaker, time, and place of utterance. 'I' refers to whoever speaks, 'here' to the speaker's location. Options 2-4 describe unrelated linguistic or logical concepts."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-005",
+      "q": "In the sentence 'Can you pass the salt?', what is the pragmatic function of this utterance?",
+      "options": [
+        "It is a request (indirect speech act) despite its interrogative form",
+        "It is a genuine question about the hearer's ability",
+        "It is a statement of fact about salt passing",
+        "It is a refusal to do something"
+      ],
+      "answer": 0,
+      "explanation": "This interrogative sentence functions as a polite request, not a genuine question about ability. The speaker expects the hearer to pass the salt, not to report whether they are capable. Options 2-4 misidentify the pragmatic intent."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-006",
+      "q": "What is a conversational implicature according to Grice?",
+      "options": [
+        "An implied meaning that is inferred from following the Maxims of Conversation",
+        "A word that implies another word in a formal logic system",
+        "The literal meaning of every word in a sentence",
+        "A mandatory grammatical rule of a language"
+      ],
+      "answer": 0,
+      "explanation": "Grice's conversational implicatures are meanings inferred when speakers appear to violate maxims (be relevant, truthful, informative, and clear). For example, 'I saw some students' (using 'some' not 'all') implicates uncertainty. Options 2-4 misrepresent the concept."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-007",
+      "q": "Which example best illustrates hyperbole?",
+      "options": [
+        "'I've told you a million times to clean your room'",
+        "'The cat sat on the mat'",
+        "'She is taller than her brother'",
+        "'That book is very long'"
+      ],
+      "answer": 0,
+      "explanation": "Hyperbole is intentional exaggeration for effect. 'A million times' is clearly not literal but emphasizes frequency. Option 2 is literal, option 3 is a comparative statement, and option 4 is a simple descriptive claim with no exaggeration."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-008",
+      "q": "What is the difference between a presupposition and an assertion?",
+      "options": [
+        "A presupposition is assumed background knowledge; an assertion is the main claim being made",
+        "An assertion is true while a presupposition can be false",
+        "A presupposition uses adjectives while an assertion uses verbs",
+        "They are synonymous terms for the same concept"
+      ],
+      "answer": 0,
+      "explanation": "In 'The king of France is bald,' the assertion is that the king is bald, while the presupposition is that a king of France exists. Presuppositions are typically not challenged in conversation. Options 2-4 incorrectly characterize the relationship."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-009",
+      "q": "What is code-switching as a pragmatic phenomenon?",
+      "options": [
+        "Alternating between two or more languages within a single conversation",
+        "Changing the meaning of a word intentionally",
+        "Switching from formal to informal grammar within a single sentence",
+        "Using technical jargon in place of everyday words"
+      ],
+      "answer": 0,
+      "explanation": "Code-switching is the practice of alternating languages in speech, often to convey group identity, respect, or social meaning. It's a pragmatic choice, not a grammatical error. Options 2-4 describe other phenomena but not code-switching."
+    },
+    {
+      "id": "linguistics-semantics-and-pragmatics-010",
+      "q": "What is the semantic relation between 'dog' and 'animal'?",
+      "options": [
+        "Hyponymy (dog is a subordinate type of animal)",
+        "Synonymy (they mean the same thing)",
+        "Antonymy (they are opposites)",
+        "Homonymy (they are spelled the same)"
+      ],
+      "answer": 0,
+      "explanation": "Hyponymy is the relation where one term ('dog') is a more specific instance of another ('animal'). 'Animal' is the hypernym (superordinate). Synonymy involves same meaning, antonymy involves opposite meaning, and homonymy involves identical spelling with different meanings."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "phonetics-and-phonology",
+  "category": "linguistics",
+  "questions": [
+    {
+      "id": "linguistics-phonetics-and-phonology-001",
+      "q": "In the International Phonetic Alphabet, which symbol represents the voiceless alveolar plosive?",
+      "options": [
+        "[t]",
+        "[d]",
+        "[θ]",
+        "[s]"
+      ],
+      "answer": 0,
+      "explanation": "[t] is the correct symbol for the voiceless alveolar plosive (stop), produced by blocking airflow with the tongue against the alveolar ridge. [d] is the voiced equivalent, [θ] is the voiceless dental fricative, and [s] is the voiceless alveolar fricative, all different manners of articulation."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-002",
+      "q": "What is an allophone?",
+      "options": [
+        "A different pronunciation of the same phoneme in different contexts",
+        "A unit of sound that distinguishes meaning between words",
+        "A sound produced by the lips and teeth together",
+        "A change in vowel quality due to stress"
+      ],
+      "answer": 0,
+      "explanation": "Allophones are different physical realizations of the same abstract phoneme that don't change meaning. For example, the [p] in 'spill' (unaspirated) and 'pill' (aspirated) are allophones of /p/ in English. Option 1 incorrectly describes a phoneme itself, option 3 describes a place of articulation, and option 4 describes vowel shifting."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-003",
+      "q": "Which feature distinguishes the consonants [b] and [p]?",
+      "options": [
+        "Voicing",
+        "Place of articulation",
+        "Manner of articulation",
+        "Nasality"
+      ],
+      "answer": 0,
+      "explanation": "[b] is voiced while [p] is voiceless; both are bilabial stops (same place and manner). Voicing is the key phonological feature that distinguishes minimal pairs like 'bat' and 'pat'. The other options are features they share, not what distinguishes them."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-004",
+      "q": "In English, the [ŋ] sound (as in 'sing') cannot occur at the beginning of a word. What is this constraint called?",
+      "options": [
+        "Phonotactic constraint",
+        "Coarticulation rule",
+        "Syllable weight restriction",
+        "Aspiration rule"
+      ],
+      "answer": 0,
+      "explanation": "Phonotactic constraints specify which sequences of sounds are allowed in a language and where they can appear. [ŋ] is restricted to coda position in English words due to this constraint. Coarticulation refers to overlapping articulation of adjacent sounds, syllable weight involves stress patterns, and aspiration rules involve plosive release."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-005",
+      "q": "What is the primary articulatory difference between a fricative and an affricate?",
+      "options": [
+        "An affricate begins with a stop and releases into a fricative",
+        "A fricative requires lip rounding but an affricate does not",
+        "An affricate is always voiced while a fricative can be either",
+        "A fricative is produced farther back in the mouth than an affricate"
+      ],
+      "answer": 0,
+      "explanation": "Affricates like [tʃ] in 'church' have two phases: an initial stop closure followed by fricative release. Fricatives like [ʃ] maintain continuous turbulent airflow. Option 2 describes rounding (independent feature), option 3 is false (both can be voiced or voiceless), and option 4 describes place variation, not the stop-fricative distinction."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-006",
+      "q": "Which vowel is typically considered the most open/lowest vowel in the vowel quadrilateral?",
+      "options": [
+        "[a]",
+        "[ə]",
+        "[i]",
+        "[u]"
+      ],
+      "answer": 0,
+      "explanation": "[a] (as in 'father') is the lowest, most open front vowel with the jaw most widely opened. [ə] is the central schwa (mid-height), [i] is high-front (most closed), and [u] is high-back (most closed). The vowel quadrilateral maps vowels by height and frontness/backness."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-007",
+      "q": "In syllable structure, what is the onset of the word 'string'?",
+      "options": [
+        "[str]",
+        "[s]",
+        "[st]",
+        "None (it is vowel-initial)"
+      ],
+      "answer": 0,
+      "explanation": "The onset is the initial consonant cluster before the vowel nucleus. In 'string', [str] forms the onset with [ɪ] as the nucleus and [ŋ] as the coda. English allows complex onsets like this; [s] would be too narrow (missing [tr]), and option 4 is incorrect as the word clearly has initial consonants."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-008",
+      "q": "What does aspiration refer to in phonetics?",
+      "options": [
+        "A burst of air released after a voiceless plosive",
+        "The vibration of the vocal cords during phonation",
+        "The nasalization of vowels before nasal consonants",
+        "The lengthening of a vowel in stressed syllables"
+      ],
+      "answer": 0,
+      "explanation": "Aspiration is the audible puff of air (voiceless period) after releasing a voiceless stop, marked with [ʰ]. English [pʰ] in 'pit' is aspirated while [p] in 'spit' is not. Option 2 describes voicing, option 3 describes nasalization, and option 4 describes duration changes."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-009",
+      "q": "Which of the following represents a minimal pair that tests the phonological contrast between nasality?",
+      "options": [
+        "'ban' and 'bad'",
+        "'ban' and 'man'",
+        "'ban' and 'pan'",
+        "'ban' and 'map'"
+      ],
+      "answer": 1,
+      "explanation": "'ban' ([bæn] with final nasal [n]) and 'man' ([mæn] with initial nasal [m]) test the feature [±nasal], though they differ in multiple positions. 'ban'/'bad' differ in final consonant voicing, 'ban'/'pan' differ in initial voicing, and 'ban'/'map' differ in multiple features. Option 1 is closest to showing nasal contrast in the final position."
+    },
+    {
+      "id": "linguistics-phonetics-and-phonology-010",
+      "q": "In English, the vowel sounds in 'fleece' and 'dress' differ primarily in which feature?",
+      "options": [
+        "Height (tenseness)",
+        "Rounding",
+        "Nasality",
+        "Length"
+      ],
+      "answer": 0,
+      "explanation": "The vowel in 'fleece' [i] is high and tense, while 'dress' [ɛ] is mid-front and lax. This height/tenseness distinction is the primary phonological contrast. Both are unrounded front vowels, neither is nasalized, and while length may vary slightly, the primary feature is vowel height."
+    }
+  ]
+}

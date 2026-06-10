@@ -1,0 +1,76 @@
+{
+  "topic": "rivers-and-mountains",
+  "category": "geography",
+  "questions": [
+    {
+      "id": "geography-rivers-and-mountains-001",
+      "q": "What is the longest river in the world?",
+      "options": ["Amazon River", "Yangtze River", "Nile River", "Mississippi River"],
+      "answer": 2,
+      "explanation": "The Nile River is the longest river in the world at about 6,650 km. The Amazon carries more water by volume but is shorter in length."
+    },
+    {
+      "id": "geography-rivers-and-mountains-002",
+      "q": "Which mountain range is the tallest in the world?",
+      "options": ["Andes Mountains", "Rocky Mountains", "Himalayas", "Alps"],
+      "answer": 2,
+      "explanation": "The Himalayas contain Mount Everest, the world's highest peak at 8,849 meters. The Andes is the longest mountain range but not the tallest."
+    },
+    {
+      "id": "geography-rivers-and-mountains-003",
+      "q": "What is the world's highest navigable lake?",
+      "options": ["Lake Baikal", "Lake Superior", "Lake Titicaca", "Dead Sea"],
+      "answer": 2,
+      "explanation": "Lake Titicaca, located between Peru and Bolivia, is the world's highest navigable lake at 3,812 meters elevation. Lake Baikal is deeper but lower in elevation."
+    },
+    {
+      "id": "geography-rivers-and-mountains-004",
+      "q": "Which river is the source of the Nile?",
+      "options": ["Lake Chad", "Lake Victoria", "Lake Tanganyika", "Lake Malawi"],
+      "answer": 1,
+      "explanation": "Lake Victoria is considered the primary source of the Nile River. The Nile begins its journey from this massive lake in East Africa."
+    },
+    {
+      "id": "geography-rivers-and-mountains-005",
+      "q": "What is the largest desert mountain range in the world?",
+      "options": ["Sierra Nevada", "Rockies", "Atlas Mountains", "Andes"],
+      "answer": 2,
+      "explanation": "The Atlas Mountains form the largest desert mountain range, stretching across North Africa. While the Andes are longer overall, the Atlas dominates desert regions."
+    },
+    {
+      "id": "geography-rivers-and-mountains-006",
+      "q": "Which river forms the border between the United States and Mexico?",
+      "options": ["Colorado River", "Rio Grande", "Brazos River", "Pecos River"],
+      "answer": 1,
+      "explanation": "The Rio Grande forms the international border between the United States and Mexico. The Colorado River is important but is largely within the US."
+    },
+    {
+      "id": "geography-rivers-and-mountains-007",
+      "q": "What is the deepest freshwater lake in the world?",
+      "options": ["Lake Superior", "Lake Baikal", "Lake Tanganyika", "Lake Michigan"],
+      "answer": 1,
+      "explanation": "Lake Baikal in Russia is the deepest freshwater lake with a maximum depth of 1,642 meters. Lake Superior is the largest by surface area but shallower."
+    },
+    {
+      "id": "geography-rivers-and-mountains-008",
+      "q": "Which mountain is the highest peak in Africa?",
+      "options": ["Mount Kenya", "Mount Stanley", "Mount Khartoum", "Mount Kilimanjaro"],
+      "answer": 3,
+      "explanation": "Mount Kilimanjaro is the highest peak in Africa at 5,895 meters. While Mount Kenya and Mount Stanley are also tall, Kilimanjaro exceeds them."
+    },
+    {
+      "id": "geography-rivers-and-mountains-009",
+      "q": "What is the second-longest river in the world?",
+      "options": ["Congo River", "Yangtze River", "Mississippi-Missouri River", "Ob River"],
+      "answer": 0,
+      "explanation": "The Congo River is the second-longest river in the world at approximately 4,700 km. The Yangtze is long but ranks differently depending on measurement methods."
+    },
+    {
+      "id": "geography-rivers-and-mountains-010",
+      "q": "Which Andean peak is the highest mountain in South America?",
+      "options": ["Aconcagua", "Ojos del Salado", "Chimborazo", "Huascarán"],
+      "answer": 0,
+      "explanation": "Aconcagua is the highest peak in South America at 6,961 meters, located in Argentina. Ojos del Salado is on the Argentina-Chile border but is slightly lower."
+    }
+  ]
+}

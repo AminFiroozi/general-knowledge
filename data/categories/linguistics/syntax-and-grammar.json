@@ -1,0 +1,126 @@
+{
+  "topic": "syntax-and-grammar",
+  "category": "linguistics",
+  "questions": [
+    {
+      "id": "linguistics-syntax-and-grammar-001",
+      "q": "In the sentence 'The cat chased the mouse,' what is the grammatical function of 'the mouse'?",
+      "options": [
+        "Direct object",
+        "Subject",
+        "Prepositional phrase",
+        "Indirect object"
+      ],
+      "answer": 0,
+      "explanation": "The direct object 'the mouse' receives the action of the verb 'chased'. The subject 'the cat' performs the action, there is no preposition (ruling out prepositional phrase), and no indirect object is present in this sentence."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-002",
+      "q": "Which of the following is a subordinate (dependent) clause?",
+      "options": [
+        "After the movie ended",
+        "She watched the movie",
+        "The actor starred in the film",
+        "He bought popcorn"
+      ],
+      "answer": 0,
+      "explanation": "'After the movie ended' is a subordinate clause introduced by 'after'; it cannot stand alone as a complete sentence. Options 2-4 are all independent clauses that can function as complete sentences, making them main clauses."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-003",
+      "q": "In traditional phrase structure grammar, what is a noun phrase?",
+      "options": [
+        "A phrase centered on a noun that can function as a unit",
+        "Any phrase that contains the word 'noun'",
+        "A single noun without any modifiers",
+        "A verb phrase that modifies a noun"
+      ],
+      "answer": 0,
+      "explanation": "A noun phrase (NP) is a syntactic unit with a noun as its head, potentially including determiners, adjectives, and complements. Examples include 'the big red car' and 'the president of France'. Option 2 is nonsensical, option 3 is too restrictive (ignores modifiers), and option 4 reverses the modification relationship."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-004",
+      "q": "What is the head of the noun phrase 'the tall man with glasses'?",
+      "options": [
+        "man",
+        "tall",
+        "the",
+        "glasses"
+      ],
+      "answer": 0,
+      "explanation": "The head is the central word around which the phrase is organized. 'Man' is the noun around which modifiers ('tall') and prepositional phrases ('with glasses') cluster. 'Tall' is an adjective modifier, 'the' is a determiner, and 'glasses' is the object of the preposition, not the head of the NP."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-005",
+      "q": "In a dependency grammar, what does a dependency relation represent?",
+      "options": [
+        "A directed link from a head word to a dependent word",
+        "The relationship between two nouns in a sentence",
+        "The sequential order of words in a clause",
+        "An agreement in number or gender between words"
+      ],
+      "answer": 0,
+      "explanation": "Dependency relations show grammatical relationships where one word modifies or complements another (head). In 'red car', 'red' depends on 'car'. Option 2 is too narrow (relations occur across all parts of speech), option 3 describes word order, and option 4 describes agreement features."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-006",
+      "q": "Which sentence demonstrates correct subject-verb agreement?",
+      "options": [
+        "The team plays well together",
+        "The team play well together",
+        "Each of the students work diligently",
+        "The jury have reached a verdict"
+      ],
+      "answer": 0,
+      "explanation": "'Team' is a collective noun that takes singular agreement in American English (plays), so option 1 is correct. 'The team play' (option 2) follows British conventions but is non-standard in American English. Options 3 and 4 incorrectly use plural verbs with singular subjects ('each' and 'jury' respectively)."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-007",
+      "q": "In the sentence 'The book that Sarah read yesterday was excellent,' what type of clause is 'that Sarah read yesterday'?",
+      "options": [
+        "Relative (adjective) clause",
+        "Adverbial clause",
+        "Noun clause",
+        "Conditional clause"
+      ],
+      "answer": 0,
+      "explanation": "This relative clause modifies the noun 'book' by specifying which book. Relative clauses function like adjectives. Adverbial clauses modify verbs, noun clauses function as noun complements, and conditional clauses express hypothetical conditions—none apply here."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-008",
+      "q": "What is the primary difference between a transitive verb and an intransitive verb?",
+      "options": [
+        "Transitive verbs require a direct object; intransitive verbs do not",
+        "Transitive verbs are always in the past tense",
+        "Intransitive verbs only appear at the end of sentences",
+        "Transitive verbs cannot take adverbial modifiers"
+      ],
+      "answer": 0,
+      "explanation": "Transitivity concerns argument structure: 'eat' in 'I ate food' is transitive (takes object), while 'sleep' in 'I slept' is intransitive (no object required). Options 2, 3, and 4 incorrectly link transitivity to tense, position, or modification."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-009",
+      "q": "In the sentence 'Quickly, the runner crossed the finish line,' which element is fronted?",
+      "options": [
+        "The adverbial 'quickly'",
+        "The noun phrase 'the runner'",
+        "The verb 'crossed'",
+        "The prepositional phrase 'the finish line'"
+      ],
+      "answer": 0,
+      "explanation": "Fronting moves an element to the front of the clause for emphasis or information structure. 'Quickly' is fronted from its typical position after the verb. The runner is already the subject in its normal position, 'crossed' is in typical verb position, and 'the finish line' is in expected object position."
+    },
+    {
+      "id": "linguistics-syntax-and-grammar-010",
+      "q": "What is a serial verb construction?",
+      "options": [
+        "Multiple verbs appearing in sequence without a coordinating conjunction",
+        "A verb repeated multiple times in the same sentence",
+        "A verb form that changes based on the subject's number",
+        "A clause containing both a main verb and an auxiliary verb"
+      ],
+      "answer": 0,
+      "explanation": "Serial verb constructions (common in languages like Mandarin and many African languages) use multiple verbs in sequence without 'and' or 'or' to express a single predicate. Example: 'go buy rice' (Mandarin) means 'go in order to buy rice'. Option 2 describes repetition without the structural property, option 3 describes inflection, and option 4 describes auxiliary constructions."
+    }
+  ]
+}

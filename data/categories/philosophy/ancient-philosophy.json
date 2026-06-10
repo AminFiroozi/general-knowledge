@@ -1,0 +1,126 @@
+{
+  "topic": "ancient-philosophy",
+  "category": "philosophy",
+  "questions": [
+    {
+      "id": "philosophy-ancient-philosophy-001",
+      "q": "What was Socrates' primary philosophical method, and what did he claim to know?",
+      "options": [
+        "He taught systematic doctrines and claimed complete knowledge of virtue",
+        "He used dialogue to expose ignorance and claimed to know only that he knew nothing",
+        "He conducted experiments to discover natural laws and claimed knowledge of physics",
+        "He wrote comprehensive treatises and claimed knowledge based on careful observation"
+      ],
+      "answer": 1,
+      "explanation": "Socrates used the Socratic method of questioning to examine beliefs and claimed only to know that he knew nothing. Option 0 wrongly suggests he taught doctrines. Option 2 applies to later empiricists. Option 3 doesn't match Socrates' method or claims."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-002",
+      "q": "In Plato's theory of forms, what is the relationship between the physical world and the realm of forms?",
+      "options": [
+        "The physical world is a precise copy of the forms",
+        "The forms are imperfect shadows of the physical world",
+        "Physical objects are imperfect, changing instances of eternal, unchanging forms",
+        "The physical world and the realm of forms are identical"
+      ],
+      "answer": 2,
+      "explanation": "Plato held that forms are eternal and perfect, while physical objects are imperfect, temporary instances participating in those forms. Option 0 reverses the perfection. Option 1 inverts the relationship. Option 3 denies the theory."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-003",
+      "q": "What did Aristotle mean by eudaimonia, and how is it achieved according to his philosophy?",
+      "options": [
+        "The absence of pain and fear, achieved through withdrawal from society",
+        "Pleasure and satisfaction, achieved through the satisfaction of desires",
+        "Human flourishing achieved through the exercise of virtue in accordance with reason",
+        "Divine favor and spiritual transcendence achieved through mystical practices"
+      ],
+      "answer": 2,
+      "explanation": "For Aristotle, eudaimonia is the highest human good, achieved through living virtuously and exercising characteristic human capacities in accordance with reason. Option 0 is Epicureanism. Option 1 is hedonism. Option 3 is religious practice."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-004",
+      "q": "According to the Stoics, what is the ultimate goal of human life?",
+      "options": [
+        "To maximize pleasure and minimize pain",
+        "To achieve virtue and live in accordance with reason and nature",
+        "To attain knowledge of the forms through philosophical contemplation",
+        "To experience mystical union with the divine"
+      ],
+      "answer": 1,
+      "explanation": "Stoics believed virtue was the highest good and achieved through living in accordance with reason and nature. Option 0 is epicureanism. Option 2 applies to Platonism. Option 3 is mysticism, not Stoicism."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-005",
+      "q": "What was the primary concern of pre-Socratic philosophers like Thales, Heraclitus, and Parmenides?",
+      "options": [
+        "Developing a comprehensive ethical theory for human conduct",
+        "Investigating the fundamental nature of reality and what the world is made of",
+        "Establishing methods for political governance and justice",
+        "Understanding the immortality of the soul and the afterlife"
+      ],
+      "answer": 1,
+      "explanation": "Pre-Socratics focused on metaphysics, asking about fundamental substance and change. Option 0 concerns ethics. Option 2 concerns politics. Option 3 concerns metaphysics but was not their primary focus."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-006",
+      "q": "Heraclitus claimed that reality is characterized by constant flux. What did this imply about permanence?",
+      "options": [
+        "Some things are permanent while others change",
+        "Nothing is permanent; everything is in constant change, and stability is an illusion",
+        "Change is illusory; permanence is the fundamental nature of reality",
+        "Permanence requires static matter that never transitions to other forms"
+      ],
+      "answer": 1,
+      "explanation": "Heraclitus held that everything flows and changes constantly; permanence is illusory. Option 0 allows for some permanence. Option 2 contradicts Heraclitus. Option 3 is incompatible with flux."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-007",
+      "q": "What was Parmenides' main argument about being and non-being?",
+      "options": [
+        "Both being and non-being exist equally and interact",
+        "Being is eternal, unchanging, and indivisible; non-being is impossible",
+        "Non-being dominates reality while being is rare and temporary",
+        "Being and non-being alternate in cycles of creation and destruction"
+      ],
+      "answer": 1,
+      "explanation": "Parmenides argued that being must be eternal and unchanging because non-being is impossible and change would require non-being. Option 0 allows non-being. Option 2 inverts his view. Option 3 implies change through non-being."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-008",
+      "q": "In Plato's allegory of the cave, what do the prisoners chained in the cave represent?",
+      "options": [
+        "Philosophers who have achieved knowledge of the forms",
+        "Ordinary people trapped in ignorance, perceiving only shadows of reality",
+        "The political rulers who justly govern the state",
+        "The souls before birth in the realm of forms"
+      ],
+      "answer": 1,
+      "explanation": "The prisoners represent humanity in ignorance, perceiving only shadows as reality. The escaped prisoner represents the philosopher ascending to knowledge of the forms. Option 0 describes the freed prisoner. Option 2 misses the epistemological point. Option 3 confuses the realm of forms with the cave."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-009",
+      "q": "What was the primary difference between Epicureanism and Stoicism as practical philosophies?",
+      "options": [
+        "Epicureanism required celibacy while Stoicism permitted marriage",
+        "Epicureanism emphasized pleasure and prudent satisfaction while Stoicism emphasized virtue and accepting fate",
+        "Epicureanism was for the wealthy while Stoicism was for the poor",
+        "Epicureanism rejected science while Stoicism embraced it"
+      ],
+      "answer": 1,
+      "explanation": "Epicureanism (properly understood) advocated modest pleasures and prudence, while Stoicism stressed virtue and cosmic fate. Option 0 is false. Option 2 wrongly limits appeal. Option 3 reverses their positions on science."
+    },
+    {
+      "id": "philosophy-ancient-philosophy-010",
+      "q": "According to Aristotle, what is the relationship between form and matter in a substance?",
+      "options": [
+        "Form is illusory; only matter is real",
+        "Matter and form are identical",
+        "Form and matter are distinct but inseparable; substance is the composite of both",
+        "Form exists in a separate realm while matter is in the physical world"
+      ],
+      "answer": 2,
+      "explanation": "Aristotle's hylomorphism holds that substances are composites of form and matter, both real but inseparable. Option 0 is materialism. Option 1 denies their distinction. Option 3 describes Plato's dualism, not Aristotle's view."
+    }
+  ]
+}

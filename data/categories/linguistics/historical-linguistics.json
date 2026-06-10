@@ -1,0 +1,126 @@
+{
+  "topic": "historical-linguistics",
+  "category": "linguistics",
+  "questions": [
+    {
+      "id": "linguistics-historical-linguistics-001",
+      "q": "What is the Indo-European language family?",
+      "options": [
+        "A hypothesized ancient family of languages from which many modern European and Asian languages descend",
+        "Languages spoken only in European countries",
+        "A modern artificial language created in the 20th century",
+        "Languages that are currently spoken in India and Europe only"
+      ],
+      "answer": 0,
+      "explanation": "Indo-European is a reconstructed ancestral language family including English, Romance languages, Germanic languages, and Sanskrit. Its speakers likely lived on the steppes around 4000 BCE. Option 2 is too geographically restrictive, option 3 is false (it's ancient), and option 4 misses major branches in Asia and other regions."
+    },
+    {
+      "id": "linguistics-historical-linguistics-002",
+      "q": "What is the Neogrammarian Hypothesis?",
+      "options": [
+        "The principle that sound changes operate regularly and without exception",
+        "The idea that all languages are derived from a single universal grammar",
+        "A theory that grammar cannot change over time",
+        "The belief that written language is more important than spoken language"
+      ],
+      "answer": 0,
+      "explanation": "The Neogrammarians (19th-century linguists) proposed that phonological changes are regular and exceptionless—'sound laws' apply consistently. Exceptions are explained through analogy or other processes. Options 2-4 misrepresent the hypothesis or confuse it with unrelated theories."
+    },
+    {
+      "id": "linguistics-historical-linguistics-003",
+      "q": "In historical linguistics, what is a cognate?",
+      "options": [
+        "Words in different languages that evolved from the same ancestral word",
+        "A word that has multiple meanings within a single language",
+        "A word borrowed from another language very recently",
+        "A word that is spelled identically in two different languages"
+      ],
+      "answer": 0,
+      "explanation": "Cognates are words in different languages descended from a common ancestor, like English 'father' and German 'Vater' from Proto-Indo-European. They often have similar form and meaning. Option 2 describes polysemy, option 3 describes recent loanwords, and option 4 describes accidental similarities."
+    },
+    {
+      "id": "linguistics-historical-linguistics-004",
+      "q": "What is the Great Vowel Shift?",
+      "options": [
+        "A major change in English vowel pronunciation that occurred between 1300-1700 CE",
+        "The process by which all vowels in English became silent",
+        "The invention of vowel letters in the Roman alphabet",
+        "A sound change that occurs in the speech of each individual person"
+      ],
+      "answer": 0,
+      "explanation": "The Great Vowel Shift was a systematic change in Middle English vowel pronunciation (e.g., /iː/ became /aɪ/ as in 'bite'). This explains why English spelling is irregular—it reflects pre-shift pronunciation. Options 2-4 mischaracterize the phenomenon."
+    },
+    {
+      "id": "linguistics-historical-linguistics-005",
+      "q": "What is etymology?",
+      "options": [
+        "The study of the origin and historical development of words",
+        "The collection of all words in a language at one point in time",
+        "The process of teaching people how to spell correctly",
+        "A theory about which words are borrowed versus native"
+      ],
+      "answer": 0,
+      "explanation": "Etymology traces a word's origins through time, showing how it entered a language and changed meaning or form. For example, 'restaurant' comes from French 'restaurer' (to restore). Option 2 describes a lexicon, option 3 describes spelling instruction, and option 4 is too narrow."
+    },
+    {
+      "id": "linguistics-historical-linguistics-006",
+      "q": "What is the comparative method in historical linguistics?",
+      "options": [
+        "A technique for comparing related languages to reconstruct an ancestral language",
+        "A way of measuring which language is superior to another",
+        "A method for determining the age of speakers of a language",
+        "A way to evaluate whether written language matches spoken language"
+      ],
+      "answer": 0,
+      "explanation": "The comparative method identifies systematic correspondences between languages to reconstruct proto-forms and trace language divergence. For example, comparing English, German, and Dutch reveals shared Germanic ancestry. Options 2-4 misapply or misunderstand the method."
+    },
+    {
+      "id": "linguistics-historical-linguistics-007",
+      "q": "What is a language family?",
+      "options": [
+        "A group of languages descended from a common ancestral language",
+        "Languages spoken by members of the same family",
+        "Languages that currently influence each other through contact",
+        "Languages invented by members of one ethnic group"
+      ],
+      "answer": 0,
+      "explanation": "Language families group languages by genetic descent from a proto-language, like Romance languages (from Latin) or Bantu languages. Option 2 is sociological not genetic, option 3 describes contact linguistics, and option 4 confuses ethnicity with linguistic descent."
+    },
+    {
+      "id": "linguistics-historical-linguistics-008",
+      "q": "What is analogy in historical linguistics?",
+      "options": [
+        "A language change where a word's form is reshaped to match patterns of similar words",
+        "A similarity between two unrelated languages",
+        "The process of literal translation from one language to another",
+        "A metaphor used to explain a grammatical concept"
+      ],
+      "answer": 0,
+      "explanation": "Analogy reshapes irregular forms based on regular patterns. For example, English 'help' had past tense 'holp' but became 'helped' by analogy with regular -ed forms. Options 2-4 describe unrelated concepts."
+    },
+    {
+      "id": "linguistics-historical-linguistics-009",
+      "q": "Which of the following is an example of a loanword?",
+      "options": [
+        "English 'café' borrowed from French",
+        "English 'run' inherited from Proto-Germanic",
+        "English 'dog' inherited from Old English",
+        "English 'big' which changed meaning over time"
+      ],
+      "answer": 0,
+      "explanation": "A loanword is borrowed from another language, often through contact. 'Café' entered English from French relatively recently. Options 2-3 are inherited words from ancestral languages, and option 4 describes semantic change, not borrowing."
+    },
+    {
+      "id": "linguistics-historical-linguistics-010",
+      "q": "What is lenition?",
+      "options": [
+        "A sound change where a consonant becomes weaker or more sonorous",
+        "The addition of new sounds to a language over time",
+        "The process of making a language extinct",
+        "A grammatical change from one tense to another"
+      ],
+      "answer": 0,
+      "explanation": "Lenition is a type of sound change where consonants weaken: /t/ might become /d/ then /ð/ then disappear. This is common in historical sound change. Option 2 describes sound addition, option 3 describes language death, and option 4 describes inflectional change."
+    }
+  ]
+}

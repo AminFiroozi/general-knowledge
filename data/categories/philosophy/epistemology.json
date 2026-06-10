@@ -1,0 +1,126 @@
+{
+  "topic": "epistemology",
+  "category": "philosophy",
+  "questions": [
+    {
+      "id": "philosophy-epistemology-001",
+      "q": "In epistemology, what does the term 'justified true belief' refer to?",
+      "options": [
+        "A belief that is consistent with scientific evidence",
+        "A belief that is held with certainty and cannot be doubted",
+        "A belief that is true and held for good reasons, traditionally considered a condition for knowledge",
+        "A belief shared by the majority of members in a community"
+      ],
+      "answer": 2,
+      "explanation": "The justified true belief (JTB) account of knowledge requires that a belief be true and the believer have adequate justification for it. This became the standard analysis until Gettier's counterexamples. Option 0 limits to scientific beliefs. Option 1 adds an impossible certainty requirement. Option 3 uses popularity as justification."
+    },
+    {
+      "id": "philosophy-epistemology-002",
+      "q": "What does radical skepticism claim?",
+      "options": [
+        "We should doubt only those beliefs that contradict empirical evidence",
+        "We lack knowledge of most external world facts because we cannot rule out systematic deception",
+        "Scientific theories are unreliable and should be replaced with intuition",
+        "Certainty is possible only in mathematics and logic"
+      ],
+      "answer": 1,
+      "explanation": "Radical skepticism argues that because we cannot definitively rule out evil demons or brain-in-vat scenarios, we cannot have knowledge of external reality. Option 0 is moderate skepticism. Option 2 is anti-scientific. Option 3 is too narrow and doesn't capture radical skepticism's scope."
+    },
+    {
+      "id": "philosophy-epistemology-003",
+      "q": "According to rationalism, what is the primary source of knowledge?",
+      "options": [
+        "Sensory experience and empirical observation",
+        "Reason and innate ideas or rational intuition",
+        "Social consensus and communal agreement",
+        "Religious faith and divine revelation"
+      ],
+      "answer": 1,
+      "explanation": "Rationalists like Descartes, Leibniz, and Spinoza held that reason and innate ideas provide the foundation for knowledge, especially of necessary truths. Option 0 describes empiricism. Option 2 and 3 are other sources but not the rationalist view."
+    },
+    {
+      "id": "philosophy-epistemology-004",
+      "q": "What is a key criticism of empiricism from rationalist philosophers?",
+      "options": [
+        "Empiricism cannot account for universal and necessary truths like mathematical principles",
+        "Empiricism relies on intuition and innate ideas that experience cannot justify",
+        "Empiricism is inconsistent with the social construction of knowledge",
+        "Empiricism cannot explain why some people are better at observation than others"
+      ],
+      "answer": 0,
+      "explanation": "Rationalists argue that universal, necessary truths in mathematics and logic cannot be derived from particular sensory experiences alone. Option 1 reverses the criticism. Options 2 and 3 are different concerns not central to the rationalist-empiricist debate."
+    },
+    {
+      "id": "philosophy-epistemology-005",
+      "q": "In Edmund Gettier's analysis, what problem did he identify with the justified true belief account of knowledge?",
+      "options": [
+        "Justified true beliefs are too rare to provide a useful definition of knowledge",
+        "Justification is impossible to achieve given the underdetermination of theory by evidence",
+        "It is possible to have a justified true belief without having knowledge, through certain lucky coincidences",
+        "The concept of truth itself is incoherent and cannot ground a definition of knowledge"
+      ],
+      "answer": 2,
+      "explanation": "Gettier showed cases where someone has a justified true belief but the belief seems not to constitute knowledge because the justification's connection to truth is accidental. His famous example involves a justified false belief in the justification process. Options 0, 1, and 3 represent different objections."
+    },
+    {
+      "id": "philosophy-epistemology-006",
+      "q": "What does foundationalism claim about the structure of justified beliefs?",
+      "options": [
+        "All beliefs must be proven through deductive logical argument",
+        "Some basic beliefs serve as foundations, with other beliefs justified by their relation to these foundations",
+        "Beliefs form a coherent web where no belief has special foundational status",
+        "Justification requires appeal to an infinite chain of further justifications"
+      ],
+      "answer": 1,
+      "explanation": "Foundationalism posits that some basic or self-justifying beliefs ground others, avoiding infinite regress. Option 0 requires deduction for all. Option 2 describes coherentism. Option 3 describes an infinite regress problem rather than a solution."
+    },
+    {
+      "id": "philosophy-epistemology-007",
+      "q": "According to reliabilism, what makes a belief justified?",
+      "options": [
+        "The belief is consistent with other beliefs in the person's system",
+        "The belief is produced by a reliable cognitive process that generally produces true beliefs",
+        "The belief conforms to standards set by experts in the relevant domain",
+        "The belief has been scrutinized and agreed upon by a community"
+      ],
+      "answer": 1,
+      "explanation": "Reliabilism, developed by Goldman, grounds justification in the reliability of belief-forming processes rather than the structure of beliefs. Option 0 is coherentism. Options 2 and 3 appeal to external authority rather than process reliability."
+    },
+    {
+      "id": "philosophy-epistemology-008",
+      "q": "What is the difference between knowledge and justified true belief according to contemporary epistemology post-Gettier?",
+      "options": [
+        "There is no difference; Gettier's examples were mistaken",
+        "Knowledge requires an additional component beyond justified true belief, such as proper grounding or reliability",
+        "Knowledge is less demanding than justified true belief because certainty is impossible",
+        "Knowledge applies only to mathematical and logical truths, while justified true belief applies to empirical matters"
+      ],
+      "answer": 1,
+      "explanation": "After Gettier, epistemologists sought to add further conditions to JTB, such as causal connections, proper grounding, or process reliability. Option 0 denies the problem exists. Option 2 reverses the relationship. Option 3 wrongly restricts knowledge's domain."
+    },
+    {
+      "id": "philosophy-epistemology-009",
+      "q": "What does the Münchhausen trilemma argue about justification?",
+      "options": [
+        "Certainty requires foundational beliefs that are self-evident to all rational beings",
+        "Knowledge of the external world is impossible due to the problem of skepticism",
+        "Justification must either be circular, infinite, or rest on unjustified foundations",
+        "Empirical knowledge is always less certain than mathematical knowledge"
+      ],
+      "answer": 2,
+      "explanation": "The trilemma presents three horns: circular justification, infinite regress, or foundational appeals. This problem lies at the heart of debates between foundationalism, coherentism, and infinite regress objections. Options 0, 1, and 3 are different epistemological problems."
+    },
+    {
+      "id": "philosophy-epistemology-010",
+      "q": "What is a priori knowledge, and how does it differ from a posteriori knowledge?",
+      "options": [
+        "A priori knowledge is knowledge of the past; a posteriori is knowledge of the future",
+        "A priori knowledge is justified independent of sensory experience; a posteriori knowledge requires empirical observation",
+        "A priori knowledge is certain; a posteriori knowledge is probabilistic",
+        "A priori knowledge comes from reason; a posteriori knowledge comes from authority"
+      ],
+      "answer": 1,
+      "explanation": "A priori knowledge (like mathematical truths) is justified independent of experience, while a posteriori knowledge requires empirical evidence. Option 0 confuses temporal ordering with epistemic justification. Option 2 wrongly equates justification type with certainty level. Option 3 mischaracterizes both categories."
+    }
+  ]
+}

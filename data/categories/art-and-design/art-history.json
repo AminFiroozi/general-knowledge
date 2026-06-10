@@ -1,0 +1,126 @@
+{
+  "topic": "art-history",
+  "category": "art-and-design",
+  "questions": [
+    {
+      "id": "art-and-design-art-history-001",
+      "q": "Which art movement, emerging in 14th century Italy, marked a shift toward realism and humanism, featuring works by Giotto and Botticelli?",
+      "options": [
+        "Renaissance",
+        "Gothic",
+        "Romanticism",
+        "Neoclassicism"
+      ],
+      "answer": 0,
+      "explanation": "The Renaissance (14th–17th centuries) originated in Italy and emphasized realism, perspective, and human subjects. Gothic was the medieval period preceding it, while Romanticism and Neoclassicism came much later."
+    },
+    {
+      "id": "art-and-design-art-history-002",
+      "q": "Impressionism, pioneered by artists like Monet and Renoir, focused on capturing what visual element through loose brushwork and light?",
+      "options": [
+        "Precise anatomical detail",
+        "The effects of light and momentary impressions",
+        "Religious narrative and symbolism",
+        "Mathematical perspective and symmetry"
+      ],
+      "answer": 1,
+      "explanation": "Impressionist painters emphasized fleeting light effects and sensory impressions rather than precise details. The movement rejected academic realism and religious themes, focusing instead on color and luminosity."
+    },
+    {
+      "id": "art-and-design-art-history-003",
+      "q": "Cubism, developed by Picasso and Braque in the early 20th century, revolutionized art by representing objects from which perspective?",
+      "options": [
+        "A single vanishing point",
+        "Multiple simultaneous viewpoints",
+        "Strict linear perspective",
+        "Atmospheric perspective only"
+      ],
+      "answer": 1,
+      "explanation": "Cubism depicted objects from multiple viewpoints at once, fragmenting and reassembling forms on the canvas. This broke from Renaissance perspective, which used a single vanishing point."
+    },
+    {
+      "id": "art-and-design-art-history-004",
+      "q": "The Baroque period (17th–18th centuries) is characterized by dramatic lighting, emotional intensity, and ornate decoration. Which artist is a key Baroque master?",
+      "options": [
+        "Leonardo da Vinci",
+        "Caravaggio",
+        "Andy Warhol",
+        "Wassily Kandinsky"
+      ],
+      "answer": 1,
+      "explanation": "Caravaggio (1571–1610) exemplified Baroque style with his dramatic use of chiaroscuro (light-dark contrast) and intense emotions. Da Vinci was Renaissance, while Warhol and Kandinsky belong to modern movements."
+    },
+    {
+      "id": "art-and-design-art-history-005",
+      "q": "Which historical period in Western art, spanning roughly the 5th to 15th centuries, produced pointed arches, ribbed vaults, and illuminated manuscripts?",
+      "options": [
+        "Medieval/Gothic",
+        "Classical Antiquity",
+        "Rococo",
+        "Abstract Expressionism"
+      ],
+      "answer": 0,
+      "explanation": "The Medieval/Gothic period (5th–15th centuries) created distinctive architectural features and intricate manuscript art. Classical Antiquity preceded it, while Rococo and Abstract Expressionism came much later."
+    },
+    {
+      "id": "art-and-design-art-history-006",
+      "q": "Surrealism, emerging in the 1920s, drew inspiration from dreams and the unconscious mind. Which artist painted melting clocks in 'The Persistence of Memory'?",
+      "options": [
+        "Max Ernst",
+        "Joan Miró",
+        "Salvador Dalí",
+        "René Magritte"
+      ],
+      "answer": 2,
+      "explanation": "Salvador Dalí's 'The Persistence of Memory' (1931) features iconic melting clocks symbolizing the fluidity of time and dreams. Though other surrealists like Ernst and Miró created dreamlike works, Dalí is famous for this specific iconic image."
+    },
+    {
+      "id": "art-and-design-art-history-007",
+      "q": "The Pre-Raphaelite movement of the 19th century rejected academic tradition and sought to return to art before which historical figure?",
+      "options": [
+        "Giotto",
+        "Raphael",
+        "Caravaggio",
+        "Michelangelo"
+      ],
+      "answer": 1,
+      "explanation": "Pre-Raphaelites deliberately named themselves to reference the period before Raphael, seeking to revive medieval and early Renaissance aesthetics rather than following academic conventions that developed after Raphael's era."
+    },
+    {
+      "id": "art-and-design-art-history-008",
+      "q": "Expressionism, prominent in early 20th-century Europe, prioritized subjective emotion over objective reality. Which painting movement emphasized bold color and distorted forms?",
+      "options": [
+        "Academicism",
+        "Expressionism",
+        "Photorealism",
+        "Minimalism"
+      ],
+      "answer": 1,
+      "explanation": "Expressionism deliberately distorted reality to convey emotional intensity through exaggerated color and form. Academicism valued technical precision, Photorealism pursued exact representation, and Minimalism reduced art to essential forms."
+    },
+    {
+      "id": "art-and-design-art-history-009",
+      "q": "The Art Deco movement of the 1920s–1930s emphasized which design qualities alongside geometric abstraction?",
+      "options": [
+        "Ornate naturalism and romantic symbolism",
+        "Geometric forms, luxury materials, and streamlined modernity",
+        "Religious iconography and medieval craftsmanship",
+        "Spontaneous gesture and drip painting"
+      ],
+      "answer": 1,
+      "explanation": "Art Deco combined geometric simplicity with luxurious materials (metals, marble, lacquer) and streamlined forms reflecting the machine age. It rejected both ornate naturalism and abstract expressionism."
+    },
+    {
+      "id": "art-and-design-art-history-010",
+      "q": "Which art movement of the 1950s–1960s celebrated mass production, consumerism, and imagery from advertising and popular culture?",
+      "options": [
+        "Dadaism",
+        "Futurism",
+        "Pop Art",
+        "Constructivism"
+      ],
+      "answer": 2,
+      "explanation": "Pop Art elevated commercial imagery and mass culture as worthy artistic subjects, with artists like Warhol and Lichtenstein using commercial techniques. Dadaism was anti-art, Futurism celebrated speed and violence, and Constructivism was politically motivated Soviet design."
+    }
+  ]
+}

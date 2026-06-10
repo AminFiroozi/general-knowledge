@@ -1,0 +1,126 @@
+{
+  "topic": "macroeconomics",
+  "category": "economics",
+  "questions": [
+    {
+      "id": "economics-macroeconomics-001",
+      "q": "Which of the following is included in a country's Gross Domestic Product (GDP)?",
+      "options": [
+        "Value of domestically produced final goods and services in a given year",
+        "Total income earned by citizens regardless of location",
+        "Total wealth accumulated by the nation over all time",
+        "All financial transactions including stock market trades"
+      ],
+      "answer": 0,
+      "explanation": "GDP measures the market value of final goods and services produced within a country during a specific period. Option B describes Gross National Income (location of earner, not production). Stock market trades (option D) represent transfers of existing assets, not new production, so they're excluded from GDP."
+    },
+    {
+      "id": "economics-macroeconomics-002",
+      "q": "Inflation is defined as:",
+      "options": [
+        "A sustained increase in the general price level of goods and services over time",
+        "An increase in the quantity of money in the economy",
+        "A decrease in the purchasing power of savings",
+        "An increase in the cost of imported goods"
+      ],
+      "answer": 0,
+      "explanation": "Inflation describes the rate at which average prices rise, reducing each unit of money's purchasing power. While inflation often accompanies money supply increases (option B), the increase in money is a potential cause, not the definition. Purchasing power decline (option C) is a consequence, not the definition."
+    },
+    {
+      "id": "economics-macroeconomics-003",
+      "q": "The natural rate of unemployment represents:",
+      "options": [
+        "The rate of unemployment when the economy is at full employment with only frictional and structural unemployment",
+        "Zero percent unemployment, meaning no one is jobless",
+        "The maximum unemployment rate a country can sustain",
+        "The average unemployment rate over the past 10 years"
+      ],
+      "answer": 0,
+      "explanation": "The natural rate (around 4-5% in developed economies) includes frictional unemployment (job search) and structural unemployment (skill mismatches), but excludes cyclical unemployment from recessions. It represents full employment capacity. Option B is impossible due to normal job transitions; option C confuses maximum with natural rate."
+    },
+    {
+      "id": "economics-macroeconomics-004",
+      "q": "Expansionary fiscal policy typically includes:",
+      "options": [
+        "Increased government spending and/or decreased taxes to stimulate economic growth",
+        "Decreased government spending and increased taxes to reduce inflation",
+        "A reduction in the money supply to control price increases",
+        "Increasing interest rates to make borrowing more expensive"
+      ],
+      "answer": 0,
+      "explanation": "Expansionary policy aims to boost aggregate demand during weak economic periods. Increased spending and lower taxes both leave more money in the economy. Option B describes contractionary fiscal policy. Options C and D describe monetary policy tools, not fiscal policy."
+    },
+    {
+      "id": "economics-macroeconomics-005",
+      "q": "What does the business cycle typically consist of?",
+      "options": [
+        "Periods of expansion, peak, contraction, and trough",
+        "Only expansion and recession phases",
+        "A steady state with no fluctuations",
+        "Random economic movements unrelated to each other"
+      ],
+      "answer": 0,
+      "explanation": "The business cycle has four standard phases: expansion (rising output), peak (maximum point), contraction/recession (falling output), and trough (lowest point). Option B omits the peak and trough. Option C ignores the reality of economic fluctuations that characterize modern economies."
+    },
+    {
+      "id": "economics-macroeconomics-006",
+      "q": "Stagflation refers to an economic condition with:",
+      "options": [
+        "High inflation and high unemployment occurring simultaneously",
+        "Very low inflation with very low unemployment",
+        "High inflation with falling unemployment",
+        "High unemployment with falling inflation"
+      ],
+      "answer": 0,
+      "explanation": "Stagflation combines stagn­ation (high unemployment) with inflation, an unusual but difficult condition experienced in the 1970s. Normal Phillips curve relationship suggests inverse unemployment-inflation tradeoff, making simultaneous high rates problematic. Option B describes favorable conditions; option C and D describe normal tradeoffs."
+    },
+    {
+      "id": "economics-macroeconomics-007",
+      "q": "According to the quantity theory of money, if the money supply doubles and velocity and output remain constant, what happens to the price level?",
+      "options": [
+        "The price level approximately doubles",
+        "The price level remains unchanged",
+        "The price level falls by half",
+        "The price level increases by less than 50%"
+      ],
+      "answer": 0,
+      "explanation": "The equation of exchange (MV = PQ) shows money supply × velocity = price level × quantity. If M doubles while V and Q stay constant, P must double to maintain equality. This illustrates the long-run relationship between money growth and inflation, though short-run effects are more complex."
+    },
+    {
+      "id": "economics-macroeconomics-008",
+      "q": "Crowding out occurs when:",
+      "options": [
+        "Increased government spending raises interest rates, reducing private investment",
+        "Government spending completely eliminates private sector activity",
+        "Consumers reduce spending due to lower taxes",
+        "The central bank reduces the money supply"
+      ],
+      "answer": 0,
+      "explanation": "Crowding out happens when government borrowing to finance spending drives up interest rates in the loanable funds market, making private borrowing more expensive and reducing private investment. Option B overstates the effect—complete elimination rarely occurs. Options C and D describe different mechanisms than crowding out."
+    },
+    {
+      "id": "economics-macroeconomics-009",
+      "q": "The aggregate demand curve slopes downward because:",
+      "options": [
+        "Higher price levels reduce real wealth and purchasing power, decreasing consumption and investment",
+        "Consumers always buy less when prices increase",
+        "The government reduces spending when inflation rises",
+        "Supply constraints force producers to raise prices"
+      ],
+      "answer": 0,
+      "explanation": "The AD curve slopes down due to three effects: real wealth effect (higher prices reduce real asset value), interest rate effect (higher prices increase money demand, raising rates), and net exports effect (higher domestic prices reduce exports). Option B confuses individual good demand curves with aggregate demand, which involves price-level changes, not individual price effects."
+    },
+    {
+      "id": "economics-macroeconomics-010",
+      "q": "Which situation would cause the aggregate supply curve to shift leftward in the short run?",
+      "options": [
+        "An increase in the price of oil used in production",
+        "A decrease in the general price level",
+        "An increase in government spending",
+        "An improvement in technology"
+      ],
+      "answer": 0,
+      "explanation": "A leftward AS shift indicates decreased supply capacity. Oil price increases raise production costs, reducing output at each price level. Option B describes movement along the curve, not a shift. Option C affects demand, not supply. Option D shifts AS rightward by improving productivity."
+    }
+  ]
+}

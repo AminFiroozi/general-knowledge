@@ -1,0 +1,76 @@
+{
+  "topic": "world-capitals",
+  "category": "geography",
+  "questions": [
+    {
+      "id": "geography-world-capitals-001",
+      "q": "What is the capital of Australia?",
+      "options": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+      "answer": 2,
+      "explanation": "Canberra is Australia's capital city, purpose-built as a compromise between rival cities Sydney and Melbourne. Sydney and Melbourne are major cities but not the capital."
+    },
+    {
+      "id": "geography-world-capitals-002",
+      "q": "Which city is the capital of Brazil?",
+      "options": ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"],
+      "answer": 2,
+      "explanation": "Brasília is the capital of Brazil, built in the 1960s as a planned city in the interior. Rio de Janeiro and São Paulo are more famous but are not the capital."
+    },
+    {
+      "id": "geography-world-capitals-003",
+      "q": "What is the capital of Canada?",
+      "options": ["Toronto", "Vancouver", "Montreal", "Ottawa"],
+      "answer": 3,
+      "explanation": "Ottawa is Canada's capital city. Toronto is the largest city, and Vancouver and Montreal are major population centers, but Ottawa is the capital."
+    },
+    {
+      "id": "geography-world-capitals-004",
+      "q": "Which city serves as the capital of South Africa?",
+      "options": ["Cape Town", "Johannesburg", "Pretoria", "Durban"],
+      "answer": 2,
+      "explanation": "Pretoria is the executive capital of South Africa. South Africa has three capitals: Pretoria (executive), Cape Town (legislative), and Bloemfontein (judicial)."
+    },
+    {
+      "id": "geography-world-capitals-005",
+      "q": "What is the capital of New Zealand?",
+      "options": ["Auckland", "Wellington", "Christchurch", "Dunedin"],
+      "answer": 1,
+      "explanation": "Wellington is the capital of New Zealand, located at the southern tip of the North Island. Auckland is the largest city but not the capital."
+    },
+    {
+      "id": "geography-world-capitals-006",
+      "q": "Which city is the capital of Egypt?",
+      "options": ["Alexandria", "Giza", "Cairo", "Luxor"],
+      "answer": 2,
+      "explanation": "Cairo is the capital and largest city of Egypt. Alexandria is a major Mediterranean port city but not the capital."
+    },
+    {
+      "id": "geography-world-capitals-007",
+      "q": "What is the capital of Thailand?",
+      "options": ["Phuket", "Chiang Mai", "Bangkok", "Pattaya"],
+      "answer": 2,
+      "explanation": "Bangkok is the capital and largest city of Thailand. Phuket and Pattaya are popular tourist destinations but not the capital."
+    },
+    {
+      "id": "geography-world-capitals-008",
+      "q": "Which city is the capital of Sweden?",
+      "options": ["Gothenburg", "Malmö", "Stockholm", "Uppsala"],
+      "answer": 2,
+      "explanation": "Stockholm is the capital of Sweden, built on 14 islands. Gothenburg and Malmö are major cities but not the capital."
+    },
+    {
+      "id": "geography-world-capitals-009",
+      "q": "What is the capital of Argentina?",
+      "options": ["Córdoba", "Rosario", "Buenos Aires", "Mendoza"],
+      "answer": 2,
+      "explanation": "Buenos Aires is the capital and largest city of Argentina, known as the 'Paris of South America'. Córdoba is the second-largest city but not the capital."
+    },
+    {
+      "id": "geography-world-capitals-010",
+      "q": "Which city is the capital of Greece?",
+      "options": ["Thessaloniki", "Patras", "Athens", "Larissa"],
+      "answer": 2,
+      "explanation": "Athens is the capital of Greece and one of the world's oldest inhabited cities. Thessaloniki is the second-largest city but not the capital."
+    }
+  ]
+}

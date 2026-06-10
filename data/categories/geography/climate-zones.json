@@ -1,0 +1,76 @@
+{
+  "topic": "climate-zones",
+  "category": "geography",
+  "questions": [
+    {
+      "id": "geography-climate-zones-001",
+      "q": "Which latitude range defines the tropical climate zone?",
+      "options": ["45°N to 45°S", "23.5°N to 23.5°S", "66.5°N to 66.5°S", "35°N to 35°S"],
+      "answer": 1,
+      "explanation": "The tropical zone is between 23.5°N and 23.5°S latitude, between the Tropic of Cancer and Tropic of Capricorn. This region receives direct overhead sun year-round."
+    },
+    {
+      "id": "geography-climate-zones-002",
+      "q": "What is the primary characteristic of a desert climate?",
+      "options": ["Low precipitation", "High altitude", "Proximity to oceans", "Dense vegetation"],
+      "answer": 0,
+      "explanation": "Desert climates are defined by low precipitation, typically under 250mm annually. High altitude and ocean proximity are not the defining features of deserts."
+    },
+    {
+      "id": "geography-climate-zones-003",
+      "q": "Which climate zone experiences four distinct seasons with moderate temperatures?",
+      "options": ["Tropical", "Polar", "Temperate", "Desert"],
+      "answer": 2,
+      "explanation": "The temperate climate zone has four distinct seasons with moderate temperatures. Tropical zones have little seasonal variation, and polar zones are extremely cold."
+    },
+    {
+      "id": "geography-climate-zones-004",
+      "q": "What does the 'A' classification in Köppen climate system represent?",
+      "options": ["Tropical climates", "Desert climates", "Temperate climates", "Polar climates"],
+      "answer": 0,
+      "explanation": "In the Köppen system, 'A' represents tropical climates. 'B' is desert, 'C' is temperate, and 'E' is polar."
+    },
+    {
+      "id": "geography-climate-zones-005",
+      "q": "Which region experiences the most extreme temperature variations in the world?",
+      "options": ["Tropical rainforests", "Continental interiors", "Coastal areas", "Equatorial regions"],
+      "answer": 1,
+      "explanation": "Continental interiors, far from moderating ocean influences, experience extreme temperature variations between summer and winter. Coastal areas are moderated by oceans."
+    },
+    {
+      "id": "geography-climate-zones-006",
+      "q": "What type of climate classification is Köppen's system based on?",
+      "options": ["Latitude only", "Longitude only", "Temperature and precipitation", "Altitude and wind"],
+      "answer": 2,
+      "explanation": "The Köppen system classifies climates based on temperature and precipitation patterns throughout the year. It's not based on latitude alone or altitude."
+    },
+    {
+      "id": "geography-climate-zones-007",
+      "q": "Which climate zone is characterized by permafrost and low precipitation?",
+      "options": ["Taiga", "Tundra", "Steppe", "Temperate"],
+      "answer": 1,
+      "explanation": "Tundra regions have permafrost and very low precipitation. Taiga is the boreal forest zone which is warmer than tundra."
+    },
+    {
+      "id": "geography-climate-zones-008",
+      "q": "What is a monsoon climate primarily characterized by?",
+      "options": ["Year-round rain", "Seasonal wind patterns bringing heavy rainfall", "No seasonal variation", "Constant drought"],
+      "answer": 1,
+      "explanation": "Monsoon climates are characterized by seasonal reversal of winds that bring heavy rainfall during the wet season. This creates distinct wet and dry periods."
+    },
+    {
+      "id": "geography-climate-zones-009",
+      "q": "Which climate type has high temperatures and moderate to high rainfall throughout the year?",
+      "options": ["Temperate oceanic", "Tropical rainforest", "Mediterranean", "Desert"],
+      "answer": 1,
+      "explanation": "Tropical rainforest climate has consistently high temperatures and abundant rainfall year-round. Mediterranean climate has dry summers."
+    },
+    {
+      "id": "geography-climate-zones-010",
+      "q": "What is the primary factor that determines climate zones globally?",
+      "options": ["Human settlement", "Latitude and air circulation patterns", "Ocean currents only", "Mountain ranges only"],
+      "answer": 1,
+      "explanation": "Latitude and resulting air circulation patterns are primary climate determinants, as they control solar energy distribution and wind patterns. Multiple factors interact together."
+    }
+  ]
+}

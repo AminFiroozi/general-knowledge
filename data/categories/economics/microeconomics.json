@@ -1,0 +1,126 @@
+{
+  "topic": "microeconomics",
+  "category": "economics",
+  "questions": [
+    {
+      "id": "economics-microeconomics-001",
+      "q": "In perfect competition, what happens to market price when demand increases while supply remains constant?",
+      "options": [
+        "Price increases until a new equilibrium is reached",
+        "Price remains unchanged due to perfect competition",
+        "Price decreases due to increased consumer spending",
+        "Price fluctuates randomly"
+      ],
+      "answer": 0,
+      "explanation": "When demand increases with constant supply, the quantity demanded exceeds quantity supplied, creating a shortage. This pressure causes price to rise until equilibrium is restored. The misconception that perfect competition prevents price changes is incorrect—perfect competition means many firms and price-taking behavior, not rigid prices."
+    },
+    {
+      "id": "economics-microeconomics-002",
+      "q": "A good has price elasticity of demand of -0.5. If price increases by 10%, what is the approximate change in quantity demanded?",
+      "options": [
+        "Decreases by 5%",
+        "Decreases by 10%",
+        "Increases by 5%",
+        "Increases by 0.5%"
+      ],
+      "answer": 0,
+      "explanation": "Elasticity measures the percentage change in quantity demanded per percentage change in price. With elasticity of -0.5, a 10% price increase causes quantity demanded to fall by approximately 5% (0.5 × 10%). This indicates inelastic demand where quantity responds less than proportionally to price changes."
+    },
+    {
+      "id": "economics-microeconomics-003",
+      "q": "Which of the following best describes marginal utility?",
+      "options": [
+        "The additional satisfaction from consuming one more unit of a good",
+        "The total satisfaction from consuming all units of a good",
+        "The lowest utility a consumer can experience from a good",
+        "The difference between price and utility of a good"
+      ],
+      "answer": 0,
+      "explanation": "Marginal utility is the incremental satisfaction gained from consuming one additional unit. Total utility (option B) sums all satisfaction, not the marginal addition. Marginal utility typically diminishes as consumption increases, which explains why consumers demand less at higher prices."
+    },
+    {
+      "id": "economics-microeconomics-004",
+      "q": "Under monopolistic competition, what is the primary characteristic that distinguishes it from perfect competition?",
+      "options": [
+        "Product differentiation allows firms to have some price-setting power",
+        "There are barriers to entry that prevent new competitors",
+        "Firms earn permanent economic profits in long-run equilibrium",
+        "Only one dominant firm controls the entire market"
+      ],
+      "answer": 0,
+      "explanation": "Monopolistic competition features product differentiation (brand, quality, design differences), giving each firm some ability to set prices above marginal cost. Perfect competition assumes homogeneous products. While monopolistically competitive markets have free entry (option B is wrong), firms earn zero economic profits long-run, not permanent profits."
+    },
+    {
+      "id": "economics-microeconomics-005",
+      "q": "A farmer produces wheat. When the market price of wheat rises, the farmer increases output. This illustrates the principle of:",
+      "options": [
+        "Positive slope of the supply curve",
+        "Law of diminishing marginal returns",
+        "Inelastic demand for agricultural products",
+        "Economies of scale in farming"
+      ],
+      "answer": 0,
+      "explanation": "The supply curve slopes upward because producers increase quantity supplied when price rises, making it more profitable to produce more. This is the fundamental law of supply. Diminishing marginal returns (option B) explains why costs eventually rise with output, but doesn't directly cause the supply curve's positive slope."
+    },
+    {
+      "id": "economics-microeconomics-006",
+      "q": "If a consumer's income increases and they demand less of a normal good, what type of good must it be?",
+      "options": [
+        "An inferior good",
+        "A complementary good",
+        "A substitute good",
+        "A luxury good"
+      ],
+      "answer": 0,
+      "explanation": "An inferior good is one for which demand decreases when income increases. Examples include generic brands or used clothing. Normal goods show opposite behavior—demand increases with income. The consumer is replacing the lower-quality inferior good with superior alternatives now affordable at higher income levels."
+    },
+    {
+      "id": "economics-microeconomics-007",
+      "q": "At the profit-maximizing point for a perfectly competitive firm, what is the relationship between price, marginal cost, and average total cost?",
+      "options": [
+        "Price equals marginal cost, but may be above or below average total cost",
+        "Price equals both marginal cost and average total cost",
+        "Price is always below both marginal cost and average total cost",
+        "Price exceeds average total cost by the amount of economic profit"
+      ],
+      "answer": 0,
+      "explanation": "Profit maximization occurs where P = MC for competitive firms (they're price-takers). However, the firm can still earn profit if P > ATC, break even if P = ATC, or suffer loss if P < ATC. Option B incorrectly assumes P always equals ATC—this only occurs in long-run equilibrium, not at each firm's optimal quantity."
+    },
+    {
+      "id": "economics-microeconomics-008",
+      "q": "How does a binding price ceiling affect a competitive market in equilibrium?",
+      "options": [
+        "Creates a shortage as quantity demanded exceeds quantity supplied",
+        "Creates a surplus as quantity supplied exceeds quantity demanded",
+        "Causes no effect on market equilibrium if it's binding",
+        "Increases both price and quantity in the long run"
+      ],
+      "answer": 0,
+      "explanation": "A binding price ceiling set below equilibrium price forces transactions below the market-clearing level. Consumers want to buy more at the low price, but producers supply less, creating excess demand (shortage). Non-binding ceilings don't affect equilibrium. This shortage can lead to queuing, rationing, or black markets."
+    },
+    {
+      "id": "economics-microeconomics-009",
+      "q": "Two goods are complements if an increase in the price of one good leads to:",
+      "options": [
+        "A decrease in the demand for the other good",
+        "An increase in the demand for the other good",
+        "No change in the quantity demanded of the other good",
+        "A decrease in the supply of the other good"
+      ],
+      "answer": 0,
+      "explanation": "Complementary goods are consumed together (like coffee and sugar). When coffee becomes more expensive, fewer people buy coffee, so demand for sugar falls too. Substitute goods show opposite behavior—higher price of one increases demand for the other. Supply shifts (option D) are independent of complementarity."
+    },
+    {
+      "id": "economics-microeconomics-010",
+      "q": "When a monopoly charges different prices to different customers for the same product, this practice is called:",
+      "options": [
+        "Price discrimination",
+        "Predatory pricing",
+        "Peak load pricing",
+        "Price skimming"
+      ],
+      "answer": 0,
+      "explanation": "Price discrimination occurs when a monopoly sells identical goods at different prices to separate customer groups based on willingness to pay. Predatory pricing (option B) is pricing below cost to eliminate competitors. Price skimming (option D) involves high initial prices later lowered, not differentiation between simultaneous customers."
+    }
+  ]
+}

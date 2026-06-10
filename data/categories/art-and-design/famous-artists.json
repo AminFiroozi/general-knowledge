@@ -1,0 +1,126 @@
+{
+  "topic": "famous-artists",
+  "category": "art-and-design",
+  "questions": [
+    {
+      "id": "art-and-design-famous-artists-001",
+      "q": "Leonardo da Vinci, a Renaissance master, painted the 'Mona Lisa' and 'The Last Supper.' Which technique did he pioneer for creating soft, blurred transitions between tones?",
+      "options": [
+        "Impasto",
+        "Chiaroscuro",
+        "Sfumato",
+        "Glazing"
+      ],
+      "answer": 2,
+      "explanation": "Sfumato creates smoky, seamless transitions between light and shadow without harsh outlines. Da Vinci used this in the Mona Lisa's iconic smile and soft modeling. Chiaroscuro uses bold light-dark contrast, while impasto applies thick paint."
+    },
+    {
+      "id": "art-and-design-famous-artists-002",
+      "q": "Michelangelo, another Renaissance titan, is famous for sculpting 'David' and painting the ceiling of which structure?",
+      "options": [
+        "The Basilica of St. Peter",
+        "The Sistine Chapel",
+        "The Uffizi Gallery",
+        "The Pantheon"
+      ],
+      "answer": 1,
+      "explanation": "Michelangelo's ceiling frescoes in the Sistine Chapel (1508–1512) depict scenes from Genesis, including the famous 'Creation of Adam.' While he worked on St. Peter's, the chapel ceiling is his most iconic work."
+    },
+    {
+      "id": "art-and-design-famous-artists-003",
+      "q": "Pablo Picasso co-founded Cubism and created 'Guernica,' a powerful anti-war painting. What tragic event inspired 'Guernica'?",
+      "options": [
+        "The sinking of the Titanic",
+        "The bombing of the Basque town of Guernica during the Spanish Civil War",
+        "The eruption of Mount Vesuvius",
+        "The fall of the Berlin Wall"
+      ],
+      "answer": 1,
+      "explanation": "Guernica was painted in 1937 in response to the bombing of Guernica by German and Italian warplanes supporting Franco's forces in Spain. The painting became an iconic symbol of the horrors of war."
+    },
+    {
+      "id": "art-and-design-famous-artists-004",
+      "q": "Vincent van Gogh is known for his expressive use of color and emotional intensity. How many paintings did Van Gogh sell during his lifetime?",
+      "options": [
+        "Over 100",
+        "Approximately 1",
+        "Around 50",
+        "None, as he was never recognized"
+      ],
+      "answer": 1,
+      "explanation": "Van Gogh struggled greatly during his lifetime, selling only one painting with certainty. His 'Starry Night' and 'Sunflowers' are now priceless, but he died in poverty and obscurity, recognized only posthumously."
+    },
+    {
+      "id": "art-and-design-famous-artists-005",
+      "q": "Claude Monet, an Impressionist pioneer, created a series of paintings of the same subject under different lighting conditions. Which subject did he paint repeatedly?",
+      "options": [
+        "The River Thames in London",
+        "Water lilies in his garden at Giverny",
+        "The Eiffel Tower in different seasons",
+        "Haystacks in a single field"
+      ],
+      "answer": 1,
+      "explanation": "Monet's water lilies series (1890–1906) explores how light and reflection transform the same pond throughout the day. While he also painted haystacks and Rouen Cathedral, water lilies became his most famous serial work."
+    },
+    {
+      "id": "art-and-design-famous-artists-006",
+      "q": "Frida Kahlo is renowned for her self-portraits and surrealist style. How many self-portraits did Kahlo paint, a significant portion of her work?",
+      "options": [
+        "Fewer than 5",
+        "Approximately 55 percent of her paintings",
+        "Less than 10 paintings total",
+        "She primarily painted landscapes"
+      ],
+      "answer": 1,
+      "explanation": "Self-portraits comprise about 55 percent of Kahlo's output. She explored themes of pain, identity, and Mexican heritage through these intimate works, using herself as her primary subject."
+    },
+    {
+      "id": "art-and-design-famous-artists-007",
+      "q": "Michelangelo's sculpture 'David' stands as a masterpiece of Renaissance art. What biblical narrative does 'David' depict?",
+      "options": [
+        "David after his victory over Goliath",
+        "David preparing to face Goliath",
+        "David as an old king reflecting on his life",
+        "David being crowned king by Samuel"
+      ],
+      "answer": 1,
+      "explanation": "The sculpture captures David at the moment before confronting Goliath, showing him alert and determined. Michelangelo's composition emphasizes the hero's physical beauty and psychological readiness, not his triumph."
+    },
+    {
+      "id": "art-and-design-famous-artists-008",
+      "q": "Andy Warhol was a Pop Art pioneer known for repetition and mass production techniques. Which iconic subject did Warhol repeatedly screen-print?",
+      "options": [
+        "Religious icons and biblical scenes",
+        "Abstract geometric patterns",
+        "Marilyn Monroe and other celebrities",
+        "Landscapes and natural scenes"
+      ],
+      "answer": 2,
+      "explanation": "Warhol's silkscreen reproductions of Marilyn Monroe epitomize Pop Art's celebration of celebrity and mass production. He used the same image repeatedly with varying colors, blurring the line between fine art and commercial reproduction."
+    },
+    {
+      "id": "art-and-design-famous-artists-009",
+      "q": "Jackson Pollock, an Abstract Expressionist, is famous for his drip painting technique. What materials did Pollock use in his drip paintings?",
+      "options": [
+        "Only watercolor and brushes",
+        "House paint, enamel, and sometimes sand on canvas laid on the floor",
+        "Oil paint applied with precision brushwork",
+        "Ink and fountain pens"
+      ],
+      "answer": 1,
+      "explanation": "Pollock used industrial house paint and enamel, pouring and dripping from sticks and cans onto horizontal canvases. This method departed from traditional easel painting and allowed gestural, all-over compositions."
+    },
+    {
+      "id": "art-and-design-famous-artists-010",
+      "q": "Georgia O'Keeffe, known as the 'Mother of American modernism,' painted large, abstract floral and natural forms. What region of the United States inspired much of her work?",
+      "options": [
+        "The Pacific Northwest and rain forests",
+        "The New York City urban landscape",
+        "The American Southwest, particularly New Mexico",
+        "The Great Plains of the Midwest"
+      ],
+      "answer": 2,
+      "explanation": "O'Keeffe spent much of her life in New Mexico, where desert landscapes, bleached bones, and expansive vistas profoundly influenced her abstract compositions. She is closely associated with the American Southwest's visual culture."
+    }
+  ]
+}

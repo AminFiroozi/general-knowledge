@@ -1,0 +1,76 @@
+{
+  "topic": "scientific-revolution",
+  "category": "history",
+  "questions": [
+    {
+      "id": "history-scientific-revolution-001",
+      "q": "Which astronomer proposed the heliocentric model of the solar system, challenging the Earth-centered view?",
+      "options": ["Tycho Brahe", "Nicolaus Copernicus", "Johannes Kepler", "Galileo Galilei"],
+      "answer": 1,
+      "explanation": "Nicolaus Copernicus published his heliocentric theory in 1543, proposing that the Sun rather than Earth was at the center of the solar system. This directly contradicted the prevailing geocentric model supported by the Church."
+    },
+    {
+      "id": "history-scientific-revolution-002",
+      "q": "What revolutionary instrument did Galileo Galilei use to observe celestial bodies in the early 1600s?",
+      "options": ["The astrolabe", "The telescope", "The sextant", "The orrery"],
+      "answer": 1,
+      "explanation": "Galileo used the telescope to make groundbreaking observations including Jupiter's moons and sunspots, providing evidence for the heliocentric model. The astrolabe and sextant were used for navigation, not observation of celestial bodies."
+    },
+    {
+      "id": "history-scientific-revolution-003",
+      "q": "Which law of motion states that an object in motion remains in motion unless acted upon by an external force?",
+      "options": ["Newton's Second Law of Motion", "Newton's First Law of Motion", "Newton's Third Law of Motion", "Kepler's First Law"],
+      "answer": 1,
+      "explanation": "Newton's First Law states that objects maintain their state of motion unless acted upon by a force, introducing the concept of inertia. His Second Law relates force to acceleration, and the Third Law addresses action-reaction pairs."
+    },
+    {
+      "id": "history-scientific-revolution-004",
+      "q": "Who is credited with developing the mathematical framework of calculus during the Scientific Revolution?",
+      "options": ["René Descartes", "Isaac Newton and Gottfried Leibniz", "Pierre-Simon Laplace", "Blaise Pascal"],
+      "answer": 1,
+      "explanation": "Isaac Newton and Gottfried Leibniz independently developed calculus, which became essential to physics and mathematics. René Descartes developed analytical geometry, and Pascal worked on probability theory."
+    },
+    {
+      "id": "history-scientific-revolution-005",
+      "q": "What did Johannes Kepler's laws describe about planetary motion?",
+      "options": ["The gravitational attraction between all objects", "The elliptical orbits of planets and their speed variations", "The temperature of the Sun's surface", "The composition of comets"],
+      "answer": 1,
+      "explanation": "Kepler's laws mathematically described how planets move in elliptical orbits at varying speeds, with orbital speed depending on distance from the Sun. These laws supported the heliocentric model and preceded Newton's law of gravity."
+    },
+    {
+      "id": "history-scientific-revolution-006",
+      "q": "Which English scientist proposed the experimental method as the basis for scientific investigation?",
+      "options": ["Thomas Hobbes", "Francis Bacon", "John Locke", "Isaac Newton"],
+      "answer": 1,
+      "explanation": "Francis Bacon advocated for empirical observation and experimentation rather than relying solely on ancient authorities or pure logic, establishing the foundation for the scientific method. This approach became central to the Scientific Revolution."
+    },
+    {
+      "id": "history-scientific-revolution-007",
+      "q": "What period of intellectual history followed the Scientific Revolution and emphasized reason and individual rights?",
+      "options": ["The Renaissance", "The Enlightenment", "The Baroque period", "The Victorian era"],
+      "answer": 1,
+      "explanation": "The Enlightenment, also called the Age of Reason in the 17th and 18th centuries, built upon scientific advances to emphasize rational thought and challenge traditional authority. It directly followed and was inspired by the Scientific Revolution."
+    },
+    {
+      "id": "history-scientific-revolution-008",
+      "q": "Which institution did the Catholic Church establish to examine scientific works and maintain doctrinal purity?",
+      "options": ["The Council of Trent", "The Inquisition", "The Index of Prohibited Books", "The Congregation for the Doctrine of the Faith"],
+      "answer": 2,
+      "explanation": "The Index of Prohibited Books listed works deemed heretical, including heliocentric theories, and was used to suppress scientific ideas contradicting Church doctrine. The Inquisition was a broader institution for heresy trials."
+    },
+    {
+      "id": "history-scientific-revolution-009",
+      "q": "What mathematical principle did Isaac Newton use to explain the motion of celestial bodies?",
+      "options": ["The conservation of momentum", "Universal gravitation", "The principle of relativity", "Quantum uncertainty"],
+      "answer": 1,
+      "explanation": "Newton's law of universal gravitation explained that all masses attract each other with a force proportional to their masses and inversely proportional to the square of their distance. This unified terrestrial and celestial mechanics."
+    },
+    {
+      "id": "history-scientific-revolution-010",
+      "q": "Which French philosopher emphasized deductive reasoning in his method of doubt and 'Cogito, ergo sum'?",
+      "options": ["Blaise Pascal", "René Descartes", "Pierre Gassendi", "Nicolas Malebranche"],
+      "answer": 1,
+      "explanation": "René Descartes developed the method of doubt, doubting everything until reaching certainty with 'Cogito, ergo sum' (I think, therefore I am), emphasizing rational deduction as the basis for knowledge and contributing to Scientific Revolution philosophy."
+    }
+  ]
+}

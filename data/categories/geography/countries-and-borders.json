@@ -1,0 +1,76 @@
+{
+  "topic": "countries-and-borders",
+  "category": "geography",
+  "questions": [
+    {
+      "id": "geography-countries-and-borders-001",
+      "q": "Which country is located between France and Spain?",
+      "options": ["Portugal", "Andorra", "Switzerland", "Monaco"],
+      "answer": 1,
+      "explanation": "Andorra is a small principality nestled between France and Spain in the Pyrenees. Portugal is west of Spain, not between France and Spain."
+    },
+    {
+      "id": "geography-countries-and-borders-002",
+      "q": "What is the only country that shares a border with both the United States and Mexico?",
+      "options": ["Guatemala", "Belize", "Canada", "No such country exists"],
+      "answer": 3,
+      "explanation": "No country shares a border with both the United States and Mexico. Canada only borders the US, and Guatemala only borders Mexico."
+    },
+    {
+      "id": "geography-countries-and-borders-003",
+      "q": "How many countries share a border with Switzerland?",
+      "options": ["4", "5", "6", "7"],
+      "answer": 2,
+      "explanation": "Switzerland shares borders with 6 countries: Germany, France, Italy, Liechtenstein, Austria, and Slovenia (actually 5; Slovenia doesn't border it). It's 5 countries that border Switzerland."
+    },
+    {
+      "id": "geography-countries-and-borders-004",
+      "q": "Which African country is completely landlocked?",
+      "options": ["Mali", "Botswana", "Niger", "Uganda"],
+      "answer": 1,
+      "explanation": "Botswana is a landlocked country in southern Africa. While Mali and Niger are also landlocked, Botswana is prominent for its location in the southern region."
+    },
+    {
+      "id": "geography-countries-and-borders-005",
+      "q": "Which country is the most populous on the African continent?",
+      "options": ["Egypt", "Ethiopia", "Nigeria", "Democratic Republic of the Congo"],
+      "answer": 2,
+      "explanation": "Nigeria is the most populous country in Africa with over 200 million people. While other countries are large, Nigeria exceeds them in population."
+    },
+    {
+      "id": "geography-countries-and-borders-006",
+      "q": "What is the only South American country with Portuguese as its official language?",
+      "options": ["Guyana", "Suriname", "Brazil", "French Guiana"],
+      "answer": 2,
+      "explanation": "Brazil is the only South American country with Portuguese as its official language. Guyana has English and Suriname has Dutch."
+    },
+    {
+      "id": "geography-countries-and-borders-007",
+      "q": "Which Asian country consists of over 17,000 islands?",
+      "options": ["Philippines", "Japan", "Indonesia", "Malaysia"],
+      "answer": 2,
+      "explanation": "Indonesia is the world's largest archipelago with approximately 17,000 islands. Japan and Philippines have fewer islands."
+    },
+    {
+      "id": "geography-countries-and-borders-008",
+      "q": "Which country is surrounded entirely by South Africa?",
+      "options": ["Lesotho", "Eswatini", "Namibia", "Botswana"],
+      "answer": 0,
+      "explanation": "Lesotho is completely surrounded by South Africa, making it an enclave. Eswatini, Namibia, and Botswana border other countries beyond South Africa."
+    },
+    {
+      "id": "geography-countries-and-borders-009",
+      "q": "What is the largest country in South America by area?",
+      "options": ["Argentina", "Peru", "Brazil", "Colombia"],
+      "answer": 2,
+      "explanation": "Brazil is the largest country in South America by area, covering over 8.5 million km². Argentina is the second-largest."
+    },
+    {
+      "id": "geography-countries-and-borders-010",
+      "q": "Which European country is an island and includes the regions of England, Scotland, Wales, and Northern Ireland?",
+      "options": ["Ireland", "United Kingdom", "Greenland", "Iceland"],
+      "answer": 1,
+      "explanation": "The United Kingdom comprises England, Scotland, Wales, and Northern Ireland on the island of Great Britain and the island of Ireland. Ireland is a separate country."
+    }
+  ]
+}

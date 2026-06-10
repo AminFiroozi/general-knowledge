@@ -1,0 +1,126 @@
+{
+  "topic": "behavioral-economics",
+  "category": "economics",
+  "questions": [
+    {
+      "id": "economics-behavioral-economics-001",
+      "q": "What is loss aversion in behavioral economics?",
+      "options": [
+        "The tendency to feel the pain of losing money roughly twice as strongly as the pleasure of gaining an equal amount",
+        "The rational fear of losing all investments in the stock market",
+        "A preference for taking risks to avoid losses",
+        "The economic law that all losses must eventually be recovered"
+      ],
+      "answer": 0,
+      "explanation": "Loss aversion describes how losses psychologically outweigh equivalent gains—losing $100 hurts more than gaining $100 feels good. This asymmetry (roughly 2:1 ratio) drives risk-averse behavior and explains why people hold losing stocks too long. Option C describes risk-seeking behavior in response to losses, which is different from loss aversion itself."
+    },
+    {
+      "id": "economics-behavioral-economics-002",
+      "q": "According to prospect theory, how do people typically evaluate economic outcomes?",
+      "options": [
+        "Relative to a reference point rather than in absolute terms",
+        "Based on maximizing absolute wealth regardless of starting position",
+        "By comparing outcomes only to the worst possible scenario",
+        "Using perfectly rational calculations of expected utility"
+      ],
+      "answer": 0,
+      "explanation": "Prospect theory, developed by Kahneman and Tversky, shows people evaluate decisions relative to a reference point (current status or expectation), not absolute values. This explains why the same outcome feels good or bad depending on context. Option B describes classical rational choice theory, which prospect theory refutes through extensive experiments."
+    },
+    {
+      "id": "economics-behavioral-economics-003",
+      "q": "The anchoring bias leads people to:",
+      "options": [
+        "Rely too heavily on the first piece of information they receive when making decisions",
+        "Always choose the cheapest option available",
+        "Ignore all numerical information in decision-making",
+        "Remember only the most recent price quoted"
+      ],
+      "answer": 0,
+      "explanation": "Anchoring bias occurs when an initial number (anchor) disproportionately influences subsequent judgments. For example, mentioning a high asking price in negotiations raises the final price even when the anchor is obviously irrelevant. Option B describes different behavior; option C overstates the effect."
+    },
+    {
+      "id": "economics-behavioral-economics-004",
+      "q": "What does confirmation bias lead people to do in economic decision-making?",
+      "options": [
+        "Seek out and interpret information in ways that confirm their existing beliefs",
+        "Always change their beliefs based on new contradictory evidence",
+        "Ignore all information when making financial decisions",
+        "Randomly select choices without using any information"
+      ],
+      "answer": 0,
+      "explanation": "Confirmation bias causes people to search for, favor, and interpret information supporting their preexisting views while dismissing contradictory evidence. An investor convinced a stock will rise seeks positive news while ignoring negative reports. Option B describes the opposite behavior (ideal rationality); options C and D describe complete information avoidance."
+    },
+    {
+      "id": "economics-behavioral-economics-005",
+      "q": "The concept of bounded rationality suggests that:",
+      "options": [
+        "People make decisions with limited information and cognitive capacity rather than with perfect rationality",
+        "Economic decisions are entirely irrational and unpredictable",
+        "Only experts can make rational economic decisions",
+        "Rational choice theory accurately describes all human behavior"
+      ],
+      "answer": 0,
+      "explanation": "Bounded rationality, introduced by Herbert Simon, recognizes that real people have limited information and mental processing ability, leading to satisficing (good enough) rather than optimizing. This explains deviations from classical rational choice without claiming decisions are purely irrational. Option B overstates the departure from rationality; option D represents classical economics that bounded rationality critiques."
+    },
+    {
+      "id": "economics-behavioral-economics-006",
+      "q": "A nudge in behavioral economics is:",
+      "options": [
+        "A small change in how choices are presented that influences decisions without restricting options",
+        "A government mandate requiring specific economic behavior",
+        "Peer pressure that forces people to make different choices",
+        "A tax or subsidy that changes the cost of decisions"
+      ],
+      "answer": 0,
+      "explanation": "Nudges preserve freedom while steering people toward better choices. For example, making savings the default option with opt-out choice increases participation rates. Option B describes direct mandates, not nudges. Options C and D involve external pressure or economic incentives beyond presentation framing."
+    },
+    {
+      "id": "economics-behavioral-economics-007",
+      "q": "The availability heuristic leads people to:",
+      "options": [
+        "Overestimate the likelihood of events that are easy to recall or recently observed",
+        "Remember the least important information about past events",
+        "Accurately calculate statistical probabilities in all situations",
+        "Dismiss all information that comes to mind easily"
+      ],
+      "answer": 0,
+      "explanation": "Availability heuristic causes people to judge frequency or likelihood based on how easily examples come to mind. After seeing news of plane crashes, people overestimate flight dangers; vivid or recent events seem more probable than they are statistically. Option C describes ideal statistical reasoning, not actual human behavior."
+    },
+    {
+      "id": "economics-behavioral-economics-008",
+      "q": "What does the sunk cost fallacy describe?",
+      "options": [
+        "The tendency to continue investing in a project because of past investments, even when future costs exceed future benefits",
+        "The correct economic principle that past costs should influence future decisions",
+        "The benefit of recovering money already spent in a project",
+        "The rational decision to always abandon projects that initially lost money"
+      ],
+      "answer": 0,
+      "explanation": "The sunk cost fallacy occurs when people continue a course of action because they've already invested money, time, or effort, despite negative future prospects. Economically, only future costs and benefits should matter—past investments are gone regardless of future decisions. Option B incorrectly claims sunk costs should influence decisions; option D describes opposite behavior of always abandoning losers."
+    },
+    {
+      "id": "economics-behavioral-economics-009",
+      "q": "The decoy effect in consumer choice demonstrates that:",
+      "options": [
+        "Adding a third inferior option can make consumers more likely to choose a higher-priced alternative",
+        "Consumers always choose the cheapest option available",
+        "More choices always make consumers happier",
+        "Prices have no effect on which option consumers select"
+      ],
+      "answer": 0,
+      "explanation": "The decoy effect shows how choice architecture matters: introducing a dominated option (similar to one choice but inferior) increases preference for the option over which it's dominated. For example, adding an overpriced large movie size can boost medium-size sales relative to small. This contradicts the assumption that adding irrelevant options doesn't affect choices."
+    },
+    {
+      "id": "economics-behavioral-economics-010",
+      "q": "Mental accounting theory suggests that people:",
+      "options": [
+        "Treat different sources of money and different expenses in separate mental categories rather than as fungible resources",
+        "Perfectly combine all money sources into one unified account for spending decisions",
+        "Always spend found money more carefully than earned money",
+        "Categorize spending only by the date of the transaction"
+      ],
+      "answer": 0,
+      "explanation": "Mental accounting shows people compartmentalize finances into separate budgets (income types, expense categories) rather than viewing all money as interchangeable. For example, gift money is often spent on luxuries while earned income goes to necessities, though economically they're equivalent. This explains why payment method and framing affect spending despite rational equivalence."
+    }
+  ]
+}

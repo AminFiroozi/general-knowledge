@@ -1,0 +1,76 @@
+{
+  "topic": "cold-war",
+  "category": "history",
+  "questions": [
+    {
+      "id": "history-cold-war-001",
+      "q": "Which two superpowers were in rivalry during the Cold War?",
+      "options": ["The United States and Japan", "The United States and the Soviet Union", "Britain and France", "The Soviet Union and China"],
+      "answer": 1,
+      "explanation": "The Cold War was primarily a political, military, and ideological conflict between the United States (capitalist) and the Soviet Union (communist) from 1947 to 1991. Japan and China were not superpowers during this period."
+    },
+    {
+      "id": "history-cold-war-002",
+      "q": "What was the Berlin Wall, constructed in 1961?",
+      "options": ["A medieval fortification rebuilt during WWII", "A barrier built to prevent escape from East Berlin to West Berlin", "A monument to German unification", "A defensive structure against NATO forces"],
+      "answer": 1,
+      "explanation": "East Germany built the Berlin Wall to prevent citizens from fleeing to the West, symbolizing the division between communist Eastern Europe and the capitalist West. It was a concrete barrier, not a historical fortification."
+    },
+    {
+      "id": "history-cold-war-003",
+      "q": "In which year did the Cuban Missile Crisis, the closest approach to nuclear war, occur?",
+      "options": ["1959", "1961", "1962", "1965"],
+      "answer": 2,
+      "explanation": "The Cuban Missile Crisis occurred in October 1962 when the Soviet Union placed nuclear missiles in Cuba, triggering a standoff with the United States. The crisis was resolved through negotiation without direct military conflict."
+    },
+    {
+      "id": "history-cold-war-004",
+      "q": "What was the Space Race during the Cold War?",
+      "options": ["A recreational competition between nations", "A competition for dominance in space exploration between the US and USSR", "A race to establish colonies on the Moon", "A contest for commercial airline supremacy"],
+      "answer": 1,
+      "explanation": "The Space Race was a competition between the United States and Soviet Union for achievements in space exploration, symbolizing technological and ideological superiority. The USSR achieved the first satellite (Sputnik) and first human in space."
+    },
+    {
+      "id": "history-cold-war-005",
+      "q": "Which term described the ideological conflict and tensions between the US and USSR that never escalated to direct warfare?",
+      "options": ["The Warm War", "The Cold War", "The Silent War", "The Proxy Conflict"],
+      "answer": 1,
+      "explanation": "The term 'Cold War' was coined to describe the geopolitical tension between superpowers without direct military confrontation, contrasting with 'hot war' which involves active combat. The competition was ideological, economic, and military."
+    },
+    {
+      "id": "history-cold-war-006",
+      "q": "What policy did President Truman pursue to counter Soviet expansion in Europe and Asia?",
+      "options": ["Massive Retaliation", "Containment", "Détente", "Appeasement"],
+      "answer": 1,
+      "explanation": "The Containment policy aimed to prevent Soviet expansion by supporting anti-communist states, implemented through aid programs like the Marshall Plan and military alliances like NATO. Massive Retaliation came later under Eisenhower."
+    },
+    {
+      "id": "history-cold-war-007",
+      "q": "Which military alliance was formed by NATO to counter Soviet influence in Europe?",
+      "options": ["The Warsaw Pact", "The Southeast Asia Treaty Organization", "The North Atlantic Treaty Organization", "The Central American Defense Alliance"],
+      "answer": 2,
+      "explanation": "NATO, the North Atlantic Treaty Organization, was established in 1949 as a collective defense alliance against Soviet expansion. The Warsaw Pact was the Soviet-led military alliance in response to NATO."
+    },
+    {
+      "id": "history-cold-war-008",
+      "q": "What was the primary cause of the Korean War from 1950 to 1953?",
+      "options": ["Japanese imperialism", "Soviet support for North Korea's invasion of South Korea", "Chinese territorial expansion", "American imperialism in Asia"],
+      "answer": 1,
+      "explanation": "North Korea, with Soviet and Chinese support, invaded South Korea in June 1950, triggering a proxy war between communist and capitalist forces. The UN, led by the US, supported South Korea, while China entered the war in late 1950."
+    },
+    {
+      "id": "history-cold-war-009",
+      "q": "Which Soviet leader initiated a policy of openness and restructuring called 'Glasnost' and 'Perestroika'?",
+      "options": ["Nikita Khrushchev", "Leonid Brezhnev", "Mikhail Gorbachev", "Boris Yeltsin"],
+      "answer": 2,
+      "explanation": "Mikhail Gorbachev introduced Glasnost (openness) and Perestroika (restructuring) in the late 1980s to reform the Soviet system, ultimately contributing to its collapse in 1991. Khrushchev and Brezhnev were earlier leaders."
+    },
+    {
+      "id": "history-cold-war-010",
+      "q": "In which year did the Berlin Wall fall, symbolizing the end of the Cold War?",
+      "options": ["1987", "1989", "1991", "1993"],
+      "answer": 1,
+      "explanation": "The Berlin Wall fell on November 9, 1989, following the opening of borders by East Germany, symbolizing the beginning of the Cold War's end. The Soviet Union formally dissolved in 1991, officially ending the conflict."
+    }
+  ]
+}

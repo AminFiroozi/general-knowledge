@@ -1,0 +1,126 @@
+{
+  "topic": "ethics",
+  "category": "philosophy",
+  "questions": [
+    {
+      "id": "philosophy-ethics-001",
+      "q": "According to utilitarianism, an action is morally right if and only if it produces the greatest happiness for the greatest number. Which of the following is a direct consequence of this principle?",
+      "options": [
+        "Stealing is always morally wrong regardless of consequences",
+        "Punishing an innocent person might be justified if it prevents greater harm",
+        "Individual rights are absolute and can never be overridden",
+        "Moral actions require the agent to act from duty rather than inclination"
+      ],
+      "answer": 1,
+      "explanation": "Utilitarianism is consequentialist, meaning it judges actions by their outcomes. If punishing an innocent could maximize overall happiness, utilitarianism would permit it. Option 1 wrongly assumes deontological thinking. Options 2 and 3 conflict with utilitarianism's focus on consequences rather than rights."
+    },
+    {
+      "id": "philosophy-ethics-002",
+      "q": "What is the primary focus of deontological ethics?",
+      "options": [
+        "The consequences of an action determine its morality",
+        "The duties and rules we must follow determine the morality of an action",
+        "The virtue of the agent's character determines what they should do",
+        "Moral actions are those that promote human flourishing and excellence"
+      ],
+      "answer": 1,
+      "explanation": "Deontological ethics is duty-based, focusing on rules and obligations rather than outcomes. Option 0 describes consequentialism. Options 2 and 3 describe virtue ethics and eudaimonia respectively. Deontologists argue we have duties independent of consequences."
+    },
+    {
+      "id": "philosophy-ethics-003",
+      "q": "In virtue ethics, what is eudaimonia?",
+      "options": [
+        "The state of maximum pleasure and minimal pain",
+        "Fulfillment of duty according to rational moral laws",
+        "Human flourishing or the highest human good achieved through developing virtuous character",
+        "The greatest happiness distributed equally among all people"
+      ],
+      "answer": 2,
+      "explanation": "Eudaimonia, often translated as human flourishing or happiness, is central to virtue ethics and represents living excellently through virtuous character development. Option 0 is hedonism. Option 1 is deontology. Option 3 is utilitarianism. Virtue ethics emphasizes individual excellence and character."
+    },
+    {
+      "id": "philosophy-ethics-004",
+      "q": "Which scenario best illustrates a genuine moral dilemma rather than a difficult choice?",
+      "options": [
+        "Choosing between two equally good job offers",
+        "Having to choose between lying to protect a friend and telling the truth, where both honesty and loyalty seem morally required",
+        "Deciding whether to study or exercise when you lack time for both",
+        "Selecting which charity to donate to when you can only afford one"
+      ],
+      "answer": 1,
+      "explanation": "A true moral dilemma requires conflicting moral duties where fulfilling one necessarily violates another. Lying to protect a friend pits truthfulness against loyalty. Options 0, 2, and 3 are difficult practical decisions but lack genuine moral conflict between principles."
+    },
+    {
+      "id": "philosophy-ethics-005",
+      "q": "Immanuel Kant's categorical imperative requires that you 'act only according to that maxim whereby you can at the same time will that it should become a universal law.' What does this test aim to ensure?",
+      "options": [
+        "That your action maximizes overall utility for society",
+        "That your action is consistent with universal rationality and avoids special pleading",
+        "That your action expresses virtuous character traits",
+        "That your action produces happiness proportional to moral desert"
+      ],
+      "answer": 1,
+      "explanation": "Kant's universalizability test checks whether a moral principle could rationally be willed as universal law. This prevents special pleading and inconsistency. Option 0 is utilitarian, option 2 is virtue ethics. Kant's approach is deontological and emphasizes rational consistency."
+    },
+    {
+      "id": "philosophy-ethics-006",
+      "q": "The trolley problem presents a scenario where you can pull a lever to divert a runaway trolley, killing one person instead of five. Which ethical framework finds this choice most clearly justified?",
+      "options": [
+        "Virtue ethics, which emphasizes compassionate character",
+        "Utilitarianism, which maximizes overall good by reducing deaths from five to one",
+        "Kantian deontology, which forbids using people as mere means",
+        "Care ethics, which prioritizes relationships and emotional bonds"
+      ],
+      "answer": 1,
+      "explanation": "Utilitarianism directly justifies the choice by calculating that one death is better than five. Kantian deontology often objects because you're using the one person as a means. Virtue ethics and care ethics provide less clear guidance on this specific dilemma."
+    },
+    {
+      "id": "philosophy-ethics-007",
+      "q": "What is the main criticism of utilitarianism from rights-based perspectives?",
+      "options": [
+        "It fails to maximize happiness in practice",
+        "It can justify violating individual rights if doing so increases overall happiness",
+        "It requires agents to act from duty rather than inclination",
+        "It depends on an unfalsifiable theory of consciousness and subjective experience"
+      ],
+      "answer": 1,
+      "explanation": "Rights-based critics argue utilitarianism treats individual rights as negotiable when consequences demand it, potentially justifying injustice. Option 0 critiques effectiveness, not principle. Option 2 applies to deontology. Option 3 is a different critique about pleasure measurement."
+    },
+    {
+      "id": "philosophy-ethics-008",
+      "q": "According to Aristotle, virtue is achieved through what mechanism?",
+      "options": [
+        "Following universal moral laws established by reason",
+        "Calculating which action maximizes overall happiness",
+        "Habituation and practice, becoming disposed to act excellently in balance between extremes",
+        "Obeying the commands of virtue ethics teachers and mentors"
+      ],
+      "answer": 2,
+      "explanation": "Aristotle held that virtue is a state of character developed through habit and practice, finding the mean between excess and deficiency. Option 0 is Kantian deontology. Option 1 is utilitarianism. Option 3 oversimplifies and ignores the role of habituation."
+    },
+    {
+      "id": "philosophy-ethics-009",
+      "q": "What distinguishes moral relativism from moral objectivism in ethics?",
+      "options": [
+        "Relativism claims moral truths depend on cultural or individual perspective; objectivism claims some moral truths are independent of perspective",
+        "Relativism requires calculating consequences; objectivism requires following duties",
+        "Relativism applies to normative ethics; objectivism applies to meta-ethics",
+        "Relativism emphasizes virtue; objectivism emphasizes utility"
+      ],
+      "answer": 0,
+      "explanation": "Moral relativism denies universal moral facts, claiming morality varies by culture or individual. Moral objectivism asserts some moral truths hold regardless of perspective. Options 1, 2, and 3 conflate meta-ethical positions with normative frameworks or misplace them in the theory space."
+    },
+    {
+      "id": "philosophy-ethics-010",
+      "q": "In ethics, what is the is-ought problem identified by David Hume?",
+      "options": [
+        "The difficulty of translating moral statements into logical notation",
+        "The challenge that descriptive statements about how things are cannot logically entail prescriptive claims about how things ought to be",
+        "The impossibility of achieving moral knowledge in a deterministic universe",
+        "The tension between individual rights and collective welfare"
+      ],
+      "answer": 1,
+      "explanation": "Hume's is-ought problem highlights that factual descriptions alone cannot logically justify moral prescriptions without an additional premise. Option 0 is about formalization. Option 2 concerns determinism and moral responsibility. Option 3 is a specific ethical tension, not Hume's problem."
+    }
+  ]
+}

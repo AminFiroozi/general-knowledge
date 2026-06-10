@@ -1,0 +1,76 @@
+{
+  "topic": "age-of-exploration",
+  "category": "history",
+  "questions": [
+    {
+      "id": "history-age-of-exploration-001",
+      "q": "Which explorer, sponsored by Spain, is credited with reaching the Americas in 1492?",
+      "options": ["Vasco da Gama", "Christopher Columbus", "Ferdinand Magellan", "Bartolomeu Dias"],
+      "answer": 1,
+      "explanation": "Christopher Columbus sailed westward across the Atlantic Ocean in 1492, reaching the Caribbean islands and establishing European contact with the Americas. Vasco da Gama reached India by sailing around Africa."
+    },
+    {
+      "id": "history-age-of-exploration-002",
+      "q": "What was the primary motivation for European exploration during the Age of Exploration?",
+      "options": ["Religious conversion of native peoples", "Search for spices, gold, and trade routes to Asia", "Establishing democratic governments", "Scientific study of unknown species"],
+      "answer": 1,
+      "explanation": "European powers sought valuable spices from Asia, gold and precious metals, and direct trade routes to avoid middlemen in the Eastern trade. Religious conversion and territorial expansion were secondary motivations."
+    },
+    {
+      "id": "history-age-of-exploration-003",
+      "q": "Which Portuguese explorer rounded the Cape of Good Hope, opening a sea route to India?",
+      "options": ["Henry the Navigator", "Vasco da Gama", "Bartolomeu Dias", "Pedro Álvares Cabral"],
+      "answer": 2,
+      "explanation": "Bartolomeu Dias rounded the Cape of Good Hope in 1488, proving an ocean route to Asia was possible. Vasco da Gama later completed the journey to India in 1498, making the first successful voyage to Asia by sea."
+    },
+    {
+      "id": "history-age-of-exploration-004",
+      "q": "Which explorer's expedition was the first to circumnavigate the globe, though he died during the journey?",
+      "options": ["Juan Sebastián Elcano", "Vasco da Gama", "Ferdinand Magellan", "Bartolomeu Dias"],
+      "answer": 2,
+      "explanation": "Ferdinand Magellan led the first expedition to circumnavigate the globe starting in 1519, but died in the Philippines in 1521. Juan Sebastián Elcano completed the voyage by returning to Spain in 1522."
+    },
+    {
+      "id": "history-age-of-exploration-005",
+      "q": "What instrument was crucial for navigation during the Age of Exploration?",
+      "options": ["The telescope", "The thermometer", "The magnetic compass", "The barometer"],
+      "answer": 2,
+      "explanation": "The magnetic compass, improved during this period, allowed sailors to navigate more accurately across open oceans without relying solely on stars and landmarks. The telescope was developed later and was not essential for ocean navigation."
+    },
+    {
+      "id": "history-age-of-exploration-006",
+      "q": "Which European nation dominated ocean exploration and colonization in the 16th and 17th centuries?",
+      "options": ["Italy", "Spain and Portugal", "England", "France"],
+      "answer": 1,
+      "explanation": "Spain and Portugal were the leading maritime powers during the early Age of Exploration, with Portugal pioneering African exploration and Spain backing Columbus. England and France became major naval powers later."
+    },
+    {
+      "id": "history-age-of-exploration-007",
+      "q": "What was the significance of the Treaty of Tordesillas in 1494?",
+      "options": ["It ended the Hundred Years' War", "It divided the New World between Spain and Portugal", "It established trade agreements with Asia", "It created the first colonial governance laws"],
+      "answer": 1,
+      "explanation": "The Treaty of Tordesillas divided newly explored territories between Spain and Portugal, with a line drawn west of the Azores and Cape Verde Islands. This prevented conflict between the two major exploring powers."
+    },
+    {
+      "id": "history-age-of-exploration-008",
+      "q": "Which African route did Portuguese explorers gradually map during the 15th century?",
+      "options": ["The Sahara Desert crossing", "The West African coast", "The Mediterranean coast", "The Indian Ocean route"],
+      "answer": 1,
+      "explanation": "Portuguese explorers under Prince Henry the Navigator systematically explored the West African coast, establishing trading posts and acquiring knowledge about African geography and trade networks, eventually rounding the Cape."
+    },
+    {
+      "id": "history-age-of-exploration-009",
+      "q": "What consequence did European exploration have on indigenous populations in the Americas?",
+      "options": ["Immediate peaceful integration and cultural exchange", "Technological advancement and widespread education", "Disease, conquest, enslavement, and population decline", "Mutual defense alliances against other threats"],
+      "answer": 2,
+      "explanation": "European contact brought devastating diseases like smallpox, conquest and colonization, enslavement of indigenous peoples, and massive population decline. While some cultural exchange occurred, it was vastly outweighed by harmful impacts."
+    },
+    {
+      "id": "history-age-of-exploration-010",
+      "q": "Which spice trade route did European explorers seek to control by reaching Asia directly?",
+      "options": ["The Silk Road through Central Asia", "The Indian Ocean sea route to Asia", "The Arctic Northwest Passage", "The Mediterranean grain trade"],
+      "answer": 1,
+      "explanation": "Europeans sought a sea route to Asia across the Indian Ocean to bypass the expensive Silk Road controlled by Ottoman and Arab middlemen, obtaining spices directly from source and increasing profits. The Northwest Passage was explored but not practical."
+    }
+  ]
+}

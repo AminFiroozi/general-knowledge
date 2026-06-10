@@ -1,0 +1,76 @@
+{
+  "topic": "world-wars",
+  "category": "history",
+  "questions": [
+    {
+      "id": "history-world-wars-001",
+      "q": "Which event triggered the start of World War I in 1914?",
+      "options": ["The invasion of Belgium", "The assassination of Archduke Franz Ferdinand", "The sinking of the Lusitania", "The rise of Adolf Hitler"],
+      "answer": 1,
+      "explanation": "The assassination of Archduke Franz Ferdinand of Austria-Hungary by a Serbian nationalist in Sarajevo on June 28, 1914, triggered the alliance system and started the war. The invasion of Belgium occurred after, not before, Austria-Hungary declared war."
+    },
+    {
+      "id": "history-world-wars-002",
+      "q": "Which countries were the primary Axis powers in World War II?",
+      "options": ["Soviet Union, China, and Britain", "Germany, Italy, and Japan", "United States, Britain, and France", "Germany and Soviet Union"],
+      "answer": 1,
+      "explanation": "The Axis powers were Germany, Italy, and Japan, who formed the primary military alliance against the Allies. The Soviet Union was initially neutral, then switched to the Allied side after Germany's invasion in 1941."
+    },
+    {
+      "id": "history-world-wars-003",
+      "q": "In what year did the United States enter World War II?",
+      "options": ["1939", "1940", "1941", "1942"],
+      "answer": 2,
+      "explanation": "The United States entered World War II on December 7, 1941, following the Japanese attack on Pearl Harbor. The war had been ongoing in Europe since 1939, but America remained neutral until the attack."
+    },
+    {
+      "id": "history-world-wars-004",
+      "q": "What was the primary cause of World War I according to historians?",
+      "options": ["Economic competition between colonial powers", "Complex system of alliances and militarism", "The spread of communism", "Religious conflict in the Middle East"],
+      "answer": 1,
+      "explanation": "Historians identify the complex system of alliances, militarism, imperialism, and nationalism as primary causes of WWI. The assassination of Franz Ferdinand was a trigger, but these underlying causes created the conditions for general European conflict."
+    },
+    {
+      "id": "history-world-wars-005",
+      "q": "Which document formally ended World War II in Europe?",
+      "options": ["The Munich Agreement", "The Treaty of Versailles", "The Potsdam Declaration", "The German Instrument of Surrender"],
+      "answer": 3,
+      "explanation": "Germany's Instrument of Surrender on May 7-8, 1945, formally ended WWII in Europe. The Treaty of Versailles ended WWI, while the Potsdam Declaration was directed at Japan."
+    },
+    {
+      "id": "history-world-wars-006",
+      "q": "Who was the leader of Nazi Germany during World War II?",
+      "options": ["Hermann Göring", "Joseph Stalin", "Adolf Hitler", "Benito Mussolini"],
+      "answer": 2,
+      "explanation": "Adolf Hitler was the Führer and leader of Nazi Germany from 1933 until his suicide in 1945. Göring was his second-in-command, Mussolini led Italy, and Stalin led the Soviet Union."
+    },
+    {
+      "id": "history-world-wars-007",
+      "q": "The Treaty of Versailles, signed after World War I, had what major consequence?",
+      "options": ["It unified all European nations under one government", "It imposed harsh penalties on Germany, creating resentment", "It ended all militarism in Europe permanently", "It granted independence to all colonial nations"],
+      "answer": 1,
+      "explanation": "The Treaty of Versailles imposed heavy reparations, territorial losses, and military restrictions on Germany, creating deep resentment that contributed to the rise of Hitler and World War II. Militarism and colonialism continued after the treaty."
+    },
+    {
+      "id": "history-world-wars-008",
+      "q": "Which Soviet leader led the country through most of World War II?",
+      "options": ["Leon Trotsky", "Nikita Khrushchev", "Joseph Stalin", "Vladimir Lenin"],
+      "answer": 2,
+      "explanation": "Joseph Stalin led the Soviet Union during World War II, from the German invasion in 1941 until the war's end in 1945. Lenin had died in 1924, and Khrushchev came to power after Stalin's death in 1953."
+    },
+    {
+      "id": "history-world-wars-009",
+      "q": "What was the primary strategy used by Germany in the opening months of World War II?",
+      "options": ["Defensive fortification along fixed lines", "Naval blockade of enemy ports", "Blitzkrieg, or lightning war, combining air and ground forces", "Guerrilla warfare and insurgency"],
+      "answer": 2,
+      "explanation": "Blitzkrieg combined rapid tank advances with air support to overwhelm enemies quickly, enabling Germany to conquer much of Europe in 1940. This strategy contrasted with the static trench warfare of WWI."
+    },
+    {
+      "id": "history-world-wars-010",
+      "q": "Which island nation was the focus of intense fighting in the Pacific Theater during World War II?",
+      "options": ["Malaysia", "The Philippines", "New Zealand", "Indonesia"],
+      "answer": 1,
+      "explanation": "The Philippines were a major battleground in the Pacific War, with the Japanese occupation followed by American liberation campaigns in 1944-1945. While other islands saw fighting, the Philippines had the largest population and strategic significance."
+    }
+  ]
+}

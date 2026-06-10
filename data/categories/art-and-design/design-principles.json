@@ -1,0 +1,126 @@
+{
+  "topic": "design-principles",
+  "category": "art-and-design",
+  "questions": [
+    {
+      "id": "art-and-design-design-principles-001",
+      "q": "In design, balance refers to the distribution of visual weight. Which type of balance uses identical or nearly identical elements on both sides of a central axis?",
+      "options": [
+        "Asymmetrical balance",
+        "Radial balance",
+        "Symmetrical balance",
+        "Diagonal balance"
+      ],
+      "answer": 2,
+      "explanation": "Symmetrical (or formal) balance mirrors elements across a central axis, creating stability and formality. Asymmetrical balance uses different elements of equal visual weight, while radial balance emanates from a central point."
+    },
+    {
+      "id": "art-and-design-design-principles-002",
+      "q": "Contrast in design emphasizes differences between elements to draw attention. Which is the strongest type of contrast?",
+      "options": [
+        "Size contrast alone",
+        "Color contrast alone",
+        "Contrast combining multiple properties like color, size, and texture",
+        "Texture contrast only"
+      ],
+      "answer": 2,
+      "explanation": "Multiple contrasts (color + size + texture) create stronger visual impact than single properties alone. Combined contrasts guide the eye more effectively and create greater visual interest and hierarchy."
+    },
+    {
+      "id": "art-and-design-design-principles-003",
+      "q": "Visual hierarchy organizes information so the viewer's eye is directed to the most important elements first. How is hierarchy typically established?",
+      "options": [
+        "By randomly placing elements",
+        "Through variations in size, color, contrast, and positioning",
+        "By making all elements identical",
+        "By using the same font weight throughout"
+      ],
+      "answer": 1,
+      "explanation": "Hierarchy is created through deliberate contrasts: larger, brighter, or positioned elements appear more important. Randomness, uniformity, or identical styling eliminate hierarchy and confuse the viewer."
+    },
+    {
+      "id": "art-and-design-design-principles-004",
+      "q": "Alignment in design ensures elements are positioned relative to a common line or edge. Why is proper alignment important?",
+      "options": [
+        "It increases file size",
+        "It creates visual order, improves readability, and appears more professional",
+        "It slows down page loading",
+        "It limits the number of design variations"
+      ],
+      "answer": 1,
+      "explanation": "Alignment creates structure and visual coherence, helping viewers navigate content intuitively. Poor alignment appears chaotic and unprofessional, reducing readability and increasing cognitive load."
+    },
+    {
+      "id": "art-and-design-design-principles-005",
+      "q": "Repetition as a design principle strengthens visual cohesion by repeating design elements. What is the risk of excessive repetition?",
+      "options": [
+        "Increased file size",
+        "The design becomes monotonous and visually boring",
+        "Loss of color information",
+        "Difficulty loading on slow networks"
+      ],
+      "answer": 1,
+      "explanation": "While repetition unifies a design, too much of it without variation creates monotony and fails to guide the eye. Successful designs balance repetition with strategic variation for visual interest."
+    },
+    {
+      "id": "art-and-design-design-principles-006",
+      "q": "White space (or negative space) in design refers to the empty areas surrounding elements. What purpose does white space serve?",
+      "options": [
+        "It wastes valuable design real estate",
+        "It provides breathing room, improves readability, and directs focus",
+        "It indicates a design is incomplete",
+        "It reduces the visual impact of key elements"
+      ],
+      "answer": 1,
+      "explanation": "White space prevents visual clutter, gives elements room to stand out, and improves comprehension. Adequate white space is essential for good design; its absence overwhelms the viewer and degrades usability."
+    },
+    {
+      "id": "art-and-design-design-principles-007",
+      "q": "Proximity in design groups related elements together. How does proximity affect perception?",
+      "options": [
+        "It has no effect on how viewers understand relationships",
+        "It makes all elements appear equally important",
+        "It causes viewers to perceive grouped elements as related",
+        "It reduces the visual appeal of a design"
+      ],
+      "answer": 2,
+      "explanation": "Proximity leverages cognitive grouping; viewers naturally perceive close elements as related. Distance between elements suggests they are unrelated, making proximity essential for communicating information structure."
+    },
+    {
+      "id": "art-and-design-design-principles-008",
+      "q": "Emphasis in design directs attention to the most important element, often called the focal point. Which is NOT a common method of creating emphasis?",
+      "options": [
+        "Using contrasting colors",
+        "Making an element significantly larger",
+        "Ensuring all elements are identical in size and color",
+        "Isolating the element with surrounding white space"
+      ],
+      "answer": 2,
+      "explanation": "Identical sizing and coloring eliminate emphasis and hierarchy. True emphasis requires differentiation through contrast, scale, color, positioning, or isolation—techniques that make an element stand out."
+    },
+    {
+      "id": "art-and-design-design-principles-009",
+      "q": "The rule of thirds divides a composition into a 3x3 grid and places key elements along the lines or intersections. What is the purpose?",
+      "options": [
+        "To waste one-third of the canvas",
+        "To create more dynamic, balanced compositions that are visually engaging",
+        "To ensure equal spacing of all elements",
+        "To simplify color palettes"
+      ],
+      "answer": 1,
+      "explanation": "The rule of thirds creates natural focal points that are more visually interesting than dead-center placement. This principle mirrors how the human eye naturally scans and focuses on compositions."
+    },
+    {
+      "id": "art-and-design-design-principles-010",
+      "q": "Gestalt principles in design describe how humans perceive visual elements as organized wholes. Which Gestalt principle suggests that we perceive grouped or related items as a single unit?",
+      "options": [
+        "Figure-ground",
+        "Law of continuity",
+        "Proximity and similarity",
+        "Depth of field"
+      ],
+      "answer": 2,
+      "explanation": "Proximity (close elements) and similarity (elements sharing properties) cause viewers to group items together. Figure-ground distinguishes objects from backgrounds, continuity follows smooth lines, and depth of field is a photographic concept."
+    }
+  ]
+}

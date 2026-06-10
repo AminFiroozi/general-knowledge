@@ -1,0 +1,126 @@
+{
+  "topic": "sociolinguistics",
+  "category": "linguistics",
+  "questions": [
+    {
+      "id": "linguistics-sociolinguistics-001",
+      "q": "What is a dialect?",
+      "options": [
+        "A variety of language used by a particular social group or region, differing in pronunciation, grammar, or vocabulary",
+        "A mistake in speaking or writing",
+        "A language with very few speakers",
+        "The formal standard version of a language used in writing"
+      ],
+      "answer": 0,
+      "explanation": "Dialects are systematic varieties of a language associated with regions, social classes, or other groups. Boston English and Southern English are dialects of American English. Option 2 equates dialects with errors (incorrect), option 3 confuses dialects with endangered languages, and option 4 misidentifies the standard as a dialect."
+    },
+    {
+      "id": "linguistics-sociolinguistics-002",
+      "q": "What is code-switching?",
+      "options": [
+        "Alternating between two languages within a single conversation or sentence",
+        "Changing one's accent to sound more professional",
+        "Learning a new language as an adult",
+        "Translating words from one language to another"
+      ],
+      "answer": 0,
+      "explanation": "Code-switching is switching between languages (e.g., Spanish and English) within speech, often unconsciously and for social meaning. Option 2 describes accent accommodation, option 3 describes language acquisition, and option 4 describes translation."
+    },
+    {
+      "id": "linguistics-sociolinguistics-003",
+      "q": "What is a register in sociolinguistics?",
+      "options": [
+        "A style of language appropriate to a particular social context or situation",
+        "A list of speakers in a language community",
+        "The pitch range of a person's voice",
+        "A grammatical category like verb tense or number"
+      ],
+      "answer": 0,
+      "explanation": "Register is the style of language appropriate to context: formal register for academic writing, casual register for friends. Registers vary in formality, technical vocabulary, and sentence structure. Options 2-4 describe unrelated linguistic or social concepts."
+    },
+    {
+      "id": "linguistics-sociolinguistics-004",
+      "q": "What is the Sapir-Whorf Hypothesis primarily concerned with?",
+      "options": [
+        "How language shapes thought and worldview",
+        "The biological basis of language acquisition",
+        "The grammar rules that all languages share",
+        "The history of the English language"
+      ],
+      "answer": 0,
+      "explanation": "The Sapir-Whorf Hypothesis proposes that speakers' language influences how they perceive and think about the world (e.g., color terms affecting color perception). Option 2 concerns neurology, option 3 concerns universal grammar, and option 4 concerns diachronic linguistics."
+    },
+    {
+      "id": "linguistics-sociolinguistics-005",
+      "q": "What is linguistic prestige?",
+      "options": [
+        "Social status or respect associated with a particular language variety",
+        "The age of a language or how long it has been spoken",
+        "The number of native speakers of a language",
+        "The difficulty level of learning a language"
+      ],
+      "answer": 0,
+      "explanation": "Prestige varieties of language receive higher social status; speakers may adopt prestigious forms to gain status. In many Western contexts, standard English has prestige while regional dialects have lower prestige. Options 2-4 describe other language properties but not social status."
+    },
+    {
+      "id": "linguistics-sociolinguistics-006",
+      "q": "What is a speech community?",
+      "options": [
+        "A group of speakers who share a language or linguistic variety and norms about language use",
+        "A group of linguists who study language",
+        "A country where one official language is spoken",
+        "An online forum where people discuss grammar rules"
+      ],
+      "answer": 0,
+      "explanation": "A speech community shares linguistic features and conventions even if geographically dispersed. Members understand each other's speech norms. Option 2 describes linguists, option 3 is geopolitical not sociolinguistic, and option 4 describes an online group."
+    },
+    {
+      "id": "linguistics-sociolinguistics-007",
+      "q": "What is a sociolect?",
+      "options": [
+        "A language variety associated with a particular social class or group",
+        "A temporary change in how someone speaks",
+        "A borrowed word from another language",
+        "A mistake that violates grammatical rules"
+      ],
+      "answer": 0,
+      "explanation": "A sociolect is a dialect tied to social group (e.g., class, profession, age). Working-class and middle-class speech varieties are sociolects. Option 2 describes temporary variation (style-shifting), option 3 describes loanwords, and option 4 describes error."
+    },
+    {
+      "id": "linguistics-sociolinguistics-008",
+      "q": "What is linguistic accommodation?",
+      "options": [
+        "The tendency to adjust one's speech toward or away from another speaker's style",
+        "Learning multiple languages at the same time",
+        "Using slang or informal language in formal settings",
+        "Translating idioms from one language to another"
+      ],
+      "answer": 0,
+      "explanation": "Accommodation is converging toward another's speech (pronouncing words similarly to gain approval) or diverging away (emphasizing differences for identity). Option 2 is bilingualism, option 3 is register mismatching, and option 4 is translation strategy."
+    },
+    {
+      "id": "linguistics-sociolinguistics-009",
+      "q": "What is a pidgin?",
+      "options": [
+        "A simplified language created by speakers of different languages to communicate",
+        "A language that is no longer spoken",
+        "A language with only consonants and no vowels",
+        "The first language learned by a child"
+      ],
+      "answer": 0,
+      "explanation": "A pidgin develops when speakers of mutually unintelligible languages need to communicate, creating simplified grammar and vocabulary. If a pidgin becomes children's first language, it becomes a creole. Options 2-4 describe other language types or acquisition scenarios."
+    },
+    {
+      "id": "linguistics-sociolinguistics-010",
+      "q": "What is a creole?",
+      "options": [
+        "A pidgin that has become the native language of a speech community",
+        "A language spoken only by elite members of society",
+        "A language that is extinct but can be reconstructed",
+        "A language brought by colonizers to a new region"
+      ],
+      "answer": 0,
+      "explanation": "A creole develops when a pidgin becomes children's native language, acquiring full grammatical complexity. Hawaiian Creole English is a creole born from pidgin. Option 2 describes prestige varieties, option 3 describes reconstructed languages, and option 4 describes colonial language contact (but not creolization specifically)."
+    }
+  ]
+}

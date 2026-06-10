@@ -1,0 +1,76 @@
+{
+  "topic": "physical-geography",
+  "category": "geography",
+  "questions": [
+    {
+      "id": "geography-physical-geography-001",
+      "q": "What is the largest desert in the world?",
+      "options": ["Sahara Desert", "Gobi Desert", "Antarctic Desert", "Arabian Desert"],
+      "answer": 2,
+      "explanation": "The Antarctic Desert is the world's largest desert by area, covering about 14 million km². While the Sahara is famous, Antarctica's cold, dry climate classifies it as the largest desert."
+    },
+    {
+      "id": "geography-physical-geography-002",
+      "q": "Which ocean is the deepest?",
+      "options": ["Atlantic Ocean", "Indian Ocean", "Pacific Ocean", "Arctic Ocean"],
+      "answer": 2,
+      "explanation": "The Pacific Ocean is the deepest ocean, with the Mariana Trench reaching about 11,000 meters. The Atlantic is the second-deepest but does not match the Pacific."
+    },
+    {
+      "id": "geography-physical-geography-003",
+      "q": "What type of weathering is the breakdown of rock without chemical change?",
+      "options": ["Chemical weathering", "Biological weathering", "Mechanical weathering", "Thermal weathering"],
+      "answer": 2,
+      "explanation": "Mechanical weathering breaks rock into smaller pieces without altering its chemical composition, through processes like frost action and abrasion. Chemical weathering alters rock composition."
+    },
+    {
+      "id": "geography-physical-geography-004",
+      "q": "Which biome receives the least precipitation?",
+      "options": ["Savanna", "Tundra", "Desert", "Grassland"],
+      "answer": 2,
+      "explanation": "Deserts receive the least precipitation, typically less than 250mm per year. Tundra appears dry but actually receives more precipitation than deserts."
+    },
+    {
+      "id": "geography-physical-geography-005",
+      "q": "What is the process by which water changes from a liquid to a vapor?",
+      "options": ["Condensation", "Precipitation", "Evaporation", "Sublimation"],
+      "answer": 2,
+      "explanation": "Evaporation is the process of water turning into vapor. Condensation is the reverse process, and precipitation is water falling to Earth."
+    },
+    {
+      "id": "geography-physical-geography-006",
+      "q": "Which mountain range is the longest in the world?",
+      "options": ["Alps", "Himalayas", "Mid-Ocean Ridge", "Andes"],
+      "answer": 2,
+      "explanation": "The Mid-Ocean Ridge is the longest mountain range, spanning over 65,000 km underwater. The Andes is the longest mountain range on land."
+    },
+    {
+      "id": "geography-physical-geography-007",
+      "q": "What is the name of the zone where rainforest vegetation thrives?",
+      "options": ["Temperate zone", "Tropical zone", "Boreal zone", "Arid zone"],
+      "answer": 1,
+      "explanation": "Tropical zones, near the equator, have the conditions for rainforests to thrive with high rainfall and warmth. Temperate and boreal zones are too cold for rainforests."
+    },
+    {
+      "id": "geography-physical-geography-008",
+      "q": "Which process describes the gradual wearing away of rock by wind, water, or ice?",
+      "options": ["Erosion", "Deposition", "Compaction", "Lithification"],
+      "answer": 0,
+      "explanation": "Erosion is the wearing away and transport of rock material by natural agents. Deposition is where eroded material is dropped, not the removal process itself."
+    },
+    {
+      "id": "geography-physical-geography-009",
+      "q": "What is the term for the height of land above sea level?",
+      "options": ["Latitude", "Longitude", "Elevation", "Gradient"],
+      "answer": 2,
+      "explanation": "Elevation refers to height above sea level. Latitude measures position north or south of the equator, and longitude measures position east or west."
+    },
+    {
+      "id": "geography-physical-geography-010",
+      "q": "Which climate classification system is most commonly used by geographers?",
+      "options": ["Holdridge classification", "Köppen classification", "Trewartha classification", "Whittaker classification"],
+      "answer": 1,
+      "explanation": "The Köppen climate classification is the most widely used system based on temperature and precipitation. It's the standard in most geography textbooks."
+    }
+  ]
+}

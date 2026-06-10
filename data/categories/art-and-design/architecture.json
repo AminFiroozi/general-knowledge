@@ -1,0 +1,126 @@
+{
+  "topic": "architecture",
+  "category": "art-and-design",
+  "questions": [
+    {
+      "id": "art-and-design-architecture-001",
+      "q": "Gothic architecture emerged in medieval Europe and featured distinctive structural elements. Which structural innovation allowed Gothic churches to reach greater heights with thinner walls?",
+      "options": [
+        "Flying buttresses and pointed arches",
+        "Domed ceilings and thick columns",
+        "Flat roofs and load-bearing walls",
+        "Steel reinforcement and concrete"
+      ],
+      "answer": 0,
+      "explanation": "Flying buttresses transferred weight outward, and pointed arches distributed loads more efficiently than rounded Romanesque arches. Together, these innovations allowed taller structures with larger windows and thinner walls."
+    },
+    {
+      "id": "art-and-design-architecture-002",
+      "q": "Modernist architecture, pioneered by architects like Le Corbusier and Ludwig Mies van der Rohe, rejected ornament and emphasized function. What is a key principle of modernism?",
+      "options": [
+        "Form follows ornament",
+        "Decoration is the primary purpose of architecture",
+        "Form follows function",
+        "Historical styles should always be imitated"
+      ],
+      "answer": 2,
+      "explanation": "Modernism's core principle, 'form follows function,' dictates that a building's shape should derive from its purpose. Ornament is eliminated, materials are exposed, and clean lines dominate—prioritizing utility over decoration."
+    },
+    {
+      "id": "art-and-design-architecture-003",
+      "q": "The Parthenon in Athens, built in the 5th century BCE, exemplifies which architectural order with its distinctive columns?",
+      "options": [
+        "Ionic",
+        "Doric",
+        "Corinthian",
+        "Tuscan"
+      ],
+      "answer": 1,
+      "explanation": "The Parthenon uses the Doric order, characterized by sturdy, fluted columns without a base. The Ionic order has scrolls (volutes), and Corinthian has ornate acanthus capitals—both more decorative than Doric."
+    },
+    {
+      "id": "art-and-design-architecture-004",
+      "q": "The Eiffel Tower, designed by Gustave Eiffel for the 1889 Paris Exposition, was revolutionary for using which material as its primary structure?",
+      "options": [
+        "Reinforced concrete",
+        "Cast iron",
+        "Steel",
+        "Stone and brick"
+      ],
+      "answer": 2,
+      "explanation": "The Eiffel Tower's elegant lattice structure is wrought iron (a form of steel). This material allowed the tower's unprecedented height and delicate appearance while maintaining strength, pioneering modern skeletal construction."
+    },
+    {
+      "id": "art-and-design-architecture-005",
+      "q": "The dome is a curved, vault-like structural form. Which ancient building famously uses an unreinforced concrete dome with an oculus (opening) at its peak?",
+      "options": [
+        "The Colosseum in Rome",
+        "The Pantheon in Rome",
+        "Hagia Sophia in Istanbul",
+        "The Roman Forum Temple of Jupiter"
+      ],
+      "answer": 1,
+      "explanation": "The Pantheon's concrete dome is an engineering marvel, still the world's largest unreinforced concrete dome. The oculus serves both structural and symbolic purposes, lighting the interior and representing the eye of heaven."
+    },
+    {
+      "id": "art-and-design-architecture-006",
+      "q": "Postmodern architecture rejected modernism's stark minimalism and reintroduced ornament, historical references, and irony. Which architect is a key postmodern figure?",
+      "options": [
+        "Walter Gropius",
+        "Le Corbusier",
+        "Robert Venturi",
+        "Mies van der Rohe"
+      ],
+      "answer": 2,
+      "explanation": "Robert Venturi championed postmodernism, arguing that decoration and historical references enrich architecture. The modernist pioneers (Gropius, Le Corbusier, Mies) advocated for form-follows-function purity."
+    },
+    {
+      "id": "art-and-design-architecture-007",
+      "q": "Load-bearing walls support a building's weight by transmitting forces downward to the foundation. Which modern structural innovation allows buildings to use fewer or thinner walls?",
+      "options": [
+        "Thicker stone masonry",
+        "Skeleton frame construction using steel or concrete",
+        "More windows and openings",
+        "Increased building height"
+      ],
+      "answer": 1,
+      "explanation": "Steel and concrete frames support weight independently, allowing walls to become non-structural infill. This innovation enabled open floor plans, flexibility, and modern skyscraper design unattainable with load-bearing masonry."
+    },
+    {
+      "id": "art-and-design-architecture-008",
+      "q": "Byzantine architecture, prominent from the 5th to 15th centuries, is recognizable by its use of large domes supported by what structural system?",
+      "options": [
+        "Flying buttresses and ribbed vaults",
+        "Pendentives and squinches",
+        "Barrel vaults and thick walls",
+        "Pointed arches and slender columns"
+      ],
+      "answer": 1,
+      "explanation": "Pendentives (triangular sections) and squinches transition a dome's circular base to a square structure beneath. This Byzantine innovation differs from Gothic buttresses and Islamic domes, creating the distinctive Byzantine silhouette."
+    },
+    {
+      "id": "art-and-design-architecture-009",
+      "q": "Frank Lloyd Wright designed many buildings with his 'Organic Architecture' philosophy. What principle guided this approach?",
+      "options": [
+        "Buildings should dominate the natural landscape",
+        "Ornament is always unnecessary",
+        "Buildings should harmonize with their natural environment and site",
+        "Only geometric shapes are appropriate"
+      ],
+      "answer": 2,
+      "explanation": "Wright's organic architecture emphasizes harmony between buildings and their environment, using local materials and adapting to landscape. This philosophy rejects both modernist minimalism and historical eclecticism in favor of contextual integration."
+    },
+    {
+      "id": "art-and-design-architecture-010",
+      "q": "Sustainable or green architecture incorporates environmental considerations into design. Which is NOT a key feature of sustainable building practice?",
+      "options": [
+        "Maximizing energy efficiency and natural light",
+        "Using high-emission, non-recyclable materials",
+        "Designing for water conservation and stormwater management",
+        "Selecting renewable or recycled building materials"
+      ],
+      "answer": 1,
+      "explanation": "Sustainable design minimizes environmental impact through efficient materials and resource use. High-emission, non-recyclable materials directly contradict sustainability principles and waste resources."
+    }
+  ]
+}

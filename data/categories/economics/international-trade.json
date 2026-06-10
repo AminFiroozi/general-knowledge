@@ -1,0 +1,126 @@
+{
+  "topic": "international-trade",
+  "category": "economics",
+  "questions": [
+    {
+      "id": "economics-international-trade-001",
+      "q": "The principle of comparative advantage suggests that countries benefit from trade by:",
+      "options": [
+        "Specializing in goods where they have the lowest opportunity cost, even if another country is more efficient in all goods",
+        "Only trading with countries that have lower wage costs",
+        "Protecting all domestic industries from foreign competition",
+        "Exporting only the goods they produce most efficiently"
+      ],
+      "answer": 0,
+      "explanation": "Comparative advantage shows that trade benefits all parties based on opportunity costs, not absolute productivity. A country might be less efficient at everything but still gain by specializing where it's relatively less inefficient. Option B ignores comparative advantage dynamics; option C eliminates gains from trade; option D confuses comparative with absolute advantage."
+    },
+    {
+      "id": "economics-international-trade-002",
+      "q": "A tariff on imported goods typically leads to:",
+      "options": [
+        "Higher domestic prices for consumers, reduced imports, and protection for domestic producers",
+        "Lower prices for all consumers due to government revenue from tariffs",
+        "Increased exports as other countries retaliate with lower prices",
+        "Elimination of unemployment in protected industries"
+      ],
+      "answer": 0,
+      "explanation": "Tariffs raise import prices, reducing quantity demanded and increasing domestic production at higher prices. Consumers pay more; protected industries benefit; other exporters lose. Option B ignores the deadweight loss exceeding tariff revenue; option C reverses the retaliation effect; option D ignores adjustment costs and potential job losses elsewhere from higher input costs."
+    },
+    {
+      "id": "economics-international-trade-003",
+      "q": "The trade balance of a country measures:",
+      "options": [
+        "The difference between the value of exports and imports of goods and services",
+        "The total amount of goods physically shipped across borders",
+        "The exchange rate between domestic and foreign currency",
+        "The government's budget surplus or deficit"
+      ],
+      "answer": 0,
+      "explanation": "Trade balance (exports minus imports) shows whether a country has a surplus or deficit. A positive balance means more exports than imports. Option B counts quantity, not value. Option C measures currency value relative to others. Option D pertains to government finances, not trade."
+    },
+    {
+      "id": "economics-international-trade-004",
+      "q": "Exchange rate appreciation of a country's currency typically makes:",
+      "options": [
+        "Exports more expensive to foreign buyers and imports cheaper for domestic consumers",
+        "Exports cheaper and imports more expensive, improving the trade balance",
+        "All foreign goods impossible to afford",
+        "The country's trade deficit disappear completely"
+      ],
+      "answer": 0,
+      "explanation": "Currency appreciation (strengthening) means foreign buyers need more of their currency to buy domestic goods, raising export prices and reducing quantity demanded. Simultaneously, domestic consumers need less currency to buy imports, reducing import prices. This typically worsens the trade balance. Option B reverses the effects; options C and D overstate impacts."
+    },
+    {
+      "id": "economics-international-trade-005",
+      "q": "According to the Heckscher-Ohlin theorem, countries have comparative advantage in goods that:",
+      "options": [
+        "Intensively use their abundant factors of production relative to other countries",
+        "Are produced using the most advanced technology",
+        "Provide the highest profits regardless of factor abundance",
+        "Are easiest to transport across international borders"
+      ],
+      "answer": 0,
+      "explanation": "The H-O theorem states countries specialize in goods requiring their abundant factors (a capital-rich country in capital-intensive goods). This explains trade patterns based on factor endowments. Option B describes comparative advantage poorly; option C ignores factor differences; option D focuses on logistics, not economic advantage."
+    },
+    {
+      "id": "economics-international-trade-006",
+      "q": "A quota on imported goods creates which economic effect that a tariff does not?",
+      "options": [
+        "Rents accrue to foreign exporters rather than generating government revenue",
+        "It eliminates all unemployment in the protected industry",
+        "Prices fall below the quota level",
+        "Consumers benefit through lower overall costs"
+      ],
+      "answer": 0,
+      "explanation": "Quotas limit quantity, raising prices and creating rents for foreign producers or whoever allocates import rights. Tariffs generate government revenue instead. Both reduce imports and raise prices, but revenue destination differs. Options B, C, and D mischaracterize quota effects—quotas typically raise prices and create deadweight loss like tariffs."
+    },
+    {
+      "id": "economics-international-trade-007",
+      "q": "The current account of a country's balance of payments includes:",
+      "options": [
+        "Trade in goods and services, plus income flows and transfers between countries",
+        "Only the physical movement of goods across borders",
+        "Financial investments and capital flows between countries",
+        "Government spending and tax revenues"
+      ],
+      "answer": 0,
+      "explanation": "The current account records transactions in real goods, services, and income (wages, investment returns). The capital account records financial asset transactions. Together they balance (current + capital ≈ 0). Option B omits services and income; option C describes the capital account; option D pertains to fiscal accounts, not balance of payments."
+    },
+    {
+      "id": "economics-international-trade-008",
+      "q": "When a country runs a persistent trade deficit, it must be financing the deficit by:",
+      "options": [
+        "Running a capital account surplus through capital inflows and foreign borrowing",
+        "Exporting large quantities of gold to other countries",
+        "Raising tariffs to eliminate imports",
+        "Abandoning international trade entirely"
+      ],
+      "answer": 0,
+      "explanation": "By balance of payments accounting, a trade deficit (current account deficit) must equal a capital account surplus. Foreign capital flows in to finance the deficit. The US consistently imports more than exports, financed by foreign investment in US assets. Options B, C, and D describe alternative mechanisms that don't match actual accounting or reality."
+    },
+    {
+      "id": "economics-international-trade-009",
+      "q": "Dumping in international trade refers to:",
+      "options": [
+        "Selling exports at prices below cost or below home country prices to gain market share",
+        "Physically discarding products that fail quality standards",
+        "Allowing foreign producers to sell freely without any tariff protection",
+        "A country accepting only one major trading partner"
+      ],
+      "answer": 0,
+      "explanation": "Dumping is predatory pricing: a firm or country sells exports below production cost or below domestic prices to undercut competitors and capture market share. This can trigger anti-dumping duties. Option B describes waste management; option C describes free trade, not dumping; option D describes bilateral trade concentration."
+    },
+    {
+      "id": "economics-international-trade-010",
+      "q": "The terms of trade for a country refer to:",
+      "options": [
+        "The ratio of export prices to import prices, indicating how much import value one unit of exports can purchase",
+        "The legal agreements between trading partners regarding tariffs",
+        "The total volume of goods a country trades internationally",
+        "The domestic price level relative to foreign prices"
+      ],
+      "answer": 0,
+      "explanation": "Terms of trade measure export/import price ratios; an improvement means exports become relatively more valuable or imports cheaper. This indicator shows trading advantage evolution. Option B describes trade agreements; option C measures volume, not price relationships; option D describes relative price levels, distinct from terms of trade."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "logic",
+  "category": "philosophy",
+  "questions": [
+    {
+      "id": "philosophy-logic-001",
+      "q": "A deductive argument is valid if which of the following conditions holds?",
+      "options": [
+        "The conclusion is true in the actual world",
+        "The premises are believed by most people",
+        "Whenever the premises are true, the conclusion must be true",
+        "The argument uses clear and simple language"
+      ],
+      "answer": 2,
+      "explanation": "Validity is a structural property: if the premises are true, the conclusion cannot be false. Option 0 confuses validity with truth. Option 1 appeals to popularity. Option 3 concerns clarity, not logical form. An argument can be valid with false premises."
+    },
+    {
+      "id": "philosophy-logic-002",
+      "q": "What is the difference between validity and soundness in deductive logic?",
+      "options": [
+        "Validity requires certainty; soundness allows probability",
+        "Validity concerns logical form; soundness requires valid form plus true premises",
+        "Validity is objective; soundness is subjective",
+        "Validity applies to induction; soundness applies to deduction"
+      ],
+      "answer": 1,
+      "explanation": "A valid argument has a correct logical form. A sound argument is valid and has all true premises. Option 0 confuses validity with certainty. Option 2 treats both as structural properties. Option 3 reverses the relationship."
+    },
+    {
+      "id": "philosophy-logic-003",
+      "q": "Which of the following is an example of the fallacy of begging the question?",
+      "options": [
+        "All birds have wings, so Tweety must have wings because Tweety is a bird",
+        "If democracy requires free speech, and free speech requires democracy, then democracy requires democracy",
+        "Most people believe the Earth is round, so it must be round",
+        "Either we institute capital punishment or crime will increase forever"
+      ],
+      "answer": 1,
+      "explanation": "Begging the question assumes the conclusion in the premises, creating circular reasoning. Option 0 is valid deduction. Option 2 is an appeal to authority. Option 3 presents a false dilemma. Option 1 illustrates how the conclusion (democracy requires X) is presupposed in the premises."
+    },
+    {
+      "id": "philosophy-logic-004",
+      "q": "In a categorical syllogism, what is the middle term?",
+      "options": [
+        "The term that appears in the conclusion",
+        "The term that appears in both premises but not in the conclusion",
+        "The term that appears only in the major premise",
+        "The first term mentioned in the syllogism"
+      ],
+      "answer": 1,
+      "explanation": "The middle term connects the two premises and appears in both but not in the conclusion. It serves to link the major and minor terms. Option 0 and 3 are other terms. Option 2 restricts to only one premise."
+    },
+    {
+      "id": "philosophy-logic-005",
+      "q": "What does the law of excluded middle state in classical logic?",
+      "options": [
+        "Every proposition must have a subject and predicate",
+        "For any proposition, either it is true or its negation is true, with no middle ground",
+        "Contradictory statements cannot both be true",
+        "A term cannot have contradictory properties simultaneously"
+      ],
+      "answer": 1,
+      "explanation": "The law of excluded middle asserts that for any proposition P, either P or not-P must be true. Option 0 is about sentence structure. Option 2 is the law of non-contradiction. Option 3 is also about non-contradiction, not excluded middle."
+    },
+    {
+      "id": "philosophy-logic-006",
+      "q": "Which logical fallacy occurs when someone attacks the person making an argument rather than addressing the argument itself?",
+      "options": [
+        "Straw man fallacy",
+        "Ad hominem fallacy",
+        "Equivocation fallacy",
+        "Hasty generalization"
+      ],
+      "answer": 1,
+      "explanation": "Ad hominem attacks the arguer's character rather than the argument's merits. Option 0 misrepresents the argument. Option 2 shifts word meanings. Option 3 generalizes from insufficient evidence."
+    },
+    {
+      "id": "philosophy-logic-007",
+      "q": "In propositional logic, what does the conditional statement 'if P then Q' mean?",
+      "options": [
+        "P and Q both occur in the world",
+        "Q cannot be true unless P is true",
+        "Whenever P is true, Q is true; the statement is false only when P is true and Q is false",
+        "P and Q are causally related in time"
+      ],
+      "answer": 2,
+      "explanation": "The material conditional is false only when the antecedent is true and the consequent is false. It does not require causal connection or temporal ordering. Option 0 is a conjunction. Option 1 is too strong. Option 3 imports causality not in the logical formula."
+    },
+    {
+      "id": "philosophy-logic-008",
+      "q": "What is a contrapositive, and how does it relate to logical equivalence?",
+      "options": [
+        "The contrapositive of 'if P then Q' is 'if Q then P', and they are logically equivalent",
+        "The contrapositive of 'if P then Q' is 'if not-Q then not-P', and they are logically equivalent",
+        "The contrapositive is the opposite of a proposition and has the opposite truth value",
+        "The contrapositive applies only to universal statements and cannot be used in particular premises"
+      ],
+      "answer": 1,
+      "explanation": "The contrapositive of 'if P then Q' is 'if not-Q then not-P', and these are always logically equivalent. Option 0 describes the converse, which is not equivalent. Option 2 mischaracterizes contraposition. Option 3 incorrectly restricts its use."
+    },
+    {
+      "id": "philosophy-logic-009",
+      "q": "What is an undistributed middle fallacy in categorical logic?",
+      "options": [
+        "Using the same term in two different senses within a syllogism",
+        "Having more terms in the conclusion than in the premises",
+        "The middle term is not distributed in at least one premise, failing to connect the premises",
+        "Making an existential claim from universal premises"
+      ],
+      "answer": 2,
+      "explanation": "When the middle term is not distributed (not referring to the entire class) in at least one premise, the syllogism fails to validly connect the premises. Option 0 is equivocation. Option 1 violates the rule of the four terms. Option 3 is the existential fallacy."
+    },
+    {
+      "id": "philosophy-logic-010",
+      "q": "In logic, what is the difference between the converse and the inverse of a conditional statement?",
+      "options": [
+        "The converse and inverse are the same thing expressed differently",
+        "The converse of 'if P then Q' is 'if Q then P'; the inverse is 'if not-P then not-Q'; both differ from the original but are equivalent to each other",
+        "The converse is the contrapositive stated backwards; the inverse applies only to negative statements",
+        "The converse and inverse are both valid inferences from a conditional, unlike the contrapositive"
+      ],
+      "answer": 1,
+      "explanation": "For 'if P then Q': converse is 'if Q then P'; inverse is 'if not-P then not-Q'. These are equivalent to each other but not to the original. Only the contrapositive is logically equivalent to the original. Option 0 conflates them. Option 3 wrongly claims both are valid inferences."
+    }
+  ]
+}

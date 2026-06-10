@@ -1,0 +1,126 @@
+{
+  "topic": "monetary-policy",
+  "category": "economics",
+  "questions": [
+    {
+      "id": "economics-monetary-policy-001",
+      "q": "The primary objective of a central bank's monetary policy is typically to:",
+      "options": [
+        "Maintain price stability and promote maximum employment",
+        "Ensure that stock market prices always increase",
+        "Eliminate all unemployment instantly",
+        "Maximize government tax revenue"
+      ],
+      "answer": 0,
+      "explanation": "Central banks like the Federal Reserve have dual mandates: price stability (controlling inflation) and maximum employment. These goals can conflict in the short run, but balance long-term growth. Option B isn't a central bank objective; option C is impossible and undesirable (natural unemployment exists); option D pertains to fiscal, not monetary policy."
+    },
+    {
+      "id": "economics-monetary-policy-002",
+      "q": "When a central bank sells government securities from its balance sheet, what effect does this have on the money supply?",
+      "options": [
+        "Decreases the money supply as commercial banks' reserves fall",
+        "Increases the money supply as more securities enter circulation",
+        "Has no effect on the money supply since it's just transferring assets",
+        "Increases the money supply only if interest rates are falling"
+      ],
+      "answer": 0,
+      "explanation": "Open market sales contract the money supply: the central bank receives payment from commercial banks, reducing their reserve balances. With fewer reserves, banks must reduce lending, shrinking money supply. Option B reverses the direction; option C ignores the reserve mechanism. This is the opposite of open market purchases, which expand money supply."
+    },
+    {
+      "id": "economics-monetary-policy-003",
+      "q": "The money supply in modern economies includes:",
+      "options": [
+        "Physical currency plus demand deposits and certain liquid accounts",
+        "Only physical coins and paper currency in circulation",
+        "Real estate and physical assets that hold value",
+        "The total wealth of all individuals and businesses"
+      ],
+      "answer": 0,
+      "explanation": "M1 (narrow money) includes physical currency plus demand deposits (checking accounts). M2 adds savings deposits and money market accounts. Option B understates money supply since most economic transactions use bank deposits, not just cash. Option C refers to assets, not money supply; option D describes national wealth, distinct from money supply."
+    },
+    {
+      "id": "economics-monetary-policy-004",
+      "q": "If the central bank raises its target interest rate, what is the likely short-term effect on economic output?",
+      "options": [
+        "Output likely decreases as higher rates make borrowing more expensive for firms and consumers",
+        "Output increases because higher interest rates encourage saving",
+        "Output remains unchanged since interest rate changes take years to affect the economy",
+        "Output increases only if the rate increase is unexpected"
+      ],
+      "answer": 0,
+      "explanation": "Higher interest rates increase borrowing costs, reducing investment and consumer spending, which depresses aggregate demand and output. This is the intended effect of contractionary policy during inflation. Option B confuses saving behavior; while higher rates encourage saving, this reduces spending and thus output. Option C understates transmission speed; effects begin within quarters."
+    },
+    {
+      "id": "economics-monetary-policy-005",
+      "q": "Quantitative easing (QE) is a monetary policy tool used when:",
+      "options": [
+        "Traditional interest rate policy is ineffective because rates are already near zero",
+        "The economy is overheating and inflation is too high",
+        "The government wants to increase tax revenue",
+        "Commercial banks request more regulatory oversight"
+      ],
+      "answer": 0,
+      "explanation": "QE involves central banks buying long-term securities to expand money supply and lower longer-term rates when short-term rates hit zero (zero lower bound). This stimulates borrowing and spending when traditional rate cuts are exhausted. Option B describes conditions for contractionary policy, not QE. Options C and D are unrelated to QE's purpose."
+    },
+    {
+      "id": "economics-monetary-policy-006",
+      "q": "The transmission mechanism of monetary policy describes how:",
+      "options": [
+        "Central bank actions affect interest rates, which influence spending and investment, ultimately affecting prices and employment",
+        "The government directly controls prices of all goods in the economy",
+        "Central banks instantaneously control the exact money supply without lags",
+        "Monetary policy has no effect on real economic variables in the long run"
+      ],
+      "answer": 0,
+      "explanation": "The transmission mechanism is the process through which monetary policy works: rate changes → spending and investment decisions → aggregate demand → prices and employment. This happens with lags of months to years. Option B describes price controls, not monetary policy. Option C ignores real-world lags; option D misunderstands long-run neutrality concepts."
+    },
+    {
+      "id": "economics-monetary-policy-007",
+      "q": "What is the discount rate in central banking?",
+      "options": [
+        "The interest rate at which the central bank lends to commercial banks",
+        "The rate at which customers receive discounts on purchased goods",
+        "The annual decline in the value of currency due to inflation",
+        "The percentage reduction in income taxes for savers"
+      ],
+      "answer": 0,
+      "explanation": "The discount rate is the central bank's lending rate to commercial banks (the Fed's primary credit rate in the US). Changes in this rate affect banks' borrowing costs and influence their lending behavior. Option B describes retail discounts; option C relates to inflation, not central banking; option D is unrelated to monetary policy tools."
+    },
+    {
+      "id": "economics-monetary-policy-008",
+      "q": "Reserve requirements for commercial banks serve to:",
+      "options": [
+        "Limit the amount of deposits banks can lend out, controlling money supply expansion",
+        "Ensure banks always make a profit on deposits",
+        "Require banks to pay interest on all customer deposits",
+        "Prevent customers from withdrawing their deposits"
+      ],
+      "answer": 0,
+      "explanation": "Reserve requirements mandate that banks hold a percentage of deposits as reserves rather than lend them out. Lower requirements expand money supply capacity; higher requirements contract it. This tool directly controls money multiplier. Option B confuses reserve requirements with profitability mechanisms; options C and D mischaracterize the purpose."
+    },
+    {
+      "id": "economics-monetary-policy-009",
+      "q": "The Fisher equation describes the relationship between nominal interest rate, real interest rate, and inflation as:",
+      "options": [
+        "Nominal rate ≈ Real rate + Inflation rate",
+        "Real rate = Nominal rate minus Deflation rate",
+        "Nominal rate = Real rate divided by Inflation rate",
+        "Inflation rate = Real rate multiplied by the Money supply"
+      ],
+      "answer": 0,
+      "explanation": "The Fisher equation shows nominal (observable) rates compensate lenders for both time value of money (real return) and expected inflation. If real return is 2% and inflation 3%, the nominal rate is roughly 5%. This explains why nominal rates rise with inflation expectations. Option B misuses terminology; options C and D use incorrect mathematical relationships."
+    },
+    {
+      "id": "economics-monetary-policy-010",
+      "q": "If the central bank's actions cause inflation expectations to become unanchored, what happens?",
+      "options": [
+        "Workers and firms incorporate higher inflation expectations into wage and price-setting, making inflation harder to control",
+        "Actual inflation remains stable regardless of expectations",
+        "The central bank loses all ability to affect the economy",
+        "Deflation becomes inevitable within one year"
+      ],
+      "answer": 0,
+      "explanation": "Well-anchored inflation expectations (stable around target) mean price and wage setters don't anticipate future inflation, keeping actual inflation controlled. Unanchored expectations cause wage-price spirals: workers demand higher wages, firms raise prices, expectations rise further, perpetuating inflation. Option B ignores expectations' real effects; option C understates policy effectiveness; option D makes unfounded claims about timing."
+    }
+  ]
+}
