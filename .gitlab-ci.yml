@@ -1,0 +1,329 @@
+include:
+    - local: "/.gitlab/workflows/notifications.yml"
+
+stages:
+    - notify_ci
+    - test
+    - notify_test
+    - build
+    - push
+    - deploy
+    - notify
+
+variables:
+    DOCKER_BUILDKIT: "1"
+    REGISTRY: "registry.hamdocker.ir"
+    FRONTEND_REGISTRY_IMAGE: "registry.hamdocker.ir/myorg/frontend"
+    GIT_STRATEGY: fetch
+    GIT_CHECKOUT: "true"
+    GIT_DEPTH: "0"
+
+# ── CI Start ──────────────────────────────────────────────────────────────
+
+notify_ci_start:
+    stage: notify_ci
+    tags:
+        - notification
+    extends: .notification_template
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop")'
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+        - if: '$CI_COMMIT_MESSAGE =~ /^ci/'
+    script:
+        - |
+            TEXT="*1️⃣ CI Pipeline Started 1️⃣*
+            ${COMMIT_INFO}"
+            send_notification "$TEXT"
+
+# ── Test ─────────────────────────────────────────────────────────────────
+
+frontend_test:
+    stage: test
+    image: node:20-alpine
+    tags:
+        - need_docker
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop")'
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+        - if: '$CI_COMMIT_MESSAGE =~ /^ci/'
+    cache:
+        key: frontend-${CI_COMMIT_REF_SLUG}
+        paths:
+            - .npm-cache/
+        policy: pull-push
+    variables:
+        npm_config_cache: "$CI_PROJECT_DIR/.npm-cache"
+    artifacts:
+        paths:
+            - .test-output/
+        expire_in: 1 day
+        when: always
+    before_script:
+        - mkdir -p .test-output
+    script:
+        - |
+            rm -f package-lock.json
+
+            npm install --no-fund --no-audit 2>&1 | tee .test-output/npm_install.log
+            NPM_EXIT=${PIPESTATUS[0]}
+            if [ $NPM_EXIT -ne 0 ]; then
+              cat .test-output/npm_install.log
+              exit $NPM_EXIT
+            fi
+
+            npm run build 2>&1 | tee .test-output/npm_build.log
+            BUILD_EXIT=${PIPESTATUS[0]}
+            sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" .test-output/npm_build.log > .test-output/frontend_test_output.log
+            if [ $BUILD_EXIT -ne 0 ]; then
+              echo "--- BUILD FAILED ---"
+              cat .test-output/frontend_test_output.log
+              exit $BUILD_EXIT
+            fi
+
+            npm run lint 2>&1 | tee .test-output/lint.log || true
+
+# ── Notify Test ───────────────────────────────────────────────────────────
+
+notify_test_failure:
+    stage: notify_test
+    tags:
+        - notification
+    needs: ["frontend_test"]
+    extends: .notification_template
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop")'
+          when: on_failure
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_failure
+        - if: '$CI_COMMIT_MESSAGE =~ /^ci/'
+          when: on_failure
+    script:
+        - |
+            MESSAGE=$(cat .test-output/frontend_test_output.log 2>/dev/null || echo "Test failed - see pipeline logs")
+            TEXT="*🔵❌ Frontend Test/Build Failed ❌🔵*
+            ${COMMIT_INFO}
+            *Error details:*
+            \`\`\`${MESSAGE}\`\`\`"
+            send_notification "$TEXT"
+
+notify_test_success:
+    stage: notify_test
+    tags:
+        - notification
+    needs: ["frontend_test"]
+    extends: .notification_template
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && ($CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main" || $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "develop")'
+          when: on_success
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_success
+        - if: '$CI_COMMIT_MESSAGE =~ /^ci/'
+          when: on_success
+    script:
+        - send_notification "*🔵✅ Frontend Tests Passed ✅🔵*"
+
+notify_cd_start:
+    stage: notify_test
+    needs: []
+    extends: .notification_template
+    tags:
+        - notification
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_success
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_success
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_success
+    script:
+        - |
+            TEXT="*🔵2️⃣ Frontend CD Pipeline Started 2️⃣🔵*
+            ${COMMIT_INFO}"
+            send_notification "$TEXT"
+
+# ── Build ─────────────────────────────────────────────────────────────────
+
+frontend_build:
+    stage: build
+    tags:
+        - frontend
+    needs: []
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_success
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_success
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_success
+    before_script:
+        - mkdir -p .build-output
+        - |
+            if [ -z "$FRONTEND_ENV_FILE" ]; then
+                echo "WARNING: FRONTEND_ENV_FILE variable is not set"
+            else
+                cp "$FRONTEND_ENV_FILE" .env.local
+            fi
+    script:
+        - |
+            export FRONTEND_REGISTRY_IMAGE=$FRONTEND_REGISTRY_IMAGE
+
+            docker compose build 2>&1 | tee .build-output/raw_build.log
+            BUILD_EXIT=${PIPESTATUS[0]}
+
+            tail -n 50 .build-output/raw_build.log | \
+            sed -r "s/\x1B\[[0-9;]*[JKmsu]//g" > .build-output/build_output.log
+
+            if [ $BUILD_EXIT -ne 0 ]; then
+              exit $BUILD_EXIT
+            fi
+
+notify_build_failure:
+    stage: notify
+    tags:
+        - notification
+    needs: ["frontend_build"]
+    extends: .notification_template
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_failure
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_failure
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_failure
+    script:
+        - |
+            MESSAGE=$(cat .build-output/build_output.log 2>/dev/null || echo "Build failed - see pipeline logs")
+            TEXT="*🔵❌ Frontend Build Failed ❌🔵*
+            ${COMMIT_INFO}
+            *Error details:*
+            \`\`\`${MESSAGE}\`\`\`"
+            send_notification "$TEXT"
+
+notify_build_success:
+    stage: notify
+    tags:
+        - notification
+    needs: ["frontend_build"]
+    extends: .notification_template
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_success
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_success
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_success
+    script:
+        - |
+            TEXT="*🔵✅ Frontend Build Successful ✅🔵*
+            ${COMMIT_INFO}"
+            send_notification "$TEXT"
+
+# ── Push ──────────────────────────────────────────────────────────────────
+
+push_image:
+    stage: push
+    tags:
+        - frontend
+    image: docker:24
+    needs: ["frontend_build"]
+    services:
+        - docker:24-dind
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_success
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_success
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_success
+    before_script:
+        - echo "$REGISTRY_PASSWORD" | docker login $REGISTRY -u $REGISTRY_USERNAME --password-stdin
+        - cp "$FRONTEND_ENV_FILE" .env.local
+    script:
+        - |
+            export FRONTEND_REGISTRY_IMAGE=${FRONTEND_REGISTRY_IMAGE}
+            docker compose push
+
+notify_push_failure:
+    stage: notify
+    tags:
+        - notification
+    needs: ["push_image"]
+    extends: .notification_template
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_failure
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_failure
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_failure
+    script:
+        - send_notification "*🔵❌ Frontend Push Failed ❌🔵*"
+
+# ── Deploy ────────────────────────────────────────────────────────────────
+
+deploy_frontend:
+    stage: deploy
+    tags:
+        - frontend
+    needs: ["push_image"]
+    retry: 2
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_success
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_success
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_success
+    before_script:
+        - mkdir -p ~/.ssh
+        - chmod 700 ~/.ssh
+        - (cat "$SSH_PRIVATE_KEY"; echo "") | tr -d '\r' > ~/.ssh/id_rsa
+        - chmod 600 ~/.ssh/id_rsa
+        - ssh-keyscan -H "$SERVER_HOST" >> ~/.ssh/known_hosts
+    script:
+        - ssh -i ~/.ssh/id_rsa ${SERVER_USER}@${SERVER_HOST} "mkdir -p /root/frontend"
+        - scp -i ~/.ssh/id_rsa docker-compose.yml ${SERVER_USER}@${SERVER_HOST}:/root/frontend/
+        - |
+            ssh -i ~/.ssh/id_rsa ${SERVER_USER}@${SERVER_HOST} "
+                cd /root/frontend
+                echo '${PAT}' | docker login ${REGISTRY} -u ${REGISTRY_USERNAME} --password-stdin
+                echo \"$(cat $FRONTEND_ENV_FILE)\" > .env.local
+                chmod 644 .env.local
+                export FRONTEND_REGISTRY_IMAGE=${FRONTEND_REGISTRY_IMAGE}
+                docker compose pull
+                docker compose down --remove-orphans
+                docker compose up -d
+                docker image prune -f
+            "
+
+notify_deploy_failure:
+    stage: notify
+    tags:
+        - notification
+    extends: .notification_template
+    needs: ["deploy_frontend"]
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_failure
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_failure
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_failure
+    script:
+        - send_notification "*🔵❌ Frontend Deploy Failed ❌🔵*"
+
+notify_deploy_success:
+    stage: notify
+    tags:
+        - notification
+    extends: .notification_template
+    needs: ["deploy_frontend"]
+    rules:
+        - if: '$CI_PIPELINE_SOURCE == "merge_request_event" && $CI_MERGE_REQUEST_TARGET_BRANCH_NAME == "main"'
+          when: on_success
+        - if: '$CI_COMMIT_BRANCH =~ /^ops/'
+          when: on_success
+        - if: '$CI_COMMIT_MESSAGE =~ /^cd/'
+          when: on_success
+    script:
+        - send_notification "*🔵✅ Frontend Deploy Successful ✅🔵*"

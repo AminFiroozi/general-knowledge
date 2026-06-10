@@ -1,0 +1,9 @@
+services:
+  frontend:
+    build: .
+    image: ${FRONTEND_REGISTRY_IMAGE:-myapp/frontend}
+    container_name: frontend
+    ports:
+      - 3000:3000
+    env_file:
+      - .env.local
