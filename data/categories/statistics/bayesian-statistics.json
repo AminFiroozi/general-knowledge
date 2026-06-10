@@ -1,0 +1,121 @@
+{
+  "topic": "bayesian-statistics",
+  "category": "statistics",
+  "questions": [
+    {
+      "id": "statistics-bayesian-statistics-001",
+      "q": "In Bayesian statistics, what does the prior distribution represent?",
+      "options": [
+        "The belief about a parameter before observing data",
+        "The belief about a parameter after observing data",
+        "The likelihood of the observed data",
+        "The probability of the data being correct"
+      ],
+      "answer": 0,
+      "explanation": "The prior distribution encodes the knowledge or belief about a parameter before any new data are observed. The belief after incorporating data is instead called the posterior distribution."
+    },
+    {
+      "id": "statistics-bayesian-statistics-002",
+      "q": "Bayes' theorem expresses the posterior as proportional to which product?",
+      "options": [
+        "Prior divided by likelihood",
+        "Likelihood times prior",
+        "Likelihood minus prior",
+        "Posterior times evidence"
+      ],
+      "answer": 1,
+      "explanation": "Bayes' theorem gives posterior ∝ likelihood × prior, with the marginal likelihood (evidence) acting as the normalizing constant. Dividing the prior by the likelihood does not yield the posterior and reverses their proper roles."
+    },
+    {
+      "id": "statistics-bayesian-statistics-003",
+      "q": "What is the posterior distribution in Bayesian inference?",
+      "options": [
+        "The distribution of the data before any analysis",
+        "The updated belief about a parameter after combining prior and data",
+        "The same as the likelihood function",
+        "A fixed point estimate with no uncertainty"
+      ],
+      "answer": 1,
+      "explanation": "The posterior is the updated probability distribution of a parameter obtained by combining the prior with the observed data via Bayes' theorem. It is a full distribution conveying uncertainty, not a single fixed point estimate."
+    },
+    {
+      "id": "statistics-bayesian-statistics-004",
+      "q": "A conjugate prior is a prior that has which useful property?",
+      "options": [
+        "It makes the posterior the same distributional family as the prior",
+        "It forces the posterior to be uniform",
+        "It guarantees the parameter is exactly known",
+        "It eliminates the need for any data"
+      ],
+      "answer": 0,
+      "explanation": "A conjugate prior is chosen so that, combined with a given likelihood, the resulting posterior belongs to the same family as the prior, making the update analytically convenient. It does not force a uniform posterior, and data are still essential to the update."
+    },
+    {
+      "id": "statistics-bayesian-statistics-005",
+      "q": "For a binomial likelihood, which distribution is the conjugate prior for the success probability p?",
+      "options": ["Normal", "Beta", "Poisson", "Exponential"],
+      "answer": 1,
+      "explanation": "The Beta distribution is the conjugate prior for the success probability of a binomial likelihood, so the posterior is also a Beta distribution. The normal distribution is not conjugate to the binomial in this setting."
+    },
+    {
+      "id": "statistics-bayesian-statistics-006",
+      "q": "In Bayes' theorem, what is the role of the evidence term P(data) in the denominator?",
+      "options": [
+        "It is the prior probability of the parameter",
+        "It is a normalizing constant ensuring the posterior integrates to 1",
+        "It is the likelihood of the parameter given the data",
+        "It is always equal to 1"
+      ],
+      "answer": 1,
+      "explanation": "The evidence, or marginal likelihood, normalizes the posterior so that it integrates to 1 across all parameter values. It is generally not equal to 1 and is not the prior; it is obtained by integrating the likelihood times the prior."
+    },
+    {
+      "id": "statistics-bayesian-statistics-007",
+      "q": "A medical test is positive. To find the probability the patient is actually diseased, Bayes' theorem combines the test's accuracy with what additional quantity?",
+      "options": [
+        "The prior prevalence of the disease in the population",
+        "The cost of the test",
+        "The number of tests administered",
+        "The patient's age only"
+      ],
+      "answer": 0,
+      "explanation": "Bayes' theorem requires the prior probability (base rate or prevalence) of the disease to convert test accuracy into the posterior probability of disease given a positive result. Ignoring this prior leads to the base-rate fallacy; the cost of the test is irrelevant to the calculation."
+    },
+    {
+      "id": "statistics-bayesian-statistics-008",
+      "q": "What is a key conceptual difference between Bayesian and frequentist inference?",
+      "options": [
+        "Bayesians treat unknown parameters as having probability distributions, while frequentists treat them as fixed unknown constants",
+        "Frequentists always use priors and Bayesians never do",
+        "Bayesians cannot use observed data",
+        "Frequentists produce posterior distributions"
+      ],
+      "answer": 0,
+      "explanation": "In the Bayesian framework parameters are treated as random variables with probability distributions, whereas frequentists regard them as fixed but unknown constants. It is Bayesians, not frequentists, who use priors, and only Bayesian analysis produces posterior distributions."
+    },
+    {
+      "id": "statistics-bayesian-statistics-009",
+      "q": "What is a non-informative (or 'flat') prior intended to do?",
+      "options": [
+        "Express strong prior beliefs about the parameter",
+        "Exert minimal influence so the data dominate the posterior",
+        "Guarantee a normal posterior",
+        "Set the parameter to a fixed known value"
+      ],
+      "answer": 1,
+      "explanation": "A non-informative or flat prior is designed to contribute little prior information, letting the observed data largely determine the posterior. By definition it does not express strong prior beliefs, which would instead be an informative prior."
+    },
+    {
+      "id": "statistics-bayesian-statistics-010",
+      "q": "As more data are collected, what generally happens to the influence of the prior on the posterior?",
+      "options": [
+        "The prior's influence grows without bound",
+        "The prior's influence diminishes and the data dominate",
+        "The prior completely determines the posterior regardless of data",
+        "The posterior becomes identical to the prior"
+      ],
+      "answer": 1,
+      "explanation": "As the amount of data increases, the likelihood term grows in influence and the posterior becomes dominated by the data, so the choice of prior matters less. With abundant data the posterior moves away from the prior rather than staying identical to it."
+    }
+  ]
+}

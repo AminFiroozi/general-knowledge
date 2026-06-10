@@ -1,0 +1,76 @@
+{
+  "topic": "microbiology",
+  "category": "biology",
+  "questions": [
+    {
+      "id": "biology-microbiology-001",
+      "q": "Which feature distinguishes prokaryotic cells such as bacteria from eukaryotic cells?",
+      "options": ["Presence of a cell membrane", "Absence of a membrane-bound nucleus", "Presence of ribosomes", "Ability to perform metabolism"],
+      "answer": 1,
+      "explanation": "Prokaryotes lack a membrane-bound nucleus and instead have their DNA in a region called the nucleoid. Cell membranes, ribosomes, and metabolism are common to both prokaryotes and eukaryotes, so they cannot be the distinguishing feature."
+    },
+    {
+      "id": "biology-microbiology-002",
+      "q": "Why are viruses generally considered non-living outside a host?",
+      "options": ["They contain no genetic material", "They cannot reproduce without a host cell", "They are made entirely of lipids", "They have a true nucleus"],
+      "answer": 1,
+      "explanation": "Viruses lack the cellular machinery to reproduce on their own and must hijack a host cell's ribosomes and enzymes to replicate. They do contain genetic material (DNA or RNA), so the claim that they have none is false."
+    },
+    {
+      "id": "biology-microbiology-003",
+      "q": "Which polymer makes up the cell wall of most bacteria?",
+      "options": ["Cellulose", "Chitin", "Peptidoglycan", "Keratin"],
+      "answer": 2,
+      "explanation": "Bacterial cell walls are built from peptidoglycan, a mesh of sugars and amino acids that provides structural strength. Cellulose forms plant cell walls and chitin forms fungal cell walls, not bacterial ones."
+    },
+    {
+      "id": "biology-microbiology-004",
+      "q": "The Gram staining technique primarily distinguishes bacteria based on differences in their:",
+      "options": ["DNA sequence", "Cell wall structure", "Flagella number", "Oxygen requirements"],
+      "answer": 1,
+      "explanation": "Gram staining differentiates bacteria by the thickness of their peptidoglycan layer: Gram-positive cells have thick walls that retain the violet dye, while Gram-negative cells have thin walls and an outer membrane. It does not classify bacteria by DNA sequence."
+    },
+    {
+      "id": "biology-microbiology-005",
+      "q": "Which kingdom do yeasts and molds belong to?",
+      "options": ["Bacteria", "Fungi", "Protista", "Archaea"],
+      "answer": 1,
+      "explanation": "Yeasts and molds are fungi, eukaryotic organisms with chitin cell walls that absorb nutrients from their surroundings. They are not bacteria, which are prokaryotes lacking a membrane-bound nucleus."
+    },
+    {
+      "id": "biology-microbiology-006",
+      "q": "A virus that infects and replicates within bacteria is called a:",
+      "options": ["Prion", "Bacteriophage", "Viroid", "Plasmid"],
+      "answer": 1,
+      "explanation": "A bacteriophage is a virus that specifically infects bacteria, injecting its genetic material to take over the host. A plasmid, by contrast, is a small circular DNA molecule found within bacteria and is not a virus."
+    },
+    {
+      "id": "biology-microbiology-007",
+      "q": "Which cells of the immune system engulf and digest pathogens through phagocytosis?",
+      "options": ["Red blood cells", "Macrophages", "Platelets", "Plasma cells"],
+      "answer": 1,
+      "explanation": "Macrophages engulf and digest pathogens and cellular debris through phagocytosis, a key part of innate immunity. Plasma cells instead secrete antibodies, and red blood cells transport oxygen rather than fighting infection."
+    },
+    {
+      "id": "biology-microbiology-008",
+      "q": "Antibiotics are effective against bacterial infections but not viral infections because antibiotics target:",
+      "options": ["The host's own cells", "Structures and processes unique to bacteria", "Viral capsids directly", "Human ribosomes"],
+      "answer": 1,
+      "explanation": "Antibiotics target bacteria-specific structures and processes, such as peptidoglycan cell wall synthesis or bacterial ribosomes, which viruses lack. Because viruses rely on host cell machinery, antibiotics have no comparable target in them."
+    },
+    {
+      "id": "biology-microbiology-009",
+      "q": "Which process allows bacteria to transfer genetic material directly through a physical bridge called a pilus?",
+      "options": ["Transformation", "Transduction", "Conjugation", "Binary fission"],
+      "answer": 2,
+      "explanation": "Conjugation transfers DNA, often a plasmid, from one bacterium to another through a pilus that connects the cells. Transduction, by contrast, transfers DNA via a bacteriophage rather than direct cell-to-cell contact."
+    },
+    {
+      "id": "biology-microbiology-010",
+      "q": "How does a vaccine typically provide immunity against a pathogen?",
+      "options": ["By directly killing existing pathogens with drugs", "By exposing the immune system to antigens so it forms memory cells", "By replacing the patient's white blood cells", "By providing antibiotics in advance"],
+      "answer": 1,
+      "explanation": "Vaccines present harmless antigens that prompt the adaptive immune system to produce antibodies and long-lived memory cells, enabling a rapid response upon later exposure. They do not kill pathogens directly the way drugs or antibiotics do."
+    }
+  ]
+}

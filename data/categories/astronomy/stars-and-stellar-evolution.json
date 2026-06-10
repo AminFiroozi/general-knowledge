@@ -1,0 +1,126 @@
+{
+  "topic": "stars-and-stellar-evolution",
+  "category": "astronomy",
+  "questions": [
+    {
+      "id": "astronomy-stars-and-stellar-evolution-001",
+      "q": "What is the primary nuclear fusion process powering main-sequence stars like the Sun?",
+      "options": [
+        "Fusion of helium into carbon",
+        "Fusion of hydrogen into helium",
+        "Fission of uranium nuclei",
+        "Fusion of carbon into iron"
+      ],
+      "answer": 1,
+      "explanation": "Main-sequence stars generate energy by fusing hydrogen nuclei into helium, primarily through the proton-proton chain in stars like the Sun. Helium fusion into carbon only begins later, when a star leaves the main sequence and becomes a red giant."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-002",
+      "q": "On the Hertzsprung-Russell (HR) diagram, what two stellar properties are plotted against each other?",
+      "options": [
+        "Mass versus radius",
+        "Luminosity versus temperature",
+        "Distance versus age",
+        "Rotation rate versus magnetic field strength"
+      ],
+      "answer": 1,
+      "explanation": "The HR diagram plots stellar luminosity (or absolute magnitude) against surface temperature (or spectral type), revealing groupings such as the main sequence, giants, and white dwarfs. It does not directly plot mass, distance, or rotation, though these correlate with position on the diagram."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-003",
+      "q": "What is the final fate of a star roughly the mass of our Sun?",
+      "options": [
+        "It explodes as a supernova and forms a black hole",
+        "It collapses directly into a neutron star",
+        "It sheds its outer layers and leaves behind a white dwarf",
+        "It becomes a brown dwarf"
+      ],
+      "answer": 2,
+      "explanation": "A Sun-like star expands into a red giant, expels its outer layers as a planetary nebula, and leaves behind a dense, slowly cooling white dwarf. Supernovae, neutron stars, and black holes are the fate of much more massive stars, not stars of one solar mass."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-004",
+      "q": "What primarily determines whether a dying massive star becomes a neutron star or a black hole?",
+      "options": [
+        "The star's color during the main sequence",
+        "The mass of the remnant core after the supernova",
+        "The star's distance from Earth",
+        "The chemical composition of the star's atmosphere"
+      ],
+      "answer": 1,
+      "explanation": "If the collapsing core remnant exceeds roughly three solar masses, gravity overwhelms neutron degeneracy pressure and a black hole forms; below that, a neutron star results. The star's color, distance, and atmospheric composition do not set this outcome."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-005",
+      "q": "What is a Type II supernova?",
+      "options": [
+        "The thermonuclear explosion of a white dwarf",
+        "The core-collapse explosion of a massive star",
+        "A nova on a binary companion",
+        "The merger of two black holes"
+      ],
+      "answer": 1,
+      "explanation": "A Type II supernova occurs when a massive star exhausts its nuclear fuel and its iron core collapses, triggering a violent explosion that disperses heavy elements. The thermonuclear explosion of a white dwarf accreting matter produces a Type Ia supernova, a different mechanism."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-006",
+      "q": "Why can iron not be fused to release energy in a stellar core?",
+      "options": [
+        "Iron is too rare in stars",
+        "Iron has the highest binding energy per nucleon, so further fusion absorbs energy",
+        "Iron immediately turns into a black hole",
+        "Iron blocks all nuclear reactions"
+      ],
+      "answer": 1,
+      "explanation": "Iron-56 has the highest binding energy per nucleon, so fusing it into heavier elements consumes energy rather than releasing it. Once a massive star builds an iron core, fusion can no longer support it against gravity, leading to collapse and a supernova."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-007",
+      "q": "What is the event horizon of a black hole?",
+      "options": [
+        "The hottest region inside the black hole",
+        "The boundary beyond which nothing, not even light, can escape",
+        "The point where the black hole emits visible light",
+        "The orbit of the nearest star"
+      ],
+      "answer": 1,
+      "explanation": "The event horizon is the boundary surrounding a black hole within which the escape velocity exceeds the speed of light, so nothing can escape once it crosses. It is not a physical hot surface or a place where the black hole shines; it is defined purely by gravity and spacetime geometry."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-008",
+      "q": "Which type of star is the most common in the Milky Way galaxy?",
+      "options": [
+        "Blue supergiants",
+        "Red dwarfs (M-type main-sequence stars)",
+        "White dwarfs",
+        "Yellow stars like the Sun"
+      ],
+      "answer": 1,
+      "explanation": "Red dwarfs, low-mass M-type main-sequence stars, are by far the most numerous stars in the galaxy, making up around three quarters of all stars. Massive blue supergiants are extremely rare and short-lived, and Sun-like stars are far less common than red dwarfs."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-009",
+      "q": "What primarily determines a main-sequence star's lifetime?",
+      "options": [
+        "Its distance from the galactic center",
+        "Its mass, with more massive stars living shorter lives",
+        "Its rotation speed only",
+        "Its surface color alone"
+      ],
+      "answer": 1,
+      "explanation": "A star's mass is the dominant factor: massive stars burn through their fuel far faster despite having more of it, so they have much shorter lifetimes than low-mass stars. A low-mass red dwarf can live for trillions of years, while a massive star may last only a few million."
+    },
+    {
+      "id": "astronomy-stars-and-stellar-evolution-010",
+      "q": "What is a planetary nebula, despite its misleading name?",
+      "options": [
+        "A nebula where new planets are forming",
+        "The glowing shell of gas ejected by a dying low-to-intermediate-mass star",
+        "The atmosphere of a giant planet",
+        "A dense cloud forming a new star cluster"
+      ],
+      "answer": 1,
+      "explanation": "A planetary nebula is the expanding, glowing shell of gas cast off by a dying star as it transitions to a white dwarf; the name is historical, since early observers thought the round glow resembled planets. It has nothing to do with planet formation, which occurs in protoplanetary disks around young stars."
+    }
+  ]
+}

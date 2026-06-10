@@ -1,0 +1,126 @@
+{
+  "topic": "quantum-mechanics",
+  "category": "physics",
+  "questions": [
+    {
+      "id": "physics-quantum-mechanics-001",
+      "q": "In the double-slit experiment, single electrons are fired one at a time at two slits. What pattern builds up on the detection screen over time?",
+      "options": [
+        "Two bright bands, one behind each slit",
+        "A single bright band centered between the slits",
+        "An interference pattern of alternating bright and dark fringes",
+        "A uniform spread with no structure"
+      ],
+      "answer": 2,
+      "explanation": "Even when electrons arrive one at a time, the accumulated detections form an interference pattern, showing that each electron's wavefunction passes through both slits and interferes with itself. Two simple bands behind the slits is what classical particles would produce — and it is what actually appears if a measurement determines which slit each electron took, destroying the interference."
+    },
+    {
+      "id": "physics-quantum-mechanics-002",
+      "q": "What does Heisenberg's uncertainty principle state about position and momentum?",
+      "options": [
+        "Measurement devices are never accurate enough to find both exactly",
+        "The product of the uncertainties in position and momentum cannot be smaller than ħ/2, as a fundamental property of nature",
+        "A particle's position and momentum are both exactly defined but change too fast to record",
+        "Position and momentum can both be known exactly, but only for massless particles"
+      ],
+      "answer": 1,
+      "explanation": "The uncertainty principle, Δx·Δp ≥ ħ/2, is a fundamental consequence of the wave nature of quantum states, not a statement about imperfect instruments. The 'clumsy measurement' interpretation is the classic misconception: even with ideal equipment, a quantum state simply does not possess simultaneously sharp values of position and momentum."
+    },
+    {
+      "id": "physics-quantum-mechanics-003",
+      "q": "In the photoelectric effect, increasing the intensity of light below the threshold frequency has what effect on electron emission from a metal?",
+      "options": [
+        "No electrons are emitted, regardless of intensity",
+        "More electrons are emitted at low energy",
+        "Electrons are emitted after a long enough exposure time",
+        "Electrons are emitted with higher kinetic energy"
+      ],
+      "answer": 0,
+      "explanation": "Each electron is ejected by absorbing a single photon, and a photon below the threshold frequency carries energy less than the work function, so no emission occurs no matter how intense the beam. The idea that enough accumulated exposure would eventually free electrons is the classical wave prediction, and its failure was key evidence for Einstein's photon hypothesis."
+    },
+    {
+      "id": "physics-quantum-mechanics-004",
+      "q": "Why are the energy levels of an electron in a hydrogen atom quantized?",
+      "options": [
+        "Because the nucleus emits energy only in bursts",
+        "Because electrons lose energy in fixed-size steps due to friction",
+        "Because protons and electrons have equal and opposite charges",
+        "Because the bound electron's wavefunction must satisfy boundary conditions, allowing only discrete standing-wave solutions"
+      ],
+      "answer": 3,
+      "explanation": "Solving the Schrödinger equation for a bound electron yields normalizable solutions only at discrete energies, analogous to the discrete standing waves on a fixed string. The quantization comes from the wave nature of the electron and confinement, not from any stepwise energy loss — a free (unbound) electron has a continuous range of allowed energies."
+    },
+    {
+      "id": "physics-quantum-mechanics-005",
+      "q": "What does the de Broglie hypothesis assign to every particle with momentum p?",
+      "options": [
+        "An electric charge proportional to its speed",
+        "A wavelength λ = h/p",
+        "A frequency equal to its kinetic energy",
+        "A wavelength λ = hp"
+      ],
+      "answer": 1,
+      "explanation": "De Broglie proposed that matter exhibits wave behavior with wavelength λ = h/p, later confirmed by electron diffraction in the Davisson–Germer experiment. The inverse relationship matters: λ = hp would absurdly give faster particles longer wavelengths, whereas in reality larger momentum means a shorter wavelength, which is why everyday objects show no observable wave behavior."
+    },
+    {
+      "id": "physics-quantum-mechanics-006",
+      "q": "What did the Stern–Gerlach experiment demonstrate when silver atoms passed through an inhomogeneous magnetic field?",
+      "options": [
+        "The atoms were deflected into a continuous smear, confirming classical magnetism",
+        "The atoms were not deflected at all, proving they are neutral",
+        "The beam split into two discrete spots, revealing quantized spin angular momentum",
+        "The atoms gained kinetic energy from the magnetic field"
+      ],
+      "answer": 2,
+      "explanation": "The beam split into exactly two components, showing that the atoms' magnetic moment along the field axis takes only two discrete values, evidence of quantized spin-1/2 angular momentum. Classical physics predicted a continuous spread of deflections because randomly oriented magnetic moments would have every projection — the observed discreteness ruled that out."
+    },
+    {
+      "id": "physics-quantum-mechanics-007",
+      "q": "What is quantum tunneling?",
+      "options": [
+        "A particle passing through a potential barrier even though its energy is less than the barrier height",
+        "A particle digging a path through a material by losing energy",
+        "A particle borrowing energy permanently to jump over a barrier",
+        "The bending of particle paths around obstacles, like diffraction"
+      ],
+      "answer": 0,
+      "explanation": "Because the wavefunction decays exponentially inside a classically forbidden barrier but remains nonzero, there is a finite probability of finding the particle on the far side, with its energy unchanged. No energy is permanently borrowed or lost — the transmitted particle emerges with the same energy it had, which distinguishes tunneling from any over-the-barrier process. Tunneling underlies alpha decay and scanning tunneling microscopy."
+    },
+    {
+      "id": "physics-quantum-mechanics-008",
+      "q": "According to the Born rule, what physical meaning does the squared magnitude of a particle's wavefunction, |ψ(x)|², have?",
+      "options": [
+        "The particle's energy density at point x",
+        "The strength of the force acting on the particle at x",
+        "The fraction of the particle's mass located at x",
+        "The probability density of finding the particle at position x upon measurement"
+      ],
+      "answer": 3,
+      "explanation": "Born's statistical interpretation holds that |ψ(x)|² gives the probability per unit length (or volume) of detecting the particle near x when a position measurement is made. The particle is not smeared matter with mass distributed according to ψ — a measurement always finds the whole particle at one location; the wavefunction encodes the statistics of where."
+    },
+    {
+      "id": "physics-quantum-mechanics-009",
+      "q": "Which problem did Planck solve in 1900 by proposing that energy is exchanged in discrete quanta E = hf?",
+      "options": [
+        "The null result of the Michelson–Morley experiment",
+        "The ultraviolet catastrophe in blackbody radiation",
+        "The instability of the nuclear atom",
+        "The anomalous precession of Mercury's orbit"
+      ],
+      "answer": 1,
+      "explanation": "Classical theory (the Rayleigh–Jeans law) predicted that a blackbody should radiate infinite energy at short wavelengths — the ultraviolet catastrophe; Planck's quantized oscillators suppressed the high-frequency modes and matched the observed spectrum. The Michelson–Morley result concerned the luminiferous ether and was resolved by special relativity, not by quantization."
+    },
+    {
+      "id": "physics-quantum-mechanics-010",
+      "q": "Two particles are prepared in an entangled state and separated by a large distance. Measuring one particle's spin instantly determines the outcome of the corresponding measurement on the other. What do Bell test experiments conclude about this correlation?",
+      "options": [
+        "The correlations are stronger than any local hidden-variable theory allows, yet they cannot be used to send signals faster than light",
+        "The particles secretly carried predetermined values all along, as local hidden variables",
+        "The correlations allow instantaneous communication between the two locations",
+        "The correlations disappear once the particles are far enough apart"
+      ],
+      "answer": 0,
+      "explanation": "Experiments violating Bell inequalities show the correlations exceed what any local hidden-variable theory can produce, ruling out the idea that the outcomes were simply predetermined locally at the source. However, the measurement outcomes at each end are individually random, so no information can be transmitted — entanglement does not enable faster-than-light signaling, preserving consistency with relativity."
+    }
+  ]
+}

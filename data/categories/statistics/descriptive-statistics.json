@@ -1,0 +1,106 @@
+{
+  "topic": "descriptive-statistics",
+  "category": "statistics",
+  "questions": [
+    {
+      "id": "statistics-descriptive-statistics-001",
+      "q": "For the data set {2, 4, 4, 4, 5, 5, 7, 9}, what is the mode?",
+      "options": ["4", "5", "5.5", "9"],
+      "answer": 0,
+      "explanation": "The mode is the value that appears most frequently, and 4 appears three times, more than any other value. The value 5 appears only twice, so it is not the mode; 5.5 is the mean of this set, a different measure of center."
+    },
+    {
+      "id": "statistics-descriptive-statistics-002",
+      "q": "Which measure of central tendency is most resistant to extreme outliers?",
+      "options": ["Mean", "Median", "Range", "Standard deviation"],
+      "answer": 1,
+      "explanation": "The median depends only on the rank position of the middle value, so adding an extreme outlier barely shifts it. The mean is pulled toward outliers because every value enters the sum, making it far less robust."
+    },
+    {
+      "id": "statistics-descriptive-statistics-003",
+      "q": "What does the variance of a data set measure?",
+      "options": [
+        "The most common value",
+        "The average squared deviation from the mean",
+        "The middle value when sorted",
+        "The difference between the largest and smallest value"
+      ],
+      "answer": 1,
+      "explanation": "Variance is defined as the average of the squared deviations of each value from the mean, quantifying spread. The difference between the largest and smallest value is the range, which uses only two points and ignores the rest of the distribution."
+    },
+    {
+      "id": "statistics-descriptive-statistics-004",
+      "q": "If every value in a data set is increased by 10, what happens to the standard deviation?",
+      "options": [
+        "It increases by 10",
+        "It stays the same",
+        "It increases by √10",
+        "It is multiplied by 10"
+      ],
+      "answer": 1,
+      "explanation": "Adding a constant to every value shifts the entire distribution without changing how spread out the values are, so the standard deviation is unchanged. It would change only if values were scaled (multiplied), which stretches the spread."
+    },
+    {
+      "id": "statistics-descriptive-statistics-005",
+      "q": "The 25th percentile of a data set is also known as what?",
+      "options": ["The median", "The first quartile (Q1)", "The third quartile (Q3)", "The mode"],
+      "answer": 1,
+      "explanation": "The 25th percentile is the first quartile (Q1), the value below which 25% of the data fall. The median is the 50th percentile (Q2), and the third quartile (Q3) is the 75th percentile."
+    },
+    {
+      "id": "statistics-descriptive-statistics-006",
+      "q": "A distribution with a long tail extending to the right is described as having what kind of skewness?",
+      "options": ["Negative skew", "Positive (right) skew", "Zero skew", "Uniform skew"],
+      "answer": 1,
+      "explanation": "Positive (right) skew means the tail stretches toward larger values on the right, typically pulling the mean above the median. Negative skew describes the opposite case, with a long tail toward smaller values on the left."
+    },
+    {
+      "id": "statistics-descriptive-statistics-007",
+      "q": "In a right-skewed distribution, how do the mean and median typically compare?",
+      "options": [
+        "Mean is greater than median",
+        "Mean is less than median",
+        "Mean equals median exactly",
+        "Mean equals the mode"
+      ],
+      "answer": 0,
+      "explanation": "In a right-skewed distribution the large values in the tail inflate the mean, pulling it above the median. The opposite ordering (mean less than median) characterizes a left-skewed distribution."
+    },
+    {
+      "id": "statistics-descriptive-statistics-008",
+      "q": "What is the interquartile range (IQR)?",
+      "options": [
+        "Q3 minus Q1",
+        "The maximum minus the minimum",
+        "The mean minus the median",
+        "Twice the standard deviation"
+      ],
+      "answer": 0,
+      "explanation": "The IQR is Q3 − Q1, the spread of the middle 50% of the data, and is robust to outliers. The maximum minus the minimum is the range, which is highly sensitive to extreme values."
+    },
+    {
+      "id": "statistics-descriptive-statistics-009",
+      "q": "For a sample, why is the variance often computed by dividing by n − 1 rather than n?",
+      "options": [
+        "To make the result larger for convenience",
+        "To produce an unbiased estimate of the population variance",
+        "Because n − 1 is always easier to compute",
+        "To convert variance into standard deviation"
+      ],
+      "answer": 1,
+      "explanation": "Dividing by n − 1 (Bessel's correction) corrects the downward bias that arises because deviations are measured from the sample mean rather than the unknown population mean, yielding an unbiased estimator. Dividing by n systematically underestimates the population variance."
+    },
+    {
+      "id": "statistics-descriptive-statistics-010",
+      "q": "The coefficient of variation (CV) is defined as which ratio?",
+      "options": [
+        "Mean divided by standard deviation",
+        "Standard deviation divided by the mean",
+        "Variance divided by the mean",
+        "Median divided by the range"
+      ],
+      "answer": 1,
+      "explanation": "The coefficient of variation is the standard deviation divided by the mean (often expressed as a percentage), giving a unitless measure of relative dispersion. The inverse ratio, mean over standard deviation, is not the CV and lacks its interpretation as relative variability."
+    }
+  ]
+}

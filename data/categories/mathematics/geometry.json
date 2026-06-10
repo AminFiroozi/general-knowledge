@@ -1,0 +1,81 @@
+{
+  "topic": "geometry",
+  "category": "mathematics",
+  "questions": [
+    {
+      "id": "mathematics-geometry-001",
+      "q": "What is the sum of the interior angles of any triangle in Euclidean geometry?",
+      "options": ["90°", "180°", "270°", "360°"],
+      "answer": 1,
+      "explanation": "The interior angles of any flat (Euclidean) triangle always add up to 180°, regardless of the triangle's shape. The value 360° is the sum of interior angles of a quadrilateral, not a triangle."
+    },
+    {
+      "id": "mathematics-geometry-002",
+      "q": "The Pythagorean theorem relates the sides of which type of triangle?",
+      "options": [
+        "Any triangle",
+        "A right triangle",
+        "An equilateral triangle",
+        "An obtuse triangle"
+      ],
+      "answer": 1,
+      "explanation": "The Pythagorean theorem a² + b² = c² holds specifically for right triangles, where c is the hypotenuse opposite the 90° angle. It does not apply to arbitrary triangles, which instead require the law of cosines."
+    },
+    {
+      "id": "mathematics-geometry-003",
+      "q": "What is the area of a circle with radius r?",
+      "options": ["2πr", "πr²", "πd", "πr"],
+      "answer": 1,
+      "explanation": "The area of a circle is πr², the constant π times the radius squared. The expression 2πr is the circumference (perimeter) of the circle, a length rather than an area."
+    },
+    {
+      "id": "mathematics-geometry-004",
+      "q": "In the coordinate plane, what is the distance between the points (0, 0) and (3, 4)?",
+      "options": ["5", "7", "12", "25"],
+      "answer": 0,
+      "explanation": "The distance formula gives √((3−0)² + (4−0)²) = √(9 + 16) = √25 = 5. The answer 7 wrongly adds the coordinate differences (3 + 4) instead of combining them via the Pythagorean relationship."
+    },
+    {
+      "id": "mathematics-geometry-005",
+      "q": "What is the measure of each interior angle of an equilateral triangle?",
+      "options": ["45°", "60°", "90°", "120°"],
+      "answer": 1,
+      "explanation": "An equilateral triangle has three equal angles summing to 180°, so each is 180° ÷ 3 = 60°. The answer 90° would describe a right angle, which cannot appear in an equilateral triangle."
+    },
+    {
+      "id": "mathematics-geometry-006",
+      "q": "An angle inscribed in a semicircle (subtending the diameter) measures what?",
+      "options": ["45°", "60°", "90°", "180°"],
+      "answer": 2,
+      "explanation": "By Thales' theorem, any angle inscribed in a semicircle and subtending the diameter is a right angle of 90°. The answer 180° confuses the inscribed angle with the straight angle of the diameter itself."
+    },
+    {
+      "id": "mathematics-geometry-007",
+      "q": "What is the slope of the line passing through points (1, 2) and (3, 6)?",
+      "options": ["1", "2", "3", "4"],
+      "answer": 1,
+      "explanation": "Slope is the change in y divided by the change in x: (6 − 2) / (3 − 1) = 4/2 = 2. The answer 4 uses only the numerator (the rise) and forgets to divide by the run of 2."
+    },
+    {
+      "id": "mathematics-geometry-008",
+      "q": "What is the circumference of a circle with diameter d?",
+      "options": ["πd", "πd²", "2πd", "πd/2"],
+      "answer": 0,
+      "explanation": "The circumference equals π times the diameter, C = πd (equivalently 2πr). The expression πd² mistakenly squares a length, which would give an area-like quantity rather than a perimeter."
+    },
+    {
+      "id": "mathematics-geometry-009",
+      "q": "Two angles are complementary. What is the sum of their measures?",
+      "options": ["90°", "180°", "270°", "360°"],
+      "answer": 0,
+      "explanation": "Complementary angles add up to 90°, while supplementary angles add up to 180°. Choosing 180° confuses the two terms, swapping 'complementary' for 'supplementary'."
+    },
+    {
+      "id": "mathematics-geometry-010",
+      "q": "A right triangle has legs of length 6 and 8. What is the length of its hypotenuse?",
+      "options": ["10", "12", "14", "48"],
+      "answer": 0,
+      "explanation": "By the Pythagorean theorem, the hypotenuse is √(6² + 8²) = √(36 + 64) = √100 = 10. The answer 14 incorrectly adds the legs (6 + 8) instead of using the square-root-of-sum-of-squares relationship."
+    }
+  ]
+}

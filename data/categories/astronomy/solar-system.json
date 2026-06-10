@@ -1,0 +1,126 @@
+{
+  "topic": "solar-system",
+  "category": "astronomy",
+  "questions": [
+    {
+      "id": "astronomy-solar-system-001",
+      "q": "Which planet in our solar system has the most extensive and visible ring system?",
+      "options": [
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune"
+      ],
+      "answer": 1,
+      "explanation": "Saturn's rings are by far the brightest and most extensive, composed mostly of water ice particles and easily visible through small telescopes. Jupiter does have rings, but they are thin, faint, and made of dark dust, making them invisible without spacecraft observation."
+    },
+    {
+      "id": "astronomy-solar-system-002",
+      "q": "What is the primary distinction between a comet and an asteroid?",
+      "options": [
+        "Comets orbit the Sun while asteroids do not",
+        "Comets are rocky while asteroids are gaseous",
+        "Comets contain significant ice and volatiles that form a tail near the Sun",
+        "Asteroids are always larger than comets"
+      ],
+      "answer": 2,
+      "explanation": "Comets are composed of ice, dust, and rock; as they approach the Sun, the ice sublimates to produce a glowing coma and tail. Asteroids are predominantly rocky or metallic bodies that lack significant volatiles, so they do not develop tails."
+    },
+    {
+      "id": "astronomy-solar-system-003",
+      "q": "According to Kepler's second law, how does a planet move along its elliptical orbit?",
+      "options": [
+        "It moves faster when closer to the Sun and slower when farther away",
+        "It moves at a constant speed throughout the orbit",
+        "It moves slower when closer to the Sun and faster when farther away",
+        "Its speed depends only on its mass"
+      ],
+      "answer": 0,
+      "explanation": "Kepler's second law states that a line joining a planet and the Sun sweeps out equal areas in equal times, which requires the planet to move fastest at perihelion (closest point) and slowest at aphelion (farthest point). A constant speed would violate this equal-area rule for an elliptical orbit."
+    },
+    {
+      "id": "astronomy-solar-system-004",
+      "q": "Which is the largest moon in the solar system?",
+      "options": [
+        "Titan",
+        "Europa",
+        "Ganymede",
+        "Earth's Moon"
+      ],
+      "answer": 2,
+      "explanation": "Ganymede, a moon of Jupiter, is the largest moon in the solar system and is even bigger than the planet Mercury. Titan, Saturn's largest moon, is the second largest but is slightly smaller than Ganymede."
+    },
+    {
+      "id": "astronomy-solar-system-005",
+      "q": "Where is the asteroid belt primarily located?",
+      "options": [
+        "Between Earth and Mars",
+        "Between Mars and Jupiter",
+        "Beyond Neptune",
+        "Between Jupiter and Saturn"
+      ],
+      "answer": 1,
+      "explanation": "The main asteroid belt lies between the orbits of Mars and Jupiter, where Jupiter's gravity prevented the material from coalescing into a planet. The region beyond Neptune is the Kuiper Belt, a separate population of icy bodies."
+    },
+    {
+      "id": "astronomy-solar-system-006",
+      "q": "Why is Pluto classified as a dwarf planet rather than a planet?",
+      "options": [
+        "It does not orbit the Sun",
+        "It has not cleared its orbital neighborhood of other objects",
+        "It has no moons",
+        "It is not spherical in shape"
+      ],
+      "answer": 1,
+      "explanation": "The International Astronomical Union's definition requires a planet to have cleared the neighborhood around its orbit, which Pluto has not done since it shares its region with many Kuiper Belt objects. Pluto does orbit the Sun and is large enough to be rounded by its own gravity, so those criteria are met."
+    },
+    {
+      "id": "astronomy-solar-system-007",
+      "q": "Which planet is the hottest in the solar system at its surface?",
+      "options": [
+        "Mercury",
+        "Venus",
+        "Mars",
+        "Jupiter"
+      ],
+      "answer": 1,
+      "explanation": "Venus has the hottest surface, around 465°C, because its thick carbon dioxide atmosphere traps heat through a runaway greenhouse effect. Although Mercury is closer to the Sun, it has almost no atmosphere to retain heat, so its surface cools dramatically on the night side."
+    },
+    {
+      "id": "astronomy-solar-system-008",
+      "q": "What causes the tides on Earth?",
+      "options": [
+        "Earth's rotation alone",
+        "The gravitational pull of the Moon and, to a lesser extent, the Sun",
+        "Changes in atmospheric pressure",
+        "The magnetic field of the Earth"
+      ],
+      "answer": 1,
+      "explanation": "Tides arise mainly from the Moon's gravitational pull, which is stronger on the near side of Earth than the far side, creating two tidal bulges. The Sun also contributes about half as much; atmospheric pressure and rotation alone do not produce the regular ocean tides."
+    },
+    {
+      "id": "astronomy-solar-system-009",
+      "q": "What is the Oort Cloud believed to be?",
+      "options": [
+        "A ring of dust orbiting Jupiter",
+        "A spherical shell of icy bodies at the outer edge of the solar system",
+        "A cloud of gas in the Sun's atmosphere",
+        "A belt of asteroids between Mars and Jupiter"
+      ],
+      "answer": 1,
+      "explanation": "The Oort Cloud is a hypothesized spherical shell of icy planetesimals surrounding the solar system at enormous distances, thought to be the source of long-period comets. The asteroid belt between Mars and Jupiter is a flat, much closer structure of rocky bodies."
+    },
+    {
+      "id": "astronomy-solar-system-010",
+      "q": "Which planet rotates on its side, with an axial tilt of about 98 degrees?",
+      "options": [
+        "Saturn",
+        "Neptune",
+        "Uranus",
+        "Mars"
+      ],
+      "answer": 2,
+      "explanation": "Uranus has an extreme axial tilt of roughly 98 degrees, so it effectively rotates on its side, likely the result of a massive ancient collision. Neptune and Saturn have more moderate tilts comparable to Earth's, giving them more conventional seasonal patterns."
+    }
+  ]
+}

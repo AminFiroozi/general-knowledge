@@ -13,6 +13,114 @@
       ],
       "answer": 2,
       "explanation": "Even at constant speed, the direction of velocity changes continuously — this constitutes acceleration. The centripetal acceleration a = v²/r is always directed toward the center of the circle (perpendicular to velocity). Centrifugal force is a fictitious force that only appears in rotating reference frames, not in inertial frames."
+    },
+    {
+      "id": "physics-classical-mechanics-002",
+      "q": "According to Newton's first law, what happens to an object moving at constant velocity when the net force on it is zero?",
+      "options": [
+        "It continues moving at the same constant velocity",
+        "It gradually slows down and stops",
+        "It accelerates slightly due to inertia",
+        "It moves in a circle at constant speed"
+      ],
+      "answer": 0,
+      "explanation": "Newton's first law states that an object with zero net force maintains its state of motion, so it keeps moving in a straight line at constant velocity. The idea that objects naturally slow down and stop is an Aristotelian misconception; in everyday life friction provides a nonzero net force, which is why moving objects seem to stop on their own."
+    },
+    {
+      "id": "physics-classical-mechanics-003",
+      "q": "A 2 kg ball is dropped from rest and falls 5 m (ignore air resistance, g = 10 m/s²). What is its kinetic energy just before hitting the ground?",
+      "options": [
+        "10 J",
+        "100 J",
+        "50 J",
+        "200 J"
+      ],
+      "answer": 1,
+      "explanation": "By conservation of energy, the kinetic energy equals the gravitational potential energy lost: KE = mgh = 2 × 10 × 5 = 100 J. The answer 50 J comes from forgetting the mass or from confusing mgh with gh; potential energy depends on mass, height, and g together."
+    },
+    {
+      "id": "physics-classical-mechanics-004",
+      "q": "In a perfectly inelastic collision between two objects, which quantity is always conserved?",
+      "options": [
+        "Kinetic energy",
+        "Both kinetic energy and momentum",
+        "Neither kinetic energy nor momentum",
+        "Momentum"
+      ],
+      "answer": 3,
+      "explanation": "Total momentum is conserved in every collision because the internal forces between the colliding bodies are equal and opposite (Newton's third law) and no external impulse acts. Kinetic energy is not conserved in an inelastic collision — the maximum possible kinetic energy is converted to heat and deformation when the objects stick together."
+    },
+    {
+      "id": "physics-classical-mechanics-005",
+      "q": "Why does an ice skater spin faster when she pulls her arms in toward her body?",
+      "options": [
+        "Pulling her arms in reduces her moment of inertia, so her angular velocity increases to conserve angular momentum",
+        "Pulling her arms in increases her angular momentum, which speeds up the spin",
+        "Her muscles add rotational kinetic energy directly to the spin",
+        "Air resistance on her arms decreases, removing a braking torque"
+      ],
+      "answer": 0,
+      "explanation": "With negligible external torque, angular momentum L = Iω is conserved; pulling mass closer to the rotation axis decreases the moment of inertia I, so ω must increase. Her angular momentum does not increase — it stays constant, which is exactly why the spin rate changes. Interestingly, her rotational kinetic energy does increase, supplied by the work her muscles do pulling her arms inward, but the speedup itself is dictated by conservation of angular momentum."
+    },
+    {
+      "id": "physics-classical-mechanics-006",
+      "q": "A horse pulls a cart forward. According to Newton's third law, the cart pulls back on the horse with an equal and opposite force. Why can the horse–cart system still accelerate?",
+      "options": [
+        "The horse's pull is slightly stronger than the cart's backward pull",
+        "The action–reaction pair acts on different objects, and the external friction force from the ground on the horse drives the system forward",
+        "The reaction force only appears once the cart is already moving",
+        "Newton's third law does not apply to living things exerting forces"
+      ],
+      "answer": 1,
+      "explanation": "Action–reaction forces act on different bodies, so they never cancel for a single object. The system accelerates because the ground pushes forward on the horse's hooves (friction) with a force larger than the resistive forces on the cart. The idea that the horse's pull somehow exceeds the cart's pull violates Newton's third law — those two forces are always exactly equal in magnitude."
+    },
+    {
+      "id": "physics-classical-mechanics-007",
+      "q": "What happens to the period of a simple pendulum (small oscillations) if its length is increased to four times the original?",
+      "options": [
+        "It quadruples",
+        "It stays the same",
+        "It doubles",
+        "It halves"
+      ],
+      "answer": 2,
+      "explanation": "The period of a simple pendulum is T = 2π√(L/g), so it scales with the square root of the length: quadrupling L doubles T. Thinking the period quadruples comes from assuming a linear dependence on length, but the square root means a factor of 4 in length gives only a factor of 2 in period."
+    },
+    {
+      "id": "physics-classical-mechanics-008",
+      "q": "A solid sphere and a hollow sphere of the same mass and radius are released from rest at the top of an incline and roll without slipping. Which reaches the bottom first?",
+      "options": [
+        "The hollow sphere, because its mass is farther from the axis",
+        "Both arrive at the same time, since they have equal mass",
+        "It depends on the angle of the incline",
+        "The solid sphere, because it has a smaller moment of inertia"
+      ],
+      "answer": 3,
+      "explanation": "The solid sphere (I = 2/5 MR²) has a smaller moment of inertia than the hollow sphere (I = 2/3 MR²), so a smaller fraction of its potential energy goes into rotation and more into translation, giving it greater linear acceleration. The 'equal mass means equal time' reasoning fails because rolling objects share energy between translation and rotation according to their mass distribution, not just their total mass."
+    },
+    {
+      "id": "physics-classical-mechanics-009",
+      "q": "A mass on an ideal spring undergoes simple harmonic motion. At which point in the motion is the speed of the mass greatest?",
+      "options": [
+        "At the maximum displacement, where the restoring force is largest",
+        "At the equilibrium position, where displacement is zero",
+        "Halfway between equilibrium and maximum displacement",
+        "The speed is constant throughout the motion"
+      ],
+      "answer": 1,
+      "explanation": "In simple harmonic motion all the energy is kinetic at the equilibrium position, so the speed is maximal there, while at maximum displacement the speed is zero. The largest restoring force occurs at maximum displacement, but a large force means large acceleration, not large speed — at that instant the mass is momentarily at rest."
+    },
+    {
+      "id": "physics-classical-mechanics-010",
+      "q": "A 1000 kg car traveling at 20 m/s brakes to a stop in 4 s. What is the magnitude of the average braking force?",
+      "options": [
+        "5000 N",
+        "20000 N",
+        "1250 N",
+        "80000 N"
+      ],
+      "answer": 0,
+      "explanation": "The impulse–momentum theorem gives F = Δp/Δt = (1000 × 20)/4 = 5000 N. The answer 20000 N is the car's initial momentum in kg·m/s mistaken for a force; force is the rate of change of momentum, so the momentum must be divided by the stopping time."
     }
   ]
 }

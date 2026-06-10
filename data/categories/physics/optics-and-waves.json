@@ -1,0 +1,126 @@
+{
+  "topic": "optics-and-waves",
+  "category": "physics",
+  "questions": [
+    {
+      "id": "physics-optics-and-waves-001",
+      "q": "When light passes from air into water, what happens to its speed and wavelength?",
+      "options": [
+        "Both speed and wavelength increase",
+        "Both speed and wavelength decrease",
+        "Speed decreases but wavelength increases",
+        "Speed increases but frequency decreases"
+      ],
+      "answer": 1,
+      "explanation": "Water is optically denser (higher refractive index), so light slows down. Since frequency is fixed by the source and v = fλ, a lower speed means a shorter wavelength. Frequency does not change when light crosses a boundary, which rules out the options that alter frequency."
+    },
+    {
+      "id": "physics-optics-and-waves-002",
+      "q": "What phenomenon causes a straight stick to appear bent at the surface of water?",
+      "options": [
+        "Diffraction",
+        "Refraction",
+        "Total internal reflection",
+        "Polarization"
+      ],
+      "answer": 1,
+      "explanation": "Refraction is the bending of light as it changes speed crossing the air-water boundary, displacing the apparent position of the submerged part. Diffraction is bending around obstacles or through slits, and total internal reflection occurs only when light tries to exit a denser medium beyond the critical angle."
+    },
+    {
+      "id": "physics-optics-and-waves-003",
+      "q": "Two waves meet so that a crest aligns with a trough. What is the result?",
+      "options": [
+        "Constructive interference, larger amplitude",
+        "Destructive interference, reduced or zero amplitude",
+        "An increase in frequency",
+        "A change in wave speed"
+      ],
+      "answer": 1,
+      "explanation": "Crest-meets-trough means the displacements are out of phase and subtract, producing destructive interference. Constructive interference requires crest aligning with crest. Interference changes amplitude, not frequency or wave speed, which depend on the source and medium."
+    },
+    {
+      "id": "physics-optics-and-waves-004",
+      "q": "What is the defining feature of a transverse wave?",
+      "options": [
+        "Particles oscillate parallel to the direction of energy transfer",
+        "Particles oscillate perpendicular to the direction of energy transfer",
+        "It cannot travel through a vacuum",
+        "It has no wavelength"
+      ],
+      "answer": 1,
+      "explanation": "In a transverse wave the medium's particles move perpendicular to the wave's travel direction, as in waves on a string or light. Parallel oscillation defines a longitudinal wave such as sound. Some transverse waves (light) travel through vacuum, so that is not the defining feature."
+    },
+    {
+      "id": "physics-optics-and-waves-005",
+      "q": "A converging (convex) lens forms an image of a distant object. Where does the image form?",
+      "options": [
+        "At the focal point, real and inverted",
+        "At twice the focal length, virtual and upright",
+        "At infinity",
+        "At the optical center, magnified"
+      ],
+      "answer": 0,
+      "explanation": "Rays from a very distant object arrive nearly parallel and a converging lens focuses them at its focal point, forming a real, inverted image. Virtual upright images from a convex lens occur only when the object is inside the focal length. The optical center does not form a focused image."
+    },
+    {
+      "id": "physics-optics-and-waves-006",
+      "q": "Why does light reflect entirely back inside an optical fiber rather than escaping?",
+      "options": [
+        "Diffraction at the core boundary",
+        "Total internal reflection beyond the critical angle",
+        "Destructive interference at the cladding",
+        "Polarization by the glass"
+      ],
+      "answer": 1,
+      "explanation": "Light traveling in the dense core strikes the core-cladding boundary at an angle greater than the critical angle, so it is totally internally reflected and guided along the fiber. Diffraction and interference do not trap light this way, and polarization only filters orientation, it does not confine the beam."
+    },
+    {
+      "id": "physics-optics-and-waves-007",
+      "q": "In Young's double-slit experiment, what happens to the spacing of bright fringes if the slit separation is increased?",
+      "options": [
+        "The fringe spacing increases",
+        "The fringe spacing decreases",
+        "The fringes disappear entirely",
+        "Only the central fringe remains"
+      ],
+      "answer": 1,
+      "explanation": "Fringe spacing is given by Δy = λL/d, so it is inversely proportional to slit separation d. Increasing d makes the fringes closer together. The pattern does not vanish; it simply compresses."
+    },
+    {
+      "id": "physics-optics-and-waves-008",
+      "q": "Sound cannot travel through a vacuum because it is what type of wave?",
+      "options": [
+        "An electromagnetic wave",
+        "A transverse wave",
+        "A mechanical (longitudinal) wave needing a medium",
+        "A standing wave"
+      ],
+      "answer": 2,
+      "explanation": "Sound is a mechanical longitudinal wave that propagates by compressing and rarefying a material medium, so it requires particles to transmit energy. A vacuum has no medium, so sound cannot travel. Electromagnetic waves, by contrast, need no medium and do cross vacuum."
+    },
+    {
+      "id": "physics-optics-and-waves-009",
+      "q": "A wave has frequency 250 Hz and wavelength 1.2 m. What is its speed?",
+      "options": [
+        "208 m/s",
+        "300 m/s",
+        "251.2 m/s",
+        "120 m/s"
+      ],
+      "answer": 1,
+      "explanation": "Wave speed v = fλ = 250 Hz × 1.2 m = 300 m/s. The value 208 comes from incorrectly dividing frequency by wavelength, and 251.2 from adding them. Multiplication of frequency and wavelength is the correct relationship."
+    },
+    {
+      "id": "physics-optics-and-waves-010",
+      "q": "Polarizing sunglasses reduce glare primarily because reflected glare is largely what?",
+      "options": [
+        "Higher in frequency than direct light",
+        "Polarized in a particular direction",
+        "Diffracted into a single color",
+        "Slower than direct light"
+      ],
+      "answer": 1,
+      "explanation": "Light reflecting off horizontal surfaces like water or roads becomes predominantly horizontally polarized, so a vertically oriented polarizing filter blocks much of it. Reflection does not change a wave's frequency or speed in air, and glare is not a diffraction effect, so those options are wrong."
+    }
+  ]
+}

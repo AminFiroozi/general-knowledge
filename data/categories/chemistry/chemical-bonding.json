@@ -1,0 +1,126 @@
+{
+  "topic": "chemical-bonding",
+  "category": "chemistry",
+  "questions": [
+    {
+      "id": "chemistry-chemical-bonding-001",
+      "q": "An ionic bond is primarily formed by which process between two atoms?",
+      "options": [
+        "Equal sharing of electron pairs",
+        "Transfer of one or more electrons from one atom to the other",
+        "Overlap of half-filled orbitals to share electrons",
+        "Attraction between temporary dipoles"
+      ],
+      "answer": 1,
+      "explanation": "In ionic bonding, a metal atom transfers electrons to a nonmetal, producing a cation and an anion held together by electrostatic attraction. Equal sharing of electron pairs describes nonpolar covalent bonding, which occurs between atoms of similar electronegativity rather than between a metal and a nonmetal."
+    },
+    {
+      "id": "chemistry-chemical-bonding-002",
+      "q": "What holds the two hydrogen atoms together in an H₂ molecule?",
+      "options": [
+        "A shared pair of electrons forming a covalent bond",
+        "Transfer of an electron creating H⁺ and H⁻ ions",
+        "A sea of delocalized electrons",
+        "Hydrogen bonding between the two atoms"
+      ],
+      "answer": 0,
+      "explanation": "The two hydrogen atoms share one pair of electrons, forming a single covalent bond that gives each atom a filled 1s orbital. Hydrogen bonding is a much weaker intermolecular attraction between molecules, not the force that bonds two atoms within one molecule."
+    },
+    {
+      "id": "chemistry-chemical-bonding-003",
+      "q": "What type of bonding is found in solid sodium chloride (NaCl)?",
+      "options": [
+        "Nonpolar covalent",
+        "Metallic",
+        "Ionic",
+        "Polar covalent"
+      ],
+      "answer": 2,
+      "explanation": "Sodium transfers its valence electron to chlorine, and the resulting Na⁺ and Cl⁻ ions pack into a crystal lattice held by electrostatic attraction. Polar covalent bonding is tempting because Na and Cl differ in electronegativity, but the difference is so large (about 2.1) that essentially complete electron transfer occurs."
+    },
+    {
+      "id": "chemistry-chemical-bonding-004",
+      "q": "The bond between hydrogen and chlorine in an HCl molecule is best described as what?",
+      "options": [
+        "Purely ionic",
+        "Nonpolar covalent",
+        "Metallic",
+        "Polar covalent"
+      ],
+      "answer": 3,
+      "explanation": "Chlorine is more electronegative than hydrogen, so the shared electron pair is pulled toward chlorine, giving partial charges (δ+ on H, δ− on Cl). The bond is not purely ionic because the electronegativity difference of about 0.9 is too small for complete electron transfer; the electrons remain shared, just unequally."
+    },
+    {
+      "id": "chemistry-chemical-bonding-005",
+      "q": "Which model best explains why solid metals conduct electricity?",
+      "options": [
+        "Delocalized valence electrons move freely through a lattice of cations",
+        "Ions migrate through the solid toward the electrodes",
+        "Electrons hop between localized covalent bonds",
+        "Protons flow through the metal lattice"
+      ],
+      "answer": 0,
+      "explanation": "Metallic bonding is described as a lattice of positive metal ions immersed in a sea of delocalized electrons, and these mobile electrons carry charge through the solid. Ion migration explains conductivity in molten salts and electrolyte solutions, not in solid metals, where the cations are fixed in the lattice."
+    },
+    {
+      "id": "chemistry-chemical-bonding-006",
+      "q": "For a hydrogen bond to form between molecules, hydrogen must be covalently bonded to which kind of atom?",
+      "options": [
+        "Any nonmetal atom, including carbon",
+        "A small, highly electronegative atom: nitrogen, oxygen, or fluorine",
+        "A metal atom such as sodium",
+        "Another hydrogen atom"
+      ],
+      "answer": 1,
+      "explanation": "Hydrogen bonding requires H attached to N, O, or F, because only these small, highly electronegative atoms leave the hydrogen sufficiently electron-poor to attract a lone pair on a neighboring molecule. Carbon is not electronegative enough, which is why C–H bonds, as in methane, do not form hydrogen bonds."
+    },
+    {
+      "id": "chemistry-chemical-bonding-007",
+      "q": "According to VSEPR theory, why does the water molecule have a bent shape rather than a linear one?",
+      "options": [
+        "The hydrogen atoms strongly repel each other",
+        "The two O–H bonds have different lengths",
+        "Two lone pairs on oxygen repel the bonding pairs, compressing the bond angle",
+        "Hydrogen bonding between molecules bends each molecule"
+      ],
+      "answer": 2,
+      "explanation": "Oxygen in water has four electron domains, two bonding pairs and two lone pairs, arranged roughly tetrahedrally; the lone pairs occupy two positions and compress the H–O–H angle to about 104.5°. Hydrogen bonding is an attraction between separate water molecules and has nothing to do with the geometry of an individual molecule."
+    },
+    {
+      "id": "chemistry-chemical-bonding-008",
+      "q": "Carbon dioxide contains two polar C=O bonds, yet the molecule has no net dipole moment. Why?",
+      "options": [
+        "The C=O bonds are actually nonpolar",
+        "The molecule is linear and symmetric, so the two bond dipoles cancel",
+        "The lone pairs on oxygen neutralize the bond dipoles",
+        "Carbon donates electrons equally to both oxygens, removing all partial charges"
+      ],
+      "answer": 1,
+      "explanation": "CO₂ is linear (O=C=O), so the two equal bond dipoles point in exactly opposite directions and cancel, leaving zero net dipole moment. The bonds themselves are genuinely polar because oxygen is much more electronegative than carbon; it is the symmetric geometry, not an absence of bond polarity, that makes the molecule nonpolar."
+    },
+    {
+      "id": "chemistry-chemical-bonding-009",
+      "q": "Among the hydrogen halides HF, HCl, HBr, and HI, which has the highest boiling point, and why?",
+      "options": [
+        "HF, because its molecules form hydrogen bonds",
+        "HI, because it has the largest molar mass",
+        "HCl, because its bond is the most polar after HF",
+        "HBr, because it balances polarity and molecular size"
+      ],
+      "answer": 0,
+      "explanation": "HF boils at about 19.5 °C, far above the other hydrogen halides, because H–F groups form strong hydrogen bonds that the others cannot. HI is the tempting choice since its large electron cloud does give stronger London dispersion forces and a higher boiling point than HCl and HBr, but dispersion alone still cannot match hydrogen bonding in HF."
+    },
+    {
+      "id": "chemistry-chemical-bonding-010",
+      "q": "According to molecular orbital theory, what is the bond order of the O₂ molecule?",
+      "options": [
+        "1",
+        "1.5",
+        "3",
+        "2"
+      ],
+      "answer": 3,
+      "explanation": "O₂ has 10 valence electrons in bonding molecular orbitals and 6 in antibonding orbitals, giving a bond order of (10 − 6)/2 = 2. A bond order of 3 corresponds to N₂, which has two fewer antibonding electrons; MO theory also correctly predicts that O₂ is paramagnetic due to two unpaired electrons in its π* orbitals."
+    }
+  ]
+}

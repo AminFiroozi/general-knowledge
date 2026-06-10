@@ -1,0 +1,126 @@
+{
+  "topic": "exoplanets",
+  "category": "astronomy",
+  "questions": [
+    {
+      "id": "astronomy-exoplanets-001",
+      "q": "What does the transit method of exoplanet detection measure?",
+      "options": [
+        "The wobble of a star caused by an orbiting planet",
+        "The slight, periodic dimming of a star as a planet passes in front of it",
+        "The heat emitted directly by the planet",
+        "The radio signals from the planet's surface"
+      ],
+      "answer": 1,
+      "explanation": "The transit method detects the small, regular dip in a star's brightness when a planet crosses in front of it from our line of sight. Detecting the star's wobble is instead the radial velocity method, a different technique."
+    },
+    {
+      "id": "astronomy-exoplanets-002",
+      "q": "What does the radial velocity (Doppler) method detect about a star hosting a planet?",
+      "options": [
+        "The star's change in brightness",
+        "Tiny shifts in the star's spectrum from its motion caused by an orbiting planet",
+        "The planet's surface temperature",
+        "The planet's magnetic field"
+      ],
+      "answer": 1,
+      "explanation": "The radial velocity method detects periodic Doppler shifts in a star's spectral lines as the star is tugged back and forth by an orbiting planet's gravity. It measures the star's motion, not brightness dips, which is what the transit method observes."
+    },
+    {
+      "id": "astronomy-exoplanets-003",
+      "q": "What is the habitable zone (or Goldilocks zone) around a star?",
+      "options": [
+        "The region where a planet's surface could support liquid water",
+        "The region where planets are tidally locked",
+        "The zone where comets originate",
+        "The area within a star's outer atmosphere"
+      ],
+      "answer": 0,
+      "explanation": "The habitable zone is the orbital region around a star where temperatures could allow liquid water to exist on a planet's surface, a key condition for life as we know it. It is defined by temperature and distance from the star, not by tidal locking or comet origins."
+    },
+    {
+      "id": "astronomy-exoplanets-004",
+      "q": "What is a 'hot Jupiter'?",
+      "options": [
+        "A gas giant orbiting very close to its host star",
+        "A rocky planet with active volcanoes",
+        "Jupiter during its closest approach to the Sun",
+        "A small planet made entirely of lava"
+      ],
+      "answer": 0,
+      "explanation": "A hot Jupiter is a gas-giant exoplanet that orbits extremely close to its star, giving it a very high temperature and short orbital period. These planets were among the first exoplanets discovered because they produce large, easily detected signals; they are not rocky or volcanic worlds."
+    },
+    {
+      "id": "astronomy-exoplanets-005",
+      "q": "Which space telescope, launched in 2009, was dedicated to discovering exoplanets via the transit method?",
+      "options": [
+        "Hubble",
+        "Kepler",
+        "Chandra",
+        "Spitzer"
+      ],
+      "answer": 1,
+      "explanation": "The Kepler Space Telescope continuously monitored a single field of stars to detect the periodic dimming caused by transiting planets, discovering thousands of exoplanets. Hubble, Chandra, and Spitzer were general-purpose or specialized observatories not primarily designed for transit surveys."
+    },
+    {
+      "id": "astronomy-exoplanets-006",
+      "q": "The TRAPPIST-1 system is notable for what reason?",
+      "options": [
+        "It contains a single gas giant the size of Jupiter",
+        "It hosts seven Earth-sized planets, several in the habitable zone",
+        "It is the closest star system to the Sun",
+        "It has no detectable planets"
+      ],
+      "answer": 1,
+      "explanation": "TRAPPIST-1, an ultracool red dwarf, hosts seven roughly Earth-sized rocky planets, with several positioned in or near the habitable zone. This makes it a prime target for studying potentially habitable worlds; it is not the closest star system, which is Alpha Centauri."
+    },
+    {
+      "id": "astronomy-exoplanets-007",
+      "q": "Why are red dwarf stars often targeted in the search for habitable exoplanets?",
+      "options": [
+        "They are extremely bright and easy to image directly",
+        "They are very common, and their dimness makes Earth-sized planets easier to detect",
+        "They never have planets, simplifying the search",
+        "They emit no harmful radiation at all"
+      ],
+      "answer": 1,
+      "explanation": "Red dwarfs are the most abundant stars, and because they are small and dim, the relative signal of an orbiting Earth-sized planet during a transit is larger and easier to detect. However, they can emit strong flares, so they are not free of harmful radiation."
+    },
+    {
+      "id": "astronomy-exoplanets-008",
+      "q": "How can astronomers study the atmosphere of a transiting exoplanet?",
+      "options": [
+        "By landing probes on the planet",
+        "By analyzing starlight that filters through the planet's atmosphere during transit",
+        "By measuring the planet's magnetic field from Earth",
+        "By listening to radio emissions from the planet"
+      ],
+      "answer": 1,
+      "explanation": "During a transit, some starlight passes through the planet's atmosphere, and the absorption features imprinted on that light reveal the atmosphere's chemical composition, a technique called transmission spectroscopy. No probes have visited exoplanets, which lie light-years away."
+    },
+    {
+      "id": "astronomy-exoplanets-009",
+      "q": "What is a 'super-Earth' exoplanet?",
+      "options": [
+        "A planet identical in every way to Earth",
+        "A rocky planet more massive than Earth but lighter than ice giants like Neptune",
+        "A gas giant larger than Jupiter",
+        "A planet that orbits two stars"
+      ],
+      "answer": 1,
+      "explanation": "A super-Earth is a planet with a mass greater than Earth's but substantially less than that of the ice giants Uranus and Neptune, and it may be rocky or have a thick atmosphere. The term refers to mass and size, not to Earth-like habitability or a specific orbital arrangement."
+    },
+    {
+      "id": "astronomy-exoplanets-010",
+      "q": "What is the direct imaging method of exoplanet detection?",
+      "options": [
+        "Capturing actual light from the planet itself, usually by blocking the star's glare",
+        "Measuring the dimming of the star during a transit",
+        "Detecting the star's spectral wobble",
+        "Timing pulses from a pulsar"
+      ],
+      "answer": 0,
+      "explanation": "Direct imaging captures the planet's own light by using instruments like coronagraphs to suppress the overwhelming glare of the host star. This differs from transit and radial velocity methods, which infer a planet's presence indirectly from effects on the star rather than imaging the planet."
+    }
+  ]
+}

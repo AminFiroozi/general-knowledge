@@ -1,0 +1,101 @@
+{
+  "topic": "cell-biology",
+  "category": "biology",
+  "questions": [
+    {
+      "id": "biology-cell-biology-001",
+      "q": "Which organelle is the primary site of ATP production in eukaryotic cells?",
+      "options": ["Ribosome", "Mitochondrion", "Golgi apparatus", "Lysosome"],
+      "answer": 1,
+      "explanation": "The mitochondrion generates most of the cell's ATP through oxidative phosphorylation on its inner membrane. Ribosomes synthesize proteins, the Golgi apparatus modifies and packages proteins, and lysosomes handle intracellular digestion."
+    },
+    {
+      "id": "biology-cell-biology-002",
+      "q": "The fluid mosaic model describes the plasma membrane as composed primarily of what?",
+      "options": [
+        "A rigid wall of cellulose",
+        "A phospholipid bilayer with embedded proteins",
+        "A single layer of cholesterol",
+        "Cross-linked nucleic acids"
+      ],
+      "answer": 1,
+      "explanation": "The fluid mosaic model describes the membrane as a phospholipid bilayer in which proteins and other molecules are embedded and can move laterally. The hydrophilic heads face outward and the hydrophobic tails face inward, creating a selectively permeable barrier."
+    },
+    {
+      "id": "biology-cell-biology-003",
+      "q": "During which phase of mitosis do sister chromatids separate and move toward opposite poles?",
+      "options": ["Prophase", "Metaphase", "Anaphase", "Telophase"],
+      "answer": 2,
+      "explanation": "In anaphase, the centromeres split and sister chromatids are pulled apart by spindle fibers toward opposite poles. Metaphase is when chromosomes align at the metaphase plate, and telophase is when nuclear envelopes reform around the separated sets."
+    },
+    {
+      "id": "biology-cell-biology-004",
+      "q": "How does meiosis differ fundamentally from mitosis?",
+      "options": [
+        "Meiosis produces two genetically identical diploid cells",
+        "Meiosis produces four genetically distinct haploid cells",
+        "Meiosis does not involve DNA replication",
+        "Meiosis only occurs in prokaryotes"
+      ],
+      "answer": 1,
+      "explanation": "Meiosis involves two successive divisions producing four haploid (n) gametes that are genetically distinct due to crossing over and independent assortment. Mitosis produces two genetically identical diploid (2n) daughter cells."
+    },
+    {
+      "id": "biology-cell-biology-005",
+      "q": "In aerobic cellular respiration, where does the citric acid (Krebs) cycle take place?",
+      "options": [
+        "Cytoplasm",
+        "Mitochondrial matrix",
+        "Inner mitochondrial membrane",
+        "Nucleus"
+      ],
+      "answer": 1,
+      "explanation": "The citric acid cycle occurs in the mitochondrial matrix, where acetyl-CoA is oxidized to produce NADH, FADH2, and CO2. Glycolysis occurs in the cytoplasm, and the electron transport chain is embedded in the inner mitochondrial membrane."
+    },
+    {
+      "id": "biology-cell-biology-006",
+      "q": "What is the net ATP yield from glycolysis of one glucose molecule?",
+      "options": ["2 ATP", "4 ATP", "36 ATP", "38 ATP"],
+      "answer": 0,
+      "explanation": "Glycolysis produces 4 ATP but consumes 2 ATP in its early steps, giving a net gain of 2 ATP (plus 2 NADH) per glucose. The much larger ATP yield comes later from the citric acid cycle and oxidative phosphorylation."
+    },
+    {
+      "id": "biology-cell-biology-007",
+      "q": "In photosynthesis, the light-dependent reactions occur in which structure of the chloroplast?",
+      "options": ["Stroma", "Thylakoid membrane", "Outer membrane", "Intermembrane space"],
+      "answer": 1,
+      "explanation": "The light-dependent reactions take place in the thylakoid membranes, where chlorophyll captures light energy to produce ATP and NADPH and to split water. The light-independent reactions (Calvin cycle) occur in the stroma."
+    },
+    {
+      "id": "biology-cell-biology-008",
+      "q": "What is the main product of the Calvin cycle that is used to build glucose?",
+      "options": ["Oxygen", "G3P (glyceraldehyde-3-phosphate)", "NADPH", "Pyruvate"],
+      "answer": 1,
+      "explanation": "The Calvin cycle fixes CO2 and uses ATP and NADPH to produce G3P (glyceraldehyde-3-phosphate), a three-carbon sugar that can be combined to form glucose and other carbohydrates. Oxygen is a byproduct of the light reactions, not the Calvin cycle."
+    },
+    {
+      "id": "biology-cell-biology-009",
+      "q": "Which organelle is responsible for modifying, sorting, and packaging proteins for secretion?",
+      "options": [
+        "Rough endoplasmic reticulum",
+        "Golgi apparatus",
+        "Peroxisome",
+        "Nucleolus"
+      ],
+      "answer": 1,
+      "explanation": "The Golgi apparatus receives proteins from the rough ER, then modifies, sorts, and packages them into vesicles for delivery or secretion. The rough ER synthesizes and begins folding proteins, while the nucleolus assembles ribosomes."
+    },
+    {
+      "id": "biology-cell-biology-010",
+      "q": "Which type of membrane transport requires the cell to expend ATP to move substances against their concentration gradient?",
+      "options": [
+        "Simple diffusion",
+        "Facilitated diffusion",
+        "Active transport",
+        "Osmosis"
+      ],
+      "answer": 2,
+      "explanation": "Active transport uses energy (typically ATP) to pump molecules against their concentration gradient, as in the sodium-potassium pump. Simple diffusion, facilitated diffusion, and osmosis are all passive processes that move substances down their gradients without energy input."
+    }
+  ]
+}

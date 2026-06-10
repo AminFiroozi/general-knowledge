@@ -1,0 +1,126 @@
+{
+  "topic": "natural-disasters",
+  "category": "earth-science",
+  "questions": [
+    {
+      "id": "earth-science-natural-disasters-001",
+      "q": "The point on Earth's surface directly above where an earthquake originates is called the what?",
+      "options": [
+        "Focus",
+        "Epicenter",
+        "Fault scarp",
+        "Hypocenter"
+      ],
+      "answer": 1,
+      "explanation": "The epicenter is the location on the surface directly above the earthquake's origin point, and it is usually where the strongest shaking is felt. The focus (or hypocenter) is the underground point where the rupture actually begins, not the surface location, so it is a different concept."
+    },
+    {
+      "id": "earth-science-natural-disasters-002",
+      "q": "The Richter and moment magnitude scales measure what aspect of an earthquake?",
+      "options": [
+        "The energy or size of the earthquake",
+        "The number of aftershocks",
+        "The depth of the focus",
+        "The duration of shaking only"
+      ],
+      "answer": 0,
+      "explanation": "Magnitude scales quantify the energy released, or size, of an earthquake, with each whole-number increase representing a large jump in energy. They do not simply count aftershocks; aftershocks are separate, smaller quakes that follow and are not what a magnitude value reports."
+    },
+    {
+      "id": "earth-science-natural-disasters-003",
+      "q": "Tsunamis are most commonly triggered by what event?",
+      "options": [
+        "Strong coastal winds",
+        "Undersea earthquakes",
+        "Heavy monsoon rains",
+        "High tides at full moon"
+      ],
+      "answer": 1,
+      "explanation": "Most tsunamis are generated when an undersea earthquake abruptly displaces a large volume of water, sending out fast-moving waves. Strong winds produce ordinary surface waves and storm surge but lack the sudden seafloor displacement needed to create a true tsunami."
+    },
+    {
+      "id": "earth-science-natural-disasters-004",
+      "q": "A volcano that has erupted in recorded history and could erupt again is best classified as what?",
+      "options": [
+        "Extinct",
+        "Dormant",
+        "Active",
+        "Fossilized"
+      ],
+      "answer": 2,
+      "explanation": "An active volcano is one that has erupted recently or shows signs that it may erupt again. An extinct volcano, by contrast, has had no eruptions in recorded history and is not expected to erupt, so it does not fit a volcano capable of erupting again."
+    },
+    {
+      "id": "earth-science-natural-disasters-005",
+      "q": "What is the rotating center of a hurricane, characterized by calm, clear conditions, called?",
+      "options": [
+        "The eye",
+        "The eyewall",
+        "The rain band",
+        "The storm surge"
+      ],
+      "answer": 0,
+      "explanation": "The eye is the relatively calm, clear center of a hurricane where air sinks and winds are light. The eyewall surrounds the eye and is actually the most violent part of the storm, with the strongest winds, so it is the opposite of calm."
+    },
+    {
+      "id": "earth-science-natural-disasters-006",
+      "q": "Which scale is used to classify the intensity of tornadoes based on the damage they cause?",
+      "options": [
+        "The Saffir-Simpson scale",
+        "The Enhanced Fujita scale",
+        "The Mohs scale",
+        "The Beaufort scale"
+      ],
+      "answer": 1,
+      "explanation": "The Enhanced Fujita (EF) scale rates tornadoes from EF0 to EF5 according to the damage they inflict, which is used to estimate wind speeds. The Saffir-Simpson scale is the wrong choice because it rates hurricanes by wind speed, not tornadoes."
+    },
+    {
+      "id": "earth-science-natural-disasters-007",
+      "q": "Hurricanes require which condition to form and strengthen?",
+      "options": [
+        "Cold ocean water below 20 degrees Celsius",
+        "Warm ocean water around 26 degrees Celsius or higher",
+        "Dry desert air over land",
+        "Strong vertical wind shear"
+      ],
+      "answer": 1,
+      "explanation": "Hurricanes draw their energy from warm ocean water, typically about 26 degrees Celsius or warmer, which fuels evaporation and rising moist air. Cold water cannot supply enough heat and moisture, which is why hurricanes weaken when they move over cooler seas or onto land."
+    },
+    {
+      "id": "earth-science-natural-disasters-008",
+      "q": "The deadly, fast-moving mixture of hot gas and volcanic debris that races down a volcano's slopes is called a what?",
+      "options": [
+        "Lahar",
+        "Pyroclastic flow",
+        "Lava dome",
+        "Caldera"
+      ],
+      "answer": 1,
+      "explanation": "A pyroclastic flow is a ground-hugging avalanche of superheated gas and volcanic particles that can travel at extreme speeds and is one of the deadliest volcanic hazards. A lahar is different: it is a volcanic mudflow of water mixed with ash and debris, not the hot gas-and-rock cloud described here."
+    },
+    {
+      "id": "earth-science-natural-disasters-009",
+      "q": "A flash flood is best described as what?",
+      "options": [
+        "A flood that develops slowly over several weeks",
+        "A rapid flood occurring within hours of heavy rain",
+        "Flooding caused only by ocean tides",
+        "A permanent rise in a lake's water level"
+      ],
+      "answer": 1,
+      "explanation": "A flash flood is a sudden, rapid rise of water, usually within minutes to a few hours of intense rainfall, dam failure, or rapid snowmelt, giving little warning. This contrasts with slow-onset river floods that build over days or weeks, allowing more time to prepare."
+    },
+    {
+      "id": "earth-science-natural-disasters-010",
+      "q": "Seismic waves produced by earthquakes are detected and recorded by which instrument?",
+      "options": [
+        "A barometer",
+        "A seismometer",
+        "An anemometer",
+        "A hygrometer"
+      ],
+      "answer": 1,
+      "explanation": "A seismometer (recording on a seismograph) senses and records the ground vibrations of seismic waves, allowing scientists to locate and measure earthquakes. A barometer is unrelated, as it measures atmospheric pressure rather than ground motion."
+    }
+  ]
+}

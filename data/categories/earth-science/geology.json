@@ -1,0 +1,126 @@
+{
+  "topic": "geology",
+  "category": "earth-science",
+  "questions": [
+    {
+      "id": "earth-science-geology-001",
+      "q": "Which type of rock forms from the cooling and solidification of magma or lava?",
+      "options": [
+        "Sedimentary rock",
+        "Igneous rock",
+        "Metamorphic rock",
+        "Clastic rock"
+      ],
+      "answer": 1,
+      "explanation": "Igneous rock forms when molten magma (underground) or lava (at the surface) cools and crystallizes into solid mineral grains. Sedimentary rock instead forms from compacted and cemented sediments such as sand, mud, or shell fragments, not from cooling melt."
+    },
+    {
+      "id": "earth-science-geology-002",
+      "q": "In the rock cycle, what process turns existing rock into a new rock type through heat and pressure without melting it completely?",
+      "options": [
+        "Weathering",
+        "Deposition",
+        "Metamorphism",
+        "Cementation"
+      ],
+      "answer": 2,
+      "explanation": "Metamorphism transforms a rock into a new type by applying heat and pressure that recrystallize its minerals while it remains solid. Weathering only breaks rock down into smaller fragments at the surface; it does not create the dense, recrystallized texture characteristic of metamorphic rocks like marble or schist."
+    },
+    {
+      "id": "earth-science-geology-003",
+      "q": "Mohs scale is used by geologists to measure which property of a mineral?",
+      "options": [
+        "Density",
+        "Color",
+        "Hardness",
+        "Magnetism"
+      ],
+      "answer": 2,
+      "explanation": "The Mohs scale ranks minerals from 1 (talc) to 10 (diamond) according to their resistance to scratching, which is hardness. Color is an unreliable diagnostic property because the same mineral can occur in many colors due to impurities, so it is not what Mohs measures."
+    },
+    {
+      "id": "earth-science-geology-004",
+      "q": "Which soil horizon, often called topsoil, is richest in organic matter and supports most plant roots?",
+      "options": [
+        "O horizon",
+        "A horizon",
+        "C horizon",
+        "R horizon"
+      ],
+      "answer": 1,
+      "explanation": "The A horizon, or topsoil, is a mix of mineral particles and decomposed organic matter (humus) where most biological activity and root growth occur. The C horizon is much deeper, consisting largely of weathered parent material with little organic content and far fewer roots."
+    },
+    {
+      "id": "earth-science-geology-005",
+      "q": "What is the correct order of the major divisions of geologic time from largest to smallest?",
+      "options": [
+        "Period, Era, Eon, Epoch",
+        "Eon, Era, Period, Epoch",
+        "Era, Eon, Epoch, Period",
+        "Epoch, Period, Era, Eon"
+      ],
+      "answer": 1,
+      "explanation": "The geologic time scale nests from largest to smallest as Eon, Era, Period, then Epoch. Listing Period before Era is incorrect because Eras (such as the Mesozoic) are subdivided into Periods (such as the Jurassic), so Periods are smaller than Eras, not larger."
+    },
+    {
+      "id": "earth-science-geology-006",
+      "q": "Coal forms primarily from which kind of original material?",
+      "options": [
+        "Accumulated marine shells",
+        "Cooled volcanic ash",
+        "Compressed plant remains",
+        "Precipitated salt crystals"
+      ],
+      "answer": 2,
+      "explanation": "Coal is a sedimentary rock formed from the accumulation and compression of plant matter in ancient swamps, gradually transformed into carbon-rich layers under heat and pressure. Marine shells instead produce limestone, a calcium carbonate rock, not the carbon-based fuel coal."
+    },
+    {
+      "id": "earth-science-geology-007",
+      "q": "A fossil preserved as a hollow impression left after the original organism dissolves away is called what?",
+      "options": [
+        "A cast",
+        "A mold",
+        "A trace fossil",
+        "Amber"
+      ],
+      "answer": 1,
+      "explanation": "A mold is the empty cavity left in rock after the buried organism decays or dissolves, recording its external shape. A cast is the opposite: it forms only later if sediment or minerals fill that mold, producing a solid replica of the original."
+    },
+    {
+      "id": "earth-science-geology-008",
+      "q": "Which process physically or chemically breaks rock down into smaller pieces while it remains in place?",
+      "options": [
+        "Erosion",
+        "Subduction",
+        "Weathering",
+        "Lithification"
+      ],
+      "answer": 2,
+      "explanation": "Weathering is the in-place breakdown of rock by physical forces (like freeze-thaw) or chemical reactions (like acid rain dissolving minerals). Erosion differs because it is the transport of those broken pieces away by wind, water, or ice, rather than the breakdown itself."
+    },
+    {
+      "id": "earth-science-geology-009",
+      "q": "The principle of superposition states that in an undisturbed sequence of sedimentary layers, the oldest rocks are located where?",
+      "options": [
+        "At the top",
+        "At the bottom",
+        "In the middle",
+        "Randomly distributed"
+      ],
+      "answer": 1,
+      "explanation": "Superposition holds that sediments are deposited in successive layers, so in an undisturbed sequence each layer is younger than the one beneath it, leaving the oldest at the bottom. Placing the oldest at the top would reverse the order of deposition, which only occurs where folding or faulting has overturned the layers."
+    },
+    {
+      "id": "earth-science-geology-010",
+      "q": "Quartz is composed primarily of which two chemical elements?",
+      "options": [
+        "Silicon and oxygen",
+        "Calcium and carbon",
+        "Iron and sulfur",
+        "Aluminum and potassium"
+      ],
+      "answer": 0,
+      "explanation": "Quartz is silicon dioxide (SiO2), built from a framework of silicon and oxygen atoms, making it one of the most abundant minerals in the crust. Calcium and carbon instead form calcite (calcium carbonate), the main mineral of limestone, not quartz."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "space-exploration",
+  "category": "astronomy",
+  "questions": [
+    {
+      "id": "astronomy-space-exploration-001",
+      "q": "Which Apollo mission first landed humans on the Moon in 1969?",
+      "options": [
+        "Apollo 8",
+        "Apollo 11",
+        "Apollo 13",
+        "Apollo 17"
+      ],
+      "answer": 1,
+      "explanation": "Apollo 11 achieved the first crewed Moon landing in July 1969, with Neil Armstrong and Buzz Aldrin walking on the surface. Apollo 8 only orbited the Moon, and Apollo 13's landing was aborted after an in-flight explosion."
+    },
+    {
+      "id": "astronomy-space-exploration-002",
+      "q": "What is the main advantage of placing a telescope like Hubble in space rather than on the ground?",
+      "options": [
+        "It is closer to the stars it observes",
+        "It avoids blurring and absorption caused by Earth's atmosphere",
+        "It can collect sunlight more efficiently",
+        "It costs less to operate than ground telescopes"
+      ],
+      "answer": 1,
+      "explanation": "Above the atmosphere, a space telescope avoids the turbulence that blurs images and the absorption of wavelengths like ultraviolet and infrared, yielding sharper, clearer observations. Being in space provides negligible change in distance to stars, which are light-years away, and space telescopes are generally more expensive to operate, not less."
+    },
+    {
+      "id": "astronomy-space-exploration-003",
+      "q": "Which space probe became the first human-made object to enter interstellar space?",
+      "options": [
+        "Voyager 1",
+        "Cassini",
+        "New Horizons",
+        "Galileo"
+      ],
+      "answer": 0,
+      "explanation": "Voyager 1, launched in 1977, crossed the heliopause into interstellar space in 2012, becoming the first spacecraft to do so. Cassini studied Saturn, Galileo studied Jupiter, and New Horizons flew past Pluto, none of which reached interstellar space first."
+    },
+    {
+      "id": "astronomy-space-exploration-004",
+      "q": "Why do multistage rockets jettison their lower stages during launch?",
+      "options": [
+        "To slow the rocket down for safety",
+        "To shed empty mass so the remaining rocket accelerates more efficiently",
+        "To reduce the noise of the engines",
+        "To change the rocket's color for tracking"
+      ],
+      "answer": 1,
+      "explanation": "Once a stage's fuel is spent, discarding its empty mass lets the lighter remaining vehicle accelerate more efficiently toward orbital velocity. Carrying dead weight would waste propellant; staging is fundamentally about improving the mass ratio, not slowing down or reducing noise."
+    },
+    {
+      "id": "astronomy-space-exploration-005",
+      "q": "What is the International Space Station (ISS) primarily used for?",
+      "options": [
+        "Launching missions to other planets",
+        "Conducting scientific research in microgravity",
+        "Mining asteroids for metals",
+        "Generating electricity for Earth"
+      ],
+      "answer": 1,
+      "explanation": "The ISS is a crewed laboratory in low Earth orbit where astronauts conduct experiments in microgravity across biology, physics, and materials science. It is not a launch platform for interplanetary missions, a mining operation, or a power source for Earth."
+    },
+    {
+      "id": "astronomy-space-exploration-006",
+      "q": "Who was the first human to travel into space, in 1961?",
+      "options": [
+        "Alan Shepard",
+        "Yuri Gagarin",
+        "John Glenn",
+        "Neil Armstrong"
+      ],
+      "answer": 1,
+      "explanation": "Soviet cosmonaut Yuri Gagarin became the first human in space, completing a single orbit of Earth aboard Vostok 1 in April 1961. Alan Shepard became the first American in space weeks later, and John Glenn was the first American to orbit Earth."
+    },
+    {
+      "id": "astronomy-space-exploration-007",
+      "q": "What does a gravity assist (or gravitational slingshot) maneuver allow a spacecraft to do?",
+      "options": [
+        "Stop completely in space",
+        "Gain or lose speed by using a planet's gravity and motion",
+        "Generate its own artificial gravity",
+        "Travel faster than light"
+      ],
+      "answer": 1,
+      "explanation": "A gravity assist uses the gravity and orbital motion of a planet to change a spacecraft's speed and direction, saving large amounts of fuel. It cannot stop a craft in space, create artificial gravity, or exceed the speed of light, which is physically impossible."
+    },
+    {
+      "id": "astronomy-space-exploration-008",
+      "q": "Which telescope, launched in 2021, observes primarily in infrared light to study the early universe?",
+      "options": [
+        "Hubble Space Telescope",
+        "James Webb Space Telescope",
+        "Kepler Space Telescope",
+        "Spitzer Space Telescope"
+      ],
+      "answer": 1,
+      "explanation": "The James Webb Space Telescope, launched in December 2021, is optimized for infrared observation, allowing it to peer through dust and detect light from the earliest galaxies. Hubble observes mainly in visible and ultraviolet light, and Kepler was dedicated to finding exoplanets."
+    },
+    {
+      "id": "astronomy-space-exploration-009",
+      "q": "What was significant about the Apollo 13 mission of 1970?",
+      "options": [
+        "It was the first landing on the far side of the Moon",
+        "An oxygen tank explosion forced the crew to abort the landing and return safely",
+        "It carried the first space telescope",
+        "It was the final Apollo mission"
+      ],
+      "answer": 1,
+      "explanation": "An oxygen tank exploded en route to the Moon, crippling the service module and forcing the crew to abandon the landing and improvise a safe return to Earth. It was not a Moon landing, did not carry a telescope, and Apollo 17 was the final crewed Apollo mission."
+    },
+    {
+      "id": "astronomy-space-exploration-010",
+      "q": "What is the approximate minimum speed an object must reach to enter a stable low Earth orbit, known as orbital velocity?",
+      "options": [
+        "About 1 km/s",
+        "About 7.8 km/s",
+        "About 30 km/s",
+        "About 300 km/s"
+      ],
+      "answer": 1,
+      "explanation": "Orbital velocity for low Earth orbit is roughly 7.8 km/s, the speed at which a spacecraft's forward motion balances Earth's gravitational pull so it continually falls around the planet. About 30 km/s is closer to Earth's orbital speed around the Sun, not around Earth itself."
+    }
+  ]
+}

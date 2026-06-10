@@ -1,0 +1,126 @@
+{
+  "topic": "regression-analysis",
+  "category": "statistics",
+  "questions": [
+    {
+      "id": "statistics-regression-analysis-001",
+      "q": "What does ordinary least squares (OLS) regression minimize?",
+      "options": [
+        "The sum of the absolute residuals",
+        "The sum of the squared residuals",
+        "The maximum residual",
+        "The number of predictor variables"
+      ],
+      "answer": 1,
+      "explanation": "OLS finds the line (or hyperplane) that minimizes the sum of squared residuals, the squared vertical distances between observed and predicted values. Minimizing the sum of absolute residuals instead defines a different method, least absolute deviations."
+    },
+    {
+      "id": "statistics-regression-analysis-002",
+      "q": "In a regression, a residual is defined as which quantity?",
+      "options": [
+        "The predicted value minus the mean",
+        "The observed value minus the predicted value",
+        "The slope of the regression line",
+        "The correlation between predictors"
+      ],
+      "answer": 1,
+      "explanation": "A residual is the difference between an observed value and the value predicted by the model, representing the part of the response the model fails to explain. The slope is a model coefficient, not a residual."
+    },
+    {
+      "id": "statistics-regression-analysis-003",
+      "q": "What does the coefficient of determination R² represent?",
+      "options": [
+        "The slope of the regression line",
+        "The proportion of variance in the response explained by the model",
+        "The probability that the model is correct",
+        "The number of predictors in the model"
+      ],
+      "answer": 1,
+      "explanation": "R² is the proportion of the total variance in the dependent variable that is explained by the regression model, ranging from 0 to 1. It is not a probability that the model is correct, and it says nothing directly about statistical significance."
+    },
+    {
+      "id": "statistics-regression-analysis-004",
+      "q": "An R² value of 0 indicates what about the model?",
+      "options": [
+        "A perfect fit",
+        "The model explains none of the variance in the response",
+        "All residuals are zero",
+        "The slope is exactly 1"
+      ],
+      "answer": 1,
+      "explanation": "An R² of 0 means the model explains none of the variability in the response, performing no better than simply predicting the mean. A perfect fit with all residuals zero would instead give R² = 1."
+    },
+    {
+      "id": "statistics-regression-analysis-005",
+      "q": "Why is adjusted R² often preferred over R² in multiple regression?",
+      "options": [
+        "It always equals 1",
+        "It penalizes the addition of predictors that do not improve the model",
+        "It ignores the residuals entirely",
+        "It is easier to compute by hand"
+      ],
+      "answer": 1,
+      "explanation": "Adjusted R² penalizes the inclusion of extra predictors, so it does not automatically increase when uninformative variables are added the way plain R² does. Plain R² can never decrease as predictors are added, which can be misleading."
+    },
+    {
+      "id": "statistics-regression-analysis-006",
+      "q": "Which is a standard assumption of the classical linear regression model?",
+      "options": [
+        "The residuals have constant variance (homoscedasticity)",
+        "The predictors must be perfectly correlated",
+        "The response variable must be categorical",
+        "The sample size must equal the number of predictors"
+      ],
+      "answer": 0,
+      "explanation": "Classical linear regression assumes homoscedasticity, meaning the residuals have constant variance across all levels of the predictors. Perfect correlation among predictors (multicollinearity) is in fact a problem to avoid, not an assumption."
+    },
+    {
+      "id": "statistics-regression-analysis-007",
+      "q": "In the simple linear model ŷ = b₀ + b₁x, what does the slope coefficient b₁ represent?",
+      "options": [
+        "The predicted value of y when x equals zero",
+        "The expected change in y for a one-unit increase in x",
+        "The total variance of y",
+        "The correlation coefficient squared"
+      ],
+      "answer": 1,
+      "explanation": "The slope b₁ gives the expected change in the response y for each one-unit increase in the predictor x. The predicted value of y when x equals zero is instead the intercept b₀."
+    },
+    {
+      "id": "statistics-regression-analysis-008",
+      "q": "Multicollinearity in multiple regression refers to what problem?",
+      "options": [
+        "Residuals that are not normally distributed",
+        "High correlation among the predictor variables",
+        "Too few observations in the data set",
+        "A response variable with outliers"
+      ],
+      "answer": 1,
+      "explanation": "Multicollinearity occurs when predictor variables are highly correlated with one another, which inflates the variance of the coefficient estimates and makes them unstable. Non-normal residuals are a separate concern about the error distribution, not multicollinearity."
+    },
+    {
+      "id": "statistics-regression-analysis-009",
+      "q": "Plotting residuals against fitted values is primarily used to check for what?",
+      "options": [
+        "The exact value of R²",
+        "Patterns indicating nonlinearity or non-constant variance",
+        "The number of predictors needed",
+        "The correlation between two response variables"
+      ],
+      "answer": 1,
+      "explanation": "A residuals-versus-fitted plot is used to detect violations such as nonlinearity, heteroscedasticity, or other systematic patterns that should not appear if the model is adequate. It does not directly report the numeric value of R²."
+    },
+    {
+      "id": "statistics-regression-analysis-010",
+      "q": "What is the relationship between the correlation coefficient r and R² in simple linear regression?",
+      "options": [
+        "R² = r",
+        "R² = r²",
+        "R² = 1 − r",
+        "R² = √r"
+      ],
+      "answer": 1,
+      "explanation": "In simple linear regression with one predictor, the coefficient of determination equals the square of the correlation coefficient, R² = r². They are not equal directly, since r can be negative while R² is always between 0 and 1."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "acids-and-bases",
+  "category": "chemistry",
+  "questions": [
+    {
+      "id": "chemistry-acids-and-bases-001",
+      "q": "On the pH scale at 25 degrees Celsius, a solution with a pH of 7 is considered:",
+      "options": [
+        "Strongly acidic",
+        "Neutral",
+        "Strongly basic",
+        "Weakly basic"
+      ],
+      "answer": 1,
+      "explanation": "At 25 degrees Celsius, pure water and other neutral solutions have a pH of 7, where the concentrations of H+ and OH- are equal. Values below 7 are acidic and values above 7 are basic, so 7 marks the neutral midpoint, not an acidic condition."
+    },
+    {
+      "id": "chemistry-acids-and-bases-002",
+      "q": "According to the Bronsted-Lowry definition, an acid is a substance that:",
+      "options": [
+        "Accepts a proton (H+)",
+        "Donates a proton (H+)",
+        "Donates a pair of electrons",
+        "Produces hydroxide ions in water"
+      ],
+      "answer": 1,
+      "explanation": "A Bronsted-Lowry acid is a proton (H+) donor, while a Bronsted-Lowry base is a proton acceptor. Donating a pair of electrons describes a Lewis base, and producing hydroxide ions is the narrower Arrhenius definition of a base, not the Bronsted-Lowry acid definition."
+    },
+    {
+      "id": "chemistry-acids-and-bases-003",
+      "q": "If the hydrogen ion concentration [H+] of a solution is 1 x 10^-3 mol/L, what is its pH?",
+      "options": [
+        "11",
+        "3",
+        "7",
+        "-3"
+      ],
+      "answer": 1,
+      "explanation": "pH is defined as -log10[H+], and -log10(10^-3) equals 3. The answer 11 comes from mistakenly computing pOH or subtracting from 14, but the direct definition gives pH 3, indicating an acidic solution."
+    },
+    {
+      "id": "chemistry-acids-and-bases-004",
+      "q": "A buffer solution is typically made from:",
+      "options": [
+        "A strong acid and a strong base in equal amounts",
+        "A weak acid and its conjugate base (or a weak base and its conjugate acid)",
+        "Pure water and table salt",
+        "Two different strong acids mixed together"
+      ],
+      "answer": 1,
+      "explanation": "Buffers resist pH change because they contain a weak acid and its conjugate base, which can neutralize added acid or base. A mixture of a strong acid and strong base simply reacts to completion and provides no reservoir of conjugate species, so it cannot buffer."
+    },
+    {
+      "id": "chemistry-acids-and-bases-005",
+      "q": "In an acid-base titration, the equivalence point is the moment when:",
+      "options": [
+        "The indicator first changes color",
+        "The moles of added titrant exactly neutralize the moles of analyte",
+        "The pH of the solution reaches exactly 7",
+        "The solution begins to boil"
+      ],
+      "answer": 1,
+      "explanation": "The equivalence point occurs when stoichiometrically equal amounts of acid and base have reacted, regardless of the final pH. The pH at equivalence is only 7 for a strong acid-strong base titration; for weak acid-strong base it is above 7, so equating the equivalence point with pH 7 is a common error."
+    },
+    {
+      "id": "chemistry-acids-and-bases-006",
+      "q": "Which of the following is a property of a strong acid in aqueous solution?",
+      "options": [
+        "It dissociates only partially into ions",
+        "It dissociates essentially completely into ions",
+        "It does not conduct electricity",
+        "It always has a pH greater than 7"
+      ],
+      "answer": 1,
+      "explanation": "A strong acid such as HCl ionizes essentially completely in water, releasing a high concentration of H+ ions. Partial dissociation is the hallmark of a weak acid, so strong acids are distinguished precisely by their near-complete ionization."
+    },
+    {
+      "id": "chemistry-acids-and-bases-007",
+      "q": "When ammonia (NH3) accepts a proton to become the ammonium ion (NH4+), the NH4+ is referred to as the:",
+      "options": [
+        "Conjugate acid of ammonia",
+        "Conjugate base of ammonia",
+        "Lewis acid",
+        "Amphoteric species"
+      ],
+      "answer": 0,
+      "explanation": "A base that gains a proton becomes its conjugate acid, so NH4+ is the conjugate acid of the base NH3. A conjugate base would be formed by losing a proton, which is the opposite of what happens when ammonia accepts H+."
+    },
+    {
+      "id": "chemistry-acids-and-bases-008",
+      "q": "At 25 degrees Celsius, the sum of pH and pOH for any aqueous solution equals:",
+      "options": [
+        "7",
+        "1",
+        "14",
+        "10"
+      ],
+      "answer": 2,
+      "explanation": "Because the ion-product constant of water Kw is 1.0 x 10^-14 at 25 degrees Celsius, pH + pOH = 14. The value 7 is the pH of a neutral solution alone, not the sum of pH and pOH, so it does not satisfy this relationship for acidic or basic solutions."
+    },
+    {
+      "id": "chemistry-acids-and-bases-009",
+      "q": "A solution changes from pH 5 to pH 3. How does its hydrogen ion concentration change?",
+      "options": [
+        "It decreases by a factor of 2",
+        "It increases by a factor of 2",
+        "It increases by a factor of 100",
+        "It decreases by a factor of 100"
+      ],
+      "answer": 2,
+      "explanation": "The pH scale is logarithmic, so each unit change corresponds to a tenfold change in [H+]; a drop of two pH units means [H+] increases by 10 x 10 = 100. Treating the change as a simple factor of 2 ignores the logarithmic nature of the scale, and the lower pH means more acidic, so [H+] rises rather than falls."
+    },
+    {
+      "id": "chemistry-acids-and-bases-010",
+      "q": "An amphoteric substance such as water can:",
+      "options": [
+        "Only donate protons",
+        "Only accept protons",
+        "Act as either an acid or a base depending on the reaction",
+        "Neither donate nor accept protons"
+      ],
+      "answer": 2,
+      "explanation": "Amphoteric species can behave as an acid in one reaction and a base in another; water donates a proton to a base and accepts one from an acid. Restricting it to only donating or only accepting protons ignores this dual capability that defines amphoterism."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "hypothesis-testing",
+  "category": "statistics",
+  "questions": [
+    {
+      "id": "statistics-hypothesis-testing-001",
+      "q": "In hypothesis testing, what does the null hypothesis (H₀) typically represent?",
+      "options": [
+        "The claim the researcher hopes to prove",
+        "A statement of no effect or no difference",
+        "The alternative explanation for the data",
+        "The probability the data are random"
+      ],
+      "answer": 1,
+      "explanation": "The null hypothesis H₀ states that there is no effect, no difference, or no relationship, serving as the default assumed true until evidence contradicts it. The claim the researcher hopes to support is instead the alternative hypothesis."
+    },
+    {
+      "id": "statistics-hypothesis-testing-002",
+      "q": "What is a p-value?",
+      "options": [
+        "The probability that the null hypothesis is true",
+        "The probability of observing data at least as extreme as the sample, assuming H₀ is true",
+        "The probability of making a correct decision",
+        "The size of the observed effect"
+      ],
+      "answer": 1,
+      "explanation": "A p-value is the probability of obtaining a result at least as extreme as the observed one, computed under the assumption that the null hypothesis is true. It is not the probability that H₀ itself is true, a common misinterpretation."
+    },
+    {
+      "id": "statistics-hypothesis-testing-003",
+      "q": "A Type I error occurs when a researcher does what?",
+      "options": [
+        "Rejects a true null hypothesis",
+        "Fails to reject a false null hypothesis",
+        "Accepts the alternative when it is true",
+        "Uses too small a sample size"
+      ],
+      "answer": 0,
+      "explanation": "A Type I error is rejecting the null hypothesis when it is actually true (a false positive), and its probability equals the significance level α. Failing to reject a false null hypothesis is instead a Type II error."
+    },
+    {
+      "id": "statistics-hypothesis-testing-004",
+      "q": "A Type II error occurs when a researcher does what?",
+      "options": [
+        "Rejects a true null hypothesis",
+        "Fails to reject a false null hypothesis",
+        "Sets the significance level too high",
+        "Reports a confidence interval"
+      ],
+      "answer": 1,
+      "explanation": "A Type II error is failing to reject the null hypothesis when it is actually false (a false negative), with probability denoted β. Rejecting a true null hypothesis is the opposite mistake, a Type I error."
+    },
+    {
+      "id": "statistics-hypothesis-testing-005",
+      "q": "The significance level α of a test corresponds to which quantity?",
+      "options": [
+        "The power of the test",
+        "The probability of a Type I error",
+        "The probability of a Type II error",
+        "The effect size"
+      ],
+      "answer": 1,
+      "explanation": "The significance level α is the threshold probability of committing a Type I error, the chance of rejecting a true null hypothesis. The probability of a Type II error is β, a separate quantity, and the power of the test equals 1 − β."
+    },
+    {
+      "id": "statistics-hypothesis-testing-006",
+      "q": "When would you use a paired t-test rather than a two-sample (independent) t-test?",
+      "options": [
+        "When comparing two unrelated groups",
+        "When each observation in one group is naturally matched with one in the other",
+        "When the population variance is known",
+        "When the sample size exceeds 30"
+      ],
+      "answer": 1,
+      "explanation": "A paired t-test is used when observations come in matched pairs, such as before-and-after measurements on the same subjects, so it analyzes the differences within pairs. A two-sample t-test instead compares two independent, unrelated groups."
+    },
+    {
+      "id": "statistics-hypothesis-testing-007",
+      "q": "The power of a statistical test is defined as which probability?",
+      "options": [
+        "1 − α",
+        "1 − β, the probability of correctly rejecting a false null",
+        "The probability of a Type I error",
+        "The p-value at the decision boundary"
+      ],
+      "answer": 1,
+      "explanation": "Power is 1 − β, the probability that the test correctly rejects the null hypothesis when the alternative is true. It is not 1 − α; that quantity is the confidence level associated with correctly retaining a true null."
+    },
+    {
+      "id": "statistics-hypothesis-testing-008",
+      "q": "If a test uses α = 0.05 and the computed p-value is 0.03, what is the conclusion?",
+      "options": [
+        "Fail to reject H₀",
+        "Reject H₀",
+        "Accept H₀ as proven true",
+        "The test is inconclusive"
+      ],
+      "answer": 1,
+      "explanation": "Because the p-value 0.03 is less than the significance level 0.05, the result is statistically significant and the null hypothesis is rejected. We never accept H₀ as proven; we only reject it or fail to reject it."
+    },
+    {
+      "id": "statistics-hypothesis-testing-009",
+      "q": "Which statement best describes a one-tailed test compared to a two-tailed test?",
+      "options": [
+        "It tests for a difference in a specific direction only",
+        "It always requires a larger sample size",
+        "It tests both directions of an effect simultaneously",
+        "It cannot produce a p-value"
+      ],
+      "answer": 0,
+      "explanation": "A one-tailed test places the entire rejection region in one direction, testing for an effect of a specified sign (for example, greater than). A two-tailed test instead splits the rejection region across both tails to detect a difference in either direction."
+    },
+    {
+      "id": "statistics-hypothesis-testing-010",
+      "q": "All else equal, what generally happens to a test's power as the sample size increases?",
+      "options": [
+        "Power decreases",
+        "Power increases",
+        "Power stays exactly constant",
+        "Power equals the significance level"
+      ],
+      "answer": 1,
+      "explanation": "Larger samples reduce the standard error and make it easier to detect a true effect, so the power (1 − β) increases. Power does not stay constant; it is directly influenced by sample size, effect size, and α."
+    }
+  ]
+}

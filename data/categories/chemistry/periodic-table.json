@@ -1,0 +1,126 @@
+{
+  "topic": "periodic-table",
+  "category": "chemistry",
+  "questions": [
+    {
+      "id": "chemistry-periodic-table-001",
+      "q": "In the periodic table, a horizontal row is called a:",
+      "options": [
+        "Group",
+        "Period",
+        "Family",
+        "Block"
+      ],
+      "answer": 1,
+      "explanation": "Horizontal rows are called periods, and elements in the same period have the same highest principal energy level. Vertical columns are called groups (or families), so 'group' refers to columns, not rows."
+    },
+    {
+      "id": "chemistry-periodic-table-002",
+      "q": "Elements in the same group (vertical column) of the periodic table generally share similar:",
+      "options": [
+        "Atomic masses",
+        "Numbers of neutrons",
+        "Chemical properties due to the same number of valence electrons",
+        "Numbers of energy levels"
+      ],
+      "answer": 2,
+      "explanation": "Elements in a group have the same number of valence electrons, which gives them similar chemical behavior. They do not share atomic masses or neutron counts, and they have different numbers of occupied energy levels as you move down the group."
+    },
+    {
+      "id": "chemistry-periodic-table-003",
+      "q": "Which group of elements is known as the noble gases?",
+      "options": [
+        "Group 1",
+        "Group 2",
+        "Group 17",
+        "Group 18"
+      ],
+      "answer": 3,
+      "explanation": "The noble gases occupy Group 18 and are largely unreactive because they have full valence shells. Group 17 is the halogens, which are highly reactive nonmetals, so it is a common distractor but not the noble gases."
+    },
+    {
+      "id": "chemistry-periodic-table-004",
+      "q": "How does atomic radius generally change as you move from left to right across a period?",
+      "options": [
+        "It increases",
+        "It decreases",
+        "It stays the same",
+        "It first increases then decreases"
+      ],
+      "answer": 1,
+      "explanation": "Across a period, nuclear charge increases while electrons are added to the same shell, so the stronger pull contracts the electron cloud and the atomic radius decreases. Although electrons are being added, they do not occupy a new shell, so the size shrinks rather than grows."
+    },
+    {
+      "id": "chemistry-periodic-table-005",
+      "q": "How does atomic radius generally change as you move down a group?",
+      "options": [
+        "It decreases because nuclear charge increases",
+        "It increases because additional electron shells are added",
+        "It stays constant because valence electrons stay the same",
+        "It decreases because of stronger electron-electron repulsion"
+      ],
+      "answer": 1,
+      "explanation": "Moving down a group adds a new principal energy level (shell), so atoms get larger despite the increasing nuclear charge. The added inner shells also shield outer electrons from the nucleus, reinforcing the increase in size."
+    },
+    {
+      "id": "chemistry-periodic-table-006",
+      "q": "Electronegativity is a measure of an atom's ability to:",
+      "options": [
+        "Lose electrons to form a positive ion",
+        "Attract a shared pair of electrons in a bond",
+        "Emit light when heated",
+        "Conduct electricity in the solid state"
+      ],
+      "answer": 1,
+      "explanation": "Electronegativity quantifies how strongly an atom pulls shared bonding electrons toward itself within a covalent bond. The tendency to lose electrons and form positive ions is more closely related to ionization energy and metallic character, not electronegativity."
+    },
+    {
+      "id": "chemistry-periodic-table-007",
+      "q": "Which element has the highest electronegativity on the Pauling scale?",
+      "options": [
+        "Oxygen",
+        "Chlorine",
+        "Fluorine",
+        "Helium"
+      ],
+      "answer": 2,
+      "explanation": "Fluorine is the most electronegative element, sitting at the top-right of the reactive nonmetals. Oxygen is second but lower, and although helium is in the top-right corner, noble gases are not assigned the highest electronegativity because they rarely form bonds."
+    },
+    {
+      "id": "chemistry-periodic-table-008",
+      "q": "First ionization energy generally shows which trend across a period from left to right?",
+      "options": [
+        "It increases",
+        "It decreases",
+        "It stays constant",
+        "It increases then drops to zero"
+      ],
+      "answer": 0,
+      "explanation": "Ionization energy generally increases across a period because the growing nuclear charge holds valence electrons more tightly, making them harder to remove. This is the opposite of the trend down a group, where added shells make outer electrons easier to remove."
+    },
+    {
+      "id": "chemistry-periodic-table-009",
+      "q": "The highly reactive metals in Group 1 of the periodic table are known as the:",
+      "options": [
+        "Alkaline earth metals",
+        "Transition metals",
+        "Alkali metals",
+        "Halogens"
+      ],
+      "answer": 2,
+      "explanation": "Group 1 elements (excluding hydrogen) are the alkali metals, which have a single valence electron and react vigorously, especially with water. The alkaline earth metals are Group 2, a frequent point of confusion, but they have two valence electrons and are less reactive than Group 1."
+    },
+    {
+      "id": "chemistry-periodic-table-010",
+      "q": "A positive ion (cation) is generally smaller than its parent neutral atom mainly because:",
+      "options": [
+        "It gains extra electrons that pull inward",
+        "Losing electrons can remove an outer shell and increases the proton-to-electron ratio",
+        "Its nucleus loses protons",
+        "Its neutrons are compressed"
+      ],
+      "answer": 1,
+      "explanation": "Forming a cation by losing electrons often empties the outermost shell and leaves the remaining electrons more strongly attracted by the unchanged nuclear charge, so the ion shrinks. A cation never loses protons in chemical reactions, and gaining electrons would describe an anion, which is larger, not smaller."
+    }
+  ]
+}

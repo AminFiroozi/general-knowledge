@@ -1,0 +1,126 @@
+{
+  "topic": "meteorology",
+  "category": "earth-science",
+  "questions": [
+    {
+      "id": "earth-science-meteorology-001",
+      "q": "In which layer of the atmosphere does almost all weather occur?",
+      "options": [
+        "Stratosphere",
+        "Troposphere",
+        "Mesosphere",
+        "Thermosphere"
+      ],
+      "answer": 1,
+      "explanation": "The troposphere is the lowest layer, holding most of the atmosphere's water vapor and where rising and sinking air produce clouds, storms, and nearly all weather. The stratosphere above it is very stable and dry, hosting the ozone layer rather than day-to-day weather."
+    },
+    {
+      "id": "earth-science-meteorology-002",
+      "q": "A cold front is best described as what?",
+      "options": [
+        "Warm air advancing and rising over cold air",
+        "Cold air advancing and pushing under warm air",
+        "Two air masses of equal temperature meeting",
+        "A region of stationary high pressure"
+      ],
+      "answer": 1,
+      "explanation": "A cold front occurs when a colder, denser air mass advances and wedges beneath warmer air, forcing it to rise rapidly and often triggering thunderstorms. The first option describes a warm front, where warm air glides up over retreating cold air, producing gentler, more prolonged precipitation."
+    },
+    {
+      "id": "earth-science-meteorology-003",
+      "q": "Relative humidity is defined as what?",
+      "options": [
+        "The total mass of water in the air",
+        "The temperature at which dew forms",
+        "The ratio of actual water vapor to the maximum the air can hold",
+        "The speed at which clouds form"
+      ],
+      "answer": 2,
+      "explanation": "Relative humidity expresses how much water vapor is present compared with the maximum amount the air could hold at that temperature, given as a percentage. The temperature at which dew forms is the dew point, a related but distinct measure, not relative humidity itself."
+    },
+    {
+      "id": "earth-science-meteorology-004",
+      "q": "Which cloud type is low, gray, and often covers the entire sky producing steady light rain or drizzle?",
+      "options": [
+        "Cirrus",
+        "Cumulonimbus",
+        "Nimbostratus",
+        "Altocumulus"
+      ],
+      "answer": 2,
+      "explanation": "Nimbostratus clouds form thick, featureless gray layers that blanket the sky and yield continuous light to moderate precipitation. Cirrus clouds, by contrast, are thin, wispy, high-altitude ice clouds that produce no rain, so they cannot be responsible for steady drizzle."
+    },
+    {
+      "id": "earth-science-meteorology-005",
+      "q": "In the Northern Hemisphere, winds around a low-pressure system (cyclone) generally rotate in which direction?",
+      "options": [
+        "Clockwise",
+        "Counterclockwise",
+        "They do not rotate",
+        "Straight inward with no rotation"
+      ],
+      "answer": 1,
+      "explanation": "Because of the Coriolis effect in the Northern Hemisphere, air spiraling into a low-pressure center is deflected so that it circulates counterclockwise. Clockwise rotation occurs instead around high-pressure systems in the Northern Hemisphere, the opposite of a cyclone."
+    },
+    {
+      "id": "earth-science-meteorology-006",
+      "q": "The ozone layer, which absorbs much of the Sun's ultraviolet radiation, is located mainly in which atmospheric layer?",
+      "options": [
+        "Troposphere",
+        "Stratosphere",
+        "Mesosphere",
+        "Exosphere"
+      ],
+      "answer": 1,
+      "explanation": "The ozone layer resides in the stratosphere, where ozone molecules absorb harmful ultraviolet light and cause that layer's temperature to rise with altitude. The troposphere, the layer below, contains little ozone and is where temperature instead decreases with height."
+    },
+    {
+      "id": "earth-science-meteorology-007",
+      "q": "What does an isobar on a weather map connect?",
+      "options": [
+        "Points of equal temperature",
+        "Points of equal pressure",
+        "Points of equal humidity",
+        "Points of equal wind speed"
+      ],
+      "answer": 1,
+      "explanation": "Isobars are lines joining locations that share the same atmospheric pressure, and their spacing indicates wind strength (closely spaced isobars mean stronger winds). Lines connecting points of equal temperature are called isotherms, a different family of contour lines, not isobars."
+    },
+    {
+      "id": "earth-science-meteorology-008",
+      "q": "The dew point is the temperature at which what happens?",
+      "options": [
+        "Air becomes saturated and water vapor begins to condense",
+        "Water boils into vapor",
+        "Air pressure reaches its maximum",
+        "Wind speed drops to zero"
+      ],
+      "answer": 0,
+      "explanation": "The dew point is the temperature to which air must cool, at constant pressure, for it to reach saturation so that water vapor condenses into liquid droplets. It has nothing to do with boiling; boiling involves heating water to vapor, the reverse of the condensation that defines the dew point."
+    },
+    {
+      "id": "earth-science-meteorology-009",
+      "q": "Which instrument is used to measure atmospheric pressure?",
+      "options": [
+        "Anemometer",
+        "Hygrometer",
+        "Barometer",
+        "Thermometer"
+      ],
+      "answer": 2,
+      "explanation": "A barometer measures atmospheric pressure, and falling pressure often signals approaching stormy weather while rising pressure suggests fair conditions. An anemometer is the wrong choice because it measures wind speed, not pressure."
+    },
+    {
+      "id": "earth-science-meteorology-010",
+      "q": "Tall, towering cumulonimbus clouds are most closely associated with which weather?",
+      "options": [
+        "Clear skies",
+        "Light fog",
+        "Thunderstorms",
+        "Gentle drizzle"
+      ],
+      "answer": 2,
+      "explanation": "Cumulonimbus clouds build upward through strong convection and can produce heavy rain, lightning, hail, and thunderstorms. They are not linked to clear skies; their very presence indicates strong vertical air movement and unstable, stormy conditions."
+    }
+  ]
+}

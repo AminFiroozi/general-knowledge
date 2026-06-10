@@ -1,0 +1,96 @@
+{
+  "topic": "distributions",
+  "category": "statistics",
+  "questions": [
+    {
+      "id": "statistics-distributions-001",
+      "q": "In a standard normal distribution, what are the mean (μ) and standard deviation (σ)?",
+      "options": [
+        "μ = 0, σ = 1",
+        "μ = 1, σ = 0",
+        "μ = 0, σ = 0",
+        "μ = 1, σ = 1"
+      ],
+      "answer": 0,
+      "explanation": "The standard normal distribution is defined to have mean μ = 0 and standard deviation σ = 1, which is why any normal variable is standardized with z = (x − μ)/σ. A distribution with σ = 0 would have no spread at all, which is not a usable distribution."
+    },
+    {
+      "id": "statistics-distributions-002",
+      "q": "According to the empirical (68-95-99.7) rule, approximately what percentage of a normal distribution lies within one standard deviation of the mean?",
+      "options": ["50%", "68%", "95%", "99.7%"],
+      "answer": 1,
+      "explanation": "For a normal distribution, about 68% of values fall within ±1σ of the mean. The 95% figure corresponds to ±2σ, so it describes a wider interval rather than one standard deviation."
+    },
+    {
+      "id": "statistics-distributions-003",
+      "q": "Which distribution models the number of successes in a fixed number of independent trials, each with the same success probability?",
+      "options": ["Poisson", "Binomial", "Normal", "Exponential"],
+      "answer": 1,
+      "explanation": "The binomial distribution counts the number of successes in n independent trials with constant success probability p. The Poisson distribution instead models counts of events over a continuous interval where there is no fixed number of trials."
+    },
+    {
+      "id": "statistics-distributions-004",
+      "q": "The Poisson distribution is most appropriate for modeling which of the following?",
+      "options": [
+        "The height of adults in a population",
+        "The number of rare events occurring in a fixed time interval",
+        "The proportion of heads in coin flips",
+        "The exact midpoint of a data range"
+      ],
+      "answer": 1,
+      "explanation": "The Poisson distribution models the count of events occurring independently at a constant average rate over a fixed interval of time or space, such as calls arriving at a call center. Heights are continuous and better modeled by the normal distribution."
+    },
+    {
+      "id": "statistics-distributions-005",
+      "q": "What does the Central Limit Theorem state about the distribution of sample means?",
+      "options": [
+        "Sample means are always uniformly distributed",
+        "For large n, the distribution of the sample mean approaches a normal distribution regardless of the population's shape",
+        "The population must be normal for any sample mean to be meaningful",
+        "Larger samples increase the population variance"
+      ],
+      "answer": 1,
+      "explanation": "The Central Limit Theorem says that as sample size n grows, the sampling distribution of the mean approaches a normal distribution even if the underlying population is non-normal. It does not require the original population itself to be normal."
+    },
+    {
+      "id": "statistics-distributions-006",
+      "q": "For a binomial distribution with parameters n and p, what is the mean (expected number of successes)?",
+      "options": ["np", "n + p", "p / n", "np(1 − p)"],
+      "answer": 0,
+      "explanation": "The mean of a binomial distribution is np, the number of trials times the success probability. The expression np(1 − p) is the variance of the binomial distribution, not its mean."
+    },
+    {
+      "id": "statistics-distributions-007",
+      "q": "A defining property of the Poisson distribution is that its mean and variance are related how?",
+      "options": [
+        "The variance is always twice the mean",
+        "The mean and variance are equal (both λ)",
+        "The variance is the square of the mean",
+        "The mean is always zero"
+      ],
+      "answer": 1,
+      "explanation": "In a Poisson distribution both the mean and the variance equal the rate parameter λ, a distinctive feature. A variance equal to the square of the mean does not hold for the Poisson; that would describe other distributions."
+    },
+    {
+      "id": "statistics-distributions-008",
+      "q": "The standard error of the sample mean for a sample of size n drawn from a population with standard deviation σ is given by what?",
+      "options": ["σ", "σ / √n", "σ × √n", "σ / n"],
+      "answer": 1,
+      "explanation": "The standard error of the mean is σ/√n, showing that variability of the sample mean shrinks as the square root of the sample size grows. Dividing by n rather than √n would overstate how quickly the standard error decreases."
+    },
+    {
+      "id": "statistics-distributions-009",
+      "q": "The normal distribution is symmetric, so its skewness equals what value?",
+      "options": ["0", "1", "3", "Undefined"],
+      "answer": 0,
+      "explanation": "Because the normal distribution is perfectly symmetric about its mean, its skewness is 0. A value of 3 refers to the kurtosis of the normal distribution, a different shape measure."
+    },
+    {
+      "id": "statistics-distributions-010",
+      "q": "Which distribution is commonly used to model the time between independent events that occur at a constant average rate?",
+      "options": ["Binomial", "Exponential", "Uniform", "Bernoulli"],
+      "answer": 1,
+      "explanation": "The exponential distribution models the waiting time between successive events in a Poisson process, where events occur at a constant average rate. The binomial distribution instead counts discrete successes and does not describe continuous waiting times."
+    }
+  ]
+}

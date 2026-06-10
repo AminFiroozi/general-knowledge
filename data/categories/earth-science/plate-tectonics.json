@@ -1,0 +1,126 @@
+{
+  "topic": "plate-tectonics",
+  "category": "earth-science",
+  "questions": [
+    {
+      "id": "earth-science-plate-tectonics-001",
+      "q": "At a divergent plate boundary, what generally happens to the two plates?",
+      "options": [
+        "They slide past each other horizontally",
+        "They move apart and new crust forms between them",
+        "One plate sinks beneath the other",
+        "They collide and crumple into mountains"
+      ],
+      "answer": 1,
+      "explanation": "At a divergent boundary the plates pull apart, and magma rises to fill the gap, creating new oceanic crust as it solidifies. Plates sliding past each other horizontally describes a transform boundary, where crust is neither created nor destroyed, not a divergent one."
+    },
+    {
+      "id": "earth-science-plate-tectonics-002",
+      "q": "Which scientist first proposed the hypothesis of continental drift in the early 20th century?",
+      "options": [
+        "Charles Darwin",
+        "Alfred Wegener",
+        "Harry Hess",
+        "Charles Lyell"
+      ],
+      "answer": 1,
+      "explanation": "Alfred Wegener proposed continental drift around 1912, arguing that continents once formed a single landmass called Pangaea and have since moved apart. Harry Hess came later, in the 1960s, contributing the mechanism of seafloor spreading rather than the original drift hypothesis."
+    },
+    {
+      "id": "earth-science-plate-tectonics-003",
+      "q": "Seafloor spreading occurs at which feature of the ocean floor?",
+      "options": [
+        "Deep-sea trenches",
+        "Abyssal plains",
+        "Mid-ocean ridges",
+        "Continental shelves"
+      ],
+      "answer": 2,
+      "explanation": "Mid-ocean ridges are underwater mountain chains where plates diverge and rising magma creates new seafloor, the very definition of seafloor spreading. Deep-sea trenches are the opposite setting: they mark subduction zones where old oceanic crust is consumed, not created."
+    },
+    {
+      "id": "earth-science-plate-tectonics-004",
+      "q": "What is the main driving force thought to move tectonic plates within the mantle?",
+      "options": [
+        "Earth's magnetic field",
+        "Tidal pull from the Moon",
+        "Convection currents",
+        "Solar radiation"
+      ],
+      "answer": 2,
+      "explanation": "Heat from Earth's interior drives convection currents in the mantle, where hot material rises and cooler material sinks, dragging the overlying plates. The Moon's tidal pull mainly affects ocean tides and is far too weak to drive the slow churning of mantle rock."
+    },
+    {
+      "id": "earth-science-plate-tectonics-005",
+      "q": "When two continental plates collide, what landform is most likely to result?",
+      "options": [
+        "A deep ocean trench",
+        "A tall mountain range",
+        "A mid-ocean ridge",
+        "A volcanic island arc"
+      ],
+      "answer": 1,
+      "explanation": "Because continental crust is too buoyant to subduct easily, colliding continents crumple and thrust upward, building mountain ranges like the Himalayas. A deep ocean trench instead forms where dense oceanic crust subducts, which does not happen readily in continent-to-continent collisions."
+    },
+    {
+      "id": "earth-science-plate-tectonics-006",
+      "q": "The San Andreas Fault in California is an example of which type of plate boundary?",
+      "options": [
+        "Convergent",
+        "Divergent",
+        "Transform",
+        "Subduction"
+      ],
+      "answer": 2,
+      "explanation": "The San Andreas Fault is a transform boundary where the Pacific and North American plates grind past each other horizontally. It is not convergent or divergent because the plates neither collide to build mountains nor pull apart to create new crust; they slip sideways, producing earthquakes."
+    },
+    {
+      "id": "earth-science-plate-tectonics-007",
+      "q": "Matching fossils found on both South America and Africa support continental drift because they suggest what?",
+      "options": [
+        "The species could swim across the ocean",
+        "The continents were once joined",
+        "Fossils formed independently in both places",
+        "The ocean was once frozen solid"
+      ],
+      "answer": 1,
+      "explanation": "Identical land-dwelling fossils on now-separated continents indicate those landmasses were once connected so the organisms could live across a continuous region. Suggesting the species swam thousands of kilometers across the Atlantic is implausible for land reptiles like Mesosaurus, which is why the joined-continent explanation is favored."
+    },
+    {
+      "id": "earth-science-plate-tectonics-008",
+      "q": "The rigid outer layer of Earth that is broken into tectonic plates is called the what?",
+      "options": [
+        "Asthenosphere",
+        "Lithosphere",
+        "Outer core",
+        "Mesosphere"
+      ],
+      "answer": 1,
+      "explanation": "The lithosphere is the rigid layer comprising the crust and uppermost mantle, and it is fractured into the moving tectonic plates. The asthenosphere lies just below and is hotter and partially molten, allowing the lithospheric plates to slide over it rather than being broken into plates itself."
+    },
+    {
+      "id": "earth-science-plate-tectonics-009",
+      "q": "At an ocean-continent convergent boundary, why does the oceanic plate sink beneath the continental plate?",
+      "options": [
+        "Oceanic crust is denser",
+        "Continental crust is denser",
+        "The oceanic plate moves faster",
+        "The continental plate is colder"
+      ],
+      "answer": 0,
+      "explanation": "Oceanic crust is composed of denser basaltic rock, so when it meets lighter continental crust it sinks, or subducts, beneath it. The claim that continental crust is denser is backwards; its lower density (granitic composition) is exactly why it stays on top."
+    },
+    {
+      "id": "earth-science-plate-tectonics-010",
+      "q": "Symmetrical magnetic stripes mirrored on either side of a mid-ocean ridge provided key evidence for what?",
+      "options": [
+        "Meteorite impacts",
+        "Seafloor spreading",
+        "Glacial movement",
+        "Volcanic ash falls"
+      ],
+      "answer": 1,
+      "explanation": "As new crust forms and cools at a ridge, it records Earth's magnetic polarity, and because the polarity reverses over time the stripes appear symmetric on both sides, confirming seafloor spreading. These magnetic patterns have nothing to do with meteorite impacts, which leave craters and shocked minerals, not mirrored magnetic bands."
+    }
+  ]
+}

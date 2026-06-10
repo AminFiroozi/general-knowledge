@@ -1,0 +1,106 @@
+{
+  "topic": "discrete-math",
+  "category": "mathematics",
+  "questions": [
+    {
+      "id": "mathematics-discrete-math-001",
+      "q": "How many subsets does a set with 4 elements have?",
+      "options": ["8", "16", "24", "4"],
+      "answer": 1,
+      "explanation": "A set with n elements has 2ⁿ subsets, since each element is independently either in or out, giving 2⁴ = 16. The answer 24 is 4 factorial, which counts orderings (permutations) of the elements, not subsets."
+    },
+    {
+      "id": "mathematics-discrete-math-002",
+      "q": "In how many ways can you choose 2 items from a set of 5 distinct items, where order does not matter?",
+      "options": ["10", "20", "25", "120"],
+      "answer": 0,
+      "explanation": "This is the combination C(5,2) = 5! / (2! · 3!) = 10. The answer 20 corresponds to the permutation P(5,2) = 20, which counts ordered selections and therefore double-counts each unordered pair."
+    },
+    {
+      "id": "mathematics-discrete-math-003",
+      "q": "What is the negation of the statement 'All cats are black'?",
+      "options": [
+        "All cats are not black",
+        "No cats are black",
+        "At least one cat is not black",
+        "Some cats are black"
+      ],
+      "answer": 2,
+      "explanation": "The negation of a universal statement ('all') is an existential statement: 'there exists at least one cat that is not black.' The statement 'No cats are black' is far stronger than the negation, which only requires a single counterexample."
+    },
+    {
+      "id": "mathematics-discrete-math-004",
+      "q": "In graph theory, what is the degree of a vertex?",
+      "options": [
+        "The number of edges incident to it",
+        "The number of vertices in the graph",
+        "The length of the longest path from it",
+        "The number of disconnected components"
+      ],
+      "answer": 0,
+      "explanation": "The degree of a vertex is the count of edges touching it, indicating how many neighbors it connects to. The total number of vertices in the graph is a property of the whole graph, not of any individual vertex."
+    },
+    {
+      "id": "mathematics-discrete-math-005",
+      "q": "What is the union of the sets {1, 2, 3} and {3, 4, 5}?",
+      "options": [
+        "{3}",
+        "{1, 2, 3, 4, 5}",
+        "{1, 2, 4, 5}",
+        "{1, 2, 3, 3, 4, 5}"
+      ],
+      "answer": 1,
+      "explanation": "The union contains every element appearing in either set, with no duplicates, giving {1, 2, 3, 4, 5}. The single-element answer {3} is the intersection (elements common to both sets), not the union."
+    },
+    {
+      "id": "mathematics-discrete-math-006",
+      "q": "The logical statement 'P AND Q' is true in which case?",
+      "options": [
+        "When at least one of P, Q is true",
+        "When both P and Q are true",
+        "When exactly one of P, Q is true",
+        "When both P and Q are false"
+      ],
+      "answer": 1,
+      "explanation": "Logical conjunction (AND) is true only when both operands are true. The condition 'at least one is true' describes the OR (disjunction) operator, which has a weaker requirement than AND."
+    },
+    {
+      "id": "mathematics-discrete-math-007",
+      "q": "A proof technique that assumes the opposite of a claim and derives a contradiction is called what?",
+      "options": [
+        "Proof by induction",
+        "Proof by contradiction",
+        "Direct proof",
+        "Proof by example"
+      ],
+      "answer": 1,
+      "explanation": "Proof by contradiction assumes the statement is false and shows this leads to a logical impossibility, forcing the statement to be true. Proof by induction is a different method that establishes a base case and an inductive step rather than seeking a contradiction."
+    },
+    {
+      "id": "mathematics-discrete-math-008",
+      "q": "How many distinct ways can 4 people be arranged in a row?",
+      "options": ["12", "16", "24", "256"],
+      "answer": 2,
+      "explanation": "The number of arrangements (permutations) of 4 distinct people is 4! = 4 × 3 × 2 × 1 = 24. The answer 16 is 2⁴ or 4², neither of which counts orderings of distinct objects."
+    },
+    {
+      "id": "mathematics-discrete-math-009",
+      "q": "By De Morgan's law, NOT (P AND Q) is logically equivalent to what?",
+      "options": [
+        "(NOT P) AND (NOT Q)",
+        "(NOT P) OR (NOT Q)",
+        "P OR Q",
+        "NOT P AND Q"
+      ],
+      "answer": 1,
+      "explanation": "De Morgan's law states that the negation of a conjunction equals the disjunction of the negations: NOT (P AND Q) = (NOT P) OR (NOT Q). The option (NOT P) AND (NOT Q) is the negation of (P OR Q) instead, applying the law to the wrong connective."
+    },
+    {
+      "id": "mathematics-discrete-math-010",
+      "q": "What is the cardinality of the empty set?",
+      "options": ["0", "1", "Undefined", "Infinite"],
+      "answer": 0,
+      "explanation": "The empty set contains no elements, so its cardinality (number of elements) is 0. The answer 1 confuses the empty set with the set containing the empty set, {∅}, which does have one element."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "atomic-structure",
+  "category": "chemistry",
+  "questions": [
+    {
+      "id": "chemistry-atomic-structure-001",
+      "q": "Which subatomic particle carries a negative electric charge?",
+      "options": [
+        "Proton",
+        "Neutron",
+        "Electron",
+        "Alpha particle"
+      ],
+      "answer": 2,
+      "explanation": "The electron carries a charge of −1 elementary charge and occupies the region around the nucleus. The proton, the most common wrong answer, carries a +1 charge and resides in the nucleus, while the neutron is electrically neutral."
+    },
+    {
+      "id": "chemistry-atomic-structure-002",
+      "q": "The atomic number of an element is defined as the number of which particles in its atoms?",
+      "options": [
+        "Protons",
+        "Neutrons",
+        "Protons plus neutrons",
+        "Electrons plus neutrons"
+      ],
+      "answer": 0,
+      "explanation": "The atomic number (Z) equals the number of protons in the nucleus and uniquely identifies the element. Protons plus neutrons is the mass number (A), not the atomic number, which is the classic point of confusion."
+    },
+    {
+      "id": "chemistry-atomic-structure-003",
+      "q": "Two atoms are isotopes of the same element. In what way do they differ?",
+      "options": [
+        "Number of protons",
+        "Number of neutrons",
+        "Number of electrons in the neutral atom",
+        "Nuclear charge"
+      ],
+      "answer": 1,
+      "explanation": "Isotopes share the same number of protons (same element) but have different numbers of neutrons, giving them different mass numbers. If the number of protons differed, they would be different elements entirely, and neutral atoms of the same element always have equal numbers of protons and electrons."
+    },
+    {
+      "id": "chemistry-atomic-structure-004",
+      "q": "What is the ground-state electron configuration of a neutral sodium atom (Z = 11)?",
+      "options": [
+        "1s² 2s² 2p⁷",
+        "1s² 2s² 2p⁵ 3s²",
+        "1s² 2s² 3s² 3p⁵",
+        "1s² 2s² 2p⁶ 3s¹"
+      ],
+      "answer": 3,
+      "explanation": "Eleven electrons fill the orbitals in order of increasing energy: 1s² 2s² 2p⁶ accounts for ten electrons, and the eleventh enters 3s. The option 1s² 2s² 2p⁷ is impossible because a p subshell holds a maximum of six electrons."
+    },
+    {
+      "id": "chemistry-atomic-structure-005",
+      "q": "What is the maximum number of electrons that a d subshell can hold?",
+      "options": [
+        "6",
+        "10",
+        "14",
+        "5"
+      ],
+      "answer": 1,
+      "explanation": "A d subshell contains five orbitals, and each orbital holds at most two electrons of opposite spin, giving a maximum of 10. The answer 5 counts only the orbitals while forgetting that each orbital accommodates two electrons, and 6 is the capacity of a p subshell."
+    },
+    {
+      "id": "chemistry-atomic-structure-006",
+      "q": "According to the Aufbau principle, which orbital is filled before the 3d orbitals in a ground-state atom?",
+      "options": [
+        "4s",
+        "4p",
+        "3f",
+        "5s"
+      ],
+      "answer": 0,
+      "explanation": "The 4s orbital has a lower energy than 3d in neutral atoms during filling, so it is occupied first, as seen in potassium and calcium. The 4p orbital fills only after 3d, and a 3f subshell does not exist because for n = 3 the angular momentum quantum number cannot reach l = 3."
+    },
+    {
+      "id": "chemistry-atomic-structure-007",
+      "q": "Which principle states that no two electrons in an atom can have the same set of four quantum numbers?",
+      "options": [
+        "Hund's rule",
+        "The Aufbau principle",
+        "The Pauli exclusion principle",
+        "Heisenberg's uncertainty principle"
+      ],
+      "answer": 2,
+      "explanation": "The Pauli exclusion principle forbids two electrons in one atom from sharing all four quantum numbers, which is why each orbital holds at most two electrons with opposite spins. Hund's rule, the common distractor, instead describes how electrons spread over degenerate orbitals with parallel spins before pairing."
+    },
+    {
+      "id": "chemistry-atomic-structure-008",
+      "q": "What is the value of the angular momentum quantum number l for an electron in a d orbital?",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": 2,
+      "explanation": "Subshell letters map directly to l values: s corresponds to l = 0, p to l = 1, d to l = 2, and f to l = 3. Choosing l = 3 confuses d with f orbitals, while l = 1 would describe a p orbital."
+    },
+    {
+      "id": "chemistry-atomic-structure-009",
+      "q": "Chromium (Z = 24) has an anomalous ground-state electron configuration. Which is correct?",
+      "options": [
+        "[Ar] 3d⁴ 4s²",
+        "[Ar] 3d⁵ 4s¹",
+        "[Ar] 3d⁶",
+        "[Ar] 4s² 4p⁴"
+      ],
+      "answer": 1,
+      "explanation": "Chromium adopts [Ar] 3d⁵ 4s¹ because a half-filled 3d subshell together with a half-filled 4s gives extra exchange-energy stability. The configuration [Ar] 3d⁴ 4s² is what naive application of the Aufbau order predicts, but experiment shows one 4s electron is promoted into 3d."
+    },
+    {
+      "id": "chemistry-atomic-structure-010",
+      "q": "How many orbitals in total are contained in the n = 3 electron shell?",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "9"
+      ],
+      "answer": 3,
+      "explanation": "The n = 3 shell contains the 3s (1 orbital), 3p (3 orbitals), and 3d (5 orbitals) subshells, for a total of n² = 9 orbitals. The answer 4 counts only the orbitals available in n = 2 (one s plus three p), reflecting the misconception that n = 3 lacks d orbitals."
+    }
+  ]
+}

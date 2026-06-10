@@ -1,0 +1,126 @@
+{
+  "topic": "electromagnetism",
+  "category": "physics",
+  "questions": [
+    {
+      "id": "physics-electromagnetism-001",
+      "q": "Two positive point charges are brought closer together. What happens to the electrostatic force between them?",
+      "options": [
+        "It decreases because like charges weaken each other",
+        "It stays the same because charge is conserved",
+        "It increases, since Coulomb force grows as the separation decreases",
+        "It becomes attractive at very short distances"
+      ],
+      "answer": 2,
+      "explanation": "Coulomb's law states F = kq₁q₂/r², so halving the distance quadruples the repulsive force. The force between two like charges never becomes attractive in classical electrostatics, no matter how small the separation; that distractor confuses electrostatics with nuclear forces between protons."
+    },
+    {
+      "id": "physics-electromagnetism-002",
+      "q": "Which statement correctly describes electric field lines around an isolated positive point charge?",
+      "options": [
+        "They form closed loops around the charge",
+        "They point radially outward, away from the charge",
+        "They point radially inward, toward the charge",
+        "They are circles centered on the charge"
+      ],
+      "answer": 1,
+      "explanation": "By convention, electric field lines show the direction of the force on a positive test charge, so they radiate outward from a positive charge and terminate on negative charges. Closed loops describe magnetic field lines (or induced electric fields), not the electrostatic field of a point charge, which begins on the charge and extends to infinity."
+    },
+    {
+      "id": "physics-electromagnetism-003",
+      "q": "Three identical resistors are connected in parallel across a battery. Compared to a single resistor alone, the total resistance of the parallel combination is:",
+      "options": [
+        "Three times the single resistance",
+        "Equal to the single resistance",
+        "Unchanged, but the current is one third",
+        "One third of the single resistance"
+      ],
+      "answer": 3,
+      "explanation": "For identical resistors in parallel, R_total = R/n, so three resistors give R/3 because the current has three equal paths to flow through. Tripling the resistance is what happens in series, where the same current must pass through each resistor in turn — a common point of confusion between the two configurations."
+    },
+    {
+      "id": "physics-electromagnetism-004",
+      "q": "Which statement expresses Gauss's law for magnetism in qualitative terms?",
+      "options": [
+        "There are no magnetic monopoles; magnetic field lines always form closed loops",
+        "The magnetic flux through a closed surface equals the enclosed current",
+        "A changing magnetic field creates an electric field",
+        "Magnetic field strength decreases with the square of distance from any magnet"
+      ],
+      "answer": 0,
+      "explanation": "Gauss's law for magnetism (∇·B = 0) says the net magnetic flux through any closed surface is zero, meaning isolated north or south poles do not exist and field lines must close on themselves. The statement about changing magnetic fields creating electric fields is Faraday's law, a different one of Maxwell's equations."
+    },
+    {
+      "id": "physics-electromagnetism-005",
+      "q": "A bar magnet is pushed north-pole-first into a coil of wire connected to a galvanometer. What does Lenz's law predict?",
+      "options": [
+        "The induced current flows so as to attract the magnet into the coil faster",
+        "No current is induced unless the coil is also moving",
+        "The induced current creates a magnetic field that opposes the magnet's approach",
+        "The induced current direction depends only on the coil's resistance"
+      ],
+      "answer": 2,
+      "explanation": "Lenz's law states that an induced current always opposes the change in magnetic flux that produces it, so the coil's near face becomes a north pole that repels the incoming magnet. If the induced current aided the magnet's motion instead, the magnet would accelerate and generate ever more energy from nothing, violating conservation of energy. Only relative motion between magnet and coil matters, so the coil itself need not move."
+    },
+    {
+      "id": "physics-electromagnetism-006",
+      "q": "A charged particle moves at constant velocity parallel to a uniform magnetic field. What is the magnetic force on it?",
+      "options": [
+        "Maximum, because the particle is moving",
+        "Zero, because the force depends on the component of velocity perpendicular to the field",
+        "Directed along the field lines",
+        "Directed opposite to the particle's motion"
+      ],
+      "answer": 1,
+      "explanation": "The magnetic force is F = qv × B, whose magnitude is qvB·sinθ; when velocity is parallel to the field, θ = 0 and the force vanishes. Simply moving is not enough — only the velocity component perpendicular to B produces a force, which is why the force is maximal at 90°, not for parallel motion."
+    },
+    {
+      "id": "physics-electromagnetism-007",
+      "q": "What did Maxwell's addition of the displacement current term to Ampère's law make possible to predict?",
+      "options": [
+        "The quantization of electric charge",
+        "The existence of magnetic monopoles",
+        "Superconductivity at low temperatures",
+        "Self-propagating electromagnetic waves traveling at the speed of light"
+      ],
+      "answer": 3,
+      "explanation": "The displacement current term means a changing electric field generates a magnetic field, which together with Faraday's law allows electric and magnetic fields to regenerate each other and propagate as waves at speed c. This unified light with electromagnetism. Maxwell's equations actually assume there are no magnetic monopoles, so predicting them is the opposite of what the equations state."
+    },
+    {
+      "id": "physics-electromagnetism-008",
+      "q": "A 60 W light bulb operates on a 120 V supply. What current does it draw?",
+      "options": [
+        "2 A",
+        "0.5 A",
+        "7200 A",
+        "60 A"
+      ],
+      "answer": 1,
+      "explanation": "Electric power is P = VI, so I = P/V = 60/120 = 0.5 A. The answer 2 A comes from inverting the ratio and computing V/P instead of P/V; checking units shows watts divided by volts gives amperes."
+    },
+    {
+      "id": "physics-electromagnetism-009",
+      "q": "Why is electrical power transmitted over long distances at very high voltage?",
+      "options": [
+        "For a given power, higher voltage means lower current, which reduces resistive losses (I²R) in the lines",
+        "Higher voltage makes electrons travel much faster through the wire",
+        "High voltage eliminates the resistance of the transmission wires",
+        "Transformers can only operate at high voltages"
+      ],
+      "answer": 0,
+      "explanation": "Transmitted power is P = VI, so raising the voltage allows the same power to be delivered with much smaller current, and the heat dissipated in the line, P_loss = I²R, drops with the square of the current. High voltage does not remove the wire's resistance — the resistance is fixed by the wire's material and geometry; it only reduces the current flowing through that resistance."
+    },
+    {
+      "id": "physics-electromagnetism-010",
+      "q": "A hollow conducting shell carries no net charge, and a point charge +q is placed at its center. What is the induced charge on the inner surface of the shell?",
+      "options": [
+        "+q",
+        "Zero, because the shell is neutral overall",
+        "−q",
+        "−q/2, with the other half on the outer surface"
+      ],
+      "answer": 2,
+      "explanation": "The electric field inside the conducting material must be zero, so a Gaussian surface drawn within the conductor must enclose zero net charge; this forces exactly −q to accumulate on the inner surface, leaving +q on the outer surface. Overall neutrality of the shell does not mean each surface is uncharged — it only means the inner and outer surface charges sum to zero."
+    }
+  ]
+}

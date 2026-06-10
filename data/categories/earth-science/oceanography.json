@@ -1,0 +1,126 @@
+{
+  "topic": "oceanography",
+  "category": "earth-science",
+  "questions": [
+    {
+      "id": "earth-science-oceanography-001",
+      "q": "What is the primary cause of ocean tides?",
+      "options": [
+        "Prevailing wind patterns",
+        "The gravitational pull of the Moon and Sun",
+        "Underwater earthquakes",
+        "Differences in water salinity"
+      ],
+      "answer": 1,
+      "explanation": "Tides are driven mainly by the Moon's gravitational pull, with a smaller contribution from the Sun, which raises bulges of water that sweep around Earth as it rotates. Underwater earthquakes can generate tsunamis but do not cause the regular daily rise and fall of the tides."
+    },
+    {
+      "id": "earth-science-oceanography-002",
+      "q": "Surface ocean currents are primarily driven by what?",
+      "options": [
+        "Global wind patterns",
+        "The Moon's gravity",
+        "Volcanic heat",
+        "River discharge"
+      ],
+      "answer": 0,
+      "explanation": "Persistent global winds, such as the trade winds and westerlies, drag on the sea surface and set large-scale surface currents in motion, which are then steered by the Coriolis effect into gyres. The Moon's gravity governs tides rather than the broad horizontal flow of surface currents."
+    },
+    {
+      "id": "earth-science-oceanography-003",
+      "q": "Average ocean water salinity is about which value?",
+      "options": [
+        "3.5 parts per thousand",
+        "35 parts per thousand",
+        "350 parts per thousand",
+        "0.35 parts per thousand"
+      ],
+      "answer": 1,
+      "explanation": "Seawater averages roughly 35 parts per thousand, meaning about 35 grams of dissolved salts per kilogram of water. A value of 3.5 parts per thousand would be ten times too dilute, closer to brackish water than to typical open-ocean seawater."
+    },
+    {
+      "id": "earth-science-oceanography-004",
+      "q": "The sunlit surface layer of the ocean where photosynthesis can occur is called the what?",
+      "options": [
+        "Abyssal zone",
+        "Photic (euphotic) zone",
+        "Hadal zone",
+        "Benthic zone"
+      ],
+      "answer": 1,
+      "explanation": "The photic or euphotic zone is the upper layer that receives enough sunlight for photosynthesis, supporting phytoplankton and most marine productivity. The abyssal zone lies in deep, perpetually dark water where photosynthesis is impossible, so it cannot be the sunlit layer."
+    },
+    {
+      "id": "earth-science-oceanography-005",
+      "q": "Thermohaline circulation, the global conveyor belt of deep ocean currents, is driven by differences in what?",
+      "options": [
+        "Wind speed and direction",
+        "Temperature and salinity",
+        "Tidal range and Moon phase",
+        "Sunlight and depth"
+      ],
+      "answer": 1,
+      "explanation": "Thermohaline circulation is driven by water density differences caused by temperature (thermo) and salinity (haline), as cold, salty water sinks and drives deep flow. Winds drive surface currents but are not the primary force behind this slow, density-driven deep circulation."
+    },
+    {
+      "id": "earth-science-oceanography-006",
+      "q": "When the Sun, Moon, and Earth are aligned, the resulting tides with the greatest range are called what?",
+      "options": [
+        "Neap tides",
+        "Spring tides",
+        "Rip tides",
+        "Slack tides"
+      ],
+      "answer": 1,
+      "explanation": "Spring tides occur at new and full moon when the Sun and Moon align so their gravitational pulls combine, producing the highest high tides and lowest low tides. Neap tides are the opposite: they happen when the Sun and Moon are at right angles, partly canceling and yielding the smallest tidal range."
+    },
+    {
+      "id": "earth-science-oceanography-007",
+      "q": "Why does cold, salty water tend to sink in the ocean?",
+      "options": [
+        "It is less dense than surrounding water",
+        "It is more dense than surrounding water",
+        "It contains more dissolved oxygen",
+        "It is closer to the Moon"
+      ],
+      "answer": 1,
+      "explanation": "Both low temperature and high salinity increase water's density, so cold salty water is heavier than the water around it and sinks. The notion that it is less dense is incorrect; if it were less dense it would float rather than drive the downwelling that powers deep circulation."
+    },
+    {
+      "id": "earth-science-oceanography-008",
+      "q": "The Gulf Stream is a warm ocean current that moves heat in which general direction along eastern North America?",
+      "options": [
+        "From the poles toward the equator",
+        "From the tropics toward higher latitudes",
+        "Straight downward into the deep ocean",
+        "From east to west across the Pacific"
+      ],
+      "answer": 1,
+      "explanation": "The Gulf Stream carries warm tropical water northward along the eastern coast of North America and on toward Europe, redistributing heat to higher latitudes. It does not flow from the poles toward the equator; that describes cold currents, whereas the Gulf Stream is a warm, poleward-moving current."
+    },
+    {
+      "id": "earth-science-oceanography-009",
+      "q": "A continental shelf is best described as what?",
+      "options": [
+        "The deepest trench in the ocean",
+        "A shallow, gently sloping submerged edge of a continent",
+        "A chain of underwater volcanoes",
+        "The flat floor of the deep ocean"
+      ],
+      "answer": 1,
+      "explanation": "The continental shelf is the shallow, gently sloping underwater extension of a continent before the seafloor drops off more steeply at the continental slope. It is not the deepest part of the ocean; the deepest features are trenches found far from the shelf at subduction zones."
+    },
+    {
+      "id": "earth-science-oceanography-010",
+      "q": "Which factor tends to lower the salinity of ocean surface water?",
+      "options": [
+        "High evaporation",
+        "Heavy rainfall and river runoff",
+        "Sea ice formation",
+        "Intense sunlight only"
+      ],
+      "answer": 1,
+      "explanation": "Heavy rainfall and freshwater from rivers add water without adding salt, diluting the surface and lowering salinity. High evaporation does the opposite, removing water while leaving salt behind, which raises salinity rather than lowering it."
+    }
+  ]
+}

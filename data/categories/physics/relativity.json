@@ -1,0 +1,126 @@
+{
+  "topic": "relativity",
+  "category": "physics",
+  "questions": [
+    {
+      "id": "physics-relativity-001",
+      "q": "Which postulate of special relativity concerns the speed of light?",
+      "options": [
+        "Light travels at speed c only relative to the ether",
+        "Light slows down when emitted from a fast-moving source",
+        "The speed of light in vacuum is the same for all inertial observers, regardless of the motion of the source",
+        "Light travels instantaneously over short distances"
+      ],
+      "answer": 2,
+      "explanation": "Einstein's second postulate states that all inertial observers measure the same vacuum light speed c, no matter how the source or observer moves. The ether-based view — that c is fixed only in a special rest frame — was the prevailing 19th-century idea, but the Michelson–Morley experiment found no evidence of motion through an ether."
+    },
+    {
+      "id": "physics-relativity-002",
+      "q": "In the equation E = mc², what does the c² factor imply about mass and energy?",
+      "options": [
+        "Only objects moving at the speed of light have energy",
+        "A small amount of mass corresponds to an enormous amount of energy",
+        "Energy increases the speed of light inside matter",
+        "Mass can only be converted to energy in black holes"
+      ],
+      "answer": 1,
+      "explanation": "Because c² is a huge number (about 9 × 10¹⁶ m²/s²), even a tiny mass is equivalent to a vast energy — one gram corresponds to roughly 9 × 10¹³ J. The relation applies to objects at rest (it is the rest energy), so it has nothing to do with the object itself moving at light speed; mass-energy conversion occurs in ordinary nuclear reactions, not only in exotic settings."
+    },
+    {
+      "id": "physics-relativity-003",
+      "q": "A muon created in the upper atmosphere has a lifetime of about 2.2 μs in its own rest frame, seemingly too short to reach the ground. Why are so many muons nevertheless detected at sea level?",
+      "options": [
+        "Muons accelerate beyond the speed of light in the atmosphere",
+        "Atmospheric collisions continually create replacement muons at low altitude",
+        "The detectors are sensitive to the muon's decay products only",
+        "Time dilation: in the Earth frame the fast-moving muon's internal clock runs slowly, extending its lifetime"
+      ],
+      "answer": 3,
+      "explanation": "Traveling near c, the muon's proper time runs slowly as seen from Earth, multiplying its laboratory lifetime by the Lorentz factor γ and letting it cover the tens of kilometers to the ground; equivalently, in the muon's frame the atmosphere is length-contracted. Nothing exceeds light speed — the survival of atmospheric muons is a classic direct confirmation of relativistic time dilation."
+    },
+    {
+      "id": "physics-relativity-004",
+      "q": "According to general relativity, what is gravity?",
+      "options": [
+        "A force transmitted instantaneously between masses",
+        "The curvature of spacetime caused by mass and energy, which determines how objects move",
+        "An electromagnetic attraction between neutral bodies",
+        "A repulsive effect of empty space on matter"
+      ],
+      "answer": 1,
+      "explanation": "In general relativity, mass-energy curves spacetime, and freely falling objects follow geodesics — the straightest possible paths — through that curved geometry. This replaces Newton's picture of an instantaneous force at a distance; changes in gravity propagate at the speed of light as gravitational waves, not instantaneously."
+    },
+    {
+      "id": "physics-relativity-005",
+      "q": "Two clocks are compared: one on Earth's surface and an identical one on a satellite far from Earth (ignoring orbital motion). According to general relativity, how do their rates compare?",
+      "options": [
+        "The Earth-surface clock runs slower, because it sits deeper in the gravitational potential",
+        "Both clocks run at the same rate, since gravity does not affect time",
+        "The satellite clock runs slower, because it is farther from Earth",
+        "The comparison is impossible because the clocks are in different places"
+      ],
+      "answer": 0,
+      "explanation": "Gravitational time dilation makes clocks deeper in a gravitational potential well tick more slowly, so the surface clock lags the distant satellite clock. For real GPS satellites this gravitational speedup outweighs the slowing from orbital velocity, and the system must correct for the net effect of tens of microseconds per day — clocks at different locations can absolutely be compared via signal exchange."
+    },
+    {
+      "id": "physics-relativity-006",
+      "q": "In the twin paradox, one twin travels to a distant star at near light speed and returns, while the other stays on Earth. Why is the traveling twin genuinely younger upon return, rather than the situation being symmetric?",
+      "options": [
+        "The traveling twin moves faster than light during the turnaround",
+        "Earth's gravity slows the aging of the stay-at-home twin",
+        "The traveling twin changes inertial frames by accelerating at the turnaround, breaking the symmetry between the twins",
+        "The paradox shows special relativity is internally inconsistent"
+      ],
+      "answer": 2,
+      "explanation": "Only the traveling twin undergoes acceleration to turn around, so the two twins' histories are not equivalent: the traveler's worldline between the same two events is shorter in proper time. The naive symmetry argument — each sees the other's clock run slow — fails because the traveler does not remain in a single inertial frame, and the paradox is fully resolved within special relativity, not a flaw in it."
+    },
+    {
+      "id": "physics-relativity-007",
+      "q": "Why can no massive object be accelerated to the speed of light?",
+      "options": [
+        "Air resistance becomes infinite at the speed of light",
+        "Its relativistic energy would have to become infinite, requiring unlimited energy input",
+        "Time stops for the object before it reaches that speed",
+        "The object's electric charge increases without bound"
+      ],
+      "answer": 1,
+      "explanation": "The energy of a massive particle, E = γmc², grows without bound as v approaches c because the Lorentz factor γ diverges, so reaching c would require infinite energy. The 'time stops' notion misapplies time dilation — the diverging energy requirement, not any clock effect, is what makes the barrier physical; only massless particles like photons travel at exactly c."
+    },
+    {
+      "id": "physics-relativity-008",
+      "q": "Which observation during the 1919 solar eclipse provided early confirmation of general relativity?",
+      "options": [
+        "The slowing of radio signals passing the Moon",
+        "A measured change in the speed of light near the Sun",
+        "The detection of gravitational waves from the Sun",
+        "Starlight passing near the Sun was deflected by the amount Einstein predicted"
+      ],
+      "answer": 3,
+      "explanation": "Eddington's expeditions photographed stars near the eclipsed Sun and found their apparent positions shifted by about 1.75 arcseconds, matching general relativity's prediction of light bending by curved spacetime — twice the value a naive Newtonian calculation gives. Gravitational waves were not detected until LIGO in 2015, almost a century later."
+    },
+    {
+      "id": "physics-relativity-009",
+      "q": "A spaceship flies past Earth at 0.8c. An observer on Earth measures the ship's length along its direction of motion. Compared with the length measured by the ship's crew, the Earth observer finds it:",
+      "options": [
+        "Shorter, contracted by the factor √(1 − v²/c²) = 0.6",
+        "Longer, stretched by the factor 1/0.6",
+        "The same, since length is absolute",
+        "Shorter in all three dimensions equally"
+      ],
+      "answer": 0,
+      "explanation": "Length contraction gives L = L₀√(1 − v²/c²); at v = 0.8c the factor is 0.6, so the Earth observer measures the ship to be 60% of its proper length. The contraction occurs only along the direction of motion — dimensions perpendicular to the velocity are unaffected, which rules out uniform shrinking in all directions."
+    },
+    {
+      "id": "physics-relativity-010",
+      "q": "Two lightning bolts strike the two ends of a moving train. An observer on the ground midway between the strike points sees them as simultaneous. What does an observer riding at the middle of the train conclude?",
+      "options": [
+        "The strikes were also simultaneous, since simultaneity is absolute",
+        "The strikes were not simultaneous in the train frame, the strike the train moves toward occurring first",
+        "Only one strike actually happened in the train frame",
+        "The train observer cannot make any valid measurement while moving"
+      ],
+      "answer": 1,
+      "explanation": "This is Einstein's relativity-of-simultaneity thought experiment: the train observer moves toward the light from the front strike and away from the rear one, and since light travels at c in her frame too, she concludes the front strike happened earlier. Absolute simultaneity is the Newtonian assumption that relativity overturns — events simultaneous in one frame are generally not simultaneous in another, though both observers' accounts are equally valid."
+    }
+  ]
+}

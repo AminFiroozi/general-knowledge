@@ -1,0 +1,126 @@
+{
+  "topic": "galaxies-and-cosmology",
+  "category": "astronomy",
+  "questions": [
+    {
+      "id": "astronomy-galaxies-and-cosmology-001",
+      "q": "What does Hubble's law describe?",
+      "options": [
+        "The brightness of stars decreasing with distance",
+        "More distant galaxies receding faster, indicating an expanding universe",
+        "The rotation rate of individual galaxies",
+        "The orbital period of planets around the Sun"
+      ],
+      "answer": 1,
+      "explanation": "Hubble's law states that a galaxy's recession velocity is proportional to its distance, providing key evidence that the universe is expanding. It concerns the large-scale motion of galaxies, not stellar brightness or planetary orbits."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-002",
+      "q": "The cosmic microwave background (CMB) radiation is best understood as what?",
+      "options": [
+        "Light emitted by distant quasars",
+        "Leftover thermal radiation from the early hot universe",
+        "Radiation from the Sun's corona",
+        "Microwave emission from interstellar dust today"
+      ],
+      "answer": 1,
+      "explanation": "The CMB is relic radiation released about 380,000 years after the Big Bang, when the universe cooled enough for atoms to form and light to travel freely. It now appears as a nearly uniform microwave glow at about 2.7 K, not light from quasars or the Sun."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-003",
+      "q": "What key observation provides evidence for dark matter in galaxies?",
+      "options": [
+        "Galaxies emit too much visible light",
+        "Galaxy rotation curves stay flat at large radii instead of falling off",
+        "Stars in galaxies are all the same color",
+        "Galaxies are perfectly spherical"
+      ],
+      "answer": 1,
+      "explanation": "The outer regions of spiral galaxies rotate as fast as their inner regions, producing flat rotation curves that visible matter alone cannot explain, implying unseen mass. If only visible matter were present, orbital speeds would decline with distance from the center."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-004",
+      "q": "In Edwin Hubble's classification scheme, what are the three main morphological types of galaxies?",
+      "options": [
+        "Hot, warm, and cold galaxies",
+        "Spiral, elliptical, and irregular galaxies",
+        "Red, blue, and green galaxies",
+        "Young, middle-aged, and old galaxies"
+      ],
+      "answer": 1,
+      "explanation": "Hubble classified galaxies primarily as spiral (including barred spirals), elliptical, and irregular based on their visible shape. Categories like temperature or color are not the basis of the standard morphological tuning-fork classification."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-005",
+      "q": "What does the redshift of light from distant galaxies indicate?",
+      "options": [
+        "The galaxies are getting hotter",
+        "The galaxies are moving away from us and the universe is expanding",
+        "The galaxies are made of red stars",
+        "Light is slowing down as it travels"
+      ],
+      "answer": 1,
+      "explanation": "Redshift stretches the wavelengths of light from receding galaxies toward the red end of the spectrum, and the general redshift of distant galaxies signals cosmic expansion. It is not caused by the galaxies' color or by light slowing down."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-006",
+      "q": "Roughly how old is the universe according to current cosmological measurements?",
+      "options": [
+        "About 4.6 billion years",
+        "About 13.8 billion years",
+        "About 100 billion years",
+        "About 1 million years"
+      ],
+      "answer": 1,
+      "explanation": "Measurements of the CMB and cosmic expansion place the age of the universe at approximately 13.8 billion years. About 4.6 billion years is instead the age of our solar system, not the universe."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-007",
+      "q": "What is dark energy thought to be responsible for?",
+      "options": [
+        "Holding galaxies together gravitationally",
+        "The accelerating expansion of the universe",
+        "The light emitted by stars",
+        "The formation of black holes"
+      ],
+      "answer": 1,
+      "explanation": "Dark energy is the name given to the unknown influence driving the observed acceleration of cosmic expansion, discovered through distant supernova measurements. Holding galaxies together is attributed to gravity and dark matter, which is a separate phenomenon."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-008",
+      "q": "What type of galaxy is the Milky Way?",
+      "options": [
+        "An elliptical galaxy",
+        "A barred spiral galaxy",
+        "An irregular galaxy",
+        "A dwarf spheroidal galaxy"
+      ],
+      "answer": 1,
+      "explanation": "The Milky Way is a barred spiral galaxy, with a central bar-shaped structure of stars and spiral arms winding outward. It is neither a featureless elliptical nor a small irregular or dwarf galaxy."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-009",
+      "q": "What does the Big Bang theory describe?",
+      "options": [
+        "A single explosion of a star in our galaxy",
+        "The expansion of the universe from an extremely hot, dense early state",
+        "The collision of two galaxies",
+        "The collapse of the Sun into a black hole"
+      ],
+      "answer": 1,
+      "explanation": "The Big Bang theory describes the universe expanding and cooling from an extremely hot, dense initial state roughly 13.8 billion years ago. It is not a stellar explosion within a galaxy nor a localized collision, but the evolution of space itself."
+    },
+    {
+      "id": "astronomy-galaxies-and-cosmology-010",
+      "q": "What is a quasar?",
+      "options": [
+        "A nearby planet with a thick atmosphere",
+        "An extremely luminous active galactic nucleus powered by a supermassive black hole",
+        "A type of comet found beyond Neptune",
+        "A cool red star at the end of its life"
+      ],
+      "answer": 1,
+      "explanation": "A quasar is an extraordinarily luminous active galactic nucleus, powered by matter falling into a supermassive black hole at a galaxy's center. It is not a planet, comet, or dying star; quasars are among the most distant and energetic objects observed."
+    }
+  ]
+}

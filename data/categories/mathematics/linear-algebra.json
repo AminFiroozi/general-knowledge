@@ -1,0 +1,111 @@
+{
+  "topic": "linear-algebra",
+  "category": "mathematics",
+  "questions": [
+    {
+      "id": "mathematics-linear-algebra-001",
+      "q": "What is the dot product of the vectors (1, 2, 3) and (4, 5, 6)?",
+      "options": ["32", "21", "90", "15"],
+      "answer": 0,
+      "explanation": "The dot product multiplies corresponding components and sums them: 1·4 + 2·5 + 3·6 = 4 + 10 + 18 = 32. The answer 90 comes from multiplying the three element-wise products together instead of adding them, which is not how the dot product is defined."
+    },
+    {
+      "id": "mathematics-linear-algebra-002",
+      "q": "For a 2×2 matrix [[a, b], [c, d]], what is the determinant?",
+      "options": ["a + d", "ad − bc", "ac − bd", "ab − cd"],
+      "answer": 1,
+      "explanation": "The determinant of a 2×2 matrix is ad − bc, the product of the main diagonal minus the product of the anti-diagonal. The expression a + d is the trace (sum of diagonal entries), a different scalar that does not indicate invertibility."
+    },
+    {
+      "id": "mathematics-linear-algebra-003",
+      "q": "If v is an eigenvector of matrix A with eigenvalue λ, which equation holds?",
+      "options": ["Av = v + λ", "Av = λv", "Av = λ + v", "A + v = λv"],
+      "answer": 1,
+      "explanation": "By definition, an eigenvector v satisfies Av = λv, meaning the matrix only scales v by the eigenvalue λ without changing its direction. The expression Av = v + λ is dimensionally inconsistent because it adds a scalar to a vector."
+    },
+    {
+      "id": "mathematics-linear-algebra-004",
+      "q": "What does it mean for a square matrix to be singular?",
+      "options": [
+        "Its determinant is zero",
+        "Its determinant is one",
+        "It is symmetric",
+        "All its entries are equal"
+      ],
+      "answer": 0,
+      "explanation": "A singular matrix has determinant zero, which means it is not invertible and maps space onto a lower-dimensional subspace. A determinant of one indicates an invertible (volume-preserving) matrix, the opposite of singular."
+    },
+    {
+      "id": "mathematics-linear-algebra-005",
+      "q": "What is the result of multiplying any vector by the identity matrix?",
+      "options": [
+        "The zero vector",
+        "The same vector unchanged",
+        "The vector scaled by 2",
+        "The transpose of the vector"
+      ],
+      "answer": 1,
+      "explanation": "The identity matrix has 1s on the diagonal and 0s elsewhere, so it leaves any vector unchanged, acting like the number 1 in multiplication. Producing the zero vector would instead require the zero matrix, which has all entries equal to 0."
+    },
+    {
+      "id": "mathematics-linear-algebra-006",
+      "q": "A set of vectors is linearly independent if which condition holds?",
+      "options": [
+        "They are all unit vectors",
+        "None can be written as a linear combination of the others",
+        "They are mutually perpendicular",
+        "They all have the same length"
+      ],
+      "answer": 1,
+      "explanation": "Linear independence means no vector in the set is a linear combination of the others, so the only way to get the zero vector from them is with all-zero coefficients. Perpendicular (orthogonal) vectors are independent, but independence does not require orthogonality, so that condition is too strong."
+    },
+    {
+      "id": "mathematics-linear-algebra-007",
+      "q": "What does the rank of a matrix represent?",
+      "options": [
+        "The number of rows",
+        "The number of linearly independent columns",
+        "The sum of all entries",
+        "The largest entry"
+      ],
+      "answer": 1,
+      "explanation": "The rank equals the maximum number of linearly independent columns (equivalently rows), measuring the dimension of the space the matrix spans. It can be smaller than the number of rows when some rows are dependent, so simply counting rows overstates the rank."
+    },
+    {
+      "id": "mathematics-linear-algebra-008",
+      "q": "Multiplying a 2D vector by which matrix rotates it 90° counterclockwise about the origin?",
+      "options": [
+        "[[1, 0], [0, 1]]",
+        "[[0, −1], [1, 0]]",
+        "[[−1, 0], [0, −1]]",
+        "[[0, 1], [1, 0]]"
+      ],
+      "answer": 1,
+      "explanation": "The rotation matrix [[0, −1], [1, 0]] sends (1, 0) to (0, 1) and (0, 1) to (−1, 0), exactly a 90° counterclockwise turn. The matrix [[−1, 0], [0, −1]] instead negates both components, producing a 180° rotation."
+    },
+    {
+      "id": "mathematics-linear-algebra-009",
+      "q": "What is the transpose of a matrix?",
+      "options": [
+        "The matrix with its rows and columns swapped",
+        "The matrix with every entry negated",
+        "The inverse of the matrix",
+        "The matrix scaled by its determinant"
+      ],
+      "answer": 0,
+      "explanation": "The transpose Aᵀ swaps rows and columns, so the entry in row i, column j moves to row j, column i. Negating every entry gives −A, a completely different operation that does not reflect the matrix across its diagonal."
+    },
+    {
+      "id": "mathematics-linear-algebra-010",
+      "q": "The trace of a square matrix is equal to what?",
+      "options": [
+        "The product of its eigenvalues",
+        "The sum of its eigenvalues",
+        "The largest eigenvalue",
+        "The number of nonzero eigenvalues"
+      ],
+      "answer": 1,
+      "explanation": "The trace, the sum of the diagonal entries, equals the sum of the matrix's eigenvalues. The product of the eigenvalues equals the determinant instead, so confusing trace with determinant swaps a sum for a product."
+    }
+  ]
+}

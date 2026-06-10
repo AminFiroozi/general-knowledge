@@ -1,0 +1,126 @@
+{
+  "topic": "organic-chemistry",
+  "category": "chemistry",
+  "questions": [
+    {
+      "id": "chemistry-organic-chemistry-001",
+      "q": "Which functional group is characteristic of an alcohol?",
+      "options": [
+        "Carboxyl (-COOH)",
+        "Hydroxyl (-OH)",
+        "Carbonyl (C=O)",
+        "Amino (-NH2)"
+      ],
+      "answer": 1,
+      "explanation": "Alcohols are defined by a hydroxyl group (-OH) bonded to a saturated carbon atom. The carboxyl group (-COOH) defines carboxylic acids, not alcohols, even though it contains an -OH, because it also includes a C=O on the same carbon."
+    },
+    {
+      "id": "chemistry-organic-chemistry-002",
+      "q": "Hydrocarbons that contain only single carbon-carbon bonds are called:",
+      "options": [
+        "Alkenes",
+        "Alkynes",
+        "Alkanes",
+        "Aromatics"
+      ],
+      "answer": 2,
+      "explanation": "Alkanes are saturated hydrocarbons with only single C-C bonds and the general formula CnH2n+2. Alkenes contain at least one C=C double bond and alkynes contain a triple bond, so both are unsaturated rather than fully single-bonded."
+    },
+    {
+      "id": "chemistry-organic-chemistry-003",
+      "q": "What is the name of the straight-chain alkane with three carbon atoms?",
+      "options": [
+        "Methane",
+        "Ethane",
+        "Propane",
+        "Butane"
+      ],
+      "answer": 2,
+      "explanation": "The three-carbon alkane is propane (C3H8), following the naming series methane (1), ethane (2), propane (3), butane (4). Ethane has only two carbons, so it is one step short of the three-carbon chain."
+    },
+    {
+      "id": "chemistry-organic-chemistry-004",
+      "q": "Two compounds share the molecular formula C2H6O but one is an alcohol and the other is an ether. This relationship is an example of:",
+      "options": [
+        "Stereoisomerism",
+        "Structural (constitutional) isomerism",
+        "Resonance",
+        "Allotropy"
+      ],
+      "answer": 1,
+      "explanation": "Ethanol and dimethyl ether have the same formula but different atomic connectivity, which is structural (constitutional) isomerism. Stereoisomers share the same connectivity and differ only in spatial arrangement, so the differing functional groups here make these structural isomers, not stereoisomers."
+    },
+    {
+      "id": "chemistry-organic-chemistry-005",
+      "q": "Which functional group is present in a ketone?",
+      "options": [
+        "A carbonyl (C=O) bonded to two carbon atoms",
+        "A carbonyl (C=O) bonded to at least one hydrogen",
+        "A hydroxyl (-OH) group",
+        "A carbon-carbon double bond"
+      ],
+      "answer": 0,
+      "explanation": "A ketone has a carbonyl carbon bonded to two other carbon atoms. When the carbonyl carbon instead bears a hydrogen, the compound is an aldehyde, which is the key distinction between the two carbonyl-containing families."
+    },
+    {
+      "id": "chemistry-organic-chemistry-006",
+      "q": "What type of reaction occurs when an alkene reacts with hydrogen gas (H2) in the presence of a catalyst to form an alkane?",
+      "options": [
+        "Substitution",
+        "Elimination",
+        "Addition",
+        "Condensation"
+      ],
+      "answer": 2,
+      "explanation": "Hydrogenation adds H atoms across the C=C double bond, converting an alkene to an alkane, which is an addition reaction. Substitution swaps one atom or group for another (typical of saturated compounds), and elimination removes atoms to create a double bond, the opposite of what happens here."
+    },
+    {
+      "id": "chemistry-organic-chemistry-007",
+      "q": "In IUPAC nomenclature, the suffix '-oic acid' indicates which functional group?",
+      "options": [
+        "Aldehyde",
+        "Ester",
+        "Carboxylic acid",
+        "Alcohol"
+      ],
+      "answer": 2,
+      "explanation": "The '-oic acid' suffix designates a carboxylic acid, as in ethanoic acid (acetic acid). The aldehyde suffix is '-al' and the alcohol suffix is '-ol', so those functional groups use different endings."
+    },
+    {
+      "id": "chemistry-organic-chemistry-008",
+      "q": "Benzene (C6H6) is unusually stable for an unsaturated ring. This extra stability is primarily attributed to:",
+      "options": [
+        "Localized alternating single and double bonds",
+        "Delocalization of pi electrons (aromaticity)",
+        "The presence of three lone pairs on each carbon",
+        "Strong hydrogen bonding between rings"
+      ],
+      "answer": 1,
+      "explanation": "Benzene's six pi electrons are delocalized over all six carbons in a continuous ring, and this aromaticity gives it exceptional stability. The older picture of fixed alternating double bonds is misleading; all six carbon-carbon bonds are actually equivalent due to the delocalized electron system."
+    },
+    {
+      "id": "chemistry-organic-chemistry-009",
+      "q": "A carbon atom bonded to four different substituent groups is described as:",
+      "options": [
+        "A primary carbon",
+        "A chiral (stereogenic) center",
+        "An sp2-hybridized carbon",
+        "An aromatic carbon"
+      ],
+      "answer": 1,
+      "explanation": "A carbon with four different groups is a chiral center, giving rise to non-superimposable mirror-image stereoisomers (enantiomers). A carbon classified merely as primary refers to how many other carbons it is attached to, which is unrelated to whether all four substituents are different."
+    },
+    {
+      "id": "chemistry-organic-chemistry-010",
+      "q": "When a carboxylic acid reacts with an alcohol to form an ester and water, the reaction is called:",
+      "options": [
+        "Saponification",
+        "Esterification (a condensation reaction)",
+        "Hydrolysis",
+        "Polymerization by addition"
+      ],
+      "answer": 1,
+      "explanation": "Esterification is a condensation reaction in which a carboxylic acid and an alcohol combine, releasing a water molecule to form an ester. Saponification is essentially the reverse, the base-catalyzed hydrolysis of an ester back into an acid (salt) and an alcohol."
+    }
+  ]
+}

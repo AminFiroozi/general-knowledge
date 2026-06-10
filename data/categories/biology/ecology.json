@@ -1,0 +1,81 @@
+{
+  "topic": "ecology",
+  "category": "biology",
+  "questions": [
+    {
+      "id": "biology-ecology-001",
+      "q": "Which term describes all the organisms of one species living in a particular area?",
+      "options": ["Community", "Population", "Ecosystem", "Biome"],
+      "answer": 1,
+      "explanation": "A population consists of all individuals of a single species in a given area. A community includes all the different species in an area, an ecosystem adds the abiotic environment, and a biome is a large region defined by climate and vegetation."
+    },
+    {
+      "id": "biology-ecology-002",
+      "q": "In a food chain, organisms that produce their own food through photosynthesis are called:",
+      "options": ["Primary consumers", "Producers", "Decomposers", "Tertiary consumers"],
+      "answer": 1,
+      "explanation": "Producers (autotrophs), such as plants and algae, convert light energy into chemical energy and form the base of food chains. Consumers eat other organisms, and decomposers break down dead organic matter."
+    },
+    {
+      "id": "biology-ecology-003",
+      "q": "Approximately what percentage of energy is transferred from one trophic level to the next in a typical ecosystem?",
+      "options": ["1%", "10%", "50%", "90%"],
+      "answer": 1,
+      "explanation": "On average only about 10% of the energy at one trophic level is passed to the next, with the rest lost mainly as heat through metabolism. This inefficiency limits the number of trophic levels and explains why top predators are relatively rare."
+    },
+    {
+      "id": "biology-ecology-004",
+      "q": "A close relationship between two species in which one benefits and the other is neither helped nor harmed is called:",
+      "options": ["Mutualism", "Parasitism", "Commensalism", "Competition"],
+      "answer": 2,
+      "explanation": "In commensalism one species benefits while the other is unaffected, such as barnacles on a whale. Mutualism benefits both species, parasitism benefits one at the other's expense, and competition harms both."
+    },
+    {
+      "id": "biology-ecology-005",
+      "q": "Which process in the carbon cycle removes carbon dioxide from the atmosphere?",
+      "options": ["Cellular respiration", "Combustion", "Photosynthesis", "Decomposition"],
+      "answer": 2,
+      "explanation": "Photosynthesis fixes atmospheric CO2 into organic compounds, removing it from the air. Respiration, combustion, and decomposition all release CO2 back into the atmosphere."
+    },
+    {
+      "id": "biology-ecology-006",
+      "q": "The maximum population size that an environment can sustainably support is called its:",
+      "options": ["Biotic potential", "Carrying capacity", "Limiting factor", "Population density"],
+      "answer": 1,
+      "explanation": "Carrying capacity (K) is the maximum number of individuals an environment can support given available resources. Beyond this point, limiting factors like food and space cause the population growth rate to slow and stabilize."
+    },
+    {
+      "id": "biology-ecology-007",
+      "q": "Which of the following is a keystone species' defining characteristic?",
+      "options": [
+        "It is always the most abundant species",
+        "It has a disproportionately large effect on its ecosystem relative to its abundance",
+        "It is always a top predator",
+        "It can survive without any other species"
+      ],
+      "answer": 1,
+      "explanation": "A keystone species exerts an outsized influence on community structure relative to its biomass; its removal causes dramatic changes. It need not be abundant or a predator (e.g., beavers and certain plants can be keystone species)."
+    },
+    {
+      "id": "biology-ecology-008",
+      "q": "The gradual, sequential change in species composition of a community over time after a disturbance is called:",
+      "options": ["Ecological succession", "Eutrophication", "Biomagnification", "Adaptive radiation"],
+      "answer": 0,
+      "explanation": "Ecological succession is the orderly replacement of communities over time, beginning with pioneer species and progressing toward a more stable climax community. Primary succession starts on bare rock, while secondary succession follows a disturbance on existing soil."
+    },
+    {
+      "id": "biology-ecology-009",
+      "q": "The increasing concentration of a toxin in organisms at higher trophic levels is known as:",
+      "options": ["Eutrophication", "Biomagnification", "Bioremediation", "Nitrogen fixation"],
+      "answer": 1,
+      "explanation": "Biomagnification is the accumulation and concentration of persistent toxins (like mercury or DDT) as they move up the food chain. Top predators accumulate the highest levels because they consume many contaminated prey over time."
+    },
+    {
+      "id": "biology-ecology-010",
+      "q": "Which group of bacteria converts atmospheric nitrogen (N2) into a form usable by plants?",
+      "options": ["Decomposers", "Nitrogen-fixing bacteria", "Photosynthetic algae", "Denitrifying bacteria"],
+      "answer": 1,
+      "explanation": "Nitrogen-fixing bacteria, many living in legume root nodules, convert atmospheric N2 into ammonia that plants can use. Denitrifying bacteria do the reverse, returning nitrogen gas to the atmosphere, completing the nitrogen cycle."
+    }
+  ]
+}

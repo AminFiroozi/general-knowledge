@@ -1,0 +1,126 @@
+{
+  "topic": "thermochemistry",
+  "category": "chemistry",
+  "questions": [
+    {
+      "id": "chemistry-thermochemistry-001",
+      "q": "An exothermic reaction is one in which the system does what?",
+      "options": [
+        "Absorbs heat from the surroundings",
+        "Releases heat to the surroundings",
+        "Neither absorbs nor releases heat",
+        "Only absorbs light energy"
+      ],
+      "answer": 1,
+      "explanation": "Exothermic reactions release heat, so the surroundings warm up and the enthalpy change ΔH is negative. Absorbing heat describes an endothermic reaction. Reactions that exchange no heat are adiabatic, not exothermic."
+    },
+    {
+      "id": "chemistry-thermochemistry-002",
+      "q": "For an endothermic reaction, what is the sign of the enthalpy change ΔH?",
+      "options": [
+        "Negative",
+        "Positive",
+        "Always zero",
+        "Undefined"
+      ],
+      "answer": 1,
+      "explanation": "Endothermic reactions absorb heat, so the products have higher enthalpy than the reactants and ΔH is positive. A negative ΔH indicates an exothermic process. ΔH is well defined for any reaction at constant pressure."
+    },
+    {
+      "id": "chemistry-thermochemistry-003",
+      "q": "Hess's law states that the total enthalpy change of a reaction is what?",
+      "options": [
+        "Dependent only on the reaction rate",
+        "Independent of the pathway taken",
+        "Always equal to the activation energy",
+        "Equal to the entropy change"
+      ],
+      "answer": 1,
+      "explanation": "Because enthalpy is a state function, Hess's law says the overall ΔH depends only on the initial and final states, not the route between them. This lets chemists add enthalpies of intermediate steps. Activation energy and entropy are different quantities entirely."
+    },
+    {
+      "id": "chemistry-thermochemistry-004",
+      "q": "What quantity does a calorimeter measure?",
+      "options": [
+        "The pH of a solution",
+        "The heat exchanged during a physical or chemical process",
+        "The mass of reactants",
+        "The pressure of a gas"
+      ],
+      "answer": 1,
+      "explanation": "A calorimeter measures heat flow, typically by recording the temperature change of a known mass of water and applying q = mcΔT. It does not directly measure pH, mass, or pressure, which require other instruments."
+    },
+    {
+      "id": "chemistry-thermochemistry-005",
+      "q": "The specific heat capacity of a substance is the energy needed to do what?",
+      "options": [
+        "Melt one mole of the substance",
+        "Raise the temperature of one gram by one degree Celsius",
+        "Break all bonds in one mole",
+        "Vaporize one liter of the substance"
+      ],
+      "answer": 1,
+      "explanation": "Specific heat capacity is the heat required to raise the temperature of one gram (or kilogram) of a substance by one degree. Melting energy is the latent heat of fusion, bond breaking relates to bond enthalpies, and vaporization is the latent heat of vaporization."
+    },
+    {
+      "id": "chemistry-thermochemistry-006",
+      "q": "How much heat is needed to raise 200 g of water by 10 °C? (specific heat of water = 4.18 J/g·°C)",
+      "options": [
+        "836 J",
+        "8360 J",
+        "418 J",
+        "2090 J"
+      ],
+      "answer": 1,
+      "explanation": "Using q = mcΔT = 200 g × 4.18 J/g·°C × 10 °C = 8360 J. The value 836 omits a factor of ten, and 418 uses only 1 g of mass and 1 °C. Correctly multiplying all three terms gives 8360 J."
+    },
+    {
+      "id": "chemistry-thermochemistry-007",
+      "q": "The standard enthalpy of formation of an element in its most stable form is defined as what?",
+      "options": [
+        "A large positive value",
+        "Zero",
+        "Equal to its atomic mass",
+        "Always negative"
+      ],
+      "answer": 1,
+      "explanation": "By convention, the standard enthalpy of formation of a pure element in its most stable state (such as O₂ gas or solid carbon as graphite) is defined as zero, providing the reference point for all other formation enthalpies. Compounds, not elements, have nonzero formation enthalpies."
+    },
+    {
+      "id": "chemistry-thermochemistry-008",
+      "q": "Breaking a chemical bond requires energy and forming a bond releases energy. A reaction is exothermic when which is true?",
+      "options": [
+        "Energy absorbed breaking bonds exceeds energy released forming bonds",
+        "Energy released forming bonds exceeds energy absorbed breaking bonds",
+        "No bonds are broken at all",
+        "The number of bonds stays exactly the same"
+      ],
+      "answer": 1,
+      "explanation": "Net energy release (exothermic) occurs when the energy given off forming new bonds in the products is greater than the energy needed to break the reactant bonds. If breaking dominates instead, the reaction is endothermic. The bond count alone does not determine the sign of ΔH."
+    },
+    {
+      "id": "chemistry-thermochemistry-009",
+      "q": "On an energy profile diagram of an exothermic reaction, where do the products lie relative to the reactants?",
+      "options": [
+        "At a higher energy level",
+        "At a lower energy level",
+        "At exactly the same energy",
+        "Above the activation energy peak"
+      ],
+      "answer": 1,
+      "explanation": "In an exothermic reaction the products are at lower energy than the reactants, and the difference is released as heat. Higher-energy products would indicate an endothermic reaction. The activation energy peak is the transition state, which both reactants and products lie below."
+    },
+    {
+      "id": "chemistry-thermochemistry-010",
+      "q": "The enthalpy change when one mole of a substance burns completely in oxygen is called the enthalpy of what?",
+      "options": [
+        "Fusion",
+        "Combustion",
+        "Neutralization",
+        "Sublimation"
+      ],
+      "answer": 1,
+      "explanation": "The enthalpy of combustion is the heat released when one mole of a substance is fully burned in oxygen, and it is always negative because combustion is exothermic. Fusion is melting, neutralization is the acid-base reaction enthalpy, and sublimation is the solid-to-gas transition."
+    }
+  ]
+}

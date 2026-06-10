@@ -1,0 +1,101 @@
+{
+  "topic": "evolution",
+  "category": "biology",
+  "questions": [
+    {
+      "id": "biology-evolution-001",
+      "q": "Who proposed the theory of evolution by natural selection in 'On the Origin of Species'?",
+      "options": ["Gregor Mendel", "Charles Darwin", "Carl Linnaeus", "Jean-Baptiste Lamarck"],
+      "answer": 1,
+      "explanation": "Charles Darwin published 'On the Origin of Species' in 1859, presenting natural selection as the mechanism of evolution. Mendel founded genetics, Linnaeus developed taxonomy, and Lamarck proposed the discredited idea of inheritance of acquired characteristics."
+    },
+    {
+      "id": "biology-evolution-002",
+      "q": "Natural selection acts directly on which of the following?",
+      "options": [
+        "An organism's genotype",
+        "An organism's phenotype",
+        "Individual genes only",
+        "Entire species at once"
+      ],
+      "answer": 1,
+      "explanation": "Natural selection acts on the phenotype, the observable traits that affect survival and reproduction. Changes in allele frequencies (genotype) result over generations, but selection 'sees' the phenotype an individual expresses in its environment."
+    },
+    {
+      "id": "biology-evolution-003",
+      "q": "Structures such as the human arm, whale flipper, and bat wing that share a common evolutionary origin are called:",
+      "options": ["Analogous structures", "Homologous structures", "Vestigial structures", "Convergent structures"],
+      "answer": 1,
+      "explanation": "Homologous structures share a common ancestral origin despite differing functions, evidence of divergent evolution. Analogous structures have similar functions but different origins (convergent evolution), and vestigial structures are reduced remnants of once-functional features."
+    },
+    {
+      "id": "biology-evolution-004",
+      "q": "What is the term for a change in allele frequencies in a population due to random chance, especially pronounced in small populations?",
+      "options": ["Natural selection", "Gene flow", "Genetic drift", "Mutation pressure"],
+      "answer": 2,
+      "explanation": "Genetic drift is the random fluctuation of allele frequencies due to chance events, with a much stronger effect in small populations. Unlike natural selection, it is not driven by fitness differences and can fix or eliminate alleles randomly."
+    },
+    {
+      "id": "biology-evolution-005",
+      "q": "The formation of new species is known as:",
+      "options": ["Adaptation", "Speciation", "Extinction", "Migration"],
+      "answer": 1,
+      "explanation": "Speciation is the evolutionary process by which new, reproductively isolated species arise from existing ones. It often follows geographic isolation (allopatric speciation) or reproductive barriers that prevent gene flow."
+    },
+    {
+      "id": "biology-evolution-006",
+      "q": "Wings of birds and wings of insects are an example of:",
+      "options": [
+        "Homologous structures from a recent common ancestor",
+        "Analogous structures resulting from convergent evolution",
+        "Vestigial structures",
+        "Genetic drift"
+      ],
+      "answer": 1,
+      "explanation": "Insect and bird wings perform the same function (flight) but evolved independently from different ancestral structures, making them analogous and an example of convergent evolution. They are not derived from a shared winged ancestor."
+    },
+    {
+      "id": "biology-evolution-007",
+      "q": "According to the Hardy-Weinberg principle, a population will NOT evolve if which condition is met?",
+      "options": [
+        "There is frequent mutation",
+        "There is no migration, mutation, selection, or genetic drift, and mating is random",
+        "Natural selection strongly favors one allele",
+        "The population is very small"
+      ],
+      "answer": 1,
+      "explanation": "Hardy-Weinberg equilibrium describes a non-evolving population requiring no mutation, no migration, no natural selection, an infinitely large population (no drift), and random mating. Real populations rarely meet all conditions, so this serves as a null model."
+    },
+    {
+      "id": "biology-evolution-008",
+      "q": "Antibiotic resistance in bacteria is a clear modern example of:",
+      "options": [
+        "Lamarckian inheritance",
+        "Natural selection in action",
+        "Genetic drift only",
+        "Artificial selection"
+      ],
+      "answer": 1,
+      "explanation": "When antibiotics are applied, resistant bacteria survive and reproduce while susceptible ones die, increasing the frequency of resistance alleles. This is natural selection acting on existing variation, not bacteria 'choosing' to adapt."
+    },
+    {
+      "id": "biology-evolution-009",
+      "q": "What is the most direct source of new genetic variation in a population?",
+      "options": ["Natural selection", "Mutation", "Genetic drift", "Gene flow"],
+      "answer": 1,
+      "explanation": "Mutation introduces entirely new alleles and is the ultimate source of genetic variation. Recombination shuffles existing variation, while selection, drift, and gene flow change the frequencies of variants that already exist."
+    },
+    {
+      "id": "biology-evolution-010",
+      "q": "Fossils, comparative anatomy, embryology, and molecular biology are all considered:",
+      "options": [
+        "Causes of evolution",
+        "Lines of evidence supporting evolution",
+        "Mechanisms of genetic drift",
+        "Reasons evolution cannot be tested"
+      ],
+      "answer": 1,
+      "explanation": "These independent fields all provide converging evidence for common descent and evolution over time. The fossil record, shared anatomical and embryological features, and DNA/protein similarities collectively support evolutionary relationships."
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "topic": "human-physiology",
+  "category": "biology",
+  "questions": [
+    {
+      "id": "biology-human-physiology-001",
+      "q": "Which chamber of the heart pumps oxygenated blood to the entire body?",
+      "options": ["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"],
+      "answer": 3,
+      "explanation": "The left ventricle has the thickest muscular wall and pumps oxygenated blood through the aorta to the systemic circulation. The right ventricle pumps deoxygenated blood to the lungs, and the atria receive blood returning to the heart."
+    },
+    {
+      "id": "biology-human-physiology-002",
+      "q": "In the respiratory system, gas exchange between air and blood occurs in the:",
+      "options": ["Bronchi", "Trachea", "Alveoli", "Larynx"],
+      "answer": 2,
+      "explanation": "The alveoli are tiny air sacs with thin walls and a rich capillary network where oxygen diffuses into the blood and carbon dioxide diffuses out. The trachea, bronchi, and larynx conduct air but do not perform gas exchange."
+    },
+    {
+      "id": "biology-human-physiology-003",
+      "q": "Which organ is the primary site of nutrient absorption in the digestive system?",
+      "options": ["Stomach", "Small intestine", "Large intestine", "Esophagus"],
+      "answer": 1,
+      "explanation": "The small intestine, with its villi and microvilli, provides a huge surface area for absorbing most nutrients into the bloodstream. The stomach mainly digests food, and the large intestine chiefly absorbs water and forms feces."
+    },
+    {
+      "id": "biology-human-physiology-004",
+      "q": "What is the basic structural and functional unit of the nervous system?",
+      "options": ["Neuron", "Nephron", "Alveolus", "Sarcomere"],
+      "answer": 0,
+      "explanation": "The neuron is the cell that transmits electrical and chemical signals throughout the nervous system. The nephron is the functional unit of the kidney, the alveolus of the lung, and the sarcomere of muscle."
+    },
+    {
+      "id": "biology-human-physiology-005",
+      "q": "The functional unit of the kidney responsible for filtering blood and forming urine is the:",
+      "options": ["Nephron", "Glomerulus alone", "Ureter", "Bladder"],
+      "answer": 0,
+      "explanation": "The nephron is the kidney's filtering unit, consisting of the glomerulus and renal tubule, where filtration, reabsorption, and secretion produce urine. The glomerulus is only one part of the nephron; the ureter and bladder transport and store urine."
+    },
+    {
+      "id": "biology-human-physiology-006",
+      "q": "Which hormone, produced by the pancreas, lowers blood glucose levels?",
+      "options": ["Glucagon", "Insulin", "Adrenaline", "Cortisol"],
+      "answer": 1,
+      "explanation": "Insulin, secreted by the beta cells of the pancreas, lowers blood glucose by promoting cellular uptake and storage of glucose. Glucagon does the opposite, raising blood glucose, while adrenaline and cortisol are stress hormones."
+    },
+    {
+      "id": "biology-human-physiology-007",
+      "q": "Which type of blood vessel carries blood away from the heart?",
+      "options": ["Veins", "Arteries", "Capillaries", "Venules"],
+      "answer": 1,
+      "explanation": "Arteries carry blood away from the heart, typically under high pressure with thick muscular walls. Veins return blood to the heart, and capillaries are the tiny vessels where exchange of gases and nutrients occurs."
+    },
+    {
+      "id": "biology-human-physiology-008",
+      "q": "The maintenance of a stable internal environment despite external changes is called:",
+      "options": ["Metabolism", "Homeostasis", "Osmoregulation", "Respiration"],
+      "answer": 1,
+      "explanation": "Homeostasis is the regulation of internal conditions such as temperature, pH, and glucose within narrow limits. It typically operates through negative feedback loops. Osmoregulation is one specific aspect, controlling water and solute balance."
+    },
+    {
+      "id": "biology-human-physiology-009",
+      "q": "Which white blood cells produce antibodies as part of the adaptive immune response?",
+      "options": ["Red blood cells", "Platelets", "B lymphocytes", "Neutrophils"],
+      "answer": 2,
+      "explanation": "B lymphocytes (B cells) differentiate into plasma cells that secrete antibodies targeting specific antigens. Red blood cells carry oxygen, platelets aid clotting, and neutrophils provide rapid innate (non-specific) defense."
+    },
+    {
+      "id": "biology-human-physiology-010",
+      "q": "Which part of the brain is primarily responsible for coordinating movement and maintaining balance?",
+      "options": ["Cerebrum", "Cerebellum", "Medulla oblongata", "Hypothalamus"],
+      "answer": 1,
+      "explanation": "The cerebellum coordinates voluntary movements, posture, and balance. The cerebrum handles higher cognition, the medulla oblongata controls involuntary functions like breathing and heart rate, and the hypothalamus regulates homeostasis and hormones."
+    }
+  ]
+}

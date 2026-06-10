@@ -1,0 +1,86 @@
+{
+  "topic": "genetics",
+  "category": "biology",
+  "questions": [
+    {
+      "id": "biology-genetics-001",
+      "q": "Which nitrogenous base is found in RNA but not in DNA?",
+      "options": ["Thymine", "Uracil", "Cytosine", "Guanine"],
+      "answer": 1,
+      "explanation": "RNA contains uracil (U) in place of the thymine (T) found in DNA. Both molecules share cytosine and guanine, and uracil pairs with adenine during transcription."
+    },
+    {
+      "id": "biology-genetics-002",
+      "q": "According to the base-pairing rules in DNA, adenine always pairs with which base?",
+      "options": ["Guanine", "Cytosine", "Thymine", "Uracil"],
+      "answer": 2,
+      "explanation": "In DNA, adenine pairs with thymine via two hydrogen bonds, and guanine pairs with cytosine via three hydrogen bonds. This complementary base pairing underlies accurate DNA replication."
+    },
+    {
+      "id": "biology-genetics-003",
+      "q": "In a monohybrid cross between two heterozygotes (Aa x Aa), what is the expected phenotypic ratio?",
+      "options": ["1:1", "3:1", "9:3:3:1", "1:2:1"],
+      "answer": 1,
+      "explanation": "An Aa x Aa cross yields a 3:1 phenotypic ratio of dominant to recessive, since three of four offspring (AA, Aa, Aa) show the dominant trait and one (aa) shows the recessive. The 1:2:1 ratio describes the genotypes, not phenotypes."
+    },
+    {
+      "id": "biology-genetics-004",
+      "q": "Mendel's law of segregation states that:",
+      "options": [
+        "Alleles for different genes assort independently",
+        "Each gamete receives only one allele for each gene",
+        "Dominant alleles always mask recessive ones",
+        "Traits blend together in offspring"
+      ],
+      "answer": 1,
+      "explanation": "The law of segregation states that the two alleles for a gene separate during gamete formation, so each gamete carries only one allele. The law of independent assortment is the separate principle about different genes assorting independently."
+    },
+    {
+      "id": "biology-genetics-005",
+      "q": "A change in the DNA sequence of a gene is called a:",
+      "options": ["Mutation", "Translation", "Transcription", "Replication"],
+      "answer": 0,
+      "explanation": "A mutation is any change in the nucleotide sequence of DNA. Transcription produces RNA from DNA, translation builds proteins from mRNA, and replication copies DNA before cell division."
+    },
+    {
+      "id": "biology-genetics-006",
+      "q": "During protein synthesis, what is the role of transfer RNA (tRNA)?",
+      "options": [
+        "Carrying the genetic code from the nucleus",
+        "Bringing specific amino acids to the ribosome",
+        "Forming the structural core of the ribosome",
+        "Unwinding the DNA double helix"
+      ],
+      "answer": 1,
+      "explanation": "tRNA molecules carry specific amino acids to the ribosome and match their anticodons to the mRNA codons during translation. mRNA carries the genetic message, rRNA forms the ribosome's core, and helicase unwinds DNA."
+    },
+    {
+      "id": "biology-genetics-007",
+      "q": "A point mutation that changes a single codon to a stop codon, prematurely terminating translation, is called a:",
+      "options": ["Silent mutation", "Missense mutation", "Nonsense mutation", "Frameshift mutation"],
+      "answer": 2,
+      "explanation": "A nonsense mutation converts an amino-acid-coding codon into a stop codon, truncating the protein. A silent mutation causes no amino acid change, a missense mutation swaps one amino acid, and a frameshift results from insertions or deletions that shift the reading frame."
+    },
+    {
+      "id": "biology-genetics-008",
+      "q": "In humans, which sex chromosome combination typically results in a biological male?",
+      "options": ["XX", "XY", "YY", "XO"],
+      "answer": 1,
+      "explanation": "A biological male typically has one X and one Y chromosome (XY), while a biological female typically has two X chromosomes (XX). The Y chromosome carries the SRY gene that triggers male development."
+    },
+    {
+      "id": "biology-genetics-009",
+      "q": "In a dihybrid cross between two organisms heterozygous for two genes (AaBb x AaBb), what is the expected phenotypic ratio?",
+      "options": ["3:1", "1:1:1:1", "9:3:3:1", "1:2:1"],
+      "answer": 2,
+      "explanation": "A dihybrid cross of AaBb x AaBb produces a classic 9:3:3:1 phenotypic ratio when the genes assort independently. This reflects the combination of two independent 3:1 monohybrid ratios."
+    },
+    {
+      "id": "biology-genetics-010",
+      "q": "What term describes an allele combination in which both alleles are fully expressed in the phenotype, such as the AB blood type?",
+      "options": ["Complete dominance", "Incomplete dominance", "Codominance", "Epistasis"],
+      "answer": 2,
+      "explanation": "Codominance occurs when both alleles are fully and simultaneously expressed, as in AB blood type where both A and B antigens appear. Incomplete dominance produces a blended intermediate phenotype, while epistasis is when one gene masks another."
+    }
+  ]
+}

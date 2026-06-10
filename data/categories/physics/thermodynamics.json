@@ -1,0 +1,126 @@
+{
+  "topic": "thermodynamics",
+  "category": "physics",
+  "questions": [
+    {
+      "id": "physics-thermodynamics-001",
+      "q": "The first law of thermodynamics is fundamentally a statement of which principle?",
+      "options": [
+        "Entropy always increases in an isolated system",
+        "Conservation of energy, including heat as a form of energy transfer",
+        "Heat always flows from hot to cold",
+        "Absolute zero cannot be reached"
+      ],
+      "answer": 1,
+      "explanation": "The first law, ΔU = Q − W, states that the internal energy of a system changes only by heat added and work done, so energy is conserved when heat is counted. The statement that entropy always increases is the second law, which governs the direction of processes rather than the bookkeeping of energy."
+    },
+    {
+      "id": "physics-thermodynamics-002",
+      "q": "A sealed rigid container of ideal gas is heated so its absolute temperature doubles. What happens to the pressure?",
+      "options": [
+        "It doubles",
+        "It stays the same because the volume is fixed",
+        "It quadruples",
+        "It increases by a factor that depends on the gas's molar mass"
+      ],
+      "answer": 0,
+      "explanation": "At constant volume the ideal gas law PV = nRT reduces to Gay-Lussac's law, P ∝ T, so doubling the absolute temperature doubles the pressure. A fixed volume does not fix the pressure — it is precisely because the gas cannot expand that the pressure must rise as the molecules strike the walls harder and more often."
+    },
+    {
+      "id": "physics-thermodynamics-003",
+      "q": "Why can no heat engine operating between two temperatures be 100% efficient?",
+      "options": [
+        "Friction in real machinery always wastes some energy",
+        "Energy is destroyed during the conversion to work",
+        "The second law requires some heat to be rejected to the cold reservoir in any cyclic process",
+        "Fuel never burns completely in practice"
+      ],
+      "answer": 2,
+      "explanation": "The second law (Kelvin–Planck statement) forbids a cyclic device whose sole effect is converting heat entirely into work; some heat must always be dumped to a colder reservoir, capping efficiency at the Carnot limit 1 − T_c/T_h. Friction explains why real engines fall short of the Carnot limit, but even a perfectly frictionless, reversible engine cannot reach 100% — the restriction is fundamental, not practical."
+    },
+    {
+      "id": "physics-thermodynamics-004",
+      "q": "Which process is an example of entropy decreasing locally without violating the second law of thermodynamics?",
+      "options": [
+        "Heat flowing spontaneously from a cold body to a hot body in isolation",
+        "Gas spontaneously compressing itself into one corner of a sealed box",
+        "A perpetual motion machine of the second kind",
+        "Water freezing in a freezer, while the freezer expels more entropy to the warm room"
+      ],
+      "answer": 3,
+      "explanation": "Entropy can decrease in a subsystem as long as the total entropy of the universe increases; the freezer's compressor does work and discharges enough heat (and entropy) into the room to more than compensate for the ordered ice formed. Heat flowing unaided from cold to hot in an isolated setup would decrease total entropy and is forbidden — the freezer avoids this by consuming external work."
+    },
+    {
+      "id": "physics-thermodynamics-005",
+      "q": "What is the maximum (Carnot) efficiency of a heat engine operating between reservoirs at 600 K and 300 K?",
+      "options": [
+        "100%",
+        "50%",
+        "25%",
+        "75%"
+      ],
+      "answer": 1,
+      "explanation": "Carnot efficiency is η = 1 − T_c/T_h = 1 − 300/600 = 0.5, or 50%, using absolute temperatures. Computing with Celsius temperatures or with the ratio inverted gives other values; the formula requires kelvin and the cold-over-hot ratio."
+    },
+    {
+      "id": "physics-thermodynamics-006",
+      "q": "On a cold day, a metal bench feels much colder to the touch than a wooden bench at the same temperature. Why?",
+      "options": [
+        "The metal is actually at a lower temperature than the wood",
+        "Wood generates a small amount of heat internally",
+        "Metal conducts heat away from your skin much faster than wood",
+        "Metal has a higher specific heat capacity than wood"
+      ],
+      "answer": 2,
+      "explanation": "Both benches are at the same temperature, but your skin senses the rate of heat loss, and metal's high thermal conductivity carries heat away from your hand far faster than wood does. The intuition that the metal must be colder is the key misconception — objects left in the same environment equilibrate to the same temperature regardless of material."
+    },
+    {
+      "id": "physics-thermodynamics-007",
+      "q": "In statistical mechanics, the entropy of a system is best described as a measure of what?",
+      "options": [
+        "The number of microscopic arrangements (microstates) consistent with the system's macroscopic state",
+        "The total thermal energy stored in the system",
+        "The average speed of the system's molecules",
+        "The amount of heat the system has absorbed since its creation"
+      ],
+      "answer": 0,
+      "explanation": "Boltzmann's relation S = k·ln W defines entropy in terms of W, the number of microstates compatible with the observed macrostate, making entropy a measure of multiplicity or missing microscopic information. Entropy is not the same as thermal energy — two systems can hold equal energy yet have very different entropies depending on how many ways that energy can be distributed."
+    },
+    {
+      "id": "physics-thermodynamics-008",
+      "q": "An ideal gas expands isothermally, doing 500 J of work on its surroundings. How much heat does it absorb during the process?",
+      "options": [
+        "Zero, because the temperature does not change",
+        "Less than 500 J, since some energy becomes internal energy",
+        "More than 500 J, to cover both work and heating",
+        "Exactly 500 J"
+      ],
+      "answer": 3,
+      "explanation": "For an ideal gas, internal energy depends only on temperature, so an isothermal process has ΔU = 0 and the first law gives Q = W = 500 J. The tempting answer 'zero heat because constant temperature' confuses temperature with heat — heat must flow in continuously to replace the energy the gas expends as work, precisely to keep the temperature constant."
+    },
+    {
+      "id": "physics-thermodynamics-009",
+      "q": "What does the zeroth law of thermodynamics establish?",
+      "options": [
+        "That energy cannot be created or destroyed",
+        "That entropy of a perfect crystal at absolute zero is zero",
+        "That if two systems are each in thermal equilibrium with a third, they are in equilibrium with each other, making temperature well-defined",
+        "That heat engines require a temperature difference to operate"
+      ],
+      "answer": 2,
+      "explanation": "The zeroth law states the transitivity of thermal equilibrium, which is what allows a thermometer (the third system) to assign a consistent temperature to other bodies. Conservation of energy is the first law; the zeroth law is logically prior because temperature must be well-defined before heat flow between temperatures can be discussed."
+    },
+    {
+      "id": "physics-thermodynamics-010",
+      "q": "A refrigerator is left running with its door open in a sealed, insulated room. Over time, the average temperature of the room will:",
+      "options": [
+        "Decrease, because the refrigerator removes heat",
+        "Rise, because the refrigerator's electrical work is dissipated as net heat into the room",
+        "Stay exactly constant, since the cooling and heating cancel",
+        "First decrease, then return exactly to the starting temperature"
+      ],
+      "answer": 1,
+      "explanation": "A refrigerator only moves heat from its interior to its coils; with the door open, that heat returns to the same room, and in addition all the electrical work consumed by the compressor is dissipated as heat. The net effect is warming, not cooling — the intuition that an open fridge cools the room ignores the work input demanded by the second law, which makes the heat exhausted at the coils exceed the heat absorbed inside."
+    }
+  ]
+}
