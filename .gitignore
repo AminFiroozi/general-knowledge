@@ -28,7 +28,7 @@ next-env.d.ts
 /.claude/**
 
 # generated — rebuilt at every compile
-src/generated/index.ts
+src/generated/
 
 # visual companion brainstorm artifacts
 .superpowers/
