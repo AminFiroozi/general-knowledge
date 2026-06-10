@@ -1,0 +1,126 @@
+{
+  "topic": "storage-engines",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-storage-engines-001",
+      "q": "What is the main difference between heap storage and index-organized storage?",
+      "options": [
+        "Heap storage is faster; index-organized storage is slower",
+        "Heap tables store rows in arbitrary order; index-organized tables physically sort and store rows by primary key",
+        "Index-organized tables cannot have secondary indexes",
+        "Heap storage is only available in NoSQL databases"
+      ],
+      "answer": 1,
+      "explanation": "Heap storage stores rows in insertion order; lookups require index traversal then row fetches. Index-organized tables (like Oracle IOT or MySQL InnoDB primary key) store rows sorted by primary key, eliminating the extra fetch step for PK queries."
+    },
+    {
+      "id": "databases-storage-engines-002",
+      "q": "What is a database page and why does its size matter?",
+      "options": [
+        "A page is a single row in a table",
+        "A page is a fixed-size unit of disk I/O (typically 4-16 KB) containing multiple rows; size affects how many rows fit per disk read and overall I/O efficiency",
+        "A page is a backup copy of the database",
+        "Page size is irrelevant to database performance"
+      ],
+      "answer": 1,
+      "explanation": "Pages are the atomic unit of disk I/O. Larger pages mean more rows per read but higher memory cost; smaller pages reduce memory but increase I/O operations. 8 KB is common. Optimal size depends on workload and hardware."
+    },
+    {
+      "id": "databases-storage-engines-003",
+      "q": "What is the buffer pool and why is it crucial for performance?",
+      "options": [
+        "A queue of pending queries waiting to execute",
+        "An in-memory cache of frequently accessed disk pages that reduces costly disk I/O",
+        "A temporary storage for network messages",
+        "A tool for managing user connections"
+      ],
+      "answer": 1,
+      "explanation": "The buffer pool caches disk pages in RAM. Hitting the buffer pool (page hit) is microseconds; reading from disk is milliseconds. Larger buffer pools reduce I/O. Most databases let you tune buffer pool size as a critical knob."
+    },
+    {
+      "id": "databases-storage-engines-004",
+      "q": "What is WAL (Write-Ahead Logging) and why is it essential?",
+      "options": [
+        "A technique for distributing writes across multiple disks",
+        "A method of writing all changes to a log before updating the actual data, enabling recovery from crashes",
+        "A compression algorithm for reducing data size",
+        "A way to encrypt database files"
+      ],
+      "answer": 1,
+      "explanation": "WAL ensures durability: before modifying a data page, the change is written to a log on stable storage. On crash, the log is replayed to recover uncommitted changes. Without WAL, power loss could corrupt data."
+    },
+    {
+      "id": "databases-storage-engines-005",
+      "q": "What is write amplification and why is it a concern?",
+      "options": [
+        "Increasing the font size of error messages",
+        "A phenomenon where writing X bytes of logical data requires writing Y > X bytes to physical storage, wasting resources",
+        "Distributing writes to multiple servers",
+        "The process of replicating data for backup"
+      ],
+      "answer": 1,
+      "explanation": "Write amplification occurs in LSM trees and SSDs: updating one row may rewrite entire SSTables or blocks. If you write 1 KB logically but 10 KB physically, amplification is 10x. This reduces write throughput and lifespan of SSDs."
+    },
+    {
+      "id": "databases-storage-engines-006",
+      "q": "How do B+ tree storage engines optimize for range queries?",
+      "options": [
+        "They only support exact match queries",
+        "They maintain sorted order and leaf nodes linked as a doubly-linked list, enabling fast sequential range scans",
+        "They use hash tables instead of trees",
+        "They compress data before storing it"
+      ],
+      "answer": 1,
+      "explanation": "B+ trees keep leaves sorted and linked; a range query finds the start leaf via tree traversal, then follows links sequentially. This is far faster than random lookups for each row. LSM trees lack this optimization."
+    },
+    {
+      "id": "databases-storage-engines-007",
+      "q": "What does a storage engine's page layout determine?",
+      "options": [
+        "The color scheme of the user interface",
+        "How rows, free space, and metadata are physically arranged within a disk page, affecting insertion, deletion, and scan efficiency",
+        "The network bandwidth used by the database",
+        "The encryption algorithm applied to data"
+      ],
+      "answer": 1,
+      "explanation": "Page layout is critical: it determines space utilization, how quickly rows can be located within a page, and fragmentation on deletes. A slotted page design uses a directory at the end; a simple layout packs rows sequentially."
+    },
+    {
+      "id": "databases-storage-engines-008",
+      "q": "Why do some storage engines use mmap (memory-mapped I/O) and others use explicit read/write?",
+      "options": [
+        "mmap is always better than explicit I/O",
+        "mmap lets the OS handle paging automatically but may cause unexpected performance; explicit I/O gives more control but requires more code",
+        "mmap cannot be used on large databases",
+        "Explicit read/write is obsolete technology"
+      ],
+      "answer": 1,
+      "explanation": "mmap delegates paging to the OS, simplifying code but risking memory pressure and page faults. Explicit I/O (read/write syscalls) lets the engine control the buffer pool and prioritize access patterns. Trade-off: simplicity vs control."
+    },
+    {
+      "id": "databases-storage-engines-009",
+      "q": "What is row versioning in a storage engine?",
+      "options": [
+        "Keeping a backup copy of each row in a separate file",
+        "Maintaining multiple versions of rows to support MVCC, allowing old transactions to read consistent snapshots while new writes create new versions",
+        "Numbering rows sequentially for sorting",
+        "Storing row modification timestamps in a separate table"
+      ],
+      "answer": 1,
+      "explanation": "Row versioning enables MVCC: each change creates a new version with a transaction ID, while old versions remain readable. Garbage collection removes versions no longer needed by active transactions. This avoids blocking readers."
+    },
+    {
+      "id": "databases-storage-engines-010",
+      "q": "How do checkpoint operations affect database recovery?",
+      "options": [
+        "They prevent any data from being written to disk",
+        "They flush dirty pages to disk at regular intervals; on recovery, only the log after the last checkpoint is replayed, speeding up recovery",
+        "They create a snapshot for point-in-time restore",
+        "They have no impact on recovery speed"
+      ],
+      "answer": 1,
+      "explanation": "Checkpoints persist the buffer pool to disk, marking a known-clean state. On crash recovery, the system replays only the log after the checkpoint, reducing recovery time significantly. Without checkpoints, the entire log must be replayed."
+    }
+  ]
+}

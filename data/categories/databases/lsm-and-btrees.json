@@ -1,0 +1,126 @@
+{
+  "topic": "lsm-and-btrees",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-lsm-and-btrees-001",
+      "q": "What is a B+ tree and how does it differ from a B tree?",
+      "options": [
+        "B+ trees are slower than B trees",
+        "A B+ tree stores all values in leaf nodes and maintains leaf-to-leaf links for efficient range scans; B trees store values at all nodes",
+        "B+ trees cannot be used for indexing",
+        "There is no practical difference between them"
+      ],
+      "answer": 1,
+      "explanation": "B+ trees segregate keys (internal nodes) from values (leaf nodes) with leaf sibling links enabling sequential scans. This sacrifices point lookup slightly but excels at ranges. B trees store values everywhere, better for point queries but worse for scanning."
+    },
+    {
+      "id": "databases-lsm-and-btrees-002",
+      "q": "What is an LSM (Log-Structured Merge) tree?",
+      "options": [
+        "A type of data compression algorithm",
+        "A write-optimized tree structure that buffers writes in memory (memtable), flushes to sorted immutable files (SSTables), and periodically merges SSTables to maintain read performance",
+        "A tree used only in NoSQL databases",
+        "A method for preventing tree rebalancing"
+      ],
+      "answer": 1,
+      "explanation": "LSM trees optimize writes by deferring merging (compaction) to background threads. Writes go to in-memory memtable, then immutable SSTables. Reads check memtable then SSTables in reverse age order. Compaction merges SSTables, eliminating deletes and duplicates."
+    },
+    {
+      "id": "databases-lsm-and-btrees-003",
+      "q": "Why are LSM trees better for write-heavy workloads?",
+      "options": [
+        "LSM trees are not better for writes",
+        "LSM trees turn random writes into sequential writes to log and memtable, maximizing throughput; B+ trees require random disk updates during rebalancing",
+        "LSM trees compress data automatically",
+        "LSM trees use less memory than B+ trees"
+      ],
+      "answer": 1,
+      "explanation": "LSM sequential writes to log+memtable are fast; B+ tree rebalancing causes random disk I/O. On modern hardware, sequential I/O vastly outperforms random I/O. For write-heavy systems (databases, caches), LSM is superior."
+    },
+    {
+      "id": "databases-lsm-and-btrees-004",
+      "q": "What is a memtable in an LSM tree?",
+      "options": [
+        "A temporary backup of the disk data",
+        "An in-memory data structure (usually a balanced tree or skip list) that buffers recent writes before flushing to disk as an immutable SSTable",
+        "A file containing metadata about SSTables",
+        "A cache for frequently accessed values"
+      ],
+      "answer": 1,
+      "explanation": "The memtable is an in-memory buffer for writes. When full (size threshold), it's flushed to disk as an immutable SSTable. Multiple SSTables accumulate; compaction merges them. Memtable is critical for write latency and throughput."
+    },
+    {
+      "id": "databases-lsm-and-btrees-005",
+      "q": "What is an SSTable and what does immutability enable?",
+      "options": [
+        "SSTable is a backup format",
+        "An SSTable (Sorted String Table) is an immutable sorted file on disk; immutability enables safe concurrent reads, efficient compression, and background compaction without locking",
+        "SSTables are used only by NoSQL databases",
+        "Immutability makes SSTables impossible to modify"
+      ],
+      "answer": 1,
+      "explanation": "SSTables are immutable: no locks needed for concurrent access. Compaction safely merges SSTables in background threads without disrupting reads. New writes accumulate in new SSTables; old SSTables are discarded when compacted. This isolation is fundamental to LSM design."
+    },
+    {
+      "id": "databases-lsm-and-btrees-006",
+      "q": "What is compaction in LSM trees and why is it necessary?",
+      "options": [
+        "Compaction is an optional optimization that can be skipped",
+        "Compaction merges multiple SSTables into fewer, larger ones to eliminate duplicates, deletes, and maintain read performance; without it, reads degrade as SSTable count grows",
+        "Compaction is only used for data backup",
+        "Compaction deletes all old data permanently"
+      ],
+      "answer": 1,
+      "explanation": "As memtables flush, SSTable count grows. Reading requires checking all SSTables, degrading lookup performance. Compaction merges SSTables: reads many, writes one, eliminating redundancy. Trade-off: write amplification (rewriting data) for read efficiency."
+    },
+    {
+      "id": "databases-lsm-and-btrees-007",
+      "q": "What is write amplification and how do LSM trees suffer from it?",
+      "options": [
+        "Write amplification does not affect LSM trees",
+        "A phenomenon where compaction causes the same data to be rewritten multiple times; a single logical write may be rewritten 10x or more during compaction cycles",
+        "Write amplification only affects B+ trees",
+        "Write amplification is when writes are split across multiple files"
+      ],
+      "answer": 1,
+      "explanation": "LSM compaction rewrites data repeatedly. If data is compacted L levels and each level triggers merging, the same byte is written many times. High write amplification reduces SSD lifespan and wastes I/O. Tuning compaction strategy (leveled vs tiered) helps."
+    },
+    {
+      "id": "databases-lsm-and-btrees-008",
+      "q": "How do B+ trees handle range queries efficiently?",
+      "options": [
+        "They scan all leaf nodes sequentially",
+        "They use the B+ tree index structure to locate the start of the range, then follow leaf-node sibling pointers sequentially without jumping through the tree",
+        "They convert range queries to point queries",
+        "B+ trees do not handle range queries efficiently"
+      ],
+      "answer": 1,
+      "explanation": "B+ tree leaf nodes are linked; a range query uses the tree to find the start leaf, then follows sibling pointers. This avoids re-traversing the tree for each row. LSM must check multiple SSTables, making range scans slower."
+    },
+    {
+      "id": "databases-lsm-and-btrees-009",
+      "q": "What is leveled compaction in LSM trees?",
+      "options": [
+        "A backup strategy for data safety",
+        "A compaction strategy where SSTables are organized in levels; each level is 10x the size of the previous; compaction keeps each level non-overlapping",
+        "A method to encrypt data in SSTables",
+        "Leveled compaction is not used in real databases"
+      ],
+      "answer": 1,
+      "explanation": "Leveled compaction: L0 (new SSTables), L1 (10x size), L2 (100x size), etc. Each level is non-overlapping (no key overlap). Lookup checks at most one SSTable per level (log search depth). Trade-off: lower write amplification but higher compaction cost."
+    },
+    {
+      "id": "databases-lsm-and-btrees-010",
+      "q": "Why do modern databases like RocksDB and Cassandra choose LSM trees over B+ trees?",
+      "options": [
+        "LSM trees are always better than B+ trees",
+        "LSM trees maximize write throughput and sequential I/O, critical for high-volume writes and modern SSD hardware where sequential I/O dominates",
+        "B+ trees are obsolete",
+        "LSM trees use less disk space"
+      ],
+      "answer": 1,
+      "explanation": "LSM trees turn random writes into sequential I/O, matching SSD behavior. B+ tree rebalancing causes random I/O, underutilizing modern hardware. For high-throughput systems (streaming, analytics), LSM is the natural choice. Traditional SQL databases often keep B+ for their different workload."
+    }
+  ]
+}

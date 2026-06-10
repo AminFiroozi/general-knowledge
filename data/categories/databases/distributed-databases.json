@@ -1,0 +1,126 @@
+{
+  "topic": "distributed-databases",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-distributed-databases-001",
+      "q": "What is horizontal partitioning (sharding) in distributed databases?",
+      "options": [
+        "Dividing a table vertically by columns",
+        "Dividing a table horizontally by rows, distributing different row ranges across multiple servers",
+        "Replicating the entire table to all servers",
+        "Encrypting data before distribution"
+      ],
+      "answer": 1,
+      "explanation": "Sharding splits a table by rows: users 1-1M on shard 1, 1M-2M on shard 2, etc. Each shard is a complete schema with a subset of data. This enables scaling writes; the tradeoff is application complexity and cross-shard queries."
+    },
+    {
+      "id": "databases-distributed-databases-002",
+      "q": "What is vertical partitioning in distributed databases?",
+      "options": [
+        "Dividing rows based on a hash function",
+        "Dividing a table by columns, storing different column sets on different servers",
+        "Replicating all columns to all servers",
+        "Sorting rows by value"
+      ],
+      "answer": 1,
+      "explanation": "Vertical partitioning splits columns: highly accessed columns (ID, name) on one server, less-used columns (profile details) on another. This reduces data moved per query but complicates JOINs across servers."
+    },
+    {
+      "id": "databases-distributed-databases-003",
+      "q": "What is the CAP theorem in distributed databases?",
+      "options": [
+        "A theorem about CPU, memory, and power usage",
+        "A theory stating that distributed systems can guarantee at most two of: Consistency, Availability, Partition tolerance",
+        "A rule that limits database connections",
+        "A requirement that all servers must have identical hardware"
+      ],
+      "answer": 1,
+      "explanation": "The CAP theorem says distributed systems cannot simultaneously guarantee consistency (all nodes see same data), availability (always respond), and partition tolerance (survive network splits). Real systems choose based on workload requirements."
+    },
+    {
+      "id": "databases-distributed-databases-004",
+      "q": "What is two-phase commit (2PC) and what is its main limitation?",
+      "options": [
+        "A method to execute queries in parallel on multiple cores",
+        "A protocol ensuring atomicity across multiple databases: a coordinator polls participants if they can commit, then instructs them to commit or abort",
+        "A way to optimize network bandwidth in distributed systems",
+        "A technique for load balancing across servers"
+      ],
+      "answer": 1,
+      "explanation": "2PC guarantees atomicity across sites: all commit or all abort. Its main limitation is blocking: if the coordinator or a participant fails during the vote phase, locks are held indefinitely, reducing availability. This is why modern systems avoid 2PC."
+    },
+    {
+      "id": "databases-distributed-databases-005",
+      "q": "What is eventual consistency in distributed databases?",
+      "options": [
+        "A guarantee that data is always consistent immediately after writes",
+        "A model where data may be temporarily inconsistent but converges to consistency over time, trading immediate consistency for availability",
+        "A requirement that all servers must be synchronized at all times",
+        "A method for preventing network failures"
+      ],
+      "answer": 1,
+      "explanation": "Eventual consistency allows reads to see stale data temporarily. Write to server A, immediately read from server B which hasn't replicated yet, see old data. But replicas converge, eventually making reads consistent. Enables high availability."
+    },
+    {
+      "id": "databases-distributed-databases-006",
+      "q": "What is replication in distributed databases and why is it used?",
+      "options": [
+        "Making exact copies of the database for backup only",
+        "Copying data to multiple servers for fault tolerance, read scaling, and geographic distribution",
+        "Encrypting data multiple times",
+        "Splitting data into smaller files"
+      ],
+      "answer": 1,
+      "explanation": "Replication maintains copies on multiple servers. Lose one server? Replicas survive. Read-heavy workload? Serve reads from multiple replicas. Global application? Keep data local. Trade-off: writes must update all replicas, increasing latency and complexity."
+    },
+    {
+      "id": "databases-distributed-databases-007",
+      "q": "What is the difference between synchronous and asynchronous replication?",
+      "options": [
+        "Synchronous is for databases, asynchronous for caches",
+        "Synchronous waits for replicas to acknowledge before committing (consistent but slow); asynchronous commits locally then replicates (fast but risks losing data)",
+        "They are the same thing",
+        "Asynchronous can only be used with encryption"
+      ],
+      "answer": 1,
+      "explanation": "Synchronous: write waits for all replicas to acknowledge, ensuring no data loss but increasing latency. Asynchronous: write commits locally, replicates in background; fast but if primary crashes, unacknowledged writes are lost. Trade-off: latency vs safety."
+    },
+    {
+      "id": "databases-distributed-databases-008",
+      "q": "What is a NewSQL database?",
+      "options": [
+        "A database that only supports the SQL language",
+        "A modern distributed SQL database that provides ACID guarantees and scalability, combining traditional SQL with distributed architecture",
+        "A database that stores data as JSON",
+        "A database that replaces SQL with a proprietary language"
+      ],
+      "answer": 1,
+      "explanation": "NewSQL databases (CockroachDB, Spanner, Vitess) aim for the best of both worlds: ACID transactions and SQL for familiar queries, plus horizontal scalability and fault tolerance of NoSQL. They avoid some limitations of 2PC via clever consensus algorithms."
+    },
+    {
+      "id": "databases-distributed-databases-009",
+      "q": "Why is the shard key choice critical in sharded databases?",
+      "options": [
+        "It only affects query performance",
+        "A poor shard key causes skew (some shards overloaded) or makes most queries cross-shard, limiting scalability",
+        "Shard keys must be unique across all rows",
+        "Changing a shard key is fast and easy"
+      ],
+      "answer": 1,
+      "explanation": "A bad shard key (like country for a global app) causes hot spots: US shard handles 90% of load. Or if sharding by user ID but queries often cross users, everything becomes a cross-shard query, defeating the purpose of sharding."
+    },
+    {
+      "id": "databases-distributed-databases-010",
+      "q": "What is a split-brain scenario in distributed databases?",
+      "options": [
+        "A database corruption issue that requires recovery",
+        "A network partition where two groups of servers lose connectivity, both believing they are the primary cluster and accepting writes, causing data divergence",
+        "A query that spans two databases",
+        "A scenario where the schema differs across replicas"
+      ],
+      "answer": 1,
+      "explanation": "Split-brain: network split divides servers into partition A (with primary) and partition B (without). Clients in B promote a new primary and write there. When partitions heal, two primaries exist with conflicting writes. Consensus algorithms (Raft, Paxos) prevent this."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "logical-clocks",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-logical-clocks-001",
+      "q": "What is the primary purpose of Lamport timestamps in distributed systems?",
+      "options": [
+        "To provide a total ordering of events across processes by assigning monotonically increasing integers",
+        "To synchronize physical clocks so all nodes show the exact same time",
+        "To measure the latency between nodes in a distributed network",
+        "To detect and correct Byzantine failures in message ordering"
+      ],
+      "answer": 0,
+      "explanation": "Lamport timestamps assign logical values to events to create a causal ordering, not requiring clock synchronization. Option 1 is about physical clock synchronization, which Lamport timestamps avoid. Option 2 measures network delay, unrelated to logical ordering."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-002",
+      "q": "How does the Lamport timestamp algorithm ensure causality?",
+      "options": [
+        "Each process increments its timestamp for every local event and updates it when receiving messages with higher timestamps",
+        "By synchronizing all clocks to a central authority at regular intervals",
+        "By requiring that all messages are delivered in the exact order they were sent",
+        "Through a global timestamp service that assigns values to all events"
+      ],
+      "answer": 0,
+      "explanation": "Lamport's rule: increment on local events and set timestamp to max(local, received) + 1 on message receipt. Option 1 requires clock synchronization. Option 2 assumes perfect FIFO delivery. Option 3 would create a bottleneck and single point of failure."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-003",
+      "q": "What limitation does a Lamport clock have regarding causality?",
+      "options": [
+        "It can create a total order of events that respects causality, but two causally unrelated events may have artificially ordered timestamps",
+        "It requires all nodes to have synchronized physical clocks",
+        "It cannot detect when events occur simultaneously",
+        "It fails entirely if any single node's clock becomes unreliable"
+      ],
+      "answer": 0,
+      "explanation": "Lamport clocks enforce a total order but lose information about which events are truly independent. Option 1 is the definition of Lamport's approach. Option 2 confuses Lamport with physical synchronization. Option 3 is incorrect; simultaneous events are ordered arbitrarily."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-004",
+      "q": "How many components does a vector clock have in a system with n processes?",
+      "options": [
+        "Exactly n integers, one per process",
+        "A single integer that grows proportionally to n",
+        "One timestamp per pair of processes, totaling n(n-1)/2 values",
+        "A variable number depending on the number of messages exchanged"
+      ],
+      "answer": 0,
+      "explanation": "Vector clocks maintain an array of n counters, allowing full causality tracking. Option 1 is a misconception that one global counter suffices. Option 2 is incorrect; vector clocks don't scale with message count."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-005",
+      "q": "What distinguishes the 'happens-before' relationship from physical causality?",
+      "options": [
+        "Happens-before is a logical construct that may include events with no actual causal connection, defined by message passing and local sequencing",
+        "Happens-before precisely corresponds to causality observed in the real world with no false positives",
+        "Happens-before only accounts for message-passing events and ignores local computation",
+        "Happens-before requires that all events are ordered by wall-clock time"
+      ],
+      "answer": 0,
+      "explanation": "Happens-before formalizes message passing and local sequencing but may order unrelated events; it is a partial order, not total causality. Option 1 assumes happens-before matches physical causality perfectly. Option 2 ignores local events. Option 3 contradicts the use of logical clocks."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-006",
+      "q": "In a vector clock system, when can you conclude that event A causally precedes event B?",
+      "options": [
+        "When A's vector clock is less than or equal to B's in all components and strictly less in at least one",
+        "When A's timestamp is less than B's timestamp in any single component",
+        "When A and B both occurred on processes that exchanged a message",
+        "When A occurred before B in wall-clock time across any two nodes"
+      ],
+      "answer": 0,
+      "explanation": "Vector clock dominance (≤ in all, < in at least one) precisely captures causal precedence. Option 1 uses incomplete comparison. Option 2 doesn't require dominance. Option 3 assumes message exchange implies precedence direction."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-007",
+      "q": "What is the key difference between vector clocks and Lamport clocks in detecting concurrency?",
+      "options": [
+        "Vector clocks can definitively identify causally unrelated (concurrent) events; Lamport clocks cannot",
+        "Lamport clocks are more precise and require less storage than vector clocks",
+        "Vector clocks only work in systems with exactly 3 processes",
+        "Lamport clocks detect concurrency by comparing integer differences"
+      ],
+      "answer": 0,
+      "explanation": "Vector clocks allow determination of partial order; two events are concurrent if neither dominates the other. Lamport clocks create a total order, obscuring concurrency. Option 1 is false; Lamport clocks are more storage-efficient. Option 2 is baseless; Lamport clocks don't measure concurrency."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-008",
+      "q": "How does a process update its vector clock when sending a message?",
+      "options": [
+        "It increments its own position, then sends the updated vector to the recipient",
+        "It sends only the incremented value without the entire vector",
+        "It waits for all other processes to acknowledge before incrementing",
+        "It replaces its value with the maximum seen across all processes"
+      ],
+      "answer": 0,
+      "explanation": "Correct protocol: increment self, then send the vector. This records the send event in the sender's timestamp. Option 1 omits the vector information needed at the receiver. Option 2 creates waiting dependencies. Option 3 violates the increment-on-send rule."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-009",
+      "q": "What problem arises from using only Lamport timestamps to order all events in a system with millions of concurrent processes?",
+      "options": [
+        "Events are ordered but the ordering may be arbitrary for causally unrelated events, making debugging and replication harder",
+        "Lamport timestamps cannot function with more than 1000 processes",
+        "All clocks will eventually overflow and wrap around to zero",
+        "Messages will arrive out of order due to network delays"
+      ],
+      "answer": 0,
+      "explanation": "Lamport clocks scale well numerically but lose causality information—unrelated events get artificial order. Option 1 is a false limit. Option 2 is unrelated to causality issues. Option 3 assumes perfect timestamp propagation is the goal."
+    },
+    {
+      "id": "distributed-systems-logical-clocks-010",
+      "q": "In the context of the causality principle in distributed systems, what is the significance of the partial order relationship?",
+      "options": [
+        "It allows some events to remain unordered (concurrent), preserving the structure of true causal dependencies while avoiding artificial orderings",
+        "It guarantees that every pair of events has a defined causal relationship",
+        "It ensures that all messages arrive in the order they were sent",
+        "It requires processes to block until causally dependent events complete"
+      ],
+      "answer": 0,
+      "explanation": "Partial order respects causality while allowing concurrent events to remain incomparable, unlike total orders. Option 1 assumes all events must be comparable. Option 2 is inconsistent with concurrent event handling. Option 3 contradicts non-blocking systems."
+    }
+  ]
+}

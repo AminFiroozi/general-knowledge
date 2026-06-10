@@ -1,0 +1,126 @@
+{
+  "topic": "gossip-protocols",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-gossip-protocols-001",
+      "q": "What is the primary mechanism by which gossip protocols achieve information dissemination?",
+      "options": [
+        "Nodes periodically exchange information with randomly selected peers, exponentially increasing the reach of updates until full propagation is achieved",
+        "A central server broadcasts information to all nodes simultaneously",
+        "Each node sends its information to every other node in the network",
+        "Information is disseminated through a predetermined spanning tree"
+      ],
+      "answer": 0,
+      "explanation": "Gossip spreads via random pairwise exchanges; coverage grows exponentially (like epidemics), not linearly. Option 1 contradicts decentralization. Option 2 assumes point-to-point delivery to all peers. Option 3 requires a precomputed tree, limiting adaptability."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-002",
+      "q": "Why is the term 'epidemic protocol' used to describe gossip algorithms?",
+      "options": [
+        "Information spreads through a population of nodes in a manner analogous to how diseases propagate through a population via random contacts",
+        "Gossip protocols are designed to handle infectious failures in distributed systems",
+        "Epidemic protocols require quarantine mechanisms to prevent total system failure",
+        "The term refers to the exponential growth of network traffic"
+      ],
+      "answer": 0,
+      "explanation": "Like epidemics, gossip achieves exponential spread through random interactions (S → I → S model). Option 1 is about resilience, not epidemiology. Option 2 is unrelated to the analogy. Option 3 describes congestion, not epidemiology."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-003",
+      "q": "What is the 'push' variant of gossip protocols and when is it most effective?",
+      "options": [
+        "A node actively sends information to randomly selected peers; most effective in the early stage of dissemination when few nodes know the update",
+        "Nodes passively request information from other nodes, downloading updates on demand",
+        "A push variant requires a central server to initiate all information transfers",
+        "Push protocols guarantee that all nodes receive information within a bounded time"
+      ],
+      "answer": 0,
+      "explanation": "Push: sender initiates; effective early because senders are rare. Pull (opposite) is better late when many have the update. Option 1 is about pull/passive requests. Option 2 requires centralization. Option 3 is false; gossip is probabilistic."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-004",
+      "q": "How does the 'pull' variant of gossip differ from 'push' and why might it be preferred in certain scenarios?",
+      "options": [
+        "Pull: a node requests information from random peers; preferred late in dissemination to reduce load on senders and avoid duplicate sends",
+        "Pull variants guarantee lossless information propagation",
+        "Pull is more efficient than push in all scenarios",
+        "Pull protocols require a central authority to coordinate requests"
+      ],
+      "answer": 0,
+      "explanation": "Pull spreads load late when many nodes have the update; avoids redundant sends. Option 1 doesn't guarantee losslessness. Option 2 is scenario-dependent. Option 3 requires coordination."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-005",
+      "q": "What is 'anti-entropy' in gossip protocols and how does it improve fault tolerance?",
+      "options": [
+        "A background process where nodes periodically exchange complete state with peers, allowing nodes that missed previous gossip rounds to recover lost updates",
+        "Anti-entropy is a technique that deletes outdated information to save storage",
+        "Anti-entropy protocols prevent the spread of misinformation across the network",
+        "Anti-entropy works by electing a leader to broadcast all state changes"
+      ],
+      "answer": 0,
+      "explanation": "Anti-entropy: periodic full state exchange to correct gaps from missed rounds. Option 1 is about deletion. Option 2 assumes deleted data prevents spread. Option 3 requires a leader."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-006",
+      "q": "In gossip-based membership protocols, what is the 'eventual membership' guarantee?",
+      "options": [
+        "All nodes will eventually have consistent knowledge of which nodes are alive, though there may be temporary inconsistencies during failures or network partitions",
+        "All nodes must instantaneously agree on the current membership",
+        "Membership changes are never lost, even if they occur during a network partition",
+        "Gossip-based membership guarantees that crashed nodes are detected within one second"
+      ],
+      "answer": 0,
+      "explanation": "Eventual membership: all non-faulty nodes converge on the same view after sufficient gossip rounds. Option 1 assumes perfect synchrony. Option 2 is inevitable during partitions. Option 3 assumes immediate detection."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-007",
+      "q": "What is a potential weakness of gossip-based dissemination in very large networks?",
+      "options": [
+        "Messages may be gossiped multiple times to the same node, creating unnecessary network traffic and amplifying overhead linearly or quadratically",
+        "Gossip protocols do not scale beyond a few hundred nodes",
+        "Gossip requires a central coordinator to manage message delivery",
+        "Gossip protocols guarantee perfect consistency across all nodes"
+      ],
+      "answer": 0,
+      "explanation": "Redundancy: a node might receive the same update from multiple peers. In poorly tuned systems, this creates quadratic overhead. Option 1 is a false limit. Option 2 requires centralization. Option 3 contradicts eventual consistency."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-008",
+      "q": "How can gossip protocols be optimized to reduce redundant message transmission?",
+      "options": [
+        "By using techniques like bloom filters to track seen updates, digest exchanges to identify missing data before sending full payloads, and adaptive fan-out based on dissemination progress",
+        "By electing a single leader to broadcast all updates, eliminating peer-to-peer exchanges",
+        "By limiting gossip to a fixed set of 3-5 neighbors, never varying",
+        "By requiring nodes to acknowledge every received message before spreading it further"
+      ],
+      "answer": 0,
+      "explanation": "Optimizations include bloom filters (compact history), digests (identify diffs), adaptive fan-out (more early, less late). Option 1 reduces gossip to broadcast. Option 2 limits flexibility. Option 3 is unnecessary."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-009",
+      "q": "What happens in a gossip protocol if a network partition isolates a subset of nodes from the rest?",
+      "options": [
+        "Each partition converges to its own consistent view; when the partition heals, nodes exchange updates and merge views, potentially detecting concurrent updates",
+        "All nodes immediately detect the partition and halt information dissemination",
+        "The partition is impossible in gossip protocols due to their fully distributed design",
+        "One partition automatically becomes the 'canonical' view while the other is discarded"
+      ],
+      "answer": 0,
+      "explanation": "Partitioned clusters gossip internally; reunion requires merge logic (e.g., take union, use versioning). Option 1 assumes immediate detection. Option 2 is false; partitions occur in any network. Option 3 contradicts distributed decision-making."
+    },
+    {
+      "id": "distributed-systems-gossip-protocols-010",
+      "q": "Why are gossip protocols valuable for managing cluster membership in eventually consistent systems?",
+      "options": [
+        "Gossip-based membership is resilient to failures, requires no central authority, and allows nodes to organically learn about cluster topology without strict synchronization",
+        "Gossip protocols detect failures faster than heartbeat mechanisms",
+        "Gossip eliminates the need for any form of failure detection",
+        "Gossip-based membership guarantees that all nodes always have identical views of the cluster"
+      ],
+      "answer": 0,
+      "explanation": "Gossip decentralizes membership: no single point of failure, no strict timing, adaptive to churn. Option 1 assumes faster detection. Option 2 requires detection to work. Option 3 is impossible during partitions."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "work-scheduling",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-work-scheduling-001",
+      "q": "What is the difference between task parallelism and data parallelism in work scheduling?",
+      "options": [
+        "Task parallelism runs different code on the same data; data parallelism runs the same code on different data",
+        "Task parallelism is faster than data parallelism",
+        "Data parallelism requires explicit synchronization; task parallelism does not",
+        "Task parallelism uses message passing while data parallelism uses shared memory"
+      ],
+      "answer": 0,
+      "explanation": "Task parallelism executes different tasks (code) possibly on different data. Data parallelism applies the same operation to different data elements. Speed, synchronization, and communication mechanisms are orthogonal concerns."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-002",
+      "q": "In a fork-join model, what does the join operation guarantee?",
+      "options": [
+        "All spawned tasks must complete before execution continues past the join point",
+        "The parent task waits for one of the child tasks to finish",
+        "The results of all child tasks are automatically combined",
+        "The child tasks are executed sequentially after the join"
+      ],
+      "answer": 0,
+      "explanation": "Join is a synchronization barrier: the parent waits for all spawned child tasks to complete. It doesn't wait for just one child, automatically combine results, or serialize execution—it's simply a synchronization point."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-003",
+      "q": "What problem does work stealing address in parallel scheduling?",
+      "options": [
+        "It prevents busy-waiting on synchronization locks",
+        "It dynamically balances load by allowing idle processors to steal work from overloaded ones",
+        "It eliminates the need for task queues entirely",
+        "It reduces memory bandwidth requirements"
+      ],
+      "answer": 1,
+      "explanation": "Work stealing keeps processors busy by allowing idle ones to take tasks from busy ones' deques, avoiding load imbalance. It doesn't eliminate busy-waiting, remove queues, or reduce bandwidth—it's a load-balancing strategy."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-004",
+      "q": "What is granularity in the context of parallel work, and why is it important to choose appropriately?",
+      "options": [
+        "Granularity is the size of the memory cache blocks used for data parallelism",
+        "Granularity is the ratio of computation to communication; too fine granularity wastes overhead, too coarse causes load imbalance",
+        "Granularity is the number of processors available for parallel execution",
+        "Granularity is the total amount of work available to parallelize"
+      ],
+      "answer": 1,
+      "explanation": "Granularity (work size per task) is critical: small tasks have high overhead-to-work ratio, large tasks cause uneven load distribution. Cache blocks, processor count, and total work are separate concerns."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-005",
+      "q": "What does Amdahl's Law predict about speedup in a parallel system?",
+      "options": [
+        "Speedup is always proportional to the number of processors",
+        "Speedup is limited by the serial fraction of code that cannot be parallelized",
+        "Speedup increases exponentially with the amount of parallel code",
+        "Speedup is independent of the algorithm and data distribution"
+      ],
+      "answer": 1,
+      "explanation": "Amdahl's Law shows that speedup is bottlenecked by the fraction of sequential code: even with unlimited processors, the serial part limits speedup. Proportional scaling, exponential growth, and independence from algorithm are all contradicted by the law."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-006",
+      "q": "In a dynamic scheduling approach, what is the main advantage over static scheduling for load balancing?",
+      "options": [
+        "Dynamic scheduling guarantees that all processors finish at exactly the same time",
+        "Dynamic scheduling can adjust task assignments at runtime based on actual execution behavior",
+        "Dynamic scheduling uses more memory but requires fewer synchronization points",
+        "Dynamic scheduling eliminates the need for work queues"
+      ],
+      "answer": 1,
+      "explanation": "Dynamic scheduling adapts task distribution during execution based on actual load, improving balance when work distribution is unknown or irregular. It can't guarantee identical finish times, uses overhead (not just memory), and still requires queuing or coordination."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-007",
+      "q": "What is the difference between static and adaptive scheduling in task parallelism?",
+      "options": [
+        "Static scheduling pre-assigns tasks to processors; adaptive scheduling adjusts during execution based on processor availability",
+        "Static scheduling is always faster than adaptive scheduling",
+        "Adaptive scheduling requires more processors than static scheduling",
+        "Static scheduling works only for data parallelism, adaptive only for task parallelism"
+      ],
+      "answer": 0,
+      "explanation": "Static scheduling makes all decisions upfront, while adaptive/dynamic scheduling observes performance and adjusts. Neither is universally faster; processor count requirements depend on workload; both apply to various parallelism patterns."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-008",
+      "q": "What is locality-aware scheduling, and why does it improve performance?",
+      "options": [
+        "Scheduling that ensures threads never migrate between processors",
+        "Scheduling that places tasks on processors close to their data (in NUMA terms) to reduce memory latency",
+        "Scheduling that only works on single-socket systems",
+        "Scheduling that prioritizes cache reuse by executing the same task repeatedly"
+      ],
+      "answer": 1,
+      "explanation": "Locality-aware scheduling places tasks where their data is to minimize NUMA penalties and memory latency. It doesn't prevent migration, isn't socket-specific, and doesn't require task repetition."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-009",
+      "q": "In a work queue with a single queue protected by a mutex, what performance bottleneck emerges under contention?",
+      "options": [
+        "Processors stall waiting for the mutex, reducing parallelism and increasing synchronization overhead",
+        "The queue grows too large and overflows",
+        "Work is duplicated across multiple processors",
+        "The queue scheduler predicts the wrong task dependencies"
+      ],
+      "answer": 0,
+      "explanation": "A centralized queue bottlenecks on the mutex: all processors contend for it, serializing access and spending time in synchronization rather than work. Overflow, duplication, and prediction aren't the issue—it's contention."
+    },
+    {
+      "id": "parallel-computing-work-scheduling-010",
+      "q": "Why is the concept of critical path relevant to parallel scheduling?",
+      "options": [
+        "The critical path determines the minimum possible execution time for the entire parallel program",
+        "The critical path identifies which variables must be protected with locks",
+        "The critical path shows which processors are overloaded",
+        "The critical path measures the total communication overhead in the system"
+      ],
+      "answer": 0,
+      "explanation": "The critical path is the longest chain of dependent tasks; no scheduling can complete faster than the critical path takes. It's not about locks, processor load, or communication—it's a fundamental lower bound on execution time."
+    }
+  ]
+}

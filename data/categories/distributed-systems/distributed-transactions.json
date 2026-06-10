@@ -1,0 +1,126 @@
+{
+  "topic": "distributed-transactions",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-distributed-transactions-001",
+      "q": "What is the primary purpose of the two-phase commit (2PC) protocol?",
+      "options": [
+        "To ensure all-or-nothing atomicity across multiple databases by coordinating prepare and commit phases",
+        "To reduce network latency by committing half the transaction on one server and the rest on another",
+        "To eliminate the need for transaction logs on individual database nodes",
+        "To guarantee that messages are delivered exactly once across a network"
+      ],
+      "answer": 0,
+      "explanation": "2PC ensures atomicity across distributed systems through prepare (get agreement) and commit (execute together) phases. Option 1 is about latency reduction, not atomicity. Option 2 is incorrect; transaction logs are still essential. Option 3 addresses message delivery, not transaction guarantees."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-002",
+      "q": "What is a critical vulnerability of two-phase commit during the commit phase?",
+      "options": [
+        "If the coordinator fails after participants vote yes but before sending commit, participants remain indefinitely locked in a prepared state",
+        "The protocol requires participants to use identical database engines",
+        "It cannot handle more than 10 participants simultaneously",
+        "Participants automatically abort if the coordinator fails to respond within one second"
+      ],
+      "answer": 0,
+      "explanation": "The 'blocking problem': prepared resources are locked and inaccessible until the coordinator recovers. Option 1 is unnecessary; 2PC works across heterogeneous systems. Option 2 is false; arbitrary participant counts are supported. Option 3 contradicts the blocking problem—timeouts are not automatic."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-003",
+      "q": "How does three-phase commit (3PC) address the blocking problem of 2PC?",
+      "options": [
+        "By introducing a pre-commit phase allowing participants to prepare for commit or abort without the coordinator, enabling timeout-based recovery",
+        "By requiring three separate network round trips instead of two, reducing coordinator failure impact",
+        "By eliminating the need for a coordinator altogether",
+        "By allowing any participant to unilaterally abort transactions"
+      ],
+      "answer": 0,
+      "explanation": "3PC adds pre-commit (CanCommit → PreCommit → Commit), enabling participants to recover via timeout if the coordinator crashes between phases. Option 1 correctly describes the improvement. Option 2 is a side effect, not the primary solution. Option 3 is false; 3PC still requires coordination."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-004",
+      "q": "What is a saga in the context of distributed transactions?",
+      "options": [
+        "A sequence of local transactions where each step is reversible, coordinated by compensating transactions on failure",
+        "A single transaction that spans multiple databases in a synchronous commit",
+        "A log of all transaction attempts for auditing purposes",
+        "A consensus protocol that ensures all replicas have identical data"
+      ],
+      "answer": 0,
+      "explanation": "Sagas decompose distributed transactions into local operations with compensation logic (e.g., debit → credit compensation). Option 1 describes synchronous 2PC, not sagas. Option 2 is an audit log. Option 3 is unrelated to transaction coordination."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-005",
+      "q": "What isolation level issue arises when sagas are used instead of strong ACID transactions?",
+      "options": [
+        "Intermediate states are visible to other transactions, risking dirty reads and the 'lost update' problem if compensation is incomplete",
+        "Sagas provide the same isolation as traditional transactions but with higher latency",
+        "Isolation is guaranteed by the compensation mechanism automatically",
+        "Other transactions cannot view the database while a saga executes"
+      ],
+      "answer": 0,
+      "explanation": "Sagas sacrifice isolation: each step commits locally, allowing dirty reads and concurrent modifications. Option 1 is false; sagas maintain snapshot isolation. Option 2 contradicts the isolation weakness of sagas. Option 3 is impossible; sagas allow concurrent visibility."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-006",
+      "q": "In a distributed transaction system, what does ACID guarantee provide?",
+      "options": [
+        "Atomicity (all-or-nothing), Consistency (valid state transition), Isolation (concurrent independence), Durability (persistence after commit)",
+        "Availability, Consistency, Isolation, and Deployment across regions",
+        "Automatic, Consistent, Isolated, and Durable replication",
+        "Asynchronous, Cached, Indexed, and Distributed updates"
+      ],
+      "answer": 0,
+      "explanation": "ACID is the classical transaction guarantee framework. The other options misstate the acronym's meaning. Option 1 is the correct definition of each property."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-007",
+      "q": "How does write skew differ from other isolation anomalies in distributed transactions?",
+      "options": [
+        "Write skew occurs when two transactions modify different records and both read a consistent view before either writes, violating constraint assumptions",
+        "Write skew is guaranteed not to occur under snapshot isolation",
+        "Write skew requires the coordinator to detect conflicting writes before committing",
+        "Write skew happens when a write operation is replicated before the read phase completes"
+      ],
+      "answer": 0,
+      "explanation": "Write skew: transactions read same state, modify different records, both commit, violating invariants—snapshot isolation doesn't prevent it. Option 1 is false; write skew can occur under snapshot isolation. Option 2 assumes detection is always needed. Option 3 is incorrect; replication timing doesn't cause write skew."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-008",
+      "q": "What happens in a distributed transaction if the network partitions between the coordinator and a participant after the participant votes yes?",
+      "options": [
+        "The participant enters a blocked state, unable to release locks until the coordinator recovers or a timeout triggers recovery logic",
+        "The participant automatically aborts the transaction to free resources",
+        "The transaction is silently rolled back without notification",
+        "The coordinator detects the partition and immediately commits on behalf of the participant"
+      ],
+      "answer": 0,
+      "explanation": "Partition during commit phase blocks the participant; this is the core blocking problem of 2PC. Option 1 is automatic abort, which leaves resources in doubt. Option 2 is silent and incorrect. Option 3 would violate safety (you cannot commit without confirmation)."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-009",
+      "q": "Why do event sourcing and choreography-based sagas reduce the blocking issues of 2PC?",
+      "options": [
+        "Each step is a local transaction with an immutable event log, allowing asynchronous replay and recovery without blocking waiting for a coordinator",
+        "They guarantee that all databases are synchronized in real time",
+        "They eliminate the need for transaction logs entirely",
+        "They replace the coordinator with a consensus algorithm that is always available"
+      ],
+      "answer": 0,
+      "explanation": "Event sourcing decouples services via events; choreography removes centralized coordinator bottlenecks. Option 1 is false; services must synchronize. Option 2 assumes event logs are unnecessary. Option 3 is false; consensus algorithms can also partition."
+    },
+    {
+      "id": "distributed-systems-distributed-transactions-010",
+      "q": "In what scenario should 2PC be chosen over saga-based transactions?",
+      "options": [
+        "When strong ACID guarantees are required and high availability is less critical than correctness, typically in financial or billing systems",
+        "When the system has more than 100 participating databases",
+        "When latency requirements are below 10 milliseconds",
+        "When saga compensation logic would be too complex to implement"
+      ],
+      "answer": 0,
+      "explanation": "2PC is appropriate when atomicity is paramount and unavailability is tolerable. Option 1 is not a hard limit. Option 2 contradicts latency requirements of 2PC. Option 3 is a rationalization for sagas, not a reason to use 2PC."
+    }
+  ]
+}

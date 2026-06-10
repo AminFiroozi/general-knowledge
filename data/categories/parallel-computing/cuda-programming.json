@@ -1,0 +1,126 @@
+{
+  "topic": "cuda-programming",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-cuda-programming-001",
+      "q": "In CUDA, what is a kernel and how does it relate to thread execution?",
+      "options": [
+        "A kernel is a library function that runs on the CPU to manage GPU operations",
+        "A kernel is a function that runs on the GPU, with many copies executing in parallel across threads",
+        "A kernel is the scheduling algorithm that decides thread order",
+        "A kernel is a section of GPU memory reserved for critical data"
+      ],
+      "answer": 1,
+      "explanation": "A CUDA kernel is a function executed on the GPU with many parallel instances (one per thread). Each thread executes the same kernel code on different data. Kernels are not CPU functions, schedulers, or memory regions."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-002",
+      "q": "How are threads organized hierarchically in CUDA?",
+      "options": [
+        "Threads are arranged in a single linear array managed by the kernel",
+        "Threads are organized into blocks, and blocks are organized into a grid",
+        "Threads form a tree structure with a root thread managing children",
+        "Threads are grouped by their execution priority on the SM"
+      ],
+      "answer": 1,
+      "explanation": "CUDA uses a grid of blocks, where each block contains threads. This hierarchy enables both local and global synchronization mechanisms. Linear arrays, tree structures, and priority groupings are not how CUDA organizes threads."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-003",
+      "q": "What is a warp in GPU execution, and why is warp divergence problematic?",
+      "options": [
+        "A warp is a memory barrier that threads must synchronize at before continuing",
+        "A warp is a group of threads that execute the same instruction; divergence causes some threads to idle while others execute",
+        "A warp is a section of shared memory allocated per block",
+        "A warp is a synchronization primitive that prevents race conditions"
+      ],
+      "answer": 1,
+      "explanation": "A warp (typically 32 threads on NVIDIA GPUs) executes in lockstep. When threads diverge in a branch (e.g., if-else), some paths are serialized and idle threads don't execute, wasting throughput. Warps aren't barriers, memory, or synchronization primitives."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-004",
+      "q": "Shared memory in CUDA is fast but limited. What is its primary purpose?",
+      "options": [
+        "To cache frequently accessed global memory automatically",
+        "To provide low-latency storage for data shared between threads within a block",
+        "To store the registers used by each thread",
+        "To hold kernel arguments passed from the host"
+      ],
+      "answer": 1,
+      "explanation": "Shared memory is explicitly managed per-block storage (on-chip SRAM) for inter-thread communication within a block. It doesn't automatically cache, isn't a register storage, and kernel arguments live in global memory or constants."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-005",
+      "q": "What does the __syncthreads() function do in a CUDA kernel?",
+      "options": [
+        "Synchronizes the GPU with the CPU host",
+        "Creates a barrier where all threads in the block wait until every thread reaches that point",
+        "Synchronizes the L1 and L2 caches",
+        "Ensures that all writes to global memory are visible across blocks"
+      ],
+      "answer": 1,
+      "explanation": "__syncthreads() is a block-level barrier—all threads in a block pause until all reach the call, enabling safe sharing of data via shared memory. It doesn't sync with the CPU, caches, or other blocks."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-006",
+      "q": "In CUDA, occupancy refers to the ratio of active warps to the maximum possible on an SM. Why does occupancy matter?",
+      "options": [
+        "Higher occupancy directly correlates with faster kernel execution",
+        "Higher occupancy allows the GPU to hide memory latency by switching between warps while others wait",
+        "Occupancy determines how much shared memory each thread can use",
+        "Lower occupancy is actually better because it reduces synchronization overhead"
+      ],
+      "answer": 1,
+      "explanation": "Occupancy impacts latency hiding: while some warps wait for memory, others execute, keeping the SM busy. Higher occupancy is generally better (though with diminishing returns). Occupancy doesn't directly guarantee speed, doesn't determine shared memory per-thread, and lower isn't better."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-007",
+      "q": "What is bank conflict in CUDA shared memory, and how does it degrade performance?",
+      "options": [
+        "Two threads try to write to the same shared memory address simultaneously",
+        "Multiple threads access different banks of shared memory, causing serialization",
+        "The compiler fails to allocate enough shared memory",
+        "A thread's registers are exhausted and spill to shared memory"
+      ],
+      "answer": 1,
+      "explanation": "Shared memory is organized into banks (typically 32). If multiple threads access the same bank in the same cycle, accesses serialize rather than parallelize. Different banks can be accessed in parallel; simultaneous writes to one address are prevented by the hardware; spilling is a different issue."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-008",
+      "q": "Why is coalescing of global memory access important in CUDA?",
+      "options": [
+        "Coalescing reduces the number of threads that can run simultaneously",
+        "Coalescing combines multiple memory transactions into fewer wider transactions, improving bandwidth utilization",
+        "Coalescing is required to prevent bank conflicts in global memory",
+        "Coalescing ensures that all threads access memory at the same time"
+      ],
+      "answer": 1,
+      "explanation": "When a warp's memory accesses are coalesced (contiguous addresses), they combine into fewer transactions, maximizing bandwidth. Coalescing improves throughput, doesn't reduce thread count, isn't a bank-conflict solution (global memory has no banks), and doesn't require simultaneous access."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-009",
+      "q": "In CUDA, what is the purpose of constant memory?",
+      "options": [
+        "To store variables that never change during kernel execution",
+        "To provide cached, read-only data accessible to all threads with minimal latency after the first read",
+        "To allocate space for arrays that must be the same size across all kernels",
+        "To reserve memory that is protected from modification by any kernel"
+      ],
+      "answer": 1,
+      "explanation": "Constant memory is cached and accessible by all threads uniformly, ideal for read-only parameters. After cached, it has very low latency. It's not for variables that never change conceptually; arrays can be any size; and it's not write-protected."
+    },
+    {
+      "id": "parallel-computing-cuda-programming-010",
+      "q": "What is a global memory transaction in CUDA, and why do modern GPUs use caching for global memory?",
+      "options": [
+        "A global memory transaction is a synchronization event between blocks",
+        "A transaction is the hardware's atomic load/store operation on global memory; caching reduces repeated accesses to main memory",
+        "A transaction is a kernel invocation that modifies global state",
+        "A transaction is a memory operation that requires explicit GPU-CPU synchronization"
+      ],
+      "answer": 1,
+      "explanation": "Global memory transactions are individual memory operations. Modern GPUs cache global memory (L1/L2) to reduce main memory bandwidth and latency. Transactions are not synchronization events, kernel invocations, or CPU-GPU syncs."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "sharding-and-partitioning",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-sharding-and-partitioning-001",
+      "q": "What is the fundamental difference between hash-based and range-based partitioning?",
+      "options": [
+        "Hash partitioning distributes keys uniformly using a hash function; range partitioning assigns contiguous key ranges to shards",
+        "Range partitioning uses a hash function while hash partitioning sorts keys alphabetically",
+        "Hash partitioning requires rebalancing whenever new shards are added, while range partitioning never requires rebalancing",
+        "Range partitioning distributes keys uniformly while hash partitioning creates hotspots"
+      ],
+      "answer": 0,
+      "explanation": "Hash spreads keys via hash(key) % num_shards; range assigns ranges like [A-M] → shard1, [N-Z] → shard2. Option 1 reverses the strategies. Option 2 is false; both partition methods handle rebalancing differently. Option 3 incorrectly assigns hotspot properties."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-002",
+      "q": "What is a hotspot in the context of sharding?",
+      "options": [
+        "A shard or partition that receives a disproportionately high volume of requests due to non-uniform data or access patterns",
+        "A server that is geographically close to clients, reducing latency",
+        "A data record that has been updated more times than others",
+        "A partition that uses more memory than other partitions"
+      ],
+      "answer": 0,
+      "explanation": "Hotspots arise from skewed access patterns or non-uniform key distributions, overloading individual shards. Option 1 is about geographic proximity, not load. Option 2 is about modification frequency. Option 3 is a side effect, not the definition."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-003",
+      "q": "Why can range-based partitioning lead to hotspots more easily than hash-based partitioning?",
+      "options": [
+        "Sequential key ranges may correspond to temporal or logical clusters in the data; if requests concentrate on recent/popular data, entire ranges become hot",
+        "Hash functions always distribute load equally across shards",
+        "Range partitioning assigns smaller key ranges to handle high-traffic shards",
+        "Hash-based partitioning automatically adjusts shard boundaries when hotspots are detected"
+      ],
+      "answer": 0,
+      "explanation": "Range partitioning preserves ordering, so popular ranges become bottlenecks (e.g., recent timestamps). Hash distributes randomly, reducing such clustering. Option 1 is not universal. Option 2 incorrectly assumes automatic adjustment. Option 3 is false; hash doesn't auto-adjust boundaries."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-004",
+      "q": "What is consistent hashing and why is it used in distributed systems?",
+      "options": [
+        "A hashing scheme that maps keys to positions on a ring, minimizing key redistribution when nodes are added or removed",
+        "A method ensuring that all hash functions across nodes produce identical outputs",
+        "A protocol for synchronizing hash tables across multiple servers",
+        "A technique that rehashes all keys whenever the number of shards changes"
+      ],
+      "answer": 0,
+      "explanation": "Consistent hashing uses a ring; adding/removing nodes affects only O(keys/n) keys, not all keys. Option 1 is a misconception about identical outputs. Option 2 is about synchronization, not hashing. Option 3 is the opposite of consistent hashing's advantage."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-005",
+      "q": "In consistent hashing, what problem does adding virtual nodes solve?",
+      "options": [
+        "Virtual nodes distribute responsibility more evenly across physical nodes, reducing load imbalance when nodes are added, removed, or have different capacities",
+        "Virtual nodes allow consistent hashing to work with non-numeric keys",
+        "Virtual nodes eliminate the need for rebalancing when shards are added",
+        "Virtual nodes assign a unique hash function to each physical node"
+      ],
+      "answer": 0,
+      "explanation": "Virtual nodes (replicas of physical nodes on the ring) improve load distribution and tolerate capacity differences. Option 1 is false; virtual nodes don't eliminate rebalancing. Option 2 is unrelated to balancing. Option 3 is incorrect; each physical node uses the same function."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-006",
+      "q": "What is the primary challenge when rebalancing shards in a live distributed system?",
+      "options": [
+        "Minimizing data migration overhead and downtime while maintaining consistency and not overloading existing shards during the transition",
+        "Ensuring that all nodes use the same hash function during rebalancing",
+        "Preventing new keys from being written until rebalancing completes",
+        "Detecting which keys belong to which shards before migration"
+      ],
+      "answer": 0,
+      "explanation": "Rebalancing moves data while queries and writes continue; poor management causes cascading overloads and data inconsistency. Option 1 is a valid constraint. Option 2 is about coordination, not challenge. Option 3 would create unavailability."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-007",
+      "q": "How does directory-based partitioning differ from hash-based and range-based approaches?",
+      "options": [
+        "A directory service maps each key (or key range) to a specific shard, decoupling the mapping from the partitioning scheme itself",
+        "Directory-based partitioning uses timestamps to assign keys to shards",
+        "Directory-based partitioning distributes keys using a cryptographic hash",
+        "Directory-based partitioning requires physical co-location of related keys"
+      ],
+      "answer": 0,
+      "explanation": "Directory (lookup table): key → shard_id via an external service, allowing arbitrary, flexible mappings. Option 1 uses timestamps, not a directory. Option 2 is hash-based. Option 3 is a property of range partitioning, not directories."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-008",
+      "q": "What is a potential drawback of hash-based partitioning in systems with evolving data models?",
+      "options": [
+        "When the number of shards changes, hash(key) % num_shards produces different results, requiring expensive global rebalancing of all keys",
+        "Hash-based partitioning cannot accommodate new shards without changing the hash function",
+        "Hash functions become invalid if the key schema is modified",
+        "Hash-based partitioning is incompatible with range queries"
+      ],
+      "answer": 0,
+      "explanation": "Changing num_shards breaks the hash modulo, necessitating total rebalance (mitigated by consistent hashing). Option 1 is false; hash functions accommodate new shards via the function itself. Option 2 assumes schema changes invalidate hashes. Option 3 is true but not about sharding changes."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-009",
+      "q": "When performing a shard split, why is it critical to avoid writes to the shard being split?",
+      "options": [
+        "Writes during the split can create data that is inconsistent across the original and new shards, potentially losing updates or creating duplicates",
+        "Splits automatically halt all writes to improve performance",
+        "The split process requires the shard to be empty before it can proceed",
+        "Writes interfere with the hash function calculation"
+      ],
+      "answer": 0,
+      "explanation": "Data moved to the new shard during split may not reflect concurrent writes, causing inconsistencies. Option 1 is false; splits don't halt writes automatically. Option 2 is unnecessary; splits can work with in-flight operations. Option 3 is unrelated to consistency."
+    },
+    {
+      "id": "distributed-systems-sharding-and-partitioning-010",
+      "q": "In a geo-distributed sharding system, why might you choose to shard by geography rather than a neutral hash?",
+      "options": [
+        "To co-locate users with their data, reducing latency and enabling simpler compliance with data residency regulations per region",
+        "Geographic sharding always provides better query performance than hash-based sharding",
+        "Geographic partitioning prevents all hotspot issues in distributed systems",
+        "Geographic sharding eliminates the need for cross-shard transactions"
+      ],
+      "answer": 0,
+      "explanation": "Geography-aware sharding improves locality and regulatory compliance but may create hotspots if regions have uneven populations. Option 1 is not a guarantee. Option 2 is false; cross-region queries still occur. Option 3 doesn't eliminate cross-shard transactions."
+    }
+  ]
+}

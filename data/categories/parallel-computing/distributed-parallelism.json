@@ -1,0 +1,126 @@
+{
+  "topic": "distributed-parallelism",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-distributed-parallelism-001",
+      "q": "What is the primary distinction between distributed memory and shared memory parallel systems?",
+      "options": [
+        "Distributed systems are slower but cheaper to build",
+        "Distributed systems require explicit message passing between processors; shared memory allows direct access to all memory",
+        "Shared memory systems can only run sequential code",
+        "Distributed systems don't require synchronization"
+      ],
+      "answer": 1,
+      "explanation": "Distributed memory systems have no single shared address space; processors communicate via explicit messages (MPI). Shared memory systems share a single address space for direct access. Speed/cost trade-offs, execution models, and synchronization are separate considerations."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-002",
+      "q": "In the MapReduce framework, what does the map phase do?",
+      "options": [
+        "It combines partial results from different processors into a final result",
+        "It partitions the input data and applies a function to each partition in parallel",
+        "It maps processor IDs to their corresponding nodes",
+        "It repartitions data to prepare for the reduce phase"
+      ],
+      "answer": 1,
+      "explanation": "Map applies a function (mapper) to partitions of input data in parallel, producing key-value pairs. Combine merges results; the second distractor is repartition, which happens between map and reduce; mapping IDs isn't relevant."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-003",
+      "q": "In the MapReduce framework, what does the reduce phase do?",
+      "options": [
+        "It shrinks the dataset to a smaller size",
+        "It applies the map function again with different parameters",
+        "It aggregates all values associated with each key across all mappers",
+        "It removes duplicate key-value pairs from the output"
+      ],
+      "answer": 2,
+      "explanation": "Reduce groups values by key and aggregates them (e.g., sum, count, concatenate). It doesn't shrink, re-run map, or deduplicate—it aggregates across all parallel map outputs."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-004",
+      "q": "What is the shuffle and sort phase in MapReduce, and why is it necessary?",
+      "options": [
+        "It randomizes data to ensure balanced loads across reducers",
+        "It groups all values with the same key together before sending to reducers, enabling aggregation",
+        "It sorts the output in ascending order for the user",
+        "It compresses data to reduce network bandwidth"
+      ],
+      "answer": 1,
+      "explanation": "Shuffle-sort groups map outputs by key and sorts them so a reducer receives all values for each key together. Randomization, sorting for users, and compression are not the primary purposes—it's about key grouping for reduce."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-005",
+      "q": "What does a barrier collective communication operation do in distributed parallelism?",
+      "options": [
+        "It sends a message from one processor to all others",
+        "It prevents a certain processor from communicating with others",
+        "It synchronizes all processors, blocking each until all have reached the barrier",
+        "It creates a hierarchical tree structure for communication"
+      ],
+      "answer": 2,
+      "explanation": "A barrier is a synchronization collective: all participating processors wait until each has called the barrier. It's not broadcast, exclusion, or hierarchy—it's pure synchronization."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-006",
+      "q": "In distributed systems, what is the main challenge of achieving strong scaling as the number of processors increases?",
+      "options": [
+        "Processors run out of cache memory",
+        "The ratio of communication to computation increases, eventually dominating execution time",
+        "The serial fraction becomes larger",
+        "Synchronization locks become more expensive"
+      ],
+      "answer": 1,
+      "explanation": "Strong scaling fixes problem size: as processors increase, communication overhead (latency and bandwidth) becomes a larger fraction of total work, creating a bottleneck. Cache, serial fractions, and lock costs don't specifically capture the communication-to-computation ratio growth."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-007",
+      "q": "What is a broadcast collective operation in MPI?",
+      "options": [
+        "One processor sends the same data to all others simultaneously",
+        "All processors send data to a central coordinator",
+        "Processors exchange data with their nearest neighbors",
+        "Each processor broadcasts a unique message to every other processor"
+      ],
+      "answer": 0,
+      "explanation": "Broadcast sends data from one root processor to all participants. Gather/reduce collects to a center; neighbor exchange is different; each processor sending unique data is an all-gather or scatter operation."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-008",
+      "q": "In data parallelism, how is a computation distributed across multiple nodes?",
+      "options": [
+        "Different nodes execute different code on the same data",
+        "Each node executes the same code on different partitions of the input data",
+        "One node coordinates while others execute in a master-slave model",
+        "Nodes communicate frequently to ensure they execute identical operations"
+      ],
+      "answer": 1,
+      "explanation": "Data parallelism applies the same operation to different data segments. Task parallelism (not data) uses different code; master-slave is an orchestration pattern; frequent communication defeats data parallelism's purpose."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-009",
+      "q": "What is latency hiding in distributed parallelism, and when is it most effective?",
+      "options": [
+        "Optimizing network hardware to reduce message delays",
+        "Overlapping computation with communication so processors don't stall while waiting for messages",
+        "Reducing the size of messages to decrease transmission time",
+        "Minimizing the number of communication rounds"
+      ],
+      "answer": 1,
+      "explanation": "Latency hiding overlaps work with communication waits, keeping processors productive. It's not hardware optimization, message size reduction, or minimizing rounds—it's about scheduling overlap."
+    },
+    {
+      "id": "parallel-computing-distributed-parallelism-010",
+      "q": "What is a bottleneck in distributed algorithms, and how does it relate to overall system scalability?",
+      "options": [
+        "A bottleneck is a processor that is slower than others",
+        "A bottleneck is a point of serialization or limited bandwidth that limits overall throughput and prevents linear scalability",
+        "A bottleneck is a communication link that is overused",
+        "A bottleneck is a phase of execution that takes the longest"
+      ],
+      "answer": 1,
+      "explanation": "A bottleneck is any serialized or bandwidth-limited point that constrains system throughput (e.g., central coordinator, slow network link, communication overhead). It limits scalability because it becomes the weakest link. Processor speed, specific links, and execution phases are manifestations, not definitions."
+    }
+  ]
+}

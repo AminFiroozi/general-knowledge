@@ -1,0 +1,126 @@
+{
+  "topic": "memory-consistency-models",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-memory-consistency-models-001",
+      "q": "In sequential consistency, what is the fundamental guarantee about the order of memory operations?",
+      "options": [
+        "All processors see operations from all other processors in some global order consistent with each processor's local order",
+        "Operations are reordered at the hardware level based on data dependencies only",
+        "Each processor has its own independent memory with eventual updates",
+        "Reads always see the most recently written value from any processor"
+      ],
+      "answer": 0,
+      "explanation": "Sequential consistency ensures a total order of operations visible to all processors, consistent with each processor's program order. Relaxed models violate this with reordering, eventual consistency doesn't guarantee a global order, and not all reads necessarily see the most recent write."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-002",
+      "q": "Which relaxed consistency model allows operations to be reordered but maintains acquire-release synchronization points?",
+      "options": [
+        "Total Store Ordering (TSO)",
+        "Release Consistency",
+        "Weak Ordering",
+        "Causal Consistency"
+      ],
+      "answer": 1,
+      "explanation": "Release Consistency allows reordering between acquire and release operations but treats acquires and releases as synchronization points that order operations across them. TSO is stricter; weak ordering only guarantees order around synchronization variables; causal consistency tracks causality differently."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-003",
+      "q": "What is the primary purpose of a memory barrier (fence) instruction in parallel systems?",
+      "options": [
+        "To prevent processors from accessing memory addresses beyond a certain range",
+        "To enforce ordering of memory operations and ensure visibility across processors",
+        "To allocate additional cache lines for critical sections",
+        "To reduce latency by prefetching memory values"
+      ],
+      "answer": 1,
+      "explanation": "Memory barriers enforce that operations before the barrier complete before those after it, and ensure visibility across processors. They don't restrict address ranges, allocate cache, or prefetch—they're synchronization mechanisms."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-004",
+      "q": "A load-acquire operation is semantically stronger than a relaxed load because it prevents what?",
+      "options": [
+        "Subsequent operations from being reordered before it",
+        "The processor from caching the loaded value",
+        "Other processors from writing to the same memory location",
+        "The CPU from executing other instructions in parallel"
+      ],
+      "answer": 0,
+      "explanation": "Load-acquire prevents subsequent memory operations from being reordered before it, creating a synchronization point. It doesn't prevent caching, other writes, or parallel execution of independent instructions—just establishes ordering."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-005",
+      "q": "In a store-release operation, which guarantee does it provide beyond a relaxed store?",
+      "options": [
+        "The value is immediately visible to all other processors",
+        "Prior memory operations must complete before the release store executes",
+        "The processor will not cache the stored value",
+        "All pending writes to main memory are flushed first"
+      ],
+      "answer": 1,
+      "explanation": "Store-release ensures all prior operations complete before the release executes, preventing reordering. It doesn't guarantee instant visibility, disable caching, or flush main memory—it orders operations relative to the release point."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-006",
+      "q": "What problem can occur if a processor reorders a read of a shared variable before a store-release that precedes it in program order?",
+      "options": [
+        "The read may see a stale value from before the release intended to publish new data",
+        "The processor's cache becomes incoherent with other caches",
+        "A deadlock occurs because the release is delayed",
+        "The read operation takes longer than the write operation"
+      ],
+      "answer": 0,
+      "explanation": "Reordering a read before a store-release violates the synchronization invariant: the release is meant to publish data, so reading before it defeats that purpose and may see stale data. This doesn't cause incoherence, deadlock, or latency issues—it's a visibility problem."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-007",
+      "q": "Which memory consistency model is most commonly implemented in modern x86-64 processors?",
+      "options": [
+        "Sequential Consistency",
+        "Total Store Ordering (TSO)",
+        "Release Consistency",
+        "Weak Consistency"
+      ],
+      "answer": 1,
+      "explanation": "x86-64 implements TSO, which is stronger than release consistency but weaker than full sequential consistency. It allows store-load reordering but prevents other reorderings. Full sequential consistency is too expensive; release consistency is weaker than TSO."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-008",
+      "q": "What is a memory ordering violation, and why is it particularly dangerous in lock-free algorithms?",
+      "options": [
+        "A situation where the CPU runs out of memory bandwidth",
+        "A reordering of operations that breaks the algorithm's synchronization assumptions, causing incorrect results",
+        "A deadlock caused by circular memory dependencies",
+        "A cache eviction that forces a reload from main memory"
+      ],
+      "answer": 1,
+      "explanation": "Lock-free algorithms rely on specific orderings of atomic operations to maintain correctness. Unexpected reorderings can break assumptions and cause data corruption or logic errors. Bandwidth limits, deadlocks, and cache evictions are separate performance concerns."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-009",
+      "q": "In ARM processors, which barrier instruction establishes full sequential consistency?",
+      "options": [
+        "DMB (Data Memory Barrier) with inner shareable domain",
+        "DSB (Data Synchronization Barrier) with inner shareable domain",
+        "ISB (Instruction Synchronization Barrier)",
+        "DMB with outer shareable domain followed by DSB"
+      ],
+      "answer": 1,
+      "explanation": "DSB with inner shareable domain provides sequential consistency on ARM, ensuring all prior operations complete and are visible before subsequent operations. DMB is weaker (doesn't wait for completion); ISB is for instruction cache; outer domain is weaker than inner."
+    },
+    {
+      "id": "parallel-computing-memory-consistency-models-010",
+      "q": "Why might a programmer choose relaxed memory ordering over acquire-release even though acquire-release is more predictable?",
+      "options": [
+        "Relaxed ordering is always faster on all hardware",
+        "Relaxed ordering provides better cache locality",
+        "Relaxed ordering may allow more aggressive compiler optimizations and reordering for non-dependent operations",
+        "Relaxed ordering reduces power consumption because barriers are expensive"
+      ],
+      "answer": 2,
+      "explanation": "Relaxed ordering allows compilers and processors to reorder independent operations more aggressively, enabling further optimizations. While barriers have overhead, relaxed ordering isn't universally faster, doesn't inherently improve locality, and power savings are not the primary motivation for the choice."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "lock-free-programming",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-lock-free-programming-001",
+      "q": "What is the fundamental difference between lock-free and wait-free algorithms?",
+      "options": [
+        "Lock-free algorithms use spinlocks while wait-free algorithms use barriers",
+        "Lock-free guarantees system-wide progress but not per-thread; wait-free guarantees per-thread progress",
+        "Wait-free algorithms are faster because they don't check locks at all",
+        "Lock-free is for single-threaded code; wait-free is for multithreaded code"
+      ],
+      "answer": 1,
+      "explanation": "Lock-free requires that if the system is running, some thread will make progress; wait-free requires every thread to make progress in a bounded number of steps. Wait-free is stronger and harder to achieve. Spinlocks are blocking; barriers are ordering tools; and both apply to multithreaded code."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-002",
+      "q": "The ABA problem occurs in compare-and-swap operations. Which scenario describes it?",
+      "options": [
+        "A thread reads value A, but before CAS, another thread changes it to B then back to A",
+        "Two threads try to swap the same memory location simultaneously",
+        "A thread attempts to swap a value that was never initialized to A",
+        "The CAS instruction fails three times in a row, causing a deadlock"
+      ],
+      "answer": 0,
+      "explanation": "The ABA problem is when a value changes and returns to its original value, fooling CAS into thinking nothing changed when the intermediate modification matters (e.g., deleted nodes in a list). Simultaneous swaps are handled by CAS semantics; uninitialized values aren't the problem; CAS doesn't deadlock."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-003",
+      "q": "What does it mean for an atomic operation to provide linearizability?",
+      "options": [
+        "The operation completes in linear time relative to input size",
+        "Each operation appears to take effect at a single point in time, respecting real-time ordering",
+        "The operation uses a linear search internally",
+        "Multiple atomic operations can be combined into a linear pipeline"
+      ],
+      "answer": 1,
+      "explanation": "Linearizability means each operation has a single linearization point where it logically takes effect, and the system is consistent with the real-time order of operations. It's about logical atomicity, not time complexity, search algorithms, or pipelining."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-004",
+      "q": "In a lock-free queue, why is a dummy node often added at the head?",
+      "options": [
+        "To simplify the CAS logic by always having a node to operate on",
+        "To prevent memory leaks by holding a reference",
+        "To reduce CPU cache misses",
+        "To ensure the queue never becomes completely empty"
+      ],
+      "answer": 0,
+      "explanation": "The dummy node eliminates the special case of an empty queue, simplifying CAS operations because head always has a successor. This doesn't prevent leaks, reduce cache misses, or prevent emptiness—it's a structural simplification."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-005",
+      "q": "What is the primary purpose of hazard pointers in lock-free data structures?",
+      "options": [
+        "To mark regions of code that are unsafe to enter",
+        "To prevent other threads from reclaiming (deallocating) nodes that a thread is still reading",
+        "To increase the speed of pointer dereferences",
+        "To track which pointers are shared between threads"
+      ],
+      "answer": 1,
+      "explanation": "Hazard pointers (or hazard links) announce which nodes a thread is using, preventing other threads from freeing them. They solve the memory reclamation problem in lock-free structures without garbage collection. They're not safety markers, don't improve speed, and automatically track shared pointers."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-006",
+      "q": "When implementing a lock-free counter, what does an atomic fetch-and-add (FAA) operation guarantee?",
+      "options": [
+        "The counter is incremented before any reader sees the old value",
+        "Each increment operation is indivisible and contributes exactly one to the final result",
+        "The counter never decreases",
+        "All threads read the counter in the same order"
+      ],
+      "answer": 1,
+      "explanation": "FAA atomically increments and returns the old value, so each thread's increment is guaranteed to contribute exactly once without loss or duplication. It doesn't guarantee visibility timing, prevent decrements, or enforce read ordering—those are separate concerns."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-007",
+      "q": "What is the ABA problem specifically dangerous for in linked-list based lock-free structures?",
+      "options": [
+        "Adding new nodes to the list",
+        "Detecting whether the next pointer of a node has been reused after the node was deleted",
+        "Traversing the list from head to tail",
+        "Comparing the values stored in nodes"
+      ],
+      "answer": 1,
+      "explanation": "In linked lists, if a node is deleted and the memory reused to create a new node at the same address, CAS won't detect it because the pointer value is unchanged. Adds, traversals, and value comparisons don't have this problem."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-008",
+      "q": "A double-word CAS (DCAS) operation is useful for lock-free structures because it allows updating what atomically?",
+      "options": [
+        "Two separate memory locations with two different values",
+        "A data structure's pointer and its reference count simultaneously",
+        "The same location twice in succession",
+        "A cache line boundary without crossing it"
+      ],
+      "answer": 1,
+      "explanation": "DCAS enables updating a pointer and a reference count or version number together, solving problems like the ABA problem or enabling version-based reclamation. Standard CAS can only update one location; DCAS isn't for two separate locations or cache boundaries."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-009",
+      "q": "In the context of lock-free algorithms, what does 'obstruction-free' mean?",
+      "options": [
+        "The algorithm uses no synchronization primitives at all",
+        "If a thread executes alone (without interference from other threads), it will eventually make progress",
+        "The algorithm doesn't create obstacles for the garbage collector",
+        "Memory operations never conflict with each other"
+      ],
+      "answer": 1,
+      "explanation": "Obstruction-freedom is a weaker guarantee than lock-free: a thread makes progress only when not interfered with. Lock-free and wait-free are strictly stronger. The term doesn't relate to synchronization primitives (CAS is still used), garbage collection, or conflict avoidance."
+    },
+    {
+      "id": "parallel-computing-lock-free-programming-010",
+      "q": "Why do lock-free algorithms often require memory ordering guarantees stronger than relaxed?",
+      "options": [
+        "Lock-free algorithms run slower and need barriers to catch up",
+        "The indivisibility of CAS doesn't order surrounding operations unless memory barriers are explicit",
+        "Lock-free algorithms must prevent cache coherency entirely",
+        "Relaxed memory ordering is not available on multicore processors"
+      ],
+      "answer": 1,
+      "explanation": "CAS is indivisible but doesn't inherently order prior or subsequent operations without acquire/release semantics. Lock-free algorithms depend on ordering assumptions around CAS, so explicit memory ordering is critical. Speed is irrelevant; cache coherency can't be disabled; relaxed ordering exists on all modern multicore systems."
+    }
+  ]
+}

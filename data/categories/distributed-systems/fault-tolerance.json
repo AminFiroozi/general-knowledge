@@ -1,0 +1,126 @@
+{
+  "topic": "fault-tolerance",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-fault-tolerance-001",
+      "q": "What is the primary purpose of replication in fault-tolerant distributed systems?",
+      "options": [
+        "To maintain multiple copies of data so that system availability is preserved if one or more replicas fail",
+        "To speed up read performance by distributing data across many servers",
+        "To eliminate the need for distributed consensus algorithms",
+        "To reduce the total amount of storage required in the system"
+      ],
+      "answer": 0,
+      "explanation": "Replication provides redundancy; if one copy is unavailable, others serve requests. Option 1 is about performance scaling, not fault tolerance. Option 2 is necessary but doesn't eliminate consensus needs. Option 3 increases storage."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-002",
+      "q": "How does a quorum-based system ensure consistency during failures?",
+      "options": [
+        "Reads and writes require acknowledgment from a majority of replicas, ensuring that read and write quorums overlap so all reads see all committed writes",
+        "A single elected leader makes all decisions and broadcasts them to other replicas",
+        "All replicas must acknowledge every operation before it completes",
+        "A quorum system automatically detects which replicas are faulty and ignores them"
+      ],
+      "answer": 0,
+      "explanation": "If W + R > N (write quorum + read quorum > total replicas), overlap guarantees read sees latest write. Option 1 is the primary role of leader election. Option 2 creates unnecessary blocking. Option 3 assumes perfect detection."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-003",
+      "q": "What is a failover and what must a system ensure during the process?",
+      "options": [
+        "Automatic transition of responsibilities from a failed primary to a backup, ensuring no committed data is lost and clients reconnect to the new primary",
+        "A mechanism that duplicates all incoming requests to avoid processing failures",
+        "A technique that halts the system temporarily to detect and repair hardware faults",
+        "A process where clients manually switch to a backup server after detecting a failure"
+      ],
+      "answer": 0,
+      "explanation": "Failover automates recovery; it must not lose committed data or violate consistency. Option 1 describes request duplication, not failover. Option 2 is reactive. Option 3 shifts responsibility to clients."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-004",
+      "q": "In leader election, what problem does the 'split-brain' scenario present?",
+      "options": [
+        "Two or more nodes simultaneously believe they are the leader, causing conflicting decisions and potential data corruption from diverged writes",
+        "A leader that processes requests on only one of its two network interfaces",
+        "A scenario where a leader node runs out of memory",
+        "An election algorithm that randomly selects two candidates"
+      ],
+      "answer": 0,
+      "explanation": "Split-brain violates the single-leader safety property; multiple leaders create write conflicts. Option 1 is about network interfaces. Option 2 is about resource exhaustion. Option 3 is a malformed algorithm."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-005",
+      "q": "How does a Byzantine fault-tolerant system differ from a crash-fault-tolerant system?",
+      "options": [
+        "Byzantine systems tolerate nodes that behave arbitrarily (maliciously or erratically); crash-fault systems assume nodes only fail by stopping",
+        "Byzantine systems use stronger consensus algorithms; crash-fault systems use quorum-based agreement",
+        "Byzantine systems detect faults faster than crash-fault systems",
+        "Byzantine systems prevent all network partitions, while crash-fault systems cannot"
+      ],
+      "answer": 0,
+      "explanation": "Byzantine faults include arbitrary behavior (lying, sending conflicting messages); crash faults are silent failures. Option 1 is false; both use consensus, but Byzantine algorithms are more complex. Option 2 assumes detection speed correlates with fault model. Option 3 is impossible; no system prevents partitions."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-006",
+      "q": "What is the significance of the threshold f < n/3 in Byzantine fault-tolerant consensus?",
+      "options": [
+        "More than one-third of nodes can be faulty; beyond this threshold, consensus becomes impossible because the remaining honest nodes cannot form a majority vote",
+        "Byzantine algorithms require one-third redundancy per node for error correction",
+        "A faulty node must receive approval from one-third of the network before its state changes",
+        "The threshold ensures that Byzantine nodes cannot communicate with each other"
+      ],
+      "answer": 0,
+      "explanation": "Information-theoretic bound: f < n/3 allows honest nodes to achieve consensus by voting; f ≥ n/3 permits Byzantine nodes to prevent consensus. Option 1 is about error correction, not consensus. Option 2 is incorrect. Option 3 assumes Byzantine nodes cannot be isolated."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-007",
+      "q": "In an active-passive replication setup, what happens when the primary fails?",
+      "options": [
+        "The passive standby is promoted to primary; clients detect the failure and reconnect, resuming normal operations from the promoted standby",
+        "All replicas simultaneously become primary until a new leader is elected",
+        "The passive replica becomes primary but must resync all uncommitted data from the failed primary before serving requests",
+        "The system enters read-only mode until the primary is manually restored"
+      ],
+      "answer": 0,
+      "explanation": "Active-passive: passive standby takes over; promotion is typically automatic or quick. Option 1 assumes multiple primaries. Option 2 requires resync of uncommitted data, risking loss. Option 3 would lose availability."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-008",
+      "q": "What advantage does active-active replication provide over active-passive?",
+      "options": [
+        "All replicas serve both read and write requests, improving throughput and availability; failing nodes are masked without client intervention",
+        "Active-active eliminates the need for consensus or conflict resolution",
+        "Active-active replication is simpler to implement than active-passive",
+        "Active-active systems never lose committed data, even with Byzantine failures"
+      ],
+      "answer": 0,
+      "explanation": "Active-active spreads load across all replicas and masks single-node failures transparently. Option 1 is false; active-active requires consensus for consistency. Option 2 is false; implementation is more complex. Option 3 doesn't guarantee losslessness against Byzantine faults."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-009",
+      "q": "How does quorum-based replication with W=N (all nodes must acknowledge writes) affect fault tolerance?",
+      "options": [
+        "Even a single node failure causes writes to fail, reducing availability significantly despite providing strong consistency",
+        "The system tolerates up to N-1 simultaneous failures without losing acknowledged data",
+        "Quorum-based replication is impossible with W=N",
+        "W=N guarantees that read requests never block"
+      ],
+      "answer": 0,
+      "explanation": "W=N is non-tolerant; any failure halts writes. Standard quorums use W=N/2+1. Option 1 is false; W=N/2+1 achieves better balance. Option 2 is incorrect; quorum-based systems cannot prevent all simultaneous failures. Option 3 is unrelated to write quorum."
+    },
+    {
+      "id": "distributed-systems-fault-tolerance-010",
+      "q": "In the context of failover and recovery, what does 'consensus on failure detection' mean?",
+      "options": [
+        "Nodes must agree through consensus whether a peer has failed before triggering failover, preventing false positives from unreliable failure detectors",
+        "All nodes must detect a failure at precisely the same time",
+        "The consensus algorithm itself detects failures independently",
+        "Failure detection is consensus-based only in Byzantine fault-tolerant systems"
+      ],
+      "answer": 0,
+      "explanation": "Failure detection is imperfect (timeouts can be unreliable); consensus on detection prevents false failovers. Option 1 assumes simultaneous detection. Option 2 assumes consensus algorithms don't detect faults. Option 3 is overly restrictive."
+    }
+  ]
+}

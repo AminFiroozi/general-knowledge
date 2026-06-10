@@ -1,0 +1,126 @@
+{
+  "topic": "concurrency-control",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-concurrency-control-001",
+      "q": "What is MVCC (Multi-Version Concurrency Control)?",
+      "options": [
+        "A way to replicate data across multiple servers",
+        "A concurrency technique where each transaction sees a consistent snapshot of the database, with multiple versions of data coexisting",
+        "A method for encrypting data in transit",
+        "A backup strategy that maintains multiple copies of the database"
+      ],
+      "answer": 1,
+      "explanation": "MVCC allows readers and writers to coexist without blocking by maintaining multiple data versions. Readers see a consistent snapshot from their start time; writers create new versions. This eliminates many read-write conflicts without locks."
+    },
+    {
+      "id": "databases-concurrency-control-002",
+      "q": "In two-phase locking (2PL), what are the two phases?",
+      "options": [
+        "Read phase and write phase",
+        "Growing phase (acquiring locks) and shrinking phase (releasing locks)",
+        "Preparation phase and execution phase",
+        "Conflict detection and conflict resolution"
+      ],
+      "answer": 1,
+      "explanation": "2PL divides transaction execution into lock acquisition (growing) and lock release (shrinking) phases. Once a lock is released, no new locks can be acquired. This guarantees serializability but can cause deadlocks."
+    },
+    {
+      "id": "databases-concurrency-control-003",
+      "q": "What is a lost update anomaly?",
+      "options": [
+        "When a server loses data during a crash",
+        "When two transactions read the same value, modify it, and write it back, causing one modification to be overwritten",
+        "When a transaction is cancelled by the database administrator",
+        "When a network failure prevents transaction completion"
+      ],
+      "answer": 1,
+      "explanation": "Lost update: T1 reads x=10, T2 reads x=10, T1 sets x=20, T2 sets x=30. T1's change is lost. Pessimistic locking or optimistic conflict detection prevent this by ensuring one transaction waits or aborts."
+    },
+    {
+      "id": "databases-concurrency-control-004",
+      "q": "What is optimistic concurrency control?",
+      "options": [
+        "Locking all rows before any transaction executes",
+        "Assuming conflicts are rare; transactions execute without locks, detecting conflicts at commit time and rolling back if needed",
+        "Splitting writes across multiple database servers",
+        "Using timestamps to order all operations"
+      ],
+      "answer": 1,
+      "explanation": "Optimistic control defers conflict detection to commit time. Transactions read and modify freely, then check if concurrent changes happened. If so, the transaction aborts and retries. Works well for low-conflict workloads; pessimistic is better for high contention."
+    },
+    {
+      "id": "databases-concurrency-control-005",
+      "q": "What is dirty read isolation anomaly and which isolation level prevents it?",
+      "options": [
+        "A transaction reading uncommitted changes from another transaction; READ UNCOMMITTED prevents it",
+        "A transaction reading uncommitted changes from another transaction; READ COMMITTED prevents it",
+        "A transaction missing data that existed earlier; SERIALIZABLE prevents it",
+        "A transaction causing a deadlock; SERIALIZABLE prevents it"
+      ],
+      "answer": 1,
+      "explanation": "Dirty read: T1 reads T2's uncommitted change. If T2 rolls back, T1 read invalid data. READ COMMITTED (the standard) only reads committed data. READ UNCOMMITTED allows dirty reads; higher isolation levels also prevent them."
+    },
+    {
+      "id": "databases-concurrency-control-006",
+      "q": "What problem does phantom read isolation solve?",
+      "options": [
+        "Transactions cannot read data modified by other transactions",
+        "A transaction reading a range twice sees different rows on the second read due to inserts/deletes by other transactions; SERIALIZABLE prevents this",
+        "Transactions cannot write concurrently to the same row",
+        "All transactions must execute sequentially"
+      ],
+      "answer": 1,
+      "explanation": "Phantom read: T1 queries rows WHERE age > 30, gets 5 rows, T2 inserts a new row with age=35, T1 queries again and gets 6 rows. SERIALIZABLE prevents this by locking the range; lower isolation levels allow phantoms."
+    },
+    {
+      "id": "databases-concurrency-control-007",
+      "q": "Why might pessimistic concurrency control cause performance degradation under high concention?",
+      "options": [
+        "It increases network latency",
+        "It reduces the size of the buffer pool",
+        "Transactions wait for locks, reducing throughput and potentially causing deadlocks as lock wait times increase",
+        "It automatically rolls back long-running transactions"
+      ],
+      "answer": 2,
+      "explanation": "Pessimistic locking blocks conflicting transactions. Under heavy contention, many transactions wait for locks, reducing concurrency and throughput. Deadlocks increase as lock dependencies grow. Optimistic control avoids this but costs on aborts."
+    },
+    {
+      "id": "databases-concurrency-control-008",
+      "q": "What is repeatable read isolation level and what anomaly does it allow?",
+      "options": [
+        "Prevents all anomalies except dirty reads",
+        "Transactions see committed data consistently but allows phantom reads (new rows inserted by other transactions in scanned ranges)",
+        "Transactions see all data from the beginning of the database",
+        "It is the highest isolation level available"
+      ],
+      "answer": 1,
+      "explanation": "REPEATABLE READ guarantees a transaction reads the same rows consistently within the transaction but allows phantoms—new rows inserted by other transactions in queried ranges. SERIALIZABLE prevents phantoms via range locks."
+    },
+    {
+      "id": "databases-concurrency-control-009",
+      "q": "How does MVCC in PostgreSQL handle write conflicts?",
+      "options": [
+        "All writes are automatically merged without conflicts",
+        "Later transactions that modify rows modified by earlier committed transactions are blocked indefinitely",
+        "Transactions that update rows modified by other committed transactions must abort and retry (on serializable isolation)",
+        "MVCC completely eliminates all write conflicts"
+      ],
+      "answer": 2,
+      "explanation": "MVCC lets readers and writers coexist, but write-write conflicts still matter. At SERIALIZABLE level, if T1 and T2 both modify the same row, one must abort. MVCC solves reader-writer conflicts, not writer-writer conflicts."
+    },
+    {
+      "id": "databases-concurrency-control-010",
+      "q": "What is a deadlock and how do databases handle it?",
+      "options": [
+        "A deadlock is when a query runs longer than expected",
+        "Two or more transactions wait for locks held by each other, preventing progress; databases detect and resolve deadlocks by aborting one transaction",
+        "A deadlock is when a table is locked for too long",
+        "Deadlocks cannot occur in modern databases"
+      ],
+      "answer": 1,
+      "explanation": "Deadlock: T1 locks A and waits for B, T2 locks B and waits for A. Neither can proceed. Databases detect cycles in the lock wait graph and abort one transaction, releasing locks so the other can continue."
+    }
+  ]
+}
