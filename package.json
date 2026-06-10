@@ -4,9 +4,13 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
+		"build:index": "tsx scripts/build-index.ts",
+		"prebuild": "npm run build:index",
 		"build": "next build",
+		"validate": "tsx scripts/validate.ts",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "next lint",
+		"test": "echo \"no tests\""
 	},
 	"dependencies": {
 		"@radix-ui/react-checkbox": "^1.3.3",

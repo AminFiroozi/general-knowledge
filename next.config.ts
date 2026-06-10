@@ -1,16 +1,11 @@
-import type { NextConfig } from "next";
+// next.config.ts
+import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-	images: {
-		remotePatterns: [
-			{
-				protocol: "http",
-				hostname: "localhost",
-			},
-			// Add your image hosting domains here:
-			// { protocol: "https", hostname: "your-s3-bucket.s3.amazonaws.com" },
-		],
-	},
-};
+  output: "export",
+  basePath: "/general-knowledge",
+  images: { unoptimized: true },
+  trailingSlash: true,
+}
 
-export default nextConfig;
+export default nextConfig
