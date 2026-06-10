@@ -1,0 +1,126 @@
+{
+  "topic": "transformers",
+  "category": "deep-learning",
+  "questions": [
+    {
+      "id": "deep-learning-transformers-001",
+      "q": "What is the key architectural innovation that allows Transformers to process sequences without recurrence?",
+      "options": [
+        "Self-attention mechanisms enable all positions to directly interact, eliminating the need for sequential processing",
+        "Transformers use convolutional layers instead of attention for faster processing",
+        "They employ gating mechanisms similar to LSTMs but applied globally",
+        "They randomly shuffle input positions to break sequential dependencies"
+      ],
+      "answer": 0,
+      "explanation": "Self-attention allows each position to attend to all other positions in parallel, enabling non-recurrent computation of dependencies. This parallelization is Transformers' fundamental advantage over RNNs. Transformers actually replace convolutions and recurrence with pure attention mechanisms, not supplement them."
+    },
+    {
+      "id": "deep-learning-transformers-002",
+      "q": "What is positional encoding in Transformers and why is it necessary?",
+      "options": [
+        "It adds position-dependent information to embeddings so the model can distinguish word order, since attention alone has no inherent notion of position",
+        "It encodes the actual positions as one-hot vectors appended to embeddings",
+        "It determines which positions are most important and removes less important positions",
+        "It converts positional integers directly into embedding vectors"
+      ],
+      "answer": 0,
+      "explanation": "Since self-attention computes relationships based on similarity regardless of position, positional encodings inject order information. Traditional approaches use sine/cosine functions of different frequencies at each position. Without positional information, the model couldn't distinguish 'The dog bites the man' from 'The man bites the dog'."
+    },
+    {
+      "id": "deep-learning-transformers-003",
+      "q": "What does multi-head attention accomplish in Transformers?",
+      "options": [
+        "It allows the model to attend to different subspaces of the input simultaneously, capturing diverse patterns and relationships",
+        "It processes each input token through multiple neural networks in sequence",
+        "It reduces the total number of parameters in the network",
+        "It ensures different layers never communicate with each other"
+      ],
+      "answer": 0,
+      "explanation": "Multi-head attention runs multiple attention operations in parallel, each with different learned projections (heads). Each head can focus on different types of relationships and patterns. This is more powerful than single attention and adds negligible computational overhead. It doesn't sequentially chain networks; rather, all heads operate in parallel."
+    },
+    {
+      "id": "deep-learning-transformers-004",
+      "q": "How do Transformers use masking in the decoder during autoregressive generation?",
+      "options": [
+        "It prevents the model from attending to future tokens, ensuring predictions depend only on previously generated tokens",
+        "It randomly removes positions from the attention computation",
+        "It forces the decoder to ignore certain layers of the encoder",
+        "It masks low-probability predictions to speed up generation"
+      ],
+      "answer": 0,
+      "explanation": "Causal masking in the decoder blocks attention to future positions during training and generation, enforcing that each position can only depend on past tokens. This ensures the autoregressive property where generation is sequential and each token depends on previous ones, not future unknowns."
+    },
+    {
+      "id": "deep-learning-transformers-005",
+      "q": "What is the role of the feed-forward network in each Transformer layer?",
+      "options": [
+        "It applies non-linear transformations after attention, adding representational capacity beyond what attention alone provides",
+        "It replicates the attention computation using feed-forward weights",
+        "It manages the positional encodings throughout the network",
+        "It computes the loss function for training"
+      ],
+      "answer": 0,
+      "explanation": "Each Transformer layer includes a feed-forward sublayer (typically two dense layers with ReLU) applied position-wise after attention. This adds non-linearity and expressiveness; the feed-forward part is not redundant attention but a distinct component. This is separate from loss computation and positional encoding management."
+    },
+    {
+      "id": "deep-learning-transformers-006",
+      "q": "What problem does layer normalization address in Transformer training?",
+      "options": [
+        "It stabilizes training by normalizing activations, helping gradients flow better and reducing sensitivity to weight initialization",
+        "It directly increases the model's accuracy on all tasks",
+        "It eliminates the need for attention mechanisms",
+        "It guarantees the model will converge to the global optimum"
+      ],
+      "answer": 0,
+      "explanation": "Layer normalization (applied before or after sublayers) normalizes activations to have mean 0 and variance 1, improving gradient flow and training stability. It also reduces internal covariate shift. Normalization is crucial for training deep Transformers; it improves stability, not accuracy directly, and doesn't eliminate attention or guarantee global optimality."
+    },
+    {
+      "id": "deep-learning-transformers-007",
+      "q": "In encoder-decoder Transformers, how do decoder layers access the encoder's output?",
+      "options": [
+        "Through cross-attention, where decoder queries attend to encoder keys and values",
+        "By concatenating encoder and decoder embeddings before processing",
+        "The decoder only processes its own tokens and ignores the encoder",
+        "By mixing encoder and decoder parameters into the same weights"
+      ],
+      "answer": 0,
+      "explanation": "Cross-attention in the decoder allows it to query the encoder's representation. The decoder queries attend to the encoder's keys and values, enabling the decoder to incorporate information from the full source sequence. This is distinct from self-attention within the encoder and decoder."
+    },
+    {
+      "id": "deep-learning-transformers-008",
+      "q": "What is the computational advantage of self-attention compared to RNNs for sequence processing?",
+      "options": [
+        "Self-attention can be computed in parallel for all positions, reducing time complexity from O(n) sequential steps to O(1) parallel steps",
+        "Self-attention requires fewer parameters than RNNs",
+        "Self-attention doesn't need any matrix multiplications",
+        "Self-attention works with fixed-length sequences while RNNs handle variable-length sequences"
+      ],
+      "answer": 0,
+      "explanation": "Self-attention computes all position pairs in parallel via matrix operations, enabling O(log n) depth on parallel machines, whereas RNNs require O(n) sequential steps. While self-attention uses more memory due to the attention matrix, parallelization is its key computational advantage. Both can handle variable-length sequences."
+    },
+    {
+      "id": "deep-learning-transformers-009",
+      "q": "How does dropout regularization function in Transformers?",
+      "options": [
+        "It randomly deactivates units during training to prevent overfitting, improving generalization to unseen data",
+        "It permanently removes layers that contribute little to the final prediction",
+        "It only applies to attention scores, not to other parts of the network",
+        "It increases model capacity by training multiple independent sub-models"
+      ],
+      "answer": 0,
+      "explanation": "Dropout stochastically disables activations during training with a fixed probability, forcing the network to learn redundant representations and preventing co-adaptation. This regularization technique improves generalization. Dropout is applied throughout Transformers (embeddings, attention, feed-forward), not just attention. It doesn't permanently remove layers or increase capacity."
+    },
+    {
+      "id": "deep-learning-transformers-010",
+      "q": "What distinguishes decoder-only Transformers from encoder-decoder Transformers?",
+      "options": [
+        "Decoder-only models process input and generate output using the same self-attention masked stack, while encoder-decoder separates input processing from output generation",
+        "Decoder-only models are always more accurate than encoder-decoder models",
+        "Encoder-decoder models use attention while decoder-only models use convolutions",
+        "Decoder-only models cannot be used for any generative tasks"
+      ],
+      "answer": 0,
+      "explanation": "Decoder-only Transformers like GPT use causal masking to process and generate sequences in a single stack. Encoder-decoder Transformers like BERT+decoder separate encoding (bidirectional, no masking) from decoding (causal masking, cross-attention). Both can be effective; choice depends on task. Decoder-only models are used extensively for generation; they use attention, not convolutions."
+    }
+  ]
+}

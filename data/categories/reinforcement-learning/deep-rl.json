@@ -1,0 +1,126 @@
+{
+  "topic": "deep-rl",
+  "category": "reinforcement-learning",
+  "questions": [
+    {
+      "id": "reinforcement-learning-deep-rl-001",
+      "q": "What is function approximation in Deep RL and why is it necessary?",
+      "options": [
+        "Using a neural network to approximate the value function V(s) or policy π(a|s) instead of storing tabular values",
+        "Storing exact Q-values in a lookup table for all state-action pairs",
+        "Using random exploration to sample rewards without learning any function",
+        "Discretizing continuous state spaces into a finite grid"
+      ],
+      "answer": 0,
+      "explanation": "Deep RL uses neural networks as function approximators to handle large or continuous state spaces where tabular methods fail. A network generalizes across unseen states via learned representations. Tabular storage is infeasible for infinite state spaces; random sampling and discretization are alternatives but inferior."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-002",
+      "q": "What is the core problem that experience replay addresses in Deep Q-Networks (DQN)?",
+      "options": [
+        "Correlations between consecutive transitions causing non-stationary learning signals and high variance in Q-updates",
+        "The inability of neural networks to learn from reward signals larger than 1.0",
+        "The need to explore before any exploitation can begin",
+        "The difficulty of storing large numbers of episodes in memory"
+      ],
+      "answer": 0,
+      "explanation": "Consecutive transitions in an episode are highly correlated, violating the i.i.d. assumption of SGD. Experience replay stores transitions in a buffer and samples mini-batches randomly, breaking correlations and stabilizing learning. It doesn't address reward scaling, exploration, or pure memory limits."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-003",
+      "q": "In DQN, why is a separate target network used instead of updating Q-values with the same network?",
+      "options": [
+        "To reduce the computational cost of forward passes",
+        "To prevent moving targets: the target network provides stable bootstrap estimates while the online network is updated",
+        "To allow the agent to learn two different value functions simultaneously",
+        "To ensure the Q-values remain positive throughout training"
+      ],
+      "answer": 1,
+      "explanation": "Using the same network for both current Q-estimates and bootstrap targets creates unstable, moving targets because updating Q(s, a) changes the target Q(s', a'). A separate target network (updated periodically or slowly) stabilizes learning. It's not for computational reduction or dual value functions."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-004",
+      "q": "What is the deadly triad and how does it relate to Deep RL?",
+      "options": [
+        "Three actions (explore, exploit, evaluate) that cannot coexist in a single algorithm",
+        "The combination of function approximation, bootstrapping, and off-policy learning, which can cause divergence without countermeasures",
+        "Three types of neural networks used in policy gradient methods",
+        "The requirement of three separate update steps in any deep RL algorithm"
+      ],
+      "answer": 1,
+      "explanation": "The deadly triad (Sutton & Barto) describes how function approximation + bootstrapping (using your own estimates as targets) + off-policy learning (learning from a different policy's data) together can cause instability and divergence. Countermeasures include target networks, experience replay, and careful learning rates. It's not about actions, network types, or update counts."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-005",
+      "q": "How does DQN handle exploration compared to tabular Q-learning?",
+      "options": [
+        "DQN removes exploration entirely and only uses the learned policy",
+        "DQN uses ε-greedy or other exploration strategies (e.g., noisy networks) in the same way as tabular methods",
+        "DQN optimizes the network to output all actions with equal probability",
+        "DQN implicitly explores through the bootstrap process without explicit exploration"
+      ],
+      "answer": 1,
+      "explanation": "DQN still requires explicit exploration strategies like ε-greedy or noisy layers to explore the state space. The neural network approximator doesn't inherently provide exploration; that's the algorithm's responsibility. Removing exploration leads to suboptimal policies; implicit exploration via bootstrapping is not sufficient."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-006",
+      "q": "What is the advantage of dueling DQN over standard DQN?",
+      "options": [
+        "It uses two separate networks running in parallel to double the learning speed",
+        "It decomposes Q(s, a) into V(s) + A(s, a), allowing the value stream and advantage stream to learn independently and generalize better",
+        "It eliminates the need for a target network",
+        "It extends DQN to continuous action spaces"
+      ],
+      "answer": 1,
+      "explanation": "Dueling DQN splits the network into two streams: one for state value V(s) and one for action advantages A(s, a), with Q(s, a) = V(s) + A(s, a) - mean(A). This allows better generalization because value and advantage have different learning signal characteristics. It doesn't double speed, eliminate target networks, or handle continuous actions."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-007",
+      "q": "In Double DQN, why is the online network used to select actions while the target network evaluates them?",
+      "options": [
+        "To increase computational efficiency by using faster networks for selection",
+        "To reduce overestimation bias: the online network may overestimate Q-values, so a separate target network provides more stable evaluation",
+        "To implement two different exploration strategies simultaneously",
+        "To enforce that the online and target networks remain synchronized"
+      ],
+      "answer": 1,
+      "explanation": "Standard DQN suffers from overestimation because max_a Q(s', a) uses the same network for selection and evaluation. Double DQN decouples them: the online network selects a' = argmax_a Q_online(s', a), and the target network evaluates: Q_target(s', a'). This reduces bias without computational overhead."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-008",
+      "q": "What does distributional RL do differently from standard value-based methods?",
+      "options": [
+        "It stores the full distribution of returns, not just the expected value V(s), enabling risk-aware or tail-focused learning",
+        "It learns multiple Q-functions and averages them",
+        "It directly parameterizes the policy instead of the value function",
+        "It uses separate networks for each action in the action space"
+      ],
+      "answer": 0,
+      "explanation": "Distributional RL (C51, QR-DQN) models the distribution over returns P(G | s, a) instead of just E[G]. This captures uncertainty and enables nuanced learning (e.g., agents can prefer certain-high vs. risky-higher returns). It's not ensemble averaging, policy parameterization, or multi-network per action."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-009",
+      "q": "How does a prioritized experience replay buffer improve learning efficiency in Deep RL?",
+      "options": [
+        "By storing only the most recent transitions and discarding old ones",
+        "By sampling transitions with probability proportional to their TD error, so high-error transitions are learned from more frequently",
+        "By guaranteeing that all transitions are visited exactly once per epoch",
+        "By removing random noise from stored rewards"
+      ],
+      "answer": 1,
+      "explanation": "Prioritized Experience Replay (PER) assigns each transition a priority (e.g., |TD error|) and samples in proportion to priority. Transitions with large errors are learned from more, improving sample efficiency. It's not about recency, equal visits, or reward denoising."
+    },
+    {
+      "id": "reinforcement-learning-deep-rl-010",
+      "q": "What is the role of the update frequency (or refresh rate) of the target network in DQN stability?",
+      "options": [
+        "Updating more frequently always leads to faster convergence",
+        "Updating less frequently ensures the targets stay fixed longer, but may become stale; updating more frequently introduces instability; a balance is needed",
+        "The target network update frequency has no effect on learning dynamics",
+        "Target networks should be updated once at the beginning of training and never again"
+      ],
+      "answer": 1,
+      "explanation": "If the target network updates too infrequently, targets become stale and learning slows. Too frequently, targets change rapidly, resembling the deadly triad. Empirically, periodic updates (e.g., every C steps) or slow moving averages (e.g., τ = 0.001) are tuned as hyperparameters. Neither extreme is optimal."
+    }
+  ]
+}

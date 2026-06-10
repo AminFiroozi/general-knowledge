@@ -1,0 +1,126 @@
+{
+  "topic": "training-and-optimization",
+  "category": "deep-learning",
+  "questions": [
+    {
+      "id": "deep-learning-training-and-optimization-001",
+      "q": "What is the primary difference between SGD (Stochastic Gradient Descent) and batch gradient descent?",
+      "options": [
+        "SGD updates weights using gradients from single samples, while batch gradient descent uses gradients from the entire dataset",
+        "SGD is faster because it skips backpropagation entirely",
+        "Batch gradient descent uses activation functions while SGD does not",
+        "They are identical methods with different names"
+      ],
+      "answer": 0,
+      "explanation": "SGD computes gradients on individual or small batches of samples and updates frequently, enabling faster learning and better generalization. Batch gradient descent computes gradients on the entire training set before each update. SGD's frequent updates provide noisy but directional gradients that help escape local minima."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-002",
+      "q": "What problem does momentum address in gradient descent optimization?",
+      "options": [
+        "It accumulates gradients over time to accelerate convergence and reduce oscillations in high-curvature directions",
+        "It guarantees convergence to the global minimum of any loss function",
+        "It eliminates the need for learning rate tuning",
+        "It prevents any updates when the gradient is zero"
+      ],
+      "answer": 0,
+      "explanation": "Momentum maintains a velocity term that accumulates past gradients, dampening oscillations in steep directions while accelerating in consistent directions. This accelerates convergence and helps the optimizer escape shallow local minima. Momentum doesn't guarantee global optima or eliminate learning rate dependence."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-003",
+      "q": "How does the Adam optimizer improve upon momentum-based methods?",
+      "options": [
+        "It maintains adaptive learning rates per parameter using both first and second moment estimates (mean and variance of gradients)",
+        "It completely removes the need for gradient computation",
+        "It guarantees finding the true global minimum for all functions",
+        "It uses only the current gradient without considering past information"
+      ],
+      "answer": 0,
+      "explanation": "Adam (Adaptive Moment Estimation) combines momentum (first moment) with RMSprop (second moment), adapting learning rates for each parameter based on gradient history. This provides faster convergence and better stability than vanilla momentum. Adam doesn't eliminate gradient computation, guarantee global optimality, or discard historical information."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-004",
+      "q": "What is the learning rate and what is the consequence of setting it too high?",
+      "options": [
+        "The step size for weight updates; too high causes oscillations or divergence, missing the optimum",
+        "The fraction of data used in each batch; too high causes memory overflow",
+        "The probability of activating each neuron; too high removes all regularization",
+        "The threshold for gradient clipping; too high prevents any weight updates"
+      ],
+      "answer": 0,
+      "explanation": "Learning rate controls the magnitude of weight updates (w = w - lr * gradient). Too high causes instability and divergence; too low causes slow convergence. Batch fraction, activation probability, and gradient thresholds are separate hyperparameters. Finding the right learning rate is crucial for successful training."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-005",
+      "q": "What does batch normalization do during training?",
+      "options": [
+        "It normalizes layer inputs to have mean 0 and variance 1, stabilizing training and enabling higher learning rates",
+        "It randomly shuffles training samples between batches",
+        "It removes gradient information to prevent overfitting",
+        "It converts all values to integers for faster computation"
+      ],
+      "answer": 0,
+      "explanation": "Batch normalization normalizes each mini-batch independently, reducing internal covariate shift. This stabilizes gradients, enables higher learning rates, and can act as a regularizer. During inference, it uses running statistics computed during training. It doesn't shuffle data, remove gradients, or discretize values."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-006",
+      "q": "What is the purpose of dropout as a regularization technique?",
+      "options": [
+        "It randomly deactivates neurons during training to prevent co-adaptation and reduce overfitting",
+        "It permanently removes neurons that have small weights",
+        "It forces all neurons to have identical outputs",
+        "It guarantees the model will never overfit on any dataset"
+      ],
+      "answer": 0,
+      "explanation": "Dropout stochastically disables a fraction of neurons during training with probability p, forcing the network to learn redundant, robust features. At test time, all neurons are active (scaled appropriately). This prevents co-adaptation and acts as an ensemble of subnetworks. Dropout improves generalization but doesn't guarantee immunity to overfitting."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-007",
+      "q": "What is L2 regularization (weight decay) and how does it affect learning?",
+      "options": [
+        "It adds a penalty proportional to the sum of squared weights to the loss, encouraging the model to use smaller weights and reduce complexity",
+        "It makes all gradients exactly equal during training",
+        "It prevents certain layers from receiving gradient updates",
+        "It automatically removes high-magnitude weights from the network"
+      ],
+      "answer": 0,
+      "explanation": "L2 regularization adds λ/2 * sum(w^2) to the loss function, penalizing large weights. This encourages the model to find simpler solutions and improves generalization. The penalty is applied uniformly; weights aren't automatically removed but rather pushed toward zero. L1 regularization uses the sum of absolute weights instead."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-008",
+      "q": "What happens during the early stopping technique in neural network training?",
+      "options": [
+        "Training is halted when validation loss stops improving, preventing overfitting to the training set",
+        "Training is stopped randomly to save computation time",
+        "The learning rate is permanently reset to zero",
+        "All weights are frozen to prevent further updates"
+      ],
+      "answer": 0,
+      "explanation": "Early stopping monitors validation performance and stops training when the validation loss plateaus or increases, capturing the model at its best generalization point before overfitting. This prevents wasting computation on degrading validation performance while improving test accuracy. Stopping randomly, freezing weights, or zeroing the learning rate serve different purposes."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-009",
+      "q": "What does learning rate scheduling accomplish during training?",
+      "options": [
+        "It adjusts the learning rate during training (e.g., decreasing over time) to improve convergence and fine-tune the solution",
+        "It determines which samples are included in each batch",
+        "It controls the number of hidden units in each layer",
+        "It changes the activation functions at different training epochs"
+      ],
+      "answer": 0,
+      "explanation": "Learning rate schedules reduce the learning rate as training progresses, enabling coarse optimization initially and fine-tuning later. Common schedules include step decay, exponential decay, and cosine annealing. This improves final performance and convergence. Learning rate schedules don't affect batch composition, network architecture, or activation functions."
+    },
+    {
+      "id": "deep-learning-training-and-optimization-010",
+      "q": "How does gradient clipping help when training deep neural networks?",
+      "options": [
+        "It caps gradient magnitudes to prevent exploding gradients, stabilizing training especially in RNNs and deep networks",
+        "It removes all negative gradients from the computation",
+        "It guarantees all losses will decrease at each training step",
+        "It eliminates the need for activation functions in hidden layers"
+      ],
+      "answer": 0,
+      "explanation": "Gradient clipping limits the norm of gradients during backpropagation (e.g., to a maximum value), preventing exploding gradients that cause numerical instability. This is particularly important in RNNs with long sequences where gradients can blow up. Clipping doesn't remove negative gradients; it rescales large gradients proportionally."
+    }
+  ]
+}

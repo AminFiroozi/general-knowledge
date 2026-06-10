@@ -1,0 +1,126 @@
+{
+  "topic": "mdps",
+  "category": "reinforcement-learning",
+  "questions": [
+    {
+      "id": "reinforcement-learning-mdps-001",
+      "q": "In a Markov Decision Process, what property must the current state satisfy to ensure the Markov property holds?",
+      "options": [
+        "The current state contains all information needed to determine future transitions, independent of history",
+        "The current state must explicitly encode the entire history of previous states",
+        "The current state probability depends on all previous states with equal weight",
+        "The current state must include reward information from all future steps"
+      ],
+      "answer": 0,
+      "explanation": "The Markov property requires that the future is independent of the past given the present. The current state must be sufficient to determine transition probabilities and expected rewards without needing historical information. All other options violate this memoryless property."
+    },
+    {
+      "id": "reinforcement-learning-mdps-002",
+      "q": "What is the discount factor γ (gamma) primarily used for in MDPs?",
+      "options": [
+        "To reduce the variance of policy gradient estimates during training",
+        "To balance immediate rewards against future rewards, with γ ∈ [0,1]",
+        "To decrease the learning rate in value function approximation",
+        "To penalize the agent for taking longer episodes"
+      ],
+      "answer": 1,
+      "explanation": "The discount factor γ determines how much weight future rewards receive relative to immediate rewards. Values closer to 0 favor immediate rewards, while values closer to 1 prefer long-term returns. It provides a mathematical mechanism for temporal preference without inherently penalizing episode length."
+    },
+    {
+      "id": "reinforcement-learning-mdps-003",
+      "q": "In the Bellman equation V(s) = E[R + γV(s')], what does the expectation operator E account for?",
+      "options": [
+        "Uncertainty in the agent's ability to execute actions correctly",
+        "Stochasticity in both the immediate reward distribution and the next state transitions",
+        "Only the randomness of the reward signal, assuming deterministic transitions",
+        "The variance of the value function across all states in the MDP"
+      ],
+      "answer": 1,
+      "explanation": "The expectation in the Bellman equation averages over both the stochastic rewards and the stochastic state transitions p(s', r | s, a). This captures the full environmental uncertainty. The equation doesn't address action execution error or variance across states—it models transitional uncertainty."
+    },
+    {
+      "id": "reinforcement-learning-mdps-004",
+      "q": "What is the relationship between the action space, state space, and transition dynamics in an MDP?",
+      "options": [
+        "The action space determines which states are reachable; unreachable states can be ignored",
+        "Given a state and action, the transition dynamics define a probability distribution over possible next states",
+        "The state space must be finite and deterministic for the Bellman equation to apply",
+        "The action space and state space must have the same cardinality"
+      ],
+      "answer": 1,
+      "explanation": "Transition dynamics p(s' | s, a) map (state, action) pairs to probability distributions over next states. This relationship is fundamental to MDPs and holds whether spaces are finite or infinite, deterministic or stochastic. The size and reachability of state spaces are independent of action space cardinality."
+    },
+    {
+      "id": "reinforcement-learning-mdps-005",
+      "q": "When is the Bellman optimality equation V*(s) = max_a E[R + γV*(s')] used rather than the standard Bellman equation?",
+      "options": [
+        "When learning from a fixed dataset without access to the environment",
+        "When seeking the maximum achievable value under an optimal policy π*",
+        "When the MDP has stochastic rewards but deterministic transitions",
+        "When γ is very close to 1 and computational precision becomes critical"
+      ],
+      "answer": 1,
+      "explanation": "The Bellman optimality equation describes the values under the optimal policy, using max_a to select the best action. The standard Bellman equation describes values under a fixed (suboptimal) policy. Optimality equations are used in value iteration and when computing the theoretical best possible performance."
+    },
+    {
+      "id": "reinforcement-learning-mdps-006",
+      "q": "What does it mean for an MDP to have a stationary reward function and deterministic policy?",
+      "options": [
+        "The same action always produces the same next state regardless of history",
+        "Rewards depend only on the current state and action, and the policy selects actions deterministically (π(a|s) ∈ {0, 1})",
+        "The expected reward converges to a constant value over infinite episodes",
+        "The agent must wait for the environment to settle before receiving rewards"
+      ],
+      "answer": 1,
+      "explanation": "Stationary means the reward function R(s, a) and transition dynamics don't change over time. A deterministic policy maps states to specific actions with probability 1. Neither implies anything about state transitions being deterministic or rewards converging."
+    },
+    {
+      "id": "reinforcement-learning-mdps-007",
+      "q": "How do terminal states affect the discount factor's role in the Bellman equation?",
+      "options": [
+        "γ must be set to 0 for terminal states since there are no future transitions",
+        "Terminal states have V(terminal) = 0 by convention, and the recursion stops naturally",
+        "The discount factor prevents the value from diverging when revisiting terminal states",
+        "γ becomes irrelevant because rewards at terminal states are always maximized"
+      ],
+      "answer": 1,
+      "explanation": "In terminal states, V(s_terminal) is typically defined as the reward received upon reaching that state (often 0), and recursion stops. Future discounting is moot since there are no successor states. The discount factor still affects returns through non-terminal states."
+    },
+    {
+      "id": "reinforcement-learning-mdps-008",
+      "q": "In the context of MDPs, what is the policy π and how does it relate to decision-making?",
+      "options": [
+        "A probability distribution over actions that the agent can use to select actions in each state",
+        "A fixed sequence of actions determined at the start of an episode",
+        "A heuristic for approximating the optimal value function without learning",
+        "A deterministic mapping from states to rewards rather than to actions"
+      ],
+      "answer": 0,
+      "explanation": "A policy π is a mapping from states to action probability distributions π(a | s). It guides the agent's decision-making; policies can be stochastic or deterministic (a special case). It's not predetermined, reward-based, or a value approximation."
+    },
+    {
+      "id": "reinforcement-learning-mdps-009",
+      "q": "What is the intuition behind the recursive structure of the Bellman equation?",
+      "options": [
+        "It decomposes the long-term return into immediate reward plus the discounted value of the next state",
+        "It ensures that all states have the same value by symmetry",
+        "It prevents overfitting by limiting the depth of future lookahead",
+        "It makes value computation independent of the initial state distribution"
+      ],
+      "answer": 0,
+      "explanation": "The Bellman equation decomposes expected return into a one-step lookahead (immediate reward) plus the value of future returns (discounted next value). This recursive decomposition is the foundation of dynamic programming in RL and enables efficient computation. It doesn't enforce value symmetry or prevent overfitting."
+    },
+    {
+      "id": "reinforcement-learning-mdps-010",
+      "q": "In an MDP with γ = 0.99, what does this discount factor imply about the agent's time preference?",
+      "options": [
+        "The agent equally prefers rewards 1 step away versus 100 steps away",
+        "The agent strongly prefers immediate rewards but still values rewards far in the future",
+        "The agent is indifferent to whether rewards arrive now or later",
+        "The agent will ignore any reward that occurs more than 100 steps in the future"
+      ],
+      "answer": 1,
+      "explanation": "γ = 0.99 means rewards are discounted multiplicatively, so a reward r at step t becomes γ^t × r. After 100 steps, this multiplier is roughly 0.37, not 0. The agent has a time preference favoring sooner rewards but still values distant rewards. It's not indifference (γ = 1) and not hard cutoff—it's smooth exponential decay."
+    }
+  ]
+}

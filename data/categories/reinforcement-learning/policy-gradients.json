@@ -1,0 +1,126 @@
+{
+  "topic": "policy-gradients",
+  "category": "reinforcement-learning",
+  "questions": [
+    {
+      "id": "reinforcement-learning-policy-gradients-001",
+      "q": "What is policy parameterization in policy gradient methods?",
+      "options": [
+        "A method to encode the policy as a function of state and action using differentiable parameters θ",
+        "A technique to discretize continuous action spaces into a finite set of choices",
+        "A way to estimate the value function during policy learning",
+        "A mechanism to generate multiple policies and select the best one via sampling"
+      ],
+      "answer": 0,
+      "explanation": "Policy parameterization represents the policy π_θ(a|s) as a differentiable function of parameters θ (e.g., neural network weights). This enables gradient-based optimization. It's not about discretization, value estimation, or ensemble selection."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-002",
+      "q": "In the REINFORCE algorithm, what is the primary gradient being estimated?",
+      "options": [
+        "The gradient of the value function V(s) with respect to policy parameters",
+        "The gradient of expected return with respect to policy parameters: ∇_θ J(θ) = E[∇_θ log π_θ(a|s) × R]",
+        "The gradient of the reward function with respect to actions",
+        "The gradient of the transition dynamics with respect to state and action"
+      ],
+      "answer": 1,
+      "explanation": "REINFORCE estimates the policy gradient using the log-likelihood trick: ∇_θ J(θ) ∝ E[∇_θ log π_θ(a|s) × R]. The gradient is of the expected return (objective J), not the value function or environment dynamics. This enables direct policy optimization."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-003",
+      "q": "Why do policy gradient methods use the log-likelihood trick (∇ log π instead of ∇π directly)?",
+      "options": [
+        "Because the log function makes probabilities easier to parse for humans",
+        "To avoid computing gradients through stochastic sampling, using the identity ∇ log π ∝ ∇π / π",
+        "To ensure the policy remains stochastic rather than becoming deterministic",
+        "To reduce the variance of gradient estimates in continuous action spaces"
+      ],
+      "answer": 1,
+      "explanation": "The log-likelihood trick, based on ∇ log π = ∇π / π, allows gradient computation without differentiating through the sampling process. This is mathematically elegant and unbiased. While it does produce stochastic policies, that's not the primary reason; variance reduction is handled separately."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-004",
+      "q": "What is the advantage function A(s, a) = Q(s, a) - V(s) used for in actor-critic methods?",
+      "options": [
+        "To directly approximate the optimal policy without learning value functions",
+        "To measure how much better taking action a is relative to the average action in state s, reducing variance in gradient estimates",
+        "To ensure the policy gradient is unbiased regardless of the baseline function",
+        "To guarantee convergence to a deterministic policy"
+      ],
+      "answer": 1,
+      "explanation": "The advantage function measures the relative merit of an action: positive when a is better than average, negative otherwise. Using A(s, a) as a baseline in the policy gradient reduces variance while keeping the estimator unbiased. This improves sample efficiency. It doesn't eliminate value learning or guarantee determinism."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-005",
+      "q": "In actor-critic architectures, what are the respective roles of the actor and critic?",
+      "options": [
+        "The actor estimates rewards; the critic selects actions",
+        "The actor (policy) selects actions; the critic (value function) evaluates them",
+        "The actor computes gradients; the critic stores replay memories",
+        "The actor and critic are independent and cannot share learned representations"
+      ],
+      "answer": 1,
+      "explanation": "The actor π_θ(a|s) generates actions (policy update); the critic V_φ(s) evaluates them (advantage estimation). They're complementary: the critic provides low-variance advantage estimates for the actor's gradient. They can share representations (e.g., early layers of a neural network)."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-006",
+      "q": "How does the baseline function reduce variance in policy gradient methods without introducing bias?",
+      "options": [
+        "The baseline is subtracted from returns: ∇ log π(a|s) × (R - b(s)); ∇E[b(s)] = 0, so E[∇ log π × b(s)] = 0",
+        "The baseline directly cancels out stochastic rewards, leaving only deterministic signal",
+        "It removes all negative returns, keeping only positive gradients",
+        "It limits the magnitude of gradient updates to prevent instability"
+      ],
+      "answer": 0,
+      "explanation": "Any baseline b(s) that depends only on state (not action) can be subtracted from returns without biasing the gradient: E[∇ log π × (R - b)] = E[∇ log π × R] - E[∇ log π × b(s)] = E[∇ log π × R] because E[∇ log π | s] = 0. This reduces variance while preserving unbiasedness."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-007",
+      "q": "What is a key advantage of policy gradient methods compared to value-based methods like Q-learning?",
+      "options": [
+        "Policy gradient methods always converge faster than value-based methods",
+        "They can handle continuous action spaces naturally without discretization",
+        "They eliminate the need for exploration entirely",
+        "They are guaranteed to find the global optimum in any MDP"
+      ],
+      "answer": 1,
+      "explanation": "Policy gradient methods directly optimize a parameterized policy, which naturally handles continuous actions (e.g., Gaussian π(a|s) = N(μ(s), σ(s))). Q-learning struggles with continuous actions due to the max_a operator. Neither method guarantees global optimality or eliminates exploration."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-008",
+      "q": "In REINFORCE, why does the return R need to be accumulated from the current step onward, not from the trajectory beginning?",
+      "options": [
+        "To ensure the gradient is unbiased for the current state-action pair",
+        "Because ∇_θ log π_θ(a_t|s_t) only causally depends on actions and rewards after time t",
+        "To match the Bellman equation's recursive structure",
+        "To allow off-policy learning from historical data"
+      ],
+      "answer": 1,
+      "explanation": "The policy at step t cannot affect previous rewards (causality). The gradient ∇ log π_θ(a_t|s_t) multiplies only the future return R_t = Σ_{k≥t} γ^{k-t} r_k, not past returns. This causality constraint is built into the policy gradient theorem. It doesn't directly relate to unbiasedness or Bellman structure."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-009",
+      "q": "What does the policy gradient theorem state, and why is it central to policy gradient methods?",
+      "options": [
+        "All policies eventually converge to the greedy policy if trained long enough",
+        "∇_θ J(θ) ∝ E[∇_θ log π_θ(a|s) Q(s, a)]; it provides an unbiased gradient estimate using Q-values without sampling the full return",
+        "The gradient of any policy is proportional to its entropy to encourage exploration",
+        "Deterministic and stochastic policies have identical gradients"
+      ],
+      "answer": 1,
+      "explanation": "The policy gradient theorem shows that the gradient of expected return can be expressed in terms of Q-values (or advantages), not the full return distribution. This is powerful because it decouples the policy gradient from return sampling. The other statements are incorrect."
+    },
+    {
+      "id": "reinforcement-learning-policy-gradients-010",
+      "q": "In deep policy gradient methods, what is the risk of using a neural network to parameterize both the actor and critic?",
+      "options": [
+        "It doubles the number of parameters, increasing computational cost proportionally",
+        "The critic's value updates can interfere with the actor's policy updates if not carefully balanced (correlation between actor-critic losses)",
+        "Neural networks cannot represent both categorical and continuous distributions",
+        "The policy will become deterministic, eliminating exploration"
+      ],
+      "answer": 1,
+      "explanation": "Shared or nearby parameters can create coupling: value updates for the critic affect gradients computed by the actor, and vice versa. Without careful tuning (e.g., separate learning rates, regularization, or parameter sharing strategies), this can lead to instability. Parameter count and representation capacity are not inherent issues."
+    }
+  ]
+}

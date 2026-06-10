@@ -1,0 +1,126 @@
+{
+  "topic": "q-learning",
+  "category": "reinforcement-learning",
+  "questions": [
+    {
+      "id": "reinforcement-learning-q-learning-001",
+      "q": "What is a Q-value Q(s, a) in the context of Q-learning?",
+      "options": [
+        "The cumulative discounted reward the agent has received so far in the episode",
+        "The expected return when taking action a in state s and following the optimal policy thereafter",
+        "The immediate reward received after taking action a in state s",
+        "The probability that action a is optimal in state s"
+      ],
+      "answer": 1,
+      "explanation": "Q(s, a) is the expected long-term discounted return starting from state s, taking action a, and then following the optimal policy. It's not the current return (which is path-specific), not just immediate reward, and not a probability. Q-values allow evaluation of action quality without explicitly computing policies."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-002",
+      "q": "Which of the following best describes the temporal difference (TD) error in Q-learning?",
+      "options": [
+        "The difference between the current Q-estimate and the true expected return over an entire episode",
+        "The one-step error: δ = [R + γ max_a' Q(s', a')] - Q(s, a)",
+        "The cumulative error accumulated over multiple steps of learning",
+        "The variance of Q-values across all state-action pairs"
+      ],
+      "answer": 1,
+      "explanation": "The TD error measures the discrepancy between the old Q-estimate and the bootstrap target (immediate reward plus discounted next Q). This one-step error drives learning in Q-learning. It's not an episode-wide error, cumulative error, or variance metric."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-003",
+      "q": "Why is Q-learning classified as an off-policy algorithm?",
+      "options": [
+        "Because it learns the value function while following an exploratory behavior policy, not the learned greedy policy",
+        "Because it updates Q-values based on the policy the agent is currently executing",
+        "Because it requires separate policies for exploration and exploitation during the same step",
+        "Because it cannot handle policies with different action probabilities per state"
+      ],
+      "answer": 0,
+      "explanation": "Q-learning learns the optimal policy while following a behavior policy (e.g., ε-greedy) that may take different actions. This decoupling allows it to learn from exploratory trajectories. On-policy methods (like SARSA) update based on the same policy being followed. The behavior and target policies need not be different per action."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-004",
+      "q": "In tabular Q-learning, what condition is necessary for convergence to the optimal Q-values?",
+      "options": [
+        "Every state-action pair must be visited infinitely often as learning progresses",
+        "The learning rate must decrease over time such that Σ α = ∞ and Σ α² < ∞",
+        "Both conditions above must hold simultaneously",
+        "The environment must be deterministic with no stochastic rewards or transitions"
+      ],
+      "answer": 2,
+      "explanation": "Convergence requires both conditions: sufficient exploration (visiting all state-action pairs infinitely) and a proper learning rate schedule (Robbins-Monro conditions). Without either, convergence may fail or be slow. Deterministic environments are not required for convergence."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-005",
+      "q": "What is the update rule in Q-learning and how does the learning rate α control learning speed?",
+      "options": [
+        "Q(s, a) ← Q(s, a) + α × δ where δ is the TD error; α close to 0 means slow updates",
+        "Q(s, a) ← (1 - α) × Q(s, a) + α × (R + γ max_a' Q(s', a')); α controls the blend of old and new information",
+        "Q(s, a) ← Q(s, a) × (1 - α) + δ²; α determines sensitivity to recent errors",
+        "Q(s, a) ← α × R + (1 - α) × Q(s, a); α must always equal 1 for convergence"
+      ],
+      "answer": 1,
+      "explanation": "The standard Q-learning update blends the old estimate with the bootstrapped target. α = 0 means no learning, α = 1 means complete replacement. Option 0 is equivalent but less explicit about the blending interpretation. Options 2 and 3 are incorrect formulations."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-006",
+      "q": "How does exploration (e.g., ε-greedy strategy) interact with the convergence properties of tabular Q-learning?",
+      "options": [
+        "Exploration is optional; Q-learning converges identically whether ε > 0 or ε = 0",
+        "Exploration ensures all state-action pairs are visited infinitely, which is required for convergence to optimality",
+        "Higher ε always leads to faster convergence in Q-learning regardless of the MDP structure",
+        "Exploration only affects computational speed, not the final converged values"
+      ],
+      "answer": 1,
+      "explanation": "Without exploration (ε = 0), Q-learning may converge to a local suboptimal policy if some state-action pairs are never visited. Exploration ensures sufficient coverage. However, exploration must decay eventually (ε → 0 in the limit) for convergence to the optimal policy. More exploration doesn't always improve convergence speed."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-007",
+      "q": "In Q-learning, what is the bootstrap target [R + γ max_a' Q(s', a')] and why is it useful?",
+      "options": [
+        "It's a Monte Carlo estimate of the return that uses the entire episode trajectory",
+        "It estimates the expected future return using the current (possibly suboptimal) Q-estimates, enabling single-step updates",
+        "It computes the optimal policy directly without requiring environment interaction",
+        "It replaces the true value function by averaging all past rewards"
+      ],
+      "answer": 1,
+      "explanation": "The bootstrap target uses the agent's own Q-estimates (not ground truth) to estimate future value. This enables learning from incomplete episodes—single-step feedback instead of waiting for full trajectories. It's not Monte Carlo (which requires full episodes), doesn't compute policies directly, and doesn't average all past rewards."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-008",
+      "q": "Why might tabular Q-learning struggle with large or continuous state spaces?",
+      "options": [
+        "The Q-table cannot scale to infinite or very large state spaces; function approximation is needed",
+        "Stochastic rewards break the contraction mapping property of the Bellman operator",
+        "Continuous states make the max operator undefined in the update rule",
+        "The learning rate schedule Σ α = ∞ becomes impossible to satisfy"
+      ],
+      "answer": 0,
+      "explanation": "Tabular Q-learning stores one value per state-action pair; with infinite or huge state spaces, memory becomes infeasible. Function approximation (neural networks, tile coding) extends Q-learning to these domains. Stochasticity, undefined max operators, and learning rate schedules are not inherent issues with large spaces."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-009",
+      "q": "What does off-policy learning in Q-learning imply about the behavior and target policies?",
+      "options": [
+        "The behavior policy (exploration) and target policy (greedy) can differ, allowing learning from non-greedy transitions",
+        "Both policies must be identical for the algorithm to work correctly",
+        "The behavior policy is learned simultaneously with the target policy in a single update",
+        "The target policy must be a stochastic mixture of all possible policies"
+      ],
+      "answer": 0,
+      "explanation": "Q-learning decouples the policy being followed (behavior policy, often ε-greedy) from the policy being learned about (greedy target). This allows it to learn optimal behavior while exploring suboptimally. The policies need not be identical; they can diverge significantly, which is the hallmark of off-policy methods."
+    },
+    {
+      "id": "reinforcement-learning-q-learning-010",
+      "q": "Under what conditions might the Q-learning update rule produce divergence instead of convergence?",
+      "options": [
+        "When function approximation is used without special precautions like target networks",
+        "When the learning rate is fixed at α = 0.1 for all state-action pairs indefinitely",
+        "When the discount factor γ > 0.95 and rewards are large",
+        "Either option A or B could cause divergence under certain conditions"
+      ],
+      "answer": 3,
+      "explanation": "With function approximation, fixed learning rates can cause instability (deadly triad: function approximation + bootstrapping + off-policy). Additionally, a fixed learning rate that doesn't decay violates the Robbins-Monro conditions needed for convergence. Large γ and rewards alone don't cause divergence if learning is otherwise sound; they just slow relative progress."
+    }
+  ]
+}

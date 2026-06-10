@@ -1,0 +1,126 @@
+{
+  "topic": "game-playing",
+  "category": "classical-ai",
+  "questions": [
+    {
+      "id": "classical-ai-game-playing-001",
+      "q": "In minimax algorithm for two-player zero-sum games, how do the maximizing and minimizing players alternate at different tree levels?",
+      "options": [
+        "Maximizing player always chooses the largest value; minimizing player chooses the smallest, with levels alternating",
+        "Both players try to maximize the score; minimizing is used for computational efficiency only",
+        "The role of each player depends on the current game state, not alternating levels",
+        "Minimax always assumes the same player moves at every level"
+      ],
+      "answer": 0,
+      "explanation": "In minimax, levels alternate: maximizing nodes represent positions where the maximizing player moves (chooses max child value), minimizing nodes represent opponent positions (chooses min child value). This assumes both players play optimally. The algorithm recursively evaluates all game paths to leaf nodes, then backs up values toward the root."
+    },
+    {
+      "id": "classical-ai-game-playing-002",
+      "q": "What does an evaluation function in game-playing AI estimate?",
+      "options": [
+        "The computational cost of expanding a node in the search tree",
+        "The desirability of a game position without reaching a terminal node, enabling limited-depth search",
+        "The probability that the current player will win randomly",
+        "The number of legal moves available from a position"
+      ],
+      "answer": 1,
+      "explanation": "An evaluation function heuristically estimates position value (e.g., material count in chess, pieces remaining in checkers) without full lookahead to terminal nodes. This enables practical game-playing with limited search depth. Poor evaluation functions hurt performance; strong functions require domain expertise (e.g., pawn structure in chess)."
+    },
+    {
+      "id": "classical-ai-game-playing-003",
+      "q": "How does alpha-beta pruning improve minimax by reducing the number of nodes explored?",
+      "options": [
+        "It explores only shallow branches and ignores deep positions",
+        "It maintains alpha (best value for maximizer) and beta (best value for minimizer), cutting branches that cannot affect the final result",
+        "It randomly samples nodes instead of evaluating all children",
+        "It eliminates the need for an evaluation function"
+      ],
+      "answer": 1,
+      "explanation": "Alpha-beta pruning tracks α (best maximizer value so far) and β (best minimizer value so far). When a maximizer node finds value ≥ β, or minimizer finds value ≤ α, further children are pruned because they cannot improve the parent's decision. This reduces nodes from O(b^d) to O(b^(d/2)) in favorable cases, doubling practical search depth."
+    },
+    {
+      "id": "classical-ai-game-playing-004",
+      "q": "What is transposition table (or hashtable) memoization in game-playing algorithms?",
+      "options": [
+        "A table that stores all possible game positions and their minimax values",
+        "A method to detect repeated game states and reuse cached evaluations, avoiding redundant computation",
+        "A technique to display the game board in different orientations",
+        "A way to track moves made during the game for replay"
+      ],
+      "answer": 1,
+      "explanation": "Transposition tables cache position evaluations using a hash of the board state as a key. When the same position is reached via different move sequences, the cached value is reused instead of re-evaluating. This is crucial in games like chess where the same position can arise from multiple paths, potentially saving orders of magnitude in computation."
+    },
+    {
+      "id": "classical-ai-game-playing-005",
+      "q": "Why is the horizon effect a significant challenge in limited-depth game-tree search?",
+      "options": [
+        "It makes the computer run out of memory",
+        "The search depth limit creates a 'horizon' beyond which important threats are invisible, allowing opponents to delay unavoidable bad outcomes past the search depth",
+        "It only affects human players, not AI",
+        "It can be completely eliminated by using deeper searches"
+      ],
+      "answer": 1,
+      "explanation": "The horizon effect occurs because limited-depth search cannot see beyond a fixed search horizon. An opponent can sacrifice material (appearing bad), pushing the consequences beyond the horizon so the evaluator at depth-d sees a favorable position. Extensions and singular extensions try to address this by deepening search in critical lines (e.g., forcing moves)."
+    },
+    {
+      "id": "classical-ai-game-playing-006",
+      "q": "In a game tree, what is the difference between a terminal node and a leaf node at a limited search depth?",
+      "options": [
+        "Terminal nodes are game endings; leaf nodes at depth limit are positions where evaluation function is applied, treated as terminal for that search",
+        "They are the same thing",
+        "Leaf nodes are always deeper than terminal nodes",
+        "Terminal nodes only exist in perfect-information games"
+      ],
+      "answer": 0,
+      "explanation": "Terminal nodes represent actual game ends (win/loss/draw). Leaf nodes in limited-depth search are artificial endpoints where the evaluation function is applied. When searching to depth d, leaf nodes at that depth are treated as if they were terminal, using the evaluation function to estimate their true value. This distinction is critical for understanding why evaluation functions matter."
+    },
+    {
+      "id": "classical-ai-game-playing-007",
+      "q": "What is the purpose of move ordering in minimax with alpha-beta pruning?",
+      "options": [
+        "To ensure both players follow the rules of the game",
+        "To search most promising moves first, maximizing pruning by allowing cutoffs earlier",
+        "To sort moves alphabetically for display purposes",
+        "To ensure the algorithm always finds the optimal move"
+      ],
+      "answer": 1,
+      "explanation": "Alpha-beta pruning effectiveness depends on move order. If the best moves are explored first, cutoffs happen sooner, dramatically reducing nodes. Poor move order approaches the unpruned minimax complexity. Heuristics like killer moves (moves that caused cutoffs at sibling nodes) or history heuristics improve move ordering without full evaluation."
+    },
+    {
+      "id": "classical-ai-game-playing-008",
+      "q": "In iterative deepening for games, why might exploring depth d+1 provide significantly better moves than depth d despite the added computation?",
+      "options": [
+        "The evaluation function is more accurate at greater depths",
+        "Deeper search reveals more forcing moves and threats that shallow search misses, improving move quality",
+        "Iterative deepening randomly improves the result",
+        "There is no benefit to searching deeper; it only wastes time"
+      ],
+      "answer": 1,
+      "explanation": "Iterative deepening searches progressively deeper (d=1, 2, 3, ...). Each additional ply reveals more of the game tree, especially forcing moves and tactical threats that shallow search cannot see. The seemingly wasted computation from re-searching earlier depths is usually negligible because recent nodes dominate the tree, while move quality improves substantially."
+    },
+    {
+      "id": "classical-ai-game-playing-009",
+      "q": "What is quiescence search and why is it important in game-playing algorithms?",
+      "options": [
+        "A method to ensure the computer takes longer to move for fairness",
+        "A technique that extends search beyond the depth limit in 'noisy' positions (capturing sequences) until reaching stable positions, avoiding sudden-death evaluation errors",
+        "A way to reduce the branching factor by eliminating quiet moves",
+        "A requirement for all game-playing algorithms"
+      ],
+      "answer": 1,
+      "explanation": "Quiescence search addresses the horizon effect by continuing to search beyond depth limits in positions with forcing moves (captures, checks). It halts when reaching a quiet position with no immediate tactics, providing a more stable evaluation. Without quiescence, the evaluator might misjudge a position mid-sequence, believing the position is favorable when a forced sequence leads to disaster."
+    },
+    {
+      "id": "classical-ai-game-playing-010",
+      "q": "In the context of game-playing AI, what is a zugzwang and how does it relate to evaluation function design?",
+      "options": [
+        "A zugzwang is an illegal move combination",
+        "A position where any move worsens the position; evaluation must recognize that passing (if legal) is preferable",
+        "A type of chess opening named after a famous grandmaster",
+        "A zugzwang cannot occur in perfectly designed game trees"
+      ],
+      "answer": 1,
+      "explanation": "Zugzwang (German for 'compulsion to move') is a position where the player to move is worse off than if they could pass. It commonly occurs in endgames (e.g., king and pawn endgames in chess). Evaluation functions must account for zugzwang; a naive material-counting function might misevaluate a position where the opponent is in zugzwang."
+    }
+  ]
+}

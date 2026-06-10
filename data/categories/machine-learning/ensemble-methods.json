@@ -1,0 +1,126 @@
+{
+  "topic": "ensemble-methods",
+  "category": "machine-learning",
+  "questions": [
+    {
+      "id": "machine-learning-ensemble-methods-001",
+      "q": "What is the core idea behind ensemble methods?",
+      "options": [
+        "Training a single model with many features",
+        "Combining predictions from multiple models to achieve better performance than any single model alone",
+        "Using different datasets for each model and averaging",
+        "Training models sequentially, where each model must beat the previous one"
+      ],
+      "answer": 1,
+      "explanation": "Ensemble methods leverage diversity: different models make different errors. Combining them (averaging, voting, weighted aggregation) often reduces bias and variance. This works best when models are accurate yet diverse; if all models make the same mistakes, ensembles provide little benefit."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-002",
+      "q": "What is bagging (bootstrap aggregating) and how does it reduce variance?",
+      "options": [
+        "Removing features with low variance",
+        "Training multiple models on random subsamples (with replacement) of the training data, then averaging predictions",
+        "Splitting the dataset into groups and assigning each to a different algorithm",
+        "A technique for handling missing values in the dataset"
+      ],
+      "answer": 1,
+      "explanation": "Bagging creates diversity through data sampling: each model sees a different random subset. Training high-variance, low-bias models (e.g., deep trees) on these samples and averaging reduces overall variance. Bagging works by exploiting that the variance of the average is lower than the average variance."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-003",
+      "q": "What is boosting and how does it differ from bagging?",
+      "options": [
+        "Boosting is faster than bagging",
+        "Boosting sequentially trains models where each focuses on examples misclassified by previous models, reducing bias and variance",
+        "Boosting requires models to be linear; bagging does not",
+        "They are the same algorithm with different names"
+      ],
+      "answer": 1,
+      "explanation": "Boosting (AdaBoost, Gradient Boosting) trains weak learners sequentially, weighting misclassified examples more heavily. Each new model corrects previous mistakes. This focuses on hard examples, reducing both bias and variance. Boosting is more prone to overfitting if not regularized but often achieves lower final error."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-004",
+      "q": "What is a Random Forest and what is its key advantage?",
+      "options": [
+        "A forest of random data points used for visualization",
+        "An ensemble of decision trees trained on random subsamples with random feature subsets at each split, providing low bias, low variance, and automatic feature selection",
+        "A single tree with random hyperparameters",
+        "A forest of linear regression models"
+      ],
+      "answer": 1,
+      "explanation": "Random Forest uses bagging (random data samples) and randomness at split-points (random feature subsets). This creates highly diverse trees that are averaged. It handles non-linear relationships, scales well, provides feature importances, and requires minimal hyperparameter tuning compared to single trees."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-005",
+      "q": "What is gradient boosting and how does it work?",
+      "options": [
+        "Boosting the gradient descent learning rate",
+        "Sequentially training weak learners (often shallow trees) to predict residuals of previous models, minimizing loss via gradient descent",
+        "Combining gradients from multiple models",
+        "A type of regularization for neural networks"
+      ],
+      "answer": 1,
+      "explanation": "Gradient Boosting fits each new model to the negative gradient (residuals) of the loss function from previous models. Learning rate (shrinkage) controls the contribution of each tree. It is powerful but requires careful hyperparameter tuning (tree depth, learning rate, iterations) to avoid overfitting."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-006",
+      "q": "What is stacking (stacked generalization)?",
+      "options": [
+        "Stacking features on top of each other",
+        "Training multiple diverse base models, then training a meta-model on their predictions as input features",
+        "Removing redundant models from an ensemble",
+        "Ensuring all models in an ensemble use the same algorithm"
+      ],
+      "answer": 1,
+      "explanation": "Stacking trains different base learners (e.g., SVM, Random Forest, Neural Net) on the full training data. Their predictions become features for a meta-learner (often logistic regression). This captures complementary information from diverse models. Cross-validation is used to prevent leakage of training data to the meta-learner."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-007",
+      "q": "What is the bias-variance decomposition in the context of ensemble methods?",
+      "options": [
+        "A way to measure how well individual models perform",
+        "Bagging reduces variance without affecting bias; boosting reduces both bias and variance, making it more powerful but risking overfitting",
+        "Ensemble methods always increase both bias and variance",
+        "It describes the trade-off between training time and model accuracy"
+      ],
+      "answer": 1,
+      "explanation": "Bagging averages similar biased models: bias unchanged, variance decreases. Boosting iteratively corrects bias by focusing on hard examples: both bias and variance can decrease. However, boosting's focus on difficult examples increases overfitting risk. Regularization (early stopping, tree depth limits) mitigates this."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-008",
+      "q": "What does out-of-bag (OOB) estimation measure in Random Forests?",
+      "options": [
+        "The number of trees in the forest",
+        "An unbiased estimate of test error using training examples not selected in each bootstrap sample",
+        "The accuracy on the validation set",
+        "The importance of each feature"
+      ],
+      "answer": 1,
+      "explanation": "In Random Forest, each tree is trained on ~63% of data (bootstrap sample). The remaining ~37% (out-of-bag) can be used for validation without requiring a separate test set. OOB error is often a reliable estimate of test performance, allowing efficient hyperparameter tuning without explicit cross-validation."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-009",
+      "q": "What is AdaBoost and what does the 'Adaptive' in its name mean?",
+      "options": [
+        "A method that automatically adapts to the number of features",
+        "AdaBoost (Adaptive Boosting) adaptively adjusts example weights so subsequent learners focus on previously misclassified examples",
+        "A boosting method that automatically selects the best base learner",
+        "A technique that adapts the learning rate during training"
+      ],
+      "answer": 1,
+      "explanation": "AdaBoost increases weights of misclassified examples after each iteration. Subsequent weak learners focus on these hard examples. A weighted vote combines predictions, with better-performing trees weighted more heavily. This sequential, adaptive focusing on errors is the key to boosting's power."
+    },
+    {
+      "id": "machine-learning-ensemble-methods-010",
+      "q": "When should you use ensemble methods versus a single complex model?",
+      "options": [
+        "Ensemble methods are always better; never use a single model",
+        "Ensembles are beneficial when diverse, accurate base models are available; they offer robustness and better generalization at the cost of complexity and computational expense",
+        "Single complex models are always faster and simpler",
+        "Ensemble methods only work for classification, not regression"
+      ],
+      "answer": 1,
+      "explanation": "Ensembles excel when diversity exists and computational cost is acceptable. A single well-tuned, interpretable model may be preferred for resource-constrained or explainability-critical applications. Ensembles tend to outperform in competitions and practical scenarios where a small accuracy gain justifies added complexity."
+    }
+  ]
+}

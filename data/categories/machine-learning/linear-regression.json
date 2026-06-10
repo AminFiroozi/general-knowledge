@@ -25,6 +25,102 @@
       ],
       "answer": 2,
       "explanation": "OLS assumes error terms are uncorrelated with each other (no autocorrelation). Autocorrelation is common in time-series data when consecutive residuals are related. It does not bias OLS coefficients but makes standard errors incorrect, invalidating hypothesis tests and confidence intervals."
+    },
+    {
+      "id": "machine-learning-linear-regression-003",
+      "q": "In least squares regression, what does minimizing the sum of squared residuals achieve?",
+      "options": [
+        "Maximizes the R² value and ensures unbiased estimates",
+        "Minimizes prediction error on the training set using an MSE-based criterion",
+        "Removes all outliers from the dataset automatically",
+        "Guarantees the model will generalize perfectly to new data"
+      ],
+      "answer": 1,
+      "explanation": "Least squares minimizes Σ(y_i - ŷ_i)², which is equivalent to minimizing mean squared error on training data. This criterion produces unbiased coefficient estimates under OLS assumptions but does not guarantee good generalization. Outliers have large squared residuals and disproportionately influence the fit."
+    },
+    {
+      "id": "machine-learning-linear-regression-004",
+      "q": "How does gradient descent differ from the normal equation in solving linear regression?",
+      "options": [
+        "Gradient descent computes the solution analytically; the normal equation requires iterations",
+        "Gradient descent iteratively updates coefficients; the normal equation solves directly via (X'X)⁻¹X'y",
+        "The normal equation works for any dataset size; gradient descent fails for large n",
+        "Gradient descent guarantees convergence; the normal equation may have no solution"
+      ],
+      "answer": 1,
+      "explanation": "The normal equation β = (X'X)⁻¹X'y solves OLS in one step but requires matrix inversion (O(n³) complexity). Gradient descent iteratively updates β via β ← β - α∇J, tolerating large datasets but requiring learning rate tuning. Both reach the same minimum for convex, well-scaled problems."
+    },
+    {
+      "id": "machine-learning-linear-regression-005",
+      "q": "What is overfitting in the context of linear regression?",
+      "options": [
+        "Using too many categorical variables in the model",
+        "The model fits training data very well but performs poorly on unseen test data",
+        "Having more rows than columns in the design matrix",
+        "Choosing a learning rate that is too small"
+      ],
+      "answer": 1,
+      "explanation": "Overfitting occurs when a model memorizes noise in training data rather than learning generalizable patterns, resulting in low train error but high test error. In linear regression, adding excessive features increases overfitting risk. High R² on training data with poor test-set performance is a red flag."
+    },
+    {
+      "id": "machine-learning-linear-regression-006",
+      "q": "What does ridge regression (L2 regularization) do to the least squares solution?",
+      "options": [
+        "Removes features with the smallest coefficients entirely",
+        "Adds a penalty proportional to the squared sum of coefficients, shrinking them toward zero",
+        "Increases the residual sum of squares on training data intentionally",
+        "Replaces all categorical variables with continuous approximations"
+      ],
+      "answer": 1,
+      "explanation": "Ridge regression minimizes ||y - Xβ||² + λ||β||². The penalty λ Σβ_j² shrinks coefficients proportionally, reducing variance but introducing bias. Unlike Lasso, ridge does not zero out coefficients. It is useful when multicollinearity is present or when overfitting is a concern."
+    },
+    {
+      "id": "machine-learning-linear-regression-007",
+      "q": "Which OLS assumption is violated when the variance of errors changes across values of the predictor (e.g., larger spread for high X values)?",
+      "options": [
+        "Linearity",
+        "Independence of errors",
+        "Homoscedasticity",
+        "Normality of residuals"
+      ],
+      "answer": 2,
+      "explanation": "Homoscedasticity assumes constant error variance Var(ε) = σ² across all X values. Heteroscedasticity (non-constant variance) does not bias OLS coefficients but makes standard errors unreliable, invalidating hypothesis tests and confidence intervals. Weighted least squares or robust standard errors can address this."
+    },
+    {
+      "id": "machine-learning-linear-regression-008",
+      "q": "What does the assumption of linearity in OLS regression require?",
+      "options": [
+        "All variables must follow a normal distribution",
+        "The relationship between X and y must be linear: E[y|X] = Xβ",
+        "The residuals must be uniformly distributed",
+        "Each predictor must be independent of every other predictor"
+      ],
+      "answer": 1,
+      "explanation": "The linearity assumption requires that the conditional expectation of y given X is a linear function of the parameters. If the true relationship is non-linear (e.g., quadratic), OLS will be biased and inefficient. Polynomial features or non-linear models may be needed to capture the true relationship."
+    },
+    {
+      "id": "machine-learning-linear-regression-009",
+      "q": "What is Lasso regression (L1 regularization) and how does it differ from ridge regression?",
+      "options": [
+        "Lasso uses a smaller penalty term and is always preferred over ridge",
+        "Lasso minimizes ||y - Xβ||² + λ Σ|β_j| and can shrink coefficients exactly to zero, performing automatic feature selection",
+        "Lasso requires normally distributed errors; ridge does not",
+        "Lasso guarantees the model will not overfit; ridge does not"
+      ],
+      "answer": 1,
+      "explanation": "Lasso minimizes ||y - Xβ||² + λ Σ|β_j|. The L1 penalty creates sparse solutions, zeroing out less important coefficients and performing feature selection automatically. Ridge (L2) shrinks all coefficients but rarely to zero. The choice depends on whether feature sparsity is desired."
+    },
+    {
+      "id": "machine-learning-linear-regression-010",
+      "q": "How does multicollinearity affect OLS estimates in linear regression?",
+      "options": [
+        "It reduces the number of predictors available",
+        "It inflates the variance of coefficient estimates, making them unstable and unreliable for inference",
+        "It always biases the regression coefficients toward zero",
+        "It guarantees that R² will be less than 0.5"
+      ],
+      "answer": 1,
+      "explanation": "When predictors are highly correlated, the matrix (X'X) becomes ill-conditioned, inflating the variance of β̂. Coefficients become sensitive to small data changes and are unreliable for inference, though predictions may still be reasonable if multicollinearity persists in new data. Regularization or feature selection can mitigate this."
     }
   ]
 }

@@ -1,0 +1,126 @@
+{
+  "topic": "cnns",
+  "category": "deep-learning",
+  "questions": [
+    {
+      "id": "deep-learning-cnns-001",
+      "q": "What is the primary advantage of using convolutional filters in a CNN compared to fully connected layers?",
+      "options": [
+        "Filters exploit spatial locality and parameter sharing to reduce parameters while capturing local patterns",
+        "Filters increase the total number of trainable parameters for better accuracy",
+        "Filters eliminate the need for activation functions in the network",
+        "Filters automatically classify images without requiring backpropagation"
+      ],
+      "answer": 0,
+      "explanation": "Convolutional filters use parameter sharing across spatial positions and exploit local connectivity, dramatically reducing parameters compared to fully connected layers while maintaining expressiveness for spatial data. Filters require activation functions and backpropagation like other layers. The parameter reduction, not increase, is the advantage."
+    },
+    {
+      "id": "deep-learning-cnns-002",
+      "q": "What does a convolution operation with a single filter produce as output?",
+      "options": [
+        "A single feature map capturing one type of local pattern",
+        "A fully connected weight matrix",
+        "Multiple class probabilities",
+        "A 1D vector of predictions"
+      ],
+      "answer": 0,
+      "explanation": "Each filter produces one feature map that represents where certain patterns are detected in the input. Multiple filters generate multiple feature maps, building the output volume. A single filter cannot produce class probabilities or fully connected weights."
+    },
+    {
+      "id": "deep-learning-cnns-003",
+      "q": "What is the purpose of pooling layers in CNNs?",
+      "options": [
+        "To reduce spatial dimensions while retaining important features through downsampling",
+        "To increase the receptive field without adding parameters",
+        "To apply non-linearity to feature maps",
+        "To combine multiple color channels into a single channel"
+      ],
+      "answer": 0,
+      "explanation": "Pooling layers (like max pooling) downsample feature maps by taking the maximum or average value in each region, reducing computation and memory while maintaining important information. This also provides spatial invariance. Option 1 correctly identifies the primary purpose, though increasing receptive field is a secondary benefit."
+    },
+    {
+      "id": "deep-learning-cnns-004",
+      "q": "How does stride in convolution affect the output feature map size?",
+      "options": [
+        "Larger stride values produce smaller output feature maps by skipping positions during convolution",
+        "Stride determines the activation function applied to each filter output",
+        "Stride controls how many filters are used in the layer",
+        "Stride is independent of output size and only affects training speed"
+      ],
+      "answer": 0,
+      "explanation": "Stride is the step size when sliding the filter across the input. A stride of 2 moves the filter in steps of 2 positions, roughly halving the output dimensions. Stride directly controls spatial downsampling separate from pooling. It doesn't determine activation functions or filter count."
+    },
+    {
+      "id": "deep-learning-cnns-005",
+      "q": "In a CNN, what does padding refer to?",
+      "options": [
+        "Adding extra pixels around the input borders to preserve spatial dimensions during convolution",
+        "Removing features from the edges of feature maps to improve accuracy",
+        "The spacing between filters in a convolutional layer",
+        "Converting between different image formats before processing"
+      ],
+      "answer": 0,
+      "explanation": "Padding adds border pixels (usually zeros) around inputs, allowing filters to be applied to edge pixels without shrinking the output. 'Same' padding preserves input dimensions; 'valid' padding allows shrinkage. Padding is crucial for designing networks where spatial dimensions decrease gradually."
+    },
+    {
+      "id": "deep-learning-cnns-006",
+      "q": "What is the receptive field in the context of CNNs?",
+      "options": [
+        "The region of the input that influences a single neuron's output after propagating through multiple layers",
+        "The size of the largest filter in the network",
+        "The number of channels in the convolutional layer",
+        "The total number of images in a training batch"
+      ],
+      "answer": 0,
+      "explanation": "The receptive field is the input area that affects a particular output neuron. Early layers have small receptive fields; deeper layers build larger receptive fields through stacked convolutions. A larger receptive field allows the network to capture context from wider input regions. Batch size is unrelated to receptive fields."
+    },
+    {
+      "id": "deep-learning-cnns-007",
+      "q": "Why are 1x1 convolutions (1x1 filters) useful in CNN architectures?",
+      "options": [
+        "They can reduce or increase channel dimensions while requiring fewer parameters than fully connected operations",
+        "They enable the network to process larger images without memory limitations",
+        "They replace the need for non-linear activation functions",
+        "They guarantee translation invariance across the entire image"
+      ],
+      "answer": 0,
+      "explanation": "1x1 convolutions act as dimension-reducing or dimension-expanding operations across channels without spatial interaction. They're computationally efficient and used in networks like GoogLeNet and ResNet for channel transformation. They don't eliminate activation functions or guarantee invariance properties."
+    },
+    {
+      "id": "deep-learning-cnns-008",
+      "q": "What architectural principle allows CNNs to achieve translation invariance?",
+      "options": [
+        "Using the same convolutional filters across different spatial locations detects the same patterns regardless of position",
+        "Applying random rotations to all training images",
+        "Using only fully connected layers in the final classification stage",
+        "Limiting the network to process images of fixed size only"
+      ],
+      "answer": 0,
+      "explanation": "Parameter sharing through convolution—using the same filter at every spatial position—naturally detects the same features regardless of location. This enables translation invariance without explicit architectural additions. Data augmentation helps but isn't the core principle; fully connected layers and fixed input sizes are constraints, not invariance mechanisms."
+    },
+    {
+      "id": "deep-learning-cnns-009",
+      "q": "In residual networks (ResNets), what is the purpose of the skip connection?",
+      "options": [
+        "To allow gradients to flow directly through layers, addressing the vanishing gradient problem in very deep networks",
+        "To reduce the total number of convolutional filters",
+        "To prevent overfitting by ignoring difficult examples",
+        "To enable the network to process multiple inputs in parallel"
+      ],
+      "answer": 0,
+      "explanation": "Skip connections (residual connections) add the input of a residual block directly to its output, creating an identity path that preserves gradient flow during backpropagation. This enables training of much deeper networks by alleviating vanishing gradients. The skip connection isn't a regularization mechanism or filter reduction technique."
+    },
+    {
+      "id": "deep-learning-cnns-010",
+      "q": "What distinguishes depthwise separable convolutions from standard convolutions?",
+      "options": [
+        "They factorize a standard convolution into a depthwise convolution applied per channel followed by a pointwise (1x1) convolution",
+        "They apply convolution at multiple depths of the network simultaneously",
+        "They use different activation functions for each color channel",
+        "They split the input image into multiple overlapping patches"
+      ],
+      "answer": 0,
+      "explanation": "Depthwise separable convolutions separate spatial filtering (per-channel depthwise) from channel mixing (pointwise), reducing parameters and computation significantly. They're used in efficient architectures like MobileNets. They don't apply different activation functions per channel or split inputs into patches."
+    }
+  ]
+}

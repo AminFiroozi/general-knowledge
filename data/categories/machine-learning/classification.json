@@ -1,0 +1,126 @@
+{
+  "topic": "classification",
+  "category": "machine-learning",
+  "questions": [
+    {
+      "id": "machine-learning-classification-001",
+      "q": "What does logistic regression output for binary classification?",
+      "options": [
+        "A discrete class label (0 or 1) directly",
+        "A probability between 0 and 1 representing the likelihood of class 1",
+        "A regression line that separates the two classes",
+        "An error rate that must be minimized by the user"
+      ],
+      "answer": 1,
+      "explanation": "Logistic regression outputs P(y=1|x) = 1/(1 + e^(-z)), a probability between 0 and 1. The predicted class is typically determined by thresholding at 0.5, but the probability itself is useful for understanding confidence and adjusting the decision boundary. The sigmoid function maps linear combinations to probabilities."
+    },
+    {
+      "id": "machine-learning-classification-002",
+      "q": "What is a decision boundary in classification?",
+      "options": [
+        "The set of misclassified training examples",
+        "The hyperplane or surface that separates classes in feature space",
+        "The threshold probability used to assign class labels",
+        "The maximum margin between two support vectors"
+      ],
+      "answer": 1,
+      "explanation": "A decision boundary is the surface in feature space that divides regions assigned to different classes. Linear classifiers (logistic regression, SVM) have linear boundaries; non-linear models create curved boundaries. The decision boundary is implicit in the learned parameters and determines how new points are classified."
+    },
+    {
+      "id": "machine-learning-classification-003",
+      "q": "What are support vectors in Support Vector Machines (SVM)?",
+      "options": [
+        "Features that support the model architecture",
+        "Training examples closest to the decision boundary that define the margin",
+        "The subset of data points used to initialize the algorithm",
+        "Vectors representing the direction of class separation"
+      ],
+      "answer": 1,
+      "explanation": "Support vectors are the training points that lie closest to or on the decision boundary. SVM maximizes the margin (distance from the boundary to the nearest points) to achieve good generalization. Only support vectors affect the final model; other points are irrelevant once trained."
+    },
+    {
+      "id": "machine-learning-classification-004",
+      "q": "In a confusion matrix for binary classification, what does precision measure?",
+      "options": [
+        "The proportion of actual positive cases correctly identified",
+        "The proportion of predicted positives that are actually positive: TP/(TP+FP)",
+        "The overall accuracy of the classifier",
+        "The fraction of negative cases predicted correctly"
+      ],
+      "answer": 1,
+      "explanation": "Precision = TP/(TP+FP) answers: \"Of all examples we predicted as positive, how many were truly positive?\" It is important when false positives are costly (e.g., spam detection, disease diagnosis). Recall = TP/(TP+FN) instead answers how many true positives we found."
+    },
+    {
+      "id": "machine-learning-classification-005",
+      "q": "What is the relationship between precision and recall, and when would you prioritize recall?",
+      "options": [
+        "They are always equal; prioritize both equally in all cases",
+        "Precision and recall trade off as the decision threshold changes; prioritize recall when missing positives is more costly",
+        "Precision is always higher than recall for well-trained models",
+        "Recall depends on the training data size; precision depends on the algorithm"
+      ],
+      "answer": 1,
+      "explanation": "Lowering the classification threshold increases recall (we catch more positives) but decreases precision (more false positives). High recall is critical when missing a positive case is very costly, such as in disease screening or fraud detection. F1-score balances both metrics."
+    },
+    {
+      "id": "machine-learning-classification-006",
+      "q": "How does k-NN (k-Nearest Neighbors) make predictions for a new point?",
+      "options": [
+        "It fits a linear boundary using the k closest training points",
+        "It classifies based on the majority class among the k nearest training examples",
+        "It computes the average distance to all k classes in the dataset",
+        "It uses k decision trees to vote on the predicted class"
+      ],
+      "answer": 1,
+      "explanation": "k-NN is a non-parametric, lazy learning algorithm that classifies a point by majority vote of its k nearest neighbors (e.g., k=3, k=5). The choice of k affects bias-variance: small k is sensitive to noise; large k oversmoothes. Distance metric (Euclidean, Manhattan) also matters."
+    },
+    {
+      "id": "machine-learning-classification-007",
+      "q": "What is a major disadvantage of k-NN?",
+      "options": [
+        "It cannot handle multi-class problems",
+        "It is computationally expensive at prediction time because it must calculate distances to all training examples",
+        "It requires the training data to follow a normal distribution",
+        "It always produces perfectly balanced class predictions"
+      ],
+      "answer": 1,
+      "explanation": "k-NN is lazy learning; it does not build a model, so prediction time is O(n×d) where n is training set size and d is dimensionality. For large datasets, this is slow. Additionally, it is sensitive to feature scaling and the curse of dimensionality (distances become meaningless in high dimensions)."
+    },
+    {
+      "id": "machine-learning-classification-008",
+      "q": "What does the kernel trick in SVM enable?",
+      "options": [
+        "Converting a non-linear classification problem into a linear one in a higher-dimensional space",
+        "Reducing the number of support vectors needed",
+        "Eliminating the need for regularization",
+        "Training the model without storing training data"
+      ],
+      "answer": 0,
+      "explanation": "The kernel trick computes dot products in a high-dimensional space without explicitly computing the transformed features. Common kernels include RBF (radial basis function), polynomial, and linear. This allows SVM to learn non-linear decision boundaries efficiently while keeping computational cost reasonable."
+    },
+    {
+      "id": "machine-learning-classification-009",
+      "q": "Why is class imbalance problematic in classification, and what is one solution?",
+      "options": [
+        "It prevents the model from converging; the only solution is to collect more data",
+        "An imbalanced class distribution can bias a model toward the majority class; techniques like oversampling, undersampling, or class weights can help",
+        "Class imbalance makes accuracy an unreliable metric; stratification automatically solves this",
+        "It means the dataset is too small and the model will always overfit"
+      ],
+      "answer": 1,
+      "explanation": "If 95% of examples are class 0, a naive classifier predicting all 0s achieves 95% accuracy while being useless. Class weights penalize minority class errors more heavily. Oversampling (SMOTE) duplicates minority examples; undersampling removes majority examples. Choosing metrics like F1 or AUC is also important."
+    },
+    {
+      "id": "machine-learning-classification-010",
+      "q": "What does ROC-AUC measure in classification evaluation?",
+      "options": [
+        "The ratio of true positives to false negatives",
+        "The area under the receiver operating characteristic curve; it measures the model's ability to distinguish between classes across all decision thresholds",
+        "The average confidence of the model's predictions",
+        "The number of hyperparameter combinations tested during training"
+      ],
+      "answer": 1,
+      "explanation": "ROC-AUC ranges from 0 to 1 (0.5 is random guessing). It plots true positive rate vs. false positive rate as the threshold varies. AUC summarizes overall discriminative ability regardless of threshold choice. It is useful for imbalanced datasets and does not depend on the chosen decision boundary."
+    }
+  ]
+}

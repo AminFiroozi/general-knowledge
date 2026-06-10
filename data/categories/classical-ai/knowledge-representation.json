@@ -1,0 +1,126 @@
+{
+  "topic": "knowledge-representation",
+  "category": "classical-ai",
+  "questions": [
+    {
+      "id": "classical-ai-knowledge-representation-001",
+      "q": "What is the primary advantage of using semantic networks over simple predicate logic for knowledge representation?",
+      "options": [
+        "Semantic networks allow visual representation and inheritance of properties across related concepts",
+        "Semantic networks are more computationally efficient than first-order logic",
+        "Semantic networks automatically handle temporal reasoning",
+        "Semantic networks require less storage space than logic-based systems"
+      ],
+      "answer": 0,
+      "explanation": "Semantic networks use nodes (concepts) and labeled edges (relationships) to represent knowledge with inheritable properties. This visual structure makes relationships explicit and enables property inheritance (e.g., 'Penguin' inherits from 'Bird'). While intuitive, semantic networks have less formal semantics than first-order logic."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-002",
+      "q": "In a frame-based knowledge representation system, what does a frame typically encapsulate?",
+      "options": [
+        "Only conditional statements in if-then format",
+        "A collection of attributes (slots) with associated values and default information for an entity or concept",
+        "A set of inference rules used for forward chaining",
+        "A visual diagram of logical propositions"
+      ],
+      "answer": 1,
+      "explanation": "A frame is a data structure representing a stereotypical object or situation, containing slots (attributes) with values, default values, and constraints. For example, a 'House' frame might have slots for 'color', 'size', and 'location'. Frames support property inheritance and provide a structured alternative to flat predicate logic."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-003",
+      "q": "Which logical principle states that if a property holds for all members of a class, it should hold for any subclass?",
+      "options": [
+        "Modus ponens",
+        "Inheritance by property subsumption",
+        "Closed-world assumption",
+        "Open-world assumption"
+      ],
+      "answer": 1,
+      "explanation": "Property inheritance (also called subsumption in description logic) allows subclasses to inherit properties from their parent classes. If 'All birds have feathers' and 'Penguins are birds', then 'Penguins have feathers'. This reduces redundancy but requires careful handling of exceptions like flightless birds."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-004",
+      "q": "What is the closed-world assumption in knowledge representation?",
+      "options": [
+        "That all facts must be explicitly stated, and anything not known is assumed false",
+        "That new facts can only be added if they are derived from existing rules",
+        "That the knowledge base contains contradictions which must be resolved",
+        "That all logical statements must be in conjunctive normal form"
+      ],
+      "answer": 0,
+      "explanation": "The closed-world assumption (CWA) states that if a fact is not known to be true, it is false. This is used in databases and some AI systems. The opposite is the open-world assumption (OWA), where unknown facts are treated as potentially true, used in semantic web and ontology systems. CWA simplifies reasoning but is less flexible."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-005",
+      "q": "In description logic, what does an ontology formally specify?",
+      "options": [
+        "A set of procedural rules for controlling agent behavior",
+        "The concepts, properties, and relationships in a domain with formal semantics",
+        "A database schema for storing facts in tables",
+        "A collection of heuristic estimates for search algorithms"
+      ],
+      "answer": 1,
+      "explanation": "An ontology in description logic defines the structure of a domain using classes, properties, and relationships with formal semantics. It specifies what entities exist, their properties, and how they relate—enabling automated reasoning and semantic interoperability. Unlike simple databases, ontologies support inference and consistency checking."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-006",
+      "q": "What problem arises when using a single global knowledge base in distributed AI systems?",
+      "options": [
+        "The knowledge base becomes too small to be useful",
+        "It creates a single point of failure, scalability bottleneck, and difficulty in maintaining consistency across systems",
+        "It eliminates the need for communication protocols",
+        "It guarantees complete consistency at all times"
+      ],
+      "answer": 1,
+      "explanation": "Centralized knowledge bases in distributed systems create scalability issues, create a single point of failure, and make it hard to maintain consistency when multiple agents update it concurrently. Distributed ontologies and knowledge graphs address this by allowing local knowledge with federated reasoning, though this introduces consistency and query challenges."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-007",
+      "q": "How do logical rules differ from frame-based representations in handling exceptions?",
+      "options": [
+        "Logical rules cannot handle exceptions at all",
+        "Frames allow default values that can be overridden, while rules require explicit exception cases",
+        "Both handle exceptions identically through inheritance",
+        "Rules automatically ignore exceptions during reasoning"
+      ],
+      "answer": 1,
+      "explanation": "Frames use defaults (slot values that apply unless overridden), elegantly handling typical cases with exceptions. Rules require explicit conditions to handle exceptions, making the knowledge base larger. For example, a frame 'Bird' might have 'can-fly: yes' by default, overridable for 'Penguin'. Logic would need explicit rules for each exception."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-008",
+      "q": "What is the purpose of an extensional definition versus an intensional definition in knowledge representation?",
+      "options": [
+        "Extensional lists all members; intensional defines by properties or rules, useful for infinite sets",
+        "Extensional is faster; intensional is more expressive but always infinite",
+        "Intensional definitions are only for symbolic reasoning",
+        "Both serve identical purposes and are interchangeable"
+      ],
+      "answer": 0,
+      "explanation": "Extensional definitions enumerate all members of a set (e.g., 'prime numbers less than 10: {2, 3, 5, 7}'). Intensional definitions specify properties (e.g., 'x is prime if x > 1 and only divisible by 1 and x'). Intensional is necessary for infinite or large sets and allows reasoning about properties directly without enumeration."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-009",
+      "q": "In first-order logic, what does the predicate Brother(x, y) represent and how does it differ from a semantic network?",
+      "options": [
+        "A directed edge in a semantic network without formal semantics",
+        "A formal assertion that x and y have the brother relationship, with precise logical semantics",
+        "A function that computes the similarity between x and y",
+        "A constraint that forces x and y to have identical properties"
+      ],
+      "answer": 1,
+      "explanation": "In first-order logic, Brother(x, y) is a predicate with formal semantics: it is true or false based on the interpretation. A semantic network edge is more informal and visual. Logic allows precise quantification (e.g., 'for all x, if Brother(x, y) then Sibling(x, y)'), enabling sound inference that semantic networks approximate."
+    },
+    {
+      "id": "classical-ai-knowledge-representation-010",
+      "q": "Why might a knowledge engineer choose rules over ontologies for a rapidly changing domain?",
+      "options": [
+        "Rules are inherently more expressive than ontologies",
+        "Rules allow quick procedural updates without restructuring the domain model, though they lack the semantic clarity of ontologies",
+        "Ontologies cannot represent temporal information",
+        "Rules automatically handle all edge cases without explicit programming"
+      ],
+      "answer": 1,
+      "explanation": "Rules enable procedural flexibility: new rules can be added to handle changing domain requirements without altering the class hierarchy. Ontologies require more upfront design for domain structure, making them less flexible for rapidly evolving domains. However, rules lack the semantic clarity and inference capabilities of ontologies, trading structure for flexibility."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "rnns-and-attention",
+  "category": "deep-learning",
+  "questions": [
+    {
+      "id": "deep-learning-rnns-and-attention-001",
+      "q": "What makes Recurrent Neural Networks (RNNs) suitable for processing sequential data?",
+      "options": [
+        "They maintain hidden state across time steps, allowing them to model temporal dependencies",
+        "They process all tokens simultaneously regardless of sequence length",
+        "They automatically extract all relevant information without attention mechanisms",
+        "They have no parameters, making them infinitely scalable"
+      ],
+      "answer": 0,
+      "explanation": "RNNs have recurrent connections that carry hidden state across time steps, enabling them to capture temporal dependencies in sequences. This recurrent structure is fundamental to sequential processing. RNNs do have parameters and typically process tokens sequentially, not in parallel."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-002",
+      "q": "What is the vanishing gradient problem in RNNs?",
+      "options": [
+        "Gradients exponentially shrink during backpropagation through time, making early time steps difficult to learn",
+        "The gradient descent algorithm randomly vanishes without reason",
+        "Hidden states become too large and overflow memory",
+        "The learning rate is automatically set to zero during training"
+      ],
+      "answer": 0,
+      "explanation": "Backpropagation through time (BPTT) involves multiplying gradients across many time steps. When these multiplication factors are less than 1, gradients exponentially decay, making it hard for the network to learn long-term dependencies. This is a fundamental challenge in vanilla RNNs, not a random phenomenon."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-003",
+      "q": "How do LSTM (Long Short-Term Memory) cells address the vanishing gradient problem?",
+      "options": [
+        "They use gating mechanisms to control information flow and maintain gradients through longer sequences",
+        "They replace RNNs with convolutional layers for temporal processing",
+        "They remove activation functions to let gradients flow unimpeded",
+        "They increase the number of parameters exponentially"
+      ],
+      "answer": 0,
+      "explanation": "LSTMs introduce gates (forget, input, output) and a cell state that act as highways for gradient flow. The additive operations in the cell state enable stronger gradient propagation compared to multiplicative operations in vanilla RNNs. This architectural innovation enables learning of longer-term dependencies."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-004",
+      "q": "What is the primary function of the forget gate in an LSTM cell?",
+      "options": [
+        "To selectively discard information from the cell state based on the current input and hidden state",
+        "To completely reset the hidden state at each time step",
+        "To multiply the input by random noise to improve generalization",
+        "To add the current input directly to the output without processing"
+      ],
+      "answer": 0,
+      "explanation": "The forget gate applies a sigmoid function that outputs values between 0 and 1, controlling what portion of the previous cell state is retained. This selective discarding is crucial for the LSTM's ability to manage long-term dependencies. The gate doesn't reset the state completely or add noise."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-005",
+      "q": "What does an attention mechanism allow a neural network to do?",
+      "options": [
+        "To dynamically focus on different parts of the input, giving variable importance to different positions",
+        "To completely ignore input sequences longer than a fixed length",
+        "To eliminate the need for any hidden layers",
+        "To combine multiple neural networks into a single prediction"
+      ],
+      "answer": 0,
+      "explanation": "Attention mechanisms compute weights that indicate how much focus each input position should receive, enabling the network to selectively attend to relevant information. This is especially useful for long sequences where not all parts are equally important. Attention works alongside hidden layers, not as a replacement."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-006",
+      "q": "In self-attention, what does the relationship between queries, keys, and values represent?",
+      "options": [
+        "Queries represent what positions look for, keys represent what positions offer, and values are what is retrieved for attended positions",
+        "Queries are always the same as values to ensure consistent processing",
+        "Keys and values are only used to reduce model parameters",
+        "They are different names for the same operation applied sequentially"
+      ],
+      "answer": 0,
+      "explanation": "Self-attention uses query, key, and value representations to compute similarity between positions (query-key) and retrieve relevant information (values). This separation enables flexible attention patterns. Queries and values being identical would prevent selective attention; keys and values serve distinct roles."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-007",
+      "q": "How does the attention score between two positions determine information flow in self-attention?",
+      "options": [
+        "Higher attention scores mean the value from one position contributes more strongly to the other position's representation",
+        "Attention scores determine only the color of the output visualization",
+        "Attention scores have no effect on the actual computation, only on visualization",
+        "Attention scores determine which LSTM gates to open"
+      ],
+      "answer": 0,
+      "explanation": "Attention scores, typically computed as softmax of query-key similarities, act as weights that combine values. Higher scores mean stronger contributions to the output. These scores directly determine how information from different positions is aggregated, not merely for visualization."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-008",
+      "q": "What is a GRU (Gated Recurrent Unit) in relation to LSTMs?",
+      "options": [
+        "A simpler alternative to LSTM with fewer gates that achieves similar performance with fewer parameters",
+        "An older technique that was completely replaced by LSTMs",
+        "A type of attention mechanism rather than a recurrent cell",
+        "A method for parallel processing of sequential data"
+      ],
+      "answer": 0,
+      "explanation": "GRUs simplify LSTMs by using two gates (reset and update) instead of three, reducing parameters while maintaining the ability to capture long-term dependencies. They often perform comparably to LSTMs with lower computational cost. GRUs are still relevant and haven't been obsoleted, though attention mechanisms are increasingly preferred."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-009",
+      "q": "Why is bidirectional processing useful in sequence modeling with RNNs?",
+      "options": [
+        "It allows the model to consider both past and future context, improving predictions for positions in the middle of sequences",
+        "It doubles the model's parameters without improving accuracy",
+        "It prevents the model from learning temporal dependencies",
+        "It only helps when processing images, not text sequences"
+      ],
+      "answer": 0,
+      "explanation": "Bidirectional RNNs process sequences forward and backward, allowing each position to use context from both directions. This is particularly valuable for tasks like tagging where context on both sides matters. It does increase parameters, but the accuracy improvement often justifies the cost."
+    },
+    {
+      "id": "deep-learning-rnns-and-attention-010",
+      "q": "How do sequence-to-sequence models with attention handle variable-length input and output sequences?",
+      "options": [
+        "The encoder processes input of any length, attention dynamically weights encoder outputs, and the decoder generates output of any length",
+        "Both input and output sequences must have exactly the same length",
+        "The model only works when input and output lengths are predetermined",
+        "Variable-length sequences must be padded to a maximum length determined before training"
+      ],
+      "answer": 0,
+      "explanation": "Seq2seq models with attention elegantly handle variable lengths: the encoder reads the full input regardless of length, attention allows the decoder to focus on relevant parts, and the decoder generates output token-by-token until completion. While padding is often used for batching efficiency, the architecture naturally supports variable lengths through attention and dynamic generation."
+    }
+  ]
+}

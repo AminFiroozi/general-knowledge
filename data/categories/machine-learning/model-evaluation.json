@@ -1,0 +1,126 @@
+{
+  "topic": "model-evaluation",
+  "category": "machine-learning",
+  "questions": [
+    {
+      "id": "machine-learning-model-evaluation-001",
+      "q": "Why is it important to split data into training and test sets?",
+      "options": [
+        "To ensure the model trains faster",
+        "To evaluate the model's ability to generalize to unseen data and detect overfitting",
+        "To increase the total amount of data available for training",
+        "To make cross-validation unnecessary"
+      ],
+      "answer": 1,
+      "explanation": "The test set is held out during training and used for unbiased performance estimation. Without this split, training accuracy can be misleading due to overfitting. A common split is 70-80% training, 20-30% test. The test set estimates the model's real-world generalization error."
+    },
+    {
+      "id": "machine-learning-model-evaluation-002",
+      "q": "What is k-fold cross-validation and why is it preferred over a single train-test split?",
+      "options": [
+        "It trains k different models on different learning rates",
+        "It divides data into k folds, trains k models (each using k-1 folds) and tests on the held-out fold, providing a more robust estimate of generalization error",
+        "It increases the size of the training set by k times",
+        "It only works for k = 5 or k = 10"
+      ],
+      "answer": 1,
+      "explanation": "k-fold cross-validation reduces variance in performance estimates by averaging over k runs. Each fold serves as a test set once. Common choices are k=5 or k=10. Stratified k-fold preserves class proportions, important for imbalanced data. It is more stable than a single split but computationally more expensive."
+    },
+    {
+      "id": "machine-learning-model-evaluation-003",
+      "q": "What is a confusion matrix in the context of binary classification?",
+      "options": [
+        "A table showing which features confuse the model most",
+        "A 2x2 table showing TP, FP, TN, FN counts; used to derive precision, recall, accuracy, and F1",
+        "A matrix of correlation coefficients between features",
+        "A visualization of model predictions over time"
+      ],
+      "answer": 1,
+      "explanation": "The confusion matrix arranges counts of correct and incorrect predictions for each class. From it, metrics are computed: Accuracy = (TP+TN)/(TP+TN+FP+FN), Precision = TP/(TP+FP), Recall = TP/(TP+FN). Multi-class confusion matrices are n×n where n is the number of classes."
+    },
+    {
+      "id": "machine-learning-model-evaluation-004",
+      "q": "What does the ROC curve plot and what does AUC represent?",
+      "options": [
+        "True positives vs. false positives; AUC is the number of correct predictions",
+        "True positive rate (sensitivity) vs. false positive rate (1-specificity) as the decision threshold varies; AUC is the area under this curve",
+        "Precision vs. recall; AUC measures the F1 score",
+        "Training accuracy vs. test accuracy; AUC indicates overfitting"
+      ],
+      "answer": 1,
+      "explanation": "The ROC curve shows trade-offs between sensitivity TPR and 1-specificity FPR. AUC (0 to 1) summarizes discriminative ability: 0.5 is random, 1.0 is perfect. ROC-AUC is threshold-independent and useful for imbalanced data where accuracy is misleading. It ranks the probability of correctly ordering a random positive-negative pair."
+    },
+    {
+      "id": "machine-learning-model-evaluation-005",
+      "q": "What is the difference between bias and variance in the context of model error?",
+      "options": [
+        "Bias measures data noise; variance measures feature correlation",
+        "Bias is systematic error from model assumptions; variance is sensitivity to training data fluctuations. High bias→underfitting; high variance→overfitting",
+        "Bias is the training error; variance is the test error",
+        "They are the same concept, just different names"
+      ],
+      "answer": 1,
+      "explanation": "Bias measures how far the model's predictions are from the true function, independent of training data. Variance measures how much the model changes with different training samples. The bias-variance tradeoff: reducing bias (adding complexity) often increases variance. Regularization and ensemble methods balance this."
+    },
+    {
+      "id": "machine-learning-model-evaluation-006",
+      "q": "What does the learning curve show and what can it reveal?",
+      "options": [
+        "The rate at which the model converges during training",
+        "Training and validation error vs. training set size; reveals whether the model is underfitting (both high), overfitting (gap between them), or well-fit",
+        "How the loss function changes over epochs during optimization",
+        "The distribution of features in the training data"
+      ],
+      "answer": 1,
+      "explanation": "Learning curves plot error on both training and validation sets as the training set grows. If both errors are high and stable, the model underfits (needs more capacity or features). If validation error is much higher, the model overfits (needs regularization or more data). The curves indicate which direction to improve."
+    },
+    {
+      "id": "machine-learning-model-evaluation-007",
+      "q": "What is the F1 score and when is it more useful than accuracy?",
+      "options": [
+        "The average of precision and recall; useful when classes are imbalanced and you want to balance both metrics",
+        "The ratio of training time to prediction time",
+        "A measure of statistical significance of the model",
+        "The F1 score is always better than accuracy"
+      ],
+      "answer": 0,
+      "explanation": "F1 = 2 × (Precision × Recall) / (Precision + Recall) is the harmonic mean of precision and recall. It penalizes models that are extreme in one direction. With imbalanced data, a model can achieve high accuracy by predicting the majority class; F1 catches this. Use F1 when both false positives and false negatives matter."
+    },
+    {
+      "id": "machine-learning-model-evaluation-008",
+      "q": "What does sensitivity and specificity measure in binary classification?",
+      "options": [
+        "Sensitivity is how fast the model trains; specificity is the number of parameters",
+        "Sensitivity = TP/(TP+FN) (true positive rate); specificity = TN/(TN+FP) (true negative rate); they measure the ability to correctly identify each class",
+        "Sensitivity is the model's accuracy on the training set; specificity is the test accuracy",
+        "They are synonyms for precision and recall"
+      ],
+      "answer": 1,
+      "explanation": "Sensitivity (recall) is the proportion of actual positives correctly identified. Specificity is the proportion of actual negatives correctly identified. Both are useful for understanding class-specific performance. In medical diagnosis, high sensitivity ensures sick patients are caught; high specificity reduces false alarms."
+    },
+    {
+      "id": "machine-learning-model-evaluation-009",
+      "q": "What is stratified sampling in train-test splitting?",
+      "options": [
+        "Randomly selecting data points without replacement",
+        "Splitting data such that the proportion of each class is preserved in both training and test sets",
+        "Ordering data by a feature before splitting",
+        "Using different random seeds for train and test splits"
+      ],
+      "answer": 1,
+      "explanation": "Stratified sampling is crucial for imbalanced data. If 90% of examples are class 0, a random split might create a test set with 85% or 95% class 0, introducing bias. Stratification ensures both splits have exactly 90% class 0, making performance estimates more reliable."
+    },
+    {
+      "id": "machine-learning-model-evaluation-010",
+      "q": "What does the validation curve show and how is it different from the learning curve?",
+      "options": [
+        "Training error vs. validation error; it is the same as a learning curve",
+        "Validation and training error vs. a hyperparameter (e.g., regularization strength); reveals how a single hyperparameter affects overfitting/underfitting",
+        "How the model performs on completely unseen test data",
+        "Whether the model has converged to a solution"
+      ],
+      "answer": 1,
+      "explanation": "Validation curves plot error against one hyperparameter (e.g., λ in regularization, k in k-NN) to find the sweet spot. Too much regularization (high λ) increases bias; too little increases variance. The curve shows the optimal hyperparameter value where validation error is minimized."
+    }
+  ]
+}

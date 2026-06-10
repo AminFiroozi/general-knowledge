@@ -1,0 +1,126 @@
+{
+  "topic": "clustering",
+  "category": "machine-learning",
+  "questions": [
+    {
+      "id": "machine-learning-clustering-001",
+      "q": "What is the objective of k-means clustering?",
+      "options": [
+        "To assign labels to test data based on labeled training examples",
+        "To partition n data points into k clusters by minimizing within-cluster variance",
+        "To identify the k most important features in the dataset",
+        "To rank clusters by their statistical significance"
+      ],
+      "answer": 1,
+      "explanation": "k-means minimizes the sum of squared distances from each point to its cluster centroid: Σ_i Σ_(x ∈ C_i) ||x - μ_i||². It is an unsupervised method that iteratively assigns points to the nearest centroid and updates centroids. Convergence is guaranteed, but the result depends on initialization."
+    },
+    {
+      "id": "machine-learning-clustering-002",
+      "q": "What is a limitation of k-means clustering?",
+      "options": [
+        "It cannot handle numerical data",
+        "It requires the user to specify k in advance and is sensitive to initialization and cluster shape assumptions",
+        "It always produces clusters of equal size",
+        "It is guaranteed to find the global optimum"
+      ],
+      "answer": 1,
+      "explanation": "k-means assumes roughly spherical clusters of similar size and requires pre-specifying k. Different initializations can lead to different local optima. It is sensitive to outliers and cannot discover clusters of arbitrary shape. Techniques like k-means++ improve initialization; silhouette analysis helps choose k."
+    },
+    {
+      "id": "machine-learning-clustering-003",
+      "q": "What is hierarchical clustering and how does it differ from k-means?",
+      "options": [
+        "Hierarchical clustering only works on labeled data; k-means is unsupervised",
+        "Hierarchical clustering builds a tree of clusters (dendrogram) by either merging or splitting points, providing a hierarchy without pre-specifying k",
+        "Hierarchical clustering is faster than k-means for all datasets",
+        "They are equivalent methods; the names just describe different implementations"
+      ],
+      "answer": 1,
+      "explanation": "Agglomerative hierarchical clustering starts with individual points and merges the closest clusters (single-link, complete-link, average-link). Divisive approaches do the reverse. The dendrogram reveals hierarchical structure and can be cut at different heights to obtain different numbers of clusters. It is deterministic unlike k-means."
+    },
+    {
+      "id": "machine-learning-clustering-004",
+      "q": "What does DBSCAN stand for and what is its key advantage over k-means?",
+      "options": [
+        "Data-Based Segmentation Clustering Algorithm; it always runs faster",
+        "Density-Based Spatial Clustering of Applications with Noise; it can discover arbitrary-shaped clusters and automatically identify outliers",
+        "Decision Boundary Scanning Clustering; it is supervised",
+        "Dynamic Batch Separation Clustering Algorithm; it works only on time-series data"
+      ],
+      "answer": 1,
+      "explanation": "DBSCAN groups points that are density-connected (close together with sufficient neighbors). Points with fewer than minPts neighbors are marked as outliers. It discovers non-spherical clusters and does not require specifying the number of clusters. Parameters eps (radius) and minPts must be tuned."
+    },
+    {
+      "id": "machine-learning-clustering-005",
+      "q": "What is the elbow method used for in clustering?",
+      "options": [
+        "To determine the optimal learning rate for gradient descent",
+        "To identify the optimal number of clusters k by plotting within-cluster variance against k and looking for an elbow-shaped bend",
+        "To remove outliers from the dataset before clustering",
+        "To validate that a cluster is spherical in shape"
+      ],
+      "answer": 1,
+      "explanation": "The elbow method plots inertia (within-cluster sum of squares) vs. k. As k increases, inertia decreases, but the rate slows. The elbow is the k where diminishing returns begin, suggesting an optimal cluster count. This is heuristic and subjective; silhouette analysis provides a more quantitative alternative."
+    },
+    {
+      "id": "machine-learning-clustering-006",
+      "q": "What does the silhouette coefficient measure?",
+      "options": [
+        "The number of points misclassified in a cluster",
+        "How well a point fits its assigned cluster compared to other clusters; values range from -1 to 1 with higher being better",
+        "The distance from a cluster centroid to the nearest neighboring cluster",
+        "The probability that the clustering is statistically significant"
+      ],
+      "answer": 1,
+      "explanation": "Silhouette coefficient s(i) = (b(i) - a(i)) / max(a(i), b(i)) where a(i) is the average distance to points in the same cluster and b(i) is the average distance to the nearest neighboring cluster. Values near 1 indicate good clustering; near 0 indicate overlapping clusters; negative values indicate misclassification."
+    },
+    {
+      "id": "machine-learning-clustering-007",
+      "q": "What is the difference between single-linkage and complete-linkage hierarchical clustering?",
+      "options": [
+        "Single-linkage is faster; complete-linkage is more accurate",
+        "Single-linkage uses the minimum distance between clusters; complete-linkage uses the maximum distance, reducing the chaining effect",
+        "Single-linkage requires labeled data; complete-linkage does not",
+        "Complete-linkage always produces exactly k clusters; single-linkage requires cutting the dendrogram"
+      ],
+      "answer": 1,
+      "explanation": "Single-linkage d(C_i, C_j) = min{d(x, y) : x ∈ C_i, y ∈ C_j} tends to chain clusters together, merging distant points. Complete-linkage uses the maximum distance, favoring compact clusters. Average-linkage uses the mean distance. The choice affects the dendrogram shape and final clustering."
+    },
+    {
+      "id": "machine-learning-clustering-008",
+      "q": "How does eps (epsilon) affect DBSCAN's behavior?",
+      "options": [
+        "It controls the number of clusters created; larger eps gives more clusters",
+        "It is the radius within which DBSCAN searches for neighbors; larger eps leads to fewer, larger clusters; smaller eps leads to more fragmentation and outliers",
+        "It is the minimum distance required between any two points",
+        "It is unrelated to the final clustering result"
+      ],
+      "answer": 1,
+      "explanation": "eps is DBSCAN's neighborhood radius. Too large: all points merge into one cluster. Too small: most points become outliers. Tuning eps (often via k-distance graphs) is crucial. The choice depends on data density and the problem domain. minPts also affects whether points qualify as core or border points."
+    },
+    {
+      "id": "machine-learning-clustering-009",
+      "q": "What is the curse of dimensionality and how does it affect clustering?",
+      "options": [
+        "It is a bug in clustering software that must be fixed",
+        "In high dimensions, distances become less meaningful because most points are equidistant from each other, degrading clustering quality",
+        "It refers to the maximum number of clusters that can be created",
+        "It ensures that clustering always produces interpretable results"
+      ],
+      "answer": 1,
+      "explanation": "In high-dimensional spaces, the volume grows exponentially, making pairwise distances nearly uniform. This breaks distance-based metrics used by k-means, hierarchical clustering, and DBSCAN. Dimensionality reduction (PCA, t-SNE) or feature selection before clustering can help. The problem worsens as d increases without proportional data increase."
+    },
+    {
+      "id": "machine-learning-clustering-010",
+      "q": "When would you use agglomerative hierarchical clustering over k-means?",
+      "options": [
+        "When you need to assign class labels to new points",
+        "When you need a dendrogram to understand hierarchical relationships, when k is unknown, or when clusters have non-spherical shapes",
+        "When the dataset is very large (millions of points)",
+        "When all features are categorical without numerical encoding"
+      ],
+      "answer": 1,
+      "explanation": "Hierarchical clustering is preferable when interpretability of the cluster hierarchy matters or when k is uncertain (it can be determined post-hoc from the dendrogram). It handles arbitrary shapes well but is O(n² log n) or worse, making it slow for large datasets. k-means is faster for high-cardinality clustering."
+    }
+  ]
+}

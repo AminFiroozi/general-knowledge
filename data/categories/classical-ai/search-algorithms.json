@@ -1,0 +1,126 @@
+{
+  "topic": "search-algorithms",
+  "category": "classical-ai",
+  "questions": [
+    {
+      "id": "classical-ai-search-algorithms-001",
+      "q": "Which search algorithm expands nodes in the order they are added to the frontier, following a first-in-first-out discipline?",
+      "options": [
+        "Depth-first search",
+        "Breadth-first search",
+        "Uniform cost search",
+        "Greedy best-first search"
+      ],
+      "answer": 1,
+      "explanation": "Breadth-first search (BFS) uses a queue to maintain the frontier, expanding nodes in FIFO order. This guarantees finding the shallowest goal node. Depth-first search uses a stack (LIFO), while uniform cost and greedy search use priority queues based on different criteria."
+    },
+    {
+      "id": "classical-ai-search-algorithms-002",
+      "q": "In the context of A* search, what property must a heuristic h(n) satisfy to guarantee optimal solutions?",
+      "options": [
+        "h(n) must be monotonic and consistent",
+        "h(n) must always overestimate the true cost",
+        "h(n) must be computed in polynomial time",
+        "h(n) must be zero for all non-goal nodes"
+      ],
+      "answer": 0,
+      "explanation": "A* is optimal when the heuristic is admissible (never overestimates) and consistent (satisfies the triangle inequality). Admissibility ensures optimality; consistency additionally prevents re-expansion of closed nodes. Overestimating costs violates admissibility, making A* suboptimal."
+    },
+    {
+      "id": "classical-ai-search-algorithms-003",
+      "q": "What is the primary advantage of depth-first search over breadth-first search in terms of memory usage?",
+      "options": [
+        "DFS uses exponentially more memory",
+        "DFS requires less memory because it only keeps nodes on the current path",
+        "DFS and BFS use the same amount of memory asymptotically",
+        "DFS automatically discards duplicate nodes"
+      ],
+      "answer": 1,
+      "explanation": "DFS stores only nodes along the current path in memory, requiring O(bd) space where b is branching factor and d is depth. BFS stores all frontier nodes at the current level, requiring O(b^d) space. However, DFS may explore much deeper than necessary and miss shorter solutions."
+    },
+    {
+      "id": "classical-ai-search-algorithms-004",
+      "q": "In uniform cost search, nodes are expanded in order of increasing path cost from the start node. This differs from BFS because:",
+      "options": [
+        "Uniform cost search prioritizes nodes by heuristic estimates",
+        "BFS treats all edge costs as equal, while uniform cost respects actual edge weights",
+        "Uniform cost search is more memory-efficient",
+        "BFS is guaranteed to find optimal solutions for weighted graphs"
+      ],
+      "answer": 1,
+      "explanation": "Uniform cost search (UCS) expands nodes based on their actual cost g(n) from the start, handling variable edge weights correctly. BFS assumes uniform cost (all edges cost 1), so it fails on weighted graphs. UCS guarantees optimality for non-negative edge weights, unlike BFS for weighted problems."
+    },
+    {
+      "id": "classical-ai-search-algorithms-005",
+      "q": "What is a heuristic admissibility condition that ensures A* will find an optimal solution?",
+      "options": [
+        "h(n) ≥ h*(n) for all nodes n, where h*(n) is the true cost to goal",
+        "h(n) ≤ h*(n) for all nodes n, where h*(n) is the true cost to goal",
+        "h(n) = 0 for all nodes",
+        "h(n) must be equal to g(n)"
+      ],
+      "answer": 1,
+      "explanation": "A heuristic is admissible if h(n) ≤ h*(n), meaning it never overestimates remaining cost. This guarantees A* finds optimal solutions. If h(n) > h*(n), A* may prune optimal paths. The zero heuristic (h(n)=0) is admissible but uninformative; it reduces A* to uniform cost search."
+    },
+    {
+      "id": "classical-ai-search-algorithms-006",
+      "q": "Why might iterative deepening depth-first search be preferred over pure depth-first search for unknown depths?",
+      "options": [
+        "It guarantees finding the shallowest solution like BFS, with DFS memory usage",
+        "It explores nodes in random order for better average performance",
+        "It eliminates the need for heuristics in pathfinding",
+        "It always requires fewer node expansions than DFS"
+      ],
+      "answer": 0,
+      "explanation": "Iterative deepening performs depth-limited searches with increasing depth limits, combining the optimality of BFS with the memory efficiency of DFS. It finds the shallowest goal at cost O(b^d) time but O(d) space, re-expanding nodes multiple times. Standard DFS may go arbitrarily deep without finding solutions."
+    },
+    {
+      "id": "classical-ai-search-algorithms-007",
+      "q": "In alpha-beta pruning for game trees, when is a beta cutoff triggered?",
+      "options": [
+        "When a minimizing node finds a value less than or equal to alpha",
+        "When a maximizing node finds a value greater than or equal to beta",
+        "When any node reaches the maximum search depth",
+        "When all child nodes have been evaluated"
+      ],
+      "answer": 1,
+      "explanation": "Beta cutoff occurs when a maximizing node finds a value ≥ beta, meaning the minimizing parent already has a better option elsewhere, so further exploration is pointless. Alpha cutoff is the dual: when a minimizing node finds value ≤ alpha. These pruning rules eliminate branches without affecting the final minimax value."
+    },
+    {
+      "id": "classical-ai-search-algorithms-008",
+      "q": "Which algorithm is complete (guarantees finding a solution if one exists) but not optimal for unweighted graphs?",
+      "options": [
+        "Depth-first search with depth limit",
+        "Breadth-first search",
+        "Greedy best-first search",
+        "Bidirectional search with greedy heuristic"
+      ],
+      "answer": 0,
+      "explanation": "Depth-first search with a depth limit is complete if the depth limit is set high enough (it finds solutions within the limit), but it is not optimal—it may find deeper solutions first. Breadth-first search is both complete and optimal for unweighted graphs. Greedy best-first search is neither complete nor optimal."
+    },
+    {
+      "id": "classical-ai-search-algorithms-009",
+      "q": "What is the relationship between the branching factor and search complexity in breadth-first search?",
+      "options": [
+        "Time complexity is O(b) and space complexity is O(d)",
+        "Time complexity is O(b^d) and space complexity is O(b^d), where d is solution depth",
+        "Time and space complexity are O(1) for binary trees",
+        "Branching factor has no effect on search complexity"
+      ],
+      "answer": 1,
+      "explanation": "BFS expands all nodes at depth d before reaching depth d+1. The number of nodes at depth d is b^d, so both time and space complexity are O(b^d). This exponential growth is called the 'curse of dimensionality' and limits BFS to problems with small branching factors or shallow solutions."
+    },
+    {
+      "id": "classical-ai-search-algorithms-010",
+      "q": "In A* search, the evaluation function f(n) = g(n) + h(n) combines path cost and heuristic estimates. Why is h(n) multiplied by a weight in weighted A*?",
+      "options": [
+        "To guarantee the solution is always optimal",
+        "To trade off optimality for speed, producing faster suboptimal solutions",
+        "To eliminate the need for goal testing",
+        "To ensure the heuristic is always consistent"
+      ],
+      "answer": 1,
+      "explanation": "Weighted A* uses f(n) = g(n) + w·h(n) where w > 1. This prioritizes the heuristic more, expanding fewer nodes and finding solutions faster, but solutions may be suboptimal by a factor related to w. When w=1, A* is optimal (if h is admissible); larger weights trade optimality for speed."
+    }
+  ]
+}

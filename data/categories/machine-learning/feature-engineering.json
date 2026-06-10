@@ -1,0 +1,126 @@
+{
+  "topic": "feature-engineering",
+  "category": "machine-learning",
+  "questions": [
+    {
+      "id": "machine-learning-feature-engineering-001",
+      "q": "Why is feature scaling important for distance-based algorithms like k-NN and SVM?",
+      "options": [
+        "It reduces the training time by a factor of k",
+        "Without scaling, features with larger ranges dominate the distance calculation, making small-range features irrelevant",
+        "It guarantees that the model will achieve 100% accuracy",
+        "It is only necessary for classification, not regression"
+      ],
+      "answer": 1,
+      "explanation": "If one feature ranges 0-1000 and another 0-1, the large-range feature dominates Euclidean distance. Standardization (mean 0, std 1) or normalization (0-1 range) equalizes feature contributions. Tree-based models are invariant to scaling; linear models, SVM, k-NN, and neural networks benefit significantly."
+    },
+    {
+      "id": "machine-learning-feature-engineering-002",
+      "q": "What is one-hot encoding and when is it used?",
+      "options": [
+        "A way to reduce the dimensionality of continuous features",
+        "Converting categorical variables into binary vectors where each category becomes a separate binary feature",
+        "A regularization technique that randomly zeros out features during training",
+        "A method to detect missing values in the dataset"
+      ],
+      "answer": 1,
+      "explanation": "One-hot encoding transforms a categorical feature with k categories into k binary columns (or k-1 to avoid multicollinearity). For example, color={red, green, blue} becomes three binary features. This allows algorithms like logistic regression and SVM (which require numerical input) to handle categorical data."
+    },
+    {
+      "id": "machine-learning-feature-engineering-003",
+      "q": "What is feature selection and why is it important?",
+      "options": [
+        "Choosing between linear and non-linear models",
+        "Identifying and keeping only the most relevant features to improve model interpretability, reduce overfitting, and decrease computation",
+        "Scaling features to have the same range",
+        "Training multiple models on different subsets of features"
+      ],
+      "answer": 1,
+      "explanation": "Feature selection removes irrelevant or redundant features. Methods include filter approaches (correlation, chi-squared), wrapper approaches (RFE, backward elimination), and embedded approaches (L1 regularization). Fewer features reduce overfitting, training time, and improve interpretability while often maintaining or improving performance."
+    },
+    {
+      "id": "machine-learning-feature-engineering-004",
+      "q": "What does Principal Component Analysis (PCA) do?",
+      "options": [
+        "Removes outliers from the dataset",
+        "Transforms high-dimensional data into lower dimensions by finding new axes (principal components) that maximize variance",
+        "Automatically selects the best-performing features for the model",
+        "Converts categorical variables to numerical features"
+      ],
+      "answer": 1,
+      "explanation": "PCA finds orthogonal directions of maximum variance. The first principal component captures the most variance, the second (uncorrelated) captures the second most, and so on. Retaining the top k components reduces dimensionality while preserving most information. Variance explained by each component guides how many to keep."
+    },
+    {
+      "id": "machine-learning-feature-engineering-005",
+      "q": "How should missing values typically be handled in machine learning?",
+      "options": [
+        "Always delete rows with missing values",
+        "Delete rows with any missing value, or impute (fill) using mean, median, mode, forward-fill, or model-based methods depending on the context",
+        "Replace all missing values with zero",
+        "Missing values automatically disappear during model training"
+      ],
+      "answer": 1,
+      "explanation": "Deleting rows loses data; imputation preserves them. Mean/median works for MCAR (missing completely at random) data. Forward-fill suits time-series. More sophisticated methods: KNN imputation, multiple imputation (MICE), or model-based approaches. Strategy depends on missing data mechanism and domain knowledge."
+    },
+    {
+      "id": "machine-learning-feature-engineering-006",
+      "q": "What is the difference between standardization and normalization?",
+      "options": [
+        "They are the same thing, just different names",
+        "Standardization (z-score) centers data (mean 0, std 1) using (x - μ) / σ; normalization (min-max) rescales to [0, 1] using (x - x_min) / (x_max - x_min)",
+        "Standardization is only for categorical data; normalization is for numerical",
+        "Normalization removes outliers; standardization does not"
+      ],
+      "answer": 1,
+      "explanation": "Standardization is preferred when the scale is unknown or unbounded. Normalization is better when you know the feature bounds and want a specific range. Min-max normalization is sensitive to outliers (they can squeeze other values into a small range). Standardization is more robust."
+    },
+    {
+      "id": "machine-learning-feature-engineering-007",
+      "q": "What are polynomial features and when might you use them?",
+      "options": [
+        "Features created by multiplying the polynomial coefficients together",
+        "Creating new features as powers and interactions of existing features (e.g., x, x², x₃, x·y) to capture non-linear relationships",
+        "Removing features that are not polynomially distributed",
+        "A way to perform regression on categorical data"
+      ],
+      "answer": 1,
+      "explanation": "Polynomial features enable linear models (e.g., linear regression) to fit non-linear relationships. For example, adding x² allows fitting a parabola. Interaction terms (e.g., x·y) capture feature dependencies. Caution: they increase dimensionality and can cause overfitting; regularization is often needed."
+    },
+    {
+      "id": "machine-learning-feature-engineering-008",
+      "q": "What is dimensionality reduction and what problem does it solve?",
+      "options": [
+        "Removing rows from the dataset to make it smaller",
+        "Reducing the number of features while preserving relevant information, combating the curse of dimensionality and improving computational efficiency",
+        "Replacing continuous features with categorical ones",
+        "It serves no practical purpose in machine learning"
+      ],
+      "answer": 1,
+      "explanation": "High-dimensional data suffers from sparsity, computational expense, and overfitting. Dimensionality reduction (PCA, t-SNE, autoencoders) compresses data to fewer dimensions. This improves visualization, speeds up training, and can reduce noise. Information loss is the trade-off; choosing the number of dimensions requires careful validation."
+    },
+    {
+      "id": "machine-learning-feature-engineering-009",
+      "q": "What is feature interaction and how does it help?",
+      "options": [
+        "Ensuring all features have the same scale",
+        "Creating new features as products or combinations of existing features to capture relationships that linear combinations alone cannot express",
+        "Removing correlated features from the dataset",
+        "Splitting a dataset into features and labels"
+      ],
+      "answer": 1,
+      "explanation": "Feature interactions model non-additive relationships. For example, in a decision tree, the effect of feature A on the outcome depends on the value of feature B. Manually creating interaction terms (x₁·x₂) or letting tree-based models discover them automatically can significantly improve predictions."
+    },
+    {
+      "id": "machine-learning-feature-engineering-010",
+      "q": "What is target encoding and when is it used instead of one-hot encoding?",
+      "options": [
+        "Encoding the target variable as 0/1 for binary classification",
+        "Replacing categorical feature values with the mean target value for each category; useful when a categorical feature has many unique values",
+        "Removing features that are highly correlated with the target",
+        "A preprocessing step that is always better than one-hot encoding"
+      ],
+      "answer": 1,
+      "explanation": "Target encoding replaces a categorical feature's categories with the mean target value observed for each category. This is compact (one numerical column vs. k binary columns) and often predictive, especially for high-cardinality features. Risk: target leakage if not cross-validated properly. One-hot is safer but creates more features."
+    }
+  ]
+}

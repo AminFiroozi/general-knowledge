@@ -1,0 +1,126 @@
+{
+  "topic": "expert-systems",
+  "category": "classical-ai",
+  "questions": [
+    {
+      "id": "classical-ai-expert-systems-001",
+      "q": "What is the main purpose of the inference engine in an expert system?",
+      "options": [
+        "To store all domain knowledge in a database",
+        "To apply logical rules to known facts and derive new conclusions",
+        "To collect user input and format it for display",
+        "To optimize queries for faster database access"
+      ],
+      "answer": 1,
+      "explanation": "The inference engine is the reasoning component that applies rules from the knowledge base to known facts (working memory) to derive new facts. It implements the control strategy (forward or backward chaining), managing the reasoning cycle. The knowledge base stores domain rules; the inference engine executes them."
+    },
+    {
+      "id": "classical-ai-expert-systems-002",
+      "q": "In forward chaining inference, the system starts with known facts and applies rules to derive conclusions. What is a key limitation of this approach?",
+      "options": [
+        "It can only handle rules with a single conclusion",
+        "It may derive many irrelevant conclusions before reaching a goal, wasting computational resources",
+        "It cannot handle negation in rules",
+        "It is guaranteed to find a solution in linear time"
+      ],
+      "answer": 1,
+      "explanation": "Forward chaining (data-driven) starts with facts and fires all applicable rules, building up new facts. This can lead to many derived facts unrelated to the goal, wasting effort. Backward chaining (goal-driven) is more efficient when a specific goal must be proven. Forward chaining is efficient for monitoring and real-time systems where new facts trigger responses."
+    },
+    {
+      "id": "classical-ai-expert-systems-003",
+      "q": "What is backward chaining and when is it more efficient than forward chaining?",
+      "options": [
+        "Backward chaining works from goals toward facts; it's more efficient when searching for specific goals in a large knowledge base",
+        "Backward chaining only works with deterministic rules",
+        "Backward chaining is less efficient and never recommended",
+        "Backward chaining eliminates the need for a knowledge base"
+      ],
+      "answer": 0,
+      "explanation": "Backward chaining (goal-driven) starts with a goal and recursively proves subgoals using rules until reaching known facts. It is efficient when searching for specific goals because it avoids deriving irrelevant facts. However, it can be inefficient if many goals have no proof path. Forward chaining is better for monitoring systems where all possible derivations matter."
+    },
+    {
+      "id": "classical-ai-expert-systems-004",
+      "q": "In an expert system, what does the working memory contain?",
+      "options": [
+        "The complete set of rules that define domain expertise",
+        "Current facts, assertions, and data about the problem instance being solved",
+        "The user interface components and graphics",
+        "The optimization algorithms for improving system performance"
+      ],
+      "answer": 1,
+      "explanation": "Working memory holds the current state of facts and assertions about the specific problem instance—both initial facts and facts derived during inference. The knowledge base (separate component) contains general domain rules and expertise. The inference engine matches rules against working memory to drive reasoning."
+    },
+    {
+      "id": "classical-ai-expert-systems-005",
+      "q": "What is the purpose of conflict resolution in rule-based expert systems?",
+      "options": [
+        "To prevent any two rules from having the same conclusion",
+        "To decide which rule fires when multiple rules are applicable in forward chaining",
+        "To resolve contradictions in the knowledge base automatically",
+        "To eliminate duplicate facts from working memory"
+      ],
+      "answer": 1,
+      "explanation": "In forward chaining, multiple rules may match at the same time. Conflict resolution selects which rule fires first using strategies like specificity (more specific rules first), recency (most recently added facts first), or priority (explicit ordering). Without conflict resolution, the inference engine's order would be arbitrary or undefined."
+    },
+    {
+      "id": "classical-ai-expert-systems-006",
+      "q": "How do expert systems handle uncertainty through confidence factors or certainty factors?",
+      "options": [
+        "By requiring all facts to be absolutely certain before applying rules",
+        "By allowing rules and facts to have associated confidence values that combine through inference",
+        "By eliminating any rules with uncertain conclusions",
+        "By defaulting to binary true/false values for all facts"
+      ],
+      "answer": 1,
+      "explanation": "Certainty factors (CF) or confidence scores attach degrees of belief to facts and rules, ranging from 0 (false) to 1 (true). Rules can propagate uncertainty: if a rule premise has CF 0.7, its conclusion might have CF 0.7 × rule_strength. This allows expert systems to reason under uncertainty without requiring classical true/false logic."
+    },
+    {
+      "id": "classical-ai-expert-systems-007",
+      "q": "What is the role of explanation in expert systems, and why is it important for user trust?",
+      "options": [
+        "Explanations slow down inference and should be avoided",
+        "Explanations show the reasoning chain (which rules fired and why), building user confidence in system decisions",
+        "Explanations are only necessary for debugging the knowledge base",
+        "Explanations replace the need for a user interface"
+      ],
+      "answer": 1,
+      "explanation": "Expert systems maintain an audit trail of rule firings (inference chain). Explanations trace back how conclusions were reached ('Why did you conclude that?' and 'How did you conclude that?'), helping users understand and trust system decisions. This transparency is critical for domains like medical diagnosis where decisions must be justifiable."
+    },
+    {
+      "id": "classical-ai-expert-systems-008",
+      "q": "What distinguishes a rule-based expert system from a case-based reasoning system?",
+      "options": [
+        "Rule-based systems use general rules; case-based systems retrieve and adapt similar past cases",
+        "Case-based reasoning is always more accurate than rule-based systems",
+        "Rule-based systems work with any domain; case-based systems only work with medical data",
+        "Both approaches are identical in implementation"
+      ],
+      "answer": 0,
+      "explanation": "Rule-based systems encode domain expertise as if-then rules applied to current facts. Case-based reasoning (CBR) stores past solved cases and solves new problems by retrieving similar cases and adapting their solutions. CBR excels when patterns exist in historical data; rule-based is better when expertise can be articulated as rules."
+    },
+    {
+      "id": "classical-ai-expert-systems-009",
+      "q": "Why might an expert system require maintenance and knowledge engineering updates over time?",
+      "options": [
+        "Domain knowledge changes, new exceptions emerge, and rules become outdated",
+        "Expert systems automatically learn and adapt without updates",
+        "Hardware becomes obsolete and requires replacing",
+        "Users prefer different user interface styles periodically"
+      ],
+      "answer": 0,
+      "explanation": "Knowledge domains evolve: new medical treatments, updated regulations, exceptions to past rules. Expert systems require continuous knowledge engineering to keep the knowledge base current and consistent. Unlike machine learning systems that can retrain on new data, rule-based systems need manual updates when domain knowledge changes."
+    },
+    {
+      "id": "classical-ai-expert-systems-010",
+      "q": "In comparing expert systems to machine learning approaches for diagnosis tasks, what is a key advantage of expert systems?",
+      "options": [
+        "Expert systems always achieve higher accuracy than machine learning",
+        "Expert systems do not require training data and provide explainable, human-auditable reasoning",
+        "Expert systems work faster than neural networks",
+        "Expert systems can learn from experience without human input"
+      ],
+      "answer": 1,
+      "explanation": "Expert systems encode domain knowledge from experts without requiring training data, and their reasoning is fully transparent (explainable). However, they require manual knowledge engineering and may not capture all domain patterns. Machine learning excels with large datasets but often lacks interpretability. Expert systems are preferred when explainability and transparency are critical."
+    }
+  ]
+}

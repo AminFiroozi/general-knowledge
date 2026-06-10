@@ -1,0 +1,126 @@
+{
+  "topic": "neural-network-basics",
+  "category": "deep-learning",
+  "questions": [
+    {
+      "id": "deep-learning-neural-network-basics-001",
+      "q": "What is the primary purpose of an activation function in a neural network neuron?",
+      "options": [
+        "To introduce non-linearity and enable learning of complex patterns",
+        "To normalize the input weights to prevent overflow",
+        "To reduce the number of parameters in the network",
+        "To speed up matrix multiplication during forward propagation"
+      ],
+      "answer": 0,
+      "explanation": "Activation functions introduce non-linearity, allowing neural networks to learn complex, non-linear mappings. Without activation functions, stacking layers would be equivalent to a single linear transformation. The other options describe different neural network techniques but not the core purpose of activation functions."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-002",
+      "q": "In forward propagation, what does the output of one layer become?",
+      "options": [
+        "The input to the next layer",
+        "The gradient for backpropagation",
+        "A label for supervised learning",
+        "Part of the loss function calculation"
+      ],
+      "answer": 0,
+      "explanation": "Forward propagation sequentially processes data through layers, where each layer's output becomes the next layer's input. This creates the computational pipeline that transforms raw input into predictions. Gradients are computed during backpropagation, not in forward passes."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-003",
+      "q": "Which activation function is defined as max(0, x) and is widely used in hidden layers?",
+      "options": [
+        "ReLU (Rectified Linear Unit)",
+        "Sigmoid",
+        "Tanh",
+        "Softmax"
+      ],
+      "answer": 0,
+      "explanation": "ReLU is the standard activation function for hidden layers due to its simplicity and effectiveness in preventing vanishing gradients. Sigmoid and Tanh are older alternatives that suffer from vanishing gradient problems. Softmax is typically used in output layers for multi-class classification."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-004",
+      "q": "What is the main difference between backpropagation and forward propagation?",
+      "options": [
+        "Backpropagation computes gradients by propagating errors backward through layers",
+        "Backpropagation adds random noise to improve generalization",
+        "Backpropagation skips certain layers to save computation",
+        "Backpropagation reverses the order of input samples"
+      ],
+      "answer": 0,
+      "explanation": "Backpropagation uses the chain rule to efficiently compute gradients of the loss with respect to all weights and biases, flowing backward through the network. These gradients are then used to update parameters. Forward propagation moves data forward; backpropagation moves error signals backward."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-005",
+      "q": "In a neural network, what is a neuron's weighted sum before applying the activation function called?",
+      "options": [
+        "Pre-activation or logit",
+        "Activation output",
+        "Gradient magnitude",
+        "Loss signal"
+      ],
+      "answer": 0,
+      "explanation": "The pre-activation (or logit) is the linear combination of inputs and weights plus bias: z = wx + b. The activation function is then applied to this value to produce the neuron's output. Understanding this distinction is crucial for implementing backpropagation correctly."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-006",
+      "q": "What is the loss function's primary role in training a neural network?",
+      "options": [
+        "To measure the discrepancy between predictions and actual labels",
+        "To determine how many training examples are needed",
+        "To normalize the learning rate during training",
+        "To select which activation function to use"
+      ],
+      "answer": 0,
+      "explanation": "The loss function quantifies prediction error, providing the signal for optimization. Minimizing the loss is the goal of training. The loss is differentiated to compute gradients for backpropagation. Other options describe different training concerns unrelated to the loss function's core purpose."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-007",
+      "q": "How does a deeper neural network (more layers) theoretically improve learning capacity?",
+      "options": [
+        "It can learn hierarchical representations, with each layer building on previous abstractions",
+        "It directly increases the values of all activations",
+        "It eliminates the need for non-linear activation functions",
+        "It reduces the total number of parameters needed"
+      ],
+      "answer": 0,
+      "explanation": "Deeper networks enable hierarchical feature learning, where early layers capture simple patterns and later layers combine them into complex concepts. This hierarchical structure is key to deep learning's success. However, training deeper networks is challenging due to vanishing gradient problems."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-008",
+      "q": "In supervised learning with neural networks, what provides the target information for training?",
+      "options": [
+        "Labels or ground truth values paired with input data",
+        "Random weight initialization",
+        "The activation function derivatives",
+        "The batch size configuration"
+      ],
+      "answer": 0,
+      "explanation": "Supervised learning requires labeled data where each input has a corresponding correct output (label). The loss function compares predictions against these labels to produce training signals. Weights are initialized randomly, but labels come from the dataset itself."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-009",
+      "q": "What happens during the weight update step in gradient descent?",
+      "options": [
+        "Weights are adjusted in the opposite direction of the gradient by a step proportional to the learning rate",
+        "Weights are doubled to increase model capacity",
+        "Weights are shuffled randomly to avoid overfitting",
+        "Weights are frozen to prevent forgetting previous learning"
+      ],
+      "answer": 0,
+      "explanation": "Gradient descent updates weights using w = w - learning_rate * gradient. Moving opposite the gradient direction decreases the loss. The learning rate controls step size. Doubling weights or random shuffling would be counterproductive to optimization."
+    },
+    {
+      "id": "deep-learning-neural-network-basics-010",
+      "q": "Which of the following best describes the relationship between neurons in consecutive layers?",
+      "options": [
+        "Each neuron in layer l+1 is connected to all neurons in layer l and receives their outputs as inputs",
+        "Each neuron in layer l+1 directly modifies the weights of layer l",
+        "Neurons in consecutive layers operate independently and never interact",
+        "Each neuron in layer l+1 processes only a randomly selected subset of layer l neurons"
+      ],
+      "answer": 0,
+      "explanation": "In fully connected layers, each neuron in the next layer receives weighted inputs from all neurons in the previous layer. This connectivity pattern enables information flow throughout the network. The alternative options incorrectly describe network connectivity."
+    }
+  ]
+}

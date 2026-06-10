@@ -1,0 +1,126 @@
+{
+  "topic": "planning",
+  "category": "classical-ai",
+  "questions": [
+    {
+      "id": "classical-ai-planning-001",
+      "q": "In STRIPS planning, what does an action schema specify?",
+      "options": [
+        "A sequence of actions in a specific order",
+        "Preconditions (must be true before executing), effects (postconditions that become true), and parameters for an action",
+        "A graphical representation of the planning domain",
+        "The temporal duration of all actions"
+      ],
+      "answer": 1,
+      "explanation": "STRIPS (Stanford Research Institute Problem Solver) action schemas are templates with: preconditions (what must be true to apply the action), effects (what becomes true or false afterward), and parameters (variables). For example, 'unload(truck, location)' requires 'truck-at(truck, location)' and makes 'in-truck(package)' false. This structure enables state-space search."
+    },
+    {
+      "id": "classical-ai-planning-002",
+      "q": "What is the fundamental difference between state-space planning and plan-space planning?",
+      "options": [
+        "State-space planning searches through possible world states; plan-space planning searches through possible plans (partially ordered action sequences)",
+        "State-space planning is always faster than plan-space planning",
+        "Plan-space planning can only handle single-goal problems",
+        "Both approaches are identical in implementation"
+      ],
+      "answer": 0,
+      "explanation": "State-space planning (forward chaining or backward chaining from states) explores possible world configurations toward a goal. Plan-space planning represents plans as partially ordered action sequences and refines partial plans by adding constraints and actions. Plan-space allows earlier interleaving of different goals and can be more efficient for complex problems."
+    },
+    {
+      "id": "classical-ai-planning-003",
+      "q": "In partial-order planning, what does a threat represent and why must it be resolved?",
+      "options": [
+        "A threat is a cost metric for evaluating plans",
+        "A threat occurs when an action A has preconditions threatened by another action B (could be deleted between A's causal link and execution); it must be resolved to ensure plan validity",
+        "A threat is only relevant in real-world planning scenarios",
+        "Threats are automatically eliminated without intervention"
+      ],
+      "answer": 1,
+      "explanation": "A threat in partial-order planning occurs when action B could delete a precondition for action A that must be true before A executes. For example, if action A requires 'lights-on' and action B 'turns off lights', B threatens A's precondition. Threats are resolved by ordering (B before A's causal link, or A before B) or demoting actions."
+    },
+    {
+      "id": "classical-ai-planning-004",
+      "q": "What is a causal link in partial-order planning?",
+      "options": [
+        "A link between two states in a state-space graph",
+        "A directed edge from an action's effect to another action's precondition it satisfies, protecting that precondition from threats",
+        "An ordering constraint that forces actions into a total order",
+        "A probabilistic connection in stochastic planning"
+      ],
+      "answer": 1,
+      "explanation": "A causal link (A →(effect) B) records that action A's effect satisfies a precondition of action B. Threats to causal links (actions that could delete the effect between A and B) must be resolved. Causal links enable efficient plan refinement by focusing on dependencies rather than all temporal constraints."
+    },
+    {
+      "id": "classical-ai-planning-005",
+      "q": "What is the purpose of domain-independent planning, and how does it differ from domain-specific planning?",
+      "options": [
+        "Domain-independent planning is always faster and more accurate",
+        "Domain-independent uses general-purpose algorithms applicable to any domain, while domain-specific exploits domain structure for efficiency",
+        "Domain-independent planning cannot handle multiple goals",
+        "Domain-specific planning is obsolete technology"
+      ],
+      "answer": 1,
+      "explanation": "Domain-independent planners (like STRIPS, GraphPlan) work on any domain once action schemas are specified, enabling reuse. Domain-specific planners encode expert knowledge about a particular domain (e.g., logistics, manufacturing), trading generality for efficiency. Modern planners combine both: general algorithms with domain-specific heuristics for better performance."
+    },
+    {
+      "id": "classical-ai-planning-006",
+      "q": "In goal-means-ends analysis (used in classical planning), what is the 'means-ends' relationship?",
+      "options": [
+        "The temporal ordering of all actions in the plan",
+        "The gap between current state and goal is bridged by finding actions ('means') whose effects achieve subgoals ('ends')",
+        "A measure of plan optimality",
+        "The cost function for evaluating plans"
+      ],
+      "answer": 1,
+      "explanation": "Means-ends analysis identifies gaps between the current state and the goal. For each gap, it selects actions ('means') whose effects ('ends') satisfy the goal. This generates subgoals for the preconditions of those actions, recursively decomposing the problem. It's foundational to backward-chaining planning and STRIPS-like algorithms."
+    },
+    {
+      "id": "classical-ai-planning-007",
+      "q": "What is a planning graph and how does it support planning algorithms like GraphPlan?",
+      "options": [
+        "A visualization of the domain structure without solving the problem",
+        "A layered graph alternating between state-levels (propositions true at each time step) and action-levels, used to find plans or prove unsolvability",
+        "A directed acyclic graph of all possible plans",
+        "A greedy heuristic for action selection"
+      ],
+      "answer": 1,
+      "explanation": "GraphPlan constructs a planning graph layer-by-layer: state layers list propositions true at time t, action layers list applicable actions at time t, with mutexes (conflicting actions/propositions). The graph terminates when all goals appear without mutexes, or proves no solution exists at that depth. GraphPlan then extracts a plan by backward regression."
+    },
+    {
+      "id": "classical-ai-planning-008",
+      "q": "What is the closed-world assumption in classical planning and what problems can it cause?",
+      "options": [
+        "All facts not explicitly stated are assumed false; this can cause incorrect plans when reality has unknown facts",
+        "It guarantees complete knowledge of the world",
+        "It only applies to AI planning, not to logic",
+        "The closed-world assumption eliminates the need for preconditions"
+      ],
+      "answer": 0,
+      "explanation": "Classical planning assumes closed-world: if a fact is not in the initial state, it is false. This enables complete state representation but fails when the world has unknown information. For example, a planner might assume 'Door is unlocked' is false and not include 'unlock door' as a precaution. Contingent planning and probabilistic planning address this limitation."
+    },
+    {
+      "id": "classical-ai-planning-009",
+      "q": "In hierarchical task network (HTN) planning, what is the relationship between abstract and primitive tasks?",
+      "options": [
+        "They are the same thing",
+        "Abstract tasks are refined into subtasks via methods until all tasks are primitive (executable actions)",
+        "Primitive tasks have higher priority than abstract tasks",
+        "HTN planning does not use primitive tasks"
+      ],
+      "answer": 1,
+      "explanation": "HTN planning uses task hierarchies: abstract tasks (high-level goals) are recursively decomposed via methods into subtasks until reaching primitive tasks (executable actions). This enables top-down planning with domain knowledge encoded in methods. HTN is more expressive and efficient than classical planning for structured domains."
+    },
+    {
+      "id": "classical-ai-planning-010",
+      "q": "What is the frame problem in AI planning and why does it matter?",
+      "options": [
+        "The frame problem is about drawing frames around objects in images",
+        "It addresses how to efficiently represent what does NOT change when an action executes, avoiding explicit specification of all unchanged facts",
+        "It only affects logic programming, not planning",
+        "The frame problem has been completely solved in classical AI"
+      ],
+      "answer": 1,
+      "explanation": "The frame problem asks: when action 'move(box, loc1, loc2)' occurs, how do we know that 'color(box, red)' remains true without explicitly stating it? Classical solutions use implicit closed-world assumption or frame axioms. This is critical for efficiency—without addressing the frame problem, planning becomes combinatorially infeasible for large domains."
+    }
+  ]
+}
