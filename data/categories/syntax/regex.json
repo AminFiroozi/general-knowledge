@@ -1,0 +1,126 @@
+{
+  "topic": "regex",
+  "category": "syntax",
+  "questions": [
+    {
+      "id": "syntax-regex-001",
+      "q": "What does the regex [a-z] match?",
+      "options": [
+        "Any single lowercase letter from a to z",
+        "The literal string 'a-z'",
+        "One or more lowercase letters",
+        "Either a or z"
+      ],
+      "answer": 0,
+      "explanation": "Character class [a-z] matches any single character in the range. [abc] matches only a, b, or c. Option 1 treats the hyphen as literal. Option 2 requires one or more repetition."
+    },
+    {
+      "id": "syntax-regex-002",
+      "q": "What does + mean in regex?",
+      "options": [
+        "One or more of the preceding element",
+        "The literal plus sign",
+        "Zero or more of the preceding element",
+        "Concatenation"
+      ],
+      "answer": 0,
+      "explanation": "The + quantifier means at least one occurrence. a+ matches 'a', 'aa', 'aaa'. * means zero or more. Option 1 treats + as literal. Option 2 requires escaping \\+."
+    },
+    {
+      "id": "syntax-regex-003",
+      "q": "What does ^ match in the regex ^hello?",
+      "options": [
+        "Start of the string",
+        "Any character before hello",
+        "The literal caret character",
+        "The end of the string"
+      ],
+      "answer": 0,
+      "explanation": "^ anchors to the start of the string. ^hello matches 'hello' only if it begins the string. $ anchors to the end. Option 1 matches any prefix. Option 2 requires literal \\^."
+    },
+    {
+      "id": "syntax-regex-004",
+      "q": "What does (abc) do in regex?",
+      "options": [
+        "Creates a capturing group to store 'abc'",
+        "Matches a, b, or c",
+        "Matches the literal string 'abc'",
+        "Creates a non-capturing group"
+      ],
+      "answer": 0,
+      "explanation": "Parentheses () define capturing groups that store matched text. (abc) matches 'abc' and saves it as group 1. [abc] matches single characters. (?:abc) is non-capturing. Option 2 requires [abc] or use a|b|c."
+    },
+    {
+      "id": "syntax-regex-005",
+      "q": "What does \\d match?",
+      "options": [
+        "Any single digit 0-9",
+        "The literal string 'd'",
+        "Any character except digit",
+        "A decimal point"
+      ],
+      "answer": 0,
+      "explanation": "\\d is a character class shorthand for [0-9]. It matches single digits. \\D matches non-digits. Option 1 treats \\d as literal d. Option 2 requires [^0-9]."
+    },
+    {
+      "id": "syntax-regex-006",
+      "q": "What does the regex a{2,4} match?",
+      "options": [
+        "Between 2 and 4 consecutive a's",
+        "Exactly 2 or exactly 4 a's",
+        "2 or more a's",
+        "0 to 4 a's"
+      ],
+      "answer": 0,
+      "explanation": "Quantifier {m,n} matches m to n occurrences. a{2,4} matches 'aa', 'aaa', 'aaaa'. a{2} matches exactly 2. Option 1 treats ranges as disjoint. Option 2 is unbounded."
+    },
+    {
+      "id": "syntax-regex-007",
+      "q": "What does (?:abc) do differently than (abc)?",
+      "options": [
+        "(?:abc) is non-capturing; (abc) captures the match",
+        "Both are identical",
+        "(?:abc) captures; (abc) does not",
+        "(?:abc) is invalid syntax"
+      ],
+      "answer": 0,
+      "explanation": "(?:...) is non-capturing—useful for grouping without storing the match. (abc) creates a numbered group. Both match 'abc' but only (abc) stores it. Option 1 reverses the behavior. Option 2 is false—they differ in capture."
+    },
+    {
+      "id": "syntax-regex-008",
+      "q": "What does (?=...) mean in regex?",
+      "options": [
+        "Positive lookahead—matches if followed by the pattern but doesn't consume it",
+        "Matches the pattern and captures it",
+        "Negative lookahead",
+        "Lookbehind assertion"
+      ],
+      "answer": 0,
+      "explanation": "(?=...) is a lookahead assertion. It asserts the pattern ahead without including it in the match. hello(?=world) matches 'hello' only if followed by 'world'. (?!...) is negative lookahead. Option 1 captures. Option 2 is lookbehind (?<=)."
+    },
+    {
+      "id": "syntax-regex-009",
+      "q": "What does . match in regex?",
+      "options": [
+        "Any single character except newline (usually)",
+        "A literal dot",
+        "Any digit",
+        "End of string"
+      ],
+      "answer": 0,
+      "explanation": ". is a wildcard matching any character except \\n in most engines. To match literal dot, escape as \\.. Option 1 treats dot as literal. Option 2 is \\d. Option 3 is $."
+    },
+    {
+      "id": "syntax-regex-010",
+      "q": "What does [^a-z] match?",
+      "options": [
+        "Any single character NOT in a-z (excluding lowercase letters)",
+        "Any lowercase letter",
+        "The negation operator before a-z",
+        "Character a followed by hyphen and z"
+      ],
+      "answer": 0,
+      "explanation": "^ inside character class [^...] negates the range. [^a-z] matches any non-lowercase letter (digits, uppercase, symbols). Option 1 includes lowercase. Option 2 is incorrect syntax."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "pure-functions",
+  "category": "functional-programming",
+  "questions": [
+    {
+      "id": "functional-programming-pure-functions-001",
+      "q": "What is the primary characteristic that distinguishes a pure function from an impure function?",
+      "options": [
+        "It has no side effects and always returns the same output for the same input",
+        "It runs faster than impure functions",
+        "It uses only local variables instead of global ones",
+        "It has a single return statement"
+      ],
+      "answer": 0,
+      "explanation": "A pure function must be deterministic (same input → same output) and have no side effects (no modifications to external state). Speed is unrelated to purity. Using local variables doesn't guarantee purity if side effects occur elsewhere."
+    },
+    {
+      "id": "functional-programming-pure-functions-002",
+      "q": "Which of the following is a side effect that would make a function impure?",
+      "options": [
+        "Modifying a global variable",
+        "Using parameters to calculate a result",
+        "Returning different values based on input",
+        "Storing the result in a variable"
+      ],
+      "answer": 0,
+      "explanation": "Modifying external state (global variables, files, databases) is a side effect. Pure functions only read their inputs and return outputs without changing anything external. Using parameters and returning values are normal function behavior."
+    },
+    {
+      "id": "functional-programming-pure-functions-003",
+      "q": "Why is referential transparency important in functional programming?",
+      "options": [
+        "It allows function calls to be replaced with their return values without changing program behavior",
+        "It makes code run in parallel automatically",
+        "It eliminates the need for testing",
+        "It reduces memory usage"
+      ],
+      "answer": 0,
+      "explanation": "Referential transparency means a function call can be substituted with its result without affecting program behavior. This relies on purity and enables reasoning about code, optimizations, and caching. It doesn't automatically enable parallelization or eliminate testing."
+    },
+    {
+      "id": "functional-programming-pure-functions-004",
+      "q": "Consider: function add(a, b) { return a + b; }. Is this function pure?",
+      "options": [
+        "Yes, it has no side effects and always returns the same output for identical inputs",
+        "No, because it modifies the input parameters",
+        "No, because it uses the + operator",
+        "No, because it doesn't store the result"
+      ],
+      "answer": 0,
+      "explanation": "The add function is pure: it produces the same output for identical inputs and has no side effects. Parameters are not modified by the + operator. Using operators or not storing results doesn't affect purity."
+    },
+    {
+      "id": "functional-programming-pure-functions-005",
+      "q": "Which function is impure due to external dependency?",
+      "options": [
+        "A function that reads from a database inside its body",
+        "A function that multiplies two numbers together",
+        "A function that reverses an array argument without modifying the original",
+        "A function that calculates the square of its input"
+      ],
+      "answer": 0,
+      "explanation": "Reading from a database is a side effect: the output depends on external state that may change. This violates purity and determinism. The other functions depend only on their inputs."
+    },
+    {
+      "id": "functional-programming-pure-functions-006",
+      "q": "Why are pure functions easier to test than impure functions?",
+      "options": [
+        "Pure functions require no setup, no external dependencies, and the output depends only on inputs",
+        "Pure functions always run faster in test environments",
+        "Pure functions automatically generate their own test cases",
+        "Pure functions don't need to be tested as thoroughly"
+      ],
+      "answer": 0,
+      "explanation": "Pure functions are testable because they depend only on their inputs and have no side effects, so testing is straightforward: pass inputs, verify outputs. No need to mock databases, files, or worry about shared state. Speed and automatic test generation are unrelated to purity."
+    },
+    {
+      "id": "functional-programming-pure-functions-007",
+      "q": "A function logs a message to console, then returns a number. Is it pure?",
+      "options": [
+        "No, because logging to console is a side effect",
+        "Yes, as long as it returns the same number each time",
+        "Yes, because the return value is deterministic",
+        "No, because it performs multiple operations"
+      ],
+      "answer": 0,
+      "explanation": "Logging is a side effect (modifying external state: the console output). Even though the return value might be consistent, the function still has observable effects beyond its return value, making it impure."
+    },
+    {
+      "id": "functional-programming-pure-functions-008",
+      "q": "What does it mean for a function to be deterministic?",
+      "options": [
+        "Calling it multiple times with the same arguments always produces the same result",
+        "It runs at a predictable speed",
+        "It uses if-else statements instead of loops",
+        "It completes execution without throwing errors"
+      ],
+      "answer": 0,
+      "explanation": "Deterministic means given the same inputs, the function always produces the same output. Speed predictability, control flow structure, and error handling are separate concerns unrelated to determinism."
+    },
+    {
+      "id": "functional-programming-pure-functions-009",
+      "q": "Why might a compiler optimize code differently for pure vs impure functions?",
+      "options": [
+        "Pure functions can be memoized, inlined, or reordered because the compiler knows they have no side effects",
+        "Impure functions are always slower so compilers ignore them",
+        "Compilers cannot optimize any function that has side effects",
+        "Pure functions use less memory so optimization isn't necessary"
+      ],
+      "answer": 0,
+      "explanation": "Knowing a function is pure allows the compiler to cache results (memoization), inline the call, reorder operations, or eliminate redundant calls. These optimizations are unsafe for impure functions. Impure functions can still be optimized, just not as aggressively."
+    },
+    {
+      "id": "functional-programming-pure-functions-010",
+      "q": "A function reads a parameter, performs a calculation, and returns a result without touching any external state. What property does this function definitely have?",
+      "options": [
+        "Referential transparency",
+        "Infinite recursion",
+        "Object-oriented design",
+        "Type safety"
+      ],
+      "answer": 0,
+      "explanation": "The description matches referential transparency: the function call can be replaced with its result without changing program semantics. This requires purity (no side effects) and determinism, both of which are satisfied. Recursion, OOP, and typing are unrelated."
+    }
+  ]
+}

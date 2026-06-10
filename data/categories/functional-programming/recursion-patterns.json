@@ -1,0 +1,126 @@
+{
+  "topic": "recursion-patterns",
+  "category": "functional-programming",
+  "questions": [
+    {
+      "id": "functional-programming-recursion-patterns-001",
+      "q": "What are the two essential components of a recursive function?",
+      "options": [
+        "A base case that stops recursion and a recursive case that breaks the problem into smaller subproblems",
+        "A loop condition and a loop counter",
+        "An input parameter and an output parameter",
+        "A start value and an end value"
+      ],
+      "answer": 0,
+      "explanation": "Base case terminates recursion; recursive case solves smaller instances. Without both, recursion is infinite or wrong. Loops, parameters, and start/end values are different programming constructs."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-002",
+      "q": "What happens if a recursive function lacks a proper base case?",
+      "options": [
+        "The function enters infinite recursion, eventually causing a stack overflow error",
+        "The function returns null automatically",
+        "The compiler detects the error and prevents compilation",
+        "The recursive calls run in parallel"
+      ],
+      "answer": 0,
+      "explanation": "Without a base case, recursion never terminates, consuming stack memory until overflow. Java/Python don't compile-time detect this; not all errors prevent compilation. Parallelization is unrelated."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-003",
+      "q": "What is tail recursion?",
+      "options": [
+        "Recursion where the final operation in the function is a recursive call, allowing optimization to avoid stack growth",
+        "Recursion that uses the tail of a list as a parameter",
+        "Recursion that handles the last element of a collection",
+        "A form of iteration that behaves like recursion"
+      ],
+      "answer": 0,
+      "explanation": "Tail recursion can be optimized by the compiler into a loop, avoiding stack accumulation. List tail operations and final element handling are separate concerns, though often related in practice."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-004",
+      "q": "Why are accumulators used in recursive functions?",
+      "options": [
+        "To maintain intermediate results and enable tail recursion by passing computed values forward",
+        "To store all computed results in memory for later analysis",
+        "To make recursive functions faster than iterative ones",
+        "To prevent the base case from being reached"
+      ],
+      "answer": 0,
+      "explanation": "Accumulators thread results through recursive calls, enabling tail call optimization and avoiding stack growth. They don't require storing all results or guarantee speed. Base cases still apply."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-005",
+      "q": "How does recursion differ from iteration in functional programming?",
+      "options": [
+        "Recursion uses function calls with explicit base cases; iteration uses loops, but both can express the same logic",
+        "Recursion is always faster than iteration",
+        "Iteration cannot express problems that recursion can solve",
+        "Recursion is a prerequisite for functional programming"
+      ],
+      "answer": 0,
+      "explanation": "Both recursion and iteration express repetitive logic; recursion uses function calls and base cases while iteration uses loops. Neither is universally faster. Both can solve equivalent problems. Recursion is preferred in FP but not required."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-006",
+      "q": "What is a mutual recursion pattern?",
+      "options": [
+        "Two or more functions that call each other directly or indirectly to solve a problem",
+        "Multiple threads calling the same recursive function",
+        "Recursion that alternates between two data types",
+        "Functions that recursively call themselves multiple times per iteration"
+      ],
+      "answer": 0,
+      "explanation": "Mutual recursion involves functions calling each other in a cycle. Thread parallelism, data type alternation, and call frequency are different concerns."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-007",
+      "q": "What problem can tail recursion optimization solve?",
+      "options": [
+        "Stack overflow from deep recursion by replacing tail calls with jumps, avoiding stack growth",
+        "The problem of writing recursive code that is readable",
+        "Making recursive functions execute in parallel",
+        "Eliminating the need for a base case"
+      ],
+      "answer": 0,
+      "explanation": "Tail call optimization (TCO) converts tail recursion into loops, preventing stack exhaustion in deep recursions. Readability, parallelization, and base case requirements are separate issues."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-008",
+      "q": "How does structural recursion differ from generative recursion?",
+      "options": [
+        "Structural recursion breaks down input data structure; generative recursion creates new subproblems that don't match input structure",
+        "Structural recursion is always faster",
+        "Generative recursion uses loops instead of function calls",
+        "There is no meaningful difference between them"
+      ],
+      "answer": 0,
+      "explanation": "Structural recursion follows input structure (traverse a tree); generative recursion creates problems computationally (divide-and-conquer). Speed and loop usage are implementation details."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-009",
+      "q": "What does a base case do in a recursive function?",
+      "options": [
+        "Stops the recursion by returning a value without making further recursive calls",
+        "Initializes variables at the start of the function",
+        "Handles edge cases by throwing exceptions",
+        "Prepares the problem for the first recursive call"
+      ],
+      "answer": 0,
+      "explanation": "The base case terminates recursion with a direct value. Variable initialization, exception handling, and problem preparation are different aspects of function design."
+    },
+    {
+      "id": "functional-programming-recursion-patterns-010",
+      "q": "Why is recursion popular in functional programming compared to imperative iteration?",
+      "options": [
+        "Recursion is more declarative and expresses transformations naturally while avoiding mutable loop variables",
+        "Recursion always produces faster code than iteration",
+        "Imperative languages don't support iteration",
+        "Recursion eliminates the need for data structures"
+      ],
+      "answer": 0,
+      "explanation": "Recursion aligns with FP's immutability and declarative style, avoiding mutable state. Speed isn't guaranteed; all languages support both patterns. Data structures are still needed."
+    }
+  ]
+}

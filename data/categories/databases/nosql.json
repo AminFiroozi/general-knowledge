@@ -1,0 +1,126 @@
+{
+  "topic": "nosql",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-nosql-001",
+      "q": "What does NoSQL stand for?",
+      "options": [
+        "Non-relational SQL",
+        "Not Only SQL",
+        "No Structured Query Language",
+        "Network Object Storage Language"
+      ],
+      "answer": 1,
+      "explanation": "NoSQL means 'Not Only SQL' - these databases don't rely solely on relational tables and SQL. They support multiple data models including document, key-value, column, and graph stores while still potentially supporting SQL-like query languages."
+    },
+    {
+      "id": "databases-nosql-002",
+      "q": "What are the characteristics of the BASE model used in NoSQL systems?",
+      "options": [
+        "Binary, Atomic, Serialized, Exclusive",
+        "Basically Available, Soft state, Eventually consistent",
+        "Batch, Aggregate, Search, Execute",
+        "Buffer, Archive, Store, Encrypt"
+      ],
+      "answer": 1,
+      "explanation": "BASE is the NoSQL alternative to ACID: systems are basically available even during failures, data may be temporarily inconsistent (soft state), and consistency is eventual (achieved over time). This enables high availability and scalability."
+    },
+    {
+      "id": "databases-nosql-003",
+      "q": "What is a document database optimized for?",
+      "options": [
+        "Numeric computations",
+        "Storing and querying semi-structured JSON/BSON documents with flexible schemas",
+        "Fixed table structures with normalized relations",
+        "Real-time analytics on billions of rows"
+      ],
+      "answer": 1,
+      "explanation": "Document databases (MongoDB, CouchDB) store nested, semi-structured data as documents. They allow flexible schemas where documents in the same collection can have different structures, suited for rapid development and hierarchical data."
+    },
+    {
+      "id": "databases-nosql-004",
+      "q": "What is sharding in NoSQL databases?",
+      "options": [
+        "Compressing data to reduce storage size",
+        "Partitioning data across multiple servers/nodes based on a shard key",
+        "Creating backups of the database",
+        "Encrypting sensitive columns"
+      ],
+      "answer": 1,
+      "explanation": "Sharding distributes data horizontally across multiple machines based on a shard key (e.g., user_id). Each shard holds a subset of the data, enabling massive scalability and parallel processing, though it adds operational complexity."
+    },
+    {
+      "id": "databases-nosql-005",
+      "q": "What is a key-value store optimized for?",
+      "options": [
+        "Complex relational queries across multiple tables",
+        "Fast lookups and storage of simple key-to-value pairs with minimal overhead",
+        "Storing unstructured text documents",
+        "Running ACID transactions across distributed systems"
+      ],
+      "answer": 1,
+      "explanation": "Key-value stores (Redis, Memcached, DynamoDB) provide ultra-fast O(1) lookups by storing and retrieving values using a unique key. They're ideal for caching, sessions, and real-time data but lack query flexibility."
+    },
+    {
+      "id": "databases-nosql-006",
+      "q": "What is a column-family database used for?",
+      "options": [
+        "Storing employee and family relationships",
+        "Real-time analytics and time-series data across billions of rows and millions of columns",
+        "Document-based storage with flexible schemas",
+        "Graph-based queries between entities"
+      ],
+      "answer": 1,
+      "explanation": "Column-family stores (HBase, Cassandra) organize data by column rather than row, excelling at compressing time-series data and analytical queries. They support massive horizontal scaling and high write throughput for time-series databases."
+    },
+    {
+      "id": "databases-nosql-007",
+      "q": "What is a graph database optimized for?",
+      "options": [
+        "Simple key-value lookups",
+        "Querying relationships and connections between entities",
+        "Storing fixed-schema tabular data",
+        "Full-text search across documents"
+      ],
+      "answer": 1,
+      "explanation": "Graph databases (Neo4j, ArangoDB) model data as nodes and edges, optimizing queries that traverse relationships. They excel at social networks, recommendation systems, and any domain where relationships are as important as the data itself."
+    },
+    {
+      "id": "databases-nosql-008",
+      "q": "When should you use NoSQL instead of SQL databases?",
+      "options": [
+        "Always; SQL is outdated",
+        "Never; SQL is superior",
+        "When you have unstructured data, need massive scale, or prioritize availability over strict consistency",
+        "Only for mobile applications"
+      ],
+      "answer": 2,
+      "explanation": "NoSQL suits scenarios with flexible schemas, horizontal scalability needs, high write throughput, or when availability matters more than immediate consistency. SQL excels at complex queries, transactions, and structured relational data."
+    },
+    {
+      "id": "databases-nosql-009",
+      "q": "What does eventual consistency mean in NoSQL systems?",
+      "options": [
+        "Data is never consistent in NoSQL systems",
+        "All reads immediately see the latest writes",
+        "Data becomes consistent across all nodes over time, but temporary inconsistencies may exist",
+        "Consistency is checked once per day"
+      ],
+      "answer": 2,
+      "explanation": "Eventual consistency means after a write, replicas synchronize over time, but brief windows exist where different nodes serve stale data. This trades immediate consistency for availability and partition tolerance in distributed systems."
+    },
+    {
+      "id": "databases-nosql-010",
+      "q": "What is the primary advantage of NoSQL over relational databases for web applications?",
+      "options": [
+        "NoSQL is always faster than SQL",
+        "Horizontal scalability and handling variable schema structures with high availability",
+        "NoSQL doesn't require any database administration",
+        "NoSQL supports complex transaction logic better than SQL"
+      ],
+      "answer": 1,
+      "explanation": "NoSQL enables horizontal scaling by distributing data across servers and handles schema flexibility better than rigid relational models, making it ideal for rapidly growing web apps with unpredictable data structures and high availability requirements."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "css-and-layout",
+  "category": "frontend",
+  "questions": [
+    {
+      "id": "frontend-css-and-layout-001",
+      "q": "What are the components of the CSS box model in order from the content outward?",
+      "options": [
+        "Border, margin, padding, content",
+        "Content, padding, border, margin",
+        "Margin, border, padding, content",
+        "Content, border, padding, margin"
+      ],
+      "answer": 1,
+      "explanation": "The box model consists of content (innermost), then padding, border, and margin (outermost). Content is the actual element; padding is inside the border; border is the edge; margin is outside the border. Understanding this order is critical for correctly calculating element sizes and spacing."
+    },
+    {
+      "id": "frontend-css-and-layout-002",
+      "q": "What does the CSS property box-sizing: border-box do?",
+      "options": [
+        "It makes the element a perfect square",
+        "It includes padding and border in the element's total width and height",
+        "It removes the border from an element",
+        "It applies a border to all sides of a box"
+      ],
+      "answer": 1,
+      "explanation": "With box-sizing: border-box, when you set width: 100px, that includes padding and border, not just content. With the default content-box, width only includes the content, and padding/border are added on top. This makes layouts more predictable."
+    },
+    {
+      "id": "frontend-css-and-layout-003",
+      "q": "Which flex property controls how available space is distributed among flex items?",
+      "options": [
+        "flex-direction",
+        "flex-wrap",
+        "justify-content",
+        "flex-basis"
+      ],
+      "answer": 2,
+      "explanation": "justify-content aligns flex items along the main axis and distributes extra space (or removes space) between them using values like space-between, space-around, and center. flex-direction sets the direction, flex-wrap allows wrapping, and flex-basis sets the default size of an item."
+    },
+    {
+      "id": "frontend-css-and-layout-004",
+      "q": "What is the difference between CSS Grid's explicit and implicit grid?",
+      "options": [
+        "Explicit grids are larger than implicit grids",
+        "Explicit grids are defined by you; implicit grids are automatically created for overflow items",
+        "Implicit grids are faster than explicit grids",
+        "There is no difference; the terms are synonyms"
+      ],
+      "answer": 1,
+      "explanation": "The explicit grid is defined by grid-template-rows and grid-template-columns. The implicit grid consists of tracks automatically created by the browser when items fall outside the explicit grid bounds. Implicit tracks use auto as their size by default, but you can control this with grid-auto-rows and grid-auto-columns."
+    },
+    {
+      "id": "frontend-css-and-layout-005",
+      "q": "How does CSS specificity work when selectors conflict?",
+      "options": [
+        "The last rule in the stylesheet always wins",
+        "Inline styles beat class selectors, which beat element selectors; !important beats everything except more specific inline styles",
+        "More specific selectors always override less specific ones based on selector type priority",
+        "All selectors have equal weight; only the cascade matters"
+      ],
+      "answer": 2,
+      "explanation": "Specificity is calculated: inline styles (1000), ID selectors (100), class/attribute/pseudo-class selectors (10), element/pseudo-element selectors (1). Higher specificity wins. !important overrides specificity but should be avoided. If specificity is tied, the last rule in source order wins."
+    },
+    {
+      "id": "frontend-css-and-layout-006",
+      "q": "What is the difference between position: relative and position: absolute in CSS?",
+      "options": [
+        "Relative elements are removed from the flow; absolute elements are not",
+        "Absolute elements are positioned relative to their nearest positioned ancestor; relative elements are positioned relative to their normal position and stay in the flow",
+        "Relative and absolute are the same; relative is just a newer term",
+        "Absolute elements always stay at the top-left corner"
+      ],
+      "answer": 1,
+      "explanation": "position: relative offsets an element from where it normally would be but keeps it in the document flow and reserves space for it. position: absolute removes the element from the flow and positions it relative to the nearest ancestor with position: relative/absolute/fixed (or the viewport if none exists). This distinction is crucial for layout behavior."
+    },
+    {
+      "id": "frontend-css-and-layout-007",
+      "q": "Which CSS Grid property allows items to span multiple columns?",
+      "options": [
+        "grid-column",
+        "grid-auto-flow",
+        "grid-gap",
+        "grid-template"
+      ],
+      "answer": 0,
+      "explanation": "grid-column (shorthand for grid-column-start and grid-column-end) lets you specify how many columns an item spans, e.g., grid-column: 1 / 3 spans from column 1 to 3. You can also use grid-row for rows. grid-auto-flow controls how items fill the grid; grid-gap sets spacing; grid-template is a shorthand for rows/columns/areas."
+    },
+    {
+      "id": "frontend-css-and-layout-008",
+      "q": "What does the CSS property align-items do in flexbox?",
+      "options": [
+        "It aligns items horizontally along the main axis",
+        "It aligns items vertically along the cross axis",
+        "It controls the space between items",
+        "It determines the width of each flex item"
+      ],
+      "answer": 1,
+      "explanation": "align-items aligns flex items on the cross axis (perpendicular to the main axis). If flex-direction is row, the cross axis is vertical. If flex-direction is column, the cross axis is horizontal. justify-content aligns on the main axis. align-content aligns rows/columns when there is extra space."
+    },
+    {
+      "id": "frontend-css-and-layout-009",
+      "q": "Why might you use CSS custom properties (variables) instead of hardcoding values?",
+      "options": [
+        "CSS variables make the browser render faster",
+        "CSS variables allow you to change values globally and use inheritance; they are useful for maintaining consistent design systems and enabling runtime theme switching",
+        "CSS variables are required by all modern browsers",
+        "CSS variables eliminate the need for any other CSS properties"
+      ],
+      "answer": 1,
+      "explanation": "CSS variables (--var-name) are declared and used via var(--var-name). They support fallbacks, inheritance through the cascade, and can be changed at runtime via JavaScript. This makes maintaining consistent color palettes, spacing scales, and responsive themes much easier than hardcoding values throughout the stylesheet."
+    },
+    {
+      "id": "frontend-css-and-layout-010",
+      "q": "What is the stacking context in CSS, and what does z-index affect?",
+      "options": [
+        "The stacking context determines the order in which CSS rules are processed",
+        "z-index controls which elements appear in front within the same stacking context; new stacking contexts are created by properties like position: relative and opacity",
+        "z-index affects the horizontal position of elements",
+        "The stacking context is only relevant for 3D transforms"
+      ],
+      "answer": 1,
+      "explanation": "z-index only works on positioned elements (position not static). Elements in the same stacking context stack by z-index value; higher values appear on top. A new stacking context is created by opacity < 1, transform, filter, position: fixed, and other properties, which limits z-index comparison to within that context. Understanding stacking contexts prevents z-index battles."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "normalization",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-normalization-001",
+      "q": "What is the primary goal of database normalization?",
+      "options": [
+        "To make queries run as fast as possible",
+        "To reduce redundancy, eliminate anomalies, and ensure data integrity",
+        "To use the least amount of disk space possible",
+        "To allow all users to access all tables simultaneously"
+      ],
+      "answer": 1,
+      "explanation": "Normalization reduces data redundancy and anomalies by organizing data into logical tables with proper relationships. While it can increase query complexity, it ensures data consistency and eliminates update/insertion/deletion anomalies."
+    },
+    {
+      "id": "databases-normalization-002",
+      "q": "What does First Normal Form (1NF) require?",
+      "options": [
+        "Tables must have a primary key and no repeating groups",
+        "All non-key attributes depend on the entire primary key",
+        "Removal of transitive dependencies",
+        "Tables must be related through foreign keys"
+      ],
+      "answer": 0,
+      "explanation": "1NF requires atomic values (no repeating groups or arrays) and a primary key. Each cell contains only one value, not a list. This is the most basic normalization level."
+    },
+    {
+      "id": "databases-normalization-003",
+      "q": "What problem does Second Normal Form (2NF) solve?",
+      "options": [
+        "Eliminates partial key dependencies where attributes depend on part of a composite key",
+        "Removes all relationships between tables",
+        "Ensures all columns have unique values",
+        "Organizes data into exactly two tables"
+      ],
+      "answer": 0,
+      "explanation": "2NF eliminates partial dependencies in composite-key tables by ensuring all non-key attributes depend on the entire key, not just part of it. This prevents anomalies when composite keys are involved."
+    },
+    {
+      "id": "databases-normalization-004",
+      "q": "What is a functional dependency?",
+      "options": [
+        "An index that depends on multiple columns",
+        "Attribute B depends on attribute A if each A value maps to exactly one B value",
+        "A column that cannot contain NULL values",
+        "A relationship between two tables"
+      ],
+      "answer": 1,
+      "explanation": "A functional dependency means attribute B is determined by attribute A (A → B): given a value of A, there is exactly one value of B. For example, StudentID → StudentName in a student table."
+    },
+    {
+      "id": "databases-normalization-005",
+      "q": "What does Third Normal Form (3NF) eliminate?",
+      "options": [
+        "Partial key dependencies",
+        "Transitive dependencies where non-key attributes depend on other non-key attributes",
+        "The need for primary keys",
+        "All foreign key relationships"
+      ],
+      "answer": 1,
+      "explanation": "3NF removes transitive dependencies by requiring non-key attributes to depend directly on the primary key, not on other non-key attributes. For example, storing city when you already store zip code creates a transitive dependency."
+    },
+    {
+      "id": "databases-normalization-006",
+      "q": "What is a deletion anomaly?",
+      "options": [
+        "When a row is permanently deleted from the database",
+        "Losing desired data as a side effect of deleting unrelated data",
+        "When a database refuses to delete rows",
+        "Attempting to delete rows without a primary key"
+      ],
+      "answer": 1,
+      "explanation": "A deletion anomaly occurs in denormalized data when removing one piece of information unintentionally removes other data. For example, deleting the only employee from a department also loses department information."
+    },
+    {
+      "id": "databases-normalization-007",
+      "q": "What is an insertion anomaly?",
+      "options": [
+        "Adding duplicate rows to a table",
+        "Inability to insert data without providing information for unrelated attributes",
+        "Inserting rows with NULL primary keys",
+        "Exceeding the maximum table size"
+      ],
+      "answer": 1,
+      "explanation": "An insertion anomaly prevents adding data when related data is missing. For example, you cannot add a new department without assigning an employee to it if they're in the same table."
+    },
+    {
+      "id": "databases-normalization-008",
+      "q": "When might you denormalize a database?",
+      "options": [
+        "Always; normalization is unnecessary",
+        "Never; denormalization is always a bad practice",
+        "For specific high-traffic queries where performance gains outweigh redundancy concerns",
+        "When the database has more than one billion rows"
+      ],
+      "answer": 2,
+      "explanation": "Denormalization is sometimes justified for performance when query complexity and join overhead become problematic. This is a deliberate tradeoff: accepting redundancy and manual synchronization for speed. It's done strategically, not by default."
+    },
+    {
+      "id": "databases-normalization-009",
+      "q": "What is an update anomaly?",
+      "options": [
+        "When an UPDATE statement fails with an error",
+        "Inconsistency when changing redundant data in some places but not others",
+        "Updating a row that is being read by another transaction",
+        "Attempting to update a column with an invalid data type"
+      ],
+      "answer": 1,
+      "explanation": "An update anomaly occurs when redundant data must be updated in multiple places, and some updates are missed, creating inconsistency. Normalization eliminates this by storing data in only one location."
+    },
+    {
+      "id": "databases-normalization-010",
+      "q": "How does normalization relate to referential integrity?",
+      "options": [
+        "Normalization eliminates the need for referential integrity",
+        "Normalized designs with separate tables require foreign keys to maintain referential integrity",
+        "Referential integrity is the same thing as normalization",
+        "Normalization prevents foreign keys from working"
+      ],
+      "answer": 1,
+      "explanation": "Normalization creates separate tables for different entities, which requires foreign key relationships to maintain referential integrity. Foreign keys enforce that references point to valid data, preventing orphaned records."
+    }
+  ]
+}

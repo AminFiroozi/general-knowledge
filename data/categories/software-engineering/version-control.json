@@ -1,0 +1,126 @@
+{
+  "topic": "version-control",
+  "category": "software-engineering",
+  "questions": [
+    {
+      "id": "software-engineering-version-control-001",
+      "q": "What is the primary purpose of version control systems?",
+      "options": [
+        "To track disk storage usage",
+        "To track changes to code over time, enabling collaboration and history management",
+        "To automatically fix merge conflicts",
+        "To encrypt sensitive data"
+      ],
+      "answer": 1,
+      "explanation": "Version control systems track code changes, maintain history, enable collaboration, and allow reverting to previous states. This is essential for team development. Option 0 is storage monitoring, option 2 requires manual resolution, and option 3 is security, not version control."
+    },
+    {
+      "id": "software-engineering-version-control-002",
+      "q": "What is a branch in Git?",
+      "options": [
+        "A backup copy of the entire repository",
+        "A separate line of development that diverges from the main codebase",
+        "A temporary file deleted after each commit",
+        "A way to organize folders in the repository"
+      ],
+      "answer": 1,
+      "explanation": "A branch is an independent line of development, allowing multiple features or fixes to be worked on in parallel without affecting the main code. Branches are fundamental to Git workflows. Option 0 is a full backup, option 2 is temporary, and option 3 misunderstands branching."
+    },
+    {
+      "id": "software-engineering-version-control-003",
+      "q": "What does merging do in version control?",
+      "options": [
+        "Deletes the source branch permanently",
+        "Combines changes from one branch into another",
+        "Reverts all changes to a previous commit",
+        "Creates a backup of the current state"
+      ],
+      "answer": 1,
+      "explanation": "Merging integrates changes from one branch (e.g., a feature branch) into another (e.g., main), combining their histories. Option 0 is branch deletion (optional), option 2 is reverting, and option 3 is backup creation."
+    },
+    {
+      "id": "software-engineering-version-control-004",
+      "q": "What is the main difference between merge and rebase?",
+      "options": [
+        "Merge is faster than rebase",
+        "Merge creates a commit combining two branches, while rebase replays commits on top of another branch to create a linear history",
+        "Rebase is safer than merge",
+        "They are identical operations with different names"
+      ],
+      "answer": 1,
+      "explanation": "Merge creates a merge commit combining branches and preserves history, while rebase rewrites commit history for a linear timeline. Merge is safer for shared branches, rebase keeps history clean for feature branches. Options 0, 2, and 3 are misconceptions."
+    },
+    {
+      "id": "software-engineering-version-control-005",
+      "q": "What is a merge conflict and when does it occur?",
+      "options": [
+        "An error that prevents any code from being committed",
+        "When two branches modify the same file at the same location and Git cannot automatically reconcile the changes",
+        "When a branch has been deleted",
+        "When a repository is corrupted"
+      ],
+      "answer": 1,
+      "explanation": "Merge conflicts occur when parallel changes to the same code region conflict, requiring manual resolution to decide which changes to keep. Git marks conflicted areas for developer review. Options 0, 2, and 3 are unrelated issues or false statements."
+    },
+    {
+      "id": "software-engineering-version-control-006",
+      "q": "What is the purpose of a commit message?",
+      "options": [
+        "To slow down the development process",
+        "To describe what changes were made and why, providing context for future developers",
+        "To satisfy a requirement with no practical value",
+        "To encrypt the code changes"
+      ],
+      "answer": 1,
+      "explanation": "Commit messages document changes and their rationale, helping developers understand history and facilitating code reviews. Good messages improve long-term maintainability. Options 0, 2, and 3 misrepresent the purpose of commit messages."
+    },
+    {
+      "id": "software-engineering-version-control-007",
+      "q": "What does a pull request (PR) do in a typical Git workflow?",
+      "options": [
+        "Automatically deploys code to production",
+        "Proposes changes for review before merging into the main branch",
+        "Deletes a branch from the repository",
+        "Creates a complete backup of the repository"
+      ],
+      "answer": 1,
+      "explanation": "A pull request requests to merge feature branch changes into main, facilitating code review and discussion before integration. This ensures quality and knowledge sharing. Option 0 is deployment, option 2 is deletion, and option 3 is backup."
+    },
+    {
+      "id": "software-engineering-version-control-008",
+      "q": "What is a distributed version control system and why is Git an example?",
+      "options": [
+        "A system where all data is stored in a single server",
+        "A system where each developer has a complete copy of the repository including full history",
+        "A system that only tracks the latest version of files",
+        "A system that prevents branching"
+      ],
+      "answer": 1,
+      "explanation": "Distributed version control like Git gives each developer a full repository copy, enabling offline work and decentralized collaboration. This contrasts with centralized systems. Option 0 describes centralized systems, option 2 ignores history, and option 3 is false."
+    },
+    {
+      "id": "software-engineering-version-control-009",
+      "q": "What does the HEAD reference in Git point to?",
+      "options": [
+        "The first commit in the repository",
+        "The most recent commit on the current branch",
+        "The production server address",
+        "The oldest unsolved merge conflict"
+      ],
+      "answer": 1,
+      "explanation": "HEAD is a pointer to the current branch's latest commit, indicating where new commits will be created. Understanding HEAD is crucial for Git navigation. Option 0 is the first commit, option 2 is not a Git concept, and option 3 is invalid."
+    },
+    {
+      "id": "software-engineering-version-control-010",
+      "q": "When should you use Git tags?",
+      "options": [
+        "To mark temporary debugging points",
+        "To mark specific points in history like releases or important versions for easy reference",
+        "To replace branch names",
+        "To force developers to commit more frequently"
+      ],
+      "answer": 1,
+      "explanation": "Tags mark important points in history (releases, milestones) for easy reference and reproducibility. Semantic versioning (v1.0.0) uses tags to identify release points. Options 0, 2, and 3 misuse tags or are incorrect."
+    }
+  ]
+}

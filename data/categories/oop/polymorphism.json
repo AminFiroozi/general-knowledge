@@ -1,0 +1,126 @@
+{
+  "topic": "polymorphism",
+  "category": "oop",
+  "questions": [
+    {
+      "id": "oop-polymorphism-001",
+      "q": "What is the difference between method overloading and method overriding?",
+      "options": [
+        "Overloading occurs in the same class with different parameters; overriding occurs in derived classes with same signature",
+        "Overloading and overriding are the same concept with different names",
+        "Overriding can only happen with private methods",
+        "Overloading requires inheritance while overriding does not"
+      ],
+      "answer": 0,
+      "explanation": "Overloading creates multiple methods with the same name but different parameters in a single class (compile-time polymorphism), while overriding replaces a base class method in a derived class (runtime polymorphism)."
+    },
+    {
+      "id": "oop-polymorphism-002",
+      "q": "What is dynamic dispatch in object-oriented programming?",
+      "options": [
+        "The compiler determining which method to call at compile time",
+        "The runtime selecting the appropriate method based on the actual object type",
+        "A technique for speeding up method calls",
+        "A requirement that all classes must inherit from a base class"
+      ],
+      "answer": 1,
+      "explanation": "Dynamic dispatch is when the runtime determines which implementation of a method to call based on the actual type of the object, not its declared type. This enables polymorphic behavior."
+    },
+    {
+      "id": "oop-polymorphism-003",
+      "q": "In C++ or Java, what does the 'virtual' (or overrideable) keyword enable?",
+      "options": [
+        "Faster execution of methods",
+        "Dynamic dispatch so derived classes can override base class methods",
+        "Automatic memory management",
+        "Compilation of the code without warnings"
+      ],
+      "answer": 1,
+      "explanation": "Virtual methods enable dynamic dispatch, allowing derived classes to override methods and the runtime to call the correct implementation based on the actual object type rather than the reference type."
+    },
+    {
+      "id": "oop-polymorphism-004",
+      "q": "How does an interface support polymorphism?",
+      "options": [
+        "Interfaces prevent polymorphism by forcing strict typing",
+        "Multiple classes can implement the same interface, allowing them to be used interchangeably through the interface reference",
+        "Interfaces only work with primitive types",
+        "Interfaces automatically call methods without user intervention"
+      ],
+      "answer": 1,
+      "explanation": "Interfaces define a contract that multiple classes can implement, enabling polymorphic behavior where different implementations can be used through a common interface reference."
+    },
+    {
+      "id": "oop-polymorphism-005",
+      "q": "Given a Shape interface with a draw() method, and Circle, Square, and Triangle classes implementing it, what is the benefit of polymorphism?",
+      "options": [
+        "All shapes must be drawn at the same speed",
+        "You can call draw() on a Shape reference and the appropriate implementation executes regardless of the actual type",
+        "The interface automatically creates shapes for you",
+        "Polymorphism only works if all shapes have the same number of sides"
+      ],
+      "answer": 1,
+      "explanation": "Polymorphism allows you to work with Shape references and call draw() on them, and the correct implementation for Circle, Square, or Triangle executes at runtime without needing type checks."
+    },
+    {
+      "id": "oop-polymorphism-006",
+      "q": "What is a potential problem with improper method overloading?",
+      "options": [
+        "It always improves code clarity and readability",
+        "Overloading with similar parameter types can create confusion and unexpected behavior",
+        "Overloading prevents inheritance from working correctly",
+        "Overloaded methods always have better performance"
+      ],
+      "answer": 1,
+      "explanation": "Overloading with subtle parameter type differences (e.g., int vs Integer, or int vs long) can lead to unexpected method selection and confusing behavior, especially with implicit type conversions."
+    },
+    {
+      "id": "oop-polymorphism-007",
+      "q": "When overriding a method in a derived class, what must remain consistent with the base class method?",
+      "options": [
+        "The method must have a different name to distinguish it",
+        "The method signature (name, parameters) must match, and the return type should be compatible (covariant)",
+        "The method must be slower to execute than the base version",
+        "The method must always perform identical behavior"
+      ],
+      "answer": 1,
+      "explanation": "Override methods must have the same signature to properly override the base class method. Return types can be covariant (a subtype of the original), but the method name and parameters must match."
+    },
+    {
+      "id": "oop-polymorphism-008",
+      "q": "Consider a Payment system with a process() method in CreditCard, PayPal, and Bitcoin classes. All are used through a Payment interface. If one implementation throws an exception unexpectedly, what polymorphic principle might be violated?",
+      "options": [
+        "The Liskov Substitution Principle, since callers expect any Payment to behave consistently",
+        "Overloading rules, which prevent exception handling",
+        "Virtual method requirements, which forbid polymorphic behavior",
+        "Interface implementation rules that require identical exception signatures"
+      ],
+      "answer": 0,
+      "explanation": "If a Payment implementation behaves differently than others (e.g., throwing unexpected exceptions), it violates LSP because code using the Payment interface assumes consistent behavior."
+    },
+    {
+      "id": "oop-polymorphism-009",
+      "q": "What is the relationship between polymorphism and type checking at runtime?",
+      "options": [
+        "Type checking prevents polymorphism from functioning",
+        "Polymorphism eliminates the need for any type checking",
+        "Runtime type checking enables the dispatch mechanism to call the correct method",
+        "Type checking only works at compile time, never at runtime"
+      ],
+      "answer": 2,
+      "explanation": "At runtime, the type checking system (through virtual method tables or similar mechanisms) determines the actual type of an object and dispatches to the correct method implementation."
+    },
+    {
+      "id": "oop-polymorphism-010",
+      "q": "Why might using 'instanceof' checks extensively to determine which subclass you're working with indicate a design flaw?",
+      "options": [
+        "instanceof is always faster than polymorphism",
+        "It defeats the purpose of polymorphism by relying on compile-time knowledge of types instead of runtime dispatch",
+        "instanceof checks require classes to be in the same file",
+        "Polymorphism and instanceof serve identical purposes"
+      ],
+      "answer": 1,
+      "explanation": "Excessive instanceof checks indicate you're treating polymorphic objects as concrete types, defeating polymorphism. Proper design should use method overriding and dynamic dispatch instead."
+    }
+  ]
+}

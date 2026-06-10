@@ -1,0 +1,126 @@
+{
+  "topic": "design-patterns",
+  "category": "software-engineering",
+  "questions": [
+    {
+      "id": "software-engineering-design-patterns-001",
+      "q": "What is the primary purpose of the Singleton pattern?",
+      "options": [
+        "To ensure a class has only one instance and provide a global point of access to it",
+        "To create multiple instances of a class efficiently",
+        "To separate object creation from object usage",
+        "To define a family of algorithms and make them interchangeable"
+      ],
+      "answer": 0,
+      "explanation": "The Singleton pattern restricts instantiation of a class to a single object and provides a global point of access. This is useful for shared resources like logging or database connections. Option 1 describes the Factory pattern, option 2 describes object pooling, and option 3 describes Strategy."
+    },
+    {
+      "id": "software-engineering-design-patterns-002",
+      "q": "Which pattern is most appropriate for creating objects without specifying their exact classes?",
+      "options": [
+        "Observer pattern",
+        "Factory pattern",
+        "Decorator pattern",
+        "MVC pattern"
+      ],
+      "answer": 1,
+      "explanation": "The Factory pattern provides an interface for creating objects without specifying their exact classes, allowing subclasses to decide which class to instantiate. This promotes loose coupling and flexibility. The Observer pattern is about event notifications, Decorator adds responsibilities dynamically, and MVC is an architectural pattern."
+    },
+    {
+      "id": "software-engineering-design-patterns-003",
+      "q": "The Observer pattern is used to establish what kind of relationship between objects?",
+      "options": [
+        "One-to-one dependency",
+        "Strict hierarchical dependency",
+        "One-to-many dependency where observers are notified of state changes",
+        "Temporary synchronization dependency"
+      ],
+      "answer": 2,
+      "explanation": "The Observer pattern establishes a one-to-many dependency where multiple observers listen for state changes in a subject and are automatically notified. This enables loose coupling and is fundamental to event-driven programming. Options 0 and 1 describe different relationship types, and option 3 is too vague."
+    },
+    {
+      "id": "software-engineering-design-patterns-004",
+      "q": "What does the Strategy pattern allow you to do?",
+      "options": [
+        "Encapsulate a request as an object",
+        "Define a family of algorithms, encapsulate each one, and make them interchangeable",
+        "Attach additional responsibilities to an object dynamically",
+        "Create complex objects step by step"
+      ],
+      "answer": 1,
+      "explanation": "The Strategy pattern enables selecting algorithms at runtime by encapsulating each one and making them interchangeable. This supports the Open/Closed principle. Option 0 describes Command, option 2 describes Decorator, and option 3 describes Builder pattern."
+    },
+    {
+      "id": "software-engineering-design-patterns-005",
+      "q": "The Decorator pattern differs from inheritance by allowing what?",
+      "options": [
+        "Adding behavior to objects statically at compile time",
+        "Creating immutable objects",
+        "Adding responsibilities to objects dynamically at runtime without altering their structure",
+        "Limiting the number of object instances"
+      ],
+      "answer": 2,
+      "explanation": "Decorator allows adding new functionality to objects dynamically without using inheritance or modifying the original class, providing more flexibility than static inheritance. This follows composition over inheritance. Options 0 and 1 are properties of other patterns, and option 3 is incorrect."
+    },
+    {
+      "id": "software-engineering-design-patterns-006",
+      "q": "In the MVC pattern, which component is responsible for updating the view when data changes?",
+      "options": [
+        "The View updates itself independently",
+        "The Controller handles all view updates",
+        "The Model notifies observers when its state changes",
+        "The View polls the Model continuously"
+      ],
+      "answer": 2,
+      "explanation": "The Model notifies observers (typically Views or Controllers) when its state changes, allowing decoupled updates. This separation of concerns is central to MVC. Option 0 violates separation of concerns, option 1 gives Controller too much responsibility, and option 3 is inefficient."
+    },
+    {
+      "id": "software-engineering-design-patterns-007",
+      "q": "Which design pattern would you use to create complex objects with many optional parameters?",
+      "options": [
+        "Singleton pattern",
+        "Factory pattern",
+        "Builder pattern",
+        "Adapter pattern"
+      ],
+      "answer": 2,
+      "explanation": "The Builder pattern is ideal for constructing complex objects step by step with optional parameters, avoiding telescoping constructors. It improves code readability and maintainability. Singleton restricts instances, Factory creates objects simply, and Adapter bridges incompatible interfaces."
+    },
+    {
+      "id": "software-engineering-design-patterns-008",
+      "q": "What is a primary advantage of using design patterns in software development?",
+      "options": [
+        "They eliminate the need for testing",
+        "They provide proven solutions to common problems, improving code reusability and maintainability",
+        "They guarantee code will run faster",
+        "They replace the need for documentation"
+      ],
+      "answer": 1,
+      "explanation": "Design patterns offer reusable solutions to recurring design problems, making code more maintainable, scalable, and communicable. Patterns don't eliminate testing, guarantee performance, or replace documentation, but they improve all three indirectly through better design."
+    },
+    {
+      "id": "software-engineering-design-patterns-009",
+      "q": "The Adapter pattern is best used for which scenario?",
+      "options": [
+        "Creating multiple instances of existing classes",
+        "Notifying multiple objects about state changes",
+        "Making incompatible interfaces work together",
+        "Encrypting sensitive data before storage"
+      ],
+      "answer": 2,
+      "explanation": "The Adapter pattern converts the interface of a class into another interface clients expect, allowing incompatible classes to work together. This is essential when integrating legacy code or third-party libraries. Options 0, 1, and 3 describe other patterns or concepts."
+    },
+    {
+      "id": "software-engineering-design-patterns-010",
+      "q": "When should you consider using the Facade pattern?",
+      "options": [
+        "When you need to create only one instance of a class",
+        "When you want to provide a unified interface to a complex subsystem",
+        "When you need to add temporary behavior to objects",
+        "When you want to define algorithm families"
+      ],
+      "answer": 1,
+      "explanation": "Facade provides a single, simplified interface to a complex subsystem of classes, reducing client dependencies and coupling. This is valuable when working with legacy systems or complex libraries. Option 0 describes Singleton, option 2 describes Decorator, and option 3 describes Strategy."
+    }
+  ]
+}

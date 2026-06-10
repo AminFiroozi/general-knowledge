@@ -1,0 +1,126 @@
+{
+  "topic": "solid-principles",
+  "category": "oop",
+  "questions": [
+    {
+      "id": "oop-solid-principles-001",
+      "q": "What does the Single Responsibility Principle (SRP) state?",
+      "options": [
+        "Each class should have only one public method",
+        "Each class should have a single reason to change, meaning it should have only one responsibility",
+        "Only one developer should work on each class",
+        "A class can only inherit from a single parent class"
+      ],
+      "answer": 1,
+      "explanation": "SRP states that a class should have one and only one reason to change—meaning it encapsulates a single responsibility or concern. This improves maintainability and reduces coupling."
+    },
+    {
+      "id": "oop-solid-principles-002",
+      "q": "What is the Open/Closed Principle (OCP)?",
+      "options": [
+        "Classes should be open to inheritance and closed to modification",
+        "Classes should be open for extension but closed for modification",
+        "Classes must be fully isolated with no external access",
+        "Code should never use inheritance at all"
+      ],
+      "answer": 1,
+      "explanation": "OCP means you should be able to extend a class's behavior through inheritance or composition without modifying its source code. Use abstraction and polymorphism to achieve extensibility safely."
+    },
+    {
+      "id": "oop-solid-principles-003",
+      "q": "The Liskov Substitution Principle (LSP) means that:",
+      "options": [
+        "Subclasses can completely ignore base class behavior",
+        "Subclasses can be substituted for their base class without breaking the program",
+        "All classes must inherit from a common ancestor",
+        "Subclasses must override every method in the base class"
+      ],
+      "answer": 1,
+      "explanation": "LSP ensures that derived classes can be used wherever their base class is expected without causing unexpected behavior. Violations occur when subclasses weaken preconditions or strengthen postconditions."
+    },
+    {
+      "id": "oop-solid-principles-004",
+      "q": "What does the Interface Segregation Principle (ISP) advocate?",
+      "options": [
+        "Creating one large interface for all functionality",
+        "Clients should not be forced to depend on interfaces they don't use",
+        "All methods in a class must implement all available interfaces",
+        "Interfaces should contain implementation code"
+      ],
+      "answer": 1,
+      "explanation": "ISP encourages creating smaller, specific interfaces rather than large, bloated ones. This prevents classes from depending on methods they don't need and reduces coupling."
+    },
+    {
+      "id": "oop-solid-principles-005",
+      "q": "What is the Dependency Inversion Principle (DIP)?",
+      "options": [
+        "High-level modules should depend directly on low-level modules",
+        "Both high-level and low-level modules should depend on abstractions, not concrete implementations",
+        "All dependencies must be managed by a global singleton",
+        "Dependencies should never be passed to constructors"
+      ],
+      "answer": 1,
+      "explanation": "DIP inverts traditional dependency flow by having both high-level and low-level modules depend on abstractions (interfaces), reducing coupling and improving flexibility."
+    },
+    {
+      "id": "oop-solid-principles-006",
+      "q": "Which SOLID principle is violated if a Dog class extends Animal but overrides the eat() method to throw an exception, when callers expect all Animals to eat?",
+      "options": [
+        "Single Responsibility Principle",
+        "Open/Closed Principle",
+        "Liskov Substitution Principle",
+        "Interface Segregation Principle"
+      ],
+      "answer": 2,
+      "explanation": "This violates LSP because Dog is not a valid substitute for Animal. Callers using an Animal reference would not expect eat() to throw an exception."
+    },
+    {
+      "id": "oop-solid-principles-007",
+      "q": "A UserController class that handles user creation, validation, database storage, email notifications, and logging. What SOLID principle is violated?",
+      "options": [
+        "Open/Closed Principle",
+        "Single Responsibility Principle",
+        "Liskov Substitution Principle",
+        "Dependency Inversion Principle"
+      ],
+      "answer": 1,
+      "explanation": "This violates SRP because the class has multiple reasons to change: user creation logic, validation rules, database schema changes, email service changes, and logging requirements should each be in separate classes."
+    },
+    {
+      "id": "oop-solid-principles-008",
+      "q": "Consider a reporting system where all report generators must implement IReporter with methods: generate(), save(), email(), and print(). Some generators only need generate() and save(). Which principle should be applied to improve this design?",
+      "options": [
+        "Single Responsibility Principle",
+        "Open/Closed Principle",
+        "Interface Segregation Principle",
+        "Dependency Inversion Principle"
+      ],
+      "answer": 2,
+      "explanation": "ISP suggests splitting IReporter into smaller, focused interfaces (e.g., IGenerator, IPersistable, IEmailable) so classes implement only what they need, reducing unnecessary dependencies."
+    },
+    {
+      "id": "oop-solid-principles-009",
+      "q": "A DataService class directly instantiates specific database implementations (MySQLDatabase, PostgresDatabase). How should this be refactored to follow DIP?",
+      "options": [
+        "Create an IDatabase interface and inject a concrete database implementation through the constructor",
+        "Remove all abstractions and use direct concrete instantiation everywhere",
+        "Use a global static reference to the database",
+        "Avoid using any database abstraction at all"
+      ],
+      "answer": 0,
+      "explanation": "DIP requires injecting a dependency on the IDatabase abstraction rather than coupling to concrete implementations, making DataService work with any IDatabase implementation."
+    },
+    {
+      "id": "oop-solid-principles-010",
+      "q": "A library now has a FileLogger, ConsoleLogger, and CloudLogger. Adding a new logger type requires modifying existing classes that switch on logger type. Which principle should be applied, and how?",
+      "options": [
+        "Apply SRP by putting all logger logic in one mega-class",
+        "Apply OCP by making loggers inherit from an abstract Logger class and using polymorphism instead of type checks",
+        "Apply LSP by ensuring all loggers throw the same exceptions",
+        "Apply ISP by splitting ILogger into multiple interfaces"
+      ],
+      "answer": 1,
+      "explanation": "OCP is violated because adding new loggers forces modification of existing code. Refactoring to use abstract Logger class with polymorphism allows new loggers to be added without modifying existing code."
+    }
+  ]
+}

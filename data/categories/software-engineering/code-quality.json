@@ -1,0 +1,126 @@
+{
+  "topic": "code-quality",
+  "category": "software-engineering",
+  "questions": [
+    {
+      "id": "software-engineering-code-quality-001",
+      "q": "What is refactoring in software development?",
+      "options": [
+        "Rewriting the entire codebase from scratch",
+        "Restructuring existing code without changing its external behavior to improve readability and maintainability",
+        "Fixing all bugs in production",
+        "Adding new features to the application"
+      ],
+      "answer": 1,
+      "explanation": "Refactoring improves code quality internally without altering functionality, making it cleaner and more maintainable. This reduces technical debt and improves long-term productivity. Option 0 is rewriting, option 2 is bug fixing, and option 3 is feature development."
+    },
+    {
+      "id": "software-engineering-code-quality-002",
+      "q": "What is a code smell?",
+      "options": [
+        "A compile-time error that prevents code execution",
+        "A symptom in code that suggests deeper design problems and may lead to bugs or maintenance issues",
+        "An intentional performance optimization",
+        "A warning message from the compiler"
+      ],
+      "answer": 1,
+      "explanation": "Code smells are patterns indicating potential problems (duplicated code, long methods, unclear naming) that don't break code but suggest design issues worth addressing. Option 0 is a compile error, option 2 is optimization, and option 3 is a compiler warning."
+    },
+    {
+      "id": "software-engineering-code-quality-003",
+      "q": "What does SOLID stand for in software design?",
+      "options": [
+        "Simple, Object-oriented, Linear, Integrated, Detailed",
+        "Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion",
+        "Stored, Ordered, Large, Independent, Dynamic",
+        "Serializable, Object-based, Language-agnostic, Internal, Declarative"
+      ],
+      "answer": 1,
+      "explanation": "SOLID principles guide object-oriented design toward maintainable, flexible code. Each principle addresses specific design concerns to reduce coupling and improve cohesion. Options 0, 2, and 3 are incorrect acronyms."
+    },
+    {
+      "id": "software-engineering-code-quality-004",
+      "q": "What is the Single Responsibility Principle (SRP)?",
+      "options": [
+        "Each class should have multiple unrelated responsibilities",
+        "Each module or class should have only one reason to change, focusing on a single responsibility",
+        "Code should only be written by one developer",
+        "Each function should contain every possible variation of behavior"
+      ],
+      "answer": 1,
+      "explanation": "SRP states classes should have one reason to change, encapsulating a single concern. This improves maintainability and testability. Options 0, 2, and 3 violate or misunderstand the principle."
+    },
+    {
+      "id": "software-engineering-code-quality-005",
+      "q": "What does DRY stand for and what does it advocate?",
+      "options": [
+        "Debug, Review, Yield; advocating frequent debugging",
+        "Don't Repeat Yourself; avoiding code duplication by extracting common logic",
+        "Data, Reporting, Years; advocating data retention policies",
+        "Dynamic, Rapid, Yield; advocating agile development"
+      ],
+      "answer": 1,
+      "explanation": "DRY prevents duplication by extracting shared code into reusable functions or modules, reducing bugs and maintenance burden. Duplication often indicates missing abstractions. Options 0, 2, and 3 are incorrect interpretations."
+    },
+    {
+      "id": "software-engineering-code-quality-006",
+      "q": "What is technical debt?",
+      "options": [
+        "Money owed to the company",
+        "A metaphor for accumulated shortcuts and poor design decisions that require future effort to address",
+        "The cost of hiring technical staff",
+        "A legal obligation to maintain code"
+      ],
+      "answer": 1,
+      "explanation": "Technical debt accumulates when shortcuts are taken for speed, creating future maintenance costs. Like financial debt, it grows with interest if not addressed. Option 0 is financial, option 2 is hiring, and option 3 is a misconception."
+    },
+    {
+      "id": "software-engineering-code-quality-007",
+      "q": "How does the Open/Closed Principle contribute to code quality?",
+      "options": [
+        "By requiring all code to be reviewed before opening files",
+        "By advocating that software should be open for extension but closed for modification, reducing the risk of breaking existing code",
+        "By limiting access to source code repositories",
+        "By closing all issues immediately upon creation"
+      ],
+      "answer": 1,
+      "explanation": "The Open/Closed Principle enables extending behavior through inheritance or composition without modifying existing code, reducing regression risks and improving stability. Options 0, 2, and 3 misinterpret the principle."
+    },
+    {
+      "id": "software-engineering-code-quality-008",
+      "q": "What is the purpose of code reviews in maintaining quality?",
+      "options": [
+        "To intimidate junior developers",
+        "To allow peers to catch bugs, improve design, ensure consistency, and share knowledge before code is merged",
+        "To assign blame for poor code",
+        "To slow down development intentionally"
+      ],
+      "answer": 1,
+      "explanation": "Code reviews improve quality through peer oversight, catching issues early and spreading knowledge. They should be constructive, not punitive. Options 0, 2, and 3 misrepresent the collaborative nature of reviews."
+    },
+    {
+      "id": "software-engineering-code-quality-009",
+      "q": "What is the Liskov Substitution Principle (LSP)?",
+      "options": [
+        "Child classes must be exactly identical to parent classes",
+        "Objects of a superclass should be replaceable with objects of its subclasses without breaking the program",
+        "All code should be stored in a single file",
+        "Substitution operations should be minimized"
+      ],
+      "answer": 1,
+      "explanation": "LSP ensures subtypes can substitute parent types without breaking behavior, maintaining behavioral contracts. This enables safe polymorphism. Options 0, 2, and 3 are incorrect interpretations."
+    },
+    {
+      "id": "software-engineering-code-quality-010",
+      "q": "How does static code analysis improve code quality?",
+      "options": [
+        "By automatically writing code for developers",
+        "By identifying potential bugs, style violations, and code smells without executing the code",
+        "By removing all comments from code",
+        "By changing code without developer review"
+      ],
+      "answer": 1,
+      "explanation": "Static analysis tools scan code for patterns indicating potential issues (null pointer errors, security vulnerabilities, style violations) early, before runtime. This catches problems cheaply. Options 0, 2, and 3 misrepresent automated tools."
+    }
+  ]
+}

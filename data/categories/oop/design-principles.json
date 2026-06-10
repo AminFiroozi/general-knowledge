@@ -1,0 +1,126 @@
+{
+  "topic": "design-principles",
+  "category": "oop",
+  "questions": [
+    {
+      "id": "oop-design-principles-001",
+      "q": "What is the primary benefit of composition over inheritance in object design?",
+      "options": [
+        "Composition is always faster than inheritance",
+        "Composition provides greater flexibility by delegating to objects rather than inheriting rigid hierarchies",
+        "Composition requires less memory than inheritance",
+        "Composition allows classes to be compiled separately from their dependencies"
+      ],
+      "answer": 1,
+      "explanation": "Composition is more flexible because behavior comes from contained objects that can be swapped at runtime, whereas inheritance creates a fixed hierarchy. This enables the Strategy pattern and other flexible designs."
+    },
+    {
+      "id": "oop-design-principles-002",
+      "q": "What does loose coupling refer to in object-oriented design?",
+      "options": [
+        "Classes that perform no operations",
+        "Classes that depend minimally on each other's internal details",
+        "Classes that have very few methods",
+        "Classes that never inherit from other classes"
+      ],
+      "answer": 1,
+      "explanation": "Loose coupling means classes depend on abstractions rather than concrete implementations, reducing the impact of changes. When a class only knows what it needs to use, it's loosely coupled."
+    },
+    {
+      "id": "oop-design-principles-003",
+      "q": "What is cohesion in a class or module?",
+      "options": [
+        "The degree to which code is compressed or minified",
+        "The degree to which elements within a module belong together and serve a common purpose",
+        "The number of external libraries a class uses",
+        "The inheritance depth of a class hierarchy"
+      ],
+      "answer": 1,
+      "explanation": "High cohesion means related functionality is grouped together in a single class, making it focused and easier to understand. Low cohesion indicates unrelated tasks mixed together."
+    },
+    {
+      "id": "oop-design-principles-004",
+      "q": "How do design by contract and abstraction relate?",
+      "options": [
+        "They are completely unrelated concepts",
+        "Abstraction hides implementation details while contracts (interfaces) define what the abstraction promises to do",
+        "Abstraction requires contracts while contracts make abstraction impossible",
+        "Design by contract eliminates the need for abstraction"
+      ],
+      "answer": 1,
+      "explanation": "Abstraction defines what something does (its public interface), while contracts specify the expected behavior and guarantees. Together they enable code to work with abstractions reliably."
+    },
+    {
+      "id": "oop-design-principles-005",
+      "q": "What does the DRY (Don't Repeat Yourself) principle advocate?",
+      "options": [
+        "Avoid writing any comments in code",
+        "Every piece of knowledge should be expressed in only one place",
+        "Every class should be as small as possible",
+        "Delete unused code immediately"
+      ],
+      "answer": 1,
+      "explanation": "DRY means avoiding duplicated logic by extracting common patterns into reusable methods or classes. This reduces bugs and makes maintenance easier since changes happen in one place."
+    },
+    {
+      "id": "oop-design-principles-006",
+      "q": "If two classes share a similar method, what's a better approach than copying the method to both?",
+      "options": [
+        "Keep the duplication to avoid complexity",
+        "Extract the common method to a base class or utility class and reuse it",
+        "Combine both classes into one mega-class",
+        "Duplicate the method and modify each copy slightly"
+      ],
+      "answer": 1,
+      "explanation": "Extracting the common method applies DRY and reduces maintenance burden. Both classes can then inherit or delegate to the shared implementation."
+    },
+    {
+      "id": "oop-design-principles-007",
+      "q": "What negative impact does tight coupling between classes have?",
+      "options": [
+        "It makes code faster to execute",
+        "Changing one class forces changes in tightly coupled classes, making refactoring risky and expensive",
+        "It reduces the number of interfaces needed",
+        "Tight coupling guarantees code correctness"
+      ],
+      "answer": 1,
+      "explanation": "Tight coupling creates a ripple effect where changes in one class force cascading changes in dependencies. This makes code fragile and expensive to maintain."
+    },
+    {
+      "id": "oop-design-principles-008",
+      "q": "In a system where Service classes depend directly on concrete Database implementations, what design problem exists and how should it be fixed?",
+      "options": [
+        "No problem; this is the standard approach in all systems",
+        "Service is tightly coupled to Database implementations; use dependency injection and interfaces to decouple them",
+        "Database should inherit from Service to fix the relationship",
+        "Service and Database should be combined into a single class"
+      ],
+      "answer": 1,
+      "explanation": "Direct dependence on concrete implementations creates tight coupling. Using interfaces and dependency injection decouples Service from specific Database implementations."
+    },
+    {
+      "id": "oop-design-principles-009",
+      "q": "A MonsterFactory creates different monsters (Goblin, Orc, Dragon) with the same ability initialization logic. Why should this logic be centralized?",
+      "options": [
+        "Centralization forces all monsters to be identical",
+        "Centralization applies DRY and ensures consistency; changes to initialization logic happen once, benefiting all monsters",
+        "Centralization makes code slower to execute",
+        "No advantage; each monster should have its own initialization logic"
+      ],
+      "answer": 1,
+      "explanation": "Centralizing common logic in a factory reduces duplication, ensures consistency, and makes bugs easier to fix since the logic exists in one place."
+    },
+    {
+      "id": "oop-design-principles-010",
+      "q": "When designing a system, why should abstractions be stable while concrete implementations can change?",
+      "options": [
+        "Abstractions are less important than implementations",
+        "Stable abstractions ensure clients don't break when implementations change; implementations can be swapped without affecting the interface contract",
+        "Concrete implementations are always more stable than abstractions",
+        "Both abstractions and implementations should change frequently"
+      ],
+      "answer": 1,
+      "explanation": "A stable abstraction (interface) provides a contract that clients depend on. Implementations can be replaced, improved, or refactored without breaking clients that depend only on the abstraction."
+    }
+  ]
+}

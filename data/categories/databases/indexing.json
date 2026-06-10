@@ -1,0 +1,126 @@
+{
+  "topic": "indexing",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-indexing-001",
+      "q": "What is a B-tree index optimized for?",
+      "options": [
+        "Exact match lookups only",
+        "Range queries, equality searches, and sorted traversal",
+        "Storing large text documents",
+        "Bitmap compression in data warehouses"
+      ],
+      "answer": 1,
+      "explanation": "B-trees support range queries (BETWEEN), equality checks, and sorted iteration through self-balancing structure. Hash indexes handle exact matches but not ranges; B-trees are the standard choice for relational databases."
+    },
+    {
+      "id": "databases-indexing-002",
+      "q": "What is the main difference between a clustered and non-clustered index?",
+      "options": [
+        "Clustered indexes are faster; non-clustered indexes are slower",
+        "A clustered index determines the physical sort order of the table; a non-clustered index is a separate structure",
+        "Clustered indexes use B-trees; non-clustered indexes use hash tables",
+        "You can have unlimited clustered indexes but only 999 non-clustered indexes"
+      ],
+      "answer": 1,
+      "explanation": "A clustered index reorders the table's physical storage; a table has only one clustered index. Non-clustered indexes are separate structures containing pointers to data rows. Speed depends on query type, not index type."
+    },
+    {
+      "id": "databases-indexing-003",
+      "q": "A covering index is one that:",
+      "options": [
+        "Includes all tables in a database",
+        "Contains all columns needed to satisfy a query without accessing the base table",
+        "Has more than one million rows of data",
+        "Uses multiple CPU cores to speed up queries"
+      ],
+      "answer": 1,
+      "explanation": "A covering index stores all necessary columns so the query engine never needs to access the table itself, eliminating expensive lookups. This reduces I/O significantly but increases index storage."
+    },
+    {
+      "id": "databases-indexing-004",
+      "q": "When is it beneficial to create an index on a column?",
+      "options": [
+        "When the column is frequently used in WHERE clauses and has high cardinality",
+        "When the table has fewer than 100 rows",
+        "On every column in a table for maximum performance",
+        "Only on primary keys and foreign keys"
+      ],
+      "answer": 0,
+      "explanation": "Indexes benefit queries filtering on high-cardinality columns with good selectivity. Small tables don't need indexes; indexing every column wastes space and slows writes. Selective indexing balances read and write performance."
+    },
+    {
+      "id": "databases-indexing-005",
+      "q": "What is a composite index?",
+      "options": [
+        "An index stored on multiple database servers",
+        "An index on multiple columns, with key order mattering for query performance",
+        "An index created on a view instead of a table",
+        "An encrypted index that requires decryption before use"
+      ],
+      "answer": 1,
+      "explanation": "A composite (multi-column) index indexes multiple columns together. Column order matters; (A, B) helps queries filtering on A or both A and B but not queries filtering only on B. Single-column queries benefit based on leftmost prefix."
+    },
+    {
+      "id": "databases-indexing-006",
+      "q": "How do indexes impact INSERT, UPDATE, and DELETE operations?",
+      "options": [
+        "They have no impact on write performance",
+        "They improve write performance by caching data",
+        "They slow down writes because the index must also be updated",
+        "They only affect SELECT performance"
+      ],
+      "answer": 2,
+      "explanation": "Each index must be updated when data changes, increasing write overhead. More indexes mean slower INSERTs, UPDATEs, and DELETEs. This tradeoff must be balanced against improved query performance."
+    },
+    {
+      "id": "databases-indexing-007",
+      "q": "What is index selectivity?",
+      "options": [
+        "The ability to index only selected tables",
+        "The percentage of rows that match an index condition, affecting query optimization",
+        "The number of indexes allowed per table",
+        "The process of choosing which columns to index"
+      ],
+      "answer": 1,
+      "explanation": "Selectivity measures how many rows an index condition filters (0-100%). High selectivity (few matching rows) makes indexes very valuable; low selectivity wastes index resources. The query optimizer considers selectivity when choosing execution plans."
+    },
+    {
+      "id": "databases-indexing-008",
+      "q": "What problem do indexes solve for query performance?",
+      "options": [
+        "They reduce CPU usage by using less memory",
+        "They eliminate the need for the query optimizer",
+        "They provide fast row lookup and reduce the need for table scans",
+        "They automatically compress data to save disk space"
+      ],
+      "answer": 2,
+      "explanation": "Indexes enable quick location of specific rows without scanning the entire table, dramatically improving query speed for filtered queries. They don't reduce memory, replace the optimizer, or compress data."
+    },
+    {
+      "id": "databases-indexing-009",
+      "q": "In a database with low disk I/O capacity, why might you limit the number of indexes?",
+      "options": [
+        "Indexes use no disk space",
+        "More indexes mean more data to read during writes, increasing I/O overhead",
+        "Indexes prevent parallel query execution",
+        "Database administrators have a hard limit on total indexes allowed"
+      ],
+      "answer": 1,
+      "explanation": "Every index occupies disk space and must be updated on writes, consuming I/O bandwidth. With limited I/O capacity, excessive indexes create contention and slow both reads and writes. Strategic indexing maximizes I/O efficiency."
+    },
+    {
+      "id": "databases-indexing-010",
+      "q": "What does a hash index excel at compared to B-tree indexes?",
+      "options": [
+        "Range queries and BETWEEN conditions",
+        "Exact match lookups with O(1) average-case complexity",
+        "Sorted traversal and ORDER BY operations",
+        "Sparse data with many NULL values"
+      ],
+      "answer": 1,
+      "explanation": "Hash indexes are optimized for equality checks (= operator) with constant-time lookups. B-trees handle ranges and sorting but are slower for exact matches. Hash indexes cannot support BETWEEN, LIKE, or ORDER BY."
+    }
+  ]
+}

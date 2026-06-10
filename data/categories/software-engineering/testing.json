@@ -1,0 +1,126 @@
+{
+  "topic": "testing",
+  "category": "software-engineering",
+  "questions": [
+    {
+      "id": "software-engineering-testing-001",
+      "q": "What is the primary goal of unit testing?",
+      "options": [
+        "To test the entire application end-to-end",
+        "To test individual components or functions in isolation to ensure they work correctly",
+        "To verify that the database is properly configured",
+        "To measure application performance under load"
+      ],
+      "answer": 1,
+      "explanation": "Unit testing focuses on testing small, isolated units of code (functions, methods, classes) to verify their correctness. This catches bugs early and enables safe refactoring. Option 0 describes end-to-end testing, option 2 is database validation, and option 3 is performance testing."
+    },
+    {
+      "id": "software-engineering-testing-002",
+      "q": "Integration testing differs from unit testing by testing what aspect of the system?",
+      "options": [
+        "Individual functions in complete isolation",
+        "The interaction and integration between multiple components or modules",
+        "Only the user interface layer",
+        "The performance of individual database queries"
+      ],
+      "answer": 1,
+      "explanation": "Integration testing verifies that multiple components work together correctly, testing interfaces and interactions between modules. This validates that units integrate properly. Option 0 is unit testing, option 2 is UI testing, and option 3 is database performance testing."
+    },
+    {
+      "id": "software-engineering-testing-003",
+      "q": "What does end-to-end testing validate?",
+      "options": [
+        "Individual function logic in isolation",
+        "Database schema correctness",
+        "The entire application workflow from start to finish as a user would experience it",
+        "Code coverage percentages"
+      ],
+      "answer": 2,
+      "explanation": "End-to-end (E2E) testing validates complete user workflows and scenarios through the entire system, including UI, business logic, and data. This ensures the application works from a user's perspective. Options 0 and 1 test specific layers, and option 3 is a code quality metric."
+    },
+    {
+      "id": "software-engineering-testing-004",
+      "q": "What is Test-Driven Development (TDD)?",
+      "options": [
+        "Writing tests after implementing all production code",
+        "Writing tests only for critical code paths",
+        "Writing tests before writing production code, then implementing code to pass the tests",
+        "Testing code in production to catch real-world issues"
+      ],
+      "answer": 2,
+      "explanation": "TDD follows the red-green-refactor cycle: write failing tests first, then implement code to pass them. This approach improves design and ensures all code is testable. Option 0 is traditional testing, option 1 is selective testing, and option 3 is production monitoring."
+    },
+    {
+      "id": "software-engineering-testing-005",
+      "q": "What is the primary purpose of mocking in unit tests?",
+      "options": [
+        "To slow down test execution deliberately",
+        "To replace external dependencies with controlled substitutes to test code in isolation",
+        "To automatically fix failing tests",
+        "To generate random test data"
+      ],
+      "answer": 1,
+      "explanation": "Mocking replaces external dependencies (APIs, databases, services) with controlled substitutes, allowing isolated unit testing without side effects. This enables testing in isolation and improves test speed. Option 0 is a drawback, option 2 is invalid, and option 3 describes test data generation."
+    },
+    {
+      "id": "software-engineering-testing-006",
+      "q": "The test pyramid suggests which distribution of tests is ideal?",
+      "options": [
+        "Many end-to-end tests, few unit tests, moderate integration tests",
+        "Many unit tests at the base, fewer integration tests in the middle, few end-to-end tests at the top",
+        "Equal distribution across all testing types",
+        "Mostly integration tests with minimal unit and end-to-end tests"
+      ],
+      "answer": 1,
+      "explanation": "The test pyramid recommends many fast unit tests (base), fewer integration tests (middle), and few slow end-to-end tests (top). This balances coverage with speed and cost. Options 0, 2, and 3 represent inefficient distributions that either waste time or miss bugs."
+    },
+    {
+      "id": "software-engineering-testing-007",
+      "q": "What does code coverage measure?",
+      "options": [
+        "How much of the codebase is executed by tests",
+        "The speed at which tests execute",
+        "How many bugs exist in the code",
+        "The number of lines of code in production"
+      ],
+      "answer": 0,
+      "explanation": "Code coverage measures the percentage of code executed during testing, helping identify untested paths. High coverage doesn't guarantee quality, but low coverage indicates risk. Option 1 is execution speed, option 2 is bug counting, and option 3 is codebase metrics."
+    },
+    {
+      "id": "software-engineering-testing-008",
+      "q": "Which testing practice is NOT part of continuous integration?",
+      "options": [
+        "Running automated tests on every commit",
+        "Building code automatically after each push",
+        "Manually testing the application once a month",
+        "Failing the build if tests don't pass"
+      ],
+      "answer": 2,
+      "explanation": "CI requires automated, continuous testing on every change. Monthly manual testing is neither continuous nor automated. Options 0, 1, and 3 are essential CI practices that provide rapid feedback on code quality."
+    },
+    {
+      "id": "software-engineering-testing-009",
+      "q": "What is a stub in testing terminology?",
+      "options": [
+        "A test that always passes regardless of code",
+        "A dummy implementation that returns pre-defined values without executing real logic",
+        "A tool for measuring test coverage",
+        "A bug in the test code itself"
+      ],
+      "answer": 1,
+      "explanation": "A stub is a minimal implementation that returns hard-coded values, used to isolate code from external dependencies. Stubs differ from mocks in that they don't verify interactions. Option 0 is a bad test, option 2 is a coverage tool, and option 3 is a code bug."
+    },
+    {
+      "id": "software-engineering-testing-010",
+      "q": "Why is it important to have both positive and negative test cases?",
+      "options": [
+        "To balance the number of lines in test files",
+        "Positive tests verify expected behavior, while negative tests verify the system handles errors and invalid input correctly",
+        "Negative tests run faster than positive tests",
+        "They are required by law in some jurisdictions"
+      ],
+      "answer": 1,
+      "explanation": "Comprehensive testing requires both positive cases (happy path) and negative cases (error conditions, invalid input). This ensures robustness and proper error handling. Options 0 and 2 are incorrect motivations, and option 3 is implausible."
+    }
+  ]
+}

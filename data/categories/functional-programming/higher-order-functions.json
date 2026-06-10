@@ -1,0 +1,126 @@
+{
+  "topic": "higher-order-functions",
+  "category": "functional-programming",
+  "questions": [
+    {
+      "id": "functional-programming-higher-order-functions-001",
+      "q": "What is a higher-order function?",
+      "options": [
+        "A function that takes another function as an argument or returns a function",
+        "A function with more than one parameter",
+        "A function that calls itself recursively",
+        "A function that operates on high numerical values"
+      ],
+      "answer": 0,
+      "explanation": "Higher-order functions operate on functions themselves: they accept functions as parameters or return functions. The number of parameters, recursion, or numerical range are unrelated to being higher-order."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-002",
+      "q": "What does the map function do in functional programming?",
+      "options": [
+        "Applies a function to each element of a collection and returns a new collection with the results",
+        "Searches through a collection to find a specific element",
+        "Rearranges elements in a collection in sorted order",
+        "Counts the number of elements in a collection"
+      ],
+      "answer": 0,
+      "explanation": "Map transforms a collection by applying a function to each element, returning a new collection. It's about transformation, not searching, sorting, or counting. Map is a classic higher-order function."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-003",
+      "q": "What is the purpose of the filter function?",
+      "options": [
+        "To create a new collection containing only elements that satisfy a predicate function",
+        "To remove duplicate elements from a collection",
+        "To convert elements from one type to another",
+        "To reorganize a collection in reverse order"
+      ],
+      "answer": 0,
+      "explanation": "Filter keeps elements where a predicate function returns true, creating a subset. It's not about deduplication, type conversion, or reversal. Filter is also a higher-order function that takes a function as input."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-004",
+      "q": "What does reduce do in functional programming?",
+      "options": [
+        "Accumulates a collection into a single value by repeatedly applying a function",
+        "Makes a collection smaller by removing elements",
+        "Converts a collection to a different data type",
+        "Ensures all elements in a collection are unique"
+      ],
+      "answer": 0,
+      "explanation": "Reduce (also called fold) combines collection elements using an accumulator function to produce one value. Merely making something smaller, type conversion, and deduplication are different operations."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-005",
+      "q": "What is currying in functional programming?",
+      "options": [
+        "Converting a function with multiple parameters into a sequence of functions each taking one parameter",
+        "Adding spice to a function's implementation",
+        "Storing function results in a cache",
+        "Splitting a function into smaller helper functions"
+      ],
+      "answer": 0,
+      "explanation": "Currying transforms f(a, b, c) into f(a)(b)(c). This technique enables partial application and higher-order function patterns. Caching, spice, and helper functions are unrelated concepts."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-006",
+      "q": "What is function composition in functional programming?",
+      "options": [
+        "Combining multiple functions to create a new function where output of one becomes input to the next",
+        "Writing multiple functions in the same file",
+        "Calling a function multiple times in a loop",
+        "Breaking a large function into smaller ones"
+      ],
+      "answer": 0,
+      "explanation": "Composition chains functions: h = compose(f, g) means h(x) = f(g(x)). File location, loops, and breaking up code are unrelated. Composition is a key higher-order pattern."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-007",
+      "q": "What is a closure in the context of higher-order functions?",
+      "options": [
+        "An inner function that captures variables from its outer function's scope",
+        "A loop that terminates after a fixed number of iterations",
+        "A function that returns the same value every time",
+        "A mechanism to prevent function calls from running in parallel"
+      ],
+      "answer": 0,
+      "explanation": "Closures allow inner functions to access and remember variables from their enclosing scope, even after the outer function returns. This is essential for higher-order functions and partial application. Loops, constants, and parallelism are separate concerns."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-008",
+      "q": "Which of the following is an example of a higher-order function?",
+      "options": [
+        "A function that accepts a callback function as a parameter",
+        "A function that adds two numbers together",
+        "A function that reads from a file",
+        "A function that prints a message to the console"
+      ],
+      "answer": 0,
+      "explanation": "A function with a callback parameter takes another function as input, making it higher-order. Adding numbers, file I/O, and printing are regular functions operating on non-function data."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-009",
+      "q": "What is partial application in functional programming?",
+      "options": [
+        "Fixing some arguments of a function and returning a new function expecting the remaining arguments",
+        "Applying a function to part of a list and ignoring the rest",
+        "Running a function on a subset of available processors",
+        "Storing only partial results of a computation"
+      ],
+      "answer": 0,
+      "explanation": "Partial application creates a new function by providing some but not all arguments. It's distinct from applying to a list subset, processor distribution, or partial result storage."
+    },
+    {
+      "id": "functional-programming-higher-order-functions-010",
+      "q": "In functional programming, what advantage does function composition provide?",
+      "options": [
+        "It allows building complex operations from simple, reusable functions with clear data flow",
+        "It eliminates the need for loops entirely",
+        "It automatically makes code run faster",
+        "It prevents all side effects from occurring"
+      ],
+      "answer": 0,
+      "explanation": "Composition creates abstraction, reusability, and readable pipelines. It enables expressing complex logic as combinations of simple functions. It doesn't eliminate loops, guarantee speed, or prevent side effects by itself."
+    }
+  ]
+}

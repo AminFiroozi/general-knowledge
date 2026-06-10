@@ -1,0 +1,126 @@
+{
+  "topic": "sql-syntax",
+  "category": "syntax",
+  "questions": [
+    {
+      "id": "syntax-sql-syntax-001",
+      "q": "What does SELECT a, COUNT(*) FROM t GROUP BY a return?",
+      "options": [
+        "Rows grouped by a with a count for each group",
+        "All rows with a count of total rows",
+        "Syntax error—cannot use non-grouped columns",
+        "All unique values of a"
+      ],
+      "answer": 0,
+      "explanation": "GROUP BY a partitions rows by distinct a values, and COUNT(*) counts rows per group. Result: each group with its count. Option 1 returns only unique a. Option 2 ignores the grouping."
+    },
+    {
+      "id": "syntax-sql-syntax-002",
+      "q": "What is the difference between INNER JOIN and LEFT JOIN?",
+      "options": [
+        "INNER returns matching rows only; LEFT returns all left rows plus matches",
+        "INNER is faster than LEFT",
+        "LEFT returns unmatched rows from the right table",
+        "INNER requires a WHERE clause"
+      ],
+      "answer": 0,
+      "explanation": "INNER JOIN: only matching rows on both sides. LEFT JOIN: all left rows, matched right rows (NULLs for unmatched). Option 1 reverses the join types. Option 2 confuses speed with join semantics."
+    },
+    {
+      "id": "syntax-sql-syntax-003",
+      "q": "What does SELECT * FROM t WHERE 1 = 0 return?",
+      "options": [
+        "An empty result set (no rows)",
+        "All rows where the condition is false",
+        "A syntax error",
+        "One row with NULL values"
+      ],
+      "answer": 0,
+      "explanation": "WHERE 1 = 0 is always false, filtering out all rows. Result: empty set. Option 1 treats false as including rows. Option 3 misses that 1 = 0 is valid syntax."
+    },
+    {
+      "id": "syntax-sql-syntax-004",
+      "q": "What does CASE WHEN age > 18 THEN 'adult' ELSE 'minor' END evaluate to for age=20?",
+      "options": [
+        "'adult'",
+        "'minor'",
+        "20",
+        "Syntax error"
+      ],
+      "answer": 0,
+      "explanation": "CASE evaluates conditions in order. age=20 > 18 is true, returning 'adult'. Option 1 returns the else value. Option 2 returns the age value."
+    },
+    {
+      "id": "syntax-sql-syntax-005",
+      "q": "What does SELECT a AS x, b FROM t mean?",
+      "options": [
+        "Returns column a renamed to x, and column b with its original name",
+        "Returns only column a and b; x is discarded",
+        "Creates a new column x computed from a and b",
+        "Syntax error—AS is invalid in SELECT"
+      ],
+      "answer": 0,
+      "explanation": "AS creates an alias for the output column. Column a appears as x in results; b is unchanged. Option 1 discards the alias. Option 2 is false—aliases are valid output column names."
+    },
+    {
+      "id": "syntax-sql-syntax-006",
+      "q": "What does SELECT * FROM t WHERE a IN (1, 2, 3) do?",
+      "options": [
+        "Returns rows where a equals 1, 2, or 3",
+        "Returns rows where a is between 1 and 3",
+        "Returns 3 rows",
+        "Syntax error—IN is not valid"
+      ],
+      "answer": 0,
+      "explanation": "IN matches any value in the list. WHERE a IN (1, 2, 3) is shorthand for WHERE a = 1 OR a = 2 OR a = 3. Option 1 uses BETWEEN for ranges. Option 2 makes no guarantees on row count."
+    },
+    {
+      "id": "syntax-sql-syntax-007",
+      "q": "What does SELECT COUNT(DISTINCT a) FROM t return?",
+      "options": [
+        "The number of unique values in column a",
+        "The total number of rows in t",
+        "The number of non-NULL values in a",
+        "The number of rows where a is distinct"
+      ],
+      "answer": 0,
+      "explanation": "DISTINCT eliminates duplicates before counting. COUNT(DISTINCT a) counts unique a values. Option 1 counts all rows. Option 2 counts all non-NULL a, ignoring duplicates."
+    },
+    {
+      "id": "syntax-sql-syntax-008",
+      "q": "What does SELECT a FROM t GROUP BY a HAVING COUNT(*) > 2 do?",
+      "options": [
+        "Returns groups where the count exceeds 2",
+        "Returns individual rows where a appears more than twice",
+        "Syntax error—HAVING requires WHERE",
+        "Returns all groups and filters by count afterward"
+      ],
+      "answer": 0,
+      "explanation": "HAVING filters groups (after GROUP BY). COUNT(*) > 2 keeps groups with >2 rows. Option 1 applies filtering before grouping (wrong order). Option 2 treats HAVING as optional."
+    },
+    {
+      "id": "syntax-sql-syntax-009",
+      "q": "What is the order of SQL clause evaluation: SELECT, WHERE, FROM, GROUP BY?",
+      "options": [
+        "FROM, WHERE, GROUP BY, SELECT",
+        "SELECT, FROM, WHERE, GROUP BY",
+        "FROM, GROUP BY, WHERE, SELECT",
+        "WHERE, FROM, SELECT, GROUP BY"
+      ],
+      "answer": 0,
+      "explanation": "SQL evaluates in this order: FROM (source), WHERE (filter rows), GROUP BY (partition), SELECT (project columns). Option 1 applies WHERE after grouping. Option 2 reverses the order."
+    },
+    {
+      "id": "syntax-sql-syntax-010",
+      "q": "What does SELECT t1.a, t2.b FROM t1 JOIN t2 ON t1.id = t2.id do?",
+      "options": [
+        "Returns rows where t1.id matches t2.id, with a and b columns",
+        "Returns all rows from both tables",
+        "Syntax error—column aliases needed",
+        "Returns rows where a equals b"
+      ],
+      "answer": 0,
+      "explanation": "JOIN ON matches rows where the condition is true. t1.id = t2.id links rows from both tables. SELECT picks columns from joined result. Option 1 returns all rows (no join condition). Option 2 is valid—aliases are optional."
+    }
+  ]
+}

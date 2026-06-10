@@ -1,0 +1,126 @@
+{
+  "topic": "javascript-fundamentals",
+  "category": "frontend",
+  "questions": [
+    {
+      "id": "frontend-javascript-fundamentals-001",
+      "q": "What is a closure in JavaScript?",
+      "options": [
+        "A function that has been compiled and cannot change",
+        "A function that has access to variables from its own scope, parent scope, and global scope",
+        "An object that closes all its properties from external access",
+        "A function that must be called immediately after declaration"
+      ],
+      "answer": 1,
+      "explanation": "A closure is a function bundled together with its lexical environment. Inner functions retain access to outer function variables even after the outer function has returned. Closures enable data privacy, callbacks, and partial application. They are a fundamental feature, not a bug, though they can cause memory leaks if not managed carefully."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-002",
+      "q": "What does the this keyword refer to in JavaScript?",
+      "options": [
+        "Always the global object",
+        "Its value depends on how the function is called; in methods it refers to the object, in functions to the global object (or undefined in strict mode)",
+        "The object where the function was defined",
+        "The parent scope of the function"
+      ],
+      "answer": 1,
+      "explanation": "The value of this is determined at call time, not definition time. In a method call (obj.method()), this refers to obj. In a regular function call, this refers to the global object (or undefined in strict mode). Arrow functions inherit this from their enclosing scope. This behavior is a common source of bugs and confusion."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-003",
+      "q": "What is the prototype chain in JavaScript?",
+      "options": [
+        "A way to organize code into modules",
+        "A chain of objects linked by prototypes; when a property is not found on an object, JavaScript looks up the prototype chain",
+        "A list of all functions defined in a script",
+        "A deprecated feature replaced by classes"
+      ],
+      "answer": 1,
+      "explanation": "Every JavaScript object has a [[Prototype]] reference to another object. When accessing a property, if it is not found on the object itself, JavaScript searches up the prototype chain. The chain ends at Object.prototype. This enables inheritance and method sharing without data duplication. Classes are syntactic sugar over prototype-based inheritance."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-004",
+      "q": "What does async/await do in JavaScript?",
+      "options": [
+        "It makes all code run synchronously instead of asynchronously",
+        "It provides a cleaner syntax for working with promises; await pauses execution until a promise resolves",
+        "It prevents functions from running in parallel",
+        "It is a replacement for callbacks that eliminates the need for promises"
+      ],
+      "answer": 1,
+      "explanation": "async/await is syntactic sugar over promises. An async function always returns a promise. The await keyword pauses execution until a promise settles, allowing asynchronous code to look and behave synchronously. Error handling uses try/catch. Async/await does not block the main thread; it allows the event loop to continue processing other events."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-005",
+      "q": "What is hoisting in JavaScript?",
+      "options": [
+        "A way to organize code at the top of files",
+        "The behavior where variable and function declarations are moved to the top of their scope before execution; var and function declarations are hoisted differently than let/const",
+        "A performance optimization technique",
+        "A method for importing modules"
+      ],
+      "answer": 1,
+      "explanation": "During compilation, var and function declarations are hoisted to the top of their scope. var variables are initialized with undefined; function declarations are fully hoisted. let and const are hoisted but not initialized (temporal dead zone). Accessing a let/const before declaration throws ReferenceError. Understanding hoisting prevents unexpected undefined values."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-006",
+      "q": "What is event bubbling in JavaScript?",
+      "options": [
+        "Events that only affect the target element",
+        "Events that propagate up through the DOM tree from child to parent; you can stop bubbling with stopPropagation()",
+        "A performance issue that slows down event handlers",
+        "An event that occurs when the DOM is being built"
+      ],
+      "answer": 1,
+      "explanation": "When an event occurs on an element, it first runs handlers on that element, then on its parent, and so on up the DOM tree. This bubbling can be stopped with event.stopPropagation(). Some events like focus do not bubble. Understanding bubbling is essential for event delegation and preventing unwanted handler execution."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-007",
+      "q": "What is the difference between let and var in JavaScript?",
+      "options": [
+        "There is no difference; they are synonyms",
+        "var is function-scoped; let is block-scoped and cannot be redeclared in the same scope; let also has a temporal dead zone",
+        "let is older and less efficient than var",
+        "var is safer because it allows hoisting"
+      ],
+      "answer": 1,
+      "explanation": "var is function-scoped and is hoisted with undefined as its initial value. let is block-scoped (limited to {}, if blocks, loops) and cannot be redeclared in the same scope. let variables are hoisted but enter a temporal dead zone (not initialized) until the declaration is reached. Using let prevents variable shadowing and scoping bugs."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-008",
+      "q": "What does Object.create() do?",
+      "options": [
+        "It creates a shallow copy of an object",
+        "It creates a new object with a specified prototype; useful for setting up inheritance chains",
+        "It creates an empty object with no properties",
+        "It converts an object to a string"
+      ],
+      "answer": 1,
+      "explanation": "Object.create(proto) creates a new object with proto as its [[Prototype]]. This is the canonical way to set up prototype-based inheritance. It is more flexible than constructor functions because you can directly control the prototype. Object.create(null) creates an object with no prototype, useful for maps that should not inherit from Object.prototype."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-009",
+      "q": "What is a promise in JavaScript?",
+      "options": [
+        "A guarantee that a function will complete within a certain time",
+        "An object representing the eventual result of an asynchronous operation, with three states: pending, fulfilled, or rejected",
+        "A function that must be called before any other code",
+        "A type of error in JavaScript"
+      ],
+      "answer": 1,
+      "explanation": "A promise is a container for a value that may not exist yet. It starts in a pending state and transitions to fulfilled (if successful) or rejected (if it fails). .then() handles fulfillment, .catch() handles rejection, and .finally() runs regardless. Promises enable chaining and cleaner asynchronous code than callbacks."
+    },
+    {
+      "id": "frontend-javascript-fundamentals-010",
+      "q": "What is the difference between slice and splice on arrays?",
+      "options": [
+        "They are the same function with different names",
+        "slice returns a shallow copy and does not modify the original; splice modifies the array in place and returns the removed elements",
+        "slice modifies the array; splice does not",
+        "splice only works on arrays of objects"
+      ],
+      "answer": 1,
+      "explanation": "slice(start, end) returns a new array without modifying the original. splice(start, deleteCount, ...items) modifies the array, removes elements, and optionally inserts new ones. A common mistake is using splice when slice is intended, accidentally mutating data. Both are zero-indexed; slice's end index is exclusive."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "browser-apis",
+  "category": "frontend",
+  "questions": [
+    {
+      "id": "frontend-browser-apis-001",
+      "q": "What is the DOM in web development?",
+      "options": [
+        "A styling language for HTML documents",
+        "A tree of objects representing the structure of an HTML document that you can query and manipulate via JavaScript",
+        "A protocol for transmitting data over the network",
+        "A deprecated API that no longer works in modern browsers"
+      ],
+      "answer": 1,
+      "explanation": "The DOM (Document Object Model) is an in-memory representation of HTML. Each HTML element becomes a node in the tree. You can query nodes with getElementById, querySelector, etc., and modify them by changing properties or calling methods like appendChild. The DOM is the bridge between static HTML and dynamic JavaScript."
+    },
+    {
+      "id": "frontend-browser-apis-002",
+      "q": "What is the difference between event.target and event.currentTarget?",
+      "options": [
+        "They always refer to the same element",
+        "event.target is the element that triggered the event; event.currentTarget is the element that has the event listener",
+        "event.currentTarget works only in bubbling phase",
+        "They have no practical difference in modern browsers"
+      ],
+      "answer": 1,
+      "explanation": "event.target is the element where the event originated. event.currentTarget is the element the event listener is attached to. With event bubbling, these differ when you listen on a parent for events from children. Inside an event listener, this also refers to event.currentTarget."
+    },
+    {
+      "id": "frontend-browser-apis-003",
+      "q": "What does the fetch API do?",
+      "options": [
+        "It loads external JavaScript files into your page",
+        "It makes HTTP requests and returns a promise that resolves with the response",
+        "It is a deprecated way to make requests; XMLHttpRequest is the modern standard",
+        "It is only for downloading files, not for APIs"
+      ],
+      "answer": 1,
+      "explanation": "fetch(url) initiates an HTTP request and returns a promise. The response object must be parsed with .json(), .text(), .blob(), etc. fetch does not reject on HTTP error status codes; you must check response.ok. It supports all HTTP methods via the options parameter, making it ideal for REST API calls."
+    },
+    {
+      "id": "frontend-browser-apis-004",
+      "q": "What is localStorage in the browser?",
+      "options": [
+        "A cache for downloaded files",
+        "A synchronous key-value store that persists data across browser sessions, stored per origin",
+        "A temporary memory used only during the current page load",
+        "An encryption mechanism for sensitive user data"
+      ],
+      "answer": 1,
+      "explanation": "localStorage stores string key-value pairs with no expiration. Data persists until explicitly removed. Each origin (protocol, domain, port) has its own localStorage. sessionStorage is similar but clears when the tab closes. Use JSON.stringify/parse for objects. localStorage is synchronous, so excessive use can block the main thread."
+    },
+    {
+      "id": "frontend-browser-apis-005",
+      "q": "What is a Web Worker and what problem does it solve?",
+      "options": [
+        "A worker is someone who maintains websites",
+        "A separate JavaScript thread that runs code in the background without blocking the main thread, useful for heavy computations",
+        "A tool for managing multiple browser tabs",
+        "A deprecated feature removed from modern browsers"
+      ],
+      "answer": 1,
+      "explanation": "Web Workers run a separate JavaScript file in a background thread. The main thread and worker communicate via postMessage. Workers cannot access the DOM or manipulate the page directly but can perform computationally intensive tasks without freezing the UI. Shared workers can be accessed by multiple tabs."
+    },
+    {
+      "id": "frontend-browser-apis-006",
+      "q": "What does event.preventDefault() do?",
+      "options": [
+        "It stops the event from being logged in the console",
+        "It prevents the browser's default action for the event; e.g., prevents form submission or link navigation",
+        "It removes the event listener",
+        "It makes the event synchronous instead of asynchronous"
+      ],
+      "answer": 1,
+      "explanation": "preventDefault() cancels the event's default action if it is cancelable. For a form submit event, it prevents page reload. For a link click, it prevents navigation. The event still propagates unless you also call stopPropagation(). preventDefault() is crucial for custom form handling and user interactions."
+    },
+    {
+      "id": "frontend-browser-apis-007",
+      "q": "What is the Intersection Observer API used for?",
+      "options": [
+        "Detecting when elements intersect with each other in CSS",
+        "Detecting when elements become visible in the viewport; useful for lazy loading and infinite scroll",
+        "A way to inspect object properties at runtime",
+        "Monitoring network traffic between the browser and server"
+      ],
+      "answer": 1,
+      "explanation": "IntersectionObserver notifies you when elements enter or leave the viewport (or another element). It is much more efficient than scroll event listeners for lazy loading images and infinite scroll. The callback fires asynchronously with IntersectionObserverEntry objects containing the intersection ratio."
+    },
+    {
+      "id": "frontend-browser-apis-008",
+      "q": "What is the purpose of document.querySelectorAll?",
+      "options": [
+        "It returns the first element matching a CSS selector",
+        "It returns a static NodeList of all elements matching a CSS selector",
+        "It is only for selecting elements by ID",
+        "It returns live elements that update when the DOM changes"
+      ],
+      "answer": 1,
+      "explanation": "querySelectorAll(selector) returns a static NodeList of all matching elements. The list is a snapshot; it does not update if the DOM changes later. getElementsByClassName and getElementsByTagName return live HTMLCollections. querySelectorAll is more flexible because it accepts any CSS selector, but it is slightly slower than specialized methods."
+    },
+    {
+      "id": "frontend-browser-apis-009",
+      "q": "What is sessionStorage and how does it differ from localStorage?",
+      "options": [
+        "sessionStorage is faster but stores less data",
+        "sessionStorage clears when the tab closes; localStorage persists until explicitly deleted",
+        "sessionStorage is only for images and files",
+        "sessionStorage and localStorage are identical"
+      ],
+      "answer": 1,
+      "explanation": "Both are synchronous key-value stores per origin. sessionStorage clears when the tab closes, making it ideal for temporary session data. localStorage persists across sessions, ideal for user preferences or offline data. Both have a typical size limit of 5-10MB. Exceeding the limit throws a QuotaExceededError."
+    },
+    {
+      "id": "frontend-browser-apis-010",
+      "q": "What does the addEventListener method do and why is it better than inline event handlers?",
+      "options": [
+        "It is an older method that is rarely used in modern code",
+        "It attaches event listeners that can be added/removed dynamically and allows multiple handlers per event; inline handlers mix HTML and JavaScript",
+        "It is slower than inline handlers",
+        "It only works for mouse events"
+      ],
+      "answer": 1,
+      "explanation": "addEventListener(eventType, callback) attaches a handler dynamically. Multiple listeners can be added to the same event. Handlers can be removed with removeEventListener. This separates concerns and enables flexible event management. Inline handlers (onclick=) mix HTML and JavaScript, are harder to manage, and support only one handler per event."
+    }
+  ]
+}

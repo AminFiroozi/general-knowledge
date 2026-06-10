@@ -1,0 +1,126 @@
+{
+  "topic": "performance",
+  "category": "frontend",
+  "questions": [
+    {
+      "id": "frontend-performance-001",
+      "q": "What is the critical rendering path in web performance?",
+      "options": [
+        "The time it takes to download HTML from the server",
+        "The sequence of steps the browser takes from receiving HTML to rendering the first paint: parsing HTML/CSS, building the DOM/CSSOM, layout, paint, and composite",
+        "A CSS property that controls how elements are rendered",
+        "The order in which JavaScript files are loaded"
+      ],
+      "answer": 1,
+      "explanation": "The critical rendering path determines how fast the page becomes interactive and visually complete. It includes DOM/CSSOM construction, layout (calculating positions), paint (drawing pixels), and composite (combining layers). Optimizing this path by reducing render-blocking resources, minimizing CSS, and deferring non-critical JavaScript directly improves page speed."
+    },
+    {
+      "id": "frontend-performance-002",
+      "q": "What is lazy loading and why is it useful?",
+      "options": [
+        "Loading CSS files after JavaScript",
+        "Deferring the loading of resources (images, scripts, components) until they are needed or visible; reduces initial load time and bandwidth",
+        "A technique that always loads resources as fast as possible",
+        "Loading data from a lazy evaluation function"
+      ],
+      "answer": 1,
+      "explanation": "Lazy loading defers loading non-critical resources until they are about to be used. For images, the loading attribute or Intersection Observer can trigger loading only when the image enters the viewport. For JavaScript, dynamic imports or code splitting load modules on demand. This significantly reduces initial page load and improves perceived performance."
+    },
+    {
+      "id": "frontend-performance-003",
+      "q": "What is the purpose of code splitting in bundlers?",
+      "options": [
+        "To split code into multiple comment blocks",
+        "To divide the bundle into smaller chunks that are loaded on demand, reducing initial load size",
+        "To separate CSS from JavaScript",
+        "To make code harder to read for security"
+      ],
+      "answer": 1,
+      "explanation": "Code splitting breaks a large bundle into smaller chunks. Only the chunk needed for the current page is loaded initially; others load as needed. Dynamic imports trigger split points in bundlers like webpack. This is especially important for single-page apps with multiple routes. Smaller bundles parse and compile faster, improving performance."
+    },
+    {
+      "id": "frontend-performance-004",
+      "q": "What does memoization do and why is it a performance technique?",
+      "options": [
+        "It is a way to add comments to code",
+        "It caches the results of expensive function calls to avoid recomputation when given the same inputs",
+        "It is a method for storing variables in memory",
+        "It compresses data in the browser"
+      ],
+      "answer": 1,
+      "explanation": "Memoization stores results of function calls with specific arguments. When the function is called again with the same arguments, the cached result is returned instead of recomputing. This is useful for expensive computations, API calls, or derived state. React's useMemo and useCallback employ memoization. Trade-off: memory usage vs. computation time."
+    },
+    {
+      "id": "frontend-performance-005",
+      "q": "What is the difference between synchronous and asynchronous loading of scripts?",
+      "options": [
+        "Synchronous scripts are never used in modern web development",
+        "Synchronous scripts block HTML parsing; asynchronous scripts load in the background without blocking",
+        "Asynchronous scripts are slower than synchronous scripts",
+        "They have the same performance but different syntax"
+      ],
+      "answer": 1,
+      "explanation": "A synchronous <script> tag blocks HTML parsing until the script loads and executes. An async script loads in the background; parsing continues, but execution happens immediately when ready (order not guaranteed). A defer script loads in background and executes after HTML parsing completes (order preserved). Use async for independent scripts (analytics), defer for scripts that depend on the DOM."
+    },
+    {
+      "id": "frontend-performance-006",
+      "q": "What is the First Contentful Paint (FCP) metric?",
+      "options": [
+        "The time it takes to download the HTML file",
+        "The time from navigation start until the browser renders the first bit of content (text, image, or colored background)",
+        "The time it takes to fully load all resources on the page",
+        "A metric that measures JavaScript execution time"
+      ],
+      "answer": 1,
+      "explanation": "FCP measures when the first content appears on screen. A fast FCP (under 1.8s) improves perceived performance. To improve FCP, optimize the critical rendering path, eliminate render-blocking resources, and prioritize above-the-fold content. Largest Contentful Paint (LCP) measures when the largest content element is visible."
+    },
+    {
+      "id": "frontend-performance-007",
+      "q": "What is tree shaking in JavaScript bundlers?",
+      "options": [
+        "Removing outdated code from the codebase",
+        "Eliminating unused code from the final bundle based on static analysis",
+        "A technique for optimizing database queries",
+        "Shaking the browser to refresh the page"
+      ],
+      "answer": 1,
+      "explanation": "Tree shaking removes unreferenced code (dead code) from the final bundle. It relies on ES module static imports to determine which exports are used. CommonJS modules are harder to tree shake because dependencies are determined at runtime. Tools like webpack and esbuild perform tree shaking automatically; using named imports improves effectiveness."
+    },
+    {
+      "id": "frontend-performance-008",
+      "q": "What does the Content Delivery Network (CDN) do for performance?",
+      "options": [
+        "It encrypts all traffic between the browser and server",
+        "It serves content from servers geographically closer to users, reducing latency and bandwidth usage",
+        "It compresses all HTML and CSS files automatically",
+        "It is only useful for serving video files"
+      ],
+      "answer": 1,
+      "explanation": "A CDN has edge servers distributed globally. When a user requests content, the CDN serves it from the nearest server, reducing round-trip time and improving load speed. CDNs also cache static assets and handle traffic spikes. Most CDNs offer HTTP/2, compression, and DDoS protection as additional benefits."
+    },
+    {
+      "id": "frontend-performance-009",
+      "q": "What is the purpose of the preload and prefetch link hints?",
+      "options": [
+        "They are deprecated and no longer used in modern browsers",
+        "preload loads a resource for the current page soon; prefetch loads a resource likely needed on future pages with lower priority",
+        "preload is for CSS; prefetch is for JavaScript",
+        "They have the same behavior and are interchangeable"
+      ],
+      "answer": 1,
+      "explanation": "preload (rel=preload) tells the browser to fetch a resource the current page will need, improving performance. It blocks rendering if blocking. prefetch (rel=prefetch) loads a resource with low priority that may be used on a future page; it does not block. prefetch is ideal for resources needed on the next page or when the user might click a link."
+    },
+    {
+      "id": "frontend-performance-010",
+      "q": "What is the Cumulative Layout Shift (CLS) metric and why does it matter?",
+      "options": [
+        "A measure of how much time it takes to load a page",
+        "A metric measuring unexpected layout shifts that occur after initial content is painted; important for user experience",
+        "The number of CSS classes in a stylesheet",
+        "A measure of memory usage in the browser"
+      ],
+      "answer": 1,
+      "explanation": "CLS quantifies visual instability caused by elements moving after the page has started rendering. High CLS (above 0.1) is poor; users dislike pages where content jumps around. Causes include images without dimensions, ads, or late font loading. Improve CLS by reserving space for dynamic content, using font-display: swap, and avoiding layout animations."
+    }
+  ]
+}

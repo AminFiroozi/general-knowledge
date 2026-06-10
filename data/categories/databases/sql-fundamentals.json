@@ -1,0 +1,126 @@
+{
+  "topic": "sql-fundamentals",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-sql-fundamentals-001",
+      "q": "Which SQL clause is used to filter rows based on conditions after the table is retrieved?",
+      "options": [
+        "HAVING",
+        "WHERE",
+        "FILTER",
+        "ON"
+      ],
+      "answer": 1,
+      "explanation": "WHERE filters individual rows before aggregation, while HAVING filters grouped results after aggregation. FILTER and ON are not standard SQL clauses for row filtering in this context."
+    },
+    {
+      "id": "databases-sql-fundamentals-002",
+      "q": "What is the result of an INNER JOIN between two tables with no matching keys?",
+      "options": [
+        "All rows from the left table",
+        "All rows from the right table",
+        "An empty result set",
+        "All rows from both tables"
+      ],
+      "answer": 2,
+      "explanation": "INNER JOIN returns only rows where the join condition is satisfied. With no matching keys, there are no matching pairs to return. OUTER JOINs would return unmatched rows, but INNER JOIN does not."
+    },
+    {
+      "id": "databases-sql-fundamentals-003",
+      "q": "Which aggregate function returns the number of non-null values in a column?",
+      "options": [
+        "SUM()",
+        "COUNT()",
+        "AVG()",
+        "MAX()"
+      ],
+      "answer": 1,
+      "explanation": "COUNT() counts non-null occurrences; COUNT(*) counts all rows including nulls. SUM adds values, AVG calculates average, and MAX finds the largest value."
+    },
+    {
+      "id": "databases-sql-fundamentals-004",
+      "q": "What does a LEFT JOIN return if there is no matching row in the right table?",
+      "options": [
+        "The row is excluded",
+        "NULL values for columns from the right table",
+        "An error is thrown",
+        "Zero values for columns from the right table"
+      ],
+      "answer": 1,
+      "explanation": "LEFT JOIN preserves all rows from the left table and fills missing right table columns with NULL. It doesn't exclude rows or throw errors; it returns NULL, not zero."
+    },
+    {
+      "id": "databases-sql-fundamentals-005",
+      "q": "Which keyword is required to sort query results in descending order?",
+      "options": [
+        "SORT DESC",
+        "ORDER BY DESC",
+        "GROUP BY DESC",
+        "ARRANGE DESC"
+      ],
+      "answer": 1,
+      "explanation": "ORDER BY DESC sorts results in descending order. ORDER BY is the clause name, and DESC specifies the direction. SORT, GROUP BY, and ARRANGE are not correct SQL syntax for this purpose."
+    },
+    {
+      "id": "databases-sql-fundamentals-006",
+      "q": "What is the purpose of the GROUP BY clause?",
+      "options": [
+        "To filter rows before aggregation",
+        "To combine multiple tables",
+        "To organize rows into groups and apply aggregate functions",
+        "To sort results alphabetically"
+      ],
+      "answer": 2,
+      "explanation": "GROUP BY partitions rows into groups based on specified columns, allowing aggregate functions to operate on each group separately. WHERE filters before grouping, JOINs combine tables, and ORDER BY sorts results."
+    },
+    {
+      "id": "databases-sql-fundamentals-007",
+      "q": "A subquery in a SELECT clause that returns a single value is called a:",
+      "options": [
+        "Derived table",
+        "Scalar subquery",
+        "Correlated subquery",
+        "Joined subquery"
+      ],
+      "answer": 1,
+      "explanation": "A scalar subquery returns one row and one column, usable as a single value in SELECT or WHERE. Derived tables are subqueries in FROM; correlated subqueries reference outer queries; joined subqueries isn't standard terminology."
+    },
+    {
+      "id": "databases-sql-fundamentals-008",
+      "q": "Which JOIN type returns rows when there is a match in at least one table?",
+      "options": [
+        "INNER JOIN",
+        "FULL OUTER JOIN",
+        "CROSS JOIN",
+        "SELF JOIN"
+      ],
+      "answer": 1,
+      "explanation": "FULL OUTER JOIN returns matches from both tables plus unmatched rows from each side. INNER JOIN requires matches in both tables, CROSS JOIN produces a Cartesian product, and SELF JOIN is a table joined to itself."
+    },
+    {
+      "id": "databases-sql-fundamentals-009",
+      "q": "What does the DISTINCT keyword do in a SELECT statement?",
+      "options": [
+        "Removes duplicate rows from the result set",
+        "Separates columns with distinct names",
+        "Marks rows as unique in the database",
+        "Filters out NULL values"
+      ],
+      "answer": 0,
+      "explanation": "DISTINCT eliminates duplicate rows from query results, keeping only unique rows. It doesn't rename columns, mark database rows, or specifically filter NULLs, though NULLs are preserved."
+    },
+    {
+      "id": "databases-sql-fundamentals-010",
+      "q": "A correlated subquery is one that:",
+      "options": [
+        "Returns multiple rows to the outer query",
+        "References columns from the outer query for each row processed",
+        "Joins two tables using a common key",
+        "Is executed once before the outer query runs"
+      ],
+      "answer": 1,
+      "explanation": "A correlated subquery references the outer query's columns and executes once per outer row. Non-correlated subqueries execute once independently. This type is less efficient than JOINs but useful for row-by-row logic."
+    }
+  ]
+}

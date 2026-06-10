@@ -1,0 +1,126 @@
+{
+  "topic": "monads",
+  "category": "functional-programming",
+  "questions": [
+    {
+      "id": "functional-programming-monads-001",
+      "q": "What is the primary purpose of a monad in functional programming?",
+      "options": [
+        "To wrap a value in a context and provide operations that respect that context",
+        "To automatically parallelize all computations across multiple cores",
+        "To eliminate the need for error handling in code",
+        "To convert imperative code into functional code"
+      ],
+      "answer": 0,
+      "explanation": "Monads encapsulate values within a computational context (like Maybe, Either, List) and provide operations that work within that context consistently. They don't parallelize, eliminate errors, or require automatic code conversion."
+    },
+    {
+      "id": "functional-programming-monads-002",
+      "q": "What is the Maybe (or Option) monad used for?",
+      "options": [
+        "Representing a value that may or may not exist, avoiding null references",
+        "Making optional parameters in functions",
+        "Handling exceptions silently without throwing",
+        "Caching function results for performance"
+      ],
+      "answer": 0,
+      "explanation": "Maybe/Option monad wraps values that might be absent: Some(value) or None. This replaces nullable checks with explicit handling. Optional parameters are a language feature, not what Maybe addresses. Exception handling and caching are separate concerns."
+    },
+    {
+      "id": "functional-programming-monads-003",
+      "q": "What does the flatMap (or bind) operation do in a monad?",
+      "options": [
+        "Applies a function that returns a wrapped value to a wrapped value, then flattens the result",
+        "Applies a function to the contents without changing the wrapper",
+        "Combines two wrapped values into one",
+        "Removes the wrapper from a value"
+      ],
+      "answer": 0,
+      "explanation": "flatMap takes a function returning a wrapped value (e.g., Maybe → Maybe) and applies it to a wrapped value, automatically flattening nested wrappers. This avoids deep nesting. Map keeps the wrapper unchanged; flatMap flattens it."
+    },
+    {
+      "id": "functional-programming-monads-004",
+      "q": "What is a functor in functional programming?",
+      "options": [
+        "A structure that supports a map operation: applying a function to wrapped values while preserving structure",
+        "A function that returns other functions",
+        "A data type that can be serialized to JSON",
+        "A design pattern used in object-oriented programming"
+      ],
+      "answer": 0,
+      "explanation": "Functors are structures supporting map: applying unwrapped functions to wrapped values. Every monad is a functor, but not all functors are monads. Higher-order functions, serialization, and OOP patterns are different concepts."
+    },
+    {
+      "id": "functional-programming-monads-005",
+      "q": "What are the three monad laws in functional programming?",
+      "options": [
+        "Left identity, right identity, and associativity",
+        "Commutativity, distributivity, and closure",
+        "Immutability, purity, and referential transparency",
+        "Encapsulation, inheritance, and polymorphism"
+      ],
+      "answer": 0,
+      "explanation": "Monad laws ensure consistent composition: wrapping and unwrapping with flatMap should behave predictably. Commutativity and distributivity apply to different algebraic structures. Immutability and OOP concepts are unrelated."
+    },
+    {
+      "id": "functional-programming-monads-006",
+      "q": "How does chaining operations with monads improve code readability?",
+      "options": [
+        "It allows writing sequential operations on wrapped values without deep nesting of null checks or error handling",
+        "Monads reduce code length regardless of complexity",
+        "Chaining makes operations run in parallel automatically",
+        "Monads guarantee that code will never fail"
+      ],
+      "answer": 0,
+      "explanation": "Monadic chaining enables fluent, sequential code for wrapped values (e.g., Maybe chains). This avoids deeply nested conditions. Length reduction, parallelization, and failure prevention are unrelated benefits."
+    },
+    {
+      "id": "functional-programming-monads-007",
+      "q": "What is the difference between a functor's map and a monad's flatMap?",
+      "options": [
+        "map unwraps values and applies a function; flatMap additionally unwraps nested results, avoiding extra layers",
+        "map works with functions while flatMap works with values",
+        "map handles errors while flatMap does not",
+        "There is no practical difference between them"
+      ],
+      "answer": 0,
+      "explanation": "map f (wrapped x) = wrapped (f x), while flatMap f (wrapped x) = f x (flattening the result). If f returns wrapped values, map creates nesting; flatMap avoids it. They operate on different function types."
+    },
+    {
+      "id": "functional-programming-monads-008",
+      "q": "Why is the Either monad useful for error handling?",
+      "options": [
+        "It wraps successful results or error information, making errors explicit and composable",
+        "It prevents all errors from occurring in the program",
+        "It automatically retries failed operations",
+        "It converts checked exceptions into unchecked ones"
+      ],
+      "answer": 0,
+      "explanation": "Either (Right for success, Left for error) makes error cases explicit and allows chaining operations that might fail. It doesn't prevent errors, auto-retry, or convert exception types—it's a different error model."
+    },
+    {
+      "id": "functional-programming-monads-009",
+      "q": "What does it mean for a monad to satisfy left identity?",
+      "options": [
+        "Wrapping a value and then applying flatMap with a function equals applying the function directly to the value",
+        "The order of operations in monadic chains can be rearranged freely",
+        "The monad's left side must be pure",
+        "Combining two monads always prioritizes the first one"
+      ],
+      "answer": 0,
+      "explanation": "Left identity: wrap(a) flatMap f ≡ f(a). This ensures wrapping doesn't add computation. The other options confuse left identity with different monad properties."
+    },
+    {
+      "id": "functional-programming-monads-010",
+      "q": "How do monads help with handling side effects in functional programming?",
+      "options": [
+        "They wrap side effects in a controlled context, making them composable and trackable within pure code",
+        "Monads eliminate all side effects from a program",
+        "They automatically prevent side effects from occurring",
+        "Monads have no relationship to side effect management"
+      ],
+      "answer": 0,
+      "explanation": "Monads like IO allow sequencing side effects in a pure, composable way. Effects remain, but are explicitly managed within a context. They don't eliminate side effects or provide automatic prevention."
+    }
+  ]
+}

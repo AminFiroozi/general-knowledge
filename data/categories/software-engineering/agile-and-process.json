@@ -1,0 +1,126 @@
+{
+  "topic": "agile-and-process",
+  "category": "software-engineering",
+  "questions": [
+    {
+      "id": "software-engineering-agile-and-process-001",
+      "q": "What is a sprint in Scrum methodology?",
+      "options": [
+        "A rapid debugging session",
+        "A fixed time-box (typically 1-4 weeks) in which a team completes a set amount of work",
+        "An emergency meeting called to discuss failures",
+        "A performance optimization technique"
+      ],
+      "answer": 1,
+      "explanation": "A sprint is a fixed iteration in Scrum (usually 2 weeks) where a team commits to completing specific work items. Sprints provide structure, predictability, and regular reflection. Option 0 is debugging, option 2 is an unplanned meeting, and option 3 is a technical practice."
+    },
+    {
+      "id": "software-engineering-agile-and-process-002",
+      "q": "Which of these is a core principle of Agile methodology?",
+      "options": [
+        "Complete all documentation before writing code",
+        "Responding to change over following a rigid plan",
+        "Avoiding all direct communication in favor of written documentation",
+        "Testing only at the end of development"
+      ],
+      "answer": 1,
+      "explanation": "Agile values responding to change and customer feedback over following a fixed plan. This flexibility enables teams to adapt to new requirements. Options 0, 2, and 3 represent waterfall or outdated practices that Agile explicitly rejects."
+    },
+    {
+      "id": "software-engineering-agile-and-process-003",
+      "q": "What is the purpose of a Kanban board in workflow management?",
+      "options": [
+        "To record employee vacation schedules",
+        "To visualize work items, their status, and workflow to limit work in progress and improve flow",
+        "To track only completed tasks",
+        "To replace all written communication"
+      ],
+      "answer": 1,
+      "explanation": "Kanban boards visualize workflow with columns representing stages (To Do, In Progress, Done), helping teams see bottlenecks and manage work-in-progress limits. Option 0 is a calendar function, option 2 ignores incomplete work, and option 3 is false."
+    },
+    {
+      "id": "software-engineering-agile-and-process-004",
+      "q": "What is the primary difference between Scrum and Kanban?",
+      "options": [
+        "Scrum uses sprints and iterations, while Kanban emphasizes continuous flow with no fixed iterations",
+        "Kanban is more expensive than Scrum",
+        "Scrum works only for small teams",
+        "Kanban requires more documentation than Scrum"
+      ],
+      "answer": 0,
+      "explanation": "Scrum uses time-boxed sprints with defined roles and ceremonies, while Kanban focuses on continuous delivery with work-in-progress limits and no sprints. Both are Agile but have different structures. Options 1, 2, and 3 are misconceptions about these methodologies."
+    },
+    {
+      "id": "software-engineering-agile-and-process-005",
+      "q": "What does CI/CD stand for and why is it valuable?",
+      "options": [
+        "Code Integration/Code Division, used to split teams",
+        "Continuous Integration/Continuous Deployment, enabling automated testing and rapid, reliable releases",
+        "Client Interface/Content Database, for website management",
+        "Compiler Integration/Configuration Distribution, for build systems"
+      ],
+      "answer": 1,
+      "explanation": "CI/CD automates testing and deployment, enabling frequent, reliable releases with rapid feedback. Continuous Integration tests each commit, Continuous Deployment automates releases. Options 0, 2, and 3 are incorrect definitions that don't relate to software delivery."
+    },
+    {
+      "id": "software-engineering-agile-and-process-006",
+      "q": "How does Waterfall methodology differ fundamentally from Agile?",
+      "options": [
+        "Waterfall is faster than Agile",
+        "Waterfall completes each phase sequentially with minimal overlap, while Agile works iteratively with frequent feedback",
+        "Waterfall requires fewer developers",
+        "Agile never involves testing"
+      ],
+      "answer": 1,
+      "explanation": "Waterfall follows a linear, phase-by-phase approach (requirements, design, development, testing, deployment), while Agile iterates in cycles with continuous feedback. Waterfall is less flexible but provides clear upfront specifications. Options 0, 2, and 3 are misconceptions."
+    },
+    {
+      "id": "software-engineering-agile-and-process-007",
+      "q": "What is the role of a Product Owner in Scrum?",
+      "options": [
+        "To write all the code for the product",
+        "To manage the product backlog, prioritize features, and communicate with stakeholders",
+        "To conduct all code reviews",
+        "To approve all pull requests before deployment"
+      ],
+      "answer": 1,
+      "explanation": "The Product Owner manages the backlog, prioritizes user stories based on business value, and communicates customer needs to the development team. This role ensures the team builds the right product. Options 0, 2, and 3 are technical responsibilities of developers and engineers."
+    },
+    {
+      "id": "software-engineering-agile-and-process-008",
+      "q": "What is the purpose of a retrospective meeting in Scrum?",
+      "options": [
+        "To blame team members for failures",
+        "To plan the next sprint's technical architecture",
+        "To reflect on what went well, what didn't, and how to improve in future sprints",
+        "To evaluate individual developer performance"
+      ],
+      "answer": 2,
+      "explanation": "Retrospectives encourage team reflection and continuous improvement, discussing processes, not individuals. This blameless approach builds trust and enables iterative process enhancements. Options 0, 1, and 3 misunderstand the meeting's constructive purpose."
+    },
+    {
+      "id": "software-engineering-agile-and-process-009",
+      "q": "What is a user story in Agile development?",
+      "options": [
+        "A detailed technical specification for developers",
+        "A narrative description of a feature from the user's perspective to prompt conversation and planning",
+        "A bug report written by customers",
+        "A historical record of all code changes"
+      ],
+      "answer": 1,
+      "explanation": "User stories describe features in user-centric language (As a user, I want X so that Y), fostering shared understanding and conversation. They're less formal than specifications. Option 0 describes technical specs, option 2 is bug reporting, and option 3 is version control history."
+    },
+    {
+      "id": "software-engineering-agile-and-process-010",
+      "q": "Why is frequent communication emphasized in Agile teams?",
+      "options": [
+        "To distract developers from coding",
+        "Because face-to-face interaction reduces misunderstandings and enables quick problem-solving",
+        "To comply with government regulations",
+        "Because it eliminates the need for code reviews"
+      ],
+      "answer": 1,
+      "explanation": "Direct communication minimizes ambiguity, accelerates decision-making, and catches issues early. This is valued over extensive documentation in Agile. Options 0, 2, and 3 misrepresent Agile principles or are false."
+    }
+  ]
+}

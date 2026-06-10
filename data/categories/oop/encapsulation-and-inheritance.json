@@ -1,0 +1,126 @@
+{
+  "topic": "encapsulation-and-inheritance",
+  "category": "oop",
+  "questions": [
+    {
+      "id": "oop-encapsulation-and-inheritance-001",
+      "q": "What is the primary purpose of access modifiers like private, protected, and public?",
+      "options": [
+        "To control visibility and restrict access to class members",
+        "To improve code execution speed",
+        "To automatically document code with comments",
+        "To organize code into different files"
+      ],
+      "answer": 0,
+      "explanation": "Access modifiers control which parts of a class can be accessed from outside the class, enforcing encapsulation. They have no effect on execution speed and are not related to documentation or file organization."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-002",
+      "q": "In inheritance, what does a derived class inherit from its base class?",
+      "options": [
+        "Only public methods and properties",
+        "Only private members",
+        "Public and protected members, but not private members",
+        "All members including private ones with full access"
+      ],
+      "answer": 2,
+      "explanation": "A derived class inherits public and protected members from its base class but cannot directly access private members. Private members exist in the derived class but are only accessible through inherited public/protected methods."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-003",
+      "q": "Which of the following best illustrates composition over inheritance?",
+      "options": [
+        "A Car class that extends Vehicle class",
+        "A Car class that contains an Engine object rather than inheriting from Engine",
+        "A Car class with multiple constructors",
+        "A Car class that implements multiple interfaces"
+      ],
+      "answer": 1,
+      "explanation": "Composition uses an object to achieve behavior flexibility, while inheritance creates a rigid hierarchy. The Car contains an Engine (composition) rather than inheriting from it, providing better flexibility and code reuse."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-004",
+      "q": "What problem can deep inheritance hierarchies cause?",
+      "options": [
+        "Increased memory usage proportional to depth",
+        "Fragile base class problem and tight coupling between parent and child classes",
+        "Automatic performance degradation at runtime",
+        "Compiler errors that cannot be fixed"
+      ],
+      "answer": 1,
+      "explanation": "Deep hierarchies create tight coupling where changes to base classes can break derived classes unpredictably (fragile base class problem). This makes maintenance difficult, not due to memory or compilation issues."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-005",
+      "q": "How does encapsulation improve code maintainability?",
+      "options": [
+        "It removes the need for testing",
+        "It allows internal implementation details to change without affecting external code",
+        "It automatically prevents all bugs from occurring",
+        "It reduces the number of classes needed in an application"
+      ],
+      "answer": 1,
+      "explanation": "Encapsulation hides implementation details behind a stable interface, allowing internal changes without impacting code that uses the class. This separation of concerns makes refactoring and maintenance much safer."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-006",
+      "q": "When should you use composition instead of inheritance?",
+      "options": [
+        "Only for mathematical operations",
+        "When objects have a 'has-a' relationship rather than an 'is-a' relationship",
+        "Whenever a class needs multiple methods",
+        "Only in languages that don't support inheritance"
+      ],
+      "answer": 1,
+      "explanation": "Composition is appropriate for 'has-a' relationships (Dog has-a Tail) while inheritance suits 'is-a' relationships (Dog is-a Animal). Using composition for true 'has-a' scenarios increases flexibility and reduces coupling."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-007",
+      "q": "What is a 'protected' access modifier used for?",
+      "options": [
+        "To make members accessible only within the same method",
+        "To allow access only from other classes in the same package",
+        "To allow access from derived classes and the same package, but not unrelated classes",
+        "To make members completely inaccessible"
+      ],
+      "answer": 2,
+      "explanation": "Protected members are accessible from derived classes and from classes in the same package, but not from unrelated classes. This enables controlled access for inheritance hierarchies while maintaining encapsulation from external code."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-008",
+      "q": "Consider a Banking system where you have Account, SavingsAccount, and CheckingAccount classes. If SavingsAccount and CheckingAccount both extend Account, but they behave differently in critical ways (e.g., overdraft handling), what design risk exists?",
+      "options": [
+        "The code will not compile",
+        "Both derived classes are forced to override every method from the base class",
+        "Code expecting an Account reference may assume behavior that doesn't hold for all subclasses, violating the Liskov Substitution Principle",
+        "The derived classes will automatically merge into a single class"
+      ],
+      "answer": 2,
+      "explanation": "When subclasses violate LSP by behaving differently in ways callers don't expect, code that treats them polymorphically may fail. For example, code assuming all Accounts allow overdrafts would break with CheckingAccount."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-009",
+      "q": "Why might a class prefer using getter and setter methods instead of public fields?",
+      "options": [
+        "Getters and setters are faster than direct field access",
+        "Getters and setters allow validation, side effects, and implementation changes without affecting callers",
+        "Public fields automatically provide thread safety",
+        "It reduces the total lines of code in a program"
+      ],
+      "answer": 1,
+      "explanation": "Encapsulation through getters and setters allows the class to add validation, trigger side effects, or change internal representation later without breaking external code that depends on the interface."
+    },
+    {
+      "id": "oop-encapsulation-and-inheritance-010",
+      "q": "In a scenario where you need shared behavior across multiple unrelated classes, why is composition with an interface often better than multiple inheritance?",
+      "options": [
+        "Multiple inheritance is always illegal in programming languages",
+        "Composition is less flexible than multiple inheritance",
+        "Composition avoids the complexity and conflicts of multiple inheritance while still achieving code reuse through delegation",
+        "Interfaces cannot define any behavior at all"
+      ],
+      "answer": 2,
+      "explanation": "Composition with interfaces avoids problems like the diamond problem and ambiguous method resolution that occur with multiple inheritance, while still enabling shared behavior through delegation and implementation of common interfaces."
+    }
+  ]
+}

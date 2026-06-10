@@ -1,0 +1,126 @@
+{
+  "topic": "cpp-syntax",
+  "category": "syntax",
+  "questions": [
+    {
+      "id": "syntax-cpp-syntax-001",
+      "q": "What is the difference between int* p and int& r in C++?",
+      "options": [
+        "p is a pointer (nullable), r is a reference (cannot be null or reassigned)",
+        "p is a reference, r is a pointer",
+        "Both are identical in behavior",
+        "p can be reassigned, r is immutable"
+      ],
+      "answer": 0,
+      "explanation": "Pointers can be null and reassigned; references are aliases that must be bound at declaration and cannot change targets. Option 1 reverses the definitions. Option 2 misses that references cannot be null."
+    },
+    {
+      "id": "syntax-cpp-syntax-002",
+      "q": "What does template<typename T> void foo(T x) declare?",
+      "options": [
+        "A function template that works with any type T",
+        "A function that only accepts pointers",
+        "A macro expansion",
+        "A class template"
+      ],
+      "answer": 0,
+      "explanation": "Template functions are instantiated at compile-time for concrete types. foo(5) creates foo<int>, foo('a') creates foo<char>. Option 1 confuses templates with generic pointers. Option 2 misses template-specific syntax."
+    },
+    {
+      "id": "syntax-cpp-syntax-003",
+      "q": "What is RAII in C++?",
+      "options": [
+        "Resources acquired in constructors are released in destructors",
+        "All resources must be freed manually",
+        "Automatic garbage collection like Java",
+        "A design pattern for multithreading"
+      ],
+      "answer": 0,
+      "explanation": "RAII ties resource lifetime to object scope. Constructors acquire (open file, allocate memory), destructors release. This avoids leaks even on exceptions. Option 1 requires manual management. Option 2 misses the automatic destructors."
+    },
+    {
+      "id": "syntax-cpp-syntax-004",
+      "q": "What does const int x = 5 mean?",
+      "options": [
+        "x is an immutable integer constant",
+        "x is a pointer to a constant integer",
+        "x can be modified with const_cast",
+        "x is mutable if reinterpreted"
+      ],
+      "answer": 0,
+      "explanation": "const before the type makes the variable immutable. Attempting x = 6 is a compile error. Option 1 confuses const with pointer declarations. Option 2 is possible but violates const semantics."
+    },
+    {
+      "id": "syntax-cpp-syntax-005",
+      "q": "What does int* const p allow?",
+      "options": [
+        "p itself cannot be reassigned, but *p can be modified",
+        "p can be reassigned, but *p cannot be modified",
+        "Neither p nor *p can be modified",
+        "The declaration is invalid"
+      ],
+      "answer": 0,
+      "explanation": "const after * makes the pointer immutable. The pointed-to value is mutable. Reading right-to-left: p is a const pointer to int. Option 1 reverses mutability. Option 2 requires const int* p."
+    },
+    {
+      "id": "syntax-cpp-syntax-006",
+      "q": "What does class A { operator int() const {} } enable?",
+      "options": [
+        "Implicit conversion of A to int",
+        "Explicit conversion with a cast",
+        "Overloading the int constructor",
+        "Defining a static conversion function"
+      ],
+      "answer": 0,
+      "explanation": "Operator overloading defines conversions. operator int() allows A obj; int x = obj (implicit). Explicit conversion requires explicit operator int(). Option 1 requires using the keyword explicit."
+    },
+    {
+      "id": "syntax-cpp-syntax-007",
+      "q": "What is std::vector<int> v(5, 3)?",
+      "options": [
+        "A vector with 5 elements, all initialized to 3",
+        "A vector with 5 capacity, 3 elements",
+        "A vector of size 3 containing [5]",
+        "Invalid syntax"
+      ],
+      "answer": 0,
+      "explanation": "Vector constructor v(count, value) creates count copies of value. v(5, 3) = [3, 3, 3, 3, 3]. Option 1 confuses count with capacity. Option 2 reverses the argument order."
+    },
+    {
+      "id": "syntax-cpp-syntax-008",
+      "q": "What does template<typename T> using vec = std::vector<T> define?",
+      "options": [
+        "A template alias for std::vector",
+        "A template function",
+        "A template class inheriting from vector",
+        "A template specialization"
+      ],
+      "answer": 0,
+      "explanation": "Template aliases (using) simplify syntax. vec<int> is equivalent to std::vector<int>. Option 1 confuses aliases with function templates. Option 2 is a separate feature."
+    },
+    {
+      "id": "syntax-cpp-syntax-009",
+      "q": "What happens with int x = 5; int& r = x; r = 10?",
+      "options": [
+        "x becomes 10 because r is an alias to x",
+        "r is assigned 10 but x remains 5",
+        "Undefined behavior",
+        "Syntax error"
+      ],
+      "answer": 0,
+      "explanation": "References are aliases. Modifying r modifies the underlying x. r and x refer to the same memory. Option 1 treats r as a copy. Option 2 is incorrect—references don't create scope boundaries."
+    },
+    {
+      "id": "syntax-cpp-syntax-010",
+      "q": "What does volatile int x indicate?",
+      "options": [
+        "x may be modified externally; the compiler must reread it each time",
+        "x is a constant that cannot be modified",
+        "x will be garbage-collected",
+        "x is thread-safe"
+      ],
+      "answer": 0,
+      "explanation": "volatile tells the compiler not to optimize away reads/writes—useful for hardware registers or shared memory. Compiler rereads x each access. Option 1 is incorrect—volatile is not about constants. Option 2 lacks synchronization guarantees."
+    }
+  ]
+}

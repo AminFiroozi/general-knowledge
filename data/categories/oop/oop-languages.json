@@ -1,0 +1,126 @@
+{
+  "topic": "oop-languages",
+  "category": "oop",
+  "questions": [
+    {
+      "id": "oop-oop-languages-001",
+      "q": "What is the fundamental difference between class-based and prototype-based OOP?",
+      "options": [
+        "Class-based languages run faster than prototype-based languages",
+        "Class-based uses classes as blueprints for objects; prototype-based uses objects as templates for other objects",
+        "Prototype-based languages cannot support inheritance",
+        "Class-based and prototype-based are synonyms for the same concept"
+      ],
+      "answer": 1,
+      "explanation": "Class-based languages (Java, C++) create objects from class blueprints, while prototype-based languages (JavaScript, Lua) clone existing objects to create new ones. Both achieve inheritance but through different mechanisms."
+    },
+    {
+      "id": "oop-oop-languages-002",
+      "q": "In JavaScript, how does prototype-based inheritance work?",
+      "options": [
+        "Objects inherit from a parent class defined at compile time",
+        "Objects have an internal [[Prototype]] link that chains to other objects, enabling property and method lookup",
+        "Each object maintains a list of all available methods",
+        "Inheritance in JavaScript is impossible"
+      ],
+      "answer": 1,
+      "explanation": "JavaScript objects are linked to other objects through the prototype chain. When a property is not found on an object, JavaScript looks up the prototype chain until it finds the property or reaches null."
+    },
+    {
+      "id": "oop-oop-languages-003",
+      "q": "What is an abstract class?",
+      "options": [
+        "A class that only contains comments",
+        "A class that cannot be instantiated and often defines abstract methods that subclasses must implement",
+        "A class with no methods",
+        "A class that exists only in documentation"
+      ],
+      "answer": 1,
+      "explanation": "Abstract classes serve as blueprints for subclasses, defining common interface and behavior. They cannot be instantiated directly; subclasses must implement abstract methods and override abstract properties."
+    },
+    {
+      "id": "oop-oop-languages-004",
+      "q": "Why would a language forbid multiple inheritance?",
+      "options": [
+        "To make code execute faster",
+        "To avoid the diamond problem and ambiguity when a class inherits from multiple parents with the same method",
+        "Because multiple inheritance is always a sign of bad design",
+        "Languages that forbid it are inferior to those that allow it"
+      ],
+      "answer": 1,
+      "explanation": "The diamond problem occurs when a class inherits from two parents that share a common ancestor, creating ambiguity about which version of inherited methods to use. Many languages (Java, C#) avoid this by forbidding multiple inheritance."
+    },
+    {
+      "id": "oop-oop-languages-005",
+      "q": "What are mixins and how do they address the multiple inheritance problem?",
+      "options": [
+        "Mixins are compilation errors that prevent code from running",
+        "Mixins are reusable behavior modules that can be combined into classes without the complexity of multiple inheritance",
+        "Mixins are the same as classes",
+        "Mixins can only be used in languages that support multiple inheritance"
+      ],
+      "answer": 1,
+      "explanation": "Mixins provide a way to compose behavior from multiple sources by combining standalone behavior modules, avoiding the diamond problem while achieving flexibility similar to multiple inheritance."
+    },
+    {
+      "id": "oop-oop-languages-006",
+      "q": "In a language with abstract classes, what happens if a subclass fails to implement an abstract method?",
+      "options": [
+        "The method is automatically implemented by the parent class",
+        "The code will not compile or will raise an error at runtime",
+        "The method silently becomes optional",
+        "The abstract class becomes concrete"
+      ],
+      "answer": 1,
+      "explanation": "Abstract methods must be implemented by concrete subclasses. Failing to do so is an error that prevents compilation (in statically typed languages) or raises a runtime error."
+    },
+    {
+      "id": "oop-oop-languages-007",
+      "q": "How can traits or interfaces provide similar functionality to multiple inheritance while avoiding its pitfalls?",
+      "options": [
+        "They don't provide any similar functionality",
+        "By allowing classes to implement multiple interfaces with default method implementations, while avoiding the diamond problem",
+        "Traits eliminate the need for any inheritance",
+        "Interfaces and multiple inheritance are identical concepts"
+      ],
+      "answer": 1,
+      "explanation": "Interfaces (and traits in languages like Rust and Scala) allow classes to implement multiple contracts with shared behavior while avoiding ambiguity through clear composition rules."
+    },
+    {
+      "id": "oop-oop-languages-008",
+      "q": "Consider a language without explicit class syntax but where objects can clone other objects and override properties. What OOP paradigm is this?",
+      "options": [
+        "Class-based OOP, because all OOP is class-based",
+        "Prototype-based OOP, where objects serve as templates for creating new objects",
+        "Functional OOP, which has no objects",
+        "Imperative OOP, which forbids inheritance"
+      ],
+      "answer": 1,
+      "explanation": "This describes prototype-based OOP where objects clone and modify existing objects. JavaScript is a primary example of this paradigm."
+    },
+    {
+      "id": "oop-oop-languages-009",
+      "q": "What is the difference between 'abstract' and 'interface' in languages like Java?",
+      "options": [
+        "There is no difference; they are synonyms",
+        "Abstract classes can contain state and method implementations; interfaces define a contract with abstract methods only",
+        "Interfaces are faster than abstract classes",
+        "Abstract classes cannot be inherited from; interfaces can"
+      ],
+      "answer": 1,
+      "explanation": "Abstract classes can have concrete methods, fields, and constructors; interfaces traditionally define only abstract contracts. Modern languages now allow default method implementations in interfaces, but abstract classes still support state."
+    },
+    {
+      "id": "oop-oop-languages-010",
+      "q": "If a programmer uses 'object composition' in a prototype-based language like JavaScript instead of prototypal delegation, what principle are they following?",
+      "options": [
+        "They are violating JavaScript best practices",
+        "They are applying composition over inheritance, favoring delegation of objects over prototype chain lookups",
+        "They are forced to do this because JavaScript forbids prototypal inheritance",
+        "Object composition and prototypal delegation are identical"
+      ],
+      "answer": 1,
+      "explanation": "Even in prototype-based languages, composition over inheritance is a valid design principle. Composing behavior through contained objects can be clearer and more flexible than relying on the prototype chain."
+    }
+  ]
+}

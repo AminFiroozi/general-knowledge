@@ -1,0 +1,126 @@
+{
+  "topic": "immutability",
+  "category": "functional-programming",
+  "questions": [
+    {
+      "id": "functional-programming-immutability-001",
+      "q": "What does it mean for data to be immutable in functional programming?",
+      "options": [
+        "Once created, the data cannot be changed or modified",
+        "The data can only be accessed once",
+        "The data is automatically deleted after use",
+        "The data is stored in memory that is read-only"
+      ],
+      "answer": 0,
+      "explanation": "Immutable data cannot be changed after creation. Any modification creates new data with the updated values. Access frequency, automatic deletion, and hardware-level memory protection are separate concerns."
+    },
+    {
+      "id": "functional-programming-immutability-002",
+      "q": "What is the difference between copying and mutating when handling immutable data?",
+      "options": [
+        "Copying creates a new version with changes; mutating modifies the original in place",
+        "Copying is faster than mutating",
+        "Mutating is safer because it doesn't use extra memory",
+        "There is no practical difference between the two approaches"
+      ],
+      "answer": 0,
+      "explanation": "With immutability, instead of mutating the original, you create a copy with modifications. This preserves the original and prevents unintended side effects. Speed and memory tradeoffs depend on implementation details, not the approach itself."
+    },
+    {
+      "id": "functional-programming-immutability-003",
+      "q": "What is a persistent data structure?",
+      "options": [
+        "A data structure that preserves previous versions while creating new versions with updates",
+        "A data structure that remains unchanged throughout program execution",
+        "A data structure that is stored on disk rather than in memory",
+        "A data structure that supports multiple simultaneous access by different threads"
+      ],
+      "answer": 0,
+      "explanation": "Persistent data structures maintain all previous versions efficiently by sharing unchanged parts between versions (structural sharing). They're not about code immutability, disk storage, or thread safety directly."
+    },
+    {
+      "id": "functional-programming-immutability-004",
+      "q": "What is structural sharing in the context of persistent data structures?",
+      "options": [
+        "Reusing unchanged portions of a data structure across multiple versions to save memory",
+        "Sharing data between unrelated programs",
+        "Using the same variable name across multiple scopes",
+        "Creating copies of entire data structures for safety"
+      ],
+      "answer": 0,
+      "explanation": "Structural sharing allows versions to share common, unchanged parts while only copying modified portions. This makes persistent data structures memory-efficient. Inter-program sharing and variable naming are unrelated."
+    },
+    {
+      "id": "functional-programming-immutability-005",
+      "q": "Why is immutability beneficial for concurrent programming?",
+      "options": [
+        "Immutable data cannot be changed unexpectedly by other threads, eliminating race conditions",
+        "Immutable data automatically synchronizes across all processors",
+        "Immutable data makes all concurrent operations execute instantly",
+        "Immutability has no impact on concurrent programming"
+      ],
+      "answer": 0,
+      "explanation": "Immutable data is inherently thread-safe: no locks needed because nothing changes. Other threads cannot see inconsistent states. Automatic synchronization, instant execution, and claiming no impact are all false."
+    },
+    {
+      "id": "functional-programming-immutability-006",
+      "q": "Consider modifying an immutable list [1, 2, 3] to [1, 2, 3, 4]. What should happen?",
+      "options": [
+        "Create a new list [1, 2, 3, 4] while the original [1, 2, 3] remains unchanged",
+        "Modify the original list in place to become [1, 2, 3, 4]",
+        "Copy the entire list, then modify the copy",
+        "Throw an error because immutable data cannot be modified"
+      ],
+      "answer": 0,
+      "explanation": "Immutability requires creating a new list rather than modifying the original. A copy is made, but ideally via structural sharing rather than deep copying. Throwing an error isn't the right approach—the operation is valid, just produces a new value."
+    },
+    {
+      "id": "functional-programming-immutability-007",
+      "q": "What advantage does immutability provide for debugging?",
+      "options": [
+        "Data values cannot change unexpectedly, making it easier to trace state changes and understand program flow",
+        "Immutability automatically detects and prevents all bugs",
+        "Immutable programs never throw exceptions",
+        "Immutability eliminates the need for logging and monitoring"
+      ],
+      "answer": 0,
+      "explanation": "Immutability makes debugging easier by preventing data corruption and making state changes explicit (via new values). Bugs still occur, exceptions still happen, and logging is still needed, but tracking state changes becomes simpler."
+    },
+    {
+      "id": "functional-programming-immutability-008",
+      "q": "How does immutability relate to referential transparency?",
+      "options": [
+        "Immutability enables referential transparency because data cannot be changed after creation",
+        "Referential transparency requires immutability but immutability doesn't guarantee transparency",
+        "Immutability and referential transparency are unrelated concepts",
+        "Referential transparency makes immutability unnecessary"
+      ],
+      "answer": 0,
+      "explanation": "Immutable data supports referential transparency: function results depend only on inputs and never change, so calls can be safely replaced with results. Immutability is a strong enabler though not the only way to achieve transparency."
+    },
+    {
+      "id": "functional-programming-immutability-009",
+      "q": "What is a potential drawback of using immutability?",
+      "options": [
+        "Creating new versions of data structures can use more memory and CPU than in-place mutation",
+        "Immutable data structures cannot be serialized to disk",
+        "Immutability prevents all optimizations from being applied",
+        "Immutable programs always run slower than mutable programs"
+      ],
+      "answer": 0,
+      "explanation": "Naïve immutability without structural sharing can increase memory use and computation. However, serialization and optimization are possible with immutability. Speed depends on implementation, not immutability itself."
+    },
+    {
+      "id": "functional-programming-immutability-010",
+      "q": "In functional programming, if a function needs to update a record, what approach aligns with immutability principles?",
+      "options": [
+        "Return a new record with the updated fields while leaving the original unchanged",
+        "Modify the original record directly and return it",
+        "Create a temporary copy, modify it, then delete the original",
+        "Throw an error indicating that the record cannot be updated"
+      ],
+      "answer": 0,
+      "explanation": "Functions should return new values rather than modify originals. Temporary copies are unnecessary overhead—the new value itself serves as the immutable result. Errors aren't appropriate for valid operations."
+    }
+  ]
+}

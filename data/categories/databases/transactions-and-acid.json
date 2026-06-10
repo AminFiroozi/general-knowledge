@@ -1,0 +1,126 @@
+{
+  "topic": "transactions-and-acid",
+  "category": "databases",
+  "questions": [
+    {
+      "id": "databases-transactions-and-acid-001",
+      "q": "What does ACID stand for in database transactions?",
+      "options": [
+        "Architecture, Consistency, Integration, Distribution",
+        "Atomicity, Consistency, Isolation, Durability",
+        "Authorization, Concurrency, Index, Design",
+        "Aggregation, Clustering, Integrity, Data"
+      ],
+      "answer": 1,
+      "explanation": "ACID is the acronym for four properties guaranteeing reliable database transactions. Atomicity ensures all-or-nothing execution, consistency maintains valid state, isolation prevents interference, and durability persists committed data."
+    },
+    {
+      "id": "databases-transactions-and-acid-002",
+      "q": "What does atomicity mean in a database transaction?",
+      "options": [
+        "Transactions execute on a single processor core",
+        "All operations in a transaction complete successfully or none of them do",
+        "Transactions cannot read uncommitted changes from other transactions",
+        "Committed data is permanently stored and survives failures"
+      ],
+      "answer": 1,
+      "explanation": "Atomicity guarantees 'all-or-nothing' execution: either all changes commit or the entire transaction rolls back. This prevents partial updates that leave data in an inconsistent state. Isolation and durability are separate ACID properties."
+    },
+    {
+      "id": "databases-transactions-and-acid-003",
+      "q": "What isolation level allows dirty reads?",
+      "options": [
+        "SERIALIZABLE",
+        "REPEATABLE READ",
+        "READ COMMITTED",
+        "READ UNCOMMITTED"
+      ],
+      "answer": 3,
+      "explanation": "READ UNCOMMITTED permits dirty reads of uncommitted data from other transactions. This is the weakest isolation level, offering the best performance but lowest data integrity. SERIALIZABLE provides the strongest isolation."
+    },
+    {
+      "id": "databases-transactions-and-acid-004",
+      "q": "What consistency means in ACID?",
+      "options": [
+        "The transaction executes only when the database is not busy",
+        "Data maintains valid state according to defined rules and constraints",
+        "Two transactions can modify the same row simultaneously",
+        "Transactions complete in the order they start"
+      ],
+      "answer": 1,
+      "explanation": "Consistency ensures all database constraints (foreign keys, unique constraints, check constraints) are satisfied before and after a transaction. A transaction takes the database from one valid state to another valid state."
+    },
+    {
+      "id": "databases-transactions-and-acid-005",
+      "q": "What does durability guarantee?",
+      "options": [
+        "Transactions will never fail or roll back",
+        "Committed data persists even after system crashes or failures",
+        "No one can delete committed data",
+        "All queries execute faster than uncommitted queries"
+      ],
+      "answer": 1,
+      "explanation": "Durability ensures that once a transaction commits, the changes survive hardware failures, power loss, and crashes. Databases use write-ahead logs and persistent storage to guarantee this property."
+    },
+    {
+      "id": "databases-transactions-and-acid-006",
+      "q": "What problem does the REPEATABLE READ isolation level prevent?",
+      "options": [
+        "Dirty reads and phantom reads but allows non-repeatable reads",
+        "Dirty reads and non-repeatable reads but allows phantom reads",
+        "Only dirty reads",
+        "Dirty reads, non-repeatable reads, and phantom reads"
+      ],
+      "answer": 1,
+      "explanation": "REPEATABLE READ prevents dirty reads and non-repeatable reads (re-reading the same row returns consistent results). It allows phantom reads where new rows inserted by other transactions appear. SERIALIZABLE prevents all three anomalies."
+    },
+    {
+      "id": "databases-transactions-and-acid-007",
+      "q": "What is a phantom read?",
+      "options": [
+        "Reading data that was never committed to the database",
+        "A row changing its values during a transaction",
+        "New rows inserted by other transactions appearing in a repeated query",
+        "Reading data deleted by another transaction"
+      ],
+      "answer": 2,
+      "explanation": "A phantom read occurs when a query returns different rows in two consecutive executions due to inserts or deletes by other transactions between the queries. Locking a range prevents this; SERIALIZABLE isolation prevents phantom reads."
+    },
+    {
+      "id": "databases-transactions-and-acid-008",
+      "q": "Why would a transaction rollback?",
+      "options": [
+        "When the database runs out of disk space",
+        "When an error occurs, constraints are violated, or the application requests ROLLBACK",
+        "When a query takes longer than expected to execute",
+        "Every transaction rolls back automatically after 10 minutes"
+      ],
+      "answer": 1,
+      "explanation": "A transaction rolls back to undo all changes when errors occur, constraints are violated, or the application explicitly calls ROLLBACK. This maintains atomicity and prevents partial updates from corrupting data."
+    },
+    {
+      "id": "databases-transactions-and-acid-009",
+      "q": "What is the tradeoff between stronger isolation levels and performance?",
+      "options": [
+        "Stronger isolation always improves performance",
+        "Stronger isolation provides better data integrity but requires more locking, reducing concurrency",
+        "Weaker isolation levels are always slower",
+        "Isolation levels have no performance impact"
+      ],
+      "answer": 1,
+      "explanation": "Stricter isolation (SERIALIZABLE) uses more locks and blocks concurrent transactions, reducing throughput. Weaker isolation (READ UNCOMMITTED) allows concurrent access but risks data anomalies. The choice depends on consistency requirements vs. performance needs."
+    },
+    {
+      "id": "databases-transactions-and-acid-010",
+      "q": "What is a non-repeatable read?",
+      "options": [
+        "A transaction that reads from multiple tables",
+        "The same query returns different data in two executions during a transaction because another transaction modified the rows",
+        "Reading data before it is committed",
+        "A row that cannot be read by any user"
+      ],
+      "answer": 1,
+      "explanation": "A non-repeatable read occurs when reading the same row twice within a transaction yields different values due to updates by other transactions. READ COMMITTED and weaker levels allow this; REPEATABLE READ and SERIALIZABLE prevent it."
+    }
+  ]
+}

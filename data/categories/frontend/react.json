@@ -32,6 +32,90 @@
       ],
       "answer": 1,
       "explanation": "Reconciliation compares the new virtual DOM tree with the previous one (diffing) and computes the minimal set of actual DOM operations needed. It uses heuristics: same-type elements update in place, different-type elements destroy and recreate, and the key prop helps match list items across renders."
+    },
+    {
+      "id": "frontend-react-004",
+      "q": "Why is the key prop important when rendering lists in React?",
+      "options": [
+        "Keys are only used for styling list items",
+        "Keys help React identify which items have changed, been added, or been removed",
+        "Keys are required to pass props to child components",
+        "Keys determine the order in which list items are rendered"
+      ],
+      "answer": 1,
+      "explanation": "Keys help React match array items with their corresponding DOM nodes across re-renders. Without stable keys, React may reuse DOM nodes incorrectly, causing state and form values to get mixed up between list items. Using array indices as keys can break component state if the list is reordered."
+    },
+    {
+      "id": "frontend-react-005",
+      "q": "What happens when you use useCallback without a dependency array?",
+      "options": [
+        "The function is never memoized",
+        "The function is memoized forever and never updates",
+        "The function is recreated on every render, negating the memoization benefit",
+        "React throws an error"
+      ],
+      "answer": 2,
+      "explanation": "Without a dependency array, useCallback has no dependencies, so the memoized function reference never changes. This can cause stale closures in child components. If you omit the dependency array intentionally to create a new function every render, useCallback provides no benefit."
+    },
+    {
+      "id": "frontend-react-006",
+      "q": "How does React Context help avoid prop drilling?",
+      "options": [
+        "Context eliminates the need for any props in the entire application",
+        "Context allows you to pass values through a Provider, making them accessible to deeply nested consumers without passing through intermediate components",
+        "Context automatically optimizes all component renders",
+        "Context only works with functional components that use hooks"
+      ],
+      "answer": 1,
+      "explanation": "Context provides a way to share state without explicitly passing props through every intermediate component. A Provider at a high level makes a value available to all consumers below it in the tree. However, context updates still cause all consumers to re-render, which can be a performance concern for frequently changing values."
+    },
+    {
+      "id": "frontend-react-007",
+      "q": "What is the main difference between state and refs in React?",
+      "options": [
+        "State is stored in memory; refs are stored in the DOM",
+        "State triggers a re-render when it changes; refs do not",
+        "Refs can only be used in class components",
+        "State cannot be used with hooks"
+      ],
+      "answer": 1,
+      "explanation": "Updating state causes the component to re-render, whereas updating a ref (via .current) does not trigger a re-render. Use state for values that affect the UI and refs for values that don't need to trigger renders, like tracking focus, managing timers, or storing mutable values."
+    },
+    {
+      "id": "frontend-react-008",
+      "q": "When should you use useMemo to memoize a value?",
+      "options": [
+        "Always, to optimize every variable",
+        "When the computation is expensive and the component renders frequently, or when the value is passed as a dependency to child components",
+        "Only in the root component",
+        "Never, because it adds unnecessary complexity"
+      ],
+      "answer": 1,
+      "explanation": "useMemo is beneficial when computation is costly or when the memoized value is a dependency for other hooks/effects to prevent unnecessary re-calculations. Over-using useMemo on cheap computations can actually hurt performance due to the memoization overhead. Premature optimization should be avoided."
+    },
+    {
+      "id": "frontend-react-009",
+      "q": "What is the purpose of useEffect dependencies array?",
+      "options": [
+        "To specify which props the component accepts",
+        "To determine when the effect should run by tracking which values it depends on",
+        "To manage the order of component renders",
+        "To automatically clean up all state on unmount"
+      ],
+      "answer": 1,
+      "explanation": "The dependency array tells React which values the effect depends on. If no values in the array change between renders, the effect does not run. An empty array means the effect runs once on mount. Omitting the array causes the effect to run after every render. Missing dependencies in the array can cause stale closures and bugs."
+    },
+    {
+      "id": "frontend-react-010",
+      "q": "Why do controlled components require onChange handlers in React?",
+      "options": [
+        "React cannot access input values without onChange",
+        "Controlled components derive their value from state, so onChange must update state to reflect user input and keep the component in sync",
+        "onChange handlers prevent form submission",
+        "They are only necessary for validation"
+      ],
+      "answer": 1,
+      "explanation": "In a controlled component, the input value is set by React state. Without an onChange handler to update state, the input would remain frozen at its initial value even when the user types. The handler bridges the gap between DOM user input and React state, making the component predictable and debuggable."
     }
   ]
 }

@@ -1,0 +1,126 @@
+{
+  "topic": "javascript-syntax",
+  "category": "syntax",
+  "questions": [
+    {
+      "id": "syntax-javascript-syntax-001",
+      "q": "What does const {a, b} = {a: 1, b: 2, c: 3} assign?",
+      "options": [
+        "a=1, b=2",
+        "a=undefined, b=undefined",
+        "a={a:1}, b={b:2}",
+        "Syntax Error"
+      ],
+      "answer": 0,
+      "explanation": "Object destructuring extracts named properties. a and b are pulled from the object with their values 1 and 2. Property c is ignored. Option 1 would occur if a and b don't exist in the source object."
+    },
+    {
+      "id": "syntax-javascript-syntax-002",
+      "q": "What does [...[1, 2], 3] evaluate to?",
+      "options": [
+        "[1, 2, 3]",
+        "[[1, 2], 3]",
+        "[..., 1, 2, 3]",
+        "[1, 2, [3]]"
+      ],
+      "answer": 0,
+      "explanation": "The spread operator ... unpacks array elements inline. [...[1, 2], 3] spreads [1, 2] to 1, 2 and appends 3, yielding [1, 2, 3]. Option 1 treats the array as a single nested element."
+    },
+    {
+      "id": "syntax-javascript-syntax-003",
+      "q": "What is the output of const f = (x) => x * 2; f(3)?",
+      "options": [
+        "6",
+        "x * 2",
+        "NaN",
+        "undefined"
+      ],
+      "answer": 0,
+      "explanation": "Arrow function (x) => x * 2 implicitly returns x * 2 for single expressions. f(3) evaluates to 3 * 2 = 6. Option 1 returns the expression string, not the computed result."
+    },
+    {
+      "id": "syntax-javascript-syntax-004",
+      "q": "What does `hello ${5 + 3}` produce?",
+      "options": [
+        "'hello 8'",
+        "'hello ${5 + 3}'",
+        "'hello 5 + 3'",
+        "hello 8 (unquoted)"
+      ],
+      "answer": 0,
+      "explanation": "Template literals (backticks) evaluate expressions inside ${}. 5 + 3 = 8, interpolated as 'hello 8'. Option 1 treats the template as literal text. Option 2 ignores the template evaluation."
+    },
+    {
+      "id": "syntax-javascript-syntax-005",
+      "q": "What does const f = (a, b = 10) => a + b; f(5) return?",
+      "options": [
+        "15",
+        "NaN",
+        "5",
+        "undefined"
+      ],
+      "answer": 0,
+      "explanation": "Default parameters fill in when arguments are omitted. f(5) sets a=5, b=10 (default), returning 5 + 10 = 15. Option 1 treats the missing b as 0 or NaN."
+    },
+    {
+      "id": "syntax-javascript-syntax-006",
+      "q": "What does (a, b) => a > b ? 'yes' : 'no' do with (3, 5)?",
+      "options": [
+        "Returns 'no'",
+        "Returns 'yes'",
+        "Returns 3 > 5",
+        "Syntax Error"
+      ],
+      "answer": 0,
+      "explanation": "The ternary operator condition ? true_val : false_val tests 3 > 5 (false), returning 'no'. Option 1 returns the opposite. Option 2 returns the raw boolean."
+    },
+    {
+      "id": "syntax-javascript-syntax-007",
+      "q": "What does const {x, y = 20} = {x: 10} assign?",
+      "options": [
+        "x=10, y=20",
+        "x=10, y=undefined",
+        "x=undefined, y=20",
+        "Syntax Error"
+      ],
+      "answer": 0,
+      "explanation": "Destructuring with defaults: x=10 from the object, y=20 from the default. Missing properties use their defaults. Option 1 ignores the default value."
+    },
+    {
+      "id": "syntax-javascript-syntax-008",
+      "q": "What does function foo(a, ...rest) allow rest to capture?",
+      "options": [
+        "All remaining positional arguments as an array",
+        "Only keyword arguments",
+        "The first argument",
+        "Named object properties"
+      ],
+      "answer": 0,
+      "explanation": "Rest parameters ...rest collect excess positional arguments into an array. foo(1, 2, 3, 4) sets a=1, rest=[2, 3, 4]. Option 1 treats rest as a single value. Option 2 requires destructuring syntax."
+    },
+    {
+      "id": "syntax-javascript-syntax-009",
+      "q": "What is const [a, , c] = [1, 2, 3]?",
+      "options": [
+        "a=1, c=3",
+        "a=1, c=2",
+        "a=1, undefined, c=3",
+        "Syntax Error"
+      ],
+      "answer": 0,
+      "explanation": "Array destructuring with holes skips elements. The empty slot skips index 1 (value 2). Result: a=1, c=3. Option 1 assigns c the skipped value."
+    },
+    {
+      "id": "syntax-javascript-syntax-010",
+      "q": "What does ({a, b} = {a: 1, b: 2}) => a + b return when called with no args?",
+      "options": [
+        "3",
+        "NaN",
+        "undefined",
+        "Syntax Error"
+      ],
+      "answer": 0,
+      "explanation": "Default parameters in destructuring: if no argument, use {a: 1, b: 2}. a=1, b=2, a+b=3. Option 1 treats missing arguments as undefined in the destructure."
+    }
+  ]
+}
