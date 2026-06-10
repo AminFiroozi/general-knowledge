@@ -1,0 +1,126 @@
+{
+  "topic": "streaming",
+  "category": "data-engineering",
+  "questions": [
+    {
+      "id": "data-engineering-streaming-001",
+      "q": "What does 'exactly-once' semantics mean in a streaming context?",
+      "options": [
+        "Each event is processed and contributes to state exactly once, even if the system fails and recovers",
+        "The streaming system can only process one event at a time",
+        "Events can only be read from a stream exactly one time before being deleted",
+        "Exactly one consumer can read from a Kafka topic at any moment"
+      ],
+      "answer": 0,
+      "explanation": "Exactly-once semantics guarantee that despite system failures, restarts, or retries, each input event affects the result exactly once. This requires idempotent operations and either deduplication (recognizing duplicate delivery) or distributed transactions. Kafka and Spark Structured Streaming support exactly-once with proper configuration."
+    },
+    {
+      "id": "data-engineering-streaming-002",
+      "q": "How does Kafka maintain fault tolerance in a distributed streaming architecture?",
+      "options": [
+        "By replicating partitions across brokers and maintaining an offset log that allows consumers to resume from any point",
+        "Kafka stores all data in memory and has no durability guarantees",
+        "By preventing any broker from failing through active health monitoring",
+        "Kafka requires manual intervention to recover from any broker failure"
+      ],
+      "answer": 0,
+      "explanation": "Kafka replicates each partition to multiple brokers (default replication factor 3), tolerating broker failures. Consumer offsets are stored, allowing applications to pause and resume without losing position. When a consumer restarts, it reads its committed offset and continues processing."
+    },
+    {
+      "id": "data-engineering-streaming-003",
+      "q": "What is the difference between event time and processing time in stream processing?",
+      "options": [
+        "Event time is when the event occurred at source; processing time is when the system processed it—they can differ due to latency and out-of-order events",
+        "They are the same thing described with different terminology",
+        "Event time is used only in batch processing; processing time only in streaming",
+        "Processing time is always before event time in a streaming system"
+      ],
+      "answer": 0,
+      "explanation": "A user clicks at 3:00 PM (event time) but network delays mean the system processes it at 3:05 PM (processing time). Windowing should typically use event time for accurate analytics. Event time windows are called 'tumbling' windows while processing time windows are called 'wall-clock' windows."
+    },
+    {
+      "id": "data-engineering-streaming-004",
+      "q": "What problem does watermarking solve in streaming systems?",
+      "options": [
+        "Tracking how far behind real-time the system is and deciding when to close windows despite late-arriving data",
+        "Preventing sensitive data from being stored in stream topics",
+        "Compressing data as it flows through the pipeline",
+        "Ensuring that stream partitions are evenly sized"
+      ],
+      "answer": 0,
+      "explanation": "A watermark is a timestamp threshold that represents when the system believes it has seen all events up to that time. If the watermark reaches 3:05 PM, the system assumes no events from before 3:05 PM will arrive. This allows windows to close and emit results. The watermark lags by a heuristic duration to handle expected delays."
+    },
+    {
+      "id": "data-engineering-streaming-005",
+      "q": "In stream processing, what is backpressure and why does handling it matter?",
+      "options": [
+        "When incoming data rate exceeds processing rate, and systems must buffer or slow input to prevent memory exhaustion and data loss",
+        "The pressure exerted by downstream systems on upstream producers",
+        "A technique for accelerating stream processing by discarding events",
+        "An indicator that the stream topic has too many partitions"
+      ],
+      "answer": 0,
+      "explanation": "Backpressure occurs when events arrive faster than they can be processed. Without backpressure handling, buffers fill and memory runs out. Solutions include pause/resume signaling (Kafka), bounded queues that block producers, or scaling consumers. Ignoring backpressure leads to out-of-memory errors and event loss."
+    },
+    {
+      "id": "data-engineering-streaming-006",
+      "q": "What types of windows are commonly used in streaming aggregations?",
+      "options": [
+        "Tumbling (non-overlapping fixed intervals), sliding (overlapping intervals), and session windows (gap-based grouping of events)",
+        "Only tumbling windows can be used in stream processing",
+        "Windows are only used in batch processing, not streaming",
+        "There is only one type of window used in all streaming systems"
+      ],
+      "answer": 0,
+      "explanation": "Tumbling windows divide time into fixed non-overlapping segments (e.g., 1-minute intervals). Sliding windows overlap (e.g., 5-minute window advancing every 1 minute). Session windows group events by inactivity gaps (e.g., events within 10 seconds of each other). Each suits different analytical questions."
+    },
+    {
+      "id": "data-engineering-streaming-007",
+      "q": "How does a streaming join differ from a batch join in complexity and semantics?",
+      "options": [
+        "Streaming joins must manage unbounded input, out-of-order events, and late arrivals; they require state management and watermarks",
+        "Streaming joins are simpler than batch joins because less data is involved",
+        "Streaming and batch joins are implemented identically",
+        "Streaming joins cannot be performed without converting streams to batches first"
+      ],
+      "answer": 0,
+      "explanation": "Batch joins have fixed datasets with known bounds. Streaming joins join unbounded, continuously-arriving streams. A stream-stream join requires maintaining state for both sides, handling out-of-order events, and deciding when to emit results. Window boundaries and watermarks become critical for correctness."
+    },
+    {
+      "id": "data-engineering-streaming-008",
+      "q": "What is a consumer group in Kafka and why is it important for scaling?",
+      "options": [
+        "Multiple consumers in a group share partitions of a topic, with each partition assigned to one consumer, enabling parallel processing at scale",
+        "A consumer group is a single consumer instance with multiple threads",
+        "Consumer groups are only used for metadata storage and don't affect processing",
+        "All consumers must be in the same group to read from any topic"
+      ],
+      "answer": 0,
+      "explanation": "A Kafka consumer group allows multiple instances to share the load. If a topic has 10 partitions and 5 consumers in a group, each consumer handles 2 partitions in parallel. If a consumer fails, Kafka rebalances so remaining consumers cover all partitions. This enables horizontal scaling."
+    },
+    {
+      "id": "data-engineering-streaming-009",
+      "q": "What does state management in stream processing enable?",
+      "options": [
+        "Maintaining aggregate or contextual data across events (counters, aggregations, join tables) to compute results based on event history",
+        "Storing raw events before processing without any computation",
+        "Eliminating the need for databases in streaming systems",
+        "Reducing the throughput of a streaming pipeline"
+      ],
+      "answer": 0,
+      "explanation": "State lets streaming apps maintain context. A count aggregation stores current count in state. A sessionization stores recent events grouped by session key. A stream join stores buffered events from one stream waiting for matches in the other. Without state, each event would be processed in isolation."
+    },
+    {
+      "id": "data-engineering-streaming-010",
+      "q": "Why might a streaming system use checkpointing?",
+      "options": [
+        "To save processing state periodically so that upon failure, the system resumes from that point without reprocessing or losing events",
+        "To validate that all events are correctly formatted before processing",
+        "To split large streams into smaller batches",
+        "To encrypt data flowing through the pipeline"
+      ],
+      "answer": 0,
+      "explanation": "Checkpoints capture the system state—current offsets, aggregation results, join state—at regular intervals. If a failure occurs, the system recovers from the latest checkpoint, avoiding reprocessing or dropped events. Without checkpointing, failures require replaying the entire stream history."
+    }
+  ]
+}

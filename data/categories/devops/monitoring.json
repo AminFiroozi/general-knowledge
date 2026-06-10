@@ -1,0 +1,126 @@
+{
+  "topic": "monitoring",
+  "category": "devops",
+  "questions": [
+    {
+      "id": "devops-monitoring-001",
+      "q": "What is the difference between metrics, logs, and traces in observability?",
+      "options": [
+        "Metrics are numeric measurements; logs are text records of events; traces show request flows across systems",
+        "Metrics are for production while logs are for development",
+        "Traces are old; modern systems only use metrics",
+        "They are three names for the same monitoring data"
+      ],
+      "answer": 0,
+      "explanation": "Observability's three pillars: metrics (time-series data like CPU%), logs (event records), and traces (request paths). Environment (B) doesn't divide them; traces remain essential (C); they're distinct data types (D)."
+    },
+    {
+      "id": "devops-monitoring-002",
+      "q": "What is an SLO (Service Level Objective)?",
+      "options": [
+        "A target for system reliability, such as 99.9% uptime, guiding engineering priorities and alerting thresholds",
+        "A guarantee that services will never fail",
+        "The speed at which alerts are sent to on-call engineers",
+        "A list of all services running in production"
+      ],
+      "answer": 0,
+      "explanation": "SLOs define acceptable performance targets; they're not guarantees (B), alert delivery speeds (C), or service inventories (D). SLOs enable trade-offs: you don't need 99.999% for non-critical systems, freeing resources for other improvements."
+    },
+    {
+      "id": "devops-monitoring-003",
+      "q": "What is the difference between an SLO and an SLA?",
+      "options": [
+        "An SLO is a target to guide engineering; an SLA is a contract promising consequences for breaches",
+        "An SLA is internal; an SLO is for customers",
+        "They are identical terms used interchangeably",
+        "An SLA applies to one service; an SLO applies to the entire system"
+      ],
+      "answer": 0,
+      "explanation": "SLOs are internal targets used for operational decisions; SLAs are binding contracts (with penalties). Usage (B) is sometimes reversed; they're distinct concepts (C). Scope (D) isn't the difference—SLAs can be per-service too."
+    },
+    {
+      "id": "devops-monitoring-004",
+      "q": "What is alerting in the context of monitoring?",
+      "options": [
+        "Triggering notifications to on-call engineers when metrics breach predefined thresholds based on SLOs",
+        "Recording all application events for later analysis",
+        "Preventing problems by rolling back code automatically",
+        "Storing historical metric data for trend analysis"
+      ],
+      "answer": 0,
+      "explanation": "Alerting notifies humans when conditions require intervention; it's triggered by thresholds tied to SLOs. Recording events (B) is logging; automatic rollback (C) is remediation, not alerting; data storage (D) is time-series databases."
+    },
+    {
+      "id": "devops-monitoring-005",
+      "q": "What are RED metrics in monitoring?",
+      "options": [
+        "Rate (request throughput), Errors (failure rate), and Duration (latency) for measuring service health",
+        "Real-time, Embedded, and Distributed monitoring approaches",
+        "Redundancy, Efficiency, and Durability for storage systems",
+        "Resource, Environment, and Deployment for infrastructure"
+      ],
+      "answer": 0,
+      "explanation": "RED focuses on user-facing service health: how many requests (Rate), how many failed (Errors), how long did they take (Duration). The other options are not monitoring frameworks—they describe different concepts entirely."
+    },
+    {
+      "id": "devops-monitoring-006",
+      "q": "What is a distributed trace?",
+      "options": [
+        "A record showing how a single request flows through multiple services, showing latency at each hop",
+        "A backup of all database transactions",
+        "A log file containing traces of deleted user accounts",
+        "A network diagram showing connections between servers"
+      ],
+      "answer": 0,
+      "explanation": "Distributed tracing tracks requests across microservices with latency at each step, enabling performance diagnosis. Database backups (B), user activity logs (C), and network diagrams (D) are unrelated."
+    },
+    {
+      "id": "devops-monitoring-007",
+      "q": "What problem does structured logging solve compared to unstructured logs?",
+      "options": [
+        "Structured logs (JSON key-value pairs) are machine-parseable, enabling precise filtering, aggregation, and alerting",
+        "Structured logs are more human-readable than plain text",
+        "Structured logs use less disk space",
+        "Structured logs are only needed for distributed systems"
+      ],
+      "answer": 0,
+      "explanation": "Structured logs enable automated parsing and searching (free-text logs require regex hacks). Readability is debatable (B); disk impact is negligible (C); benefits apply to any system (D)."
+    },
+    {
+      "id": "devops-monitoring-008",
+      "q": "What is cardinality in monitoring, and why is it a concern?",
+      "options": [
+        "The number of unique label values in a metric; high cardinality (e.g., per-user metrics) causes storage and query performance problems",
+        "The accuracy of metric measurements",
+        "The number of distinct services being monitored",
+        "The frequency at which metrics are recorded"
+      ],
+      "answer": 0,
+      "explanation": "Cardinality refers to unique combinations of labels; unbounded cardinality (e.g., one metric per user ID) explodes storage and slows queries. Accuracy (B), service count (C), and sampling frequency (D) are separate monitoring concerns."
+    },
+    {
+      "id": "devops-monitoring-009",
+      "q": "What is the purpose of health checks in monitoring?",
+      "options": [
+        "To verify a service is functioning correctly and responding, enabling orchestrators to restart or remove failed instances",
+        "To scan for security vulnerabilities in code",
+        "To measure user satisfaction with the application",
+        "To verify backups were created successfully"
+      ],
+      "answer": 0,
+      "explanation": "Health checks signal readiness and liveness, enabling self-healing. Vulnerability scanning (B) is separate; user satisfaction is NPS or feedback (C); backup verification (D) is a different mechanism."
+    },
+    {
+      "id": "devops-monitoring-010",
+      "q": "What is the difference between a counter and a gauge metric?",
+      "options": [
+        "A counter monotonically increases; a gauge can go up or down, reflecting current state at a point in time",
+        "Counters measure failures; gauges measure successes",
+        "Counters are for logs; gauges are for metrics",
+        "Counters are deprecated in favor of gauges"
+      ],
+      "answer": 0,
+      "explanation": "Counters track cumulative totals (request count, errors); gauges show current state (memory usage, temperature). Success/failure (B) is separate from metric type; they're both metric types (C, D incorrect)."
+    }
+  ]
+}

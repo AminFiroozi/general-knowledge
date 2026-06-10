@@ -1,0 +1,126 @@
+{
+  "topic": "link-building",
+  "category": "seo",
+  "questions": [
+    {
+      "id": "seo-link-building-001",
+      "q": "What is domain authority and how is it calculated?",
+      "options": [
+        "A metric measuring how old a domain is",
+        "A Moz metric predicting ranking strength based on backlink profile and quality",
+        "The number of pages indexed on a domain",
+        "A Google metric directly determining page rank"
+      ],
+      "answer": 1,
+      "explanation": "Domain Authority (DA) by Moz predicts a site's ability to rank based on link profile quality and quantity on a 0-100 scale. It's not Google's official metric (that's indirectly measured via rankings); age and page count alone don't determine it."
+    },
+    {
+      "id": "seo-link-building-002",
+      "q": "Why should you avoid buying backlinks as a link-building strategy?",
+      "options": [
+        "Buying links is always free anyway",
+        "Google considers paid links a violation of guidelines and may apply manual penalties",
+        "Paid links automatically get you ranking benefits",
+        "There's no risk to buying links from low-quality sites"
+      ],
+      "answer": 1,
+      "explanation": "Purchased links violate Google's Webmaster Guidelines and can result in ranking drops or de-indexing if detected. Google actively penalizes artificial link schemes; natural, earned links carry far more weight and sustainable value."
+    },
+    {
+      "id": "seo-link-building-003",
+      "q": "What does 'nofollow' attribute on a link tell search engines?",
+      "options": [
+        "Don't follow the link at all, ever",
+        "Ignore this link for ranking purposes, don't pass authority",
+        "The link is broken or invalid",
+        "Only Google should follow it, not other crawlers"
+      ],
+      "answer": 1,
+      "explanation": "Nofollow signals that the link shouldn't pass ranking credit or authority. Google still crawls nofollow links for discovery but doesn't consolidate link equity through them; they're useful for user-generated content and affiliate links."
+    },
+    {
+      "id": "seo-link-building-004",
+      "q": "What is the primary difference between 'link quality' and 'link quantity' in rankings?",
+      "options": [
+        "Quality doesn't matter; quantity is everything",
+        "One high-quality link from a relevant authority site often outweighs many low-quality links",
+        "Quantity always beats quality no matter what",
+        "Both quality and quantity are irrelevant for modern rankings"
+      ],
+      "answer": 1,
+      "explanation": "A single relevant, authoritative backlink often delivers more ranking power than hundreds of low-quality ones. Over-optimization through quantity (link farms, directory submissions) now triggers penalties; modern algorithms reward editorial quality and topical relevance."
+    },
+    {
+      "id": "seo-link-building-005",
+      "q": "What role does anchor text play in communicating link relevance?",
+      "options": [
+        "Anchor text has no SEO impact whatsoever",
+        "Over-optimized exact-match anchor text can trigger unnatural link warnings",
+        "Anchor text should always be the target keyword repeated",
+        "Search engines ignore anchor text completely"
+      ],
+      "answer": 1,
+      "explanation": "Anchor text provides context about the linked content but over-optimization (excessive exact-match keywords) flags links as unnatural. Varied, natural anchor text (branded, generic, partial match) looks earned; overuse of perfect-match keywords is a red flag for algorithms."
+    },
+    {
+      "id": "seo-link-building-006",
+      "q": "How do topical backlinks differ from generic backlinks in SEO value?",
+      "options": [
+        "There is no difference; all backlinks have equal weight",
+        "Topically relevant links from related industry sites signal stronger authority in that niche",
+        "Generic links are always more valuable than topical ones",
+        "Only .edu and .gov domains provide topical relevance"
+      ],
+      "answer": 1,
+      "explanation": "Topically relevant backlinks from related sites carry more ranking weight than random links because they signal genuine credibility in a specific field. Google's algorithm factors in link context and site relationship; a finance link to a tech site is weaker than a tech-to-tech link."
+    },
+    {
+      "id": "seo-link-building-007",
+      "q": "What is the relationship between link building and brand reputation?",
+      "options": [
+        "Link building has no connection to brand reputation",
+        "Earning links through quality content and reputation naturally builds authority and trust",
+        "Only paid ads can build brand reputation",
+        "Brand reputation has nothing to do with search rankings"
+      ],
+      "answer": 1,
+      "explanation": "Legitimate link building stems from strong content and brand reputation; sites respected by industry earn more links naturally. This reputation signals translate to both user trust and search algorithm signals; paid ads build visibility but not earned link authority."
+    },
+    {
+      "id": "seo-link-building-008",
+      "q": "How does internal linking structure affect link equity distribution on your site?",
+      "options": [
+        "Internal links don't affect link equity at all",
+        "Strategic internal links distribute authority to priority pages and establish information architecture",
+        "You should link every page to every other page equally",
+        "Internal links dilute authority and should be minimized"
+      ],
+      "answer": 1,
+      "explanation": "Internal linking passes authority strategically; linking to priority pages concentrates equity where it matters. Excessive linking wastes juice across unimportant pages; minimal linking leaves authority untapped; thoughtful architecture balances both."
+    },
+    {
+      "id": "seo-link-building-009",
+      "q": "What is a 'broken backlink' opportunity in link building?",
+      "options": [
+        "A broken backlink means the link is spammy and should be ignored",
+        "When a competitor's linked page is removed, you can pitch your content as a replacement",
+        "Broken links automatically harm your rankings",
+        "You should create broken links intentionally to gain attention"
+      ],
+      "answer": 1,
+      "explanation": "Broken link building identifies when valuable pages linking to competitors disappear, then pitch your similar content as a replacement. This creates natural editorial links; it's a legitimate earned strategy—not spam—because it solves a real problem for webmasters."
+    },
+    {
+      "id": "seo-link-building-010",
+      "q": "Why might a website avoid exchanging reciprocal links as a link-building tactic?",
+      "options": [
+        "Reciprocal links always boost rankings equally",
+        "Excessive reciprocal link exchanges can appear unnatural and trigger penalty filters",
+        "Reciprocal links are the most natural form of linking",
+        "Google has never penalized reciprocal linking"
+      ],
+      "answer": 1,
+      "explanation": "Widespread reciprocal link exchanges (link wheels, mutual link swaps) look artificial and can trigger unnatural link warnings. Occasional reciprocal links between related sites are normal; systematic schemes are flagged as manipulative."
+    }
+  ]
+}

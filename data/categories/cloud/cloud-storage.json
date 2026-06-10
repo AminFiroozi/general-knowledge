@@ -1,0 +1,126 @@
+{
+  "topic": "cloud-storage",
+  "category": "cloud",
+  "questions": [
+    {
+      "id": "cloud-storage-001",
+      "q": "What is the primary difference between object storage and block storage?",
+      "options": [
+        "Object storage is faster but block storage is more reliable",
+        "Block storage is attached to compute instances as volumes; object storage is accessed via HTTP API and stores complete files",
+        "Object storage requires a filesystem; block storage does not",
+        "Block storage can only store 1 TB while object storage is unlimited"
+      ],
+      "answer": 1,
+      "explanation": "Block storage (like EBS) attaches volumes to EC2 instances for high-performance I/O, while object storage (like S3) is accessed via API for storing complete files or objects. Option 0 is false; option 2 is reversed; option 3 incorrectly specifies limits."
+    },
+    {
+      "id": "cloud-storage-002",
+      "q": "What does storage durability in cloud storage mean?",
+      "options": [
+        "How quickly data can be retrieved from storage",
+        "The percentage probability that your data will not be lost over a specified period",
+        "The encryption strength applied to data at rest",
+        "How many copies of your data are kept in the same data center"
+      ],
+      "answer": 1,
+      "explanation": "Durability is the probability that data remains intact and accessible over time. AWS S3 offers 99.999999999% (11 nines) durability. Option 0 is availability/performance; option 2 is security; option 3 is replication strategy, not durability."
+    },
+    {
+      "id": "cloud-storage-003",
+      "q": "What is the purpose of storage tiers in cloud storage like S3?",
+      "options": [
+        "To separate data by file type (images, videos, documents)",
+        "To provide different levels of access speed and cost for different use cases",
+        "To automatically delete old data after a specified period",
+        "To enforce different encryption standards for different data"
+      ],
+      "answer": 1,
+      "explanation": "Storage tiers (Standard, Infrequent Access, Glacier, Deep Archive) optimize the cost/performance tradeoff based on access patterns. Frequent access uses Standard; infrequent or archival use cheaper tiers. Option 0 is about content; option 2 is lifecycle; option 3 is encryption policy."
+    },
+    {
+      "id": "cloud-storage-004",
+      "q": "Which storage tier is most appropriate for frequently accessed data?",
+      "options": [
+        "Glacier Deep Archive",
+        "S3 Intelligent-Tiering",
+        "S3 Standard",
+        "Glacier Flexible Retrieval"
+      ],
+      "answer": 2,
+      "explanation": "S3 Standard provides the fastest access and is appropriate for hot data accessed frequently. Glacier tiers (options 0 and 3) are for long-term archive; Intelligent-Tiering (option 1) automates tier transitions based on usage patterns."
+    },
+    {
+      "id": "cloud-storage-005",
+      "q": "What is a Content Delivery Network (CDN) and why is it used with cloud storage?",
+      "options": [
+        "A service that encrypts data before storing it in the cloud",
+        "A distributed network of edge servers that cache and serve content from locations closer to end users",
+        "A backup system that replicates data across multiple regions",
+        "A load balancer that distributes storage requests across multiple servers"
+      ],
+      "answer": 1,
+      "explanation": "A CDN like CloudFront caches content at edge locations worldwide, serving data from the server nearest to the user for reduced latency. Option 0 is encryption; option 2 is replication/backup; option 3 is load balancing."
+    },
+    {
+      "id": "cloud-storage-006",
+      "q": "What is file storage in cloud environments?",
+      "options": [
+        "Storage that uses block storage underneath with a filesystem interface for multiple instances",
+        "A cheaper alternative to object storage for storing large files",
+        "Storage that only works with NFS protocol",
+        "A backup solution for database files only"
+      ],
+      "answer": 0,
+      "explanation": "File storage (like EFS) provides shared filesystem access across multiple compute instances using NFS. Option 1 is wrong about cost; option 2 is too restrictive (EFS supports multiple protocols); option 3 is too narrow (all file types are supported)."
+    },
+    {
+      "id": "cloud-storage-007",
+      "q": "When should you choose object storage over file storage?",
+      "options": [
+        "Only when your application is web-based",
+        "When you need to share a filesystem across multiple instances",
+        "When storing complete, unstructured data like images, videos, or logs accessed via API",
+        "Only for backups and archival purposes"
+      ],
+      "answer": 2,
+      "explanation": "Object storage excels for unstructured data accessed via API, like web assets, logs, and backups. Option 0 is too restrictive; option 1 describes file storage; option 3 is too narrow (object storage is for general use)."
+    },
+    {
+      "id": "cloud-storage-008",
+      "q": "What is meant by storage replication in cloud storage?",
+      "options": [
+        "Making multiple copies of data within the same data center",
+        "Compressing data to reduce storage costs",
+        "Distributing copies of data across multiple geographic locations for fault tolerance and disaster recovery",
+        "Creating backup snapshots at scheduled intervals"
+      ],
+      "answer": 2,
+      "explanation": "Replication copies data across geographic regions or AZs to protect against data center failures. Option 0 describes within-region redundancy but not geographic distribution; option 1 is compression; option 3 is snapshots."
+    },
+    {
+      "id": "cloud-storage-009",
+      "q": "What is the lifecycle policy in cloud storage services?",
+      "options": [
+        "The encryption algorithm applied to data",
+        "The maximum retention period before data is automatically deleted",
+        "A rule that automatically transitions data between storage tiers or deletes it based on age or access patterns",
+        "The approval process for granting access to stored data"
+      ],
+      "answer": 2,
+      "explanation": "Lifecycle policies automate data management by transitioning objects between tiers (e.g., Standard to Glacier after 30 days) or deleting them based on age. Option 0 is encryption; option 1 is retention only; option 3 is access control."
+    },
+    {
+      "id": "cloud-storage-010",
+      "q": "What advantage does cloud storage provide over on-premises storage?",
+      "options": [
+        "Cloud storage is always faster than local storage",
+        "Cloud storage requires less security configuration",
+        "Cloud storage offers elasticity, managed redundancy, global availability, and pay-as-you-go pricing without upfront hardware costs",
+        "Cloud storage eliminates the need for backups"
+      ],
+      "answer": 2,
+      "explanation": "Cloud storage provides flexibility, automatic redundancy, geographic distribution, and cost efficiency without purchasing infrastructure. Option 0 is false (latency depends on access patterns); option 1 is false (security is still critical); option 3 is false (backups are still important)."
+    }
+  ]
+}

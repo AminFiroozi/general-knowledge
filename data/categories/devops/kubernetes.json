@@ -1,0 +1,126 @@
+{
+  "topic": "kubernetes",
+  "category": "devops",
+  "questions": [
+    {
+      "id": "devops-kubernetes-001",
+      "q": "What is a Kubernetes Pod?",
+      "options": [
+        "The smallest deployable unit in Kubernetes, containing one or more tightly-coupled containers that share storage, network, and lifecycle",
+        "A cluster of Kubernetes master nodes that manage the system",
+        "A storage solution for persisting container data across nodes",
+        "A grouping of services that handle traffic load balancing"
+      ],
+      "answer": 0,
+      "explanation": "Pods are the foundational unit wrapping containers with shared networking and storage. They're not clusters of masters (B), storage solutions (C), or load-balancing groups (D). Most Pods contain a single container, but multi-container Pods are used for sidecar patterns."
+    },
+    {
+      "id": "devops-kubernetes-002",
+      "q": "What is the purpose of a Kubernetes Deployment?",
+      "options": [
+        "To manage ReplicaSets and enable declarative updates, rolling updates, and rollback of Pod replicas",
+        "To provide persistent storage for stateful applications",
+        "To route external traffic to Pods",
+        "To monitor Pod health and restart failed containers"
+      ],
+      "answer": 0,
+      "explanation": "Deployments manage replica counts and update strategies, allowing zero-downtime rolling updates and easy rollbacks. Persistent storage is PersistentVolume (B); traffic routing is Services (C); health monitoring is part of kubelet, not Deployments (D)."
+    },
+    {
+      "id": "devops-kubernetes-003",
+      "q": "What is a Kubernetes Service?",
+      "options": [
+        "An abstraction that exposes Pods as a stable network endpoint with DNS names and load balancing",
+        "A long-running process that monitors cluster resource usage",
+        "A template for creating multiple identical Pods",
+        "A security policy that restricts traffic between Pods"
+      ],
+      "answer": 0,
+      "explanation": "Services provide stable IPs and DNS names, abstracting away Pod ephemeralness and enabling service discovery. Resource monitors are separate (B); Pod templates are Deployments/StatefulSets (C); traffic restriction is NetworkPolicy (D)."
+    },
+    {
+      "id": "devops-kubernetes-004",
+      "q": "What is a ReplicaSet in Kubernetes?",
+      "options": [
+        "A controller that ensures a specified number of identical Pod replicas are running, replacing failed ones",
+        "A backup copy of Kubernetes configuration files",
+        "A security group that allows Pods to communicate with each other",
+        "A volume that replicates data across multiple nodes"
+      ],
+      "answer": 0,
+      "explanation": "ReplicaSets maintain replica counts and self-heal by respawning failed Pods. Configuration backups (B) are handled by version control; security is NetworkPolicy (C); data replication uses PersistentVolumes (D). Deployments manage ReplicaSets, not the reverse."
+    },
+    {
+      "id": "devops-kubernetes-005",
+      "q": "What does 'scaling' mean in Kubernetes?",
+      "options": [
+        "Adjusting the number of Pod replicas to meet demand, either manually or automatically based on metrics",
+        "Increasing the CPU and memory resources allocated to each Pod",
+        "Upgrading the Kubernetes cluster version",
+        "Moving Pods between different nodes in the cluster"
+      ],
+      "answer": 0,
+      "explanation": "Scaling changes replica counts via horizontal scaling or Pod resource limits via vertical scaling; the most common is horizontal replica scaling. Resource allocation (B) is a separate parameter; cluster upgrades (C) and Pod migration (D) are different operations."
+    },
+    {
+      "id": "devops-kubernetes-006",
+      "q": "What is the difference between a ClusterIP, NodePort, and LoadBalancer Service type?",
+      "options": [
+        "ClusterIP is internal-only; NodePort exposes Pods on every node's port; LoadBalancer provisions an external load balancer",
+        "They differ in how data is encrypted inside the cluster",
+        "ClusterIP is faster than the other two types",
+        "They represent different versions of Kubernetes networking"
+      ],
+      "answer": 0,
+      "explanation": "ClusterIP (default) enables internal communication; NodePort makes each node forward traffic; LoadBalancer provisions cloud load balancers for external access. Encryption (B) is orthogonal; speed doesn't differ (C); they're concurrent features, not versions (D)."
+    },
+    {
+      "id": "devops-kubernetes-007",
+      "q": "What is Horizontal Pod Autoscaling (HPA)?",
+      "options": [
+        "Automatically scaling the number of Pod replicas based on observed metrics like CPU or memory usage",
+        "Automatically scaling the cluster by adding more worker nodes",
+        "Horizontally distributing a single Pod across multiple nodes",
+        "Automatically restarting Pods when they consume too much memory"
+      ],
+      "answer": 0,
+      "explanation": "HPA adjusts replica counts based on metrics; cluster node scaling is different (B). Pods can't be split across nodes horizontally (C); automatic restarts are separate from HPA (D)."
+    },
+    {
+      "id": "devops-kubernetes-008",
+      "q": "Why would a team use a StatefulSet instead of a Deployment?",
+      "options": [
+        "For applications requiring stable pod identities, ordered startup/shutdown, and persistent storage like databases or queues",
+        "For better security compared to Deployments",
+        "For faster scaling performance",
+        "For reducing storage requirements"
+      ],
+      "answer": 0,
+      "explanation": "StatefulSets maintain stable DNS names and ordering for stateful apps; Deployments handle stateless workloads. Security (B), scaling speed (C), and storage reduction (D) are not differentiators—StatefulSets actually use more storage for persistent claims."
+    },
+    {
+      "id": "devops-kubernetes-009",
+      "q": "What is a ConfigMap in Kubernetes?",
+      "options": [
+        "A way to store non-sensitive configuration data as key-value pairs that Pods can consume as environment variables or files",
+        "A tool for backing up cluster configuration",
+        "A template for automatically generating Pods",
+        "A policy that limits which nodes Pods can run on"
+      ],
+      "answer": 0,
+      "explanation": "ConfigMaps decouple configuration from Pod specifications, allowing easy updates without rebuilds. Backups (B) are separate; Pod generation is Deployments (C); node constraints are Affinity/Taints (D)."
+    },
+    {
+      "id": "devops-kubernetes-010",
+      "q": "What does 'self-healing' mean in Kubernetes?",
+      "options": [
+        "Automatically restarting crashed containers and replacing failed Pods to maintain desired state",
+        "Automatically fixing bugs in application code",
+        "Manually redeploying applications after failures",
+        "Restoring data from backups when volumes fail"
+      ],
+      "answer": 0,
+      "explanation": "Kubernetes constantly monitors and replaces failed Pods/containers to match declared state. Bug fixes (B) are manual; manual redeployment (C) contradicts automation; backups (D) are separate recovery mechanisms."
+    }
+  ]
+}

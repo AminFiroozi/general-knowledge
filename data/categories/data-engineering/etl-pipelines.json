@@ -1,0 +1,126 @@
+{
+  "topic": "etl-pipelines",
+  "category": "data-engineering",
+  "questions": [
+    {
+      "id": "data-engineering-etl-pipelines-001",
+      "q": "What is the primary difference between ETL and ELT approaches?",
+      "options": [
+        "ETL transforms data before loading; ELT loads raw data and transforms in the target system",
+        "ELT is only used for real-time streaming data while ETL handles batch",
+        "ETL and ELT are identical terms used interchangeably in industry",
+        "ETL works with SQL databases while ELT works only with NoSQL systems"
+      ],
+      "answer": 0,
+      "explanation": "ETL (Extract-Transform-Load) applies transformations in a staging layer before loading into the warehouse, while ELT (Extract-Load-Transform) leverages the target system's compute power to transform data after loading. This distinction matters because modern cloud data warehouses like Snowflake and BigQuery have sufficient compute to make ELT efficient."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-002",
+      "q": "Why is idempotency critical in data pipeline design?",
+      "options": [
+        "It ensures the same input data always produces the same output, even if the pipeline runs multiple times",
+        "It makes pipelines run faster by skipping redundant transformations",
+        "It allows pipelines to handle data in any order without affecting results",
+        "It eliminates the need for error handling in transformation logic"
+      ],
+      "answer": 0,
+      "explanation": "Idempotency guarantees that re-running a pipeline on the same data produces identical results, preventing duplicate inserts or inconsistent state when retries occur. Without idempotency, network failures or job restarts could corrupt data by applying transformations multiple times."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-003",
+      "q": "In batch processing, what is a key trade-off between processing frequency and system load?",
+      "options": [
+        "More frequent batches reduce latency but increase infrastructure costs; less frequent batches reduce costs but increase data staleness",
+        "More frequent batches always improve query performance regardless of volume",
+        "Batch frequency has no impact on system resources or data freshness",
+        "Less frequent batches are always preferred because they use fewer computing resources"
+      ],
+      "answer": 0,
+      "explanation": "Batch processing frequency directly impacts both latency and resource consumption. Running hourly batches provides fresher data but consumes more compute and storage throughput than daily batches. The optimal frequency depends on business requirements for data freshness versus infrastructure budget."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-004",
+      "q": "Which design pattern best prevents data loss during the extract phase if the source system is unavailable?",
+      "options": [
+        "Implementing retry logic with exponential backoff and persisting state to resume from the last checkpoint",
+        "Increasing the frequency of extraction attempts to maximize success probability",
+        "Storing all extracted data in memory for faster processing",
+        "Bypassing the extract phase and directly querying downstream systems for data"
+      ],
+      "answer": 0,
+      "explanation": "Checkpointing and retry logic with exponential backoff allow pipelines to recover gracefully from transient failures without data loss. The pipeline records progress (like which rows were last extracted) and can resume from that point, avoiding duplicate or missed extractions during retries."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-005",
+      "q": "What is a common source of data quality issues in transformation logic?",
+      "options": [
+        "Implicit type conversions and null handling assumptions that vary between source and target systems",
+        "Using too many CPU cores during transformation execution",
+        "Extracting data too frequently from the source system",
+        "Storing intermediate results in columnar format instead of row format"
+      ],
+      "answer": 0,
+      "explanation": "Different systems handle null values, date formats, and numeric precision differently. For example, a NULL in SQL might become an empty string or 0 depending on transformation logic assumptions. Explicit null handling and type conversion rules prevent silent data corruption."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-006",
+      "q": "Why might a company choose to load raw, untransformed data into their data warehouse?",
+      "options": [
+        "To preserve the original data for auditability, enable exploratory analysis, and defer transformation logic to where it's most scalable",
+        "Because raw data is always cleaner than transformed data and requires less storage",
+        "To avoid the need for any transformation logic in the pipeline",
+        "Because untransformed data loads faster and no one needs the transformed version"
+      ],
+      "answer": 0,
+      "explanation": "Loading raw data first (ELT approach) maintains a complete audit trail, allows analysts to build transformations incrementally, and leverages the warehouse's compute power. This approach has become standard in cloud data warehousing because storage is cheap and warehouse compute can scale elastically."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-007",
+      "q": "In a batch ETL pipeline, what problem does a SCD (Slowly Changing Dimension) approach solve?",
+      "options": [
+        "Tracking historical changes to dimension attributes while maintaining referential integrity in fact tables",
+        "Speeding up the extraction phase by processing only changed records",
+        "Reducing the storage footprint of fact tables by removing old dimension records",
+        "Eliminating the need for join operations in analytical queries"
+      ],
+      "answer": 0,
+      "explanation": "Slowly Changing Dimensions handle attributes that change infrequently but need historical context (e.g., a customer's address). SCD Type 2 creates new rows with validity dates, allowing queries to show the correct dimension values for each fact record's time period."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-008",
+      "q": "What does 'exactly-once' semantics mean in an ETL pipeline context?",
+      "options": [
+        "Each record is processed and loaded exactly one time, even if the pipeline fails and retries",
+        "The pipeline can only run once per day to ensure consistency",
+        "Each transformation operation is run exactly one time on the source data",
+        "Exactly one copy of the data exists in the entire system at any moment"
+      ],
+      "answer": 0,
+      "explanation": "Exactly-once semantics guarantee that despite failures and retries, each input record contributes to the output exactly one time. This requires idempotent operations and deduplication logic to prevent duplicates when a job restarts. Systems like Kafka and Spark Structured Streaming support exactly-once guarantees."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-009",
+      "q": "How does incremental loading improve ETL performance compared to full refresh?",
+      "options": [
+        "By extracting and processing only new or modified records since the last run, reducing compute and I/O",
+        "By loading entire datasets but using parallel processing threads",
+        "By storing all historical data in memory for instant access",
+        "By eliminating the need for data validation after loading"
+      ],
+      "answer": 0,
+      "explanation": "Incremental loading uses timestamps or version numbers to identify only records changed since the last extraction. This dramatically reduces data volume processed, bandwidth consumed, and load times compared to re-extracting and reloading the entire dataset every time."
+    },
+    {
+      "id": "data-engineering-etl-pipelines-010",
+      "q": "What is a major risk of manual transformations in ETL pipelines?",
+      "options": [
+        "Lack of testability, auditability, and reproducibility; increased error rates and difficulty maintaining complex logic",
+        "Manual transformations always use more memory than automated ones",
+        "Spreadsheets are faster than code so manual transformations reduce pipeline latency",
+        "Manual transformations eliminate the need for data validation steps"
+      ],
+      "answer": 0,
+      "explanation": "Manual transformations via spreadsheets or ad-hoc scripts are error-prone, hard to version control, and impossible to audit. They don't scale with data volume and introduce human error. Version-controlled, tested transformation code is the industry standard for reliable, maintainable ETL systems."
+    }
+  ]
+}

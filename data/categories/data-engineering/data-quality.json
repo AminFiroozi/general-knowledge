@@ -1,0 +1,126 @@
+{
+  "topic": "data-quality",
+  "category": "data-engineering",
+  "questions": [
+    {
+      "id": "data-engineering-data-quality-001",
+      "q": "What is the relationship between schema enforcement and data quality in pipelines?",
+      "options": [
+        "Schema enforcement validates structure (column types, nullability, ranges) early, preventing malformed data from corrupting downstream systems",
+        "Schema enforcement has no impact on data quality",
+        "Schema enforcement slows down pipelines and should be avoided",
+        "Data quality is only relevant for batch pipelines, not streaming"
+      ],
+      "answer": 0,
+      "explanation": "Schema enforcement acts as a gatekeeper. If a field must be an integer but a string arrives, the system can reject or quarantine it before it pollutes the warehouse. This prevents subtle bugs where type mismatches silently produce wrong results. Tools like Apache Arrow and Avro enforce schema at read time."
+    },
+    {
+      "id": "data-engineering-data-quality-002",
+      "q": "How does deduplication improve data quality in pipelines?",
+      "options": [
+        "Removing duplicate records prevents overcounting and ensures each logical entity appears once, maintaining accuracy in aggregations",
+        "Deduplication reduces storage space but doesn't affect analytical accuracy",
+        "All duplicates are intentional and should never be removed",
+        "Deduplication only applies to streaming data, not batch"
+      ],
+      "answer": 0,
+      "explanation": "Duplicate records skew metrics. If a customer record is inserted twice, revenue per customer and customer count become wrong. Deduplication (via unique keys, business key hashing, or windowing logic) ensures each logical record appears once. This is critical after retries or failed pipeline runs."
+    },
+    {
+      "id": "data-engineering-data-quality-003",
+      "q": "What does 'completeness' mean as a data quality dimension?",
+      "options": [
+        "All required fields are populated with non-null values meeting minimum cardinality thresholds for the dataset",
+        "The dataset contains every possible combination of values",
+        "Records are arranged in chronological order",
+        "All data is stored in a single centralized location"
+      ],
+      "answer": 0,
+      "explanation": "Completeness measures whether expected data is present. A customer table missing email for 50% of rows has low completeness. A transaction table with 99% of amount fields filled has high completeness for that dimension. Quality rules check that completeness exceeds acceptable thresholds (e.g., > 95%)."
+    },
+    {
+      "id": "data-engineering-data-quality-004",
+      "q": "How does data lineage help with debugging quality issues?",
+      "options": [
+        "Lineage traces data origins and transformations, showing which source record(s) led to problematic output and which downstream systems are affected",
+        "Lineage removes the need for data validation checks",
+        "Lineage only applies to historical data already loaded",
+        "Data lineage is purely for documentation and doesn't help resolve issues"
+      ],
+      "answer": 0,
+      "explanation": "If an aggregation shows suspicious results, lineage reveals which source tables and transformation steps created it. Finding that a join included duplicates, for example, becomes easier when you can trace the path. Lineage also shows blast radius—which other reports rely on this data."
+    },
+    {
+      "id": "data-engineering-data-quality-005",
+      "q": "What is a common validation rule for referential integrity in a data warehouse?",
+      "options": [
+        "Every foreign key in a fact table must match a primary key in the referenced dimension (no orphaned facts)",
+        "All columns must have identical data types across tables",
+        "Every row must appear exactly once across all tables combined",
+        "All dimension tables must be normalized to third normal form"
+      ],
+      "answer": 0,
+      "explanation": "A fact table's customer_id must exist in the customer dimension. Orphaned facts (facts referencing non-existent dimensions) indicate data problems. This validation prevents wrong or missing dimension context from distorting aggregations."
+    },
+    {
+      "id": "data-engineering-data-quality-006",
+      "q": "How can row-level lineage support root-cause analysis in data pipelines?",
+      "options": [
+        "Tracking exactly which input records contributed to each output record enables isolation of data issues to specific sources or transformation steps",
+        "Row-level lineage is only useful for documentation purposes",
+        "Lineage can only track tables, not individual records",
+        "Root-cause analysis requires manual inspection of raw files"
+      ],
+      "answer": 0,
+      "explanation": "Row-level lineage links output rows back to input rows and intermediate transformations. If an order total is wrong, row-level lineage shows which source records were involved and which join or calculation step introduced the error. This is harder to implement but invaluable for production debugging."
+    },
+    {
+      "id": "data-engineering-data-quality-007",
+      "q": "What is data drift and why should pipelines monitor for it?",
+      "options": [
+        "Changes in data distributions or patterns (e.g., new categories, value ranges shifting) that indicate upstream system changes requiring pipeline updates",
+        "Physical movement of data between servers",
+        "Gradual degradation of file quality from multiple reads",
+        "The gap between batch processing time and real-time requirements"
+      ],
+      "answer": 0,
+      "explanation": "Drift detection alerts when data behavior changes unexpectedly. If product categories included 'Electronics' for years but suddenly 'Smartphones' appears, the pipeline might need adjustment. Monitoring distributions helps catch upstream bugs—like a source system starting to send invalid codes."
+    },
+    {
+      "id": "data-engineering-data-quality-008",
+      "q": "How do great expectations and similar frameworks improve data quality testing?",
+      "options": [
+        "They enable data teams to define, document, and enforce expectations about data structure and content, with automated validation and alerts",
+        "Frameworks eliminate the need for pipeline testing entirely",
+        "They are only useful for final data quality checks, not during processing",
+        "Data quality frameworks slow down pipelines significantly"
+      ],
+      "answer": 0,
+      "explanation": "Great Expectations lets teams define assertions (e.g., 'age must be 0-150', 'product_id must exist in products table'). These run automatically and generate reports. When violations occur, pipelines fail or alert, preventing bad data propagation. Documentation is generated automatically for governance."
+    },
+    {
+      "id": "data-engineering-data-quality-009",
+      "q": "What is a data quality dimension and which is often the hardest to measure?",
+      "options": [
+        "Dimensions are attributes like accuracy, completeness, consistency, and validity; accuracy is hardest because it requires domain knowledge and ground truth",
+        "All data quality dimensions are equally easy to measure",
+        "Data quality has only one dimension: row count",
+        "Timeliness is impossible to measure in practice"
+      ],
+      "answer": 0,
+      "explanation": "Accuracy asks 'does this record match reality?' but requires authoritative sources (ground truth) to verify against. Completeness is easy: count nulls. Consistency is moderate: check values across systems. Accuracy needs manual audits or third-party validation, making it expensive and sometimes infeasible at scale."
+    },
+    {
+      "id": "data-engineering-data-quality-010",
+      "q": "How can quarantine tables improve data quality practices?",
+      "options": [
+        "Failed records are isolated for investigation instead of discarded, preserving evidence of issues and enabling reprocessing after fixes",
+        "Quarantine tables eliminate the need for validation rules",
+        "All records must be quarantined during testing phases",
+        "Quarantining increases data quality risks by delaying processing"
+      ],
+      "answer": 0,
+      "explanation": "When a record fails validation (schema, foreign key, range check), it goes to a quarantine table rather than the main pipeline. Engineers investigate why it failed and whether to fix the record, the rule, or the source. Quarantine preserves these records for auditability and enables batch reprocessing after corrections."
+    }
+  ]
+}

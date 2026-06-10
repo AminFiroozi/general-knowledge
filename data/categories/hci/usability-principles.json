@@ -1,0 +1,126 @@
+{
+  "topic": "usability-principles",
+  "category": "hci",
+  "questions": [
+    {
+      "id": "hci-usability-principles-001",
+      "q": "According to Nielsen's 10 usability heuristics, which principle emphasizes keeping users informed about system status?",
+      "options": [
+        "Match between system and real world",
+        "Visibility of system status",
+        "User control and freedom",
+        "Consistency and standards"
+      ],
+      "answer": 1,
+      "explanation": "Visibility of system status is the first of Nielsen's heuristics, requiring the system to keep users informed in real time. The other options are separate principles from Nielsen's framework that address different usability aspects."
+    },
+    {
+      "id": "hci-usability-principles-002",
+      "q": "What does affordance mean in usability design?",
+      "options": [
+        "The price of the product",
+        "The physical property that suggests how an object should be used",
+        "The decorative appearance of an interface",
+        "The language used in system messages"
+      ],
+      "answer": 1,
+      "explanation": "Affordance refers to visual or physical properties that intuitively suggest an action. A button that looks clickable or a slider that appears draggable demonstrates affordance. Affordance has nothing to do with cost, aesthetics, or language choice."
+    },
+    {
+      "id": "hci-usability-principles-003",
+      "q": "Why is immediate feedback important in interactive systems?",
+      "options": [
+        "It increases the cost of development",
+        "It reduces the need for user testing",
+        "It helps users understand whether their action was recognized and what the system is doing",
+        "It makes the interface more visually appealing"
+      ],
+      "answer": 2,
+      "explanation": "Immediate feedback confirms user actions and shows system state changes, reducing uncertainty and improving user confidence. Feedback is critical for usability and doesn't affect development cost, eliminate testing needs, or inherently improve aesthetics."
+    },
+    {
+      "id": "hci-usability-principles-004",
+      "q": "What does consistency in usability heuristics refer to?",
+      "options": [
+        "Using the same color throughout the entire website",
+        "Maintaining predictable patterns in terminology, design, and interaction across the interface",
+        "Ensuring all pages load at the same speed",
+        "Requiring users to follow the same steps repeatedly"
+      ],
+      "answer": 1,
+      "explanation": "Consistency means following the same conventions, terminology, and interaction patterns throughout the system so users can apply knowledge from one part to another. Consistency extends beyond just colors and doesn't relate to loading speed or forcing repetitive user steps."
+    },
+    {
+      "id": "hci-usability-principles-005",
+      "q": "How does error prevention contribute to good usability?",
+      "options": [
+        "By making all error messages humorous",
+        "By eliminating all warnings and confirmations",
+        "By anticipating problems and designing the system to prevent them from occurring",
+        "By requiring users to read extensive documentation"
+      ],
+      "answer": 2,
+      "explanation": "Error prevention means designing the system to make problems unlikely in the first place, such as disabling invalid options or confirming destructive actions. Humor in errors doesn't improve usability, removing warnings increases errors, and documentation alone doesn't prevent errors."
+    },
+    {
+      "id": "hci-usability-principles-006",
+      "q": "Nielsen's principle of 'match between system and real world' means the system should:",
+      "options": [
+        "Reject all user input that doesn't match expected formats",
+        "Use the user's language and real-world conventions rather than technical jargon or system-oriented terms",
+        "Only accept input from physical world devices",
+        "Replicate the exact appearance of physical objects"
+      ],
+      "answer": 1,
+      "explanation": "This principle requires the system to speak the user's language using familiar conventions and metaphors. Users shouldn't struggle with technical terminology. It's not about format validation, device restrictions, or visual mimicry of physical objects."
+    },
+    {
+      "id": "hci-usability-principles-007",
+      "q": "What is the primary goal of error recovery in Nielsen's heuristics?",
+      "options": [
+        "To hide errors from users completely",
+        "To help users understand what went wrong and how to fix it with clear, plain language error messages",
+        "To prevent developers from making mistakes",
+        "To eliminate the need for system backups"
+      ],
+      "answer": 1,
+      "explanation": "When errors occur, the system should communicate the problem clearly and suggest solutions in user-friendly language. Hiding errors degrades the experience, error recovery doesn't directly prevent developer mistakes, and it doesn't replace backups."
+    },
+    {
+      "id": "hci-usability-principles-008",
+      "q": "How do mental models relate to the usability principle of consistency?",
+      "options": [
+        "Mental models are irrelevant to consistency",
+        "Users form mental models of how the system works based on consistent patterns, so breaking consistency violates their expectations and causes errors",
+        "Mental models only apply to expert users",
+        "Consistency destroys mental models and should be avoided"
+      ],
+      "answer": 1,
+      "explanation": "Consistent design helps users build accurate mental models by showing predictable patterns; inconsistency causes users to mispredict system behavior. Mental models apply to all users, not just experts, and consistency actually supports rather than destroys them."
+    },
+    {
+      "id": "hci-usability-principles-009",
+      "q": "In the context of affordances, why might a flat design button be less usable than a beveled button?",
+      "options": [
+        "Flat buttons are more modern",
+        "Beveled buttons use more memory",
+        "A flat button may lack visual affordance suggesting it's clickable, whereas beveling affords the impression of a pressable surface",
+        "Flat buttons cannot contain text"
+      ],
+      "answer": 2,
+      "explanation": "Beveled, shadowed, or raised buttons better afford clickability because they visually suggest a pressable surface; flat buttons may be ambiguous about interactivity. Modern aesthetics, memory usage, and text capability are separate concerns unrelated to affordance."
+    },
+    {
+      "id": "hci-usability-principles-010",
+      "q": "Which combination best describes Nielsen's approach to preventing problems in system design?",
+      "options": [
+        "Complex validation rules and detailed error messages",
+        "Removing user control to prevent errors",
+        "Designing the system architecture and UI to make problems unlikely, using constraints and sensible defaults",
+        "Requiring users to complete extensive training before use"
+      ],
+      "answer": 2,
+      "explanation": "Prevention through thoughtful design—like disabling invalid options, using sensible defaults, and constraining choices—is more effective than relying on error messages or removing user autonomy. Prevention reduces the need for training and complex validation logic."
+    }
+  ]
+}

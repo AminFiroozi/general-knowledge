@@ -1,0 +1,126 @@
+{
+  "topic": "infrastructure-as-code",
+  "category": "devops",
+  "questions": [
+    {
+      "id": "devops-infrastructure-as-code-001",
+      "q": "What is Infrastructure as Code (IaC)?",
+      "options": [
+        "Managing infrastructure through version-controlled code instead of manual configuration, enabling reproducibility and automation",
+        "Writing code to communicate with physical servers",
+        "Storing infrastructure documentation in a wiki",
+        "Using APIs to manually provision cloud resources"
+      ],
+      "answer": 0,
+      "explanation": "IaC treats infrastructure as code: version-controlled, reviewable, and reproducible. Communication protocols (B), documentation storage (C), and manual APIs (D) are not IaC—IaC is declarative automation."
+    },
+    {
+      "id": "devops-infrastructure-as-code-002",
+      "q": "What is Terraform?",
+      "options": [
+        "A declarative tool that defines infrastructure in code, with support for multiple cloud providers and local state management",
+        "A physical terraform-shaped robot that configures servers",
+        "A cloud platform owned by Amazon",
+        "A programming language for backend development"
+      ],
+      "answer": 0,
+      "explanation": "Terraform is the leading open-source IaC tool for multi-cloud infrastructure. The robot (B) is nonsense; it's not AWS (C) or a language (D)—it's a provisioning framework."
+    },
+    {
+      "id": "devops-infrastructure-as-code-003",
+      "q": "What is idempotency in IaC?",
+      "options": [
+        "Running the same IaC multiple times produces the same result; infrastructure remains in the desired state without duplication or errors",
+        "Writing IaC in an imperative style rather than declarative",
+        "Ensuring infrastructure changes are approved before deployment",
+        "Limiting the number of cloud resources created"
+      ],
+      "answer": 0,
+      "explanation": "Idempotent IaC safely reruns without side effects—applying 'create VPC' to an existing VPC does nothing. Imperative (B) is the opposite of declarative; approval gates (C) and resource limits (D) are separate practices."
+    },
+    {
+      "id": "devops-infrastructure-as-code-004",
+      "q": "What is the difference between declarative and imperative IaC?",
+      "options": [
+        "Declarative specifies desired state; imperative specifies steps to reach it. Declarative is idempotent by default",
+        "Declarative is faster than imperative",
+        "Imperative is used for cloud providers; declarative for on-premises",
+        "They are the same concept with different names"
+      ],
+      "answer": 0,
+      "explanation": "Declarative (Terraform): 'Create a VPC with these properties.' Imperative (shell scripts): 'Check if VPC exists, then create it if not.' Declarative is safer and idempotent. Speed (B) varies; scope (C) doesn't divide them; they're distinct paradigms (D)."
+    },
+    {
+      "id": "devops-infrastructure-as-code-005",
+      "q": "What is the purpose of a Terraform state file?",
+      "options": [
+        "To track the current state of infrastructure, enabling Terraform to detect changes and plan updates without re-discovering resources",
+        "To store passwords and API keys securely",
+        "To document infrastructure changes over time",
+        "To execute remote scripts on cloud instances"
+      ],
+      "answer": 0,
+      "explanation": "State files map Terraform resources to real cloud resources; without them, Terraform can't plan diffs. Secrets (B) belong in vaults, not state; change logs (C) are separate; scripts (D) are modules."
+    },
+    {
+      "id": "devops-infrastructure-as-code-006",
+      "q": "What problem does remote state in Terraform solve?",
+      "options": [
+        "Enabling team collaboration and preventing concurrent modifications by storing state in shared backends like S3",
+        "Reducing the size of state files",
+        "Making Terraform run faster",
+        "Automatically backing up infrastructure"
+      ],
+      "answer": 0,
+      "explanation": "Remote state (S3, Terraform Cloud) allows teams to share state with locking, preventing conflicts. File size (B) doesn't improve much; speed (C) is unaffected; backups (D) are a side benefit, not the primary purpose."
+    },
+    {
+      "id": "devops-infrastructure-as-code-007",
+      "q": "What is a Terraform module?",
+      "options": [
+        "A reusable package of Terraform configurations with inputs and outputs, enabling code reuse and abstraction",
+        "A plugin that extends Terraform with new features",
+        "A compiled binary that executes infrastructure changes",
+        "A backup of Terraform state files"
+      ],
+      "answer": 0,
+      "explanation": "Modules wrap resources and variables for reuse; a module for 'VPC with security groups' can be parameterized and reused. Plugins (B) are providers; binaries (C) are executables; backups (D) are separate."
+    },
+    {
+      "id": "devops-infrastructure-as-code-008",
+      "q": "What does 'immutable infrastructure' mean in the context of IaC?",
+      "options": [
+        "Infrastructure is never modified in place; changes replace entire instances or environments, preventing configuration drift",
+        "Infrastructure that cannot be deleted after creation",
+        "Infrastructure built from immutable data structures",
+        "Infrastructure that uses read-only filesystems"
+      ],
+      "answer": 0,
+      "explanation": "Immutable infrastructure means replacing servers rather than patching them (e.g., redeploy instead of SSH to fix). Undeletable (B) would be a problem; data structures (C) and filesystems (D) don't define the pattern."
+    },
+    {
+      "id": "devops-infrastructure-as-code-009",
+      "q": "What is configuration drift, and why is it problematic?",
+      "options": [
+        "When actual infrastructure diverges from IaC code due to manual changes, breaking reproducibility and creating snowflake systems",
+        "When code references outdated cloud APIs",
+        "When multiple teams edit the same infrastructure simultaneously",
+        "When IaC runs too frequently and causes performance issues"
+      ],
+      "answer": 0,
+      "explanation": "Drift occurs when infrastructure changes outside IaC (manual SSH fixes), causing code and reality to diverge—making it unreproducible. API references (B), concurrent edits (C), and performance (D) are separate issues."
+    },
+    {
+      "id": "devops-infrastructure-as-code-010",
+      "q": "What is the purpose of 'terraform plan' before 'terraform apply'?",
+      "options": [
+        "To preview changes without applying them, allowing review and verification before modifying infrastructure",
+        "To check if Terraform is installed correctly",
+        "To automatically apply approved changes",
+        "To delete old infrastructure before creating new"
+      ],
+      "answer": 0,
+      "explanation": "`terraform plan` shows a diff of proposed changes, enabling review and catching mistakes before applying. Installation checks (B) happen automatically; auto-apply (C) is 'apply', not 'plan'; cleanup (D) is separate."
+    }
+  ]
+}

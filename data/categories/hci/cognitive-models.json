@@ -1,0 +1,126 @@
+{
+  "topic": "cognitive-models",
+  "category": "hci",
+  "questions": [
+    {
+      "id": "hci-cognitive-models-001",
+      "q": "What is working memory capacity, and why does it matter for interface design?",
+      "options": [
+        "Working memory stores all lifetime experiences",
+        "Working memory can hold about 5-9 items simultaneously; interfaces should avoid overloading it with too many choices or steps",
+        "Working memory is unlimited",
+        "Working memory only stores numbers"
+      ],
+      "answer": 1,
+      "explanation": "Working memory has limited capacity (approximately 7±2 items); exceeding this causes users to forget information and make errors. Interface designers should minimize cognitive load through chunking, progressive disclosure, and clear organization."
+    },
+    {
+      "id": "hci-cognitive-models-002",
+      "q": "What does Hick's Law state about reaction time in interfaces?",
+      "options": [
+        "Reaction time is always constant",
+        "Reaction time increases with the number of choices; more options increase decision complexity and time",
+        "More choices make decisions faster",
+        "Hick's Law doesn't apply to user interfaces"
+      ],
+      "answer": 1,
+      "explanation": "Hick's Law (RT = a + b × log₂(n+1)) quantifies that reaction time grows logarithmically with the number of choices. Designing with fewer, prioritized options reduces decision time. More choices don't speed up decisions."
+    },
+    {
+      "id": "hci-cognitive-models-003",
+      "q": "What is attention in cognitive psychology, and how does it affect interface design?",
+      "options": [
+        "Attention is irrelevant to design",
+        "Attention is the cognitive resource for focusing on information; users can attend to only limited information at once, so interfaces should prioritize important elements visually",
+        "Users can simultaneously attend to everything on the screen",
+        "Attention only matters for reading text"
+      ],
+      "answer": 1,
+      "explanation": "Attention is selective; users focus on some information while ignoring the rest. Good design uses visual hierarchy, color, position, and contrast to direct attention to important elements. Everyone has limited attentional resources."
+    },
+    {
+      "id": "hci-cognitive-models-004",
+      "q": "What is the difference between recognition and recall?",
+      "options": [
+        "They are the same cognitive process",
+        "Recognition means identifying something from presented options; recall means retrieving information from memory without external cues",
+        "Recall is easier than recognition",
+        "Recognition is only for images"
+      ],
+      "answer": 1,
+      "explanation": "Recognition (identifying from choices) is cognitively easier than recall (retrieving from memory). Interfaces should use recognition where possible, such as dropdown menus instead of requiring typed commands."
+    },
+    {
+      "id": "hci-cognitive-models-005",
+      "q": "Why do users prefer recognition over recall in interface interactions?",
+      "options": [
+        "Recognition takes longer",
+        "Recall is faster",
+        "Recognition requires only perception of presented options; recall requires retrieving information from long-term memory, which is slower and more error-prone",
+        "Recognition is less accurate"
+      ],
+      "answer": 2,
+      "explanation": "Presenting options for recognition reduces memory demands and errors compared to requiring users to recall and type commands. Recognition is cognitively cheaper than recall, making interfaces more usable and forgiving."
+    },
+    {
+      "id": "hci-cognitive-models-006",
+      "q": "What is cognitive load in interface design?",
+      "options": [
+        "The power consumption of the computer",
+        "The mental effort required to interact with the interface; high cognitive load causes errors and frustration",
+        "The file size of web pages",
+        "The speed of the processor"
+      ],
+      "answer": 1,
+      "explanation": "Cognitive load is the mental effort users expend understanding and using an interface. Designers should minimize unnecessary load through clarity, consistency, and organization. Cognitive load is not related to hardware or performance."
+    },
+    {
+      "id": "hci-cognitive-models-007",
+      "q": "How does chunking reduce cognitive load?",
+      "options": [
+        "Chunking increases the number of items to remember",
+        "Chunking groups related items into larger meaningful units, reducing the item count users must hold in working memory",
+        "Chunking removes information",
+        "Chunking only applies to letters"
+      ],
+      "answer": 1,
+      "explanation": "Chunking organizes information into patterns or groups, so users remember one chunk instead of many items. Example: remembering a phone number as 555-1234 (chunks) instead of 5,5,5,1,2,3,4. Chunking doesn't remove or add information; it reorganizes it."
+    },
+    {
+      "id": "hci-cognitive-models-008",
+      "q": "What is inattentional blindness, and how can interfaces prevent it?",
+      "options": [
+        "It's a permanent visual disability",
+        "Users fail to notice unexpected or unattended information even if they look directly at it; interfaces can prevent it by making important elements visually prominent and expected",
+        "It only affects older people",
+        "Interfaces cannot prevent inattentional blindness"
+      ],
+      "answer": 1,
+      "explanation": "Inattentional blindness occurs when users focus on one task and miss other visible information. Designers prevent this by using high contrast, movement, and positioning for critical alerts. It's not a disability; it's normal attentional behavior."
+    },
+    {
+      "id": "hci-cognitive-models-009",
+      "q": "How does the primacy effect influence interface design?",
+      "options": [
+        "All items should be equal",
+        "Users disproportionately remember the first item in a list; ordering should place important items first to leverage this effect",
+        "The last item is always remembered best",
+        "Item order never matters"
+      ],
+      "answer": 1,
+      "explanation": "The primacy effect causes initial information to have disproportionate influence on memory and decisions. Designers should place preferred or important options first in lists. The recency effect (last items) is stronger in short-term recall."
+    },
+    {
+      "id": "hci-cognitive-models-010",
+      "q": "What does it mean for an interface to have low extraneous cognitive load?",
+      "options": [
+        "Users must read lots of help documentation",
+        "The interface presents only necessary information clearly; unnecessary complexity, redundant steps, or confusing terminology don't burden users",
+        "The interface has maximum features",
+        "Extraneous load makes interfaces better"
+      ],
+      "answer": 1,
+      "explanation": "Extraneous load is unnecessary mental effort; low extraneous load means the interface doesn't waste the user's cognition on irrelevant tasks or confusing design. This leaves mental resources available for the actual work. More features increase load; clarity decreases it."
+    }
+  ]
+}

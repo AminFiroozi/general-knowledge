@@ -1,0 +1,126 @@
+{
+  "topic": "user-research",
+  "category": "hci",
+  "questions": [
+    {
+      "id": "hci-user-research-001",
+      "q": "What is the primary goal of usability testing?",
+      "options": [
+        "To ensure the interface is visually perfect",
+        "To observe real users interacting with the product to identify problems and validate design decisions",
+        "To measure the developer's productivity",
+        "To select marketing colors"
+      ],
+      "answer": 1,
+      "explanation": "Usability testing involves watching real users perform tasks to uncover usability issues and validate designs. It's not about visual perfection, developer productivity, or marketing decisions."
+    },
+    {
+      "id": "hci-user-research-002",
+      "q": "What is a persona in user research?",
+      "options": [
+        "A person's job title",
+        "A fictional character representing a user segment, created from research data to guide design decisions",
+        "A password for the system",
+        "The company's mascot"
+      ],
+      "answer": 1,
+      "explanation": "Personas are archetypal user profiles based on research, representing goals, behaviors, and pain points of real user segments. Personas help designers stay focused on actual user needs rather than assumptions."
+    },
+    {
+      "id": "hci-user-research-003",
+      "q": "How do user interviews differ from surveys in data collection?",
+      "options": [
+        "Interviews and surveys are the same",
+        "Interviews allow in-depth exploration of 'why' through open questions; surveys collect standardized data from large samples efficiently",
+        "Surveys are always better",
+        "Interviews cannot collect qualitative data"
+      ],
+      "answer": 1,
+      "explanation": "Interviews enable deep, exploratory conversation with small samples; surveys collect quantifiable data from large samples. Both have strengths; interviews excel at understanding motivations, surveys at measuring prevalence."
+    },
+    {
+      "id": "hci-user-research-004",
+      "q": "What is A/B testing used for in product design?",
+      "options": [
+        "To rank employees alphabetically",
+        "To compare two versions of a design and measure which performs better for a specific metric",
+        "To test the alphabet",
+        "To grade student assignments"
+      ],
+      "answer": 1,
+      "explanation": "A/B testing (controlled experiments) randomly assigns users to variant A or B, then compares metrics to determine which design performs better. It's not about rankings, alphabet, or grading."
+    },
+    {
+      "id": "hci-user-research-005",
+      "q": "Why is user research conducted before design, rather than only after?",
+      "options": [
+        "Research costs too much to repeat later",
+        "Early research reveals user needs, pain points, and contexts, preventing costly design mistakes and ensuring the product solves real problems",
+        "User needs never change",
+        "Research is optional"
+      ],
+      "answer": 1,
+      "explanation": "Formative research early in the process grounds design in actual user needs, preventing development of solutions looking for problems. While summative research validates designs, both research phases serve different purposes."
+    },
+    {
+      "id": "hci-user-research-006",
+      "q": "What is a common bias in user research called 'social desirability bias'?",
+      "options": [
+        "People always like social media",
+        "Participants answer based on what they think the researcher wants to hear rather than their true behavior or opinions",
+        "All users are social",
+        "Design should prioritize social features"
+      ],
+      "answer": 1,
+      "explanation": "Social desirability bias occurs when participants modify responses to appear favorable to the interviewer, leading to inaccurate data. Researchers use techniques like indirect questioning to reduce this bias."
+    },
+    {
+      "id": "hci-user-research-007",
+      "q": "How should usability testing participants be recruited to ensure valid results?",
+      "options": [
+        "Recruit only friends and family",
+        "Recruit participants who match the target user profile and haven't seen the product before to avoid bias",
+        "Recruit anyone available",
+        "Participants don't matter for testing"
+      ],
+      "answer": 1,
+      "explanation": "Valid testing requires representative participants from the target user population and typically requires them to be new to the product to observe natural interactions. Friends, family, and convenience sampling introduce bias."
+    },
+    {
+      "id": "hci-user-research-008",
+      "q": "In user research, what is a task in a usability test?",
+      "options": [
+        "Work that should be assigned to team members",
+        "A specific goal or action the user should attempt to complete, designed to reveal usability issues",
+        "A background process on a computer",
+        "A long-term project"
+      ],
+      "answer": 1,
+      "explanation": "Test tasks are realistic scenarios or goals presented to users to observe how they navigate and complete them. Tasks reveal interaction patterns, obstacles, and confusion points. Tasks are not work assignments, processes, or projects."
+    },
+    {
+      "id": "hci-user-research-009",
+      "q": "Why should A/B tests run long enough to reach statistical significance?",
+      "options": [
+        "Longer tests are always more valid",
+        "A minimum sample size ensures differences are unlikely due to chance; premature conclusion may lead to false decisions based on random variation",
+        "Tests should be as short as possible",
+        "Statistical significance is not important"
+      ],
+      "answer": 1,
+      "explanation": "Tests must achieve adequate sample size to ensure observed differences reflect real effects, not random variation. Running too short risks Type I errors. Sample size, not duration alone, determines validity."
+    },
+    {
+      "id": "hci-user-research-010",
+      "q": "How do qualitative and quantitative research methods complement each other in user research?",
+      "options": [
+        "Only one method is needed",
+        "Qualitative research reveals 'why' users behave certain ways; quantitative research measures 'how many' and validates findings across large populations",
+        "Quantitative data is always wrong",
+        "Research methods don't need to complement each other"
+      ],
+      "answer": 1,
+      "explanation": "Qualitative methods (interviews, observations) provide rich understanding of user motivations and contexts; quantitative methods (surveys, metrics) measure prevalence and generalizability. Together they provide comprehensive insights. Neither alone is sufficient."
+    }
+  ]
+}

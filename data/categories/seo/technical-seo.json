@@ -1,0 +1,126 @@
+{
+  "topic": "technical-seo",
+  "category": "seo",
+  "questions": [
+    {
+      "id": "seo-technical-seo-001",
+      "q": "What is the primary purpose of a robots.txt file?",
+      "options": [
+        "To block all web traffic to your site",
+        "To instruct search engine crawlers which pages to crawl and which to exclude",
+        "To improve website security by blocking hackers",
+        "To increase page load speed"
+      ],
+      "answer": 1,
+      "explanation": "robots.txt directs crawler behavior and prevents crawling of sensitive or duplicate content. It doesn't block traffic (that's firewalls) or improve security; it's a crawl budget optimization tool, not a security mechanism."
+    },
+    {
+      "id": "seo-technical-seo-002",
+      "q": "What does a canonical tag do in SEO?",
+      "options": [
+        "It removes duplicate content from your site",
+        "It tells search engines which version of a page is the preferred original",
+        "It automatically redirects traffic between pages",
+        "It prevents all other sites from linking to your pages"
+      ],
+      "answer": 1,
+      "explanation": "Canonical tags signal the authoritative version of duplicate content without removing pages or creating redirects. They consolidate ranking signals but don't physically remove pages; other sites can still link freely despite canonicals."
+    },
+    {
+      "id": "seo-technical-seo-003",
+      "q": "Why is page speed important for SEO rankings?",
+      "options": [
+        "It has no impact on rankings",
+        "Google uses Core Web Vitals as a ranking factor, and fast pages improve user experience",
+        "Only mobile speed matters, desktop speed is irrelevant",
+        "Page speed only affects ad revenue, not organic search"
+      ],
+      "answer": 1,
+      "explanation": "Page speed is a confirmed ranking signal for both desktop and mobile; Core Web Vitals assess user experience. Slow pages hurt both rankings and conversions; speed affects organic search visibility, not just ads."
+    },
+    {
+      "id": "seo-technical-seo-004",
+      "q": "What is the relationship between crawl budget and site structure?",
+      "options": [
+        "Crawl budget doesn't exist; Google crawls everything equally",
+        "Poor site structure wastes crawl budget on unimportant pages instead of priority content",
+        "Crawl budget only applies to large enterprise sites, not small sites",
+        "More internal links automatically increase crawl budget"
+      ],
+      "answer": 1,
+      "explanation": "All sites have finite crawl budgets; efficient architecture directs crawlers to valuable content. Poor structure (deep nesting, dead links) wastes budget on low-value pages; crawl budget applies to all sites; internal links should be strategic, not excessive."
+    },
+    {
+      "id": "seo-technical-seo-005",
+      "q": "What is the purpose of an XML sitemap in technical SEO?",
+      "options": [
+        "To replace the need for internal links",
+        "To inform search engines about your site structure and priority pages",
+        "To guarantee all pages will be indexed",
+        "To improve website security"
+      ],
+      "answer": 1,
+      "explanation": "Sitemaps guide crawlers to important pages and signal update frequency, helping indexing but not guaranteeing it. Sitemaps supplement (not replace) internal navigation; indexing still depends on crawlability and relevance; sitemaps have no security function."
+    },
+    {
+      "id": "seo-technical-seo-006",
+      "q": "How do 301 redirects versus 302 redirects differ in their SEO impact?",
+      "options": [
+        "They have identical SEO impact",
+        "301 (permanent) passes authority while 302 (temporary) does not preserve link equity reliably",
+        "302 redirects are faster than 301 redirects",
+        "Only 302 redirects are indexed by search engines"
+      ],
+      "answer": 1,
+      "explanation": "301s signal permanent moves and consolidate authority; 302s indicate temporary changes, causing search engines to potentially crawl both versions and dilute signals. For permanent URL changes, 301 is always correct; 302 wastes ranking potential."
+    },
+    {
+      "id": "seo-technical-seo-007",
+      "q": "What does the Core Web Vitals assessment include?",
+      "options": [
+        "Keyword density and heading count",
+        "Largest Contentful Paint, First Input Delay, and Cumulative Layout Shift",
+        "Domain age and backlink count",
+        "Page title length and meta description accuracy"
+      ],
+      "answer": 1,
+      "explanation": "Core Web Vitals measure user experience: LCP (load time), FID (interactivity), and CLS (visual stability). They don't evaluate keywords, age, or backlinks; these specific metrics directly impact mobile rankings and user satisfaction."
+    },
+    {
+      "id": "seo-technical-seo-008",
+      "q": "How does HTTPS/SSL certification affect SEO rankings?",
+      "options": [
+        "HTTPS has no impact on SEO",
+        "Google favors HTTPS sites and treats it as a weak ranking signal",
+        "HTTPS is required for all sites or they'll be de-indexed",
+        "HTTPS only benefits e-commerce sites, not content sites"
+      ],
+      "answer": 1,
+      "explanation": "HTTPS is a confirmed ranking signal; secure sites receive a modest boost over non-secure versions. It's not required for indexing but is strongly recommended; security matters across all site types for user trust and search visibility."
+    },
+    {
+      "id": "seo-technical-seo-009",
+      "q": "What is the purpose of mobile-first indexing in Google's crawling strategy?",
+      "options": [
+        "To penalize desktop-only websites",
+        "Google crawls and ranks pages based primarily on mobile versions due to most traffic being mobile",
+        "It only applies to sites built with mobile frameworks",
+        "Mobile-first indexing eliminates the need for desktop optimization"
+      ],
+      "answer": 1,
+      "explanation": "Google predominantly crawls and indexes mobile versions since most users browse mobile. This doesn't penalize desktop or eliminate desktop optimization; it means mobile UX and mobile site structure are now the primary ranking factors."
+    },
+    {
+      "id": "seo-technical-seo-010",
+      "q": "How do structured data and schema markup improve technical SEO?",
+      "options": [
+        "They guarantee higher rankings automatically",
+        "They help search engines understand content context and enable rich snippets in results",
+        "They are only useful for e-commerce product pages",
+        "Schema markup has been deprecated and no longer works"
+      ],
+      "answer": 1,
+      "explanation": "Schema markup provides context (JSON-LD, Microdata) enabling rich snippets, knowledge panels, and better crawling. It doesn't guarantee rankings but improves CTR through enhanced SERP appearance; it applies to content, events, articles, and more—not just products."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "serverless",
+  "category": "cloud",
+  "questions": [
+    {
+      "id": "cloud-serverless-001",
+      "q": "What does FaaS (Functions as a Service) mean?",
+      "options": [
+        "A way to package functions into Docker containers for deployment",
+        "A cloud model where you write and deploy code functions without managing servers or infrastructure",
+        "A programming paradigm for writing pure functional code in languages like Haskell",
+        "A framework for building REST APIs with function-based routing"
+      ],
+      "answer": 1,
+      "explanation": "FaaS is a cloud computing model where developers write discrete functions that run in response to events, without managing servers. The cloud provider handles infrastructure, scaling, and execution. Option 0 describes containerization; option 2 is functional programming; option 3 is an API framework."
+    },
+    {
+      "id": "cloud-serverless-002",
+      "q": "What is a cold start in serverless computing?",
+      "options": [
+        "The initial cost of provisioning a new AWS account",
+        "The delay when a function executes for the first time or after a period of inactivity",
+        "A failure mode where a function cannot establish a database connection",
+        "A configuration setting that prevents autoscaling during business hours"
+      ],
+      "answer": 1,
+      "explanation": "A cold start is the latency incurred when a function is invoked after being idle or for the first time, as the runtime environment must be initialized. This differs from warm starts where the container is already running."
+    },
+    {
+      "id": "cloud-serverless-003",
+      "q": "Which AWS service is a primary example of FaaS?",
+      "options": [
+        "EC2",
+        "Lambda",
+        "RDS",
+        "S3"
+      ],
+      "answer": 1,
+      "explanation": "AWS Lambda is the serverless, event-driven compute service where you run code without provisioning or managing servers. EC2 requires instance management; RDS is a managed database; S3 is object storage."
+    },
+    {
+      "id": "cloud-serverless-004",
+      "q": "In serverless architectures, how does a function typically get triggered?",
+      "options": [
+        "By manual polling every few seconds from a cron job",
+        "By events from AWS services like S3, DynamoDB, API Gateway, or scheduled timers",
+        "Only through HTTP requests to a dedicated API endpoint",
+        "By continuous background processes running 24/7"
+      ],
+      "answer": 1,
+      "explanation": "Serverless functions are event-driven and triggered by events from various sources including API calls, database changes, file uploads, and scheduled timers. Option 0 is inefficient and not serverless; option 2 is too restrictive; option 3 contradicts the serverless model."
+    },
+    {
+      "id": "cloud-serverless-005",
+      "q": "What is a key characteristic of statelessness in serverless functions?",
+      "options": [
+        "Functions cannot use databases or external storage",
+        "Each function invocation is independent with no memory of previous executions",
+        "Functions must run synchronously and wait for responses",
+        "Functions are limited to processing JSON data only"
+      ],
+      "answer": 1,
+      "explanation": "Serverless functions are stateless, meaning each invocation is independent and doesn't rely on state from previous executions. Any persistent state must be stored externally in databases or caches. Option 0 is false; option 2 relates to synchrony, not state; option 3 is incorrect."
+    },
+    {
+      "id": "cloud-serverless-006",
+      "q": "How does AWS Lambda billing differ from EC2?",
+      "options": [
+        "Lambda charges per instance-hour; EC2 charges per invocation",
+        "Lambda charges per invocation and compute duration; EC2 charges per instance-hour regardless of usage",
+        "Both charge by the hour at the same rates",
+        "Lambda is free; EC2 requires a subscription"
+      ],
+      "answer": 1,
+      "explanation": "Lambda uses a pay-per-use model charging for invocations and execution duration (GB-seconds), while EC2 charges per running instance-hour. This makes Lambda cost-effective for sporadic workloads and EC2 better for continuous workloads."
+    },
+    {
+      "id": "cloud-serverless-007",
+      "q": "What is event-driven architecture in serverless computing?",
+      "options": [
+        "Writing code that polls a queue every millisecond for messages",
+        "Architecture where components are triggered by discrete events rather than running continuously",
+        "A pattern where all application logic is centralized in a single large function",
+        "A requirement that all functions must handle errors before generating events"
+      ],
+      "answer": 1,
+      "explanation": "Event-driven architecture means functions respond to events (file uploads, API calls, messages, etc.) rather than running constantly. This enables scalability and efficiency. Option 0 is inefficient polling; option 2 contradicts modularity; option 3 is about error handling, not architecture."
+    },
+    {
+      "id": "cloud-serverless-008",
+      "q": "Which of these is NOT typically a concern in serverless computing?",
+      "options": [
+        "Function execution timeout limits",
+        "Cold start latency for inactive functions",
+        "Managing server patches and OS updates",
+        "Handling concurrent function invocations"
+      ],
+      "answer": 2,
+      "explanation": "In serverless, the cloud provider handles server patches and OS updates automatically, freeing you from infrastructure maintenance. Timeout limits (option 0), cold starts (option 1), and concurrency management (option 3) are all developer concerns."
+    },
+    {
+      "id": "cloud-serverless-009",
+      "q": "What role does API Gateway play in serverless architectures?",
+      "options": [
+        "It provides the only way to trigger Lambda functions",
+        "It creates a managed HTTP endpoint for invoking functions and controlling API-level concerns like throttling and authentication",
+        "It replaces the need for databases in serverless applications",
+        "It automatically prevents cold starts by keeping functions warm"
+      ],
+      "answer": 1,
+      "explanation": "API Gateway is a managed service that creates HTTP endpoints for invoking serverless functions and handles request/response processing, authentication, rate limiting, and CORS. It is not the only trigger (option 0); it doesn't replace databases (option 2); it doesn't prevent cold starts (option 3)."
+    },
+    {
+      "id": "cloud-serverless-010",
+      "q": "Why might you use a message queue like SQS in a serverless architecture?",
+      "options": [
+        "To guarantee that functions never experience cold starts",
+        "To decouple event producers from consumers and handle asynchronous processing reliably",
+        "To replace the need for Lambda functions entirely",
+        "To reduce the cost of Lambda invocations"
+      ],
+      "answer": 1,
+      "explanation": "SQS enables asynchronous, decoupled communication where producers can enqueue messages without waiting for consumers. This provides reliability, backpressure handling, and fault tolerance. Option 0 is incorrect; option 2 is nonsensical; option 3 is wrong since SQS adds cost."
+    }
+  ]
+}

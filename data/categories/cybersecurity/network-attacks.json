@@ -1,0 +1,126 @@
+{
+  "topic": "network-attacks",
+  "category": "cybersecurity",
+  "questions": [
+    {
+      "id": "cybersecurity-network-attacks-001",
+      "q": "What is a Man-in-the-Middle (MITM) attack?",
+      "options": [
+        "An attack that targets the middle layer of the OSI model",
+        "An attack where the attacker intercepts and possibly modifies communications between two parties without their knowledge",
+        "An attack that disables the middle segment of a network",
+        "An attack that hijacks the server's central processor"
+      ],
+      "answer": 1,
+      "explanation": "A MITM attack occurs when an attacker positions themselves between two communicating parties (e.g., on public WiFi using ARP spoofing or DNS hijacking). They can eavesdrop on unencrypted traffic, steal credentials, inject malicious content, or redirect traffic. Prevention: use HTTPS/TLS to encrypt traffic, verify certificate authenticity, use VPNs on public networks, and enable mutual authentication."
+    },
+    {
+      "id": "cybersecurity-network-attacks-002",
+      "q": "What is the primary effect of a Distributed Denial of Service (DDoS) attack?",
+      "options": [
+        "To steal sensitive data from the target server",
+        "To overflow the target with traffic from multiple sources, making it unavailable to legitimate users",
+        "To corrupt the target server's operating system",
+        "To gain administrative access to the target"
+      ],
+      "answer": 1,
+      "explanation": "DDoS attacks overwhelm a target's bandwidth, resources, or computing power using traffic from many compromised machines (botnets) or many attackers. The target becomes unable to serve legitimate requests. Unlike DoS (single source), DDoS uses multiple sources, making IP-based blocking ineffective. Mitigation: rate limiting, traffic filtering, anycast networks, and DDoS protection services like Cloudflare or AWS Shield."
+    },
+    {
+      "id": "cybersecurity-network-attacks-003",
+      "q": "How does ARP spoofing enable attacks on a local network?",
+      "options": [
+        "By forging Domain Name System responses to redirect traffic",
+        "By broadcasting false ARP (Address Resolution Protocol) messages to map an attacker's MAC address to a target's IP, intercepting traffic meant for the target",
+        "By sending spoofed ICMP packets to disable network switches",
+        "By cracking WPA2 encryption on WiFi networks"
+      ],
+      "answer": 1,
+      "explanation": "ARP spoofing floods the local network with fake ARP replies, convincing devices that the attacker's MAC address corresponds to a legitimate IP (like the default gateway or a target host). Devices then send traffic to the attacker instead of the intended destination, enabling MITM attacks. Prevention: use ARP monitoring tools, implement static ARP entries on critical systems, use VLANs to segment networks, and enable port security on switches."
+    },
+    {
+      "id": "cybersecurity-network-attacks-004",
+      "q": "What is the purpose of port scanning in reconnaissance?",
+      "options": [
+        "To encrypt data being transmitted over network ports",
+        "To discover which ports are open and listening on a target, revealing what services may be running",
+        "To block unauthorized access to specific ports",
+        "To allocate more bandwidth to high-traffic ports"
+      ],
+      "answer": 1,
+      "explanation": "Port scanning probes a target to identify listening ports (open, closed, or filtered). Open ports reveal running services (SSH on 22, HTTP on 80, databases on 3306). Attackers use this information to identify attack surfaces and vulnerable software versions. Common tools: nmap, netstat. Defenders can mitigate by disabling unnecessary services, filtering ports via firewalls, and using intrusion detection systems."
+    },
+    {
+      "id": "cybersecurity-network-attacks-005",
+      "q": "What information can an attacker gather from packet sniffing on an unencrypted network?",
+      "options": [
+        "Only the physical addresses of devices on the network",
+        "Passwords, cookies, emails, and any data transmitted in plaintext",
+        "The encryption keys used to secure the network",
+        "The source code of web applications running on the server"
+      ],
+      "answer": 1,
+      "explanation": "Packet sniffing captures network traffic using tools like Wireshark. On unencrypted channels (HTTP, telnet, unencrypted email), an attacker sees everything: login credentials, session tokens, personal data. Even with encryption, metadata (IP addresses, domains accessed) is visible. Prevention: use HTTPS for all traffic, disable plaintext protocols (telnet, FTP), use VPNs, and segment networks so sensitive data doesn't traverse untrusted segments."
+    },
+    {
+      "id": "cybersecurity-network-attacks-006",
+      "q": "What is DNS spoofing and how does it relate to network attacks?",
+      "options": [
+        "A type of virus that attacks the Domain Name System database",
+        "Forging DNS responses to redirect a victim's traffic to an attacker-controlled server for MITM or phishing",
+        "A method to speed up DNS resolution on slow networks",
+        "An encryption technique for protecting DNS queries from being intercepted"
+      ],
+      "answer": 1,
+      "explanation": "DNS spoofing (or DNS hijacking) sends fraudulent DNS replies, mapping a domain name (e.g., bank.com) to an attacker's IP. The victim's browser then connects to the fake server, which can phish credentials or inject malware. Attackers exploit DNS cache poisoning or ARP spoofing to intercept DNS requests. Prevention: use DNSSEC for authentication, VPNs to tunnel DNS, and DNS-over-HTTPS (DoH) to encrypt queries."
+    },
+    {
+      "id": "cybersecurity-network-attacks-007",
+      "q": "What differentiates a SYN flood attack from a typical port scan?",
+      "options": [
+        "A SYN flood scans all ports; a port scan targets one port",
+        "A SYN flood sends incomplete TCP handshakes to overwhelm the target's resources and cause denial of service",
+        "A SYN flood is used for reconnaissance; a port scan is used for data theft",
+        "A SYN flood requires encryption; a port scan does not"
+      ],
+      "answer": 1,
+      "explanation": "A SYN flood is a DoS attack that sends many TCP SYN packets (starting handshakes) but never completes them (sends no ACK). The target allocates memory for half-open connections until resources are exhausted. Unlike port scanning (passive reconnaissance), SYN floods actively damage availability. Prevention: SYN cookies (encode connection state in sequence numbers), rate limiting, and firewalls that drop suspicious SYN floods."
+    },
+    {
+      "id": "cybersecurity-network-attacks-008",
+      "q": "How can an attacker use IP spoofing to launch attacks?",
+      "options": [
+        "By changing the font and styling of IP addresses",
+        "By forging the source IP in packets to hide identity, evade filtering, or amplify DDoS attacks via third-party servers",
+        "By encrypting the IP layer of network packets",
+        "By using IPv6 instead of IPv4 addresses"
+      ],
+      "answer": 1,
+      "explanation": "IP spoofing forges the source IP header so packets appear to come from a different sender. Attackers use it to evade IP-based blocking, hide their identity, or perform amplification attacks (send requests to third-party servers with spoofed source IP, causing responses to flood the victim). Prevention: egress filtering (block packets with non-local source IPs), ingress filtering, and IP authentication mechanisms like RPKI."
+    },
+    {
+      "id": "cybersecurity-network-attacks-009",
+      "q": "What is the difference between passive and active reconnaissance in network attacks?",
+      "options": [
+        "Passive attacks use malware; active attacks do not",
+        "Passive reconnaissance gathers information without alerting the target (open sources, DNS queries); active reconnaissance directly probes the target (port scans, pings) and may trigger alerts",
+        "Active attacks are legal; passive attacks are illegal",
+        "Passive reconnaissance uses encrypted channels; active reconnaissance uses plaintext"
+      ],
+      "answer": 1,
+      "explanation": "Passive reconnaissance (OSINT, social engineering, DNS lookups) leaves no obvious trace. Active reconnaissance (port scanning, traceroute, vulnerability scanning) sends packets that may be logged and detected. Attackers often start with passive reconnaissance to gather information, then move to active probing if feasible. Defenders monitor for active scanning patterns using IDS/IPS tools."
+    },
+    {
+      "id": "cybersecurity-network-attacks-010",
+      "q": "What makes a botnet dangerous in the context of network attacks?",
+      "options": [
+        "It is a single powerful server that can crash networks",
+        "It is a network of compromised machines controlled remotely by attackers, used to launch DDoS attacks, spread malware, or steal data at scale",
+        "It is a type of encryption that cannot be broken",
+        "It is a protocol for secure file transfer between networks"
+      ],
+      "answer": 1,
+      "explanation": "A botnet comprises thousands of infected devices (bots) controlled by a command-and-control (C2) server. Botnets enable large-scale attacks: DDoS, spam distribution, ransomware deployment, credential harvesting. Infected devices operate without the owner's knowledge. Prevention: keep systems patched and updated, use antivirus/anti-malware, monitor outbound traffic for C2 communications, and educate users about malicious downloads."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "data-warehousing",
+  "category": "data-engineering",
+  "questions": [
+    {
+      "id": "data-engineering-data-warehousing-001",
+      "q": "What is the primary advantage of a star schema compared to a normalized relational schema?",
+      "options": [
+        "Simpler queries with fewer joins, better query performance, and easier for business users to understand",
+        "Star schemas use less storage space because they eliminate redundancy completely",
+        "Star schemas automatically prevent all data quality issues without validation",
+        "Normalized schemas cannot support aggregations while star schemas can"
+      ],
+      "answer": 0,
+      "explanation": "Star schemas denormalize dimensions around a central fact table, making queries simpler (fewer joins) and faster. Analysts can write straightforward group-by queries instead of complex multi-table joins. The trade-off is controlled redundancy in dimensions, which is acceptable because dimension tables are typically much smaller than facts."
+    },
+    {
+      "id": "data-engineering-data-warehousing-002",
+      "q": "How does a snowflake schema differ from a star schema?",
+      "options": [
+        "Snowflake further normalizes dimension tables into sub-dimensions, reducing redundancy but increasing join complexity",
+        "Snowflake schemas only work with cloud databases while star schemas work anywhere",
+        "Snowflake schemas use more joins than star schemas but are faster",
+        "There is no difference; the terms are interchangeable"
+      ],
+      "answer": 0,
+      "explanation": "Snowflake schemas normalize dimension tables to remove redundancy. For example, a date dimension might split into separate year/month/day tables. While snowflake saves storage, the extra joins typically make queries slower. Most modern data warehouses prefer star schemas for analytical simplicity."
+    },
+    {
+      "id": "data-engineering-data-warehousing-003",
+      "q": "What is the key operational difference between OLAP and OLTP systems?",
+      "options": [
+        "OLAP optimizes for complex analytical queries on large datasets; OLTP optimizes for fast individual transactional operations",
+        "OLAP systems are faster than OLTP systems for all query types",
+        "OLTP systems are used for data analysis while OLAP systems handle customer transactions",
+        "OLAP and OLTP are identical systems with different names"
+      ],
+      "answer": 0,
+      "explanation": "OLTP (Online Transactional Processing) prioritizes sub-second response times for individual inserts/updates like bank transactions. OLAP (Online Analytical Processing) optimizes for scanning millions of rows to answer questions like 'total revenue by region.' They require different indexing and storage strategies."
+    },
+    {
+      "id": "data-engineering-data-warehousing-004",
+      "q": "Why are columnar storage formats preferred in data warehouses over row-oriented storage?",
+      "options": [
+        "Columnar storage compresses similar data values efficiently and enables selective column access, improving query performance and reducing I/O",
+        "Columnar storage uses less memory than row storage for all operations",
+        "Columnar storage automatically eliminates the need for indexes",
+        "Row storage cannot support aggregation queries"
+      ],
+      "answer": 0,
+      "explanation": "Columnar formats like Parquet store all values of a column together, enabling compression algorithms to work better (similar values compress well) and allowing queries to read only needed columns. For analytical queries that touch few columns, columnar reduces I/O by 10-100x compared to row format."
+    },
+    {
+      "id": "data-engineering-data-warehousing-005",
+      "q": "In a fact table, what characterizes a measure (metric) versus a dimension?",
+      "options": [
+        "Measures are numeric and aggregate (like sales amount); dimensions are categorical and describe context (like date, region, product)",
+        "Measures are categories and dimensions are numbers",
+        "All numeric columns in fact tables are dimensions",
+        "Measures and dimensions serve the same purpose and the distinction is just terminology"
+      ],
+      "answer": 0,
+      "explanation": "Fact tables store quantitative measurements that are aggregated in analysis (sum, average, count). Dimensions provide the context for those measurements. A sales fact table might have measure 'amount' and dimensions 'customer', 'product', 'date'. This structure enables dimensional analysis."
+    },
+    {
+      "id": "data-engineering-data-warehousing-006",
+      "q": "What problem does a bridge table solve in dimensional modeling?",
+      "options": [
+        "Handling many-to-many relationships between dimensions and facts (e.g., multiple products per order line item)",
+        "Storing historical fact data across multiple time periods",
+        "Connecting OLTP source systems to the data warehouse",
+        "Reducing the number of joins needed in star schema queries"
+      ],
+      "answer": 0,
+      "explanation": "Bridge tables (also called bridge dimensions) represent many-to-many relationships. For instance, an order line might have multiple associated products, or a promotion might apply to many products. The bridge table has foreign keys to both the fact and dimension tables."
+    },
+    {
+      "id": "data-engineering-data-warehousing-007",
+      "q": "How does conformed dimensioning improve consistency across multiple fact tables?",
+      "options": [
+        "Using the same dimension table definition and keys across multiple fact tables ensures consistent analysis across subjects",
+        "Conformed dimensions require duplicating dimension data across every fact table",
+        "Conformed dimensioning makes star schemas more complex by adding more joins",
+        "It prevents fact tables from referencing the same dimension at all"
+      ],
+      "answer": 0,
+      "explanation": "Conformed dimensions share the same business rules, keys, and attributes across multiple fact tables. When a customer dimension is used in both the sales fact table and the returns fact table, they have one consistent definition of customer. This enables consistent drilling and comparison across subjects."
+    },
+    {
+      "id": "data-engineering-data-warehousing-008",
+      "q": "What is the purpose of a factless fact table?",
+      "options": [
+        "Recording events or relationships without numeric measures (e.g., student-course enrollments, coverage relationships)",
+        "Temporarily storing data until it can be moved to a regular fact table",
+        "A placeholder used when a data warehouse hasn't been designed yet",
+        "Tables that only contain dimensions with no connection to facts"
+      ],
+      "answer": 0,
+      "explanation": "Factless fact tables capture events or relationships. An enrollment fact table might record only student_id and course_id dimensions without measures—counting rows tells you how many enrollments exist. These tables are useful for 'who-what-when' analysis even when no numerical metrics apply."
+    },
+    {
+      "id": "data-engineering-data-warehousing-009",
+      "q": "How can a data warehouse handle rapid dimension changes without breaking analytical continuity?",
+      "options": [
+        "Using Slowly Changing Dimension techniques to create version rows or maintain historical attributes while linking facts to correct versions",
+        "Deleting old dimension rows so only the current version exists",
+        "Creating a new fact table every time a dimension attribute changes",
+        "Manually adjusting historical facts to match the new dimension values"
+      ],
+      "answer": 0,
+      "explanation": "SCDs (Slowly Changing Dimensions) like Type 1, 2, and 3 handle dimension changes. Type 2 adds new rows with validity dates, allowing historical facts to link to the correct dimension version. This preserves analytical accuracy—a sale attributed to a product when it was in category 'Electronics' stays accurate even after recategorization."
+    },
+    {
+      "id": "data-engineering-data-warehousing-010",
+      "q": "Why might a company add a data mart as an intermediary layer between the warehouse and business users?",
+      "options": [
+        "Pre-aggregating and denormalizing data for specific business domains improves query performance and simplifies user queries for that subject area",
+        "Data marts are cheaper than data warehouses so they replace warehouses entirely",
+        "Data marts have no performance benefit and are only used for data governance",
+        "All business users should query the warehouse directly without any intermediate layer"
+      ],
+      "answer": 0,
+      "explanation": "Data marts are subject-specific subsets of the warehouse. A sales data mart might pre-aggregate revenue by region/product and denormalize supporting dimensions, enabling instant response to common sales queries. This topology reduces load on the central warehouse and improves user experience for specific teams."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "interaction-design",
+  "category": "hci",
+  "questions": [
+    {
+      "id": "hci-interaction-design-001",
+      "q": "What is Fitts's Law primarily concerned with in interaction design?",
+      "options": [
+        "The aesthetics of button shapes",
+        "The relationship between movement distance, target size, and time to acquire a target",
+        "The amount of memory required for interaction",
+        "The font sizes used in interfaces"
+      ],
+      "answer": 1,
+      "explanation": "Fitts's Law quantifies that movement time increases with distance and decreases with target size: MT = a + b × log₂(D/W). Aesthetics, memory requirements, and font sizes are design considerations unrelated to this motor control principle."
+    },
+    {
+      "id": "hci-interaction-design-002",
+      "q": "In interaction design, what is a mental model?",
+      "options": [
+        "A diagram showing all system files",
+        "The user's internal belief about how the system works and what will happen next",
+        "A list of features the product should have",
+        "The visual design of the interface"
+      ],
+      "answer": 1,
+      "explanation": "A mental model is the user's conceptual understanding of a system's behavior. Designers should make the system's actual model match the user's mental model. Mental models are not file diagrams, feature lists, or visual designs."
+    },
+    {
+      "id": "hci-interaction-design-003",
+      "q": "What is a signifier in interaction design?",
+      "options": [
+        "A mathematical symbol",
+        "A communicative element that tells the user what action is possible or what will happen",
+        "A user's signature on a form",
+        "The importance of a design element"
+      ],
+      "answer": 1,
+      "explanation": "Signifiers are perceivable indicators that communicate possible actions to the user, such as underlined text suggesting links or arrow cursors indicating draggable objects. Signifiers differ from affordances in that they are explicit communication cues."
+    },
+    {
+      "id": "hci-interaction-design-004",
+      "q": "What does mapping refer to in interaction design?",
+      "options": [
+        "The physical location of the office",
+        "The relationship between controls and their effects on the system",
+        "A diagram of server locations",
+        "The layout of building rooms"
+      ],
+      "answer": 1,
+      "explanation": "Mapping is the correspondence between user actions (controls) and system results. Good mapping makes the relationship obvious; for example, slider position matching volume level. Mapping is not about physical locations or infrastructure."
+    },
+    {
+      "id": "hci-interaction-design-005",
+      "q": "In the context of Fitts's Law, what is the fastest way to target a menu item in the corner of a screen?",
+      "options": [
+        "Menu items should never be in corners",
+        "Items in screen corners are infinitely large targets because the pointer cannot overshoot, making them the fastest to acquire",
+        "Corners slow down targeting",
+        "Corner menus require smaller text"
+      ],
+      "answer": 1,
+      "explanation": "Screen edges and corners create natural boundaries that stop pointer movement, making targets effectively larger and acquisition faster despite smaller visible size. This is why menus in corners are optimal placements according to Fitts's Law."
+    },
+    {
+      "id": "hci-interaction-design-006",
+      "q": "What problem occurs when system behavior contradicts the user's mental model?",
+      "options": [
+        "The system runs faster",
+        "Users make incorrect predictions about what the system will do, leading to errors and frustration",
+        "The interface becomes more colorful",
+        "Data is automatically deleted"
+      ],
+      "answer": 1,
+      "explanation": "When system behavior violates expectations, users struggle to predict outcomes and make more errors. Violations don't affect performance speed, colors, or data integrity, but they damage usability and user confidence."
+    },
+    {
+      "id": "hci-interaction-design-007",
+      "q": "How should an interaction designer apply mapping principles to a stove's burner controls?",
+      "options": [
+        "Place all knobs in a straight line randomly",
+        "Arrange controls to spatially match the burner layout so the user immediately understands which control affects which burner",
+        "Use only abstract symbols without any visual relationship",
+        "Mix different control types so users remain engaged"
+      ],
+      "answer": 1,
+      "explanation": "Spatial mapping makes the relationship between controls and elements immediately clear. A burner control layout matching actual burner positions requires no learning. Random placement, abstract symbols, and mixed controls all worsen mapping and increase errors."
+    },
+    {
+      "id": "hci-interaction-design-008",
+      "q": "What is a mode in interaction design, and why can modes be problematic?",
+      "options": [
+        "Modes are color schemes used in design",
+        "Modes are states where the same user action produces different results; they can cause confusion when users forget which mode they're in",
+        "Modes refer to design trends in fashion",
+        "Modes are only used in gaming applications"
+      ],
+      "answer": 1,
+      "explanation": "Modes (like drawing mode vs. selection mode) can be problematic because users may forget the current mode and make errors. Good design minimizes modes or makes them highly visible. Modes are not color schemes, fashion, or gaming-specific."
+    },
+    {
+      "id": "hci-interaction-design-009",
+      "q": "Why does Fitts's Law suggest that dragging is slower than pointing?",
+      "options": [
+        "Dragging requires two hands",
+        "Dragging involves a higher index of difficulty because users must maintain precision while moving a greater distance",
+        "Dragging is only used on mobile devices",
+        "Modern computers don't support dragging"
+      ],
+      "answer": 1,
+      "explanation": "Dragging requires continuous precision maintenance over a longer path, increasing difficulty according to Fitts's Law formula. Dragging doesn't inherently require two hands, works on all devices, and is universally supported."
+    },
+    {
+      "id": "hci-interaction-design-010",
+      "q": "How does understanding mental models help optimize interaction design for different user groups?",
+      "options": [
+        "Mental models are always the same across all users",
+        "Designers can adjust terminology, features, and workflows to match each group's existing mental model, reducing learning time and errors",
+        "Mental models only apply to children",
+        "Mental models are irrelevant to interaction design"
+      ],
+      "answer": 1,
+      "explanation": "Different user groups have different mental models based on expertise and experience. Expert users may expect different workflows than novices. Tailoring to the target group's model improves usability. Mental models are not universal, age-dependent, or irrelevant to design."
+    }
+  ]
+}

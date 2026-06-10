@@ -1,0 +1,126 @@
+{
+  "topic": "cryptography",
+  "category": "cybersecurity",
+  "questions": [
+    {
+      "id": "cybersecurity-cryptography-001",
+      "q": "What is the key difference between symmetric and asymmetric encryption?",
+      "options": [
+        "Symmetric uses one key for both encryption and decryption; asymmetric uses two mathematically related keys (public and private)",
+        "Symmetric is faster; asymmetric is more secure",
+        "Symmetric is used for passwords; asymmetric is used for files",
+        "Asymmetric can be broken by brute force; symmetric cannot"
+      ],
+      "answer": 0,
+      "explanation": "Symmetric encryption (AES, 3DES) uses a shared secret key known to both parties. Asymmetric encryption (RSA, ECC) uses a public key (known to everyone) to encrypt and a private key (kept secret) to decrypt. Symmetric is faster and ideal for encrypting bulk data; asymmetric is slower but solves the key distribution problem and enables digital signatures. Both have different use cases."
+    },
+    {
+      "id": "cybersecurity-cryptography-002",
+      "q": "What is the purpose of a cryptographic hash function?",
+      "options": [
+        "To encrypt data so only the key holder can decrypt it",
+        "To produce a fixed-size unique fingerprint of data; any change in input drastically changes the output",
+        "To compress data for faster storage and transmission",
+        "To exchange keys securely over an insecure channel"
+      ],
+      "answer": 1,
+      "explanation": "Hash functions (SHA-256, MD5) map arbitrary input to a fixed-size output (digest). They are one-way: you cannot reverse a hash to get the original data. Used for password storage, data integrity verification, and digital signatures. A good hash function has avalanche effect: changing one bit of input changes half the output bits. MD5 is broken; use SHA-256 or SHA-3 instead."
+    },
+    {
+      "id": "cybersecurity-cryptography-003",
+      "q": "Which cryptographic algorithm is most suitable for hashing passwords?",
+      "options": [
+        "MD5 with multiple iterations",
+        "SHA-256 directly from plaintext",
+        "bcrypt, scrypt, or Argon2 with salt",
+        "AES-256 encryption with a known key"
+      ],
+      "answer": 2,
+      "explanation": "Password hashing must use slow, memory-hard algorithms (bcrypt, scrypt, Argon2) that include a salt to prevent rainbow table attacks. MD5 and SHA-256 are fast, which makes brute-force attacks feasible. Salting ensures identical passwords produce different hashes. Argon2 is modern and specifically designed to resist GPU/ASIC attacks. Encryption is reversible and inappropriate for passwords."
+    },
+    {
+      "id": "cybersecurity-cryptography-004",
+      "q": "What does TLS (Transport Layer Security) protect during communication?",
+      "options": [
+        "Only the authentication of the server to the client",
+        "Confidentiality, integrity, and authenticity of data in transit",
+        "The password database on the server",
+        "Local files on the client machine"
+      ],
+      "answer": 1,
+      "explanation": "TLS encrypts data in transit (confidentiality via symmetric encryption), verifies it hasn't been tampered with (integrity via MACs), and authenticates the server using digital certificates (authenticity). TLS uses key exchange (like ECDHE) to derive session keys, then AES for encryption. HTTPS is HTTP over TLS. TLS protects against eavesdropping and MITM attacks but doesn't protect local storage or server-side vulnerabilities."
+    },
+    {
+      "id": "cybersecurity-cryptography-005",
+      "q": "What is the purpose of the Diffie-Hellman key exchange in cryptography?",
+      "options": [
+        "To hash passwords securely",
+        "To allow two parties to derive a shared secret key over an insecure channel without transmitting the secret",
+        "To digitally sign documents",
+        "To encrypt data at rest on a hard drive"
+      ],
+      "answer": 1,
+      "explanation": "Diffie-Hellman (and its elliptic curve variant ECDHE) solves the key distribution problem by enabling two parties to derive a shared secret without ever transmitting it. Each party contributes a private value; the mathematical properties ensure only they can compute the shared secret from exchanged public values. Attackers cannot derive the secret knowing only the public values. This enables TLS session key negotiation."
+    },
+    {
+      "id": "cybersecurity-cryptography-006",
+      "q": "What is a digital signature used for in cryptography?",
+      "options": [
+        "To encrypt messages so only the intended recipient can read them",
+        "To prove the authenticity and non-repudiation of a message—the signer cannot deny creating it",
+        "To compress data for faster transmission",
+        "To hash passwords safely without a salt"
+      ],
+      "answer": 1,
+      "explanation": "Digital signatures use asymmetric cryptography: the sender signs with their private key, the receiver verifies with the sender's public key. This proves the sender created the message (authentication) and cannot deny it (non-repudiation). The signature binds the message to the signer; tampering breaks the signature. Used for code signing, document integrity, and TLS certificates. Note: signatures prove who signed, not who created the original message."
+    },
+    {
+      "id": "cybersecurity-cryptography-007",
+      "q": "Why is a salt used when hashing passwords?",
+      "options": [
+        "To make the password longer and harder to guess",
+        "To prevent attackers from using precomputed hash tables (rainbow tables) to crack passwords",
+        "To encrypt the password so even the server cannot read it",
+        "To speed up the hashing process for faster login"
+      ],
+      "answer": 1,
+      "explanation": "A salt is a random value appended to the password before hashing. Without salt, identical passwords hash to identical values, allowing attackers to use precomputed rainbow tables. With salt, the same password hashes differently each time. Salts are stored plaintext alongside the hash—their purpose is not secrecy but uniqueness. Even if two users have the same password, their hashes differ due to different salts."
+    },
+    {
+      "id": "cybersecurity-cryptography-008",
+      "q": "What is the main vulnerability of using RSA with a small key size?",
+      "options": [
+        "It makes encryption slower",
+        "It requires more memory to store the keys",
+        "It can be broken by factoring the modulus into its prime factors in reasonable time",
+        "It cannot be used with TLS protocol"
+      ],
+      "answer": 2,
+      "explanation": "RSA security depends on the difficulty of factoring large numbers. Small keys (like 512-bit or 1024-bit) can be factored with modern computers in hours or days, breaking encryption and digital signatures. Recommended minimum is 2048-bit; 4096-bit is better for long-term security. Larger keys are computationally expensive, so RSA is used for key exchange and signatures, not bulk encryption."
+    },
+    {
+      "id": "cybersecurity-cryptography-009",
+      "q": "What is the purpose of Perfect Forward Secrecy (PFS) in TLS?",
+      "options": [
+        "To ensure the TLS handshake cannot be intercepted",
+        "To ensure that if a long-term key is compromised, past sessions remain secure because ephemeral session keys were used",
+        "To prevent brute-force attacks on passwords",
+        "To encrypt the server's private key in storage"
+      ],
+      "answer": 1,
+      "explanation": "PFS (achieved via ECDHE or DHE in TLS) derives unique session keys for each connection using ephemeral (temporary) key pairs. Even if an attacker captures all traffic and later steals the server's long-term private key, they cannot decrypt past sessions—the ephemeral keys are gone. Without PFS (static key exchange), stealing the private key reveals all past sessions. PFS is critical for long-term confidentiality."
+    },
+    {
+      "id": "cybersecurity-cryptography-010",
+      "q": "Why should AES (Advanced Encryption Standard) not be used to encrypt passwords?",
+      "options": [
+        "AES is slower than MD5 for password hashing",
+        "AES is reversible; if someone knows the encryption key, they can decrypt all passwords instantly, and attackers with the key can easily crack it via brute force against fast AES",
+        "AES only supports 128-bit keys",
+        "AES cannot encrypt text data"
+      ],
+      "answer": 1,
+      "explanation": "AES is a fast, reversible cipher designed for bulk data encryption where speed and reversibility are desired. Passwords require one-way hashing with slow, memory-hard algorithms. If AES is used, an attacker with the key decrypts all passwords instantly. Additionally, AES's speed makes brute-forcing weak passwords trivial. Bcrypt and Argon2 are intentionally slow, making brute-force attacks computationally expensive."
+    }
+  ]
+}

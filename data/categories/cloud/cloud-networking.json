@@ -1,0 +1,126 @@
+{
+  "topic": "cloud-networking",
+  "category": "cloud",
+  "questions": [
+    {
+      "id": "cloud-networking-001",
+      "q": "What is the primary purpose of a load balancer in cloud networking?",
+      "options": [
+        "To encrypt all traffic between instances",
+        "To distribute incoming traffic across multiple backend instances for availability and performance",
+        "To prevent users from accessing certain instances",
+        "To cache static content from web servers"
+      ],
+      "answer": 1,
+      "explanation": "Load balancers distribute incoming requests across multiple backend instances, improving availability, performance, and fault tolerance. Option 0 is encryption; option 2 describes security groups; option 3 describes CDNs."
+    },
+    {
+      "id": "cloud-networking-002",
+      "q": "What is a security group in AWS?",
+      "options": [
+        "A group of users with similar access permissions",
+        "A virtual firewall that controls inbound and outbound traffic to EC2 instances",
+        "A collection of VPCs that share security policies",
+        "A service that monitors suspicious network activity"
+      ],
+      "answer": 1,
+      "explanation": "A security group is a stateful firewall controlling which traffic is allowed to reach instances. Option 0 is IAM; option 2 is not a real construct; option 3 describes monitoring services like VPC Flow Logs."
+    },
+    {
+      "id": "cloud-networking-003",
+      "q": "What is the difference between a security group and a network ACL?",
+      "options": [
+        "Security groups work at layer 3; network ACLs work at layer 4",
+        "Network ACLs are stateful; security groups are stateless",
+        "Security groups are instance-level stateful firewalls; network ACLs are subnet-level stateless firewalls",
+        "Network ACLs can only block traffic; security groups can allow and block"
+      ],
+      "answer": 2,
+      "explanation": "Security groups are stateful and attached to instances; network ACLs (NACLs) are stateless and attached to subnets. Option 0 reverses the layer context; option 1 is reversed (security groups are stateful); option 3 is false (both allow and block)."
+    },
+    {
+      "id": "cloud-networking-004",
+      "q": "What is a subnet in the context of VPC networking?",
+      "options": [
+        "A smaller VPC within a larger VPC",
+        "A range of IP addresses within a VPC, associated with a specific Availability Zone",
+        "A security rule that filters traffic at the protocol level",
+        "A tunnel that encrypts data between two VPCs"
+      ],
+      "answer": 1,
+      "explanation": "A subnet is a segment of a VPC's IP address range, scoped to a single AZ, where instances are launched. Option 0 is incorrect nesting; option 2 is security groups; option 3 is VPC peering or VPN."
+    },
+    {
+      "id": "cloud-networking-005",
+      "q": "What is DNS (Domain Name System) used for in cloud networks?",
+      "options": [
+        "To encrypt data in transit between services",
+        "To translate human-readable domain names to IP addresses so users can access services by name",
+        "To distribute load across multiple instances",
+        "To authenticate users accessing cloud resources"
+      ],
+      "answer": 1,
+      "explanation": "DNS maps domain names (example.com) to IP addresses, enabling human-friendly access to services. Option 0 is encryption (TLS); option 2 is load balancing; option 3 is authentication/IAM."
+    },
+    {
+      "id": "cloud-networking-006",
+      "q": "What is the role of an Internet Gateway in a VPC?",
+      "options": [
+        "To block all traffic from the internet to instances",
+        "To connect instances to on-premises data centers",
+        "To enable instances in public subnets to communicate with the internet",
+        "To prevent DDoS attacks from reaching instances"
+      ],
+      "answer": 2,
+      "explanation": "An Internet Gateway allows instances in a VPC to communicate bidirectionally with the public internet. Option 0 is the opposite; option 1 describes a Virtual Private Gateway; option 3 describes DDoS protection services."
+    },
+    {
+      "id": "cloud-networking-007",
+      "q": "What is a NAT Gateway used for in cloud networking?",
+      "options": [
+        "To provide a public IP address to every instance in a VPC",
+        "To allow instances in private subnets to initiate outbound traffic to the internet while remaining unreachable from the internet",
+        "To route traffic between multiple VPCs",
+        "To encrypt all traffic leaving the VPC"
+      ],
+      "answer": 1,
+      "explanation": "A NAT Gateway lets private instances make outbound connections to the internet (for updates, API calls) while staying protected from inbound connections. Option 0 is Internet Gateway; option 2 is peering/routing; option 3 is encryption."
+    },
+    {
+      "id": "cloud-networking-008",
+      "q": "What types of load balancers are commonly used in cloud environments?",
+      "options": [
+        "Only Layer 4 load balancers exist in the cloud",
+        "Application Load Balancer (Layer 7), Network Load Balancer (Layer 4), and Classic Load Balancer",
+        "Load balancers that only work with static IP addresses",
+        "Only software-based load balancers deployed on EC2 instances"
+      ],
+      "answer": 1,
+      "explanation": "Cloud providers offer multiple load balancer types optimized for different use cases: ALB for HTTP/HTTPS, NLB for extreme performance/UDP, CLB for legacy applications. Options 0, 2, and 3 are unnecessarily restrictive or false."
+    },
+    {
+      "id": "cloud-networking-009",
+      "q": "What is VPC peering in AWS?",
+      "options": [
+        "A way to monitor network traffic between instances",
+        "A connection that enables private communication between two VPCs as if they were part of the same network",
+        "A service that automatically scales VPC subnets",
+        "A backup mechanism for VPC configurations"
+      ],
+      "answer": 1,
+      "explanation": "VPC peering creates a networking connection between two VPCs for private, non-internet traffic. Option 0 is monitoring; option 2 is autoscaling; option 3 is backup/recovery."
+    },
+    {
+      "id": "cloud-networking-010",
+      "q": "Why would you use Route 53 or similar managed DNS services?",
+      "options": [
+        "To replace security groups in controlling traffic",
+        "To provide DNS resolution, health checks, traffic routing policies, and failover management",
+        "To eliminate the need for load balancers",
+        "To encrypt all data in transit across the network"
+      ],
+      "answer": 1,
+      "explanation": "Managed DNS services handle domain resolution, health monitoring, intelligent routing, and automatic failover to healthy endpoints. Option 0 is incorrect; option 2 is wrong (they complement each other); option 3 is encryption, not DNS."
+    }
+  ]
+}

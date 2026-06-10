@@ -1,0 +1,126 @@
+{
+  "topic": "keyword-research",
+  "category": "seo",
+  "questions": [
+    {
+      "id": "seo-keyword-research-001",
+      "q": "What is search intent and why is it critical for keyword research?",
+      "options": [
+        "Search intent is the length of a search query",
+        "Search intent is the purpose behind a query; matching intent improves rankings and user satisfaction",
+        "Search intent only matters for branded keywords",
+        "Intent has no connection to keyword strategy"
+      ],
+      "answer": 1,
+      "explanation": "Search intent (informational, transactional, navigational) determines the type of content that ranks. Mismatching intent—ranking a product page for 'how to' queries—results in high bounce rate and poor rankings; intent is fundamental to relevance."
+    },
+    {
+      "id": "seo-keyword-research-002",
+      "q": "What is a long-tail keyword and what advantage does it offer in SEO?",
+      "options": [
+        "A keyword that is very short, like 'SEO'",
+        "A longer, more specific phrase with lower search volume but higher conversion intent",
+        "A keyword that no one searches for",
+        "Any keyword with more than three words"
+      ],
+      "answer": 1,
+      "explanation": "Long-tail keywords (e.g., 'best budget fitness tracker under $100') have lower volume but higher intent and less competition. Short keywords ('fitness tracker') are harder to rank for; long-tail traffic compounds into substantial volume with better conversions."
+    },
+    {
+      "id": "seo-keyword-research-003",
+      "q": "What does 'search volume' measure in keyword research tools?",
+      "options": [
+        "The total size of a website ranking for that keyword",
+        "The estimated number of searches per month for a given keyword",
+        "The amount of content written about a topic",
+        "The number of backlinks pointing to pages ranking for that keyword"
+      ],
+      "answer": 1,
+      "explanation": "Search volume measures estimated monthly queries for a keyword. It indicates opportunity size but doesn't directly correlate to ranking difficulty or traffic potential; low-volume keywords can be highly valuable if they convert well."
+    },
+    {
+      "id": "seo-keyword-research-004",
+      "q": "How does keyword difficulty (or competition) relate to ranking potential?",
+      "options": [
+        "High difficulty keywords are always best to target",
+        "Lower difficulty keywords in your niche offer faster ranking wins with less competition",
+        "Difficulty is irrelevant; you should target every keyword equally",
+        "High difficulty guarantees high traffic"
+      ],
+      "answer": 1,
+      "explanation": "Keyword difficulty shows how hard it is to rank; targeting manageable difficulty aligns resources with realistic ROI. Ignoring difficulty wastes effort on unwinnable battles; some high-difficulty keywords lack traffic value."
+    },
+    {
+      "id": "seo-keyword-research-005",
+      "q": "What does a SERP (Search Engine Results Page) analysis reveal about keyword opportunity?",
+      "options": [
+        "Nothing; SERP analysis is useless",
+        "Examining top-ranking pages reveals content gaps, required topics, and whether you can compete",
+        "All SERP pages rank equally regardless of quality",
+        "SERP analysis is only useful for Google Ads, not organic search"
+      ],
+      "answer": 1,
+      "explanation": "SERP analysis shows what Google rewards for a query—content type, length, structure, required topics. If high-authority sites dominate, ranking is harder; identifying gaps (missing subtopics) reveals angles to outrank competitors."
+    },
+    {
+      "id": "seo-keyword-research-006",
+      "q": "What is keyword cannibalization and how does it harm SEO?",
+      "options": [
+        "Keyword cannibalization doesn't exist",
+        "When multiple pages target the same keyword, they compete internally, diluting ranking potential",
+        "Cannibalization means having too many backlinks",
+        "Ranking multiple pages for one keyword always increases traffic"
+      ],
+      "answer": 1,
+      "explanation": "When several pages target identical keywords, search engines struggle to determine which to rank; authority gets split instead of concentrated. Consolidation or clear targeting separation (by intent or modifier) solves this; it's a common but fixable problem."
+    },
+    {
+      "id": "seo-keyword-research-007",
+      "q": "How do seasonal trends affect keyword research strategy?",
+      "options": [
+        "Seasonal keywords have no impact on strategy",
+        "Seasonal keywords spike at certain times; planning content calendars around them optimizes traffic peaks",
+        "All keywords search equally year-round",
+        "Seasonal data is only for e-commerce businesses"
+      ],
+      "answer": 1,
+      "explanation": "Seasonal keywords ('tax deductions' in January, 'Halloween costumes' in September) vary in volume and competition over time. Planning content windows around peaks captures opportunity; evergreen keywords maintain steady traffic; mixing both balances portfolio."
+    },
+    {
+      "id": "seo-keyword-research-008",
+      "q": "What does 'search volume variability' indicate about keyword stability?",
+      "options": [
+        "Variability doesn't matter for keyword planning",
+        "High variability suggests seasonal or trending keywords; low variability suggests stable evergreen keywords",
+        "All keywords have identical variability patterns",
+        "Search volume never varies regardless of season"
+      ],
+      "answer": 1,
+      "explanation": "Keywords with consistent search volume month-to-month are dependable traffic sources. High variability means feast-or-famine traffic; understanding patterns allows portfolio balance between trending and evergreen content."
+    },
+    {
+      "id": "seo-keyword-research-009",
+      "q": "How does competitor keyword analysis inform your strategy?",
+      "options": [
+        "Competitor analysis is irrelevant to SEO",
+        "Analyzing competitors' keywords reveals gaps you can exploit and high-value opportunities they might miss",
+        "You should copy all competitor keywords exactly",
+        "Competitors have no bearing on your keyword choices"
+      ],
+      "answer": 1,
+      "explanation": "Competitor keyword analysis identifies ranking opportunities and market gaps; it informs differentiation strategy. Copying keywords verbatim is ineffective; understanding competitor focus helps you find underserved angles in your niche."
+    },
+    {
+      "id": "seo-keyword-research-010",
+      "q": "What role does search intent classification play in organizing keyword research?",
+      "options": [
+        "Classification is unnecessary for keyword strategy",
+        "Grouping keywords by intent (informational, transactional, navigational) guides content type and structure decisions",
+        "All keywords have the same intent",
+        "Intent classification is only for paid search, not organic"
+      ],
+      "answer": 1,
+      "explanation": "Intent-based grouping ensures you create appropriate content—blog posts for informational, product pages for transactional, brand pages for navigational. Mixing intent types in one article confuses users and search engines; clarity improves rankings and conversions."
+    }
+  ]
+}

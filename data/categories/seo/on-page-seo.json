@@ -1,0 +1,126 @@
+{
+  "topic": "on-page-seo",
+  "category": "seo",
+  "questions": [
+    {
+      "id": "seo-on-page-seo-001",
+      "q": "What is the optimal length for a page title tag for search engine visibility?",
+      "options": [
+        "50-60 characters",
+        "10-20 characters",
+        "100-120 characters",
+        "150+ characters"
+      ],
+      "answer": 0,
+      "explanation": "Title tags should be 50-60 characters to display fully in search results and prevent truncation. Shorter titles may not provide enough keyword context, while longer titles get cut off in SERPs and waste space."
+    },
+    {
+      "id": "seo-on-page-seo-002",
+      "q": "Which HTML heading tag should be used only once per page for the main topic?",
+      "options": [
+        "H2",
+        "H1",
+        "H3",
+        "H4"
+      ],
+      "answer": 1,
+      "explanation": "H1 should appear once per page to indicate the primary topic. Using multiple H1s confuses search engines about page focus, while H2-H6 can appear multiple times for subheadings."
+    },
+    {
+      "id": "seo-on-page-seo-003",
+      "q": "What is the recommended length for a meta description tag?",
+      "options": [
+        "50-80 characters",
+        "150-160 characters",
+        "200+ characters",
+        "30-50 characters"
+      ],
+      "answer": 1,
+      "explanation": "Meta descriptions should be 150-160 characters to display fully on desktop and mobile in search results. Shorter descriptions miss optimization opportunity; longer ones get truncated and fail to entice clicks."
+    },
+    {
+      "id": "seo-on-page-seo-004",
+      "q": "How do internal links benefit SEO when linking between pages on your site?",
+      "options": [
+        "They increase page bounce rate",
+        "They distribute page authority and help establish information hierarchy",
+        "They have no impact on SEO value",
+        "They decrease crawl efficiency"
+      ],
+      "answer": 1,
+      "explanation": "Internal links pass PageRank-like authority between pages and signal information relationships, helping both users and crawlers navigate. Poor internal linking isolates pages and wastes crawl budget on dead ends."
+    },
+    {
+      "id": "seo-on-page-seo-005",
+      "q": "What is the primary purpose of using heading tags in proper hierarchy (H1, H2, H3)?",
+      "options": [
+        "To change font sizes for visual design",
+        "To organize content structure and help search engines understand topic relationships",
+        "To prevent CSS styling on the page",
+        "To increase keyword density automatically"
+      ],
+      "answer": 1,
+      "explanation": "Heading hierarchy creates semantic structure that both users and search engines use to understand content organization and relationships. Visual styling should be handled by CSS, not heading tags; keyword density alone doesn't improve rankings."
+    },
+    {
+      "id": "seo-on-page-seo-006",
+      "q": "Which anchor text approach is best for internal linking from an SEO perspective?",
+      "options": [
+        "Using exact target keyword every time",
+        "Using 'click here' consistently across all links",
+        "Using descriptive, keyword-relevant text that matches link context",
+        "Using numbers or symbols instead of words"
+      ],
+      "answer": 2,
+      "explanation": "Descriptive anchor text tells search engines what the linked page is about while remaining natural. Over-optimization with exact keywords looks spammy; generic phrases waste the opportunity to pass relevance signals; non-text anchors provide no context."
+    },
+    {
+      "id": "seo-on-page-seo-007",
+      "q": "How does keyword placement in page content affect on-page SEO optimization?",
+      "options": [
+        "Keywords only matter if placed in the first sentence",
+        "Placement in title, headings, and early in content matters more than random placement",
+        "Keyword placement has no effect; only total mentions matter",
+        "Keywords should be hidden in white text for best results"
+      ],
+      "answer": 1,
+      "explanation": "Strategic keyword placement in title, H1, and opening paragraph gives stronger signals than scattered mentions. The first 100 words carry more weight; hiding keywords (white text) is considered cloaking and risks manual penalties."
+    },
+    {
+      "id": "seo-on-page-seo-008",
+      "q": "What is the relationship between user intent and on-page content optimization?",
+      "options": [
+        "User intent doesn't matter for rankings",
+        "Content must match search intent to rank well and reduce bounce rate",
+        "Only Google cares about user intent, not visitors",
+        "User intent changes daily and can't be optimized for"
+      ],
+      "answer": 1,
+      "explanation": "Content must satisfy the intent behind search queries—informational, transactional, or navigational. Mismatched content creates high bounce rates and poor CTR, which are ranking signals; ignoring intent is a common optimization failure."
+    },
+    {
+      "id": "seo-on-page-seo-009",
+      "q": "How should target keywords be incorporated into a page's URL structure for SEO?",
+      "options": [
+        "URLs should be randomly generated for security",
+        "Use hyphens to separate descriptive keywords in clean, readable URLs",
+        "URLs should be as long as possible to include all variations",
+        "Keywords in URLs have no SEO value whatsoever"
+      ],
+      "answer": 1,
+      "explanation": "Clean URLs with hyphens and descriptive keywords are more crawlable and provide weak relevance signals. Excessively long URLs are harder to share and crawl; random URLs waste ranking opportunity; keywords do provide modest but measurable ranking benefit."
+    },
+    {
+      "id": "seo-on-page-seo-010",
+      "q": "What is the ideal approach to optimizing image alt text for both accessibility and SEO?",
+      "options": [
+        "Alt text should be keyword-stuffed with as many variations as possible",
+        "Leave alt text empty to improve page load speed",
+        "Write concise, descriptive text that explains the image and includes relevant keywords naturally",
+        "Alt text only matters for ADA compliance, not SEO"
+      ],
+      "answer": 2,
+      "explanation": "Descriptive alt text improves both accessibility for screen readers and image search visibility. Keyword stuffing looks unnatural; empty alt text wastes ranking opportunity and harms accessibility; alt text genuinely impacts image search results and on-page relevance."
+    }
+  ]
+}

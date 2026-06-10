@@ -1,0 +1,126 @@
+{
+  "topic": "containers",
+  "category": "devops",
+  "questions": [
+    {
+      "id": "devops-containers-001",
+      "q": "What is the primary difference between a Docker image and a Docker container?",
+      "options": [
+        "An image is a blueprint or template; a container is a running instance of that image with its own isolated environment",
+        "An image runs in memory while a container is stored on disk",
+        "Images are used for testing and containers are used for production",
+        "A container is a lighter version of an image that uses fewer resources"
+      ],
+      "answer": 0,
+      "explanation": "A Docker image is an immutable template containing all dependencies and code; a container is a live, isolated execution environment created from that image. Memory/disk distinction (B) is wrong—both run in memory; testing/production (C) is a usage pattern, not a technical difference; size/resource differences (D) don't define the relationship."
+    },
+    {
+      "id": "devops-containers-002",
+      "q": "What are Docker layers, and why are they important?",
+      "options": [
+        "Layers are stacked filesystem snapshots in a Dockerfile; each instruction creates a layer, enabling reuse and reducing image size through caching",
+        "Layers are separate servers that host different parts of the application",
+        "Layers are security boundaries that isolate containers from the host system",
+        "Layers are version control commits for Docker images"
+      ],
+      "answer": 0,
+      "explanation": "Each Dockerfile instruction creates a layer, and Docker caches them to speed up rebuilds and reduce redundant work. Layers aren't servers (B), security boundaries (C), or version commits (D)—they're the core of Docker's efficiency model."
+    },
+    {
+      "id": "devops-containers-003",
+      "q": "What does a Dockerfile do?",
+      "options": [
+        "Defines the steps and configuration to build a Docker image automatically",
+        "Specifies how to connect containers to a network",
+        "Manages permissions for files inside a container",
+        "Schedules when containers should start and stop"
+      ],
+      "answer": 0,
+      "explanation": "A Dockerfile contains instructions (FROM, RUN, COPY, etc.) that Docker uses to build images layer by layer. Network configuration (B), file permissions (C), and scheduling (D) are separate concerns handled by other Docker features."
+    },
+    {
+      "id": "devops-containers-004",
+      "q": "What is a Docker volume?",
+      "options": [
+        "A mechanism for persistent data storage and sharing between containers and the host, surviving container restarts",
+        "The maximum amount of data a container can process at once",
+        "A compressed archive of a Docker image for faster distribution",
+        "A configuration file that lists all running containers"
+      ],
+      "answer": 0,
+      "explanation": "Volumes persist data outside container lifecycles and enable container-to-host and container-to-container data sharing. Data capacity (B), image compression (C), and container lists (D) are unrelated to volumes' purpose."
+    },
+    {
+      "id": "devops-containers-005",
+      "q": "What problem does Docker container networking solve?",
+      "options": [
+        "Enabling containers to communicate with each other and the host while maintaining isolation and service discovery",
+        "Making containers run faster by reducing network latency",
+        "Replacing physical network infrastructure",
+        "Preventing all containers from accessing the internet"
+      ],
+      "answer": 0,
+      "explanation": "Docker networks allow inter-container communication and hostname-based service discovery while keeping containers isolated. Network speed (B) is a side effect, not the problem solved; Docker doesn't replace physical networks (C); it doesn't block internet access (D)."
+    },
+    {
+      "id": "devops-containers-006",
+      "q": "Why is the FROM instruction typically the first instruction in a Dockerfile?",
+      "options": [
+        "It specifies the base image that all other layers build upon",
+        "It defines the starting network configuration for the container",
+        "It sets the version of Docker to use for building",
+        "It marks the beginning of the build process chronologically"
+      ],
+      "answer": 0,
+      "explanation": "FROM establishes the base image (OS, runtime, libraries) that subsequent instructions modify and extend. Network config (B) comes later; Docker version (C) is configured elsewhere; chronological ordering (D) is less important than the logical dependency on a base image."
+    },
+    {
+      "id": "devops-containers-007",
+      "q": "What is the advantage of using .dockerignore in a project?",
+      "options": [
+        "To exclude files from being copied into the image during build, reducing image size and build time",
+        "To prevent containers from accessing certain files on the host",
+        "To ignore error messages during container execution",
+        "To skip security scanning of specific files"
+      ],
+      "answer": 0,
+      "explanation": ".dockerignore prevents unnecessary files (like node_modules, .git, test files) from being added to images, improving build speed and reducing bloat. It's not about host file access (B), error handling (C), or security scans (D)—it's a build optimization."
+    },
+    {
+      "id": "devops-containers-008",
+      "q": "What happens to data in a container when it stops or is deleted without using a volume?",
+      "options": [
+        "The data is lost because it exists only in the container's writable layer",
+        "The data is automatically backed up to the host system",
+        "The data persists indefinitely until manually deleted",
+        "The data is transferred to a default Docker archive location"
+      ],
+      "answer": 0,
+      "explanation": "Container data without volumes is ephemeral—it's destroyed when the container stops. Backups don't happen automatically (B); data doesn't persist without volumes (C); Docker doesn't archive container data by default (D). This is why volumes are essential for stateful applications."
+    },
+    {
+      "id": "devops-containers-009",
+      "q": "In a Dockerfile, what does the EXPOSE instruction do?",
+      "options": [
+        "Documents which ports the container listens on; it does not actually publish ports without additional runtime flags",
+        "Opens ports on the host machine automatically",
+        "Encrypts network traffic on specified ports",
+        "Lists all exposed vulnerabilities in the base image"
+      ],
+      "answer": 0,
+      "explanation": "EXPOSE is metadata documenting container ports but doesn't publish them—actual port binding requires -p flags at runtime. It doesn't open host ports (B), encrypt traffic (C), or scan vulnerabilities (D)—it's purely for documentation."
+    },
+    {
+      "id": "devops-containers-010",
+      "q": "What is a 'multi-stage build' in Docker?",
+      "options": [
+        "Using multiple FROM instructions to build an image in stages, keeping only artifacts from final stages to reduce image size",
+        "Building the same image multiple times for testing purposes",
+        "Deploying containers across multiple cloud providers in sequence",
+        "Running multiple containers in parallel during the build process"
+      ],
+      "answer": 0,
+      "explanation": "Multi-stage builds use multiple FROM instructions to build intermediate images, copying only necessary artifacts to the final image, dramatically reducing size. Testing repeats (B), multi-cloud deployment (C), and parallel builds (D) are separate concerns unrelated to multi-stage builds."
+    }
+  ]
+}

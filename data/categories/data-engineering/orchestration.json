@@ -1,0 +1,126 @@
+{
+  "topic": "orchestration",
+  "category": "data-engineering",
+  "questions": [
+    {
+      "id": "data-engineering-orchestration-001",
+      "q": "What is a DAG (Directed Acyclic Graph) in the context of data pipeline orchestration?",
+      "options": [
+        "A workflow representation where tasks are nodes and dependencies are edges, with no circular paths, defining execution order and parallelization",
+        "A database storage format optimized for analytics queries",
+        "A method for compressing large datasets",
+        "A type of network topology used in distributed systems"
+      ],
+      "answer": 0,
+      "explanation": "A DAG models task dependencies visually. Task A must finish before Task B starts, but Task C can run in parallel if it has no dependency on A. Acyclic means no task can indirectly depend on itself (no infinite loops). Airflow, Prefect, and Dagster all use DAG abstraction."
+    },
+    {
+      "id": "data-engineering-orchestration-002",
+      "q": "Why is idempotency crucial for orchestration systems handling retries?",
+      "options": [
+        "If a task re-runs due to failure, idempotency ensures the same inputs produce identical output without duplicating effects",
+        "Idempotency eliminates all failure scenarios",
+        "Idempotency is only relevant for real-time systems, not scheduled pipelines",
+        "It slows down pipeline execution"
+      ],
+      "answer": 0,
+      "explanation": "When an orchestrator retries a failed task, it re-executes with the same inputs. An idempotent task (e.g., 'insert or update' vs 'insert') produces the same result on the second run. Non-idempotent tasks (e.g., 'insert' without checking duplicates) corrupt data on retries. Orchestrators assume idempotency."
+    },
+    {
+      "id": "data-engineering-orchestration-003",
+      "q": "What does the orchestrator track with task state during pipeline execution?",
+      "options": [
+        "Status transitions (pending, running, success, failed) to enable retry logic, monitoring, and resuming from the last successful task",
+        "Only the final success or failure outcome",
+        "The amount of data processed by each task",
+        "The wall-clock time each task took to complete"
+      ],
+      "answer": 0,
+      "explanation": "Orchestrators maintain state: a task is pending (not started), running (actively executing), succeeded (completed successfully), or failed. On failure, the orchestrator can retry based on policy. On recovery, it resumes from the failed task, not the beginning. State persistence enables this across restarts."
+    },
+    {
+      "id": "data-engineering-orchestration-004",
+      "q": "How do dynamic DAGs improve flexibility compared to static DAGs?",
+      "options": [
+        "Dynamic DAGs generate task structure at runtime based on data (e.g., creating a task per partition), adapting to varying input sizes",
+        "Dynamic DAGs are less efficient than static DAGs",
+        "All DAGs must be fully defined before execution starts",
+        "Dynamic DAGs are only useful for real-time systems"
+      ],
+      "answer": 0,
+      "explanation": "A static DAG is fixed: always 10 tasks in the same order. A dynamic DAG might inspect input data and decide to create 100 partition-processing tasks in parallel if the dataset is large. Airflow supports dynamic task mapping. This scales pipelines automatically based on data volume."
+    },
+    {
+      "id": "data-engineering-orchestration-005",
+      "q": "What is sensor-based orchestration and when is it useful?",
+      "options": [
+        "A task waits for an external condition (file arrival, S3 object, API response) rather than running on a schedule, useful for event-driven pipelines",
+        "Sensors are only used to monitor system performance",
+        "Sensors eliminate the need for scheduling",
+        "All orchestrated pipelines must use time-based schedules, not sensors"
+      ],
+      "answer": 0,
+      "explanation": "An Airflow S3KeySensor waits for a file to appear before proceeding. This is more efficient than fixed schedules if data arrival is irregular. Event-driven processing reduces latency compared to waiting until the next scheduled interval. Sensors enable reactive pipelines."
+    },
+    {
+      "id": "data-engineering-orchestration-006",
+      "q": "How does an SLA (Service Level Agreement) in orchestration differ from a timeout?",
+      "options": [
+        "An SLA defines expected completion time for business reasons; breaching it alerts stakeholders; a timeout is a hard technical limit that kills the task",
+        "SLAs and timeouts are identical concepts",
+        "Timeouts are for streaming, SLAs only for batch",
+        "SLAs are automatically determined by the system"
+      ],
+      "answer": 0,
+      "explanation": "An SLA might say 'daily sales report must complete by 9 AM' (business commitment). If it runs until 9:05 AM, the SLA is breached and alerts are sent, but processing continues. A timeout says 'kill the task after 2 hours' (hard stop). SLAs are for alerting; timeouts prevent runaway tasks."
+    },
+    {
+      "id": "data-engineering-orchestration-007",
+      "q": "What problem does resource pool configuration solve in orchestrators?",
+      "options": [
+        "Limiting concurrent task execution per pool prevents overwhelming infrastructure (database connections, API rate limits) while maximizing throughput",
+        "Resource pools make scheduling slower",
+        "All tasks should run with unlimited concurrency",
+        "Resource pools only affect job priority, not resource consumption"
+      ],
+      "answer": 0,
+      "explanation": "If 50 tasks can run but only 5 database connections are available, all tasks fail. A 'database' resource pool limits concurrency to 5. Tasks queue behind the pool limit. This prevents resource starvation and enables multi-pipeline coordination sharing resources."
+    },
+    {
+      "id": "data-engineering-orchestration-008",
+      "q": "How do backfill features in orchestrators enable historical data loading?",
+      "options": [
+        "Backfilling re-runs pipeline DAGs for historical date ranges, generating outputs as if those dates were being processed, populating warehouses retroactively",
+        "Backfill eliminates the need for initial data load from source systems",
+        "Backfilling is only used for correcting recent mistakes",
+        "Historical pipelines cannot be executed with modern orchestrators"
+      ],
+      "answer": 0,
+      "explanation": "If a new pipeline is created today but you need data from January, backfilling runs the DAG for each day in January with that date's parameters. Backfill respects the DAG logic (same transformations, same dependencies) but on past data. This rapidly populates historical data in the warehouse."
+    },
+    {
+      "id": "data-engineering-orchestration-009",
+      "q": "What is trigger-rule-based orchestration and how does it improve error handling?",
+      "options": [
+        "Trigger rules define when downstream tasks execute based on upstream state (all_success, all_failed, all_done), enabling conditional workflows and graceful degradation",
+        "Trigger rules are used only for logging, not execution control",
+        "All tasks must run regardless of upstream failures",
+        "Trigger rules make orchestration more complicated without benefits"
+      ],
+      "answer": 0,
+      "explanation": "A task might run only on success (all_success), only on failure (all_failed), or always (all_done). This enables branching: if validation fails, send an alert task. If extraction succeeds, proceed to loading. This creates resilient pipelines that handle failure gracefully."
+    },
+    {
+      "id": "data-engineering-orchestration-010",
+      "q": "How do alerting and notification integrations enhance orchestration reliability?",
+      "options": [
+        "Immediate alerts on task failures enable faster diagnosis and recovery, preventing silent data loss and reducing time to resolution",
+        "Alerts are unnecessary if tasks have logging",
+        "Notifications should only go to automated systems, not engineers",
+        "Orchestrators have no capability to integrate external notification systems"
+      ],
+      "answer": 0,
+      "explanation": "A failed task sends Slack alerts, PagerDuty pages, or emails. Engineers notice immediately rather than discovering the problem hours later in data validation. Integration with monitoring tools creates a unified incident response. Without alerting, silent failures corrupt data undetected."
+    }
+  ]
+}

@@ -20,6 +20,92 @@
       ],
       "answer": 1,
       "explanation": "CSRF exploits the browser's automatic cookie sending by tricking a user's browser into making a forged request. A CSRF token is an unpredictable value tied to the user's session and embedded in forms/headers. The server validates it on state-changing requests — attackers cannot know the token, so forged requests fail."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-003",
+      "q": "What does Broken Access Control allow an attacker to do?",
+      "options": [
+        "Bypass authentication entirely",
+        "Access resources or perform actions without proper authorization",
+        "Inject malicious code into web pages",
+        "Intercept encrypted network traffic"
+      ],
+      "answer": 1,
+      "explanation": "Broken access control occurs when authorization checks are missing or flawed, allowing users to access resources beyond their privilege level (reading others' data, modifying records, escalating privileges). Unlike authentication (proving identity), authorization checks whether an authenticated user has permission to act. Prevention: enforce principle of least privilege, use role-based access control, and validate permissions on every request."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-004",
+      "q": "Which attack injects malicious scripts into web pages viewed by other users?",
+      "options": ["SQL Injection", "Cross-Site Scripting (XSS)", "Server-Side Request Forgery", "XML External Entity (XXE)"],
+      "answer": 1,
+      "explanation": "Cross-Site Scripting (XSS) happens when untrusted input is rendered in a user's browser without sanitization, letting attackers inject JavaScript to steal cookies, redirect users, or perform actions on their behalf. Reflected XSS comes from URL parameters; stored XSS comes from database. Prevention: escape output based on context (HTML, JavaScript, URL), use Content Security Policy, and avoid dangerous APIs like innerHTML."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-005",
+      "q": "What is Server-Side Request Forgery (SSRF)?",
+      "options": [
+        "An attack where the attacker forges the server's SSL certificate",
+        "An attack where the server is tricked into making requests to unintended destinations",
+        "An attack that bypasses server-side authentication",
+        "An attack that exploits server-side template injection"
+      ],
+      "answer": 1,
+      "explanation": "SSRF occurs when an application fetches remote resources based on untrusted input without validation. An attacker can trick the server into making requests to internal services (localhost, private IPs), cloud metadata endpoints, or external targets. This bypasses network segmentation and can expose sensitive data or internal systems. Prevention: validate and sanitize input, use allowlists, disable unnecessary protocols (file://, gopher://), and restrict outbound connections."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-006",
+      "q": "Which of the following is an example of Security Misconfiguration?",
+      "options": [
+        "Using MD5 to hash passwords",
+        "Leaving default credentials enabled on production servers",
+        "Using HTTP instead of HTTPS for sensitive data",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "Security misconfiguration includes leaving default credentials, unnecessary services running, unpatched software, missing security headers, verbose error messages exposing system details, and weak cryptographic defaults. These are not single vulnerabilities but gaps in security hardening. Prevention: use security configuration checklists, automation to enforce hardening, disable unnecessary features, and regularly audit settings."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-007",
+      "q": "What risk does using vulnerable third-party libraries pose?",
+      "options": [
+        "It increases the application's file size",
+        "It can expose the application to known exploits if not patched",
+        "It slows down the application performance",
+        "It requires more memory during runtime"
+      ],
+      "answer": 1,
+      "explanation": "Applications depend on vulnerable components — outdated libraries, frameworks, and dependencies with known CVEs. Attackers exploit these publicly disclosed vulnerabilities automatically. Prevention: inventory all components, monitor for vulnerabilities using tools like OWASP Dependency-Check or Snyk, subscribe to security advisories, and apply patches promptly."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-008",
+      "q": "What makes a password susceptible to brute-force attacks in the context of weak authentication?",
+      "options": [
+        "The password is stored in plaintext",
+        "The application lacks rate limiting and has no account lockout mechanism",
+        "The password is longer than 16 characters",
+        "The password contains special characters"
+      ],
+      "answer": 1,
+      "explanation": "Weak authentication allows attackers to enumerate valid usernames, perform unlimited brute-force attempts, or use default credentials. Without rate limiting, account lockout, or CAPTCHA challenges, automated tools can try millions of password combinations. Prevention: enforce strong password policies, implement exponential backoff, lock accounts after failed attempts, and use multi-factor authentication."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-009",
+      "q": "Which attack involves modifying or replaying previously captured HTTP requests?",
+      "options": ["Privilege Escalation", "Insecure Direct Object References", "Session Hijacking", "Man-in-the-Middle with request manipulation"],
+      "answer": 3,
+      "explanation": "A Man-in-the-Middle (MITM) attacker who intercepts unencrypted traffic can modify or replay HTTP requests sent between client and server. Without HTTPS and proper validation, attackers can forge requests, bypass authentication, or repeat state-changing operations. Prevention: enforce HTTPS with strong TLS versions, implement certificate pinning, use request signing or timestamps, and add CSRF tokens."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-010",
+      "q": "What is the primary risk of XML External Entity (XXE) injection?",
+      "options": [
+        "It allows attackers to run arbitrary JavaScript in the browser",
+        "It enables attackers to read local files and perform SSRF attacks via XML parsers",
+        "It allows attackers to modify the XML structure of responses",
+        "It enables attackers to bypass HTTP authentication headers"
+      ],
+      "answer": 1,
+      "explanation": "XXE injection exploits XML parsers that process external entities without restriction. Attackers can define malicious entities to read local files (/etc/passwd, private keys), perform SSRF, or cause denial of service. Prevention: disable XML external entity parsing entirely, use allowlists for XML processing, validate and sanitize all XML input, and use simpler data formats like JSON when possible."
     }
   ]
 }

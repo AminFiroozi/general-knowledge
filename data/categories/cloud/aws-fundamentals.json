@@ -1,0 +1,126 @@
+{
+  "topic": "aws-fundamentals",
+  "category": "cloud",
+  "questions": [
+    {
+      "id": "cloud-aws-fundamentals-001",
+      "q": "What is an Availability Zone (AZ) in AWS?",
+      "options": [
+        "A distinct location within a region with independent infrastructure and fault isolation",
+        "A geographic area containing multiple data centers across different countries",
+        "A virtual subnet that isolates traffic within a VPC",
+        "A pricing tier that determines the cost of resources"
+      ],
+      "answer": 0,
+      "explanation": "An Availability Zone is a distinct data center location within an AWS region, designed to be isolated from failures in other AZs. A region contains multiple AZs (option 1 is correct); regions span countries, not individual AZs (option 1 correct, option 1 not option 1)."
+    },
+    {
+      "id": "cloud-aws-fundamentals-002",
+      "q": "Which AWS service is primarily used for object storage?",
+      "options": [
+        "EC2",
+        "S3",
+        "EBS",
+        "DynamoDB"
+      ],
+      "answer": 1,
+      "explanation": "Amazon S3 is AWS's object storage service designed for storing and retrieving any amount of data. EC2 is compute (option 0), EBS is block storage for instances (option 2), and DynamoDB is a NoSQL database (option 3)."
+    },
+    {
+      "id": "cloud-aws-fundamentals-003",
+      "q": "What does IAM stand for in AWS?",
+      "options": [
+        "Instance Access Management",
+        "Identity and Access Management",
+        "Isolated Availability Management",
+        "Infrastructure as a Module"
+      ],
+      "answer": 1,
+      "explanation": "IAM stands for Identity and Access Management, a service for securely controlling access to AWS resources through users, roles, and policies. It is fundamental to AWS security architecture."
+    },
+    {
+      "id": "cloud-aws-fundamentals-004",
+      "q": "How many Availability Zones does a typical AWS region contain at minimum?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "answer": 2,
+      "explanation": "AWS regions typically contain at least 3 Availability Zones for high availability and redundancy. Some newer regions may have 4 or more, but 3 is the standard minimum for fault tolerance."
+    },
+    {
+      "id": "cloud-aws-fundamentals-005",
+      "q": "What is the primary use case for Amazon VPC?",
+      "options": [
+        "To store large amounts of video data",
+        "To create an isolated network environment within AWS where you control IP addressing and routing",
+        "To manage user authentication across multiple AWS accounts",
+        "To automatically scale EC2 instances based on demand"
+      ],
+      "answer": 1,
+      "explanation": "A Virtual Private Cloud (VPC) lets you provision an isolated network environment with full control over IP ranges, subnets, and security. Option 0 is S3's role, option 2 is IAM's role, and option 3 is Auto Scaling's role."
+    },
+    {
+      "id": "cloud-aws-fundamentals-006",
+      "q": "Which of the following is NOT a way to authenticate to AWS?",
+      "options": [
+        "IAM users with access keys",
+        "IAM roles with temporary security credentials",
+        "Social Security Number (SSN)",
+        "Root account with email and password"
+      ],
+      "answer": 2,
+      "explanation": "AWS does not use Social Security Numbers for authentication; it uses IAM users with access keys, IAM roles with temporary credentials, and root account email/password. SSN is never used in AWS authentication."
+    },
+    {
+      "id": "cloud-aws-fundamentals-007",
+      "q": "What is EC2 in AWS?",
+      "options": [
+        "A managed database service for structured data",
+        "Elastic Compute Cloud, providing virtual servers that you can resize and control",
+        "A file storage service for unstructured data",
+        "A messaging service for decoupled application communication"
+      ],
+      "answer": 1,
+      "explanation": "EC2 (Elastic Compute Cloud) is AWS's compute service offering virtual servers (instances) with configurable CPU, memory, and storage. You have full control over the instance lifecycle and can scale vertically or horizontally."
+    },
+    {
+      "id": "cloud-aws-fundamentals-008",
+      "q": "In AWS, what is a region?",
+      "options": [
+        "A single data center facility",
+        "A geographic area containing multiple Availability Zones",
+        "A subset of a VPC reserved for private traffic",
+        "A security zone that isolates compliance requirements"
+      ],
+      "answer": 1,
+      "explanation": "An AWS region is a geographic area with multiple Availability Zones, such as us-east-1 or eu-west-1. It is not a single facility (option 0), not a VPC concept (option 2), and not a compliance boundary (option 3)."
+    },
+    {
+      "id": "cloud-aws-fundamentals-009",
+      "q": "What distinguishes a private subnet from a public subnet in a VPC?",
+      "options": [
+        "Private subnets have encryption enabled, public subnets do not",
+        "Public subnets have a route to the internet gateway, private subnets do not",
+        "Private subnets can only be created in certain Availability Zones",
+        "Public subnets require IAM permissions to access, private subnets do not"
+      ],
+      "answer": 1,
+      "explanation": "A public subnet has a route to an Internet Gateway, allowing instances to communicate with the internet. Private subnets lack this direct route. Encryption (option 0) is independent of subnet type; AZ placement (option 2) is separate; IAM (option 3) applies to both."
+    },
+    {
+      "id": "cloud-aws-fundamentals-010",
+      "q": "Which AWS service provides block storage for EC2 instances?",
+      "options": [
+        "S3",
+        "EBS",
+        "EFS",
+        "Glacier"
+      ],
+      "answer": 1,
+      "explanation": "EBS (Elastic Block Store) provides persistent block-level storage volumes for EC2 instances. S3 is object storage (option 0), EFS is shared file storage (option 2), and Glacier is long-term archive storage (option 3)."
+    }
+  ]
+}

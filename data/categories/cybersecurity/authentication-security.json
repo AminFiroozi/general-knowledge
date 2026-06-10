@@ -1,0 +1,126 @@
+{
+  "topic": "authentication-security",
+  "category": "cybersecurity",
+  "questions": [
+    {
+      "id": "cybersecurity-authentication-security-001",
+      "q": "Why is storing passwords in plaintext dangerous?",
+      "options": [
+        "It makes password entry slower",
+        "It allows anyone with database access to immediately use the password; if the database is breached, all user accounts are compromised",
+        "It prevents users from changing their passwords",
+        "It requires more storage space"
+      ],
+      "answer": 1,
+      "explanation": "Plaintext passwords offer zero protection against database breaches. An attacker with database access immediately gains all passwords and can log in as users or reuse passwords on other services (credential stuffing). Passwords must be hashed using slow, salted algorithms (bcrypt, Argon2). Even salted hashes can be cracked if the algorithm is weak, but proper hashing significantly increases time and cost."
+    },
+    {
+      "id": "cybersecurity-authentication-security-002",
+      "q": "What is the primary benefit of Multi-Factor Authentication (MFA)?",
+      "options": [
+        "It makes passwords longer and more complex",
+        "It requires multiple forms of verification, so compromising one factor does not grant full access",
+        "It encrypts all user passwords",
+        "It prevents users from forgetting their passwords"
+      ],
+      "answer": 1,
+      "explanation": "MFA requires two or more factors from different categories: something you know (password), something you have (TOTP app, hardware key), or something you are (biometric). If an attacker steals the password, they still need the second factor. MFA reduces account compromise risk by ~99%. Common factors: TOTP (Google Authenticator), push notifications, hardware keys (YubiKey), SMS (less secure). SMS should not be used alone due to SIM swapping attacks."
+    },
+    {
+      "id": "cybersecurity-authentication-security-003",
+      "q": "How can an attacker exploit weak session management?",
+      "options": [
+        "By guessing the computer's model number",
+        "By stealing or predicting session tokens to impersonate authenticated users without knowing their password",
+        "By modifying system date and time",
+        "By changing the network SSID"
+      ],
+      "answer": 1,
+      "explanation": "Session tokens (cookies, JWTs) are used to maintain authenticated state. Weak session management includes predictable tokens, no expiration, no HTTPS transmission, or lack of CSRF protection. An attacker can steal tokens via XSS or packet sniffing, or brute-force weak tokens. Prevention: use cryptographically random, long tokens; set short expiration; use secure, httpOnly cookies; implement CSRF tokens; and use HTTPS exclusively."
+    },
+    {
+      "id": "cybersecurity-authentication-security-004",
+      "q": "What is credential stuffing?",
+      "options": [
+        "Physically stealing someone's business card",
+        "Using leaked passwords from one breach to attempt login on other services, leveraging password reuse",
+        "Encrypting passwords in a credential manager",
+        "Generating random passwords for security"
+      ],
+      "answer": 1,
+      "explanation": "Credential stuffing exploits the common practice of password reuse across services. Attackers obtain a leaked username-password list from one breach (or dark web), then try those credentials on other services (email, banking, social media). Many accounts succeed because users reuse passwords. Prevention: require unique passwords (use password managers), implement rate limiting on login attempts, detect unusual login locations, and monitor for compromised credentials."
+    },
+    {
+      "id": "cybersecurity-authentication-security-005",
+      "q": "How does a brute-force attack work against password authentication?",
+      "options": [
+        "By tricking users into revealing their password through social engineering",
+        "By systematically trying all possible password combinations until one succeeds, feasible if no rate limiting or account lockout is in place",
+        "By crashing the server to cause a denial of service",
+        "By intercepting the password during transmission"
+      ],
+      "answer": 1,
+      "explanation": "Brute-force attacks try every possible password (or common passwords) until one works. Without defenses, an 8-character password can be cracked in hours. Prevention: implement exponential backoff (increase delay between attempts), account lockout after N failures, CAPTCHA challenges, rate limiting per IP, and MFA to make brute-force useless. Encourage long, complex passwords and unique passwords per service."
+    },
+    {
+      "id": "cybersecurity-authentication-security-006",
+      "q": "What role does salting play in password security?",
+      "options": [
+        "It increases the password's length automatically",
+        "It adds a random value to the password before hashing, ensuring identical passwords hash differently and preventing rainbow table attacks",
+        "It encrypts the password so the server cannot read it",
+        "It allows users to change passwords more frequently"
+      ],
+      "answer": 1,
+      "explanation": "A salt is a random value combined with the password before hashing. Without salt, identical passwords hash identically, enabling rainbow table attacks (precomputed hash lookups). With salt, the same password produces different hashes for each user. Salts are stored plaintext in the database—their security comes from uniqueness, not secrecy. Proper salting is crucial for password databases; use bcrypt or Argon2 which handle salting automatically."
+    },
+    {
+      "id": "cybersecurity-authentication-security-007",
+      "q": "What is the weakness of password-only authentication?",
+      "options": [
+        "Passwords are too easy to remember",
+        "Passwords can be forgotten, stolen, reused across services, or brute-forced; single-factor authentication provides no recovery if the password is compromised",
+        "Passwords are encrypted when stored",
+        "Passwords require special characters"
+      ],
+      "answer": 1,
+      "explanation": "Password-only (single-factor) authentication is vulnerable to theft (phishing, keyloggers, MITM), reuse (credential stuffing), and weak passwords (brute-force). Once compromised, there's no second barrier. MFA mitigates this: even if the password is stolen, the attacker needs the second factor. Passwordless authentication (WebAuthn, passkeys) is even stronger, eliminating phishing risk entirely."
+    },
+    {
+      "id": "cybersecurity-authentication-security-008",
+      "q": "How can attackers bypass authentication using account enumeration?",
+      "options": [
+        "By guessing the server's IP address",
+        "By exploiting differences in login response messages to determine which usernames exist, narrowing the target to valid accounts for brute-force attacks",
+        "By modifying the login form HTML",
+        "By intercepting login packets"
+      ],
+      "answer": 1,
+      "explanation": "Account enumeration occurs when a login system returns different responses for invalid usernames vs. invalid passwords, or valid accounts vs. invalid ones. Example: 'User not found' vs. 'Invalid password.' Attackers use this to build a list of valid accounts, then focus brute-force efforts on those. Prevention: return identical error messages for both cases, use rate limiting regardless of username validity, and consider not confirming account existence."
+    },
+    {
+      "id": "cybersecurity-authentication-security-009",
+      "q": "What is the security risk of storing session tokens in local storage (browser)?",
+      "options": [
+        "It makes loading web pages slower",
+        "Tokens in local storage are vulnerable to XSS attacks because JavaScript can access them, allowing attackers to steal the token and hijack the session",
+        "It prevents the browser from caching web pages",
+        "It requires HTTPS to be enabled"
+      ],
+      "answer": 1,
+      "explanation": "Local storage persists browser data across sessions and is accessible to JavaScript, including malicious scripts injected via XSS. Attackers steal the token and make authenticated requests as the victim. HttpOnly cookies are more secure: they're excluded from JavaScript access and sent automatically with requests, mitigating XSS token theft. Prevention: use secure, httpOnly cookies; implement CSP to prevent XSS; and validate all input."
+    },
+    {
+      "id": "cybersecurity-authentication-security-010",
+      "q": "How does SIM swapping lead to authentication bypass?",
+      "options": [
+        "By replacing the SIM card with a counterfeit",
+        "By tricking the carrier into transferring the victim's phone number to an attacker's SIM, allowing the attacker to receive SMS 2FA codes and reset passwords",
+        "By blocking SMS messages with a jammer",
+        "By modifying the phone's operating system"
+      ],
+      "answer": 1,
+      "explanation": "SIM swapping is a social engineering attack where the attacker impersonates the victim to their mobile carrier, claiming they need a new SIM. The carrier transfers the phone number to the attacker's SIM. Since SMS-based 2FA and password resets rely on receiving SMS codes, the attacker receives those codes instead, gaining account access. Prevention: use strong account recovery questions, require in-person verification for SIM transfers, use TOTP or hardware keys instead of SMS, and enable carrier-level PIN protection."
+    }
+  ]
+}

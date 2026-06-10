@@ -1,0 +1,126 @@
+{
+  "topic": "cost-and-scaling",
+  "category": "cloud",
+  "questions": [
+    {
+      "id": "cloud-cost-and-scaling-001",
+      "q": "What is autoscaling in cloud computing?",
+      "options": [
+        "A process that manually increases instance count when demand rises",
+        "A feature that automatically adds or removes compute resources based on demand metrics like CPU utilization",
+        "A method to reduce application response time",
+        "A security feature that restricts resource access"
+      ],
+      "answer": 1,
+      "explanation": "Autoscaling automatically adjusts the number of instances based on demand and defined policies, ensuring cost efficiency and performance. Option 0 is manual scaling; option 2 relates to optimization but isn't autoscaling; option 3 is security."
+    },
+    {
+      "id": "cloud-cost-and-scaling-002",
+      "q": "What is the difference between on-demand and reserved instances?",
+      "options": [
+        "On-demand instances run faster than reserved instances",
+        "On-demand instances are pay-as-you-go; reserved instances require upfront commitment for lower hourly rates",
+        "Reserved instances are only for databases, on-demand for compute",
+        "There is no difference; the terms are interchangeable"
+      ],
+      "answer": 1,
+      "explanation": "On-demand pricing charges hourly with no commitment; reserved instances require 1-3 year commitments for 30-70% discounts. Option 0 is false; option 2 is too narrow; option 3 is clearly false."
+    },
+    {
+      "id": "cloud-cost-and-scaling-003",
+      "q": "Which pricing model is most cost-effective for workloads with unpredictable demand?",
+      "options": [
+        "Reserved instances",
+        "Spot instances",
+        "On-demand instances",
+        "Dedicated hosts"
+      ],
+      "answer": 2,
+      "explanation": "On-demand instances are ideal for unpredictable workloads since you pay only for what you use with no commitment. Reserved instances (option 0) require commitment; spot instances (option 1) can be interrupted; dedicated hosts (option 3) are expensive."
+    },
+    {
+      "id": "cloud-cost-and-scaling-004",
+      "q": "What are spot instances in AWS?",
+      "options": [
+        "Instances that only accept spotty network connectivity",
+        "Unused EC2 capacity offered at discounts, but can be terminated when capacity is needed",
+        "Instances that are located at specific geographic spots",
+        "Instances that use spot checks to detect network latency"
+      ],
+      "answer": 1,
+      "explanation": "Spot instances are spare capacity sold at 70-90% discounts but can be interrupted. They suit stateless, fault-tolerant workloads. Option 0 is nonsense; option 2 is incorrect; option 3 is about network monitoring."
+    },
+    {
+      "id": "cloud-cost-and-scaling-005",
+      "q": "What is elasticity in cloud computing?",
+      "options": [
+        "The ability to stretch compute resources across multiple data centers",
+        "The capacity to automatically scale up or down based on demand, allowing cost optimization",
+        "A type of load balancer that distributes traffic",
+        "A security measure that limits resource access"
+      ],
+      "answer": 1,
+      "explanation": "Elasticity is the ability to dynamically scale resources up during peaks and down during troughs, matching capacity to demand. Option 0 is imprecise (not about stretching); option 2 is a tool, not the concept; option 3 is security."
+    },
+    {
+      "id": "cloud-cost-and-scaling-006",
+      "q": "When scaling horizontally, what are you doing?",
+      "options": [
+        "Increasing the CPU and memory of a single instance",
+        "Adding more instances to distribute load across multiple servers",
+        "Compressing data to save storage costs",
+        "Moving instances to a different geographic region"
+      ],
+      "answer": 1,
+      "explanation": "Horizontal scaling adds more instances (scaling out). Vertical scaling (option 0) increases instance size. Options 2 and 3 are unrelated to scaling."
+    },
+    {
+      "id": "cloud-cost-and-scaling-007",
+      "q": "What is cost optimization in cloud computing?",
+      "options": [
+        "Eliminating all cloud services to reduce expenses",
+        "Identifying and implementing strategies to reduce cloud spending while maintaining performance",
+        "Paying upfront for all cloud resources for the entire year",
+        "Using only the cheapest cloud provider available"
+      ],
+      "answer": 1,
+      "explanation": "Cost optimization balances performance and expense through strategies like reserved instances, autoscaling, storage tiering, and resource right-sizing. Option 0 is elimination; option 2 is prepayment; option 3 is provider selection, not optimization."
+    },
+    {
+      "id": "cloud-cost-and-scaling-008",
+      "q": "What metric commonly triggers autoscaling policies?",
+      "options": [
+        "The number of database queries per second",
+        "CPU utilization, memory usage, or custom metrics like request count per instance",
+        "The geographic location of users",
+        "The encryption strength applied to data"
+      ],
+      "answer": 1,
+      "explanation": "Autoscaling policies use metrics like CPU, memory, request count, or custom CloudWatch metrics to trigger scaling decisions. Option 0 is too specific; option 2 is for routing, not scaling; option 3 is security, not performance."
+    },
+    {
+      "id": "cloud-cost-and-scaling-009",
+      "q": "What is the benefit of using autoscaling groups in AWS?",
+      "options": [
+        "To guarantee zero application downtime",
+        "To automatically maintain a desired number of instances and replace unhealthy ones for high availability",
+        "To encrypt all traffic between instances",
+        "To provide unlimited storage for all instances"
+      ],
+      "answer": 1,
+      "explanation": "Autoscaling groups maintain desired capacity and replace failed instances, providing self-healing infrastructure and fault tolerance. Option 0 overstates the guarantee; option 2 is encryption; option 3 is storage provisioning."
+    },
+    {
+      "id": "cloud-cost-and-scaling-010",
+      "q": "Why might a company choose reserved instances despite their upfront cost?",
+      "options": [
+        "Reserved instances are faster than on-demand",
+        "To reduce hourly rates by 30-70% for predictable, long-term workloads and improve budget certainty",
+        "Reserved instances provide unlimited scalability",
+        "To eliminate the need for security groups"
+      ],
+      "answer": 1,
+      "explanation": "Reserved instances offer significant discounts for committed capacity, lowering TCO for stable workloads and providing cost predictability. Option 0 is false; option 2 is scalability (related but not the driver); option 3 is unrelated."
+    }
+  ]
+}

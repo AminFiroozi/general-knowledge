@@ -1,0 +1,126 @@
+{
+  "topic": "ci-cd",
+  "category": "devops",
+  "questions": [
+    {
+      "id": "devops-ci-cd-001",
+      "q": "What is the primary purpose of a CI/CD pipeline?",
+      "options": [
+        "To automate code integration, testing, and deployment while maintaining code quality",
+        "To manually deploy code changes to production servers",
+        "To store all project documentation in a centralized location",
+        "To replace developers with automated systems"
+      ],
+      "answer": 0,
+      "explanation": "CI/CD pipelines automate the integration, testing, and deployment of code to ensure quality and speed. The other options misrepresent the role of CI/CD—deployment is automated, not manual; documentation storage is separate; and CI/CD augments rather than replaces developers."
+    },
+    {
+      "id": "devops-ci-cd-002",
+      "q": "Which of these is NOT a typical stage in a CI/CD pipeline?",
+      "options": [
+        "Code compilation and build",
+        "Automated unit and integration testing",
+        "Manual payroll processing",
+        "Artifact creation and storage"
+      ],
+      "answer": 2,
+      "explanation": "Payroll processing is unrelated to software development pipelines. Standard CI/CD stages include build, test, and artifact creation. The other three options are standard pipeline operations for ensuring code quality and deployability."
+    },
+    {
+      "id": "devops-ci-cd-003",
+      "q": "What does 'Continuous Integration' primarily focus on?",
+      "options": [
+        "Automatically merging code changes and running tests after each commit",
+        "Continuously updating production servers with new features",
+        "Integrating payment systems with cloud providers",
+        "Creating backups of the database continuously"
+      ],
+      "answer": 0,
+      "explanation": "CI focuses on frequent code integration with automated testing to catch errors early. The other options describe unrelated tasks—CD handles production deployment, not CI; the others are not CI concerns."
+    },
+    {
+      "id": "devops-ci-cd-004",
+      "q": "In a deployment strategy, what is a 'blue-green deployment'?",
+      "options": [
+        "Running two identical production environments and switching traffic to the updated version while keeping the old one available for rollback",
+        "Deploying code in phases to different geographical regions",
+        "Using blue and green colored labels to mark staging and production environments",
+        "Alternating between two development teams for code reviews"
+      ],
+      "answer": 0,
+      "explanation": "Blue-green deployment maintains two production environments—traffic switches to the green (updated) version while blue remains available for rollback if issues arise. This enables zero-downtime deployments. The other options misunderstand the strategy's mechanics and purpose."
+    },
+    {
+      "id": "devops-ci-cd-005",
+      "q": "What is the purpose of build artifacts in a CI/CD pipeline?",
+      "options": [
+        "To store compiled binaries and dependencies that are tested and deployed, ensuring consistency across environments",
+        "To archive outdated source code for historical reference",
+        "To generate documentation automatically from code comments",
+        "To track which developers wrote which lines of code"
+      ],
+      "answer": 0,
+      "explanation": "Artifacts are packaged, tested binaries deployed to production, ensuring the exact version tested is deployed. This prevents 'works on my machine' problems. The other options describe different version control or documentation tasks, not artifact purposes."
+    },
+    {
+      "id": "devops-ci-cd-006",
+      "q": "What is a canary deployment?",
+      "options": [
+        "Gradually rolling out new code to a small percentage of users before full deployment, monitoring for issues",
+        "Testing new features only in staging environments before any production release",
+        "Deploying code to a single production server as a test before expanding to others",
+        "Using bird-themed naming conventions for release versions"
+      ],
+      "answer": 0,
+      "explanation": "Canary deployments expose new versions to a small user subset first, allowing real-world testing and quick rollback if problems occur. Staging environments (option B) don't involve real users; option C lacks the monitoring aspect of true canary deployments; option D is not a deployment strategy."
+    },
+    {
+      "id": "devops-ci-cd-007",
+      "q": "Why would a team implement automated testing in their CI/CD pipeline?",
+      "options": [
+        "To catch bugs early, provide rapid feedback on code changes, and prevent broken code from reaching production",
+        "To eliminate the need for human code reviews entirely",
+        "To slow down deployments and ensure developers have time to fix issues",
+        "To replace manual testing with lower-quality automated checks"
+      ],
+      "answer": 0,
+      "explanation": "Automated testing catches regressions immediately and provides fast feedback, preventing defects in production. Human reviews remain valuable (B is wrong); fast deployments are a goal (C inverts the benefit); automated tests complement rather than replace manual testing at appropriate levels."
+    },
+    {
+      "id": "devops-ci-cd-008",
+      "q": "What is the difference between CI and CD?",
+      "options": [
+        "CI automates testing of merged code; CD automates deployment of validated code to production environments",
+        "CI is for small projects and CD is for large enterprises",
+        "CI uses version control while CD uses containerization",
+        "They are the same process with different names"
+      ],
+      "answer": 0,
+      "explanation": "CI (Continuous Integration) focuses on code merging and testing; CD (Continuous Deployment) focuses on releasing to production. Project size doesn't define them (B); they use different tools, not different VCS/container choices (C); they're distinct but related practices (D is incorrect)."
+    },
+    {
+      "id": "devops-ci-cd-009",
+      "q": "In a CI/CD pipeline, what is the role of a webhook?",
+      "options": [
+        "To trigger pipeline execution automatically when code is pushed to the repository",
+        "To manually approve deployments before they reach production",
+        "To encrypt sensitive data in pipeline configuration files",
+        "To redirect traffic between servers during deployment"
+      ],
+      "answer": 0,
+      "explanation": "Webhooks automatically trigger pipelines upon code events like pushes, eliminating manual intervention for pipeline initiation. Manual approval gates are separate mechanisms (B); encryption is handled differently (C); traffic routing happens during deployment, not via webhooks (D)."
+    },
+    {
+      "id": "devops-ci-cd-010",
+      "q": "What does 'idempotency' mean in the context of CI/CD deployments?",
+      "options": [
+        "Running the same deployment multiple times produces the same result without side effects or errors",
+        "Ensuring that deployments happen at the same time every day",
+        "Creating identical copies of the production database",
+        "Using the same programming language for all pipeline scripts"
+      ],
+      "answer": 0,
+      "explanation": "Idempotent deployments produce identical outcomes regardless of execution count, enabling safe reruns without duplication issues. Scheduling (B), database copies (C), and language consistency (D) are unrelated to idempotency in deployment contexts."
+    }
+  ]
+}
