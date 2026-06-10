@@ -1,0 +1,126 @@
+{
+  "topic": "mpi-and-openmp",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-mpi-and-openmp-001",
+      "q": "Which parallelization model uses shared memory for communication between threads?",
+      "options": [
+        "MPI (Message Passing Interface)",
+        "OpenMP",
+        "CUDA",
+        "pthreads only, not OpenMP"
+      ],
+      "answer": 1,
+      "explanation": "OpenMP uses shared memory—threads work on the same variables directly via compiler directives. MPI uses message passing (data is explicitly sent between processes), CUDA uses GPU memory, and pthreads can use either shared or message-based patterns."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-002",
+      "q": "What is the primary advantage of MPI over OpenMP for distributed computing?",
+      "options": [
+        "MPI is always faster",
+        "MPI allows communication across multiple machines/nodes over a network",
+        "OpenMP requires more code changes",
+        "MPI automatically balances load better"
+      ],
+      "answer": 1,
+      "explanation": "MPI is designed for distributed systems where processes run on different machines communicating via message passing. OpenMP is restricted to shared-memory systems (single machine). Speed, code changes, and load balancing depend on the problem, not the model."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-003",
+      "q": "In OpenMP, what does a parallel region directive accomplish?",
+      "options": [
+        "It divides memory into parallel segments",
+        "It spawns multiple threads that execute the enclosed code concurrently",
+        "It optimizes loop compilation for the GPU",
+        "It serializes execution to ensure thread safety"
+      ],
+      "answer": 1,
+      "explanation": "The #pragma omp parallel directive creates a team of threads executing the same code block concurrently. It doesn't modify memory layout, optimize for GPU, or force serialization—it enables parallelism."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-004",
+      "q": "What is an MPI collective operation and give an example.",
+      "options": [
+        "A blocking operation that waits for all processes to start",
+        "An operation where all processes in a group participate, such as MPI_Allreduce or MPI_Gather",
+        "A non-blocking send operation between two processes",
+        "A command to shut down all MPI processes immediately"
+      ],
+      "answer": 1,
+      "explanation": "Collective operations involve multiple processes—MPI_Allreduce computes a result across all processes, MPI_Gather collects data to one process. They're not about startup/shutdown and not point-to-point like Send/Recv."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-005",
+      "q": "In OpenMP, what does the collapse clause in a loop directive do?",
+      "options": [
+        "Removes unused iterations from a loop",
+        "Flattens nested loops into a single loop for better parallelization",
+        "Prevents data races by serializing outer loop iterations",
+        "Merges multiple loop kernels into one"
+      ],
+      "answer": 1,
+      "explanation": "collapse(n) treats n nested loops as a single loop for work distribution, enabling fine-grained parallelism across multiple loop levels. It doesn't remove iterations, serialize, or merge kernels."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-006",
+      "q": "What is the difference between MPI_Send and MPI_Isend?",
+      "options": [
+        "MPI_Send is point-to-point, MPI_Isend is collective",
+        "MPI_Send blocks until the message is received; MPI_Isend returns immediately and is non-blocking",
+        "MPI_Isend is only used for Fortran programs",
+        "MPI_Send is faster because it doesn't require a matching receive"
+      ],
+      "answer": 1,
+      "explanation": "MPI_Send is blocking (waits for matching receive or buffer safety), while MPI_Isend (immediate send) returns immediately and requires MPI_Wait to check completion. Both are point-to-point; language doesn't matter; both need matching receives."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-007",
+      "q": "In OpenMP, what does a reduction clause do?",
+      "options": [
+        "Decreases the number of threads used",
+        "Combines partial results from threads safely (e.g., summing individual sums into a global sum)",
+        "Removes loop iterations that produce the same result",
+        "Allocates less memory per thread"
+      ],
+      "answer": 1,
+      "explanation": "A reduction clause like 'reduction(+:sum)' creates thread-local copies, lets each thread compute independently, then combines results using the specified operator. It doesn't reduce thread count, skip iterations, or change memory allocation."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-008",
+      "q": "What is MPI_Barrier used for?",
+      "options": [
+        "To limit the bandwidth of MPI messages",
+        "To synchronize all processes—each waits until all others reach the barrier",
+        "To encrypt sensitive MPI messages",
+        "To allocate buffer space for incoming messages"
+      ],
+      "answer": 1,
+      "explanation": "MPI_Barrier blocks all processes in a communicator until all have called it—a collective synchronization point. It doesn't manage bandwidth, encryption, or buffers."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-009",
+      "q": "In OpenMP, what is a critical section and when is it necessary?",
+      "options": [
+        "A part of code that must run first before anything else",
+        "A region where only one thread executes at a time to protect shared memory access",
+        "A loop that cannot be parallelized",
+        "The main function that initializes parallelization"
+      ],
+      "answer": 1,
+      "explanation": "A critical section (pragma omp critical) serializes access to protect shared data from race conditions. It's not about execution order, not every non-parallel loop, and not related to main initialization."
+    },
+    {
+      "id": "parallel-computing-mpi-and-openmp-010",
+      "q": "What is the key difference in memory model between OpenMP and MPI?",
+      "options": [
+        "OpenMP is cache-aware, MPI is not",
+        "OpenMP: shared memory with implicit communication; MPI: separate address spaces with explicit message passing",
+        "MPI uses more memory than OpenMP",
+        "OpenMP requires synchronized clocks between processors, MPI does not"
+      ],
+      "answer": 1,
+      "explanation": "OpenMP threads share a single memory space and communicate implicitly via shared variables. MPI processes have separate memory and must explicitly send/receive messages. Cache awareness and memory overhead vary by implementation; clock synchronization isn't a factor."
+    }
+  ]
+}

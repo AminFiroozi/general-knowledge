@@ -13,6 +13,114 @@
       ],
       "answer": 2,
       "explanation": "A process has its own isolated virtual address space, file handles, and resources. Threads within a process share the same address space and resources, communicating via shared memory. Thread creation is cheaper than process creation (no address space duplication), but a bug in one thread can corrupt data for all other threads."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-002",
+      "q": "What information is stored in a Process Control Block (PCB)?",
+      "options": [
+        "Only CPU register values and program counter",
+        "Process ID, memory pointers, CPU state, scheduling info, and resource allocations",
+        "Just the process name and creation timestamp",
+        "File system permissions and user credentials only"
+      ],
+      "answer": 1,
+      "explanation": "The PCB is a data structure that contains all information about a process: PID, process state, program counter, CPU registers, memory management data, scheduling priority, allocated resources, and accounting information. The OS saves and restores PCB data during context switches to resume process execution correctly."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-003",
+      "q": "What happens during a context switch?",
+      "options": [
+        "The CPU physically changes to a different processor core",
+        "The OS saves the current process PCB state and loads a new process PCB state",
+        "All processes pause and wait for I/O completion",
+        "The memory address space is permanently deallocated"
+      ],
+      "answer": 1,
+      "explanation": "During a context switch, the OS saves the current process's execution context (registers, program counter, state) in its PCB, then loads the PCB of the next process to execute. Context switching has overhead—the CPU cache may miss and the TLB is flushed—but is essential for multitasking."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-004",
+      "q": "Which of the following is an advantage of user-level threads over kernel-level threads?",
+      "options": [
+        "User-level threads can utilize multiple CPU cores simultaneously",
+        "User-level threads are faster to create and switch between",
+        "Kernel must allocate system resources for each user-level thread",
+        "User-level threads inherit kernel privileges automatically"
+      ],
+      "answer": 1,
+      "explanation": "User-level threads are managed entirely by user-space libraries, so thread creation and context switching are very fast with no kernel involvement. However, the main limitation is that blocking syscalls in one thread block all threads in that process, and they cannot exploit multicore parallelism since the OS sees them as a single process."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-005",
+      "q": "What is the primary purpose of Inter-Process Communication (IPC)?",
+      "options": [
+        "To replace the need for processes with threads",
+        "To allow different processes to share data and coordinate execution",
+        "To eliminate the need for CPU scheduling",
+        "To prevent all data sharing between processes"
+      ],
+      "answer": 1,
+      "explanation": "IPC mechanisms (pipes, sockets, message queues, shared memory) enable independent processes with separate address spaces to exchange information and synchronize their activities. This is essential for building cooperating applications—for example, a shell piping data between commands, or a database and web server communicating over a socket."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-006",
+      "q": "What is the main disadvantage of many-to-one thread models (many user threads mapped to one kernel thread)?",
+      "options": [
+        "They consume too much kernel memory",
+        "A blocking syscall in any user thread blocks all user threads in that process",
+        "They require special hardware support from the CPU",
+        "User threads cannot share memory with each other"
+      ],
+      "answer": 1,
+      "explanation": "In the many-to-one model, the kernel is unaware of individual user threads and treats the entire group as a single process. If one user thread makes a blocking I/O call, the kernel blocks the whole process, even though other user threads are ready to run. This severely limits concurrency and responsiveness."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-007",
+      "q": "How do threads simplify concurrent programming compared to spawning separate processes?",
+      "options": [
+        "Threads eliminate the need for synchronization primitives",
+        "Threads share memory by default, reducing the need for explicit IPC mechanisms",
+        "Threads can only run on single-core processors",
+        "Threads automatically prevent all race conditions"
+      ],
+      "answer": 1,
+      "explanation": "Because threads share the same process address space, data sharing is as simple as having threads read and write to shared variables—no pipes, sockets, or message passing needed. However, this convenience comes at a cost: race conditions become possible, requiring careful use of locks and synchronization primitives."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-008",
+      "q": "What is the state of a process waiting for I/O completion?",
+      "options": [
+        "Running",
+        "Ready",
+        "Waiting (or Blocked)",
+        "Terminated"
+      ],
+      "answer": 2,
+      "explanation": "A process is in the Waiting or Blocked state when it cannot proceed until an external event (like disk I/O, network response, or user input) occurs. It relinquishes the CPU and will return to the Ready state once the I/O completes. This frees the CPU to run other processes."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-009",
+      "q": "What is the relationship between a lightweight process (LWP) and threads?",
+      "options": [
+        "LWPs are older terminology for operating system kernel threads",
+        "LWPs are faster than user-level threads but slower than processes",
+        "LWPs are an alternative to processes but cannot be suspended",
+        "LWPs can only exist within a single address space"
+      ],
+      "answer": 0,
+      "explanation": "A lightweight process (LWP) is essentially a kernel-level thread—a schedulable entity with its own context but sharing memory and resources with other LWPs in the same process. The term LWP emphasizes that they are lighter than full processes but heavier than user-level threads."
+    },
+    {
+      "id": "operating-systems-processes-and-threads-010",
+      "q": "In the one-to-one thread model (as used by modern Linux), what is the advantage over many-to-one?",
+      "options": [
+        "It eliminates the need for process IDs",
+        "Each user thread maps to a kernel thread, allowing true parallelism and preventing one blocking call from stalling all threads",
+        "It requires no kernel scheduling overhead",
+        "It guarantees that all threads run on the same CPU core"
+      ],
+      "answer": 1,
+      "explanation": "In one-to-one mapping, the kernel is aware of each thread individually and can schedule them on different CPU cores independently. If one thread blocks on I/O, the kernel can still run other threads of that process. The tradeoff is higher memory overhead since each kernel thread requires kernel data structures."
     }
   ]
 }

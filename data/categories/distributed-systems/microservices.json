@@ -1,0 +1,126 @@
+{
+  "topic": "microservices",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-microservices-001",
+      "q": "What is the primary goal of service decomposition in microservices architecture?",
+      "options": [
+        "To break a monolith into independently deployable services organized around business capabilities, enabling faster development and scaling",
+        "To minimize the number of services by combining unrelated functionality into single deployable units",
+        "To ensure all services share a common database for consistency",
+        "To replace all network communication with direct function calls"
+      ],
+      "answer": 0,
+      "explanation": "Service decomposition enables independent development and deployment of business-aligned services. Option 1 consolidates services rather than decomposing. Option 2 sacrifices consistency gains. Option 3 defeats the purpose of microservices."
+    },
+    {
+      "id": "distributed-systems-microservices-002",
+      "q": "What is an API gateway and what problems does it solve?",
+      "options": [
+        "A single entry point that routes client requests to appropriate services, handles authentication, and abstracts service topology",
+        "A firewall that prevents clients from directly accessing services",
+        "A load balancer that ensures all services have equal processing capacity",
+        "A service that caches responses from all other microservices"
+      ],
+      "answer": 0,
+      "explanation": "API gateways provide a unified interface and handle cross-cutting concerns. Option 1 is a firewall function, not the gateway's primary purpose. Option 2 ensures resource equality, not a gateway function. Option 3 is caching, not gateway responsibility."
+    },
+    {
+      "id": "distributed-systems-microservices-003",
+      "q": "What is service discovery and why is it critical in microservices?",
+      "options": [
+        "A mechanism to dynamically locate service instances in a network as services scale and fail, avoiding hardcoded addresses",
+        "A process that manually registers all microservices in a configuration file",
+        "A technique to prevent services from communicating with each other",
+        "A service that stores all service code in a centralized repository"
+      ],
+      "answer": 0,
+      "explanation": "Service discovery enables dynamic location resolution without hardcoding addresses. Option 1 is manual and doesn't handle dynamics. Option 2 prevents service interaction. Option 3 is about code storage."
+    },
+    {
+      "id": "distributed-systems-microservices-004",
+      "q": "What is the 'saga pattern' and what problem does it address?",
+      "options": [
+        "A pattern for distributed transactions where compensation transactions undo partial changes if the overall transaction fails",
+        "A pattern for caching responses across multiple services simultaneously",
+        "A technique for merging multiple databases into a single schema",
+        "A pattern that ensures all services process requests in the same order"
+      ],
+      "answer": 0,
+      "explanation": "Sagas handle distributed transactions through compensating transactions when failures occur. Option 1 is about response caching. Option 2 concerns database consolidation. Option 3 is about request ordering."
+    },
+    {
+      "id": "distributed-systems-microservices-005",
+      "q": "What are the differences between choreography and orchestration in saga patterns?",
+      "options": [
+        "Choreography uses events and service autonomy; orchestration uses a central coordinator that directs service calls",
+        "Choreography is synchronous while orchestration is asynchronous",
+        "Orchestration eliminates the need for event-driven communication",
+        "Choreography requires a central database shared across services"
+      ],
+      "answer": 0,
+      "explanation": "Choreography decouples services via events; orchestration uses a central controller. Option 1 falsely describes async/sync properties. Option 2 doesn't eliminate events. Option 3 contradicts microservices principles."
+    },
+    {
+      "id": "distributed-systems-microservices-006",
+      "q": "Why do microservices typically use eventual consistency instead of strong consistency?",
+      "options": [
+        "Maintaining strong consistency across services requires distributed transactions that are slow and error-prone; eventual consistency enables faster, independent operations",
+        "Strong consistency is impossible to implement in any distributed system",
+        "Eventual consistency guarantees immediate visibility of all writes",
+        "Microservices eliminate the need for consistency concerns entirely"
+      ],
+      "answer": 0,
+      "explanation": "Strong consistency across services introduces bottlenecks; eventual consistency improves performance and fault tolerance. Option 1 claims strong consistency is impossible. Option 2 guarantees immediate visibility, not eventual. Option 3 assumes no consistency needs."
+    },
+    {
+      "id": "distributed-systems-microservices-007",
+      "q": "What is the 'database per service' pattern and why is it important?",
+      "options": [
+        "Each service owns its own database to ensure loose coupling and independence, allowing technology choices per service",
+        "All services share a single database to ensure data consistency",
+        "Services share databases but in different schemas to prevent interference",
+        "Database ownership rotates between services to distribute responsibility"
+      ],
+      "answer": 0,
+      "explanation": "Database per service prevents tight coupling and enables independent scaling. Option 1 assumes shared database. Option 2 partially decouples services. Option 3 is impractical."
+    },
+    {
+      "id": "distributed-systems-microservices-008",
+      "q": "What is inter-service communication and what are common patterns?",
+      "options": [
+        "Services communicate via REST APIs, gRPC, or message queues depending on latency and decoupling requirements",
+        "Services communicate by reading and writing directly to a shared database",
+        "Inter-service communication is eliminated in microservices through complete autonomy",
+        "All inter-service communication uses synchronous RPC calls exclusively"
+      ],
+      "answer": 0,
+      "explanation": "Inter-service communication uses various protocols with different tradeoffs. Option 1 assumes direct database access. Option 2 assumes complete autonomy is achievable. Option 3 excludes asynchronous patterns."
+    },
+    {
+      "id": "distributed-systems-microservices-009",
+      "q": "What is the 'circuit breaker' pattern and when should it be used?",
+      "options": [
+        "A pattern that prevents cascading failures by stopping calls to a failing service and returning cached/degraded responses",
+        "A pattern that distributes requests equally across all service instances",
+        "A pattern that forces failed services to immediately restart",
+        "A pattern that ensures messages are never dropped in transit"
+      ],
+      "answer": 0,
+      "explanation": "Circuit breakers detect failures and fail fast, preventing system-wide outages. Option 1 is load balancing. Option 2 forcibly restarts services. Option 3 is about message durability."
+    },
+    {
+      "id": "distributed-systems-microservices-010",
+      "q": "What is distributed tracing and why is it essential in microservices?",
+      "options": [
+        "A technique that tracks requests across multiple services to identify performance bottlenecks and debug failures",
+        "A method for preventing services from communicating with each other",
+        "A tool that forces all services to log to a single file",
+        "A pattern that ensures all services complete requests in under 100 milliseconds"
+      ],
+      "answer": 0,
+      "explanation": "Distributed tracing correlates logs across service boundaries for observability. Option 1 prevents communication. Option 2 assumes single logging. Option 3 is a performance requirement, not tracing."
+    }
+  ]
+}

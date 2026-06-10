@@ -1,0 +1,126 @@
+{
+  "topic": "memory-management",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-memory-management-001",
+      "q": "What is virtual memory and why is it essential for modern operating systems?",
+      "options": [
+        "Memory that is stored in the network cloud instead of locally",
+        "An abstraction allowing each process to have its own address space larger than physical RAM by using disk storage",
+        "A special type of RAM that operates at a different voltage",
+        "A caching mechanism for CPU registers"
+      ],
+      "answer": 1,
+      "explanation": "Virtual memory allows the OS to create the illusion that each process has a large, contiguous address space even though physical RAM is limited. The OS maps virtual addresses to physical addresses and can swap pages to disk, enabling multiprogramming and isolating processes from each other."
+    },
+    {
+      "id": "operating-systems-memory-management-002",
+      "q": "What is paging and how does it differ from segmentation?",
+      "options": [
+        "Paging uses variable-sized blocks; segmentation uses fixed-size blocks of 4KB",
+        "Paging divides memory into fixed-size pages; segmentation divides memory into variable-sized segments based on logical units",
+        "Paging is only used in 32-bit systems; segmentation is only for 64-bit systems",
+        "Paging eliminates fragmentation while segmentation causes it"
+      ],
+      "answer": 1,
+      "explanation": "Paging divides both virtual and physical memory into equal-sized pages (typically 4KB), managed by a page table. Segmentation divides memory into variable-sized logical segments (code, data, stack) based on program structure. Paging simplifies memory management and eliminates external fragmentation, while segmentation better reflects program semantics."
+    },
+    {
+      "id": "operating-systems-memory-management-003",
+      "q": "What occurs during a page fault?",
+      "options": [
+        "The CPU is completely halted until memory is repaired",
+        "The OS terminates the faulting process immediately",
+        "The OS fetches the needed page from disk and resumes the process",
+        "A backup power supply activates to protect memory data"
+      ],
+      "answer": 2,
+      "explanation": "A page fault occurs when a process accesses a page not currently in physical memory. The OS interrupts the process, loads the page from disk into RAM, updates the page table, and resumes the process. This is transparent to the application and enables virtual memory to work, though it incurs disk I/O latency."
+    },
+    {
+      "id": "operating-systems-memory-management-004",
+      "q": "What is the purpose of the Translation Lookaside Buffer (TLB)?",
+      "options": [
+        "To store recently accessed disk blocks from the file system",
+        "To cache frequently used virtual-to-physical address translations",
+        "To buffer data between the CPU and main memory",
+        "To prevent unauthorized access to kernel memory"
+      ],
+      "answer": 1,
+      "explanation": "The TLB is a small, fast cache of virtual-to-physical address mappings stored in the CPU. Without it, every memory access would require a page table lookup, which is slow. The TLB hits for most accesses, making the system faster. A context switch typically flushes the TLB since virtual addresses change per process."
+    },
+    {
+      "id": "operating-systems-memory-management-005",
+      "q": "What is internal fragmentation in paging?",
+      "options": [
+        "Unused space within the last page allocated to a process",
+        "Gaps between pages on the disk drive",
+        "Breakage of the page table into multiple files",
+        "Deterioration of physical memory over time"
+      ],
+      "answer": 0,
+      "explanation": "Internal fragmentation in paging occurs when a process's last allocated page is not completely filled. For example, if a process needs 8.3KB of memory and pages are 4KB, three pages are allocated but the last page is only 0.3KB used, wasting 3.7KB. This waste is inherent to fixed-size paging."
+    },
+    {
+      "id": "operating-systems-memory-management-006",
+      "q": "How does demand paging improve memory utilization?",
+      "options": [
+        "It pre-loads all pages into memory at process startup",
+        "It loads pages only when they are actually referenced, reducing unnecessary memory use",
+        "It compresses pages to fit more data into RAM",
+        "It prevents the use of virtual memory entirely"
+      ],
+      "answer": 1,
+      "explanation": "With demand paging, a process starts with few or no pages in memory. Pages are fetched from disk only when the process actually accesses them. This allows the OS to run more processes simultaneously and share memory more efficiently, as not all of a program's code and data needs to reside in RAM at once."
+    },
+    {
+      "id": "operating-systems-memory-management-007",
+      "q": "What is the role of the page replacement algorithm (e.g., LRU)?",
+      "options": [
+        "To decide which process should be terminated when memory is full",
+        "To select which page in memory to evict to disk when physical memory is exhausted",
+        "To determine the optimal page size for all processes",
+        "To encrypt pages before storing them on disk"
+      ],
+      "answer": 1,
+      "explanation": "When physical memory is full and a page fault occurs for a page not in memory, the OS must evict (remove) an existing page to make room. The page replacement algorithm selects which page to evict, usually choosing one unlikely to be used soon (e.g., the Least Recently Used page). A poor choice causes thrashing."
+    },
+    {
+      "id": "operating-systems-memory-management-008",
+      "q": "What does swapping mean in the context of virtual memory?",
+      "options": [
+        "Exchanging data between two processes",
+        "Copying entire processes or pages between RAM and disk to manage memory",
+        "Replacing the operating system kernel",
+        "Synchronizing caches between CPU cores"
+      ],
+      "answer": 1,
+      "explanation": "Swapping is the mechanism where the OS copies memory contents between fast RAM and slow disk storage. When a process is not needed immediately, its entire address space can be swapped to disk, freeing RAM for other processes. Page-level swapping (paging) is more efficient than process-level swapping."
+    },
+    {
+      "id": "operating-systems-memory-management-009",
+      "q": "What is a working set in the context of virtual memory?",
+      "options": [
+        "The set of all disk blocks used by a process",
+        "The set of pages a process actively references during a time interval",
+        "The total physical memory available on the system",
+        "A backup copy of the page table"
+      ],
+      "answer": 1,
+      "explanation": "A process's working set is the subset of its pages that it frequently references during execution. Keeping the working set in physical memory minimizes page faults. If the working set size exceeds available RAM, thrashing occurs—the system spends more time swapping than executing useful work."
+    },
+    {
+      "id": "operating-systems-memory-management-010",
+      "q": "What is the main advantage of multi-level page tables over single-level page tables?",
+      "options": [
+        "They execute faster on all processors",
+        "They reduce memory overhead for sparse address spaces by only allocating second-level tables as needed",
+        "They eliminate the need for the TLB",
+        "They prevent all page faults from occurring"
+      ],
+      "answer": 1,
+      "explanation": "A single-level page table for a 32-bit address space requires 4MB of memory just for the page table, even if the process uses only a fraction of its address space. Multi-level (hierarchical) page tables allocate second-level tables on demand, using much less memory for processes with sparse address spaces."
+    }
+  ]
+}

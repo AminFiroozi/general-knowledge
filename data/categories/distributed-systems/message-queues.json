@@ -1,0 +1,126 @@
+{
+  "topic": "message-queues",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-message-queues-001",
+      "q": "What is the main difference between publish-subscribe (pub-sub) and point-to-point messaging?",
+      "options": [
+        "Pub-sub broadcasts messages to multiple subscribers; point-to-point delivers a message to a single consumer",
+        "Pub-sub is synchronous while point-to-point is asynchronous",
+        "Pub-sub guarantees message ordering while point-to-point does not",
+        "Point-to-point messaging requires a central broker while pub-sub does not"
+      ],
+      "answer": 0,
+      "explanation": "Pub-sub enables one-to-many messaging to all subscribers; point-to-point is one-to-one. Option 1 confuses synchronization with messaging patterns. Option 2 is false; pub-sub doesn't guarantee ordering. Option 3 is incorrect; point-to-point systems also use brokers."
+    },
+    {
+      "id": "distributed-systems-message-queues-002",
+      "q": "What is an 'at-most-once' delivery guarantee in message queues?",
+      "options": [
+        "A message is delivered zero or one time; it will not be redelivered even if delivery fails",
+        "A message is guaranteed to be delivered within one network round trip",
+        "Only one instance of a consumer can process messages from the queue",
+        "The queue holds at most one message before starting to drop new messages"
+      ],
+      "answer": 0,
+      "explanation": "At-most-once means no duplicates but possible loss. Option 1 conflates timing with delivery semantics. Option 2 concerns the number of consumers. Option 3 is about queue capacity."
+    },
+    {
+      "id": "distributed-systems-message-queues-003",
+      "q": "What does 'backpressure' mean in message queue systems?",
+      "options": [
+        "A mechanism to slow down producers when consumers cannot keep up, preventing queue overflow",
+        "Pressure exerted by failed messages being retried repeatedly",
+        "The delay caused by network congestion between brokers",
+        "A signal sent by the broker to drop low-priority messages"
+      ],
+      "answer": 0,
+      "explanation": "Backpressure is flow control that regulates producer rate to match consumer capacity. Option 1 is about message failure, not pressure. Option 2 is network latency. Option 3 describes message dropping, not flow control."
+    },
+    {
+      "id": "distributed-systems-message-queues-004",
+      "q": "What is 'exactly-once' semantics in message delivery and why is it challenging to achieve?",
+      "options": [
+        "Each message is processed exactly once despite failures; it requires coordination between producer, broker, and consumer with idempotent operations",
+        "The broker ensures messages are delivered to exactly one broker node at a time",
+        "Each consumer receives exactly one copy of every message published",
+        "Exactly-once semantics is trivial to implement using standard TCP guarantees"
+      ],
+      "answer": 0,
+      "explanation": "Exactly-once requires deduplication and coordination across the entire system with idempotent operations. Option 1 concerns broker replication, not delivery. Option 2 assumes all consumers must receive all messages. Option 3 underestimates the complexity."
+    },
+    {
+      "id": "distributed-systems-message-queues-005",
+      "q": "What role does a message broker play in a message queue system?",
+      "options": [
+        "It receives messages from producers, stores them durably, and delivers them to consumers according to routing rules",
+        "It acts as a transparent proxy that directly connects producers to consumers",
+        "It enforces strict ordering of all messages across all partitions globally",
+        "It provides computation services to transform messages before delivery"
+      ],
+      "answer": 0,
+      "explanation": "A broker decouples producers and consumers with durable storage and routing. Option 1 assumes transparency without storage. Option 2 is false; brokers don't guarantee global ordering. Option 3 is not a core broker function."
+    },
+    {
+      "id": "distributed-systems-message-queues-006",
+      "q": "What is a message partition in queue systems like Kafka?",
+      "options": [
+        "A subset of messages in a topic that preserves order within the partition, enabling parallel consumption",
+        "A separation of message types that prevents mixing of different payload formats",
+        "A network segment that isolates consumer groups from producers",
+        "A compression algorithm that splits large messages into smaller chunks"
+      ],
+      "answer": 0,
+      "explanation": "Partitions enable ordered processing and parallelism; each partition is an ordered log. Option 1 confuses type separation with partitioning. Option 2 describes isolation, not partitioning. Option 3 is about compression."
+    },
+    {
+      "id": "distributed-systems-message-queues-007",
+      "q": "What is a consumer group in Kafka-like systems?",
+      "options": [
+        "A set of consumers sharing the same subscription that collectively process all partitions of a topic",
+        "All consumers in a network that communicate with a single broker",
+        "A temporary group of consumers that form during a network partition",
+        "A priority tier that determines which messages consumers receive first"
+      ],
+      "answer": 0,
+      "explanation": "Consumer groups enable distributed consumption where partitions are divided among members. Option 1 assumes all consumers share the same broker. Option 2 is temporary grouping, not a consumer group. Option 3 is about priority, not grouping."
+    },
+    {
+      "id": "distributed-systems-message-queues-008",
+      "q": "What is the difference between message retention policies?",
+      "options": [
+        "Retention policies determine how long messages are stored (time-based or size-based) before deletion",
+        "Retention policies dictate which consumers can access messages",
+        "Retention policies ensure messages are never deleted from the broker",
+        "Retention policies control the network bandwidth used for message transmission"
+      ],
+      "answer": 0,
+      "explanation": "Retention policies manage message lifetime in storage. Option 1 concerns access control, not retention. Option 2 is false; messages are deleted per policy. Option 3 is about bandwidth, not storage duration."
+    },
+    {
+      "id": "distributed-systems-message-queues-009",
+      "q": "What does 'offset' mean in the context of message queue consumers?",
+      "options": [
+        "The position in a partition's log indicating which messages have been consumed, enabling resumption after failures",
+        "A delay added to message delivery to prevent overwhelming consumers",
+        "The unique identifier assigned to each message in the queue",
+        "A calculation of latency between producer and broker"
+      ],
+      "answer": 0,
+      "explanation": "Offsets track consumption position; storing offsets enables exactly-once replay. Option 1 is a delay mechanism. Option 2 is a message ID, not an offset. Option 3 is a latency metric."
+    },
+    {
+      "id": "distributed-systems-message-queues-010",
+      "q": "Why do message queues typically use durable storage rather than in-memory buffers?",
+      "options": [
+        "Durable storage persists messages across broker failures and enables consumer recovery from any point in the log",
+        "In-memory buffers are always faster, but durability is a secondary feature",
+        "Durability prevents consumers from processing messages out of order",
+        "Durable storage automatically guarantees exactly-once delivery semantics"
+      ],
+      "answer": 0,
+      "explanation": "Durability ensures data survives failures and allows replay. Option 1 assumes speed is the primary concern. Option 2 is false; durability doesn't enforce ordering. Option 3 is a misconception; durability alone doesn't guarantee exactly-once."
+    }
+  ]
+}

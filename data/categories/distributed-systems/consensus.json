@@ -1,0 +1,126 @@
+{
+  "topic": "consensus",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-consensus-001",
+      "q": "In the Raft consensus algorithm, what is the primary role of the leader?",
+      "options": [
+        "To replicate log entries to followers and commit entries when a majority acknowledges them",
+        "To ensure every node has identical memory at all times",
+        "To resolve Byzantine faults by majority voting on transaction hashes",
+        "To eliminate the need for followers to store any data"
+      ],
+      "answer": 0,
+      "explanation": "The leader in Raft replicates its log to followers and commits entries once a majority has acknowledged them, ensuring consensus. Option 1 is incorrect because Raft doesn't require identical memory—it tolerates temporary inconsistencies. Option 2 confuses Raft with Byzantine fault tolerance algorithms."
+    },
+    {
+      "id": "distributed-systems-consensus-002",
+      "q": "What is a quorum in distributed consensus?",
+      "options": [
+        "A voting block that represents the majority of nodes required to make a decision",
+        "A predetermined set of nodes chosen at random for each consensus round",
+        "The total number of nodes in the system minus one",
+        "A mechanism that prevents any node from voting twice"
+      ],
+      "answer": 0,
+      "explanation": "A quorum is the minimum number of nodes (typically a majority) whose agreement is necessary for a decision to be valid. Option 1 is a misconception about random selection. Option 2 is incorrect because quorum size is fixed, not random."
+    },
+    {
+      "id": "distributed-systems-consensus-003",
+      "q": "In Paxos, what is the purpose of the Proposer role?",
+      "options": [
+        "To initiate consensus by proposing values and handling retries when proposals are rejected",
+        "To store all proposed values and reject duplicates",
+        "To verify that all Acceptors have identical state",
+        "To broadcast messages directly to Learners without going through Acceptors"
+      ],
+      "answer": 0,
+      "explanation": "A Proposer suggests values and must retry with higher proposal numbers if rejected. Option 1 is a function of Acceptors, not Proposers. Option 2 assumes Proposers bypass the Acceptor phase, which violates Paxos protocol."
+    },
+    {
+      "id": "distributed-systems-consensus-004",
+      "q": "How many nodes can a Byzantine fault-tolerant system tolerate if it has n total nodes?",
+      "options": [
+        "Up to (n-1)/3 faulty nodes",
+        "Up to n/2 faulty nodes",
+        "Up to n-1 faulty nodes",
+        "No faulty nodes—Byzantine systems require perfect reliability"
+      ],
+      "answer": 0,
+      "explanation": "Byzantine fault tolerance requires that fewer than one-third of nodes are faulty to reach consensus. Option 1 is too permissive; systems with n/2 faulty nodes cannot guarantee consensus. Option 2 is false; Byzantine systems are designed specifically to tolerate some faults."
+    },
+    {
+      "id": "distributed-systems-consensus-005",
+      "q": "In leader election, what is a split brain scenario?",
+      "options": [
+        "Multiple nodes incorrectly believe themselves to be the leader, causing conflicting decisions",
+        "A situation where the leader node experiences memory corruption",
+        "When a follower node splits its data across multiple servers",
+        "A network partition that causes two nodes to communicate simultaneously"
+      ],
+      "answer": 0,
+      "explanation": "Split brain occurs when two or more nodes independently claim leadership, violating the safety guarantee of consensus. Option 1 is about memory errors, not consensus. Option 2 is irrelevant to leadership."
+    },
+    {
+      "id": "distributed-systems-consensus-006",
+      "q": "What property must a consensus algorithm guarantee to be considered safe?",
+      "options": [
+        "All non-faulty nodes must eventually agree on the same value",
+        "Consensus must complete within a bounded time frame",
+        "Faulty nodes are immediately detected and removed",
+        "Every proposed value is guaranteed to be committed"
+      ],
+      "answer": 0,
+      "explanation": "Safety in consensus requires agreement among all correct nodes on a single value. Option 1 is about liveness, not safety. Option 2 assumes faults are always detectable. Option 3 is false; not all proposals succeed."
+    },
+    {
+      "id": "distributed-systems-consensus-007",
+      "q": "In Raft, what does the term 'election timeout' control?",
+      "options": [
+        "How long a follower waits for a heartbeat before initiating a new leader election",
+        "The time a leader has to commit entries before relinquishing leadership",
+        "The duration a candidate remains in the running state before becoming a follower",
+        "The time allowed for a new leader to synchronize all follower logs"
+      ],
+      "answer": 0,
+      "explanation": "The election timeout is the period during which followers expect heartbeats from the leader; if none arrive, they start an election. Option 1 confuses the timeout with the election process itself. Option 2 applies to the commitment process, not timing."
+    },
+    {
+      "id": "distributed-systems-consensus-008",
+      "q": "Which characteristic distinguishes Raft from Paxos in terms of understandability?",
+      "options": [
+        "Raft separates concerns into distinct phases (leader election, log replication, safety) explicitly",
+        "Paxos uses fewer state transitions, making it simpler to implement",
+        "Raft eliminates the need for any form of quorum agreements",
+        "Paxos guarantees liveness in all scenarios where Raft cannot"
+      ],
+      "answer": 0,
+      "explanation": "Raft was designed with clarity in mind, clearly separating leader election from log replication. Option 1 is historically inaccurate; Paxos is known for being harder to understand. Option 2 falsely claims Raft eliminates quorum requirements."
+    },
+    {
+      "id": "distributed-systems-consensus-009",
+      "q": "What happens in Raft when a candidate receives votes from a quorum of nodes?",
+      "options": [
+        "The candidate immediately becomes the leader and begins sending heartbeats",
+        "The candidate must wait for the previous leader's term to expire before assuming leadership",
+        "The votes are discarded if any follower is still committing previous entries",
+        "The candidate enters a transition phase where it cannot serve requests"
+      ],
+      "answer": 0,
+      "explanation": "Upon receiving a quorum of votes, a candidate becomes leader and immediately begins sending heartbeats to establish authority. Option 1 is incorrect; there is no waiting period. Option 2 assumes leaders can exist concurrently, violating safety."
+    },
+    {
+      "id": "distributed-systems-consensus-010",
+      "q": "In consensus algorithms, what is meant by 'eventual consistency'?",
+      "options": [
+        "Non-leader nodes may temporarily differ from the leader but will eventually apply all committed entries",
+        "Some data may be permanently lost if a majority of nodes fail simultaneously",
+        "The system will always return the most recent write within one network round trip",
+        "Faulty nodes gradually become consistent through passive healing"
+      ],
+      "answer": 0,
+      "explanation": "Eventual consistency means followers lag behind the leader but converge as they apply committed log entries. Option 1 describes permanent loss, not consistency. Option 2 assumes instant consistency, which consensus cannot guarantee across network delays."
+    }
+  ]
+}

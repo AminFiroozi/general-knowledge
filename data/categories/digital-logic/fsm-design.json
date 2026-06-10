@@ -1,0 +1,126 @@
+{
+  "topic": "fsm-design",
+  "category": "digital-logic",
+  "questions": [
+    {
+      "id": "digital-logic-fsm-design-001",
+      "q": "What is the key difference between a Moore machine and a Mealy machine?",
+      "options": [
+        "Moore machines have no memory while Mealy machines do",
+        "Moore machine outputs depend only on the current state; Mealy outputs depend on both state and inputs",
+        "Mealy machines are faster but less reliable",
+        "Moore machines require more flip-flops than Mealy machines"
+      ],
+      "answer": 1,
+      "explanation": "In a Moore machine, outputs are determined solely by the current state. In a Mealy machine, outputs are determined by both the current state and the current inputs, making Mealy machines typically more responsive but potentially more complex. Both use memory; hardware cost depends on implementation details."
+    },
+    {
+      "id": "digital-logic-fsm-design-002",
+      "q": "In an FSM state diagram, what do the directed arrows labeled with input/output represent?",
+      "options": [
+        "Transitions between states; labels show input conditions and (for Mealy) output values",
+        "The time it takes to move between states",
+        "The number of flip-flops needed",
+        "The power supply voltage required"
+      ],
+      "answer": 0,
+      "explanation": "State diagram arrows show transitions triggered by input conditions. In a Moore diagram, outputs are written inside states. In a Mealy diagram, outputs appear on the arrows as 'input/output'. Time, flip-flop count, and voltage are not represented in state diagrams."
+    },
+    {
+      "id": "digital-logic-fsm-design-003",
+      "q": "An FSM with 8 distinct states requires a minimum of ___ flip-flops to represent all possible states.",
+      "options": [
+        "2",
+        "3",
+        "4",
+        "8"
+      ],
+      "answer": 1,
+      "explanation": "The number of flip-flops needed is ⌈log₂(number of states)⌉. For 8 states: log₂(8) = 3 flip-flops can represent 2^3 = 8 states. Two flip-flops can represent only 4 states; four flip-flops can represent 16 states (wasteful for 8 states)."
+    },
+    {
+      "id": "digital-logic-fsm-design-004",
+      "q": "What is state encoding in FSM design?",
+      "options": [
+        "Converting the state diagram into a Verilog program",
+        "Assigning binary codes to each state to represent them with flip-flops",
+        "Encrypting the state information for security",
+        "Compressing the state diagram to reduce states"
+      ],
+      "answer": 1,
+      "explanation": "State encoding assigns a unique binary pattern to each state. For example, state A might be 00, B might be 01, C might be 10. Different encodings (binary, Gray code, one-hot) affect circuit complexity. This is not about programming, security, or state reduction."
+    },
+    {
+      "id": "digital-logic-fsm-design-005",
+      "q": "In a synchronous FSM, when do state transitions occur?",
+      "options": [
+        "Immediately upon input change (asynchronously)",
+        "Only at clock edges (synchronously)",
+        "After a fixed time delay",
+        "When the output changes"
+      ],
+      "answer": 1,
+      "explanation": "Synchronous FSMs use a clock signal to control when flip-flops update, ensuring transitions occur only at clock edges. Asynchronous FSMs transition immediately upon input change. Clock edges prevent race conditions and metastability."
+    },
+    {
+      "id": "digital-logic-fsm-design-006",
+      "q": "What is the advantage of using one-hot state encoding for an FSM?",
+      "options": [
+        "It minimizes the total number of flip-flops needed",
+        "It allows glitch-free transitions because only one flip-flop changes at a time",
+        "It automatically handles invalid states",
+        "It eliminates the need for a decoder"
+      ],
+      "answer": 1,
+      "explanation": "One-hot encoding uses one flip-flop per state (e.g., 8 states = 8 flip-flops, only one bit is 1 at a time). This prevents multiple bits from changing simultaneously, reducing glitches and hazards. Standard binary encoding (3 flip-flops for 8 states) requires fewer flip-flops but can have glitches."
+    },
+    {
+      "id": "digital-logic-fsm-design-007",
+      "q": "A Moore machine is detecting the pattern '101' in an input stream. Where does it output '1' when the pattern is detected?",
+      "options": [
+        "Immediately when the third bit arrives (in the Mealy style)",
+        "In the state representing completion of pattern detection",
+        "At the input pins of the FSM",
+        "In the next clock cycle after the pattern is complete"
+      ],
+      "answer": 1,
+      "explanation": "In a Moore machine, output is associated with states, not transitions. The FSM enters a dedicated 'detected' state and outputs 1 from that state. The output remains stable while in that state. Option 0 describes Mealy behavior; option 3 is incorrect because output is immediate in Moore machines."
+    },
+    {
+      "id": "digital-logic-fsm-design-008",
+      "q": "In designing an FSM for a vending machine, which type would be more suitable for immediate coin acceptance feedback?",
+      "options": [
+        "Moore machine for immediate response",
+        "Mealy machine for immediate response to coin input",
+        "Asynchronous FSM",
+        "An FSM with no feedback mechanism"
+      ],
+      "answer": 1,
+      "explanation": "A Mealy machine outputs immediately based on input and state, so it can display 'coin accepted' feedback as soon as a coin is sensed. A Moore machine would require transitioning to a new state before showing feedback, introducing delay. Moore machines are not inherently faster."
+    },
+    {
+      "id": "digital-logic-fsm-design-009",
+      "q": "An FSM state table lists all states, inputs, next states, and outputs. What is a missing or invalid state transition typically handled by?",
+      "options": [
+        "Default: remains in the same state",
+        "Immediately resets to the initial state",
+        "Ignored without consequences",
+        "Assigned explicitly in the design to prevent undefined behavior"
+      ],
+      "answer": 3,
+      "explanation": "Good FSM design explicitly specifies all state transitions, even invalid ones, to prevent undefined behavior and ensure the system is robust. Undefined states can cause circuits to hang. Options 0 and 1 are default behaviors but may be insufficient; option 2 risks system failure."
+    },
+    {
+      "id": "digital-logic-fsm-design-010",
+      "q": "In a state diagram, what do self-loops (arrows pointing back to the same state) represent?",
+      "options": [
+        "An unstable state that will eventually transition elsewhere",
+        "A condition under which the FSM remains in the same state without transitioning",
+        "A feedback path in the circuit schematic",
+        "An error condition that must be handled"
+      ],
+      "answer": 1,
+      "explanation": "A self-loop represents a transition condition that keeps the FSM in the current state. For example, in a counter FSM, a state might loop while waiting for an enable signal. Self-loops are normal and necessary in FSM design; they are not errors."
+    }
+  ]
+}

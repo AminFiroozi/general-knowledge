@@ -1,0 +1,126 @@
+{
+  "topic": "replication",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-replication-001",
+      "q": "In primary-backup replication, when does the primary acknowledge a write to the client?",
+      "options": [
+        "After the backup has durably stored the write",
+        "Immediately after the primary writes to its own storage, before contacting the backup",
+        "Only after all nodes have written to their local storage",
+        "When the client explicitly requests confirmation with a separate message"
+      ],
+      "answer": 0,
+      "explanation": "Strong primary-backup replication requires the backup to acknowledge before the primary replies to the client, ensuring durability. Option 1 would sacrifice durability. Option 2 is inconsistent with the primary-backup model."
+    },
+    {
+      "id": "distributed-systems-replication-002",
+      "q": "What is the main advantage of quorum-based replication over primary-backup replication?",
+      "options": [
+        "Any available quorum of nodes can serve reads and handle failures without requiring a specific primary role",
+        "Quorum replication guarantees that all nodes have identical data at all times",
+        "Quorum replication eliminates the need for any consensus protocol",
+        "Quorum replication reduces the number of network messages by half"
+      ],
+      "answer": 0,
+      "explanation": "Quorum replication allows multiple nodes to serve as coordinators and tolerates failures more flexibly than primary-backup, which depends on a single primary. Option 1 is false; quorum doesn't ensure uniform state. Option 2 is a misconception; quorum replication still requires coordination."
+    },
+    {
+      "id": "distributed-systems-replication-003",
+      "q": "In eventual consistency, what guarantee can an application expect?",
+      "options": [
+        "If no new writes occur, all replicas will eventually have the same data",
+        "All replicas will always have identical data within 100 milliseconds",
+        "Writes are immediately visible to all readers globally",
+        "Read operations never return stale data"
+      ],
+      "answer": 0,
+      "explanation": "Eventual consistency promises convergence only when writes stop and all updates propagate. Option 1 assumes real-time consistency, which eventual consistency doesn't provide. Option 2 guarantees immediate visibility, violating the definition."
+    },
+    {
+      "id": "distributed-systems-replication-004",
+      "q": "What is a conflict in multi-master replication and how is it typically resolved?",
+      "options": [
+        "Two masters apply different writes to the same data; resolution uses timestamps, version vectors, or application logic",
+        "A conflict occurs when two nodes have different network latencies",
+        "Conflicts are eliminated by ensuring only one master ever writes data",
+        "A conflict means one master is completely unreachable and cannot be recovered"
+      ],
+      "answer": 0,
+      "explanation": "Conflicts in multi-master replication arise from concurrent writes to the same data and require conflict resolution strategies. Option 1 is a network property, not a data conflict. Option 2 describes single-master systems, not multi-master."
+    },
+    {
+      "id": "distributed-systems-replication-005",
+      "q": "What does 'durability' mean in the context of replication?",
+      "options": [
+        "Data persisted to non-volatile storage survives node failures and is not lost",
+        "Replicas can be updated without requiring any network communication",
+        "The system guarantees that reads never see uncommitted writes",
+        "Replicated data is automatically compressed to save storage space"
+      ],
+      "answer": 0,
+      "explanation": "Durability means committed data persists across failures. Option 1 is a network property. Option 2 confuses durability with consistency. Option 3 is irrelevant to durability."
+    },
+    {
+      "id": "distributed-systems-replication-006",
+      "q": "In the read-repair technique used in eventual consistency, what happens?",
+      "options": [
+        "When a stale value is read, it is detected and updated to the latest version before being returned",
+        "Reads are temporarily blocked while all replicas reach consensus on the latest version",
+        "Stale data is deleted from the system without returning it to the client",
+        "The client is responsible for merging different versions it receives from different replicas"
+      ],
+      "answer": 0,
+      "explanation": "Read repair detects and corrects stale data on read operations, improving consistency. Option 1 is too strict and would block reads. Option 2 implies deletion without client notification. Option 3 places the burden on the client."
+    },
+    {
+      "id": "distributed-systems-replication-007",
+      "q": "What is the key difference between synchronous and asynchronous replication?",
+      "options": [
+        "Synchronous replication waits for backup acknowledgment before returning to the client; asynchronous does not",
+        "Asynchronous replication is faster but may lose recent writes on primary failure; synchronous is slower but durable",
+        "Synchronous replication does not use network communication between replicas",
+        "Asynchronous replication guarantees lower latency to clients while maintaining stronger consistency"
+      ],
+      "answer": 0,
+      "explanation": "Synchronous replication provides stronger durability at the cost of latency; asynchronous replication improves performance but risks data loss. Option 1 correctly identifies the tradeoff. Option 2 is false; asynchronous replication still uses networks."
+    },
+    {
+      "id": "distributed-systems-replication-008",
+      "q": "In vector clocks, what information does each entry represent?",
+      "options": [
+        "The logical clock value for a specific process, used to detect causality and concurrent events",
+        "The physical time at which a message was sent between two nodes",
+        "The number of bytes transmitted by each node in the system",
+        "The priority level assigned to each replica in the replication group"
+      ],
+      "answer": 0,
+      "explanation": "Vector clocks track the logical clock of each process to determine causal ordering and identify concurrent events. Option 1 measures physical time, not logical causality. Option 2 tracks data volume, not event ordering."
+    },
+    {
+      "id": "distributed-systems-replication-009",
+      "q": "What is the 'write quorum' in quorum-based replication?",
+      "options": [
+        "The minimum number of replicas that must acknowledge a write before it is considered committed",
+        "The number of replicas required to handle read operations",
+        "The total number of replicas minus one that must fail before writes are blocked",
+        "A group of replicas elected to filter duplicate write requests"
+      ],
+      "answer": 0,
+      "explanation": "The write quorum ensures a minimum number of replicas acknowledge a write for safety. Option 1 applies to read operations, not writes. Option 2 describes failure tolerance, not write commitment."
+    },
+    {
+      "id": "distributed-systems-replication-010",
+      "q": "In replication, what is a 'ghost write'?",
+      "options": [
+        "A write applied by one replica that is overwritten before reaching other replicas, causing data divergence",
+        "A write operation that completes successfully but the acknowledgment is lost in the network",
+        "A write that targets a replica that is currently offline",
+        "A write operation issued by a client that was never received by any replica"
+      ],
+      "answer": 0,
+      "explanation": "A ghost write occurs when one replica's write diverges from others before propagation, leading to consistency issues. Option 1 describes network loss, not divergence. Option 2 assumes offline replicas ignore writes. Option 3 is a lost message, not a ghost write."
+    }
+  ]
+}

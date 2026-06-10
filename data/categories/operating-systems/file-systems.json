@@ -1,0 +1,126 @@
+{
+  "topic": "file-systems",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-file-systems-001",
+      "q": "What is an inode in a file system?",
+      "options": [
+        "A block of data stored on disk that contains file contents",
+        "A data structure that stores metadata about a file (size, permissions, ownership, block locations)",
+        "A cache for recently accessed directory entries",
+        "The first sector of a disk partition"
+      ],
+      "answer": 1,
+      "explanation": "An inode (index node) is a data structure that contains all metadata about a file: size, owner, permissions, timestamps, and pointers to the actual data blocks. The file system stores one inode per file, indexed by the inode number. The file name is just a directory entry pointing to an inode."
+    },
+    {
+      "id": "operating-systems-file-systems-002",
+      "q": "How do directories work in a file system?",
+      "options": [
+        "They are special files containing a list of inodes and their corresponding file names",
+        "They physically reorganize disk blocks to group related files",
+        "They exist only in RAM and are lost when the system shuts down",
+        "They can contain only read-only files"
+      ],
+      "answer": 0,
+      "explanation": "A directory is a special type of file that maps file names (strings) to inode numbers. When you reference a file by name (e.g., /home/user/file.txt), the OS uses directories to traverse the path and find the corresponding inode. This separation of names from metadata enables hard links and efficient file management."
+    },
+    {
+      "id": "operating-systems-file-systems-003",
+      "q": "What is the purpose of journaling in a file system?",
+      "options": [
+        "To log all user commands for debugging purposes",
+        "To record changes before writing them to disk, enabling recovery from crashes",
+        "To encrypt file contents automatically",
+        "To compress files to save disk space"
+      ],
+      "answer": 1,
+      "explanation": "Journaling writes a record of planned changes to a journal on disk before actually modifying file system structures. If a crash occurs during a write operation, the file system can replay the journal to complete the operation, preventing corruption. Systems like ext3, ext4, and NTFS use journaling for reliability."
+    },
+    {
+      "id": "operating-systems-file-systems-004",
+      "q": "What are the main differences between FAT (File Allocation Table) and ext-based file systems?",
+      "options": [
+        "FAT is journaled; ext is not",
+        "FAT uses a simple allocation table; ext uses inodes and better handles permissions, large files, and fragmentation",
+        "ext is only for temporary files; FAT is for permanent storage",
+        "FAT supports more file types than ext"
+      ],
+      "answer": 1,
+      "explanation": "FAT is simple and stores a table mapping file clusters to their next cluster. It offers minimal metadata support. ext (and derivatives like ext4) use inodes with rich metadata (permissions, ownership), support large files and sparse files efficiently, and are more robust. FAT is typically found on USB drives; ext is standard on Linux."
+    },
+    {
+      "id": "operating-systems-file-systems-005",
+      "q": "What is fragmentation in file systems and how does it affect performance?",
+      "options": [
+        "The breaking of inodes into smaller pieces on disk",
+        "The scattering of a file's data blocks across distant disk locations, increasing seek time and reducing performance",
+        "The deletion of temporary files during operation",
+        "The encryption of file metadata"
+      ],
+      "answer": 1,
+      "explanation": "Fragmentation occurs when a file's data blocks are spread across different locations on the disk. The disk head must seek repeatedly, causing slower access. Modern file systems (like ext4) minimize fragmentation with better allocation strategies. Solid-state drives are unaffected by fragmentation since they have no mechanical seek latency."
+    },
+    {
+      "id": "operating-systems-file-systems-006",
+      "q": "What does the superblock in a file system contain?",
+      "options": [
+        "The list of all currently open files",
+        "Critical metadata about the file system (size, inode count, block size, free space info)",
+        "The encryption keys for all files",
+        "A cache of recently accessed directories"
+      ],
+      "answer": 1,
+      "explanation": "The superblock is a critical data structure stored at a known location on disk that contains metadata about the entire file system: total number of blocks and inodes, block size, inode size, and other parameters. Multiple copies of the superblock are often maintained for redundancy. File system corruption can be repaired by restoring a backup superblock."
+    },
+    {
+      "id": "operating-systems-file-systems-007",
+      "q": "What is the difference between a hard link and a symbolic (soft) link?",
+      "options": [
+        "Hard links are for directories; symbolic links are for regular files",
+        "A hard link is a directory entry pointing to the same inode; a symbolic link is a file containing a path to another file",
+        "Symbolic links are faster but can only reference local files",
+        "Hard links cannot be deleted once created"
+      ],
+      "answer": 1,
+      "explanation": "A hard link is simply another directory entry pointing to the same inode, so both names reference the same file. A symbolic (soft) link is a small file containing the path to another file; it's resolved at runtime. Hard links cannot span file systems or reference directories, while symbolic links can."
+    },
+    {
+      "id": "operating-systems-file-systems-008",
+      "q": "How do file systems allocate disk blocks to files?",
+      "options": [
+        "All files are stored in a single contiguous block for speed",
+        "Using allocation methods like FAT (linked clusters), ext (extents and bitmap), or B-trees to track which blocks belong to which files",
+        "By storing all blocks in RAM and writing to disk only on shutdown",
+        "Using inode numbers as direct disk addresses"
+      ],
+      "answer": 1,
+      "explanation": "File systems use various allocation strategies to track which disk blocks belong to which files. FAT maintains a table linking clusters; extent-based systems like ext4 group consecutive blocks; B-tree systems allow efficient searches. The choice affects performance, fragmentation, and maximum file size."
+    },
+    {
+      "id": "operating-systems-file-systems-009",
+      "q": "What is the purpose of the free block list or bitmap in a file system?",
+      "options": [
+        "To store the contents of deleted files for recovery",
+        "To track which disk blocks are free and available for allocation to new files",
+        "To index all file permissions globally",
+        "To compress unused disk space"
+      ],
+      "answer": 1,
+      "explanation": "A free block list (or bitmap where each bit represents a block's status) tracks which blocks are available for allocation. When a new file is created or grows, the file system consults this structure to find free blocks. Properly maintaining the free list is essential for correct allocation and preventing overwriting of file data."
+    },
+    {
+      "id": "operating-systems-file-systems-010",
+      "q": "What happens when a file is deleted in a file system?",
+      "options": [
+        "The inode and data blocks are immediately overwritten with zeros",
+        "The inode is marked as free, blocks are returned to the free list, but data remains on disk until overwritten",
+        "The directory entry and inode are removed, but the file cannot be recovered",
+        "All related inodes are moved to a special archive location"
+      ],
+      "answer": 1,
+      "explanation": "When a file is deleted, the OS marks the inode as free and returns its data blocks to the free block list. However, the actual data remains on disk until those blocks are reused for new files. This is why deleted files can sometimes be recovered by forensic tools if blocks haven't been overwritten."
+    }
+  ]
+}

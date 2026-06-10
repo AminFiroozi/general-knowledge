@@ -1,0 +1,126 @@
+{
+  "topic": "cap-theorem",
+  "category": "distributed-systems",
+  "questions": [
+    {
+      "id": "distributed-systems-cap-theorem-001",
+      "q": "What does the CAP theorem state about distributed systems?",
+      "options": [
+        "A system can guarantee at most two of three properties: Consistency, Availability, or Partition tolerance",
+        "All distributed systems must sacrifice Consistency to achieve Availability",
+        "Partition tolerance is optional and can be disabled in local area networks",
+        "Systems that prioritize Consistency will never experience network failures"
+      ],
+      "answer": 0,
+      "explanation": "The CAP theorem proves that systems can achieve only two of the three guarantees in the presence of network partitions. Option 1 is an overgeneralization; some systems do sacrifice availability. Option 2 is false; partitions are fundamental to distributed systems."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-002",
+      "q": "In CAP terminology, what does 'Consistency' mean?",
+      "options": [
+        "All nodes see the same data at the same time (strong consistency)",
+        "Data is formatted uniformly across all nodes",
+        "The system persists all acknowledged writes to disk",
+        "Nodes gradually agree on data values without synchronous coordination"
+      ],
+      "answer": 0,
+      "explanation": "CAP's consistency refers to strong consistency where all clients see the same data simultaneously. Option 1 is about data formatting. Option 2 is durability, not consistency in the CAP sense. Option 3 describes eventual consistency."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-003",
+      "q": "What does 'Availability' mean in the CAP theorem?",
+      "options": [
+        "Every request to any non-failing node receives a response without guarantee of consistency",
+        "The system never goes offline for maintenance or updates",
+        "All replicas have identical hardware capacity",
+        "The system responds to requests faster than the network latency"
+      ],
+      "answer": 0,
+      "explanation": "Availability means the system always responds, though responses may be stale. Option 1 assumes zero downtime. Option 2 concerns hardware, not availability. Option 3 is about timing, not responsiveness."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-004",
+      "q": "What is a network 'partition' in distributed systems?",
+      "options": [
+        "A failure where nodes cannot communicate with each other, splitting the network into isolated groups",
+        "A division of data across multiple nodes for scalability",
+        "A temporary delay in network messages between nodes",
+        "A firewall that blocks certain types of network traffic"
+      ],
+      "answer": 0,
+      "explanation": "A partition is a communication failure that isolates groups of nodes from each other. Option 1 describes data sharding, not partitions. Option 2 is a temporary delay, not a partition. Option 3 describes access control, not network failures."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-005",
+      "q": "Why must a system choose between Consistency and Availability during a partition?",
+      "options": [
+        "If nodes cannot communicate, maintaining consistency requires refusing some requests (sacrificing availability), or serving stale data (sacrificing consistency)",
+        "Partitions are rare and systems can simply wait for the network to heal",
+        "Consistency and Availability are properties that degrade equally with partitions",
+        "The CAP theorem only applies to systems with an odd number of nodes"
+      ],
+      "answer": 0,
+      "explanation": "During a partition, a system must choose: either block requests to preserve consistency or risk inconsistency to maintain availability. Option 1 is false; partitions are inevitable. Option 2 assumes equal degradation, which is incorrect."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-006",
+      "q": "What is the PACELC theorem?",
+      "options": [
+        "If Partition tolerance exists, systems trade Consistency for Latency or Availability; else, systems trade Consistency for Latency",
+        "PACELC is an acronym for five properties: Partition, Availability, Consistency, Eventual, Latency",
+        "PACELC disproves the CAP theorem by showing all three properties can coexist",
+        "PACELC applies only to systems where Partition tolerance is negligible"
+      ],
+      "answer": 0,
+      "explanation": "PACELC extends CAP by stating that even without partitions, systems must trade Consistency for Latency. Option 1 falsely claims five properties suffice. Option 2 contradicts CAP. Option 3 is inapplicable universally."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-007",
+      "q": "Which of the following is a CA system (Consistency + Availability, no partition tolerance)?",
+      "options": [
+        "A traditional SQL database on a single reliable network with no replication across WAN",
+        "DynamoDB with eventual consistency enabled",
+        "A gossip protocol that replicates data across multiple data centers",
+        "A distributed blockchain system like Bitcoin"
+      ],
+      "answer": 0,
+      "explanation": "CA systems exist only in reliable networks without partitions; single-server databases are practical CA systems. Option 1 provides eventual consistency. Option 2 replaces replication across regions, enabling partitions. Option 3 is a distributed system inherently subject to partitions."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-008",
+      "q": "Why is Partition tolerance considered a requirement in modern distributed systems?",
+      "options": [
+        "Network partitions are inevitable in large-scale systems, so systems must be designed to handle them",
+        "Partition tolerance improves system performance by reducing the need for consensus",
+        "Without partition tolerance, the CAP theorem is inapplicable",
+        "Partition tolerance allows systems to ignore Byzantine faults entirely"
+      ],
+      "answer": 0,
+      "explanation": "Modern distributed systems span networks where partitions are inevitable, making partition tolerance non-negotiable. Option 1 is false; partitions actually decrease performance. Option 2 assumes partition tolerance is optional. Option 3 assumes Byzantine faults are covered by partition tolerance."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-009",
+      "q": "In a CP system (Consistency + Partition tolerance), what happens during a network partition?",
+      "options": [
+        "The system refuses some requests to maintain strong consistency across partitions",
+        "The system continues serving all requests with eventually consistent data",
+        "The system prioritizes latency over consistency guarantees",
+        "The system merges partitioned data using application-specific logic"
+      ],
+      "answer": 0,
+      "explanation": "CP systems sacrifice availability to maintain consistency; they may block or reject requests during partitions. Option 1 provides eventual consistency, not strong consistency. Option 2 prioritizes latency, not consistency. Option 3 assumes merging is always possible."
+    },
+    {
+      "id": "distributed-systems-cap-theorem-010",
+      "q": "Why do many NoSQL databases choose AP over CP?",
+      "options": [
+        "Applications often tolerate eventual inconsistency better than unavailability, and AP enables high availability and fault tolerance",
+        "AP systems are fundamentally faster than CP systems at handling writes",
+        "AP systems eliminate the need for data replication across regions",
+        "The CAP theorem guarantees AP systems will never lose committed data"
+      ],
+      "answer": 0,
+      "explanation": "AP systems remain available during partitions with eventual consistency, which many applications can tolerate. Option 1 conflates speed with availability. Option 2 doesn't eliminate replication needs. Option 3 is false; data loss is possible in AP systems."
+    }
+  ]
+}

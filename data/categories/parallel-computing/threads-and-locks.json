@@ -1,0 +1,126 @@
+{
+  "topic": "threads-and-locks",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-threads-and-locks-001",
+      "q": "A race condition occurs when multiple threads access a shared variable without proper synchronization. Which outcome is most common?",
+      "options": [
+        "The program crashes immediately",
+        "The final value of the variable becomes unpredictable",
+        "All threads wait indefinitely",
+        "The operating system selects one thread as the winner"
+      ],
+      "answer": 1,
+      "explanation": "Race conditions result in unpredictable final values because the order of memory operations is non-deterministic. The program won't necessarily crash, threads won't block indefinitely, and the OS doesn't arbitrate—it's a logic error in the program."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-002",
+      "q": "What is the primary purpose of a mutex (mutual exclusion lock)?",
+      "options": [
+        "To increase the speed of thread execution",
+        "To ensure only one thread accesses a critical section at a time",
+        "To replace the need for condition variables",
+        "To distribute work evenly across CPU cores"
+      ],
+      "answer": 1,
+      "explanation": "A mutex enforces mutual exclusion by allowing only one thread to hold it at a time, protecting shared data from concurrent modification. Mutexes don't improve speed; condition variables are separate constructs; work distribution is handled by scheduling."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-003",
+      "q": "Which atomic operation guarantees that a read-modify-write sequence happens indivisibly without interruption?",
+      "options": [
+        "compare_and_swap (CAS)",
+        "release_fence",
+        "acquire_load",
+        "relaxed_store"
+      ],
+      "answer": 0,
+      "explanation": "Compare-and-swap atomically reads a value, compares it, and conditionally writes a new value—all indivisibly. Fences and memory ordering operations don't provide the read-modify-write guarantee; they control visibility and ordering of separate operations."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-004",
+      "q": "False sharing occurs when two threads access different variables that happen to be in the same cache line. What is the performance consequence?",
+      "options": [
+        "The variables get corrupted",
+        "Cache coherency traffic invalidates the line, reducing cache hit rate",
+        "One thread is forced to wait for the other",
+        "Memory reads become uncacheable"
+      ],
+      "answer": 1,
+      "explanation": "False sharing causes cache coherency protocols to invalidate the entire line when either thread modifies its variable, even though they're not actually sharing data. This increases cache misses and traffic, but doesn't cause corruption or force serialization."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-005",
+      "q": "In a reader-writer lock scenario with many readers and infrequent writers, what problem occurs with a simple mutex?",
+      "options": [
+        "Writers starve because readers keep acquiring the lock",
+        "Readers block each other unnecessarily even though they don't modify data",
+        "Deadlock becomes inevitable",
+        "The lock always favors the thread that was created first"
+      ],
+      "answer": 1,
+      "explanation": "A simple mutex serializes all access, forcing readers to block each other despite being able to safely execute concurrently. Reader-writer locks solve this by allowing multiple readers. Writers don't necessarily starve, and deadlock isn't automatic with a single mutex."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-006",
+      "q": "What is a deadlock in the context of multithreading?",
+      "options": [
+        "A situation where a thread modifies data faster than others can read it",
+        "A state where two or more threads are blocked waiting for each other's locks indefinitely",
+        "The condition where all threads are executing simultaneously",
+        "A performance degradation caused by excessive context switching"
+      ],
+      "answer": 1,
+      "explanation": "Deadlock is circular wait: thread A holds lock X and waits for lock Y, while thread B holds Y and waits for X. Neither progresses. Fast writes, simultaneous execution, and context switching are separate issues."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-007",
+      "q": "Which memory ordering model is the weakest and provides the fewest guarantees about operation visibility?",
+      "options": [
+        "Sequential consistency",
+        "Release-acquire ordering",
+        "Relaxed ordering",
+        "Full barrier ordering"
+      ],
+      "answer": 2,
+      "explanation": "Relaxed ordering (memory_order_relaxed) provides no ordering or visibility guarantees—operations may be reordered and visibility is not guaranteed across threads. Sequential consistency is strongest; release-acquire and barriers provide intermediate guarantees."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-008",
+      "q": "When implementing a spin lock, what is the main disadvantage compared to a mutex?",
+      "options": [
+        "Spin locks cannot handle contention",
+        "Spin locks burn CPU cycles in a busy-wait loop while a mutex blocks the thread",
+        "Mutexes are faster under all conditions",
+        "Spin locks prevent the program from running on multicore systems"
+      ],
+      "answer": 1,
+      "explanation": "Spin locks waste CPU by continuously checking if the lock is available, while mutexes put threads to sleep. Under contention, this wastes energy and prevents other work. Spin locks are actually faster under low contention, but the busy-wait is inefficient when the lock is held."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-009",
+      "q": "What does the acquire-release memory ordering guarantee?",
+      "options": [
+        "All memory operations are strictly ordered globally",
+        "A release operation makes prior operations visible to threads that acquire the same lock",
+        "The processor caches are fully flushed",
+        "Writes to shared memory are immediately written to main memory"
+      ],
+      "answer": 1,
+      "explanation": "Acquire-release creates a synchronization point: operations before a release are visible after a subsequent acquire on the same atomic variable. It doesn't enforce global ordering, flush caches, or force immediate writes—it's a synchronization mechanism."
+    },
+    {
+      "id": "parallel-computing-threads-and-locks-010",
+      "q": "In a double-checked locking pattern, why is the second lock check necessary?",
+      "options": [
+        "To ensure the first thread acquired the lock correctly",
+        "To handle the race between the first check and acquiring the lock",
+        "To prevent the same object from being initialized multiple times",
+        "To guarantee the lock will eventually be released"
+      ],
+      "answer": 2,
+      "explanation": "Double-checked locking checks once without the lock (fast path), then acquires the lock and checks again to ensure no other thread initialized the object in the race window. The second check prevents redundant initialization by threads that lost the race."
+    }
+  ]
+}

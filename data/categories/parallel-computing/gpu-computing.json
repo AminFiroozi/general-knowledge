@@ -1,0 +1,126 @@
+{
+  "topic": "gpu-computing",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-gpu-computing-001",
+      "q": "What does SIMD stand for and what is its primary advantage?",
+      "options": [
+        "Single Input Multiple Devices; allows one CPU to control many GPUs",
+        "Single Instruction Multiple Data; applies one operation to many data elements in parallel",
+        "Synchronous Input Memory Distribution; ensures consistent memory caches",
+        "Shared Instruction Multiple Domains; distributes code across processors"
+      ],
+      "answer": 1,
+      "explanation": "SIMD processes multiple data elements with a single instruction, leveraging hardware parallelism for efficiency. The other options confuse SIMD with unrelated concepts: device management, cache synchronization, or domain distribution."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-002",
+      "q": "In CUDA, a warp is a fundamental execution unit. How many threads does a warp typically contain?",
+      "options": [
+        "16 threads",
+        "32 threads",
+        "64 threads",
+        "128 threads"
+      ],
+      "answer": 1,
+      "explanation": "A CUDA warp contains 32 threads that execute the same instruction in lockstep on modern NVIDIA GPUs. Warps are the smallest independently scheduled units; 16, 64, and 128 are not standard warp sizes."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-003",
+      "q": "What is memory coalescing in GPU computing?",
+      "options": [
+        "Combining multiple kernels into a single executable",
+        "Threads in the same warp accessing consecutive memory addresses so reads/writes happen in one transaction",
+        "Reducing the number of global memory accesses by manual unrolling",
+        "Storing frequently accessed data permanently in the register file"
+      ],
+      "answer": 1,
+      "explanation": "Memory coalescing occurs when consecutive threads access consecutive memory addresses, allowing the GPU to fetch them in a single memory transaction. This is critical for bandwidth efficiency. Kernel combination, unrolling, and register allocation are separate optimizations."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-004",
+      "q": "Why do GPUs have high throughput compared to CPUs?",
+      "options": [
+        "GPU clock speeds are always faster",
+        "GPUs dedicate more transistors to computation and less to caching and control flow",
+        "GPUs use a more efficient instruction encoding scheme",
+        "GPUs employ speculative execution to predict all branches correctly"
+      ],
+      "answer": 1,
+      "explanation": "GPUs maximize computation by allocating vast transistor resources to ALUs, accepting high memory latency in exchange for throughput. CPUs prioritize low latency with large caches and complex control units. GPU clocks are typically slower than CPUs, and the other factors don't account for throughput differences."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-005",
+      "q": "In CUDA, what is the purpose of shared memory in a thread block?",
+      "options": [
+        "To store data that persists between kernel launches",
+        "To allow fast communication and synchronization between threads in the same block",
+        "To hold the arguments passed to the kernel function",
+        "To cache global memory accesses transparently"
+      ],
+      "answer": 1,
+      "explanation": "Shared memory is fast, on-chip memory accessible by all threads in a block, enabling low-latency communication and requiring explicit synchronization barriers. It doesn't persist between kernels, isn't used for kernel arguments, and is not an automatic cache."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-006",
+      "q": "What is a bank conflict in GPU shared memory?",
+      "options": [
+        "When two kernels write to the same global memory address",
+        "When multiple threads access different words in the same memory bank in the same cycle",
+        "When the GPU runs out of shared memory and spills to global memory",
+        "When thread blocks are scheduled on different GPU cores"
+      ],
+      "answer": 1,
+      "explanation": "Shared memory is divided into banks; simultaneous accesses to different words in the same bank cause serialization (a bank conflict), reducing throughput. Global memory contention, memory overflow, and block scheduling are different issues."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-007",
+      "q": "What limits the occupancy of a GPU (the percentage of active warps relative to maximum)?",
+      "options": [
+        "The number of warps requested by the kernel",
+        "Register usage, shared memory usage, and the number of thread blocks launched",
+        "The GPU's memory bandwidth alone",
+        "Whether the kernel uses global or shared memory"
+      ],
+      "answer": 1,
+      "explanation": "Occupancy is limited by available registers and shared memory per block—if a block uses too much, fewer blocks can run on a core. Requesting more warps doesn't help if hardware resources are exhausted. Memory bandwidth and memory type are performance factors, not occupancy limiters."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-008",
+      "q": "What is divergence in GPU execution and why is it problematic?",
+      "options": [
+        "When two GPU cores execute different instructions simultaneously",
+        "Threads in the same warp taking different execution paths, causing some threads to be idle",
+        "The GPU clock speed becoming unstable during high load",
+        "Multiple kernels running concurrently on the same GPU"
+      ],
+      "answer": 1,
+      "explanation": "When warp threads follow different branches, the GPU must execute both paths serially, disabling threads that shouldn't execute—wasting computation. Multiple cores executing different instructions is normal parallelism, not problematic. Clock instability and concurrent kernels are separate issues."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-009",
+      "q": "In GPU memory hierarchy, which memory is fastest but smallest?",
+      "options": [
+        "Global memory",
+        "Constant memory",
+        "Registers",
+        "Unified memory"
+      ],
+      "answer": 2,
+      "explanation": "Registers are the fastest memory (1-2 cycles latency) but extremely limited in quantity per thread (typically 32-256 registers). Global memory is large but slow; constant and unified memory have intermediate characteristics."
+    },
+    {
+      "id": "parallel-computing-gpu-computing-010",
+      "q": "What is the main purpose of using texture memory in CUDA kernels?",
+      "options": [
+        "To store graphical textures for rendering",
+        "To cache global memory reads with 2D locality and provide automatic address translation",
+        "To share data between CPU and GPU efficiently",
+        "To reduce register pressure in compute-heavy kernels"
+      ],
+      "answer": 1,
+      "explanation": "Texture memory provides a specialized cache optimized for 2D spatial locality, useful for image processing and array access patterns. It doesn't store graphics textures in compute kernels, isn't primarily for CPU-GPU transfer, and doesn't directly reduce register pressure."
+    }
+  ]
+}

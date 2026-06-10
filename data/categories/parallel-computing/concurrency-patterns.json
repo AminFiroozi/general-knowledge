@@ -1,0 +1,126 @@
+{
+  "topic": "concurrency-patterns",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-concurrency-patterns-001",
+      "q": "In the producer-consumer pattern, why is a bounded queue (fixed size) preferred over an unbounded one?",
+      "options": [
+        "To prevent the producer from creating data faster than the consumer can handle",
+        "To reduce memory usage and provide backpressure when the queue is full",
+        "To ensure the consumer always has data available",
+        "To eliminate the need for synchronization"
+      ],
+      "answer": 1,
+      "explanation": "A bounded queue limits memory growth and forces the producer to slow down when the queue is full (backpressure), preventing resource exhaustion. An unbounded queue can grow indefinitely and doesn't provide this regulation. Backpressure, not preventing fast production, is the key benefit."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-002",
+      "q": "What is the main advantage of a thread pool over creating a new thread for each task?",
+      "options": [
+        "Thread pools execute tasks in parallel, individual threads do not",
+        "Thread pools reuse threads, avoiding the overhead of repeated thread creation/destruction",
+        "Thread pools guarantee tasks execute in the order they were submitted",
+        "Thread pools eliminate the need for task queuing"
+      ],
+      "answer": 1,
+      "explanation": "Thread pools amortize thread creation costs by reusing threads for multiple tasks. Both patterns enable parallelism; ordering and queuing are separate design choices, not inherent advantages of pooling."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-003",
+      "q": "In the future pattern, what does a future represent?",
+      "options": [
+        "A thread that will execute eventually",
+        "A placeholder for a value that will be computed asynchronously and can be awaited",
+        "A guarantee that the computation will complete within a fixed time",
+        "A list of tasks scheduled to run in the future"
+      ],
+      "answer": 1,
+      "explanation": "A future is a handle to an ongoing or completed computation—you can wait for it and retrieve the result. It's not a thread, doesn't guarantee completion time, and isn't a task list."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-004",
+      "q": "What is the actor model's main principle?",
+      "options": [
+        "Actors are lightweight threads that share memory",
+        "Each actor is isolated, processes messages sequentially from a queue, and communicates only via asynchronous message passing",
+        "Actors are preempted automatically every millisecond",
+        "The actor model eliminates the need for explicit thread creation"
+      ],
+      "answer": 1,
+      "explanation": "The actor model emphasizes isolation and message passing—each actor runs independently, processes one message at a time, and sends messages to other actors. Shared memory, automatic preemption, and thread creation are separate concerns."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-005",
+      "q": "In the work-stealing scheduler pattern, when does a thread steal work?",
+      "options": [
+        "After every task completes",
+        "When its local queue is empty and other threads have pending tasks",
+        "At random intervals to ensure fair load balancing",
+        "Only after all threads synchronize at a barrier"
+      ],
+      "answer": 1,
+      "explanation": "Work-stealing occurs when a thread runs out of work and steals tasks from other threads' queues, improving load balancing dynamically. Stealing happens opportunistically, not at fixed intervals or barriers, to balance idle and busy threads."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-006",
+      "q": "What is the purpose of a barrier in concurrent programming?",
+      "options": [
+        "To prevent certain threads from accessing shared memory",
+        "To synchronize multiple threads—all must reach the barrier before any proceed",
+        "To measure the performance of a parallel program",
+        "To enforce the execution of tasks in sequential order"
+      ],
+      "answer": 1,
+      "explanation": "A barrier blocks all participating threads until they've all arrived, then releases them together. It synchronizes progress, not access control. It doesn't measure performance or enforce sequentiality."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-007",
+      "q": "In the promise-future pattern, what does a promise enable?",
+      "options": [
+        "Guarantees that a task will never fail",
+        "A thread to set the result of a computation that another thread can retrieve via a future",
+        "Automatic retrying of failed tasks",
+        "Prevention of race conditions without locks"
+      ],
+      "answer": 1,
+      "explanation": "A promise is the producer-side endpoint—it sets a value or exception that a future (consumer-side) can retrieve. Promises don't guarantee success, enable automatic retries, or prevent races by themselves."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-008",
+      "q": "What is the dining philosophers problem an example of?",
+      "options": [
+        "A pattern for efficient thread synchronization",
+        "A classic deadlock scenario where processes compete for limited resources",
+        "A load-balancing algorithm for distributed systems",
+        "A method to detect memory leaks in concurrent programs"
+      ],
+      "answer": 1,
+      "explanation": "The dining philosophers problem illustrates deadlock: each philosopher needs two forks (resources) but if all grab one fork simultaneously, none can proceed. It's a pedagogical example, not a solution or load-balancing technique."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-009",
+      "q": "In the observer pattern for concurrent systems, what is the main challenge?",
+      "options": [
+        "Observers cannot be modified after subscription",
+        "Ensuring thread-safe notification when the subject's state changes and multiple observers are notified concurrently",
+        "Limiting the number of observers per subject",
+        "Predicting which observer will process notifications first"
+      ],
+      "answer": 1,
+      "explanation": "Observer notification in concurrent systems must handle thread safety—multiple observers receiving updates simultaneously, observer additions/removals during notifications, and callback logic. The other options don't reflect real design challenges."
+    },
+    {
+      "id": "parallel-computing-concurrency-patterns-010",
+      "q": "What is a semaphore and what is a common use case?",
+      "options": [
+        "A lock that prevents all threads from executing",
+        "A synchronization primitive with an integer count; used to limit concurrent access to a resource pool (e.g., max N threads)",
+        "A message-passing mechanism for inter-process communication",
+        "A cache invalidation technique"
+      ],
+      "answer": 1,
+      "explanation": "A semaphore maintains a count representing available resources—threads wait if count is zero, decrement on access, increment on release. Common for limiting concurrency (bounded access), not blocking all threads. It's not about messaging or caching."
+    }
+  ]
+}

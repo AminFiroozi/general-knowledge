@@ -1,0 +1,126 @@
+{
+  "topic": "amdahls-law",
+  "category": "parallel-computing",
+  "questions": [
+    {
+      "id": "parallel-computing-amdahls-law-001",
+      "q": "Amdahl's Law describes the speedup of a parallel program. What is the formula's key insight?",
+      "options": [
+        "Speedup is proportional to the square of the number of processors",
+        "The maximum speedup is limited by the serial (non-parallelizable) fraction of the program",
+        "Speedup always increases linearly with processor count",
+        "The parallel fraction determines execution time more than the serial fraction"
+      ],
+      "answer": 1,
+      "explanation": "Amdahl's Law shows that speedup ≈ 1 / (S + (1-S)/P), where S is serial fraction and P is processor count. No matter how many processors you add, the serial part creates a bottleneck. Linear scaling and other options ignore this fundamental limitation."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-002",
+      "q": "If a program is 95% parallelizable and you have 100 processors, what is the maximum theoretical speedup?",
+      "options": [
+        "100×",
+        "≈20×",
+        "≈95×",
+        "≈50×"
+      ],
+      "answer": 1,
+      "explanation": "Speedup = 1 / (0.05 + 0.95/100) ≈ 1 / (0.05 + 0.0095) ≈ 1 / 0.0595 ≈ 16.8 ≈ 20×. The 5% serial fraction dominates and limits speedup regardless of processor count. The other values ignore the serial component."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-003",
+      "q": "What does 'strong scaling' mean in parallel computing?",
+      "options": [
+        "Using strong processors with high clock speeds",
+        "Keeping problem size fixed and increasing processor count, measuring speedup",
+        "Increasing problem size proportionally with processor count",
+        "Scaling the parallel portion independently from the serial portion"
+      ],
+      "answer": 1,
+      "explanation": "Strong scaling fixes the problem size and varies processor count—it reveals Amdahl's Law limitations as serial sections dominate. Weak scaling increases problem size with processors. Speed and portion scaling are implementation details, not definitions."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-004",
+      "q": "What does 'weak scaling' address that strong scaling doesn't?",
+      "options": [
+        "Processors with lower clock speeds",
+        "Distributed systems with high latency",
+        "Keeping memory per processor constant while increasing problem size and processor count",
+        "Eliminating serial code sections"
+      ],
+      "answer": 2,
+      "explanation": "Weak scaling maintains constant memory per processor and grows the problem with processor count—it shows how well an algorithm utilizes additional resources before hitting Amdahl's limit. It's not about clock speeds, latency, or removing serial code."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-005",
+      "q": "If a program has 10% serial fraction, what is the theoretical maximum speedup with infinite processors?",
+      "options": [
+        "10×",
+        "100×",
+        "∞ (unbounded)",
+        "≈1.11× (limited by Amdahl's Law)"
+      ],
+      "answer": 0,
+      "explanation": "As P → ∞, speedup → 1/S = 1/0.1 = 10×. The serial fraction (10%) creates an insurmountable bottleneck. The parallel portion can be arbitrarily sped up, but serial code always takes at least 10% of the original time."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-006",
+      "q": "Gustafson's Law challenges Amdahl's Law by proposing what alternative view?",
+      "options": [
+        "Serial code is always removable with better algorithms",
+        "If you have more processors, you can solve larger problems while maintaining fixed runtime (weak scaling improvement)",
+        "Parallel speedup is always linear regardless of serial fraction",
+        "Processors increase in speed exponentially"
+      ],
+      "answer": 1,
+      "explanation": "Gustafson's Law assumes fixed execution time and scales the problem size—as you add processors, you solve bigger problems, improving practical speedup. It's optimistic about scaling large problems. Serial code reduction and linear scaling are separate ideas."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-007",
+      "q": "What is the relationship between problem size and the impact of Amdahl's Law?",
+      "options": [
+        "Larger problems always have higher serial fractions",
+        "Smaller problems have proportionally larger serial overhead (setup, I/O), increasing the effective serial fraction",
+        "Problem size doesn't affect the serial fraction",
+        "Amdahl's Law only applies to small problems"
+      ],
+      "answer": 1,
+      "explanation": "Serial overhead (synchronization, I/O, initialization) becomes proportionally smaller for larger problems because work grows asymptotically. Small problems may be dominated by overhead, making the effective serial fraction large. The serial fraction often depends on problem size."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-008",
+      "q": "In practice, why do programs often achieve less speedup than Amdahl's Law predicts?",
+      "options": [
+        "Processors are slower than theoretical models",
+        "Communication overhead, synchronization costs, and load imbalance reduce the effective parallel efficiency",
+        "Programmers make mistakes in parallel code",
+        "Memory bandwidth is always sufficient"
+      ],
+      "answer": 1,
+      "explanation": "Amdahl's Law assumes perfect parallelization with zero overhead. Real systems suffer from message passing latency, barrier synchronization, load imbalance (some threads finish early and idle), and memory contention. These reduce practical speedup below the theoretical limit."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-009",
+      "q": "What is 'scalability' in the context of parallel computing?",
+      "options": [
+        "The speed of the fastest processor",
+        "How well a parallel program maintains efficiency (speedup/processor count) as the number of processors increases",
+        "The ability to run on different operating systems",
+        "The maximum amount of memory a program can use"
+      ],
+      "answer": 1,
+      "explanation": "Scalability measures parallel efficiency (speedup as a fraction of ideal speedup) as systems grow—better scalability means less degradation as processor count increases. It's not about processor speed, OS portability, or memory limits."
+    },
+    {
+      "id": "parallel-computing-amdahls-law-010",
+      "q": "If you optimize the serial portion of a program from 5% to 2%, how does this affect maximum speedup with 50 processors according to Amdahl's Law?",
+      "options": [
+        "Maximum speedup changes from ~20× to ~50×",
+        "Maximum speedup doesn't change because the parallel portion scales with processors",
+        "Maximum speedup changes from ~19× to ~33×",
+        "Maximum speedup becomes unbounded"
+      ],
+      "answer": 2,
+      "explanation": "Original: 1/(0.05 + 0.95/50) ≈ 19×. Optimized: 1/(0.02 + 0.98/50) ≈ 33×. Reducing serial fraction allows more speedup, but improvement is sub-linear. Complete elimination (serial=0) yields perfect scaling, but small reductions have diminishing returns."
+    }
+  ]
+}

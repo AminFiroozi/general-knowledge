@@ -1,0 +1,126 @@
+{
+  "topic": "flip-flops-and-latches",
+  "category": "digital-logic",
+  "questions": [
+    {
+      "id": "digital-logic-flip-flops-and-latches-001",
+      "q": "What is the key difference between a latch and a flip-flop?",
+      "options": [
+        "A latch uses NOR gates while a flip-flop uses NAND gates",
+        "A latch is level-triggered while a flip-flop is edge-triggered",
+        "A flip-flop can store more bits than a latch",
+        "A latch requires external power while a flip-flop does not"
+      ],
+      "answer": 1,
+      "explanation": "Latches respond to logic levels (asynchronous) and are level-triggered, while flip-flops use a clock signal and are edge-triggered (synchronous). Both can be built with NOR or NAND gates. Storage capacity and power requirements are independent of latch vs flip-flop distinction."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-002",
+      "q": "In an SR latch with S=1 and R=0, what is the output state?",
+      "options": [
+        "Q=0, Q'=1 (reset state)",
+        "Q=1, Q'=0 (set state)",
+        "Q=0, Q'=0 (invalid state)",
+        "Q=1, Q'=1 (invalid state)"
+      ],
+      "answer": 1,
+      "explanation": "S=1 (Set) and R=0 forces Q=1 and Q'=0. When S=0 and R=1, the latch resets to Q=0, Q'=1. When both are 1 simultaneously, it creates an undefined/invalid state."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-003",
+      "q": "What is the prohibited input condition for an SR latch?",
+      "options": [
+        "S=0, R=0",
+        "S=1, R=1",
+        "S=0, R=1",
+        "S=1, R=0"
+      ],
+      "answer": 1,
+      "explanation": "S=1 and R=1 simultaneously tries to set and reset at once, creating an undefined state since Q cannot be both 0 and 1. The state S=0, R=0 holds the current value. S=0, R=1 resets; S=1, R=0 sets."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-004",
+      "q": "A D flip-flop on a positive edge trigger captures its input ___.",
+      "options": [
+        "While the clock is high",
+        "While the clock is low",
+        "At the moment the clock transitions from 0 to 1",
+        "At the moment the clock transitions from 1 to 0"
+      ],
+      "answer": 2,
+      "explanation": "A positive (rising) edge-triggered flip-flop samples the D input at the instant the clock transitions from low to high. Level-triggered devices respond while the clock is at a specific level. A negative edge trigger samples on 1→0 transition."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-005",
+      "q": "What is the function of the D input in a D flip-flop?",
+      "options": [
+        "Determines the clock frequency",
+        "The data to be stored when the trigger condition is met",
+        "Delays the clock signal",
+        "Disables the flip-flop when set to 0"
+      ],
+      "answer": 1,
+      "explanation": "The D (Data) input specifies what value should be captured and stored in the flip-flop when the trigger event (clock edge) occurs. D does not control timing, frequency, or enable logic; those are separate signals."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-006",
+      "q": "In a JK flip-flop with J=1, K=0, what does the flip-flop do?",
+      "options": [
+        "It resets to Q=0",
+        "It sets to Q=1",
+        "It toggles its state",
+        "It remains unchanged"
+      ],
+      "answer": 1,
+      "explanation": "In a JK flip-flop: J=1, K=0 sets Q=1; J=0, K=1 resets Q=0; J=1, K=1 toggles; J=0, K=0 holds state. J controls set behavior, K controls reset behavior."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-007",
+      "q": "What happens in a JK flip-flop when J=1 and K=1?",
+      "options": [
+        "The flip-flop is set",
+        "The flip-flop is reset",
+        "The flip-flop toggles on each clock pulse",
+        "The flip-flop enters an invalid state"
+      ],
+      "answer": 2,
+      "explanation": "J=1 and K=1 causes the JK flip-flop to toggle (switch between 0 and 1) on each clock edge. This is an advantage of JK over SR latches—both inputs can be 1 without creating an invalid state. The other options describe different J, K combinations."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-008",
+      "q": "A T (toggle) flip-flop output toggles when its input T is ___.",
+      "options": [
+        "0",
+        "1",
+        "Neither: it always toggles",
+        "During clock transitions only"
+      ],
+      "answer": 1,
+      "explanation": "When T=1, the flip-flop toggles on each clock pulse. When T=0, it holds its current state. The T input directly controls toggle behavior. Option 2 is too restrictive; option 3 is incorrect because toggling is conditional on T."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-009",
+      "q": "What is the primary purpose of using a register (collection of flip-flops)?",
+      "options": [
+        "To amplify digital signals",
+        "To store multiple bits of data temporarily",
+        "To convert analog signals to digital",
+        "To increase clock frequency"
+      ],
+      "answer": 1,
+      "explanation": "A register stores multiple bits of data by using one flip-flop per bit, allowing parallel storage of binary values. Amplification, analog-digital conversion, and frequency scaling are unrelated to registers."
+    },
+    {
+      "id": "digital-logic-flip-flops-and-latches-010",
+      "q": "In a gated SR latch with enable signal E, when E=0, what does the latch do?",
+      "options": [
+        "It sets regardless of S and R",
+        "It resets regardless of S and R",
+        "It ignores S and R and maintains its previous state",
+        "It enters an invalid state"
+      ],
+      "answer": 2,
+      "explanation": "When the enable (gate) signal E=0, the AND gates block the S and R inputs from reaching the NOR latch, so it holds its current state. Only when E=1 can S and R affect the output. This is a form of synchronous control."
+    }
+  ]
+}

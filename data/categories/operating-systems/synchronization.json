@@ -1,0 +1,126 @@
+{
+  "topic": "synchronization",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-synchronization-001",
+      "q": "What is a race condition?",
+      "options": [
+        "A competitive performance benchmark between two CPU cores",
+        "A situation where multiple threads access shared data concurrently and the outcome depends on the timing of their execution",
+        "A type of deadlock that occurs only in single-core systems",
+        "A scheduled contest between processes for CPU time"
+      ],
+      "answer": 1,
+      "explanation": "A race condition occurs when two or more threads access shared data without synchronization, and at least one modifies it. The result depends on the order of execution, which is non-deterministic. Classic example: if two threads increment a shared variable, the result may be wrong if they access it in an unlucky order."
+    },
+    {
+      "id": "operating-systems-synchronization-002",
+      "q": "What is a critical section?",
+      "options": [
+        "A part of the file system that cannot be modified",
+        "A code segment where a process accesses shared resources that must not be accessed concurrently by multiple processes",
+        "The most computationally expensive part of a program",
+        "A section of memory reserved for kernel-only use"
+      ],
+      "answer": 1,
+      "explanation": "A critical section is a code segment that accesses shared resources (variables, files, etc.). Only one process/thread should execute its critical section at a time; otherwise, race conditions occur. Synchronization primitives (locks, semaphores) ensure mutual exclusion—only one process in its critical section at a time."
+    },
+    {
+      "id": "operating-systems-synchronization-003",
+      "q": "What is a mutex (mutual exclusion lock)?",
+      "options": [
+        "A scheduling algorithm that alternates between processes",
+        "A synchronization primitive that ensures only one thread can hold it at a time, protecting critical sections",
+        "A method of dividing memory among multiple processes",
+        "A type of interrupt handler"
+      ],
+      "answer": 1,
+      "explanation": "A mutex is a binary lock that can be held by at most one thread. A thread acquires (locks) the mutex before entering a critical section and releases (unlocks) it afterward. Other threads trying to acquire a held mutex block until it's released. Mutexes are the primary tool for preventing race conditions."
+    },
+    {
+      "id": "operating-systems-synchronization-004",
+      "q": "What is a semaphore and how does it differ from a mutex?",
+      "options": [
+        "A semaphore is only for inter-process communication; a mutex is only for threads",
+        "A semaphore is a counter allowing a specified number of threads to access a resource; a mutex is binary (only one)",
+        "A semaphore prevents all access to a resource; a mutex allows shared access",
+        "They are functionally identical but have different names"
+      ],
+      "answer": 1,
+      "explanation": "A semaphore is a counter with two atomic operations: wait (decrement, block if zero) and signal (increment, wake one waiting thread). Binary semaphores (count 0 or 1) are equivalent to mutexes. Counting semaphores allow multiple threads to access a resource pool (e.g., N database connections). Semaphores are more general and flexible than mutexes."
+    },
+    {
+      "id": "operating-systems-synchronization-005",
+      "q": "What is a deadlock in concurrent programming?",
+      "options": [
+        "A process that uses 100% of the CPU indefinitely",
+        "A situation where two or more processes hold resources and wait for each other, causing all to block indefinitely",
+        "An exception thrown when memory is exhausted",
+        "A lock that cannot be released by any process"
+      ],
+      "answer": 1,
+      "explanation": "Deadlock is a circular wait: process A holds resource 1 and waits for resource 2, while process B holds resource 2 and waits for resource 1. Both block forever. Deadlock requires four conditions: mutual exclusion, hold and wait, no preemption, and circular wait. Preventing or detecting deadlock is a major synchronization challenge."
+    },
+    {
+      "id": "operating-systems-synchronization-006",
+      "q": "What are the four necessary conditions for deadlock to occur?",
+      "options": [
+        "Resource exhaustion, infinite loops, context switching, and process termination",
+        "Mutual exclusion, hold and wait, no preemption, and circular wait",
+        "Race conditions, memory leaks, CPU throttling, and disk full",
+        "Semaphore timeout, priority inversion, starvation, and cache conflict"
+      ],
+      "answer": 1,
+      "explanation": "All four conditions must be true simultaneously for deadlock: (1) Mutual exclusion—resources cannot be shared, (2) Hold and wait—processes hold resources while waiting for others, (3) No preemption—resources cannot be forcibly taken, (4) Circular wait—a cycle exists in the resource allocation graph. Breaking any condition prevents deadlock."
+    },
+    {
+      "id": "operating-systems-synchronization-007",
+      "q": "What is a monitor as a synchronization primitive?",
+      "options": [
+        "A tool that logs all system activities",
+        "A high-level abstraction encapsulating a lock and condition variables, ensuring only one thread runs its methods at a time",
+        "A hardware device that displays process status",
+        "A checkpoint that threads must pass through sequentially"
+      ],
+      "answer": 1,
+      "explanation": "A monitor is a language or OS construct that wraps a shared resource with an implicit lock and provides condition variables for waiting/signaling. When a thread enters a monitor method, the lock is automatically acquired; when it exits, the lock is released. This simplifies synchronization compared to manual lock management."
+    },
+    {
+      "id": "operating-systems-synchronization-008",
+      "q": "What is priority inversion?",
+      "options": [
+        "A scheduling algorithm that randomly assigns priorities",
+        "A situation where a high-priority thread is blocked by a low-priority thread holding a resource",
+        "The removal of priority levels from the scheduler",
+        "A type of network packet reordering"
+      ],
+      "answer": 1,
+      "explanation": "Priority inversion occurs when a high-priority thread needs a resource held by a lower-priority thread that is preempted by medium-priority threads. The high-priority thread cannot run until the medium-priority threads complete and the low-priority thread releases the lock. This defeats the purpose of priorities. Priority inheritance or priority ceiling can mitigate this."
+    },
+    {
+      "id": "operating-systems-synchronization-009",
+      "q": "What is a condition variable used for?",
+      "options": [
+        "To store the current state of a boolean expression",
+        "To allow threads to wait for a specific condition and be awakened when another thread signals it",
+        "To limit the number of concurrent threads in a program",
+        "To measure elapsed time between events"
+      ],
+      "answer": 1,
+      "explanation": "A condition variable is used with a mutex to implement wait/signal patterns. A thread can wait on a condition (releasing the mutex while waiting), and another thread can signal the condition to wake up one or all waiting threads. This is essential for producer-consumer problems and other coordination patterns."
+    },
+    {
+      "id": "operating-systems-synchronization-010",
+      "q": "What is the difference between spinlocks and blocking locks?",
+      "options": [
+        "Spinlocks are faster but use more power; blocking locks are slower but efficient",
+        "A spinlock repeatedly checks a lock in a loop; a blocking lock puts the thread to sleep until the lock is available",
+        "Spinlocks work only on single-core systems; blocking locks require multiple cores",
+        "They are functionally equivalent but have different APIs"
+      ],
+      "answer": 1,
+      "explanation": "A spinlock repeatedly polls a lock variable in a tight loop, wasting CPU cycles. A blocking lock puts the waiting thread to sleep, allowing the OS to schedule other work. Spinlocks are useful for very short critical sections on multi-core systems where sleep overhead is wasteful; blocking locks are better for longer waits or single-core systems."
+    }
+  ]
+}

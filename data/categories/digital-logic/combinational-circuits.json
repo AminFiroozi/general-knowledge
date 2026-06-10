@@ -1,0 +1,126 @@
+{
+  "topic": "combinational-circuits",
+  "category": "digital-logic",
+  "questions": [
+    {
+      "id": "digital-logic-combinational-circuits-001",
+      "q": "What is the primary function of a multiplexer (MUX)?",
+      "options": [
+        "To convert serial data to parallel data",
+        "To select one of many input signals and forward it to a single output based on a control signal",
+        "To amplify digital signals",
+        "To synchronize multiple clock signals"
+      ],
+      "answer": 1,
+      "explanation": "A multiplexer uses select lines to choose which of its multiple inputs appears at the output. A 4-to-1 MUX has 4 inputs and 2 select lines (2^2=4). Serialization, amplification, and clock synchronization are not MUX functions."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-002",
+      "q": "A 3-to-8 decoder receives input 101 (binary 5). Which output line is activated?",
+      "options": [
+        "Output 0",
+        "Output 3",
+        "Output 5",
+        "Output 7"
+      ],
+      "answer": 2,
+      "explanation": "A decoder converts an n-bit binary input into 2^n output lines. The input 101 = 5 in decimal, so the output at index 5 is activated (typically set to 1). The other 7 outputs remain 0."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-003",
+      "q": "How many select lines does a 16-to-1 multiplexer require?",
+      "options": [
+        "4",
+        "8",
+        "16",
+        "2"
+      ],
+      "answer": 0,
+      "explanation": "A 16-to-1 MUX has 16 inputs and needs log₂(16) = 4 select lines. With 4 select lines, you can represent 2^4 = 16 different combinations to select each input."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-004",
+      "q": "What is the output of a full adder with A=1, B=1, and Cin=1?",
+      "options": [
+        "Sum=0, Cout=0",
+        "Sum=1, Cout=1",
+        "Sum=0, Cout=1",
+        "Sum=1, Cout=0"
+      ],
+      "answer": 2,
+      "explanation": "A full adder adds three bits: A + B + Cin. 1 + 1 + 1 = 3 = 11 (binary), so Sum=1 (least significant bit) and Cout=1 (carry out, most significant bit)."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-005",
+      "q": "An encoder performs the opposite function of a decoder. What does a priority encoder do that a standard encoder does not?",
+      "options": [
+        "It amplifies the input signals",
+        "It handles multiple simultaneous active inputs by prioritizing one",
+        "It increases the number of outputs",
+        "It adds delay to synchronize with a clock"
+      ],
+      "answer": 1,
+      "explanation": "A priority encoder outputs the binary code for the highest-priority active input when multiple inputs are 1 simultaneously, whereas a standard encoder assumes only one input is active. Amplification, output count, and clock synchronization are not differentiators."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-006",
+      "q": "What does a magnitude comparator output?",
+      "options": [
+        "The binary code of the larger number",
+        "Flags indicating A > B, A = B, or A < B",
+        "The difference between two numbers",
+        "A serial bit stream representing comparison result"
+      ],
+      "answer": 1,
+      "explanation": "A comparator outputs three flags or signals indicating the relationship between two inputs: greater than, equal to, or less than. It does not output the numbers themselves, their difference, or serial data."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-007",
+      "q": "In a 2-bit ripple carry adder, what is the main drawback compared to a carry look-ahead adder?",
+      "options": [
+        "It requires more transistors",
+        "It produces incorrect results",
+        "Propagation delay increases with the number of bits due to carry ripple through stages",
+        "It cannot add negative numbers"
+      ],
+      "answer": 2,
+      "explanation": "In ripple carry addition, the carry must propagate through each stage sequentially, causing delay proportional to the number of bits (n stages → O(n) delay). Carry look-ahead computes carries in parallel, reducing delay to O(log n). Transistor count and negative number handling are separate issues."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-008",
+      "q": "What is the truth table output for a 1-to-2 demultiplexer (DEMUX) with data input D=1 and select line S=0?",
+      "options": [
+        "Y0=1, Y1=1",
+        "Y0=1, Y1=0",
+        "Y0=0, Y1=1",
+        "Y0=0, Y1=0"
+      ],
+      "answer": 1,
+      "explanation": "A 1-to-2 DEMUX routes its single input to one of two outputs based on the select line. When S=0, the input D goes to Y0; when S=1, it goes to Y1. The inactive output is 0. So D=1, S=0 gives Y0=1, Y1=0."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-009",
+      "q": "A 4-bit adder-subtractor requires a control signal to toggle between add and subtract operations. When the control is set to subtract, what operation is typically performed internally?",
+      "options": [
+        "Direct subtraction using XOR gates",
+        "Two's complement addition of the subtrahend",
+        "One's complement addition with end-around carry",
+        "Floating-point arithmetic"
+      ],
+      "answer": 1,
+      "explanation": "To subtract B from A, the circuit typically computes A + (¬B + 1), which is A + two's complement of B. This reuses the adder hardware. One's complement and floating-point are alternative but less common approaches in basic circuits."
+    },
+    {
+      "id": "digital-logic-combinational-circuits-010",
+      "q": "What is the relationship between the number of input lines and select lines in a multiplexer?",
+      "options": [
+        "Select lines = Input lines × 2",
+        "Select lines = log₂(Input lines)",
+        "Input lines = 2 × Select lines",
+        "They are always equal"
+      ],
+      "answer": 1,
+      "explanation": "For an n-to-1 multiplexer with n input lines, you need log₂(n) select lines. For example, 8 inputs require log₂(8) = 3 select lines. This is because 2^(select lines) = input lines. Option 0 and 2 have the relationship inverted or incorrect."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "scheduling",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-scheduling-001",
+      "q": "What is the goal of CPU scheduling?",
+      "options": [
+        "To ensure all processes run simultaneously on all cores",
+        "To maximize CPU utilization by keeping the CPU busy and providing fast response times for interactive processes",
+        "To eliminate the need for process preemption",
+        "To guarantee all processes complete in exactly the same time"
+      ],
+      "answer": 1,
+      "explanation": "CPU scheduling aims to efficiently allocate CPU time among processes to maximize utilization (minimize idle time), minimize average response time, and ensure fairness. The scheduler must balance throughput with responsiveness—background jobs should not starve interactive processes."
+    },
+    {
+      "id": "operating-systems-scheduling-002",
+      "q": "What does First-Come-First-Served (FCFS) scheduling mean?",
+      "options": [
+        "Processes with short burst times run first",
+        "Processes are executed in the order they arrive in the ready queue, with no preemption",
+        "The CPU is divided equally among all processes",
+        "Interactive processes always run before batch processes"
+      ],
+      "answer": 1,
+      "explanation": "FCFS is the simplest scheduling algorithm: the process at the front of the ready queue runs to completion before the next process begins. It is non-preemptive and fair but can cause high average wait time and the convoy effect (short jobs waiting behind long jobs)."
+    },
+    {
+      "id": "operating-systems-scheduling-003",
+      "q": "What is the advantage of Shortest Job First (SJF) scheduling?",
+      "options": [
+        "It guarantees all processes complete within a deadline",
+        "It minimizes average waiting time among all scheduling algorithms",
+        "It provides the fastest response time for interactive users",
+        "It prevents process starvation completely"
+      ],
+      "answer": 1,
+      "explanation": "SJF always selects the process with the shortest CPU burst time next, minimizing the average waiting time and minimizing the number of waiting processes. However, it requires predicting burst times (difficult) and can starve long processes if short jobs continuously arrive."
+    },
+    {
+      "id": "operating-systems-scheduling-004",
+      "q": "What problem does Round-Robin (RR) scheduling address?",
+      "options": [
+        "It eliminates external fragmentation in memory",
+        "It ensures fairness by giving each process a fixed time slice (quantum) in turn, preventing process starvation",
+        "It guarantees the shortest job always completes first",
+        "It reduces disk I/O operations"
+      ],
+      "answer": 1,
+      "explanation": "Round-Robin uses preemption with a time quantum (e.g., 10ms). Each process runs for at most one quantum, then is placed at the back of the queue. This ensures fairness and reasonable response times for interactive processes. The choice of quantum is critical: too small incurs scheduling overhead, too large reduces interactivity."
+    },
+    {
+      "id": "operating-systems-scheduling-005",
+      "q": "What is priority-based scheduling?",
+      "options": [
+        "Assigning each process a fixed time slice based on memory usage",
+        "Assigning each process a priority level and scheduling higher-priority processes first",
+        "Requiring all processes to complete in numerical order",
+        "Limiting the number of processes that can run simultaneously"
+      ],
+      "answer": 1,
+      "explanation": "Priority scheduling assigns each process a priority, and the scheduler always selects the highest-priority ready process. Priorities can be static or dynamic. Priority inversion can occur: a high-priority process waiting for a low-priority process holding a resource, reducing responsiveness. Aging (gradually increasing priority) can prevent starvation."
+    },
+    {
+      "id": "operating-systems-scheduling-006",
+      "q": "What is preemptive scheduling?",
+      "options": [
+        "A scheduling algorithm that prevents all context switches",
+        "Scheduling that allows the OS to interrupt a running process and switch to another process",
+        "A method of scheduling that requires user approval before running processes",
+        "Scheduling that guarantees no process will ever be interrupted"
+      ],
+      "answer": 1,
+      "explanation": "Preemptive scheduling interrupts a running process to switch to another (usually due to a time quantum expiration or a higher-priority process becoming ready). This ensures responsiveness and fairness. Non-preemptive scheduling only switches when the current process blocks or terminates, which can cause poor response times."
+    },
+    {
+      "id": "operating-systems-scheduling-007",
+      "q": "What are multilevel queue scheduling (MLQ) and multilevel feedback queues (MLFQ)?",
+      "options": [
+        "Techniques for managing multiple CPUs independently",
+        "MLQ partitions processes into separate queues by priority; MLFQ allows processes to move between queues based on behavior",
+        "Methods for encrypting process scheduling data",
+        "Algorithms that require all processes to be of equal priority"
+      ],
+      "answer": 1,
+      "explanation": "MLQ maintains separate queues for process classes (e.g., interactive, batch) and uses different scheduling algorithms per queue. MLFQ improves this by allowing processes to move between queues dynamically: if a process uses its full quantum, it moves to a lower-priority queue; if it yields early, it moves higher. This adapts to process behavior automatically."
+    },
+    {
+      "id": "operating-systems-scheduling-008",
+      "q": "What is the convoy effect in scheduling?",
+      "options": [
+        "A deadlock where multiple processes wait indefinitely for each other",
+        "When a long-running process blocks short processes in FCFS, causing them to wait longer than necessary",
+        "The automatic acceleration of process execution on multi-core systems",
+        "The movement of processes between different priority queues"
+      ],
+      "answer": 1,
+      "explanation": "In FCFS scheduling, if a long process runs first, all subsequent short processes must wait for it to complete. This causes short jobs to experience long wait times even though they would finish quickly if run first. The convoy effect illustrates why FCFS is often inefficient for mixed workloads."
+    },
+    {
+      "id": "operating-systems-scheduling-009",
+      "q": "What is starvation in process scheduling?",
+      "options": [
+        "The process of terminating a process due to memory exhaustion",
+        "A situation where a process is never scheduled because higher-priority processes continuously arrive",
+        "The reduction of a process's time quantum",
+        "The forced migration of a process to a different CPU core"
+      ],
+      "answer": 1,
+      "explanation": "Starvation occurs when a process never runs because other processes always have higher priority or arrive more frequently. In priority scheduling, low-priority processes can starve. Aging (gradually increasing the priority of waiting processes) is a technique to prevent starvation while maintaining responsiveness."
+    },
+    {
+      "id": "operating-systems-scheduling-010",
+      "q": "How does a scheduler balance throughput and response time?",
+      "options": [
+        "By running all processes simultaneously on all cores",
+        "By choosing appropriate scheduling algorithms and time quanta based on the workload",
+        "By terminating all interactive processes",
+        "By disabling preemption to reduce overhead"
+      ],
+      "answer": 1,
+      "explanation": "Throughput (processes completed per unit time) and response time (time until a process starts) are often in tension. Longer time quanta improve throughput but worsen response time for interactive processes. Modern systems use adaptive algorithms like MLFQ that adjust behavior based on workload characteristics, providing good performance across different scenarios."
+    }
+  ]
+}

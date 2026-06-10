@@ -1,0 +1,126 @@
+{
+  "topic": "boolean-algebra",
+  "category": "digital-logic",
+  "questions": [
+    {
+      "id": "digital-logic-boolean-algebra-001",
+      "q": "Which of the following is a correct statement of De Morgan's Law?",
+      "options": [
+        "¬(A + B) = ¬A · ¬B",
+        "¬(A · B) = A + B",
+        "A + B = ¬A · ¬B",
+        "¬(A + B) = ¬A + ¬B"
+      ],
+      "answer": 0,
+      "explanation": "De Morgan's Law states that ¬(A + B) = ¬A · ¬B and ¬(A · B) = ¬A + ¬B. The negation of an OR expression equals the AND of the negations. Option 3 is incorrect because it omits the negation operator."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-002",
+      "q": "Simplify the Boolean expression: A · A + A · B",
+      "options": [
+        "A",
+        "A · B",
+        "B",
+        "A + B"
+      ],
+      "answer": 0,
+      "explanation": "Using the absorption law (A · A = A) and factoring: A · A + A · B = A · (1 + B) = A · 1 = A. Option 1 is a common distractor that assumes the expression cannot be simplified further."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-003",
+      "q": "What is the result of the Boolean expression: (A + B) · (A + C)?",
+      "options": [
+        "A + B · C",
+        "A + (B · C)",
+        "(A + B) · C",
+        "A · B + C"
+      ],
+      "answer": 1,
+      "explanation": "Using the distributive law: (A + B) · (A + C) = A + (B · C). This is the dual of the more familiar distributive law A · (B + C) = A · B + A · C. Option 0 misses the parentheses around B · C."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-004",
+      "q": "Which Karnaugh map simplification eliminates the most variables for the expression: A·B·C + A·B·¬C + A·¬B·C + A·¬B·¬C?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "A · B"
+      ],
+      "answer": 0,
+      "explanation": "All four minterms have A = 1 in common. Factoring out A gives A·(B·C + B·¬C + ¬B·C + ¬B·¬C) = A·1 = A. Options 1 and 2 appear in some minterms but not all, and option 3 appears in only two minterms."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-005",
+      "q": "Convert the Boolean function F = A·B + ¬A·C to Sum of Products (SOP) form by expanding to minterms.",
+      "options": [
+        "A·B·C + A·B·¬C + ¬A·B·C + ¬A·¬B·C",
+        "A·B·C + A·B·¬C + ¬A·¬B·C",
+        "A·B·¬C + ¬A·B·C",
+        "A·B + ¬A·C"
+      ],
+      "answer": 0,
+      "explanation": "SOP form requires all variables in each term. A·B expands to A·B·C + A·B·¬C (both C values). ¬A·C expands to ¬A·B·C + ¬A·¬B·C (both B values). Option 1 is incomplete, missing A·B·C."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-006",
+      "q": "Using Boolean algebra, simplify: A·B + A·¬B + ¬A·B",
+      "options": [
+        "A + B",
+        "A·B",
+        "¬A + B",
+        "A·¬B + B"
+      ],
+      "answer": 0,
+      "explanation": "Factor: A·(B + ¬B) + ¬A·B = A·1 + ¬A·B = A + ¬A·B. Then apply absorption: A + ¬A·B = A + B. Option 1 is too restrictive; option 3 includes the negation of A."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-007",
+      "q": "Which term is a prime implicant of F = A·B·C + A·B·¬C + ¬A·B·C?",
+      "options": [
+        "A·C",
+        "A·B",
+        "B·C",
+        "¬A·¬B"
+      ],
+      "answer": 1,
+      "explanation": "A·B appears in both A·B·C and A·B·¬C as a common factor. This makes A·B a prime implicant. A·C does not cover all three minterms; B·C does not cover A·B·¬C; ¬A·¬B does not appear in the function."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-008",
+      "q": "Which law states that A + A·B = A?",
+      "options": [
+        "Commutative law",
+        "Distributive law",
+        "Absorption law",
+        "Identity law"
+      ],
+      "answer": 2,
+      "explanation": "The absorption law states A + A·B = A and A·(A + B) = A. The identity law defines A + 0 = A and A·1 = A. The distributive and commutative laws do not describe this simplification."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-009",
+      "q": "In a Karnaugh map for 3 variables, how many cells must be adjacent and contain 1s to form a group of 4?",
+      "options": [
+        "2 horizontally or vertically adjacent pairs",
+        "A 2×2 square",
+        "4 cells in any arrangement",
+        "Either option 1 or option 2"
+      ],
+      "answer": 3,
+      "explanation": "In a 3-variable K-map, a group of 4 ones can be formed as a 2×2 square (standard rectangular grouping) or as two adjacent pairs of 2. Wrapping is allowed on Karnaugh maps. Options 1 and 2 are individually correct, making option 3 the complete answer."
+    },
+    {
+      "id": "digital-logic-boolean-algebra-010",
+      "q": "What does the complementary property of Boolean algebra state?",
+      "options": [
+        "A + ¬A = 1 and A · ¬A = 0",
+        "A + A = A and A · A = A",
+        "A + 1 = 1 and A · 0 = 0",
+        "¬(¬A) = A"
+      ],
+      "answer": 0,
+      "explanation": "The complementary (or involution) property states that A + ¬A = 1 (tautology) and A · ¬A = 0 (contradiction). Option 1 is the idempotent property; option 2 is the domination property; option 3 is the involution property."
+    }
+  ]
+}

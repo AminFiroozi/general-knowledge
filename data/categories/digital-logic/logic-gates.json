@@ -1,0 +1,126 @@
+{
+  "topic": "logic-gates",
+  "category": "digital-logic",
+  "questions": [
+    {
+      "id": "digital-logic-logic-gates-001",
+      "q": "Which gate produces a 1 output only when all inputs are 1?",
+      "options": [
+        "OR gate",
+        "AND gate",
+        "XOR gate",
+        "NAND gate"
+      ],
+      "answer": 1,
+      "explanation": "The AND gate outputs 1 only when all inputs are 1. The OR gate outputs 1 when any input is 1. XOR outputs 1 when inputs differ. NAND is the complement of AND."
+    },
+    {
+      "id": "digital-logic-logic-gates-002",
+      "q": "What is the output of a NOR gate when both inputs are 0?",
+      "options": [
+        "0",
+        "1",
+        "Undefined",
+        "Depends on previous state"
+      ],
+      "answer": 1,
+      "explanation": "NOR is the complement of OR. When both inputs are 0, OR outputs 0, so NOR outputs 1. The output of combinational logic depends only on current inputs, not history."
+    },
+    {
+      "id": "digital-logic-logic-gates-003",
+      "q": "Which two gates are considered universal gates because any Boolean function can be implemented using only them?",
+      "options": [
+        "AND and OR",
+        "NAND and NOR",
+        "XOR and XNOR",
+        "AND and NOT"
+      ],
+      "answer": 1,
+      "explanation": "NAND and NOR are universal gates; both can implement any Boolean function. AND and OR alone cannot create NOT. XOR and XNOR cannot implement all functions (e.g., a constant 1). AND and NOT can actually implement all functions but are rarely called universal gates."
+    },
+    {
+      "id": "digital-logic-logic-gates-004",
+      "q": "A 3-input AND gate has inputs A=1, B=0, C=1. What is the output?",
+      "options": [
+        "1",
+        "0",
+        "Cannot be determined",
+        "2"
+      ],
+      "answer": 1,
+      "explanation": "AND requires all inputs to be 1. Since B=0, the output is 0. Boolean gates output only 0 or 1, never other values like 2."
+    },
+    {
+      "id": "digital-logic-logic-gates-005",
+      "q": "What does an XOR gate output when its two inputs are equal?",
+      "options": [
+        "1",
+        "0",
+        "The value of the first input",
+        "The value of the second input"
+      ],
+      "answer": 1,
+      "explanation": "XOR (exclusive OR) outputs 1 when inputs differ and 0 when they are equal. When A=B, XOR outputs 0 for both (0,0)→0 and (1,1)→0."
+    },
+    {
+      "id": "digital-logic-logic-gates-006",
+      "q": "Complete the truth table: For a NAND gate with inputs A=1 and B=1, the output is ___.",
+      "options": [
+        "1",
+        "0",
+        "Unknown",
+        "High impedance"
+      ],
+      "answer": 1,
+      "explanation": "NAND is NOT-AND. When A=1 and B=1, AND produces 1, so NAND produces ¬1 = 0. High impedance and unknown states are irrelevant in ideal combinational logic."
+    },
+    {
+      "id": "digital-logic-logic-gates-007",
+      "q": "Which gate implements the Boolean function F = ¬(A + B)?",
+      "options": [
+        "NAND gate",
+        "NOR gate",
+        "AND gate",
+        "XOR gate"
+      ],
+      "answer": 1,
+      "explanation": "NOR is NOT-OR, implementing ¬(A + B). NAND implements ¬(A · B). AND implements A · B without the NOT."
+    },
+    {
+      "id": "digital-logic-logic-gates-008",
+      "q": "In the context of logic gates, what does 'active low' signify?",
+      "options": [
+        "The gate is powered by low voltage",
+        "A signal is considered true/active when it is at logic 0",
+        "The gate cannot be used with high-frequency signals",
+        "The output transitions from low to high slowly"
+      ],
+      "answer": 1,
+      "explanation": "Active low means the signal is logically true when the voltage level is 0 (low). This is a convention used in digital design, particularly for control signals. Voltage supply level and frequency behavior are separate concerns."
+    },
+    {
+      "id": "digital-logic-logic-gates-009",
+      "q": "An XNOR gate outputs 1 when ___.",
+      "options": [
+        "The inputs are different",
+        "Exactly one input is 1",
+        "The inputs are the same",
+        "At least one input is 0"
+      ],
+      "answer": 2,
+      "explanation": "XNOR (exclusive NOR) is the complement of XOR. It outputs 1 when inputs are equal: (0,0)→1 and (1,1)→1. XOR outputs 1 when inputs differ. Option 3 (at least one 0) is false since (1,1)→1."
+    },
+    {
+      "id": "digital-logic-logic-gates-010",
+      "q": "How many different truth table outputs can be achieved by varying the gate type (AND, OR, NOT, NAND, NOR, XOR, XNOR) for a 2-input combinational logic circuit?",
+      "options": [
+        "7",
+        "16",
+        "8",
+        "4"
+      ],
+      "answer": 1,
+      "explanation": "There are 2^4 = 16 possible Boolean functions of 2 variables (each of the 4 input combinations can map to 0 or 1 independently). The 7 standard gates represent only some of these functions. Option 2 correctly represents all possible functions; the others are too restrictive."
+    }
+  ]
+}
