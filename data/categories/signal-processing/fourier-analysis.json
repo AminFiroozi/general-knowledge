@@ -1,0 +1,126 @@
+{
+  "topic": "fourier-analysis",
+  "category": "signal-processing",
+  "questions": [
+    {
+      "id": "signal-processing-fourier-analysis-001",
+      "q": "What does the Fourier transform do to a time-domain signal?",
+      "options": [
+        "Converts it to the frequency domain, showing which frequencies are present",
+        "Compresses the signal to reduce storage requirements",
+        "Filters out high-frequency noise automatically",
+        "Doubles the sampling rate of the signal"
+      ],
+      "answer": 0,
+      "explanation": "The Fourier transform decomposes a time-domain signal into its frequency components, revealing the amplitudes and phases at each frequency. Compression, filtering, and resampling are separate operations that may use Fourier analysis but are not what the transform itself does."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-002",
+      "q": "The Discrete Fourier Transform (DFT) differs from the Fast Fourier Transform (FFT) primarily in what way?",
+      "options": [
+        "DFT operates on continuous signals while FFT operates on discrete signals",
+        "FFT is a faster algorithm for computing the DFT using divide-and-conquer strategies",
+        "DFT can analyze longer signals than FFT",
+        "FFT requires signal length to be a prime number"
+      ],
+      "answer": 1,
+      "explanation": "The FFT is an optimized algorithm that computes the DFT in O(n log n) time instead of O(n²), using techniques like Cooley-Tukey. Both operate on discrete signals; the difference is computational efficiency, not fundamental capability."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-003",
+      "q": "If a time-domain signal has a fundamental frequency of 50 Hz, what can you expect in its Fourier spectrum?",
+      "options": [
+        "Peaks only at exactly 50 Hz and nowhere else",
+        "Peaks at 50 Hz (fundamental) and its harmonics at 100 Hz, 150 Hz, 200 Hz, etc.",
+        "A continuous distribution across all frequencies from 0 to 50 Hz",
+        "No peaks at 50 Hz; only at 25 Hz and 100 Hz (half and double)"
+      ],
+      "answer": 1,
+      "explanation": "Periodic signals with a fundamental frequency f₀ show peaks at f₀ and integer multiples (harmonics). A pure sine at 50 Hz appears only at 50 Hz, but complex periodic signals contain the fundamental plus harmonics determined by their waveform shape."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-004",
+      "q": "What is the key limitation of the Fourier Transform when analyzing non-stationary signals?",
+      "options": [
+        "It cannot process real signals, only complex exponentials",
+        "It requires the signal to be periodic with period equal to infinity",
+        "It loses time localization—you cannot determine when a frequency component occurred",
+        "It is mathematically undefined for signals shorter than 1 second"
+      ],
+      "answer": 2,
+      "explanation": "The Fourier Transform provides frequency information for the entire signal duration but no information about when each frequency occurred. For signals whose frequency content changes over time (non-stationary), time-frequency methods like wavelets or spectrograms are more appropriate."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-005",
+      "q": "What does Parseval's theorem state in the context of Fourier analysis?",
+      "options": [
+        "The total energy in the time domain equals the total energy in the frequency domain",
+        "The Fourier transform is always real-valued for real-valued signals",
+        "High-frequency components always have lower amplitude than low-frequency components",
+        "The inverse Fourier transform must be computed using integration, not summation"
+      ],
+      "answer": 0,
+      "explanation": "Parseval's theorem establishes energy conservation: ∫|x(t)|² dt = ∫|X(f)|² df. This means the energy calculated in the time domain equals the energy calculated from the frequency spectrum, confirming the transform preserves signal energy."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-006",
+      "q": "Why is the FFT algorithm fundamentally faster than the direct DFT computation?",
+      "options": [
+        "Because modern computers have parallel processing cores",
+        "It eliminates redundant calculations by breaking the problem into smaller subproblems recursively",
+        "It skips computing Fourier coefficients for frequencies above the Nyquist frequency",
+        "It uses floating-point operations instead of integer arithmetic"
+      ],
+      "answer": 1,
+      "explanation": "The FFT uses a divide-and-conquer approach (e.g., Cooley-Tukey algorithm) that identifies and reuses common calculations, reducing complexity from O(n²) to O(n log n). This algorithmic advantage is independent of hardware and works on any computer."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-007",
+      "q": "What does the magnitude spectrum of a Fourier Transform represent?",
+      "options": [
+        "The rate of change of frequency components over time",
+        "The amplitude of each frequency component present in the signal",
+        "The phase relationship between different time samples",
+        "The probability distribution of signal values"
+      ],
+      "answer": 1,
+      "explanation": "The magnitude spectrum shows |X(f)|, indicating how much of each frequency is present in the signal. The phase spectrum shows the phase angle ∠X(f). Together they fully characterize the frequency content."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-008",
+      "q": "For a real-valued time signal, what symmetry property does its Fourier transform exhibit?",
+      "options": [
+        "The spectrum is identical for positive and negative frequencies",
+        "The spectrum is completely asymmetric and contains no predictable pattern",
+        "The magnitude spectrum is even and the phase spectrum is odd about zero frequency",
+        "Only even-indexed frequency components are non-zero"
+      ],
+      "answer": 2,
+      "explanation": "For real signals, the Fourier transform exhibits Hermitian symmetry: |X(-f)| = |X(f)| (even magnitude) and ∠X(-f) = -∠X(f) (odd phase). This is why we often compute and display only positive frequencies for real signals."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-009",
+      "q": "What phenomenon occurs when a signal's components are not aligned at integer multiples of the DFT bin spacing?",
+      "options": [
+        "The signal energy concentrates entirely in one frequency bin",
+        "Spectral leakage, where energy spreads across neighboring frequency bins",
+        "Complete cancellation of all frequency components",
+        "The DFT result becomes purely imaginary"
+      ],
+      "answer": 1,
+      "explanation": "Spectral leakage occurs when a frequency doesn't align with a DFT bin center; the signal energy 'leaks' into adjacent bins with sinc-function side lobes. Using appropriate windows (Hann, Hamming) reduces leakage at the cost of wider main lobe."
+    },
+    {
+      "id": "signal-processing-fourier-analysis-010",
+      "q": "The 2D Fourier Transform extends to images by operating on which two dimensions?",
+      "options": [
+        "Time and frequency, the same as 1D signals",
+        "Real and imaginary components of the image values",
+        "Horizontal spatial frequency (u) and vertical spatial frequency (v)",
+        "Brightness and color channels independently"
+      ],
+      "answer": 2,
+      "explanation": "The 2D Fourier Transform treats spatial position (x, y) analogously to time in 1D, transforming to spatial frequency domain (u, v). This reveals periodic patterns, edges, and textures in images. Brightness and color are separate concerns handled before or after."
+    }
+  ]
+}

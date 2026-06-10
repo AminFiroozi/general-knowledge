@@ -1,0 +1,126 @@
+{
+  "topic": "sampling-and-aliasing",
+  "category": "signal-processing",
+  "questions": [
+    {
+      "id": "signal-processing-sampling-and-aliasing-001",
+      "q": "What does the Nyquist theorem state about sampling a continuous signal?",
+      "options": [
+        "The sampling rate must be at least twice the highest frequency in the signal to avoid aliasing",
+        "The sampling rate must equal the signal's maximum frequency",
+        "Aliasing can always be eliminated by increasing the number of samples",
+        "Any sampling rate above 10 kHz is sufficient for all practical signals"
+      ],
+      "answer": 0,
+      "explanation": "The Nyquist theorem requires fs ≥ 2·fmax to perfectly reconstruct a band-limited signal. Sampling below this rate causes aliasing, where high frequencies appear as lower frequencies. This is a fundamental limit, not just a guideline."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-002",
+      "q": "If a signal contains a 5 kHz component and is sampled at 8 kHz, what aliased frequency will appear?",
+      "options": [
+        "13 kHz (5 + 8)",
+        "3 kHz (8 - 5)",
+        "5 kHz (no aliasing occurs)",
+        "2.5 kHz (5 / 2)"
+      ],
+      "answer": 1,
+      "explanation": "Aliasing occurs when fs/2 (the Nyquist frequency, 4 kHz here) is exceeded. The 5 kHz component aliases to fs - foriginal = 8 - 5 = 3 kHz. This is indistinguishable from a true 3 kHz signal in the sampled data."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-003",
+      "q": "What is the purpose of an anti-aliasing filter in a data acquisition system?",
+      "options": [
+        "To increase the sampling rate of the analog signal",
+        "To attenuate frequencies above the Nyquist frequency before sampling to prevent aliasing",
+        "To remove quantization noise from the digital samples",
+        "To amplify weak signals so they can be sampled accurately"
+      ],
+      "answer": 1,
+      "explanation": "An anti-aliasing filter (analog low-pass) is applied before the ADC to remove frequency components above fs/2. Without it, these components alias into the baseband and corrupt the signal. It's essential for proper sampling."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-004",
+      "q": "The Nyquist frequency is defined as which of the following?",
+      "options": [
+        "The highest frequency that can exist in any physical signal",
+        "Half the sampling rate; frequencies above it will alias if present in the signal",
+        "The frequency at which the sampling process becomes unstable",
+        "The center frequency of the anti-aliasing filter"
+      ],
+      "answer": 1,
+      "explanation": "The Nyquist frequency is fN = fs/2, the highest frequency that can be unambiguously represented in sampled data. Components above fN fold back (alias) into the 0 to fN range, appearing as lower frequencies."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-005",
+      "q": "What does oversampling achieve in signal processing?",
+      "options": [
+        "It guarantees that no aliasing will occur regardless of signal content",
+        "It increases the sampling rate well above the Nyquist rate to ease filter requirements and improve SNR",
+        "It eliminates the need for any anti-aliasing filter",
+        "It reduces the number of bits required per sample"
+      ],
+      "answer": 1,
+      "explanation": "Oversampling at fs >> 2·fmax relaxes anti-aliasing filter requirements (they can be gentler) and allows noise-shaping in sigma-delta converters to push quantization noise to frequencies that are then filtered out, improving SNR."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-006",
+      "q": "In perfect signal reconstruction using the Whittaker-Shannon interpolation formula, what waveform is the basis of reconstruction?",
+      "options": [
+        "Rectangular pulses between samples",
+        "Linear interpolation connecting adjacent samples",
+        "The sinc function, which is the impulse response of an ideal low-pass filter",
+        "A series of Dirac delta functions at sample locations"
+      ],
+      "answer": 2,
+      "explanation": "The Whittaker-Shannon formula reconstructs a band-limited signal by convolving samples with sinc(πt/Ts) functions. sinc(t) = sin(πt)/(πt) is the ideal low-pass filter impulse response, bandlimiting interpolation to fs/2."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-007",
+      "q": "What happens at frequencies exactly equal to the Nyquist frequency (fs/2) in a sampled signal?",
+      "options": [
+        "They are preserved perfectly without any ambiguity",
+        "They are completely removed from the signal",
+        "They are ambiguous—you cannot distinguish them from DC (0 Hz) in the sampled data",
+        "They are automatically filtered by the sampling process"
+      ],
+      "answer": 2,
+      "explanation": "At fs/2, a sinusoid could alternate [+1, -1, +1, -1,...] or [-1, +1, -1, +1,...] with identical samples. The signal and its negative are indistinguishable, making fs/2 ambiguous. Anti-aliasing filters typically attenuate to near zero at fs/2."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-008",
+      "q": "If a signal is band-limited to 2 kHz, what is the minimum sampling rate required without aliasing?",
+      "options": [
+        "1 kHz",
+        "2 kHz",
+        "4 kHz",
+        "8 kHz"
+      ],
+      "answer": 2,
+      "explanation": "The Nyquist theorem requires fs ≥ 2·fmax = 2·2000 = 4000 Hz = 4 kHz. This is the minimum rate; in practice, slightly higher rates and anti-aliasing filters are used for safety margin and filter practicality."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-009",
+      "q": "What is the relationship between bit depth and the signal-to-quantization-noise ratio (SQNR)?",
+      "options": [
+        "SQNR is independent of bit depth",
+        "SQNR increases by approximately 6 dB for each additional bit of depth",
+        "SQNR decreases exponentially with bit depth",
+        "SQNR depends only on the sampling rate, not bit depth"
+      ],
+      "answer": 1,
+      "explanation": "For uniform quantization, SQNR ≈ 6.02·b + 1.76 dB, where b is bit depth. Each additional bit roughly halves quantization error, improving SQNR by ≈6 dB. This is why 16-bit audio is preferred over 8-bit for quality."
+    },
+    {
+      "id": "signal-processing-sampling-and-aliasing-010",
+      "q": "What is the practical purpose of dithering in quantization?",
+      "options": [
+        "To increase the sampling rate of the signal",
+        "To add small random noise that trades quantization distortion for broadband noise, improving perceived audio quality",
+        "To reduce the number of quantization levels required",
+        "To eliminate the Nyquist frequency from the signal"
+      ],
+      "answer": 1,
+      "explanation": "Dithering adds small amplitude noise before quantization. This prevents the audible 'stair-stepping' effect by making quantization error random (white noise) rather than deterministic. Perceptually, broadband noise is less objectionable than harmonic distortion."
+    }
+  ]
+}

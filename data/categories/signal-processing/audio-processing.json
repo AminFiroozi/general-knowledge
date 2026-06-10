@@ -1,0 +1,126 @@
+{
+  "topic": "audio-processing",
+  "category": "signal-processing",
+  "questions": [
+    {
+      "id": "signal-processing-audio-processing-001",
+      "q": "What does a spectrogram show that a static Fourier spectrum does not?",
+      "options": [
+        "The total energy of the signal",
+        "How frequency content changes over time, displayed as intensity in a time-frequency plot",
+        "The phase relationship between harmonics",
+        "The sampling rate used for the signal"
+      ],
+      "answer": 1,
+      "explanation": "A spectrogram computes the Fourier transform of short overlapping signal segments (using the Short-Time Fourier Transform), revealing which frequencies are present at which times. A static spectrum shows only the overall frequency content averaged over the entire signal."
+    },
+    {
+      "id": "signal-processing-audio-processing-002",
+      "q": "In audio processing, what is the purpose of windowing?",
+      "options": [
+        "To increase the sampling rate of the signal",
+        "To reduce spectral leakage by tapering the edges of analysis frames before FFT",
+        "To eliminate all frequency components above 20 kHz",
+        "To compress the audio for storage"
+      ],
+      "answer": 1,
+      "explanation": "Windowing applies a taper function (Hann, Hamming, Blackman) that goes to zero at frame edges, reducing discontinuities. This attenuates the sinc-function side lobes of spectral leakage. Rectangular (no) windowing produces the most leakage."
+    },
+    {
+      "id": "signal-processing-audio-processing-003",
+      "q": "What are MFCCs (Mel-Frequency Cepstral Coefficients) primarily used for in audio processing?",
+      "options": [
+        "Displaying high-quality audio waveforms on a screen",
+        "Feature extraction for speech recognition and audio classification, modeling human auditory perception",
+        "Removing background noise from audio recordings",
+        "Increasing the bit depth of audio samples"
+      ],
+      "answer": 1,
+      "explanation": "MFCCs compress the frequency spectrum into mel-scale coefficients that mirror human hearing: we perceive frequency logarithmically and are more sensitive to lower frequencies. They're widely used in voice recognition, speaker identification, and music information retrieval."
+    },
+    {
+      "id": "signal-processing-audio-processing-004",
+      "q": "What is the mel scale in the context of audio processing?",
+      "options": [
+        "A unit measuring the amplitude of sound in decibels",
+        "A nonlinear frequency scale that matches human perception of pitch, where equal mel intervals correspond to equal perceived intervals",
+        "The rate at which the sampling frequency must be divided",
+        "A measure of compression ratio in audio codecs"
+      ],
+      "answer": 1,
+      "explanation": "The mel scale is perceptually motivated: humans perceive frequency logarithmically. The formula mel = 2595 × log10(1 + f/700) maps Hz to mels. At low frequencies, mels ≈ f; at high frequencies, mels ≈ 2595 log10(f)."
+    },
+    {
+      "id": "signal-processing-audio-processing-005",
+      "q": "In audio equalization, what does boosting a frequency band at 2 kHz do to the perceived sound?",
+      "options": [
+        "Makes the audio sound lower in pitch",
+        "Increases the perceived brightness and presence; emphasizes consonants and attack transients",
+        "Reduces the frequency content above 2 kHz proportionally",
+        "Eliminates aliasing in the digital audio"
+      ],
+      "answer": 1,
+      "explanation": "The 2 kHz region is critical for clarity and presence in audio. Boosting it enhances definition, especially for speech (consonants) and instrument attacks. The midrange (1-4 kHz) is perceptually important; adjusting it noticeably changes audio character."
+    },
+    {
+      "id": "signal-processing-audio-processing-006",
+      "q": "What is the purpose of overlap-add in Short-Time Fourier Transform (STFT) processing?",
+      "options": [
+        "To increase the FFT length for better frequency resolution",
+        "To reconstruct a continuous signal from overlapping windowed frames without artifacts",
+        "To reduce the number of computations required",
+        "To eliminate the phase information from the spectrum"
+      ],
+      "answer": 1,
+      "explanation": "STFT divides the signal into overlapping frames (typically 50% overlap). After processing each frame independently, the modified frames are reconstructed by overlap-add (summing overlapping portions). With proper window design, this reconstruction is perfect."
+    },
+    {
+      "id": "signal-processing-audio-processing-007",
+      "q": "In audio compression (codecs like MP3), what is the purpose of perceptual coding?",
+      "options": [
+        "To amplify quiet parts of the audio",
+        "To remove frequency components humans cannot hear or notice due to masking, reducing file size",
+        "To increase the bit depth of audio samples",
+        "To eliminate echo and reverberation"
+      ],
+      "answer": 1,
+      "explanation": "Perceptual coding exploits psychoacoustics: if a loud tone masks a quiet tone nearby, the quiet one can be removed without audible quality loss. This reduces data dramatically (MP3 achieves 10:1 compression) while remaining transparent to human listeners."
+    },
+    {
+      "id": "signal-processing-audio-processing-008",
+      "q": "What is spectral masking in the context of audio perception?",
+      "options": [
+        "A filtering technique to remove background noise",
+        "The phenomenon where a loud sound makes nearby frequencies inaudible due to auditory system limitations",
+        "A method to increase the perceived loudness of audio",
+        "The process of converting audio to the frequency domain"
+      ],
+      "answer": 1,
+      "explanation": "Spectral masking occurs when a strong frequency component suppresses the perception of weaker components in nearby frequencies. The auditory system has limited frequency resolution; a loud tone 'masks' quieter tones within its critical band, making them inaudible."
+    },
+    {
+      "id": "signal-processing-audio-processing-009",
+      "q": "What is the relationship between window length and frequency resolution in STFT?",
+      "options": [
+        "Longer windows provide better frequency resolution but worse time resolution",
+        "Longer windows provide better time resolution but worse frequency resolution",
+        "Window length has no effect on resolution",
+        "Longer windows provide better resolution in both time and frequency"
+      ],
+      "answer": 0,
+      "explanation": "Frequency resolution depends on window length: Δf ≈ fs/N, where N is window length. Longer windows have narrower frequency bins (better resolution). But longer windows integrate over more time, reducing time localization (worse temporal resolution)."
+    },
+    {
+      "id": "signal-processing-audio-processing-010",
+      "q": "What is temporal masking in audio processing?",
+      "options": [
+        "Removing low-frequency components from the signal",
+        "The inability to perceive a weak sound shortly before or after a loud sound, due to auditory system dynamics",
+        "The phase distortion introduced by audio filters",
+        "Compressing the dynamic range of an audio signal"
+      ],
+      "answer": 1,
+      "explanation": "Temporal masking has pre-masking (backward masking, a few ms before) and post-masking (forward masking, tens of ms after). A loud sound temporarily raises the hearing threshold, making quieter sounds inaudible if they occur nearby in time. Exploiting this is key to perceptual audio coding."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "digital-signals",
+  "category": "signal-processing",
+  "questions": [
+    {
+      "id": "signal-processing-digital-signals-001",
+      "q": "What is quantization in the context of analog-to-digital conversion?",
+      "options": [
+        "The process of measuring the signal's frequency content",
+        "Rounding analog sample values to the nearest discrete digital level",
+        "Filtering out frequencies above the Nyquist rate",
+        "The rate at which samples are collected from an analog signal"
+      ],
+      "answer": 1,
+      "explanation": "Quantization maps infinite analog values to a finite set of discrete digital values. An ADC with b bits produces 2^b quantization levels. This introduces quantization error, typically modeled as uniform random noise."
+    },
+    {
+      "id": "signal-processing-digital-signals-002",
+      "q": "An ADC has 8 bits and an input range of 0 to 10V. What is the quantization step size?",
+      "options": [
+        "10 V / 8 = 1.25 V",
+        "10 V / (2^8 - 1) ≈ 0.039 V",
+        "10 V / 2^8 ≈ 0.039 V",
+        "8 V"
+      ],
+      "answer": 2,
+      "explanation": "Quantization step (least significant bit, LSB) = (Vmax - Vmin) / 2^b = 10 / 256 ≈ 0.039 V. With 256 levels, each adjacent level differs by this amount. Maximum quantization error is ± LSB/2."
+    },
+    {
+      "id": "signal-processing-digital-signals-003",
+      "q": "What is the Signal-to-Noise Ratio (SNR) for an ideal ADC, assuming full-scale sinusoidal input?",
+      "options": [
+        "SNR = 2^b (where b is bit depth)",
+        "SNR ≈ 6.02·b + 1.76 dB (logarithmic)",
+        "SNR depends only on the sampling rate",
+        "SNR is always constant at 20 dB"
+      ],
+      "answer": 1,
+      "explanation": "For an ideal b-bit ADC, SQNR ≈ 6.02·b + 1.76 dB. A 16-bit ADC yields ≈98 dB SNR, an 8-bit yields ≈50 dB. This assumes uniform quantization and full-scale signal; smaller signals have worse SNR due to fewer effective bits."
+    },
+    {
+      "id": "signal-processing-digital-signals-004",
+      "q": "What does a Digital-to-Analog Converter (DAC) do?",
+      "options": [
+        "Converts analog signals to digital bit patterns for storage",
+        "Converts digital binary values back into an analog signal by summing weighted current or voltage sources",
+        "Removes high frequencies to anti-alias the signal",
+        "Increases the resolution of a digital signal"
+      ],
+      "answer": 1,
+      "explanation": "A DAC reconstructs an analog signal from digital samples, typically using a weighted summing network (binary-weighted resistors or capacitor networks). The output is then smoothed with a reconstruction filter."
+    },
+    {
+      "id": "signal-processing-digital-signals-005",
+      "q": "What is the relationship between sampling rate and the maximum frequency that can be represented in a digital signal?",
+      "options": [
+        "The maximum frequency is the sampling rate minus 1",
+        "The maximum frequency is half the sampling rate (the Nyquist frequency)",
+        "There is no relationship; any frequency can be represented at any sampling rate",
+        "The maximum frequency is twice the sampling rate"
+      ],
+      "answer": 1,
+      "explanation": "By the Nyquist theorem, the highest unambiguous frequency in a sampled signal is fs/2. Frequencies above this alias into the baseband. This fundamental limit applies regardless of ADC resolution or design."
+    },
+    {
+      "id": "signal-processing-digital-signals-006",
+      "q": "What causes quantization distortion, and how does it appear in the frequency domain?",
+      "options": [
+        "Sampling at rates below Nyquist; it appears as aliasing",
+        "Rounding sample values to discrete levels; it introduces harmonic distortion and broadband noise floor",
+        "High-order filters; it shifts the phase of all frequency components equally",
+        "Insufficient anti-aliasing filtering; it produces only DC bias"
+      ],
+      "answer": 1,
+      "explanation": "Quantization error is typically modeled as white noise uniformly distributed ±LSB/2. For large signals, this manifests as broadband noise; for small signals, deterministic harmonic distortion appears. Dithering converts it to perceptually softer noise."
+    },
+    {
+      "id": "signal-processing-digital-signals-007",
+      "q": "What is 'bit depth' or 'resolution' in a digital signal?",
+      "options": [
+        "The number of samples collected per second",
+        "The number of bits used to represent each sample, determining the number of quantization levels",
+        "The frequency range the ADC can measure",
+        "How deeply the ADC can amplify weak signals"
+      ],
+      "answer": 1,
+      "explanation": "Bit depth (b) directly determines quantization levels: 2^b possible values. Higher bit depth reduces quantization error and increases SNR, at the cost of more data per sample and ADC complexity."
+    },
+    {
+      "id": "signal-processing-digital-signals-008",
+      "q": "Why is the reconstruction filter (analog low-pass filter after a DAC) necessary?",
+      "options": [
+        "To remove the DC component of the signal",
+        "To eliminate imaging—copies of the spectrum at multiples of the sampling frequency introduced by DAC reconstruction",
+        "To increase the amplitude of the reconstructed signal",
+        "To convert the digital values back to analog (the DAC itself cannot do this)"
+      ],
+      "answer": 1,
+      "explanation": "A DAC outputs analog step approximations; without filtering, these steps contain the original signal plus copies (images) centered at fs, 2fs, etc. The reconstruction filter removes these images, leaving only the baseband signal 0 to fs/2."
+    },
+    {
+      "id": "signal-processing-digital-signals-009",
+      "q": "What is 'effective number of bits' (ENOB) in an ADC?",
+      "options": [
+        "The same as the nominal bit depth specified by the manufacturer",
+        "The number of bits equivalent to the actual SNR achieved, accounting for nonlinearity and noise",
+        "The number of bits required to store the ADC output in memory",
+        "The number of bits used only for the most significant part of the signal"
+      ],
+      "answer": 1,
+      "explanation": "ENOB = (SNRdB - 1.76) / 6.02, giving the equivalent bit depth if only quantization noise were present. Real ADCs have ENOB less than nominal bits due to noise, distortion, and nonlinearity from the analog circuitry."
+    },
+    {
+      "id": "signal-processing-digital-signals-010",
+      "q": "A signal is acquired by a 12-bit ADC with range 0-5V. If the true analog value is 2.537V, what is the likely digital output range?",
+      "options": [
+        "Exactly 2537 counts (precise digital mapping)",
+        "A range due to quantization error; approximately 1550-1555 counts out of 4096 possible",
+        "Only 2048 (exactly half the range)",
+        "A value that requires compensation by a DAC to recover accurately"
+      ],
+      "answer": 1,
+      "explanation": "12 bits give 4096 levels across 5V (LSB ≈ 1.22 mV). The value 2.537V maps to count ≈ 2537/5 × 4096 ≈ 2076. Quantization error causes variation of ±1 count (±0.61 mV). The exact output depends on the rounding method (round, truncate, etc.)."
+    }
+  ]
+}

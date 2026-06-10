@@ -1,0 +1,126 @@
+{
+  "topic": "filters",
+  "category": "signal-processing",
+  "questions": [
+    {
+      "id": "signal-processing-filters-001",
+      "q": "What is the primary function of a low-pass filter?",
+      "options": [
+        "To amplify all frequencies equally",
+        "To allow low frequencies to pass while attenuating high frequencies",
+        "To completely remove all frequency components above a threshold",
+        "To boost the fundamental frequency of a signal"
+      ],
+      "answer": 1,
+      "explanation": "A low-pass filter passes frequencies below its cutoff frequency with minimal attenuation and attenuates frequencies above it. It doesn't completely remove high frequencies (that would require infinite order) but reduces them by an amount dependent on filter design."
+    },
+    {
+      "id": "signal-processing-filters-002",
+      "q": "What is the cutoff frequency of a filter?",
+      "options": [
+        "The frequency at which the signal is completely eliminated",
+        "The frequency at which the filter response is -3dB (approximately 70.7% of the passband magnitude)",
+        "The highest frequency the filter can theoretically analyze",
+        "The frequency where phase shift equals 180 degrees"
+      ],
+      "answer": 1,
+      "explanation": "The cutoff (or corner) frequency is conventionally defined at -3dB from the passband gain, where power is reduced to half. This standard definition makes filter specifications consistent across different filter types and orders."
+    },
+    {
+      "id": "signal-processing-filters-003",
+      "q": "Which statement best describes the difference between FIR and IIR filters?",
+      "options": [
+        "FIR filters are always low-pass while IIR filters are always high-pass",
+        "FIR filters use only past inputs; IIR filters use past inputs and past outputs",
+        "FIR filters have linear phase response; IIR filters cannot achieve linear phase",
+        "IIR filters require more computational power but are always stable"
+      ],
+      "answer": 2,
+      "explanation": "FIR (Finite Impulse Response) filters can be designed with exactly linear phase, which preserves signal shape. IIR (Infinite Impulse Response) filters use feedback (past outputs) for efficiency but typically have nonlinear phase. Both can be any type (low/high/band pass)."
+    },
+    {
+      "id": "signal-processing-filters-004",
+      "q": "What does the impulse response of a filter tell you?",
+      "options": [
+        "How the filter responds to a single brief pulse input; convolution with it gives the output",
+        "The maximum amplitude the filter can produce",
+        "Only the phase shift introduced by the filter",
+        "The cutoff frequency required for the filter to work correctly"
+      ],
+      "answer": 0,
+      "explanation": "The impulse response h(t) is the filter's output when given a Dirac delta input. The output for any input x(t) is y(t) = x(t) * h(t) (convolution). It completely characterizes the filter's behavior in the time domain."
+    },
+    {
+      "id": "signal-processing-filters-005",
+      "q": "A band-pass filter has a center frequency of 1 kHz and a bandwidth of 200 Hz. What frequencies does it primarily pass?",
+      "options": [
+        "All frequencies from 0 to 200 Hz",
+        "Frequencies from 900 Hz to 1100 Hz (approximately)",
+        "Only exactly 1000 Hz with a narrow tolerance",
+        "Frequencies from 1 kHz to 1.2 kHz"
+      ],
+      "answer": 1,
+      "explanation": "A band-pass filter centered at f₀ with bandwidth BW passes frequencies roughly from f₀ - BW/2 to f₀ + BW/2, which is 1000 - 100 to 1000 + 100 = 900 to 1100 Hz. The exact edges depend on filter order and design."
+    },
+    {
+      "id": "signal-processing-filters-006",
+      "q": "Why are IIR filters more efficient than FIR filters for the same attenuation specifications?",
+      "options": [
+        "IIR filters process signals faster due to parallel computation",
+        "IIR filters require fewer coefficients (lower order) to achieve the same frequency response",
+        "IIR filters can operate on any sampling rate without redesign",
+        "IIR filters automatically remove aliasing without additional processing"
+      ],
+      "answer": 1,
+      "explanation": "IIR filters achieve sharper roll-off with lower order than FIR filters because feedback creates poles near the unit circle. An IIR filter might achieve the same attenuation with order 4 while an FIR requires order 100, reducing computation and memory."
+    },
+    {
+      "id": "signal-processing-filters-007",
+      "q": "What is a major disadvantage of IIR filters compared to FIR filters?",
+      "options": [
+        "They cannot process real-time signals",
+        "They can become unstable if not carefully designed, and they introduce nonlinear phase distortion",
+        "They require more multiplications per sample",
+        "They cannot handle complex-valued signals"
+      ],
+      "answer": 1,
+      "explanation": "IIR filters can be unstable (poles outside unit circle) if poorly designed, requiring careful stability analysis. Their nonlinear phase response distorts signal shape. FIR filters can always be made stable and can achieve linear phase, avoiding these issues."
+    },
+    {
+      "id": "signal-processing-filters-008",
+      "q": "In filter design, what does the term 'roll-off rate' refer to?",
+      "options": [
+        "The speed at which the filter processes signals",
+        "How quickly the filter's magnitude response decreases beyond the cutoff frequency, measured in dB/octave",
+        "The phase lag introduced by the filter at the cutoff frequency",
+        "The number of zeros in the filter's transfer function"
+      ],
+      "answer": 1,
+      "explanation": "Roll-off rate characterizes the steepness of attenuation in the stopband. A first-order filter rolls off at ≈20 dB/decade (≈6 dB/octave), second-order at 40 dB/decade. Higher-order filters achieve steeper roll-off, providing better stopband attenuation."
+    },
+    {
+      "id": "signal-processing-filters-009",
+      "q": "What is the relationship between filter order and group delay in a typical FIR filter?",
+      "options": [
+        "Group delay is independent of filter order",
+        "Group delay is approximately half the filter order divided by the sampling rate",
+        "Filter order has no effect on group delay; only cutoff frequency matters",
+        "Higher order always means infinite group delay"
+      ],
+      "answer": 1,
+      "explanation": "For a linear-phase FIR filter of length N, group delay ≈ (N-1)/(2·fs). This is the time delay introduced to the signal; higher-order filters delay the signal more. This must be considered in real-time applications."
+    },
+    {
+      "id": "signal-processing-filters-010",
+      "q": "A Butterworth filter is popular because it has which characteristic property?",
+      "options": [
+        "It has the sharpest possible roll-off for a given order",
+        "It exhibits a maximally flat magnitude response in the passband with no ripple",
+        "It achieves zero phase shift across all frequencies",
+        "It automatically adapts to any input signal without redesign"
+      ],
+      "answer": 1,
+      "explanation": "Butterworth filters are characterized by maximally flat passband response—no ripple—making them smooth and predictable. Other filters like Chebyshev trade passband flatness for steeper roll-off. The tradeoff is a key design consideration."
+    }
+  ]
+}
