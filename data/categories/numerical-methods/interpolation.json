@@ -1,0 +1,126 @@
+{
+  "topic": "interpolation",
+  "category": "numerical-methods",
+  "questions": [
+    {
+      "id": "numerical-methods-interpolation-001",
+      "q": "Lagrange interpolation constructs a polynomial through n data points. What is the degree of the resulting polynomial?",
+      "options": [
+        "Exactly n - 1",
+        "At most n",
+        "Exactly 2n",
+        "Dependent on the data values"
+      ],
+      "answer": 0,
+      "explanation": "Lagrange polynomials L_i(x) for i = 0, ..., n-1 are degree n-1. The interpolant P(x) = Σ f_i L_i(x) is a linear combination of degree n-1 polynomials, so it has degree at most n-1, and exactly n-1 if the leading coefficient is nonzero."
+    },
+    {
+      "id": "numerical-methods-interpolation-002",
+      "q": "Newton's divided differences method builds the interpolating polynomial incrementally. What is an advantage over Lagrange form?",
+      "options": [
+        "Adding one more data point requires O(n) operations to update coefficients, not recomputing from scratch",
+        "Divided differences always produce smaller interpolation errors",
+        "Newton form avoids computing the Lagrange basis polynomials",
+        "It automatically selects the optimal node locations"
+      ],
+      "answer": 0,
+      "explanation": "Newton form P(x) = a₀ + a₁(x - x₀) + a₂(x - x₀)(x - x₁) + ... has the property that adding x_{n} requires computing only one new divided difference coefficient a_n, O(n) work. Lagrange form requires recomputing all basis L_i, O(n²) work."
+    },
+    {
+      "id": "numerical-methods-interpolation-003",
+      "q": "The divided difference f[x₀, x₁] is defined as:",
+      "options": [
+        "[f(x₁) - f(x₀)] / (x₁ - x₀)",
+        "f(x₁) - f(x₀)",
+        "[f(x₁) + f(x₀)] / 2",
+        "f(x₁) / f(x₀)"
+      ],
+      "answer": 0,
+      "explanation": "The first divided difference is the slope of the secant line through (x₀, f(x₀)) and (x₁, f(x₁)). Higher-order divided differences f[x₀, ..., x_k] are recursively defined from lower-order ones and represent k-th order finite differences."
+    },
+    {
+      "id": "numerical-methods-interpolation-004",
+      "q": "Spline interpolation uses piecewise polynomial curves instead of a single high-degree polynomial. Why is this preferred?",
+      "options": [
+        "Avoids Runge's phenomenon (oscillations at interval ends with high-degree polynomials) and maintains smoothness",
+        "Splines always interpolate with zero error",
+        "Splines require fewer data points than polynomial interpolation",
+        "Splines automatically choose optimal smoothness parameters"
+      ],
+      "answer": 0,
+      "explanation": "Runge's phenomenon occurs when a single high-degree polynomial oscillates wildly near the boundaries for equispaced nodes, even if the underlying function is smooth. Splines (especially cubic with continuity conditions) avoid this by using low-degree pieces with smooth transitions."
+    },
+    {
+      "id": "numerical-methods-interpolation-005",
+      "q": "A natural cubic spline has what boundary conditions?",
+      "options": [
+        "Second derivatives are zero at the endpoints: S''(a) = S''(b) = 0",
+        "First derivatives are zero at the endpoints",
+        "Function values match the derivative of the original function",
+        "The curvature is minimized everywhere"
+      ],
+      "answer": 0,
+      "explanation": "Natural splines assume zero curvature (S'' = 0) at the boundaries. This reduces the system of equations from n+1 to n-1 unknowns for n+1 data points. Other choices (clamped, periodic) impose different boundary conditions."
+    },
+    {
+      "id": "numerical-methods-interpolation-006",
+      "q": "The Chebyshev nodes x_i = cos((2i - 1)π / (2n)) for i = 1, ..., n are optimal for polynomial interpolation. What problem do they solve?",
+      "options": [
+        "They minimize the maximum interpolation error by clustering near the interval boundaries",
+        "They reduce the number of evaluations needed",
+        "They guarantee the interpolant is linear",
+        "They make the divided differences all equal"
+      ],
+      "answer": 0,
+      "explanation": "Equispaced nodes lead to Runge's phenomenon. Chebyshev nodes cluster near ±1 and are sparser in the middle, controlling the growth of the product ∏(x - x_i). This minimizes the Lebesgue constant Λ and interpolation error."
+    },
+    {
+      "id": "numerical-methods-interpolation-007",
+      "q": "For a cubic spline with n data points, how many cubic polynomial pieces are needed?",
+      "options": [
+        "n - 1 pieces, each connecting consecutive data points",
+        "n pieces with an extra boundary segment",
+        "n/2 pieces covering two points each",
+        "Just one piece covering all points"
+      ],
+      "answer": 0,
+      "explanation": "With n data points (x₀, ..., x_{n-1}), there are n - 1 intervals: [x₀, x₁], [x₁, x₂], ..., [x_{n-2}, x_{n-1}]. Each interval has its own cubic polynomial S_i(x) defined on [x_i, x_{i+1}], with continuity of S, S', S'' at interior knots."
+    },
+    {
+      "id": "numerical-methods-interpolation-008",
+      "q": "Hermite interpolation differs from standard Lagrange interpolation by also enforcing that:",
+      "options": [
+        "Derivative values (and possibly higher derivatives) match the original function at the interpolation points",
+        "The interpolant is a straight line between data points",
+        "Second derivatives are continuous everywhere",
+        "The polynomial has minimal degree among all approximations"
+      ],
+      "answer": 0,
+      "explanation": "Hermite interpolation specifies both function values f(x_i) and derivative values f'(x_i) at each node. For n nodes with derivatives, the interpolant is degree 2n - 1. Cubic Hermite splines (locally) maintain C¹ smoothness using these conditions."
+    },
+    {
+      "id": "numerical-methods-interpolation-009",
+      "q": "The Lebesgue constant Λ_n bounds interpolation error as |f(x) - P(x)| ≤ (1 + Λ_n) dist(f, Π_{n-1}). Why is small Λ_n desirable?",
+      "options": [
+        "Small Λ_n means the rounding error amplification is limited, ensuring numerical stability",
+        "Small Λ_n guarantees the interpolant is convex",
+        "Small Λ_n allows using fewer data points",
+        "Small Λ_n makes the interpolant unique"
+      ],
+      "answer": 0,
+      "explanation": "The Lebesgue constant measures how much rounding errors in function values are amplified. For equispaced nodes, Λ_n grows exponentially (Λ_n ≈ 2^n / n), leading to instability. Chebyshev nodes have Λ_n ≈ O(log n), much better for high-degree interpolation."
+    },
+    {
+      "id": "numerical-methods-interpolation-010",
+      "q": "B-splines (basis splines) are used in modern computational geometry. Compared to explicit spline polynomials, B-splines offer:",
+      "options": [
+        "Local control: changing one control point affects only nearby interpolant regions, not the entire curve",
+        "Faster computation through matrix multiplication",
+        "Exact interpolation of all data points",
+        "Automatic smoothness at all boundaries"
+      ],
+      "answer": 0,
+      "explanation": "B-splines are basis functions with compact support: each B_i(x) is nonzero only on a small interval. Modifying a control point affects only splines with nonzero support in that region, giving locality. This is essential in CAD/graphics. Standard splines change globally with one data point adjustment."
+    }
+  ]
+}

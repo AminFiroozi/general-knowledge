@@ -1,0 +1,126 @@
+{
+  "topic": "type-systems",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-type-systems-001",
+      "q": "What is the key difference between static and dynamic type checking?",
+      "options": [
+        "Static checking happens at compile time; dynamic checking happens at runtime",
+        "Static typing is used for integer operations; dynamic typing is for string operations",
+        "Static systems are faster; dynamic systems are slower",
+        "Static checking prevents all errors; dynamic checking catches only some errors"
+      ],
+      "answer": 0,
+      "explanation": "Static type checking verifies types before execution; dynamic checking enforces types during execution. Type specificity (integers vs strings) is not the distinction; performance varies; dynamic checking still catches errors."
+    },
+    {
+      "id": "compilers-type-systems-002",
+      "q": "What is type inference?",
+      "options": [
+        "Automatically deducing variable types from their usage context without explicit annotations",
+        "Checking that all variables are assigned before being used",
+        "Converting one type to another automatically",
+        "Verifying that function parameters match their declared types"
+      ],
+      "answer": 0,
+      "explanation": "Type inference deduces types from context and assignment, reducing explicit annotations. Use-before-assignment is initialization checking; automatic conversion is type coercion; parameter verification is type checking."
+    },
+    {
+      "id": "compilers-type-systems-003",
+      "q": "What is polymorphism in type systems?",
+      "options": [
+        "Allowing a function or value to work with multiple types",
+        "Checking that all type declarations match their usage exactly",
+        "Converting between different representation formats",
+        "Applying the same algorithm to different data structures"
+      ],
+      "answer": 0,
+      "explanation": "Polymorphism enables code to operate on multiple types (parametric or ad-hoc). Exact matching is type rigidity; conversion is coercion; algorithmic reuse is implementation, not a type system property."
+    },
+    {
+      "id": "compilers-type-systems-004",
+      "q": "What is parametric polymorphism?",
+      "options": [
+        "Allowing functions to be written once and work with any type that satisfies certain constraints",
+        "Requiring each function to handle all possible input types",
+        "Checking that parameters are provided in the correct order",
+        "Using different algorithms depending on the parameter types at runtime"
+      ],
+      "answer": 0,
+      "explanation": "Parametric polymorphism uses type parameters (generics), allowing one implementation for many types. Handling all types at once is impossible; parameter order is syntax; runtime selection is ad-hoc polymorphism."
+    },
+    {
+      "id": "compilers-type-systems-005",
+      "q": "What is ad-hoc polymorphism (also called overloading)?",
+      "options": [
+        "Allowing functions with the same name to have different implementations for different types",
+        "Using the same function name for unrelated purposes in different modules",
+        "Automatically converting types when necessary during execution",
+        "Applying type parameters to generic function definitions"
+      ],
+      "answer": 0,
+      "explanation": "Ad-hoc polymorphism (overloading) provides type-specific implementations with one name. Same-name unrelated functions are poor practice; automatic conversion is coercion; type parameters are parametric polymorphism."
+    },
+    {
+      "id": "compilers-type-systems-006",
+      "q": "What does type soundness mean?",
+      "options": [
+        "A type system where well-typed programs cannot encounter type errors at runtime",
+        "A type system with no unsupported operations",
+        "A type system where all types must be explicitly declared",
+        "A type system optimized for maximum execution speed"
+      ],
+      "answer": 0,
+      "explanation": "Sound types guarantee type safety: well-typed programs won't fail type checks at runtime. Supported operations, explicit declaration, and speed are separate type system properties."
+    },
+    {
+      "id": "compilers-type-systems-007",
+      "q": "What is the relationship between type completeness and expressiveness?",
+      "options": [
+        "More expressive type systems can represent finer-grained guarantees but become harder to check",
+        "Expressive types make programs shorter but reduce type safety",
+        "Complete types eliminate all runtime errors completely",
+        "Expressiveness and completeness are unrelated concepts"
+      ],
+      "answer": 0,
+      "explanation": "Richer type systems express more properties but increase complexity for type checking. Type expressiveness doesn't inherently affect program length or runtime errors; these properties are related in practice."
+    },
+    {
+      "id": "compilers-type-systems-008",
+      "q": "What is a subtype relation in type systems?",
+      "options": [
+        "A type relationship where a value of one type can be safely used wherever another type is expected",
+        "A way to organize type names hierarchically by length or alphabetically",
+        "A mechanism to avoid type errors in arithmetic operations",
+        "A constraint that forces all types to inherit from a common base"
+      ],
+      "answer": 0,
+      "explanation": "Subtyping enables substitutability: if S is a subtype of T, S values can be used as T values. It's not about naming, arithmetic, or forced inheritance but about behavioral compatibility."
+    },
+    {
+      "id": "compilers-type-systems-009",
+      "q": "What is a type error in a strongly-typed language?",
+      "options": [
+        "Using a value in a context requiring a different, incompatible type",
+        "Assigning a value to a variable of the same declared type",
+        "Using a function that hasn't been declared yet",
+        "Performing arithmetic with numbers of different sizes"
+      ],
+      "answer": 0,
+      "explanation": "Type errors occur when operations violate type constraints. Assigning to same-type variables is correct; undeclared functions are name errors; different number sizes are supported in most languages."
+    },
+    {
+      "id": "compilers-type-systems-010",
+      "q": "What is the Hindley-Milner type inference algorithm primarily used for?",
+      "options": [
+        "Automatically inferring types in languages like ML and Haskell without explicit annotations",
+        "Checking that type declarations match their implementations",
+        "Converting dynamic types to static types at runtime",
+        "Organizing type hierarchies in object-oriented languages"
+      ],
+      "answer": 0,
+      "explanation": "Hindley-Milner enables polymorphic type inference, widely used in functional languages for deducing types automatically. Declaration matching is different; dynamic-to-static conversion is not what it does; it's not specific to OO type hierarchies."
+    }
+  ]
+}

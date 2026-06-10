@@ -32,6 +32,90 @@
       ],
       "answer": 1,
       "explanation": "Top-down DP (memoization) starts from the original problem, recurses into subproblems, and caches results. Bottom-up DP starts from the smallest subproblems, fills a table in order, and builds up to the answer. Both have the same asymptotic complexity; bottom-up typically has less function-call overhead."
+    },
+    {
+      "id": "algorithms-dynamic-programming-004",
+      "q": "In the 0/1 knapsack problem, what does the recurrence relation dp[i][w] represent?",
+      "options": [
+        "The maximum value achievable using the first i items with capacity w",
+        "The minimum number of items needed to reach weight w",
+        "The total weight of the optimal solution for item i",
+        "The number of ways to fill the knapsack with capacity w"
+      ],
+      "answer": 0,
+      "explanation": "dp[i][w] is the maximum value we can obtain using items 0 to i-1 with knapsack capacity w. The recurrence is: dp[i][w] = max(dp[i-1][w], dp[i-1][w-weight[i]] + value[i]) — we either exclude item i or include it if it fits."
+    },
+    {
+      "id": "algorithms-dynamic-programming-005",
+      "q": "What is the Longest Common Subsequence (LCS) and what is its DP table complexity?",
+      "options": [
+        "The longest substring matching between two strings; O(n) space and time",
+        "The longest subsequence common to two strings; O(mn) time and O(min(m,n)) space after optimization",
+        "The longest identical substring; O(n²) time and O(n) space",
+        "The edit distance between two strings; O(nm) time only"
+      ],
+      "answer": 1,
+      "explanation": "LCS finds the longest subsequence (not necessarily contiguous) common to two strings of length m and n. The DP table is O(m × n). We can optimize space to O(min(m,n)) by keeping only two rows since dp[i][j] depends only on the previous row. Substring matching would be simpler with rolling hashes."
+    },
+    {
+      "id": "algorithms-dynamic-programming-006",
+      "q": "How does memoization differ from tabulation in dynamic programming implementation?",
+      "options": [
+        "Memoization is always faster; tabulation is only for academic purposes",
+        "Memoization uses recursion with caching; tabulation builds tables bottom-up iteratively",
+        "Memoization requires more space for recursion stacks; tabulation solves subproblems in arbitrary order",
+        "Memoization solves subproblems in order; tabulation uses random access"
+      ],
+      "answer": 1,
+      "explanation": "Memoization (top-down) caches recursive calls — you compute subproblems on-demand and store results. Tabulation (bottom-up) builds a table from small subproblems to large ones iteratively. Both have the same time complexity but differ in space (recursion depth vs. table size) and constant factors. Tabulation avoids function call overhead."
+    },
+    {
+      "id": "algorithms-dynamic-programming-007",
+      "q": "In the Fibonacci sequence, why does memoization dramatically improve naive recursion?",
+      "options": [
+        "Because each subproblem is solved only once instead of 2ⁿ times; naive recursion has exponential overlapping subproblems",
+        "Because memoization uses iteration instead of recursion",
+        "Because Fibonacci has polynomial optimal substructure",
+        "Because memoization changes the growth rate from exponential to polynomial"
+      ],
+      "answer": 0,
+      "explanation": "Naive recursive Fibonacci recomputes fib(k) many times, resulting in O(φⁿ) calls. Memoization caches each fib(k) after computing it once, reducing computation to O(n) since there are only n distinct subproblems. This exponential-to-linear speedup illustrates why DP is so powerful for overlapping subproblems."
+    },
+    {
+      "id": "algorithms-dynamic-programming-008",
+      "q": "What is optimal substructure and why is it required for DP?",
+      "options": [
+        "The ability to divide a problem into independent pieces; DP assumes pieces are unrelated",
+        "An optimal solution contains optimal solutions to subproblems; DP builds solutions from optimal subproblem answers",
+        "The problem must have polynomial size subproblems; DP only works for small inputs",
+        "The structure of the input array must be sorted; DP requires preordering"
+      ],
+      "answer": 1,
+      "explanation": "Optimal substructure means that the best solution to a problem can be constructed from best solutions to its subproblems. DP exploits this: compute optimal solutions to small subproblems, then combine them. Without this property, a subproblem's optimal solution might not lead to the global optimum."
+    },
+    {
+      "id": "algorithms-dynamic-programming-009",
+      "q": "For the coin change problem (minimize coins), why does DP guarantee correctness while greedy fails?",
+      "options": [
+        "DP explores all subsets; greedy picks the largest coin first which is not always optimal",
+        "DP considers all ways to use each coin and keeps the minimum; greedy makes locally optimal choices that may not be globally optimal",
+        "DP is always faster than greedy for this problem",
+        "Greedy fails only for very large coin sets"
+      ],
+      "answer": 1,
+      "explanation": "DP builds a table: dp[i] = minimum coins to make amount i. For each amount, it tries all coins and picks the best. Greedy (always pick the largest coin that fits) fails on counterexamples like coins {1, 3, 4} and amount 6: greedy gives 4+1+1 (3 coins) but optimal is 3+3 (2 coins). DP guarantees the global minimum."
+    },
+    {
+      "id": "algorithms-dynamic-programming-010",
+      "q": "What is meant by overlapping subproblems, and how does this relate to DP's efficiency?",
+      "options": [
+        "Subproblems that share the same answer; caching avoids solving them repeatedly",
+        "Subproblems that have intersecting input ranges; they must be solved in parallel",
+        "Problems where the total number of subproblems is greater than n; only DP can handle them",
+        "Recursive problems where the call tree is unbalanced"
+      ],
+      "answer": 0,
+      "explanation": "Overlapping subproblems occur when the same subproblem appears multiple times in the recursive structure. Without caching, you solve it repeatedly — exponential work. With memoization/tabulation, you solve each unique subproblem once and reuse the answer — polynomial work. This is the core insight that makes DP efficient."
     }
   ]
 }

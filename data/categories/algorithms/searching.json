@@ -1,0 +1,121 @@
+{
+  "topic": "searching",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-searching-001",
+      "q": "What is the time complexity of binary search and what precondition must be met?",
+      "options": [
+        "O(n), works on any array",
+        "O(log n), requires the array to be sorted",
+        "O(1), works with a hash table",
+        "O(n log n), requires preprocessing"
+      ],
+      "answer": 1,
+      "explanation": "Binary search repeatedly halves the search space by comparing the target to the middle element. With each comparison, the search space is cut in half — O(log n) comparisons total. It requires a sorted array. Without sorting, linear search O(n) is necessary."
+    },
+    {
+      "id": "algorithms-searching-002",
+      "q": "Compare linear search and binary search: when is linear search preferable despite being slower asymptotically?",
+      "options": [
+        "Linear search is never preferable",
+        "Linear search is simpler for unsorted data and has lower constant factors on small inputs; also works on linked lists where random access is unavailable",
+        "Linear search is always faster in practice",
+        "They have identical performance on sorted arrays"
+      ],
+      "answer": 1,
+      "explanation": "Linear search is O(n) versus binary search's O(log n), but linear search has simpler logic and lower constant factors. For small n, linear search may be faster in practice. Linear search works on unsorted data and linked lists. Binary search requires sorted data and random access, plus O(n log n) preprocessing cost for sorting may not justify itself on small datasets."
+    },
+    {
+      "id": "algorithms-searching-003",
+      "q": "What is the average-case time complexity of searching in a hash table with uniform hashing?",
+      "options": ["O(log n)", "O(n)", "O(1)", "O(n log n)"],
+      "answer": 2,
+      "explanation": "With uniform hashing and a good hash function, elements are distributed evenly across buckets. The average bucket size is n/m where m is the table size. With m ≈ n (constant load factor), average bucket size is O(1). Therefore, average search is O(1). Worst case O(n) occurs if all elements hash to the same bucket."
+    },
+    {
+      "id": "algorithms-searching-004",
+      "q": "What is a collision in hashing and how is it typically handled?",
+      "options": [
+        "When two keys hash to the same value; handled by open addressing (probing) or chaining",
+        "When a key is not found in the table",
+        "When the hash table is full",
+        "When two tables have the same size"
+      ],
+      "answer": 0,
+      "explanation": "A collision occurs when hash(key1) = hash(key2) for key1 ≠ key2. Chaining stores colliding elements in a linked list at each bucket. Open addressing (linear probing, quadratic probing, double hashing) finds an empty slot for the colliding element. The choice affects performance, memory, and implementation complexity."
+    },
+    {
+      "id": "algorithms-searching-005",
+      "q": "What is a binary search tree (BST) and what is its average search complexity?",
+      "options": [
+        "A tree where every node has at most 2 children; search is O(n) always",
+        "A sorted tree where left subtree keys < node key < right subtree keys; average search is O(log n) for a balanced tree, O(n) worst case if unbalanced",
+        "A complete binary tree used for heap operations",
+        "A tree used exclusively for sorting"
+      ],
+      "answer": 1,
+      "explanation": "A BST maintains the binary search property: all keys in the left subtree are smaller, all in the right are larger. Search, insert, and delete average O(log n) on a balanced tree (like AVL or red-black BST). An unbalanced BST degenerates to a linked list, giving O(n) worst case. BSTs support efficient range queries and in-order traversal."
+    },
+    {
+      "id": "algorithms-searching-006",
+      "q": "What is a balanced search tree and why is it important?",
+      "options": [
+        "A tree where each node has exactly 2 children",
+        "A tree that maintains height O(log n) to guarantee worst-case O(log n) search and insertion; examples are AVL and red-black trees",
+        "A tree with an equal number of elements on each side",
+        "Any tree used for searching"
+      ],
+      "answer": 1,
+      "explanation": "A balanced search tree constrains its height to O(log n) via rotation or rebalancing rules. AVL trees maintain height difference ≤1 between subtrees. Red-black trees relax this with color rules. Both guarantee O(log n) worst-case search, insert, and delete. Unbalanced BSTs can degrade to O(n), making balancing essential for predictable performance."
+    },
+    {
+      "id": "algorithms-searching-007",
+      "q": "What is the difference between a B-tree and a BST in terms of structure and use case?",
+      "options": [
+        "A B-tree is a generalization of a BST that stores multiple keys per node; used in databases and file systems for disk access",
+        "A B-tree is only for balanced trees; a BST is unbalanced",
+        "A B-tree and BST are the same",
+        "A B-tree is slower but uses less space"
+      ],
+      "answer": 0,
+      "explanation": "A B-tree of order m stores m-1 keys and m children per node, with all leaves at the same depth. It generalizes the binary tree. B-trees minimize disk I/O by storing many keys per node — each node access retrieves many keys. Databases and file systems (NTFS, ext4) use B-trees. A BST stores one key per node, suitable for in-memory structures."
+    },
+    {
+      "id": "algorithms-searching-008",
+      "q": "How does hashing compare to BST for the problem of finding all keys in a range [a, b]?",
+      "options": [
+        "Hash tables are optimal for range queries",
+        "BSTs can efficiently enumerate sorted keys in a range; hash tables require scanning the entire table — BSTs are better for range queries, hash tables excel at exact-key lookup",
+        "Hash tables are always faster",
+        "Both have identical performance"
+      ],
+      "answer": 1,
+      "explanation": "A BST can find the smallest key ≥ a via binary search, then in-order traverse to b — total O(k + log n) where k is the number of keys in the range. A hash table must scan all m buckets and their elements — O(n + m). For range queries, BSTs are superior. Hash tables are best for exact-key lookup (O(1) average)."
+    },
+    {
+      "id": "algorithms-searching-009",
+      "q": "What is the interpolation search and when is it better than binary search?",
+      "options": [
+        "A search that interpolates missing values in the array",
+        "A variant of binary search that estimates the position based on the value (like searching in a dictionary); O(log log n) average on uniformly distributed data, but O(n) worst case",
+        "A search that is always faster than binary search",
+        "A search that works only on strings"
+      ],
+      "answer": 1,
+      "explanation": "Interpolation search guesses the position of the target by assuming uniform distribution: pos = low + (target - arr[low]) / (arr[high] - arr[low]) * (high - low). On uniformly distributed data, this gives O(log log n) average time. On sorted but skewed data, it degenerates to O(n). Binary search is more robust with guaranteed O(log n)."
+    },
+    {
+      "id": "algorithms-searching-010",
+      "q": "What is the lower bound for comparison-based searching and what does it imply?",
+      "options": [
+        "O(n), because you must examine every element",
+        "O(log n), because you need at least log₂(n) comparisons to distinguish among n possibilities — no comparison-based search can do better",
+        "O(1), because the element might be first",
+        "O(n²), because of nested structures"
+      ],
+      "answer": 1,
+      "explanation": "Any comparison-based search must distinguish among n possible outcomes (found or not found at each position). Each comparison yields one of two outcomes, so you need at least log₂(n) comparisons. Binary search achieves this lower bound. Non-comparison searches (like hashing with key extraction) can achieve O(1) average by side-stepping comparisons entirely."
+    }
+  ]
+}

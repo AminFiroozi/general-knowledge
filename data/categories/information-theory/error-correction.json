@@ -1,0 +1,126 @@
+{
+  "topic": "error-correction",
+  "category": "information-theory",
+  "questions": [
+    {
+      "id": "information-theory-error-correction-001",
+      "q": "What is the primary purpose of error-correcting codes?",
+      "options": [
+        "Detect and correct errors introduced during transmission or storage",
+        "Increase the transmission speed",
+        "Reduce the size of transmitted messages",
+        "Encrypt data for security"
+      ],
+      "answer": 0,
+      "explanation": "Error-correcting codes add redundancy to enable detection and correction of errors in noisy channels. They protect data integrity by recovering original information despite corruption. Encryption (option 3) serves a different purpose: security rather than error recovery."
+    },
+    {
+      "id": "information-theory-error-correction-002",
+      "q": "Hamming(7,4) code encodes 4 data bits into 7 total bits by adding 3 parity bits. How many single-bit errors can it correct?",
+      "options": [
+        "1 single-bit error",
+        "2 single-bit errors",
+        "3 single-bit errors",
+        "7 single-bit errors"
+      ],
+      "answer": 0,
+      "explanation": "Hamming codes with minimum distance 3 can correct 1 error. The relationship is: to correct t errors, minimum distance must be 2t+1. Hamming(7,4) achieves distance 3. To correct 2 errors would require distance 5, needing more parity bits."
+    },
+    {
+      "id": "information-theory-error-correction-003",
+      "q": "What is a parity bit?",
+      "options": [
+        "An extra bit added to make the total number of 1s even (or odd)",
+        "A bit that indicates the position of an error",
+        "A bit used to encrypt the message",
+        "The most significant bit in the encoded word"
+      ],
+      "answer": 0,
+      "explanation": "A parity bit is a checksum bit that makes the total count of 1s even (even parity) or odd (odd parity). It detects single-bit errors but cannot correct them. Option 1 describes syndrome bits, which locate errors in Hamming codes."
+    },
+    {
+      "id": "information-theory-error-correction-004",
+      "q": "The Hamming distance between two codewords is the number of positions where they differ. What does minimum distance d_min determine?",
+      "options": [
+        "The number of errors that can be corrected or detected",
+        "The probability of correct transmission",
+        "The entropy of the source",
+        "The speed of encoding"
+      ],
+      "answer": 0,
+      "explanation": "Minimum distance d_min determines error correction capacity: can correct ⌊(d_min-1)/2⌋ errors and detect d_min-1 errors. Larger minimum distance provides stronger error correction but requires more redundancy. This is a core principle of code design."
+    },
+    {
+      "id": "information-theory-error-correction-005",
+      "q": "Reed-Solomon codes are used in QR codes and space missions. What makes them powerful for burst errors?",
+      "options": [
+        "They can correct multiple errors and burst errors spanning multiple symbols",
+        "They detect but cannot correct errors",
+        "They only work for binary channels",
+        "They require no redundancy overhead"
+      ],
+      "answer": 0,
+      "explanation": "Reed-Solomon codes operate on symbols (e.g., bytes) rather than bits, making them excellent for burst errors where consecutive bits are corrupted. An RS(n,k) code can correct up to (n-k)/2 symbol errors. They're non-binary codes with high efficiency."
+    },
+    {
+      "id": "information-theory-error-correction-006",
+      "q": "The code rate R is defined as k/n where k is data bits and n is total bits. What does a lower code rate imply?",
+      "options": [
+        "More redundancy and stronger error correction",
+        "Better compression and faster transmission",
+        "Weaker error detection capability",
+        "Simpler decoding algorithm"
+      ],
+      "answer": 0,
+      "explanation": "Code rate R = k/n measures information efficiency. Lower R means more parity bits (more redundancy) for stronger error correction at the cost of higher overhead. Higher R means less redundancy but reduced correction capability. This is a fundamental trade-off."
+    },
+    {
+      "id": "information-theory-error-correction-007",
+      "q": "Which type of error-correcting code uses a parity check matrix H to encode and detect errors?",
+      "options": [
+        "Linear block codes (including Hamming and LDPC codes)",
+        "Arithmetic codes",
+        "Substitution codes",
+        "One-time pads"
+      ],
+      "answer": 0,
+      "explanation": "Linear block codes use parity check matrices for efficient encoding and error detection via syndrome calculation. Hamming codes are a classical example; LDPC (Low-Density Parity-Check) codes are modern variants with near-Shannon-limit performance. Options 1-3 are classical cipher concepts, not error correction."
+    },
+    {
+      "id": "information-theory-error-correction-008",
+      "q": "Turbo codes and LDPC codes achieve near-Shannon-limit performance. What key feature enables this?",
+      "options": [
+        "Iterative decoding with feedback between component decoders",
+        "Extremely long codewords",
+        "Non-linear encoding functions",
+        "Quantum error correction principles"
+      ],
+      "answer": 0,
+      "explanation": "Turbo and LDPC codes use iterative decoding where multiple component decoders exchange soft-decision information, progressively improving error correction. This feedback-driven approach exploits the channel structure. Option 1 is about computational complexity, not the core advantage."
+    },
+    {
+      "id": "information-theory-error-correction-009",
+      "q": "In a Binary Symmetric Channel (BSC) with error probability p, what is the Shannon capacity?",
+      "options": [
+        "C = 1 - H(p) where H(p) = -p log₂(p) - (1-p) log₂(1-p)",
+        "C = 1 - p",
+        "C = log₂(1/p)",
+        "C = p"
+      ],
+      "answer": 0,
+      "explanation": "The BSC capacity is C = 1 - H(p) bits per transmission, where H(p) is the binary entropy function. As p → 0, C → 1 (perfect channel); as p → 0.5, C → 0 (useless channel). This defines the theoretical maximum rate for reliable communication."
+    },
+    {
+      "id": "information-theory-error-correction-010",
+      "q": "What is a syndrome in Hamming code decoding?",
+      "options": [
+        "A vector computed from received bits that indicates error position",
+        "The original data bits before encoding",
+        "The parity check equation used in encoding",
+        "The corrected codeword after error removal"
+      ],
+      "answer": 0,
+      "explanation": "The syndrome s = H·r (where r is received word, H is parity check matrix) is a vector that uniquely identifies the error position in Hamming codes. A zero syndrome indicates no error; non-zero syndrome directly maps to the error bit position for correction."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "complexity-analysis",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-complexity-analysis-001",
+      "q": "What do Big-O, Big-Θ, and Big-Ω represent in complexity analysis?",
+      "options": [
+        "They are equivalent notations for the same concept",
+        "Big-O is upper bound, Big-Ω is lower bound, Big-Θ is tight bound (upper and lower match asymptotically)",
+        "Big-O measures space, Big-Ω measures time, Big-Θ measures both",
+        "They describe the best, average, and worst cases"
+      ],
+      "answer": 1,
+      "explanation": "Big-O(g(n)) is an upper bound: f(n) ≤ c·g(n) for large n. Big-Ω(g(n)) is a lower bound: f(n) ≥ c·g(n) for large n. Big-Θ(g(n)) is tight: f(n) = Θ(g(n)) when both Big-O and Big-Ω apply — f(n) grows as g(n). Example: quicksort is O(n²) worst-case, Ω(n log n) best-case, Θ(n log n) average-case."
+    },
+    {
+      "id": "algorithms-complexity-analysis-002",
+      "q": "What is amortized analysis and when is it useful?",
+      "options": [
+        "Averaging the cost of operations over the entire algorithm",
+        "An analysis technique that spreads the cost of expensive operations over many cheap operations to show that the average cost per operation is low — useful for data structures like dynamic arrays where occasional resizing is expensive",
+        "The worst-case complexity of an algorithm",
+        "The best-case complexity of an algorithm"
+      ],
+      "answer": 1,
+      "explanation": "Amortized analysis proves that although some operations (like resizing a dynamic array) are expensive in isolation, their amortized cost is low when averaged over many operations. For dynamic arrays, insertion is amortized O(1) because the O(n) cost of doubling the capacity happens rarely. Techniques: aggregate analysis, accounting method, potential method."
+    },
+    {
+      "id": "algorithms-complexity-analysis-003",
+      "q": "What is a recurrence relation and how does the Master Theorem help analyze it?",
+      "options": [
+        "A recursive formula defining the runtime; the Master Theorem solves it directly without recurrence",
+        "A formula defining a function in terms of itself; the Master Theorem solves recurrences of the form T(n) = aT(n/b) + f(n) giving O(n^log_b(a)), O(n log n), or O(f(n)) depending on f",
+        "A relation only for sorting algorithms",
+        "A theoretical concept with no practical use"
+      ],
+      "answer": 1,
+      "explanation": "A recurrence like T(n) = 2T(n/2) + n describes the runtime recursively. The Master Theorem solves T(n) = aT(n/b) + f(n) by comparing f(n) to n^(log_b a): if f is smaller, T(n) = Θ(n^(log_b a)); if equal, T(n) = Θ(f(n) log n); if larger, T(n) = Θ(f(n)). Example: merge sort with a=2, b=2, f(n)=n gives Θ(n log n)."
+    },
+    {
+      "id": "algorithms-complexity-analysis-004",
+      "q": "Explain the P vs NP problem in simple terms.",
+      "options": [
+        "P problems are hard; NP problems are easy",
+        "P is the class of problems solvable in polynomial time; NP is the class of problems whose solutions are verifiable in polynomial time — it is unknown if P = NP",
+        "NP is a smaller class than P",
+        "They describe space complexity, not time complexity"
+      ],
+      "answer": 1,
+      "explanation": "P (polynomial time) contains problems solvable by a deterministic algorithm in polynomial time. NP (nondeterministic polynomial time) contains problems where a proposed solution can be verified in polynomial time. P ⊆ NP, but whether P = NP is unsolved (one of the Millennium Prize problems). NP-complete problems are the hardest in NP; if any is in P, then P = NP."
+    },
+    {
+      "id": "algorithms-complexity-analysis-005",
+      "q": "What is NP-completeness and why is it important?",
+      "options": [
+        "A problem is NP-complete if it can be solved in polynomial time",
+        "A problem is NP-complete if it is in NP and every other NP problem can be reduced to it in polynomial time — solving one efficiently would solve all NP problems",
+        "NP-complete problems are always easy to solve",
+        "There are no NP-complete problems"
+      ],
+      "answer": 1,
+      "explanation": "NP-complete problems are the hardest in NP. Examples: SAT, 3-SAT, traveling salesman, knapsack. If any NP-complete problem is solvable in polynomial time, then P = NP and all NP-complete problems are solvable in polynomial time — a breakthrough. No polynomial algorithm is known for any NP-complete problem, so most researchers believe P ≠ NP."
+    },
+    {
+      "id": "algorithms-complexity-analysis-006",
+      "q": "What is asymptotic notation and why is it used instead of exact operation counts?",
+      "options": [
+        "Asymptotic notation is the same as exact counts; there is no difference",
+        "Asymptotic notation (like O(n)) ignores constant factors and lower-order terms to focus on how runtime scales with input size; useful because constants vary by hardware but the growth rate reveals algorithm efficiency",
+        "Asymptotic notation only works for polynomial functions",
+        "Asymptotic notation is always more pessimistic than reality"
+      ],
+      "answer": 1,
+      "explanation": "Exact operation counts depend on hardware and implementation details. Asymptotic notation abstracts these away: O(n) algorithms with different constants all scale linearly. This allows comparing algorithms independently of constants. For large n, growth rate dominates — O(n) beats O(n²) regardless of constants. Asymptotic analysis reveals inherent algorithm efficiency."
+    },
+    {
+      "id": "algorithms-complexity-analysis-007",
+      "q": "How do you determine the time complexity of a nested loop structure?",
+      "options": [
+        "Count the number of loops",
+        "Analyze the iteration count of each loop and multiply; for loops that iterate n times nested in loops iterating n times, total is O(n²)",
+        "Time complexity is always O(n) for any loop",
+        "Nested loops always have exponential complexity"
+      ],
+      "answer": 1,
+      "explanation": "For nested loops, multiply iteration counts: a loop of n iterations containing a loop of n iterations gives n × n = n² operations. If the inner loop runs i iterations on iteration i of the outer loop, sum: 1 + 2 + ... + n = n(n+1)/2 = O(n²). Multiply for depth; sum for conditional branches. Example: bubble sort has two nested loops of n iterations each → O(n²)."
+    },
+    {
+      "id": "algorithms-complexity-analysis-008",
+      "q": "What does it mean for an algorithm to have logarithmic complexity and why is it fast?",
+      "options": [
+        "Logarithmic means the runtime is the logarithm of the input size; it is fast because the exponent is small",
+        "O(log n) means the input size is reduced by a constant factor with each step, so the total steps is log(n) — very fast because even for n = 1,000,000, log₂(n) ≈ 20",
+        "Logarithmic complexity is slower than linear",
+        "Logarithm is only used for space complexity"
+      ],
+      "answer": 1,
+      "explanation": "O(log n) algorithms (like binary search) reduce the problem size by a constant factor (e.g., half) with each step. For n = 1 million, log₂(1 million) ≈ 20 steps. For n = 1 billion, only ≈ 30 steps. Logarithmic growth is much slower than linear, quadratic, or exponential, making these algorithms extremely scalable and fast even for huge inputs."
+    },
+    {
+      "id": "algorithms-complexity-analysis-009",
+      "q": "What is the difference between worst-case, average-case, and best-case complexity?",
+      "options": [
+        "They are the same thing with different names",
+        "Worst-case: maximum time over all inputs of size n; average-case: expected time over a distribution; best-case: minimum time — usually we focus on worst-case for guarantees",
+        "Best-case is always O(1)",
+        "Average-case is never useful for analysis"
+      ],
+      "answer": 1,
+      "explanation": "Worst-case bounds guarantee performance on any input. Quicksort worst-case is O(n²) (when pivot is always extremal). Average-case assumes random input distribution — quicksort average is O(n log n). Best-case is the easiest scenario (quicksort best-case is O(n log n) with balanced partitions). Worst-case is standard because it gives a safety guarantee; average-case requires distributional assumptions."
+    },
+    {
+      "id": "algorithms-complexity-analysis-010",
+      "q": "What is a polynomial-time reduction and how does it relate to NP-completeness?",
+      "options": [
+        "A method to reduce the input size of an algorithm",
+        "A method to transform an instance of problem A to problem B in polynomial time such that the solution to B solves A — used to prove NP-completeness by showing all NP problems reduce to a candidate NP-complete problem",
+        "A technique to make an algorithm faster",
+        "Only used for theoretical computer science"
+      ],
+      "answer": 1,
+      "explanation": "A polynomial-time reduction from A to B is an algorithm that solves A by transforming it to B, solving B, and transforming the result back — all in polynomial time. If B is NP-complete and A reduces to B, then A is NP-complete. SAT is the canonical NP-complete problem; 3-SAT, vertex cover, and TSP are shown NP-complete via reductions. Reductions form a hierarchy of hardness."
+    }
+  ]
+}

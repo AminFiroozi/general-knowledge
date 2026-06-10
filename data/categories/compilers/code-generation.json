@@ -1,0 +1,126 @@
+{
+  "topic": "code-generation",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-code-generation-001",
+      "q": "What is the primary goal of instruction selection in code generation?",
+      "options": [
+        "Choosing appropriate target machine instructions to implement intermediate code operations",
+        "Determining the order in which source code statements are compiled",
+        "Selecting which variables should reside in registers versus memory",
+        "Deciding which compiler optimization passes to apply"
+      ],
+      "answer": 0,
+      "explanation": "Instruction selection maps intermediate representation operations to target machine instructions. Statement order is parsing; register decisions are allocation; optimization selection is a compilation strategy choice."
+    },
+    {
+      "id": "compilers-code-generation-002",
+      "q": "What is register allocation?",
+      "options": [
+        "Assigning variables to physical registers or memory locations on the target processor",
+        "Initializing processor registers at program startup",
+        "Restricting the number of variables a function can declare",
+        "Reserving memory space for register save areas on the stack"
+      ],
+      "answer": 0,
+      "explanation": "Register allocation maps variables to limited hardware registers, spilling to memory as needed. Register initialization is runtime setup; variable count restrictions are language constraints; save areas are calling convention details."
+    },
+    {
+      "id": "compilers-code-generation-003",
+      "q": "Why is register allocation a challenging problem in code generation?",
+      "options": [
+        "The number of available registers is limited, requiring careful assignment to minimize spills and maintain efficiency",
+        "Modern processors do not support variable-length instructions",
+        "Programming languages forbid direct register usage",
+        "Memory is unlimited, making register usage optional"
+      ],
+      "answer": 0,
+      "explanation": "Fitting many variables into few registers optimally is NP-hard. Processors do support variable-length instructions; most languages allow compiler access to registers; memory limitations make registers crucial, not optional."
+    },
+    {
+      "id": "compilers-code-generation-004",
+      "q": "What is a calling convention?",
+      "options": [
+        "A standard agreement specifying how functions receive arguments, return values, and preserve state across calls",
+        "The order in which functions are declared in a program",
+        "A rule determining when inline optimization is applied to functions",
+        "A restriction on the maximum number of function parameters"
+      ],
+      "answer": 0,
+      "explanation": "Calling conventions define parameter passing, return values, and register saving across function boundaries, enabling interoperability. Declaration order, inlining decisions, and parameter limits are separate concerns."
+    },
+    {
+      "id": "compilers-code-generation-005",
+      "q": "What information does a calling convention typically specify?",
+      "options": [
+        "Parameter passing method, return value location, and which registers are caller-saved versus callee-saved",
+        "The memory addresses where all global variables are stored",
+        "The exact syntax of function definitions in the source language",
+        "Which optimization passes must be run before code generation"
+      ],
+      "answer": 0,
+      "explanation": "Calling conventions cover parameter passing (registers or stack), return values, and register preservation across calls. Global variable addresses are linker concerns; syntax is language-level; optimization passes are compiler strategy."
+    },
+    {
+      "id": "compilers-code-generation-006",
+      "q": "What does spilling mean in the context of register allocation?",
+      "options": [
+        "Storing a value in memory when all registers are in use, then reloading it when needed",
+        "Accidentally losing a value during computation",
+        "Spreading a single variable across multiple registers",
+        "Clearing unused registers to free them for allocation"
+      ],
+      "answer": 0,
+      "explanation": "Spilling saves register contents to memory, freeing registers for other values; reloading restores them later. Accidental loss would be a bug; spreading across registers is multi-part allocation; clearing is not a standard term."
+    },
+    {
+      "id": "compilers-code-generation-007",
+      "q": "What is the relationship between intermediate code and target code?",
+      "options": [
+        "Intermediate code is a machine-independent representation; target code is specific to a processor architecture",
+        "Intermediate code is only used for optimization; target code includes all original source information",
+        "Intermediate code must be human-readable; target code is always binary",
+        "Target code is generated before intermediate code during compilation"
+      ],
+      "answer": 0,
+      "explanation": "Intermediate representation abstracts away architecture details; code generation lowers it to specific machine instructions. Optimization uses both; target code is the actual output; intermediate code can be binary; generation order is semantic analysis, intermediate, then target."
+    },
+    {
+      "id": "compilers-code-generation-008",
+      "q": "What is a data hazard in code generation for pipelined processors?",
+      "options": [
+        "A dependency between instructions where an earlier instruction's result is needed by a later instruction before it's available",
+        "Corruption of data due to simultaneous access from multiple threads",
+        "Inefficient memory access patterns causing cache misses",
+        "A mismatch between declared variable types and actual usage"
+      ],
+      "answer": 0,
+      "explanation": "Data hazards occur when instruction pipelines stall waiting for previous results. Data corruption is synchronization-related; cache issues are performance concerns; type mismatches are semantic errors."
+    },
+    {
+      "id": "compilers-code-generation-009",
+      "q": "What is the purpose of code emission in the final stage of code generation?",
+      "options": [
+        "Writing the final target code instructions to an output file or stream",
+        "Removing redundant code from the intermediate representation",
+        "Converting abstract syntax trees into intermediate code",
+        "Performing final verification of type correctness before execution"
+      ],
+      "answer": 0,
+      "explanation": "Code emission outputs generated instructions as assembly or machine code. Redundant code removal is optimization; AST conversion is semantic analysis; type verification is compile-time, not emission."
+    },
+    {
+      "id": "compilers-code-generation-010",
+      "q": "How do compilers handle the impedance mismatch between an intermediate language and a target processor?",
+      "options": [
+        "Through instruction selection, register allocation, and code emission phases that systematically lower abstractions",
+        "By generating only code that directly maps to specific hardware features",
+        "By interpreting intermediate code at runtime instead of compiling it",
+        "By requiring source programs to explicitly specify target hardware details"
+      ],
+      "answer": 0,
+      "explanation": "Code generation phases systematically bridge the gap between machine-independent and machine-specific code. Direct hardware mapping loses portability; interpretation defeats compilation; explicit hardware specifications break abstraction."
+    }
+  ]
+}

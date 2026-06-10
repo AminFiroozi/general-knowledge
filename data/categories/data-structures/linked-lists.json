@@ -1,0 +1,126 @@
+{
+  "topic": "linked-lists",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-linked-lists-001",
+      "q": "In a singly linked list, each node contains which of the following?",
+      "options": [
+        "Data and pointers to both next and previous nodes",
+        "Data and a pointer to the next node",
+        "Only data, no pointers",
+        "Data and an index"
+      ],
+      "answer": 1,
+      "explanation": "A singly linked list node has data and a single pointer to the next node. A doubly linked list additionally maintains a pointer to the previous node. Array-based structures use indices instead of pointers."
+    },
+    {
+      "id": "data-structures-linked-lists-002",
+      "q": "What is the time complexity of inserting an element at the beginning of a singly linked list?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 0,
+      "explanation": "Insertion at the beginning requires only updating the pointer of the new node to point to the old head and updating the head reference, which takes constant time O(1). No traversal is needed."
+    },
+    {
+      "id": "data-structures-linked-lists-003",
+      "q": "How would you detect a cycle in a linked list efficiently?",
+      "options": [
+        "Use a hash set to store visited nodes and check for duplicates",
+        "Use Floyd's cycle detection algorithm with two pointers at different speeds",
+        "Traverse the list and count nodes, then check if count exceeds list length",
+        "Both A and B are correct"
+      ],
+      "answer": 3,
+      "explanation": "Both approaches work: the hash set approach uses O(n) space, while Floyd's algorithm uses O(1) space with a slow pointer moving 1 step and a fast pointer moving 2 steps. Floyd's is more space-efficient."
+    },
+    {
+      "id": "data-structures-linked-lists-004",
+      "q": "What is a key disadvantage of linked lists compared to arrays?",
+      "options": [
+        "Linked lists use less memory",
+        "Linked lists cannot store different data types",
+        "Random access by index is O(n), requiring traversal from the head",
+        "Linked lists cannot be sorted"
+      ],
+      "answer": 2,
+      "explanation": "Linked lists require O(n) traversal to access the element at a specific position since there is no index-based direct access. Arrays provide O(1) random access. Linked lists can be sorted and use extra memory for pointers."
+    },
+    {
+      "id": "data-structures-linked-lists-005",
+      "q": "In a doubly linked list, what additional capability does the backward pointer provide compared to a singly linked list?",
+      "options": [
+        "Ability to store more data in each node",
+        "Traversal in both directions without reversal",
+        "Faster insertion and deletion operations",
+        "Reduced memory usage"
+      ],
+      "answer": 1,
+      "explanation": "Backward pointers allow traversing from any node toward the head in O(n) worst case, enabling bidirectional iteration. Singly linked lists require reversal or external data structures. Memory usage is actually higher due to extra pointers."
+    },
+    {
+      "id": "data-structures-linked-lists-006",
+      "q": "What is the time complexity of deleting a node in a singly linked list if you have a direct pointer to that node?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "Cannot be done directly"
+      ],
+      "answer": 1,
+      "explanation": "To delete a node in a singly linked list, you need to know its predecessor to update the predecessor's next pointer. Even with a direct pointer to the target node, finding the predecessor requires traversal, taking O(n) in worst case."
+    },
+    {
+      "id": "data-structures-linked-lists-007",
+      "q": "Merging two sorted singly linked lists of sizes m and n can be done in what time complexity?",
+      "options": [
+        "O(m + n)",
+        "O(m × n)",
+        "O((m + n) log(m + n))",
+        "O(max(m, n))"
+      ],
+      "answer": 0,
+      "explanation": "Merging two sorted linked lists requires a single pass through both lists, comparing elements at the head of each list and advancing pointers. This takes O(m + n) time without requiring sorting."
+    },
+    {
+      "id": "data-structures-linked-lists-008",
+      "q": "In a circular linked list, the last node points to which node?",
+      "options": [
+        "A null pointer",
+        "The head node",
+        "Itself",
+        "The second-to-last node"
+      ],
+      "answer": 1,
+      "explanation": "A circular linked list has the last node pointing back to the head node, creating a cycle. This allows continuous iteration without termination. A standard linked list has the last node pointing to null."
+    },
+    {
+      "id": "data-structures-linked-lists-009",
+      "q": "What is the space complexity of Floyd's cycle detection algorithm?",
+      "options": [
+        "O(n)",
+        "O(1)",
+        "O(log n)",
+        "O(n²)"
+      ],
+      "answer": 1,
+      "explanation": "Floyd's algorithm uses only two pointers (slow and fast) regardless of list size, making it O(1) space complexity. This is more efficient than the hash set approach which requires O(n) extra space."
+    },
+    {
+      "id": "data-structures-linked-lists-010",
+      "q": "Reversing a singly linked list in place requires how much extra space?",
+      "options": [
+        "O(n) for a temporary array",
+        "O(1) by manipulating pointers",
+        "O(log n) for recursion depth",
+        "O(n) for a stack to track nodes"
+      ],
+      "answer": 1,
+      "explanation": "In-place reversal uses only a few pointer variables to reverse the links iteratively, requiring constant extra space O(1). Recursive approaches use O(n) stack space due to call depth, and array-based approaches use O(n) space."
+    }
+  ]
+}

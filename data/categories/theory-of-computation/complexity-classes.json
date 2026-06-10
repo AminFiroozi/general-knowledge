@@ -1,0 +1,126 @@
+{
+  "topic": "complexity-classes",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-complexity-classes-001",
+      "q": "The complexity class P consists of languages that:",
+      "options": [
+        "Can be recognized by a polynomial number of Turing machines",
+        "Can be decided by a deterministic Turing machine in polynomial time",
+        "Can be verified by a non-deterministic Turing machine in polynomial time",
+        "Are polynomial-length strings only"
+      ],
+      "answer": 1,
+      "explanation": "P (polynomial time) comprises decision problems solvable by a deterministic Turing machine in polynomial time relative to input size. This includes practical problems like sorting and graph reachability. Option 2 is the standard definition. NP involves verification (option 3), and option 1 conflates number of machines with time complexity."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-002",
+      "q": "The complexity class NP consists of languages where:",
+      "options": [
+        "No polynomial algorithm is known",
+        "A certificate for membership can be verified in polynomial time by a deterministic machine",
+        "A non-deterministic Turing machine can solve it in exponential time",
+        "The problem is 'not polynomial' and definitely requires exponential time"
+      ],
+      "answer": 1,
+      "explanation": "NP (non-deterministic polynomial time) consists of problems where a proposed solution (certificate) can be checked in polynomial time. Example: SAT, where a truth assignment is the certificate. 'Not polynomial' (option 4) is a misreading of 'NP'. NP problems may or may not have polynomial solutions; P vs NP is open. Option 2 defines decidability, not NP."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-003",
+      "q": "A problem is NP-complete if:",
+      "options": [
+        "It is in NP and every problem in NP reduces to it in polynomial time",
+        "It is the hardest problem in NP",
+        "It cannot be solved in polynomial time",
+        "It is in P and also in NP"
+      ],
+      "answer": 0,
+      "explanation": "NP-complete requires two conditions: (1) membership in NP (verifiable in polynomial time), and (2) NP-hardness (all NP problems reduce to it polynomially). This makes NP-complete problems 'hardest' in NP in a technical sense. Option 2 is informal; option 3 conflates NP-completeness with proven exponential hardness; option 4 describes problems unlikely to exist (barring P = NP)."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-004",
+      "q": "If P = NP, which of the following would be true?",
+      "options": [
+        "All problems would be solvable in polynomial time",
+        "The Halting Problem would become decidable",
+        "Every problem in NP could be solved (not merely verified) in polynomial time",
+        "PSPACE would equal P"
+      ],
+      "answer": 2,
+      "explanation": "If P = NP, then every problem verifiable in polynomial time is also solvable in polynomial time. This would mean NP-complete problems like SAT have polynomial algorithms. Not all problems are in NP (option 1 overstates); the Halting Problem remains undecidable (option 2); PSPACE does not collapse to P (option 3). Option 2 is the precise consequence of P = NP."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-005",
+      "q": "A polynomial reduction from problem A to problem B means:",
+      "options": [
+        "A is easier than B",
+        "A can be converted to an instance of B in polynomial time such that the solution for B yields a solution for A",
+        "Every solution to A is also a solution to B",
+        "B requires more time to solve than A"
+      ],
+      "answer": 1,
+      "explanation": "A polynomial reduction A ≤_p B uses a polynomial-time computable function to transform any instance of A into an instance of B, preserving yes/no answers. If B is solvable in polynomial time, then A is too. Reductions establish hardness relationships but do not directly compare difficulty. Option 1 is informal; option 3 conflates decision problems with solution preservation."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-006",
+      "q": "The Satisfiability Problem (SAT) is NP-complete. What does this imply?",
+      "options": [
+        "SAT cannot be solved in polynomial time",
+        "SAT is in NP and any problem in NP reduces to SAT in polynomial time",
+        "SAT is the only NP-complete problem",
+        "SAT is decidable and verifiable in logarithmic time"
+      ],
+      "answer": 1,
+      "explanation": "NP-completeness of SAT means SAT is in NP (truth assignments verify in polynomial time) and is NP-hard (all NP problems reduce to it polynomially). Option 0 is unproven conjecture; option 2 is false—there are many NP-complete problems; option 3 confuses decidability with complexity. The definition of NP-completeness is exactly option 1."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-007",
+      "q": "PSPACE is the set of languages decidable by a Turing machine using:",
+      "options": [
+        "Polynomial time and unlimited space",
+        "Polynomial space and unlimited time",
+        "Exponential space and exponential time",
+        "Linear space only"
+      ],
+      "answer": 1,
+      "explanation": "PSPACE (polynomial space) comprises languages decidable in polynomial space, but time is unrestricted. We know P ⊆ NP ⊆ PSPACE, but P = PSPACE is open. Option 0 bounds time (not PSPACE); option 2 is EXPSPACE; option 3 is linear space, a smaller class. PSPACE allows any polynomial amount of memory."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-008",
+      "q": "Which statement correctly orders these complexity classes by inclusion?",
+      "options": [
+        "P ⊆ NP ⊆ PSPACE ⊆ EXPTIME",
+        "NP ⊆ P ⊆ PSPACE",
+        "PSPACE ⊆ P ⊆ NP",
+        "EXPTIME ⊆ PSPACE ⊆ NP ⊆ P"
+      ],
+      "answer": 0,
+      "explanation": "The known hierarchy is P ⊆ NP ⊆ PSPACE ⊆ EXPTIME (exponential time). These strict inclusions follow from simulation relationships between models and resource bounds. NP ⊆ P is unproven and unlikely; PSPACE ⊆ P is false; EXPTIME ⊆ PSPACE is false. Option 0 reflects current understanding of the landscape."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-009",
+      "q": "The 3-SAT problem (satisfiability of boolean formulas in 3-CNF) is:",
+      "options": [
+        "Decidable in polynomial time",
+        "NP-complete, meaning it is as hard as any problem in NP",
+        "In P but not in NP",
+        "Undecidable"
+      ],
+      "answer": 1,
+      "explanation": "3-SAT is a canonical NP-complete problem: membership is in NP (verify truth assignments in polynomial time), and NP-hardness is proven by reduction from general SAT (Cook's theorem). No polynomial-time algorithm for 3-SAT is known, and finding one would prove P = NP. It is decidable but hardness remains unresolved."
+    },
+    {
+      "id": "theory-of-computation-complexity-classes-010",
+      "q": "If a problem is NP-hard, what can we conclude?",
+      "options": [
+        "The problem is in NP",
+        "Every problem in NP reduces to it in polynomial time",
+        "The problem is polynomial-time solvable",
+        "The problem is undecidable"
+      ],
+      "answer": 1,
+      "explanation": "NP-hardness means all NP problems polynomially reduce to it. NP-hardness does not require the problem to be in NP itself (option 0 is NP-completeness); NP-hard problems need not be solvable in polynomial time (option 2); undecidability is unrelated to NP-hardness (option 3). Option 1 is the defining property of NP-hardness."
+    }
+  ]
+}

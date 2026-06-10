@@ -1,0 +1,126 @@
+{
+  "topic": "trees",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-trees-001",
+      "q": "In a binary tree, what is the maximum number of nodes at level k (where the root is at level 0)?",
+      "options": [
+        "k nodes",
+        "2^k nodes",
+        "2k nodes",
+        "k² nodes"
+      ],
+      "answer": 1,
+      "explanation": "A binary tree at level k can have at most 2^k nodes because each node has at most 2 children. Level 0 has 1 node (2^0), level 1 has 2 nodes (2^1), level 2 has 4 nodes (2^2), and so on."
+    },
+    {
+      "id": "data-structures-trees-002",
+      "q": "What property must a binary search tree satisfy?",
+      "options": [
+        "All left children are smaller than the parent, and all right children are larger",
+        "The tree is perfectly balanced",
+        "All nodes have exactly two children",
+        "The sum of all left subtree values equals the sum of right subtree values"
+      ],
+      "answer": 0,
+      "explanation": "A BST's defining property is that for each node, all values in the left subtree are smaller and all values in the right subtree are larger. Balance and child count are separate properties that BSTs don't require."
+    },
+    {
+      "id": "data-structures-trees-003",
+      "q": "In-order traversal of a binary search tree visits nodes in which order?",
+      "options": [
+        "Largest to smallest",
+        "Smallest to largest (sorted ascending)",
+        "Level by level from top to bottom",
+        "Random order"
+      ],
+      "answer": 1,
+      "explanation": "In-order traversal (left → node → right) of a BST produces values in sorted ascending order. Pre-order visits the node first, and level-order goes by levels. Reverse in-order gives largest to smallest."
+    },
+    {
+      "id": "data-structures-trees-004",
+      "q": "What is the height of a tree with a single node (just the root)?",
+      "options": [
+        "0",
+        "1",
+        "-1",
+        "Undefined"
+      ],
+      "answer": 0,
+      "explanation": "Height is the number of edges from a node to the furthest leaf. A single node has no edges below it, so its height is 0. Some definitions count nodes instead (making it 1), but the edge-based definition is standard."
+    },
+    {
+      "id": "data-structures-trees-005",
+      "q": "What is the worst-case time complexity of searching in an unbalanced binary search tree?",
+      "options": [
+        "O(log n)",
+        "O(n)",
+        "O(1)",
+        "O(n²)"
+      ],
+      "answer": 1,
+      "explanation": "If a BST becomes skewed (like a linked list with all nodes going right), search degenerates to O(n). A balanced BST achieves O(log n). The distractor O(log n) assumes the tree remains balanced."
+    },
+    {
+      "id": "data-structures-trees-006",
+      "q": "An AVL tree maintains balance by ensuring the height difference between left and right subtrees is what?",
+      "options": [
+        "At most 1",
+        "At most 2",
+        "Exactly 0",
+        "Depends on tree size"
+      ],
+      "answer": 0,
+      "explanation": "AVL trees maintain a balance factor where the height difference between left and right subtrees of any node is at most 1 (|height(left) - height(right)| ≤ 1). This ensures O(log n) operations even in worst case."
+    },
+    {
+      "id": "data-structures-trees-007",
+      "q": "In a complete binary tree with n nodes, how many leaf nodes are there?",
+      "options": [
+        "Exactly n/2",
+        "Between n/2 and n",
+        "Approximately n/2 or n/2 + 1 depending on whether n is even",
+        "n - 1"
+      ],
+      "answer": 2,
+      "explanation": "In a complete binary tree, if n is even, there are n/2 leaf nodes. If n is odd, there are (n+1)/2 leaf nodes. The key insight is that internal nodes total n/2 rounded down, so leaves are the remainder."
+    },
+    {
+      "id": "data-structures-trees-008",
+      "q": "What is the time complexity of inserting a node into a balanced BST like an AVL tree?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 1,
+      "explanation": "Balanced BSTs maintain height O(log n), so insertion requires finding the position (O(log n)) and possibly performing rotations (O(log n) maximum). Unbalanced BSTs can degrade to O(n)."
+    },
+    {
+      "id": "data-structures-trees-009",
+      "q": "A red-black tree is a self-balancing BST that maintains which invariant?",
+      "options": [
+        "Height of left and right subtrees differ by at most 1",
+        "All paths from root to leaves have the same number of black nodes",
+        "All nodes are either red or black with specific coloring rules",
+        "Both B and C are correct"
+      ],
+      "answer": 3,
+      "explanation": "Red-black trees use both properties: the black-height property (all paths have equal black nodes) and the coloring rules (no two adjacent red nodes). AVL trees use the strict height difference property, which is more restrictive."
+    },
+    {
+      "id": "data-structures-trees-010",
+      "q": "In a binary tree, what is the minimum number of comparisons needed to find the minimum value?",
+      "options": [
+        "1 comparison",
+        "log n comparisons",
+        "n - 1 comparisons",
+        "Cannot be determined"
+      ],
+      "answer": 2,
+      "explanation": "Finding the minimum requires checking every node at least once because any node could be the minimum. This requires n - 1 comparisons (comparing all n nodes). In a BST, you could go only left, but in a general tree you must examine all nodes."
+    }
+  ]
+}

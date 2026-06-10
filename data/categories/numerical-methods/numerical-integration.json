@@ -1,0 +1,126 @@
+{
+  "topic": "numerical-integration",
+  "category": "numerical-methods",
+  "questions": [
+    {
+      "id": "numerical-methods-numerical-integration-001",
+      "q": "The trapezoidal rule approximates ∫[a,b] f(x)dx by treating the region under f as a trapezoid. What is its local truncation error order?",
+      "options": [
+        "O(h³) where h is the step size",
+        "O(h) where h is the step size",
+        "O(h²) where h is the step size",
+        "O(h⁴) where h is the step size"
+      ],
+      "answer": 2,
+      "explanation": "The trapezoidal rule has local error O(h³) per interval, but globally (compositing over n intervals) it becomes O((b-a)h²) = O(1/n²). Simpson's rule is O(h⁵) locally and O(1/n⁴) globally."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-002",
+      "q": "Simpson's rule uses a parabola through three points. For n subintervals with even n, how many function evaluations are needed?",
+      "options": [
+        "n + 1 evaluations",
+        "2n function evaluations",
+        "n/2 + 1 evaluations",
+        "3n evaluations"
+      ],
+      "answer": 0,
+      "explanation": "Simpson's rule composites n/2 parabolic pieces, each using 3 points. The points are shared between adjacent intervals, so evaluations at interior points (x₁, x₂, ..., x_{n-1}) are counted once. Total: 1 + n = n + 1 points."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-003",
+      "q": "Gaussian quadrature optimally places quadrature nodes and weights. For n points, what is the highest polynomial degree it integrates exactly?",
+      "options": [
+        "Degree n",
+        "Degree 2n + 1",
+        "Degree 2n - 1",
+        "Degree n²"
+      ],
+      "answer": 2,
+      "explanation": "Gaussian quadrature with n nodes integrates polynomials of degree up to 2n - 1 exactly. The nodes are chosen as roots of orthogonal polynomials (e.g., Legendre polynomials), and weights are computed to maximize precision."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-004",
+      "q": "Which integration method is most affected by oscillatory or rapidly varying integrands?",
+      "options": [
+        "Gaussian quadrature, which assumes smooth functions and few nodes",
+        "Trapezoidal rule with equispaced nodes",
+        "Simpson's rule with adaptive refinement",
+        "Clenshaw-Curtis quadrature with Chebyshev nodes"
+      ],
+      "answer": 1,
+      "explanation": "Trapezoidal rule with fixed equispaced nodes struggles with oscillatory integrands because it may miss peaks. Gaussian quadrature and Clenshaw-Curtis can be effective even for oscillatory functions. Adaptive Simpson's rule refines in high-variation regions."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-005",
+      "q": "Adaptive quadrature divides an interval and refines where the error is largest. What is a typical stopping criterion?",
+      "options": [
+        "Subdivide until the difference between coarse and fine estimates is below tolerance ε",
+        "Always subdivide to a maximum depth of 20",
+        "Stop when the function has been evaluated at 10,000 points",
+        "Subdivide until all subintervals have length < 0.001"
+      ],
+      "answer": 0,
+      "explanation": "Adaptive methods estimate error via difference between estimates (e.g., Simpson vs. nested Simpson or trapezoidal vs. Simpson). If error < ε, the subinterval is accepted; otherwise it is subdivided. This efficiently allocates function evaluations."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-006",
+      "q": "For a function with a singularity at x = a inside [a, b], how should integration be handled?",
+      "options": [
+        "Apply a change of variables or split the interval and use weighted quadrature designed for singularities",
+        "Simply apply Simpson's rule across the singularity",
+        "Exclude a small neighborhood around x = a",
+        "Use bisection to find the exact singularity location"
+      ],
+      "answer": 0,
+      "explanation": "Singularities require special treatment: variable substitution can remove the singularity, or specialized quadrature rules (e.g., Gauss-Laguerre) can handle them. Naive Simpson's rule fails because smoothness assumptions are violated."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-007",
+      "q": "The global error of the composite trapezoidal rule for n subintervals is O(1/n²). To reduce error by a factor of 100, approximately how many more subintervals are needed?",
+      "options": [
+        "10 times more subintervals",
+        "100 times more subintervals",
+        "1,000 times more subintervals",
+        "5 times more subintervals"
+      ],
+      "answer": 0,
+      "explanation": "If E_n ≈ C/n², then E_{10n} ≈ C/(100n²) = E_n/100. Multiplying n by 10 reduces error by 100. This illustrates how quadratic convergence requires many more evaluations for high precision."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-008",
+      "q": "What is the main advantage of Gaussian quadrature over Newton-Cotes formulas (trapezoidal, Simpson's)?",
+      "options": [
+        "Optimal node placement and weights for a given number of function evaluations; higher polynomial precision",
+        "Easier to implement without computing orthogonal polynomials",
+        "Superior handling of discontinuities in the integrand",
+        "No need to specify the integration interval"
+      ],
+      "answer": 0,
+      "explanation": "Gaussian quadrature nodes are optimally placed (as roots of orthogonal polynomials), not equispaced. With n nodes, Gaussian quadrature integrates degree 2n - 1 polynomials exactly, vs. degree n - 1 for Newton-Cotes. This makes it far more accurate for smooth functions."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-009",
+      "q": "Multiple integration (e.g., 2D) using tensor products of 1D quadrature rules requires how many function evaluations for n nodes per dimension in 2D?",
+      "options": [
+        "n² evaluations",
+        "2n evaluations",
+        "n evaluations",
+        "n³ evaluations"
+      ],
+      "answer": 0,
+      "explanation": "A 2D tensor product quadrature rule uses a Cartesian grid of nodes: all combinations of n x-nodes and n y-nodes, totaling n × n = n² points. In d dimensions, this grows as n^d, causing the curse of dimensionality."
+    },
+    {
+      "id": "numerical-methods-numerical-integration-010",
+      "q": "Why does the trapezoidal rule yield exact results for linear functions f(x) = mx + c?",
+      "options": [
+        "The parabola through any three points on a line is the line itself; the area under the trapezoid equals the exact integral",
+        "Rounding errors cancel out for linear functions",
+        "The derivative of a linear function is constant, reducing error",
+        "Linear functions have no second derivative, so error bounds give E = 0"
+      ],
+      "answer": 0,
+      "explanation": "Trapezoidal rule connects the function values with straight lines (degree ≤ 1 interpolation). For a linear function, this interpolant is exact, so the numerical integral equals the analytical result. This is why the method has at least degree-1 precision."
+    }
+  ]
+}

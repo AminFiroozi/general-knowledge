@@ -1,0 +1,116 @@
+{
+  "topic": "graph-algorithms",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-graph-algorithms-001",
+      "q": "What is the key difference between breadth-first search (BFS) and depth-first search (DFS)?",
+      "options": [
+        "BFS uses a queue and explores level-by-level; DFS uses a stack and explores deeply before backtracking",
+        "BFS is always faster; DFS requires more memory",
+        "DFS finds the shortest path; BFS finds the longest path",
+        "BFS only works on trees; DFS works on general graphs"
+      ],
+      "answer": 0,
+      "explanation": "BFS uses a queue (FIFO) to explore neighbors level by level, visiting all nodes at distance k before distance k+1. DFS uses a stack or recursion (LIFO), exploring as far as possible before backtracking. Both have O(V + E) time complexity. BFS finds shortest paths in unweighted graphs; DFS is useful for topological sort and cycle detection."
+    },
+    {
+      "id": "algorithms-graph-algorithms-002",
+      "q": "What is the time complexity of BFS on a graph with V vertices and E edges?",
+      "options": ["O(V)", "O(E)", "O(V + E)", "O(V²)"],
+      "answer": 2,
+      "explanation": "BFS visits each vertex once and examines each edge once. Initialization takes O(V), and the main loop processes each vertex and edge exactly once — O(E) total for all adjacency list traversals. Total: O(V + E). This holds for connected and disconnected graphs."
+    },
+    {
+      "id": "algorithms-graph-algorithms-003",
+      "q": "In Dijkstra's algorithm, why must all edge weights be non-negative?",
+      "options": [
+        "Negative weights make the algorithm run slower but still correct",
+        "Negative weights can cause the algorithm to visit vertices multiple times and miss the optimal path",
+        "Negative weights are impossible in real-world graphs",
+        "Negative weights require O(2ⁿ) time instead of polynomial"
+      ],
+      "answer": 1,
+      "explanation": "Dijkstra's greedy strategy picks the unvisited vertex with minimum distance and declares its distance final. With negative edge weights, a later edge might reduce a finalized distance, violating the greedy assumption. Bellman-Ford handles negative weights by relaxing edges multiple times. For negative cycles, no shortest path may exist."
+    },
+    {
+      "id": "algorithms-graph-algorithms-004",
+      "q": "What is the time complexity of Dijkstra's algorithm using a binary heap?",
+      "options": ["O(V²)", "O((V + E) log V)", "O(E log V)", "O(V log E)"],
+      "answer": 1,
+      "explanation": "With a binary heap, extract-min is O(log V) and each vertex is processed once — O(V log V). Each edge relaxation is one heap operation — O(E log V) total. Combined: O((V + E) log V). Using a Fibonacci heap reduces this to O(V log V + E), but binary heaps are simpler and often faster in practice."
+    },
+    {
+      "id": "algorithms-graph-algorithms-005",
+      "q": "What is a Minimum Spanning Tree (MST) and why is it useful?",
+      "options": [
+        "A spanning tree with the maximum total weight; used to find the slowest path",
+        "A spanning tree connecting all vertices with the minimum total edge weight; useful for connecting networks with minimum cost",
+        "A tree with the minimum number of vertices; used for graph compression",
+        "A tree where the deepest vertex is minimized"
+      ],
+      "answer": 1,
+      "explanation": "An MST is a spanning tree (connects all V vertices using V-1 edges) with minimum total weight. Applications include network design, clustering, and finding the cheapest way to connect locations. An MST always exists for connected graphs and is not unique when edge weights repeat."
+    },
+    {
+      "id": "algorithms-graph-algorithms-006",
+      "q": "How do Kruskal's and Prim's algorithms for MST differ in their approach?",
+      "options": [
+        "Kruskal is greedy on edges; Prim is greedy on vertices — Kruskal sorts edges by weight and uses a union-find structure",
+        "Kruskal uses DFS; Prim uses BFS",
+        "Prim always produces a smaller MST than Kruskal",
+        "Kruskal handles negative weights; Prim does not"
+      ],
+      "answer": 0,
+      "explanation": "Kruskal's algorithm sorts edges by weight and greedily adds edges that do not form a cycle (using union-find). Prim's algorithm grows a tree starting from one vertex, greedily adding the minimum-weight edge connecting the tree to a new vertex. Both find the same MST weight but may produce different trees when weights repeat. Kruskal: O(E log E); Prim with heap: O((V+E) log V)."
+    },
+    {
+      "id": "algorithms-graph-algorithms-007",
+      "q": "What is topological sorting and on what type of graph is it defined?",
+      "options": [
+        "Ordering vertices by geographic location; works on any graph",
+        "A linear ordering of vertices such that for every edge u → v, u comes before v; only defined on Directed Acyclic Graphs (DAGs)",
+        "Sorting vertices by their degree; works on weighted graphs",
+        "A tree traversal method; only works on trees"
+      ],
+      "answer": 1,
+      "explanation": "Topological sort is a linear ordering of DAG vertices respecting all directed edges. It has applications in task scheduling, dependency resolution, and compiler optimization. A cycle in the graph prevents a topological ordering. Algorithms: DFS-based (O(V+E)) or Kahn's algorithm using in-degree (O(V+E))."
+    },
+    {
+      "id": "algorithms-graph-algorithms-008",
+      "q": "What does it mean for a graph to be bipartite, and how can you test for it?",
+      "options": [
+        "A graph with exactly two vertices; tested by checking V = 2",
+        "A graph where vertices can be partitioned into two sets with no edges within each set; tested using BFS/DFS coloring with 2 colors",
+        "A graph with two connected components; tested by counting components",
+        "A graph where every vertex has exactly 2 edges; tested by checking degree"
+      ],
+      "answer": 1,
+      "explanation": "A bipartite graph has no odd-length cycles. To test: color vertices with 2 colors using BFS/DFS — if any edge connects vertices of the same color, the graph is not bipartite. Bipartite graphs model matching problems, like pairing job seekers with jobs. Testing is O(V + E)."
+    },
+    {
+      "id": "algorithms-graph-algorithms-009",
+      "q": "What is strongly connected components (SCC) and why is it important?",
+      "options": [
+        "Connected subgraphs; every edge is reachable from every other edge",
+        "Maximal subsets of vertices where every vertex can reach every other vertex via directed paths; useful for identifying independent groups in directed graphs",
+        "Sets of vertices with the same incoming degree; used for load balancing",
+        "Cycles in the graph; important for deadlock detection"
+      ],
+      "answer": 1,
+      "explanation": "An SCC is a maximal subgraph where vertices are mutually reachable. SCCs decompose a directed graph into independent modules. Algorithms: Kosaraju's and Tarjan's run in O(V + E) using two DFS passes. Applications include finding cycles, identifying bottlenecks in workflow networks, and social network analysis."
+    },
+    {
+      "id": "algorithms-graph-algorithms-010",
+      "q": "When comparing BFS for shortest paths versus Dijkstra's algorithm, which is correct?",
+      "options": [
+        "BFS finds shortest paths only in unweighted graphs; Dijkstra handles weighted graphs with non-negative weights",
+        "Dijkstra is always faster than BFS",
+        "BFS handles negative weights; Dijkstra does not",
+        "They produce the same result on any graph"
+      ],
+      "answer": 0,
+      "explanation": "BFS counts hops and finds shortest paths in unweighted (or unit-weight) graphs in O(V + E). Dijkstra minimizes total weight and requires non-negative weights, with O((V+E) log V) complexity using a heap. On unweighted graphs, BFS is simpler and faster. On weighted graphs, Dijkstra is necessary (or Bellman-Ford for negative weights)."
+    }
+  ]
+}

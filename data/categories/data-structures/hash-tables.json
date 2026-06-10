@@ -1,0 +1,126 @@
+{
+  "topic": "hash-tables",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-hash-tables-001",
+      "q": "What is a hash function in the context of hash tables?",
+      "options": [
+        "A function that maps keys to array indices",
+        "A function that encrypts data for security",
+        "A function that sorts the table",
+        "A function that compresses large files"
+      ],
+      "answer": 0,
+      "explanation": "A hash function takes a key and returns an index in the hash table's underlying array. It determines where to store and retrieve values. While hash functions are used in cryptography, their primary role in hash tables is addressing, not encryption."
+    },
+    {
+      "id": "data-structures-hash-tables-002",
+      "q": "What is a hash collision?",
+      "options": [
+        "When the hash table runs out of memory",
+        "When the hash table is accessed from multiple threads simultaneously",
+        "When two different keys hash to the same index",
+        "When a key cannot be found in the table"
+      ],
+      "answer": 2,
+      "explanation": "A collision occurs when two distinct keys produce the same hash value and map to the same index. Collision resolution techniques like chaining and open addressing handle this problem."
+    },
+    {
+      "id": "data-structures-hash-tables-003",
+      "q": "In a hash table using chaining for collision resolution, what is the average time complexity of a lookup with a load factor α?",
+      "options": [
+        "O(1)",
+        "O(α)",
+        "O(1 + α)",
+        "O(n)"
+      ],
+      "answer": 2,
+      "explanation": "With chaining, the average lookup time is O(1 + α) where α is the load factor (number of entries / table size). α accounts for the average chain length. When α is kept small (e.g., < 1), lookups remain effectively O(1)."
+    },
+    {
+      "id": "data-structures-hash-tables-004",
+      "q": "What is the load factor in a hash table?",
+      "options": [
+        "The ratio of the number of entries to the table size",
+        "The time taken to hash a single key",
+        "The number of collisions per entry",
+        "The percentage of memory used"
+      ],
+      "answer": 0,
+      "explanation": "Load factor α = n / m, where n is the number of entries and m is the table size. It indicates how full the table is. High load factors (α > 1) typically trigger resizing to maintain performance."
+    },
+    {
+      "id": "data-structures-hash-tables-005",
+      "q": "In open addressing, what happens when a collision is detected?",
+      "options": [
+        "The new key-value pair is stored in a linked list at that index",
+        "An alternative index is found using a probing sequence",
+        "The table is immediately resized",
+        "The collision is ignored and data is lost"
+      ],
+      "answer": 1,
+      "explanation": "Open addressing uses probing sequences (linear, quadratic, or double hashing) to find an empty slot. Chaining uses linked lists at each index. Open addressing avoids extra memory for pointers but can lead to clustering."
+    },
+    {
+      "id": "data-structures-hash-tables-006",
+      "q": "What is linear probing in open addressing?",
+      "options": [
+        "Probing indices increase by a fixed constant (usually 1) until an empty slot is found",
+        "Probing indices are calculated using a quadratic formula",
+        "Probing uses a secondary hash function",
+        "Probing checks all indices in sequence regardless of collisions"
+      ],
+      "answer": 0,
+      "explanation": "Linear probing checks indices h, h+1, h+2, ... until finding an empty slot. It's simple but suffers from primary clustering. Quadratic probing and double hashing spread out probes more effectively."
+    },
+    {
+      "id": "data-structures-hash-tables-007",
+      "q": "When should a hash table be resized?",
+      "options": [
+        "Only when completely full",
+        "When the load factor exceeds a threshold (typically 0.75)",
+        "After every insertion",
+        "Never—the size is fixed"
+      ],
+      "answer": 1,
+      "explanation": "Hash tables are typically resized when load factor exceeds a threshold like 0.75 to maintain O(1) average performance. Resizing involves creating a new larger table and rehashing all entries. Waiting until full degrades performance significantly."
+    },
+    {
+      "id": "data-structures-hash-tables-008",
+      "q": "What is a good property for a hash function?",
+      "options": [
+        "It should always produce the same index for the same key",
+        "It should distribute keys uniformly across the table",
+        "It should minimize collisions",
+        "All of the above"
+      ],
+      "answer": 3,
+      "explanation": "A good hash function must be deterministic (same key → same index), distribute uniformly to minimize collisions, and be fast to compute. All three properties are essential for hash table performance."
+    },
+    {
+      "id": "data-structures-hash-tables-009",
+      "q": "What is the disadvantage of chaining compared to open addressing?",
+      "options": [
+        "Chaining uses extra memory for pointers",
+        "Chaining has slower lookup time",
+        "Chaining cannot handle collisions",
+        "Chaining requires resizing more frequently"
+      ],
+      "answer": 0,
+      "explanation": "Chaining uses additional memory for linked list nodes and pointers. Open addressing avoids this extra memory but can suffer from clustering. The trade-off involves memory usage versus space utilization efficiency."
+    },
+    {
+      "id": "data-structures-hash-tables-010",
+      "q": "In a hash table with 100 slots and 75 entries using chaining, what is the approximate average chain length?",
+      "options": [
+        "0.75",
+        "1",
+        "100",
+        "75"
+      ],
+      "answer": 0,
+      "explanation": "Load factor α = 75 / 100 = 0.75. With chaining, the average chain length equals the load factor. This means on average, searching a chain requires examining 0.75 elements, giving O(1 + 0.75) = O(1.75) ≈ O(1)."
+    }
+  ]
+}

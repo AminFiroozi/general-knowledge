@@ -1,0 +1,126 @@
+{
+  "topic": "floating-point",
+  "category": "numerical-methods",
+  "questions": [
+    {
+      "id": "numerical-methods-floating-point-001",
+      "q": "IEEE 754 single-precision floats have 1 sign bit, 8 exponent bits, and 23 mantissa bits. How many significant decimal digits does this represent?",
+      "options": [
+        "Approximately 7 decimal digits",
+        "Exactly 23 decimal digits",
+        "Approximately 15 decimal digits",
+        "Approximately 3 decimal digits"
+      ],
+      "answer": 0,
+      "explanation": "With 23 mantissa bits, the precision is 2^{-23} ≈ 1.2 × 10^{-7}. This gives about 6-7 significant decimal digits. Double-precision (52 mantissa bits) gives ≈15-16 digits."
+    },
+    {
+      "id": "numerical-methods-floating-point-002",
+      "q": "Machine epsilon (ε_machine) is the smallest relative error in rounding a real number. For IEEE 754 double-precision, ε_machine ≈:",
+      "options": [
+        "2.22 × 10^{-16}",
+        "1.0 × 10^{-10}",
+        "3.14 × 10^{-8}",
+        "1.5 × 10^{-32}"
+      ],
+      "answer": 0,
+      "explanation": "For double-precision with 52 mantissa bits, ε_machine = 2^{-52} ≈ 2.22 × 10^{-16}. Single-precision gives 2^{-23} ≈ 1.19 × 10^{-7}. Machine epsilon bounds the relative rounding error in basic operations."
+    },
+    {
+      "id": "numerical-methods-floating-point-003",
+      "q": "Catastrophic cancellation occurs when subtracting two nearly equal numbers. Why is this numerically problematic?",
+      "options": [
+        "Leading significant digits cancel, leaving mostly rounding error; relative error becomes huge",
+        "The CPU runs out of memory during the computation",
+        "The exponent becomes negative and underflows to zero",
+        "The result is always exactly zero"
+      ],
+      "answer": 0,
+      "explanation": "If a ≈ b, then a - b has few significant digits but is computed from two numbers with many. Rounding error in a and b (relative error ε_machine × |a|) dominates the tiny result, yielding relative error ≈ ε_machine × |a| / (a - b), which is huge."
+    },
+    {
+      "id": "numerical-methods-floating-point-004",
+      "q": "To avoid catastrophic cancellation in computing √(1 + x) - 1 for small x > 0, the recommended form is:",
+      "options": [
+        "x / [√(1 + x) + 1], using rationalization",
+        "√x · √(1 + 1/x) - 1",
+        "1 / [√(1 + x) + 1]",
+        "(1 + x) / √(1 + x)"
+      ],
+      "answer": 0,
+      "explanation": "Direct computation √(1 + x) - 1 cancels when √(1 + x) ≈ 1. Multiplying by the conjugate gives [1 + x - 1] / [√(1 + x) + 1] = x / [√(1 + x) + 1]. The denominator is not near-unity, so cancellation is avoided."
+    },
+    {
+      "id": "numerical-methods-floating-point-005",
+      "q": "In IEEE 754, numbers are normalized so the mantissa satisfies 1 ≤ m < 2. What is the representation of the number x = 5.5?",
+      "options": [
+        "m = 1.375, exponent = 2 (i.e., 1.375 × 2²)",
+        "m = 5.5, exponent = 0",
+        "m = 0.6875, exponent = 3",
+        "m = 11.0, exponent = -1"
+      ],
+      "answer": 0,
+      "explanation": "5.5 = (101.1)₂ = 1.011 × 2² in binary. The mantissa is 1.375 = (1.011)₂ and exponent is 2. The leading 1 in the mantissa is implicit in IEEE 754, so only .011 is stored."
+    },
+    {
+      "id": "numerical-methods-floating-point-006",
+      "q": "Subnormal (denormalized) numbers in IEEE 754 have exponent field all zeros. What is their smallest magnitude?",
+      "options": [
+        "2^{-126} × 2^{-23} = 2^{-149} for single-precision",
+        "2^{-126} for single-precision",
+        "Zero only",
+        "Undefined; subnormals are not representable"
+      ],
+      "answer": 0,
+      "explanation": "Subnormal numbers use an implicit exponent (typically 2^{-126} for single-precision) but mantissa < 1, allowing gradual underflow. The smallest positive subnormal is 2^{-126} × 2^{-23} = 2^{-149} ≈ 1.4 × 10^{-45}."
+    },
+    {
+      "id": "numerical-methods-floating-point-007",
+      "q": "What happens in IEEE 754 when overflow occurs (result is too large)?",
+      "options": [
+        "The result is set to infinity (±∞) and an exception is signaled",
+        "The result is rounded to the largest finite float",
+        "An error is raised and the program terminates",
+        "The result wraps around to the smallest positive float"
+      ],
+      "answer": 0,
+      "explanation": "IEEE 754 specifies overflow returns ±∞ depending on sign. Infinity can propagate through further computations. Underflow returns zero or subnormal numbers. Both are recoverable errors that allow graceful degradation."
+    },
+    {
+      "id": "numerical-methods-floating-point-008",
+      "q": "For computing a sum S = x₁ + x₂ + ... + x_n with very different magnitudes, the Kahan summation algorithm improves accuracy by:",
+      "options": [
+        "Keeping a running correction term to track rounding error and add it back in subsequent iterations",
+        "Sorting terms in increasing order of magnitude before summing",
+        "Using higher-precision arithmetic internally",
+        "Skipping very small terms to avoid underflow"
+      ],
+      "answer": 0,
+      "explanation": "Kahan summation maintains c (accumulated rounding error) and computes y = x_i - c, then S' = S + y, then c = (S' - S) - y. This correction reduces error from O(nε_machine |S|) to O(ε_machine |S|), independent of n."
+    },
+    {
+      "id": "numerical-methods-floating-point-009",
+      "q": "The relative error in representing a real number x by a float fl(x) satisfies |fl(x) - x| / |x| ≤ ε_machine (assuming no underflow). This is a consequence of:",
+      "options": [
+        "Rounding to the nearest representable float; the error is at most half a unit in the last place (ULP)",
+        "The mantissa having a fixed number of bits",
+        "Normalization of the mantissa to [1, 2)",
+        "The binary base used in IEEE 754"
+      ],
+      "answer": 0,
+      "explanation": "IEEE 754 rounds to nearest: |fl(x) - x| ≤ 0.5 × ulp(x) = 0.5 × 2^{-p} × 2^e where p is precision bits and 2^e is the scale. Relative error |fl(x) - x| / |x| ≤ (0.5 × 2^{-p} × 2^e) / (2^e × mantissa) ≈ ε_machine."
+    },
+    {
+      "id": "numerical-methods-floating-point-010",
+      "q": "When implementing the discriminant formula x = [-b ± √(b² - 4ac)] / (2a) for a quadratic, numerical instability occurs when b² >> 4ac and b > 0. Why?",
+      "options": [
+        "The formula -b + √(b² - 4ac) subtracts two nearly equal large numbers, causing catastrophic cancellation",
+        "The discriminant becomes negative",
+        "Division by 2a amplifies rounding errors",
+        "The square root is undefined"
+      ],
+      "answer": 0,
+      "explanation": "When b > 0 and 4ac << b², we have √(b² - 4ac) ≈ b, so -b + √(b² - 4ac) cancels. The stable approach is compute one root as r₁ = [-b - √(b² - 4ac)] / (2a) (no cancellation), then r₂ = c / (a·r₁)."
+    }
+  ]
+}

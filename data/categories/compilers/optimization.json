@@ -1,0 +1,126 @@
+{
+  "topic": "optimization",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-optimization-001",
+      "q": "What is constant folding in compiler optimization?",
+      "options": [
+        "Evaluating constant expressions at compile time and replacing them with their computed result",
+        "Removing unused variables from a program",
+        "Rearranging loop iterations for better cache performance",
+        "Combining multiple variable declarations into a single statement"
+      ],
+      "answer": 0,
+      "explanation": "Constant folding replaces compile-time computable expressions like 3 + 4 with 7. Removing unused variables is dead code elimination; loop rearrangement is a different optimization; declaration combining is a syntax transformation."
+    },
+    {
+      "id": "compilers-optimization-002",
+      "q": "What is dead code elimination?",
+      "options": [
+        "Removing code that is unreachable or whose results are never used",
+        "Deleting comments from source code before compilation",
+        "Eliminating branches with missing else clauses",
+        "Converting recursive functions into iterative ones"
+      ],
+      "answer": 0,
+      "explanation": "Dead code elimination removes unreachable or useless code without changing program semantics. Removing comments is a lexical operation; missing else clauses are syntactically valid; recursion-to-iteration is a different transformation."
+    },
+    {
+      "id": "compilers-optimization-003",
+      "q": "What is loop unrolling and why might it be beneficial?",
+      "options": [
+        "Replicating loop body statements to reduce branch overhead and improve pipeline efficiency",
+        "Converting a loop into recursive function calls for better readability",
+        "Eliminating all loops from a program to prevent infinite execution",
+        "Inverting loop conditions to reverse iteration direction"
+      ],
+      "answer": 0,
+      "explanation": "Loop unrolling reduces branching and enables vectorization. Converting to recursion reduces performance; eliminating loops changes semantics; inverting conditions changes behavior."
+    },
+    {
+      "id": "compilers-optimization-004",
+      "q": "What is Static Single Assignment (SSA) form?",
+      "options": [
+        "An intermediate representation where each variable is assigned exactly once",
+        "A requirement that all variables must be statically typed",
+        "A constraint that functions can have only one return statement",
+        "A property of assembly code where registers are assigned one per instruction"
+      ],
+      "answer": 0,
+      "explanation": "In SSA, each variable receives exactly one assignment, making data flow analysis easier. Static typing is a language property, not SSA; single returns are a coding style; register assignment is not what SSA means."
+    },
+    {
+      "id": "compilers-optimization-005",
+      "q": "Why is SSA form useful for compiler optimization?",
+      "options": [
+        "It makes data flow analysis straightforward because each variable's value comes from exactly one source",
+        "It reduces the number of registers required on the target machine",
+        "It eliminates the need for loop optimization",
+        "It allows direct execution of intermediate code without machine code generation"
+      ],
+      "answer": 0,
+      "explanation": "SSA simplifies tracking where values come from, enabling many analyses. It doesn't reduce register count (that's register allocation); doesn't eliminate loop optimization; doesn't make intermediate code executable directly."
+    },
+    {
+      "id": "compilers-optimization-006",
+      "q": "What is common subexpression elimination (CSE)?",
+      "options": [
+        "Identifying identical expressions in code and computing them once, reusing the result",
+        "Removing redundant conditional statements",
+        "Merging multiple functions that compute the same result",
+        "Eliminating operator precedence issues in arithmetic expressions"
+      ],
+      "answer": 0,
+      "explanation": "CSE avoids redundant computation by computing a subexpression once and reusing it. Redundant conditionals are dead code; merging functions changes program structure; precedence issues are syntactic, not optimization-related."
+    },
+    {
+      "id": "compilers-optimization-007",
+      "q": "What is the purpose of live variable analysis in optimization?",
+      "options": [
+        "Determining which variables contain values that might be used in the future",
+        "Tracking variable names for the debugger's symbol table",
+        "Identifying variables that are explicitly initialized in their declarations",
+        "Counting the frequency of variable accesses in a program"
+      ],
+      "answer": 0,
+      "explanation": "Live variable analysis identifies values needed later, guiding decisions like register allocation and dead code removal. It's not about debug symbols, initialization patterns, or access frequency."
+    },
+    {
+      "id": "compilers-optimization-008",
+      "q": "How can peephole optimization improve code?",
+      "options": [
+        "By examining and replacing small sequences of instructions with more efficient equivalents",
+        "By analyzing global data flow across entire functions",
+        "By predicting runtime behavior without executing code",
+        "By eliminating all function call overhead through inlining"
+      ],
+      "answer": 0,
+      "explanation": "Peephole optimization works on short local instruction sequences, finding inefficiencies. Global data flow analysis is broader; runtime prediction isn't peephole optimization; inlining is a separate technique."
+    },
+    {
+      "id": "compilers-optimization-009",
+      "q": "What is the difference between inlining and loop unrolling?",
+      "options": [
+        "Inlining replaces function calls with function body; unrolling replicates loop iterations",
+        "Inlining applies only to recursive functions; unrolling applies only to nested loops",
+        "Unrolling works at runtime; inlining happens only at compile time",
+        "Inlining requires explicit annotations; unrolling is automatic in all compilers"
+      ],
+      "answer": 0,
+      "explanation": "Inlining substitutes a function call with its body; unrolling repeats loop bodies. Both apply broadly; both happen at compile time; neither requires special annotations universally."
+    },
+    {
+      "id": "compilers-optimization-010",
+      "q": "What does a correctness-preserving optimization guarantee?",
+      "options": [
+        "The optimized program produces the same observable results as the original for all valid inputs",
+        "The optimized program uses less memory than the original",
+        "The optimized program always runs faster than the original",
+        "The optimized program is easier to understand and maintain"
+      ],
+      "answer": 0,
+      "explanation": "Correctness preservation means semantics are unchanged. Optimizations may not always reduce memory or speed; readability and maintainability are secondary concerns."
+    }
+  ]
+}

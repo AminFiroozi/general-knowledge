@@ -1,0 +1,126 @@
+{
+  "topic": "computability",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-computability-001",
+      "q": "A decision problem is decidable if:",
+      "options": [
+        "A heuristic algorithm can solve it in reasonable time",
+        "A Turing machine exists that halts and gives the correct yes/no answer for every input",
+        "Humans can understand the problem intuitively",
+        "A non-deterministic machine can solve it in polynomial time"
+      ],
+      "answer": 1,
+      "explanation": "A decidable problem requires a decider: a Turing machine that always terminates with the correct answer. Heuristics and human understanding are informal; polynomial time concerns complexity, not decidability. A non-deterministic machine does not grant decidability if it loops on some inputs. Decidability is about existence of a terminating algorithm."
+    },
+    {
+      "id": "theory-of-computation-computability-002",
+      "q": "Rice's Theorem states that any non-trivial property of the language recognized by a Turing machine is:",
+      "options": [
+        "Always decidable using a decider",
+        "Undecidable (no algorithm can determine if an arbitrary Turing machine has that property)",
+        "Decidable in exponential time",
+        "Solvable by a non-deterministic machine in polynomial time"
+      ],
+      "answer": 1,
+      "explanation": "Rice's Theorem proves that checking non-trivial properties of recursively enumerable languages (properties true of some but not all Turing-recognizable languages) is undecidable. Examples include 'Does M accept a finite language?' or 'Is L empty?'. A non-trivial property cannot be mechanically verified for all Turing machines. Trivial properties (always true or always false) are vacuously decidable."
+    },
+    {
+      "id": "theory-of-computation-computability-003",
+      "q": "Recursively enumerable languages are also called:",
+      "options": [
+        "Regular languages",
+        "Context-free languages",
+        "Turing-recognizable languages",
+        "Decidable languages"
+      ],
+      "answer": 2,
+      "explanation": "Recursively enumerable (RE) languages are exactly those recognizable by a Turing machine, hence 'Turing-recognizable'. They are weaker than decidable languages, as a recognizer need not halt on rejected strings. Regular and context-free languages are proper subsets of RE languages. 'Decidable' is a stronger property (both the language and its complement are RE)."
+    },
+    {
+      "id": "theory-of-computation-computability-004",
+      "q": "A reduction from problem A to problem B means:",
+      "options": [
+        "A is easier than B",
+        "An algorithm solving B can be used to solve A",
+        "A can be converted to B in polynomial time",
+        "B can be solved by ignoring A entirely"
+      ],
+      "answer": 1,
+      "explanation": "A reduction from A to B (written A ≤ B) means a solution for B can be transformed into a solution for A. If B is decidable, then A is decidable via reduction. If A is undecidable, then B must be undecidable. Reductions preserve properties (decidability, NP-completeness) in the direction of the reduction. Polynomial time is relevant for complexity, not decidability."
+    },
+    {
+      "id": "theory-of-computation-computability-005",
+      "q": "The Halting Problem is undecidable because:",
+      "options": [
+        "We have not yet found a fast enough algorithm",
+        "Computers lack sufficient memory",
+        "It is impossible to determine for all Turing machines whether they halt, as proven by diagonalization",
+        "The problem requires infinite input"
+      ],
+      "answer": 2,
+      "explanation": "The undecidability of the Halting Problem is proven rigorously via diagonalization. Assuming a decider H for the Halting Problem leads to a logical contradiction when H is applied to itself. This proof is independent of algorithmic sophistication or computing resources; it is a fundamental limitation. Limitations on memory or speed would not resolve this inherent undecidability."
+    },
+    {
+      "id": "theory-of-computation-computability-006",
+      "q": "The complement of a Turing-recognizable language is:",
+      "options": [
+        "Always Turing-recognizable",
+        "Always decidable",
+        "Sometimes Turing-recognizable, depending on the language",
+        "Never Turing-recognizable unless the original language is decidable"
+      ],
+      "answer": 3,
+      "explanation": "If language L is Turing-recognizable and its complement is also Turing-recognizable, then L is decidable. Conversely, if L is merely Turing-recognizable (and undecidable), its complement is generally not Turing-recognizable. The only exception is when both L and its complement are Turing-recognizable, making L decidable by dovetailing the two recognizers."
+    },
+    {
+      "id": "theory-of-computation-computability-007",
+      "q": "What is the relationship between decidability and Turing-recognizability?",
+      "options": [
+        "All decidable languages are Turing-recognizable, but not vice versa",
+        "Turing-recognizable and decidable languages are the same class",
+        "No decidable language is Turing-recognizable",
+        "Decidability is defined only for non-Turing-recognizable languages"
+      ],
+      "answer": 0,
+      "explanation": "If a language is decidable, a decider (halting Turing machine) exists, so a recognizer also exists. Thus every decidable language is Turing-recognizable. The converse fails: the Halting Problem language is Turing-recognizable but undecidable. Decidability is a stronger property, requiring both the language and its complement to be Turing-recognizable."
+    },
+    {
+      "id": "theory-of-computation-computability-008",
+      "q": "The set of Turing-recognizable languages is:",
+      "options": [
+        "Finite",
+        "Countably infinite",
+        "Uncountably infinite",
+        "Empty"
+      ],
+      "answer": 1,
+      "explanation": "Each Turing machine is a finite string over a finite alphabet, so there are countably infinitely many Turing machines. Since each Turing machine recognizes one language, there are countably infinitely many Turing-recognizable languages. This is fewer than the uncountably infinite set of all languages over an alphabet, proving that some languages are unrecognizable."
+    },
+    {
+      "id": "theory-of-computation-computability-009",
+      "q": "To prove a language L is undecidable, a common technique is:",
+      "options": [
+        "Show that L is regular but not context-free",
+        "Perform a reduction from a known undecidable problem (like the Halting Problem) to L",
+        "Demonstrate that L is infinite",
+        "Prove L is Turing-recognizable"
+      ],
+      "answer": 1,
+      "explanation": "If a known undecidable problem A reduces to L, then L must be undecidable; otherwise A would be decidable via L's decider. This reduction technique leverages known undecidability results. Being regular/context-free, infinite, or Turing-recognizable does not establish undecidability. Undecidability specifically concerns the absence of a halting algorithm."
+    },
+    {
+      "id": "theory-of-computation-computability-010",
+      "q": "A language L is co-Turing-recognizable if:",
+      "options": [
+        "L is Turing-recognizable",
+        "The complement of L is Turing-recognizable",
+        "L is decidable",
+        "L is the union of two Turing-recognizable languages"
+      ],
+      "answer": 1,
+      "explanation": "Co-Turing-recognizable means the complement of L is Turing-recognizable. A language is decidable if and only if it is both Turing-recognizable and co-Turing-recognizable. Union of two Turing-recognizable languages is Turing-recognizable, not co-Turing-recognizable. Complement and co-recognizability are dual properties in the hierarchy of recognizability."
+    }
+  ]
+}

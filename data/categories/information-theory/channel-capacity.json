@@ -1,0 +1,126 @@
+{
+  "topic": "channel-capacity",
+  "category": "information-theory",
+  "questions": [
+    {
+      "id": "information-theory-channel-capacity-001",
+      "q": "Shannon's channel capacity theorem states that reliable communication is possible at rates up to C bits per second. What does C depend on?",
+      "options": [
+        "Bandwidth and Signal-to-Noise Ratio (SNR)",
+        "Only the bandwidth of the channel",
+        "Only the power of the transmitted signal",
+        "The modulation scheme used"
+      ],
+      "answer": 0,
+      "explanation": "Shannon capacity C = B·log₂(1 + SNR) where B is bandwidth in Hz and SNR is signal-to-noise ratio. Both factors are essential: larger bandwidth and higher SNR increase capacity. Modulation is a specific encoding choice that can approach but not exceed capacity."
+    },
+    {
+      "id": "information-theory-channel-capacity-002",
+      "q": "For a Binary Symmetric Channel (BSC), what is the capacity when the error probability is p = 0.1?",
+      "options": [
+        "1 - H(0.1) ≈ 0.53 bits per transmission",
+        "0.9 bits per transmission",
+        "0.1 bits per transmission",
+        "Exactly 1 bit per transmission"
+      ],
+      "answer": 0,
+      "explanation": "C = 1 - H(p) where H(0.1) = -0.1·log₂(0.1) - 0.9·log₂(0.9) ≈ 0.469. So C ≈ 0.531 bits/transmission. The capacity decreases with error probability. At p=0.5, C becomes zero (channel is completely noisy)."
+    },
+    {
+      "id": "information-theory-channel-capacity-003",
+      "q": "The Shannon-Hartley theorem for AWGN (Additive White Gaussian Noise) channels states: C = B·log₂(1 + P/N). What do P and N represent?",
+      "options": [
+        "P is signal power, N is noise power",
+        "P is probability, N is number of symbols",
+        "P is parity bits, N is total bits",
+        "P is phase, N is noise frequency"
+      ],
+      "answer": 0,
+      "explanation": "The Shannon-Hartley formula relates capacity to signal power P and noise power N. The ratio P/N is the Signal-to-Noise Ratio (SNR). Higher signal power or lower noise power increases capacity. This is the fundamental limit for Gaussian channels."
+    },
+    {
+      "id": "information-theory-channel-capacity-004",
+      "q": "What is the relationship between channel capacity and the number of distinct symbols M that can be reliably transmitted?",
+      "options": [
+        "C = log₂(M) bits per transmission for a noiseless channel",
+        "Capacity is independent of the alphabet size",
+        "Capacity increases linearly with M²",
+        "M must always equal 2 (binary)"
+      ],
+      "answer": 0,
+      "explanation": "For a noiseless channel with M equally likely symbols, C = log₂(M). This is information content per symbol. For noisy channels, achievable rates depend on SNR and bandwidth. Option 1 wrongly implies capacity grows unboundedly with M."
+    },
+    {
+      "id": "information-theory-channel-capacity-005",
+      "q": "A communication system transmits at 10 kbps over a channel with capacity 15 kbps. Is reliable communication possible?",
+      "options": [
+        "Yes, because transmission rate is below capacity",
+        "No, because the rate exceeds half the capacity",
+        "Only if the SNR is doubled",
+        "Impossible to determine without knowing bandwidth"
+      ],
+      "answer": 0,
+      "explanation": "Reliable communication is possible if and only if the transmission rate R ≤ C (Shannon's theorem). Since 10 kbps < 15 kbps capacity, there exists a code achieving arbitrarily low error probability. The rate does not need to be below half capacity."
+    },
+    {
+      "id": "information-theory-channel-capacity-006",
+      "q": "How does doubling the bandwidth affect the Shannon capacity of an AWGN channel (assuming constant SNR)?",
+      "options": [
+        "Capacity doubles (linear increase)",
+        "Capacity quadruples (squared)",
+        "Capacity remains unchanged",
+        "Capacity decreases"
+      ],
+      "answer": 0,
+      "explanation": "C = B·log₂(1 + SNR). If B doubles, capacity doubles (linear dependence). SNR remains fixed by constant signal and noise power spectral density. This logarithmic dependence on bandwidth is why spectrum is valuable but subject to diminishing returns with SNR."
+    },
+    {
+      "id": "information-theory-channel-capacity-007",
+      "q": "What happens to channel capacity as SNR approaches infinity?",
+      "options": [
+        "Capacity increases logarithmically without bound",
+        "Capacity saturates at a fixed limit",
+        "Capacity becomes zero",
+        "Capacity oscillates"
+      ],
+      "answer": 0,
+      "explanation": "C = B·log₂(1 + SNR) → B·log₂(SNR) as SNR → ∞, growing logarithmically. No finite saturation point exists. This shows that increasing SNR always increases capacity, but with diminishing returns due to the logarithm. This is why power is less efficient than bandwidth."
+    },
+    {
+      "id": "information-theory-channel-capacity-008",
+      "q": "The channel state information (CSI) in wireless channels can be used to adapt transmission. What coding principle does this enable?",
+      "options": [
+        "Water-filling: allocate more power to better channel states",
+        "Equal power across all subchannels regardless of state",
+        "No adaptation is theoretically beneficial",
+        "Random power allocation maximizes capacity"
+      ],
+      "answer": 0,
+      "explanation": "Water-filling principle (proven by Shannon) optimally allocates power inversely to noise level across frequency subchannels. High SNR regions get more power; low SNR regions get less or none. This maximizes total capacity in parallel channels. Equal power (option 1) is suboptimal."
+    },
+    {
+      "id": "information-theory-channel-capacity-009",
+      "q": "For a MIMO (Multiple-Input Multiple-Output) channel with M transmit and N receive antennas, how many parallel spatial channels does it create?",
+      "options": [
+        "min(M, N) independent spatial channels",
+        "M + N parallel channels",
+        "M × N parallel channels",
+        "Only 1 channel regardless of antenna configuration"
+      ],
+      "answer": 0,
+      "explanation": "MIMO creates min(M,N) independent spatial streams, each with its own capacity. Total capacity is the sum of individual stream capacities. A 4×4 MIMO theoretically provides 4 independent channels. This spatial multiplexing dramatically increases system capacity."
+    },
+    {
+      "id": "information-theory-channel-capacity-010",
+      "q": "What does the channel coding theorem imply about the gap between real codes and Shannon's capacity?",
+      "options": [
+        "Any gap can be made arbitrarily small with longer codes and complexity",
+        "A fixed gap always remains, no matter the code design",
+        "The gap depends only on alphabet size, not on code length",
+        "Practical codes always achieve exactly the capacity"
+      ],
+      "answer": 0,
+      "explanation": "The channel coding theorem states that for any R < C, there exists a code achieving arbitrarily small error probability at rate R, though encoding/decoding complexity grows. The gap between practical codes and capacity shrinks with increasing complexity and codeword length."
+    }
+  ]
+}

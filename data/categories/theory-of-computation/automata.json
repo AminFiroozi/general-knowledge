@@ -1,0 +1,126 @@
+{
+  "topic": "automata",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-automata-001",
+      "q": "A Deterministic Finite Automaton (DFA) over alphabet {a, b} accepts strings ending with 'ab'. How many states are minimally required?",
+      "options": [
+        "2 states",
+        "3 states",
+        "4 states",
+        "5 states"
+      ],
+      "answer": 1,
+      "explanation": "A minimal DFA needs a start state, a state after seeing 'a', and an accepting state after 'ab'. The state tracking whether we've just seen 'a' is essential to recognize 'ab'. Thus 3 states suffice. 2 states is insufficient because we cannot distinguish between arbitrary input and the required 'ab' suffix."
+    },
+    {
+      "id": "theory-of-computation-automata-002",
+      "q": "Which statement is true about Non-deterministic Finite Automata (NFA) and Deterministic Finite Automata (DFA)?",
+      "options": [
+        "NFAs accept languages that DFAs cannot",
+        "DFAs and NFAs accept exactly the same class of languages",
+        "NFAs are more efficient in terms of state count for all languages",
+        "DFAs can simulate NFAs but require infinite states"
+      ],
+      "answer": 1,
+      "explanation": "DFAs and NFAs are equivalent in computational power—both accept exactly the regular languages. Although NFAs may use fewer states for some languages, the subset construction algorithm converts any NFA to an equivalent DFA. The claim that NFAs accept non-regular languages is false."
+    },
+    {
+      "id": "theory-of-computation-automata-003",
+      "q": "State minimization of a DFA using Hopcroft's algorithm operates by:",
+      "options": [
+        "Merging non-equivalent states until no more merges are possible",
+        "Removing all non-reachable states, then iteratively partitioning distinguishable states",
+        "Converting to NFA then back to DFA",
+        "Deleting transitions with low probability"
+      ],
+      "answer": 1,
+      "explanation": "Hopcroft's algorithm partitions states into groups: first by reachability, then by distinguishability relative to accepting states. Two states are distinguishable if an input string leads one to an accepting state but not the other. Non-equivalent states cannot be merged. Option 2 correctly describes this partition refinement approach."
+    },
+    {
+      "id": "theory-of-computation-automata-004",
+      "q": "An NFA can have multiple transitions on the same input symbol from a single state. Such non-determinism allows it to explore multiple paths simultaneously. For the language {a^n b^n | n >= 0}, is an NFA inherently more capable than a DFA?",
+      "options": [
+        "Yes, only NFAs can recognize this language",
+        "No, both DFAs and NFAs fail to recognize it because it requires a stack",
+        "Yes, but only with epsilon transitions",
+        "No, the language is not regular regardless of machine type"
+      ],
+      "answer": 3,
+      "explanation": "The language {a^n b^n} is context-free, not regular, so neither DFAs nor NFAs can recognize it. Both machines have only finite memory and cannot count unbounded numbers of 'a's to verify they match the count of 'b's. A pushdown automaton is required. The claim that non-determinism helps is false for this language."
+    },
+    {
+      "id": "theory-of-computation-automata-005",
+      "q": "Two DFAs are said to be equivalent if they accept the same language. To test equivalence, which approach is standard?",
+      "options": [
+        "Simulate both DFAs on randomly chosen strings and compare outputs",
+        "Minimize both DFAs and check if their transition tables are identical",
+        "Intersect their languages and verify the result is empty",
+        "Use breadth-first search to explore all reachable states"
+      ],
+      "answer": 1,
+      "explanation": "Minimizing both DFAs produces unique canonical forms. If the minimized DFAs have identical transition tables, they are equivalent. Random simulation is unreliable for proving equivalence. Intersecting languages (L1 - L2) and checking emptiness also works but minimization is the direct method for checking exact structural equivalence."
+    },
+    {
+      "id": "theory-of-computation-automata-006",
+      "q": "In an NFA, epsilon transitions allow movement between states without consuming input. What does the epsilon closure of a state represent?",
+      "options": [
+        "The set of states reachable from the current state by following epsilon transitions only",
+        "The set of all strings the NFA can accept starting from that state",
+        "The union of all transitions leaving that state",
+        "The number of paths through the automaton"
+      ],
+      "answer": 0,
+      "explanation": "The epsilon closure of a state s, denoted ε-closure(s), is the set of all states reachable by following zero or more epsilon transitions from s. When converting an NFA to a DFA, epsilon closures become the states of the resulting DFA. Option 1 is the precise definition; other options describe different concepts."
+    },
+    {
+      "id": "theory-of-computation-automata-007",
+      "q": "The subset construction converts an NFA with k states into an equivalent DFA. In the worst case, how many states does the resulting DFA have?",
+      "options": [
+        "k states",
+        "k + 1 states",
+        "2^k states",
+        "k! states"
+      ],
+      "answer": 2,
+      "explanation": "Each state in the DFA represents a subset of NFA states. Since there are 2^k possible subsets, the DFA can have up to 2^k states in the worst case (though many may be unreachable). This exponential blowup is why NFAs with fewer states can sometimes be preferable despite requiring subset construction to simulate on a DFA."
+    },
+    {
+      "id": "theory-of-computation-automata-008",
+      "q": "A language L is regular if and only if it can be accepted by a DFA. Which of the following languages is NOT regular?",
+      "options": [
+        "All strings over {a, b} with an even number of 'a's",
+        "All strings of the form a^n b^n where n >= 0",
+        "All strings over {a, b} that do not contain 'aa' as a substring",
+        "All strings over {0, 1} of length divisible by 3"
+      ],
+      "answer": 1,
+      "explanation": "The language a^n b^n requires unbounded counting of 'a's to match the count of 'b's, which exceeds the finite memory of a DFA. The other languages are regular: even 'a's (parity check), no 'aa' substring (2-state automaton), and length divisible by 3 (modulo 3 counter) can all be recognized by DFAs."
+    },
+    {
+      "id": "theory-of-computation-automata-009",
+      "q": "In state minimization, two states are considered equivalent if:",
+      "options": [
+        "They have the same number of outgoing transitions",
+        "They lead to the same set of accepting states under all possible input strings",
+        "They are both unreachable from the initial state",
+        "They have the same label or color in the DFA diagram"
+      ],
+      "answer": 1,
+      "explanation": "Two states are equivalent if, starting from either state, any input string either leads both to accepting states or both to rejecting states. This is the formal definition used in minimization algorithms. States with the same number of transitions or same labels are not necessarily equivalent; behavior under all inputs is what matters."
+    },
+    {
+      "id": "theory-of-computation-automata-010",
+      "q": "The powerset construction (subset construction) demonstrates that NFAs and DFAs have equal expressive power. What is the key insight underlying this construction?",
+      "options": [
+        "Non-determinism can be eliminated by tracking all possible states an NFA could be in simultaneously",
+        "NFAs are strictly more powerful because they can explore exponentially many paths",
+        "DFAs cannot simulate multiple transitions on the same symbol",
+        "Epsilon transitions allow NFAs to bypass the limitations of DFAs"
+      ],
+      "answer": 0,
+      "explanation": "The powerset construction represents NFA non-determinism explicitly by making each DFA state correspond to a set of NFA states. At each step, the DFA state tracks all possible NFA states reachable by the input seen so far. This removes non-determinism by deterministically computing the powerset of reachable states, proving equivalence in expressive power."
+    }
+  ]
+}

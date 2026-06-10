@@ -1,0 +1,126 @@
+{
+  "topic": "entropy",
+  "category": "information-theory",
+  "questions": [
+    {
+      "id": "information-theory-entropy-001",
+      "q": "Shannon entropy is defined as H(X) = -Σ p(x) log₂ p(x). What does a higher entropy value indicate?",
+      "options": [
+        "Greater uncertainty or unpredictability in the random variable",
+        "Higher probability of a specific outcome",
+        "Lower average information content",
+        "Deterministic behavior with one certain outcome"
+      ],
+      "answer": 0,
+      "explanation": "Shannon entropy measures uncertainty: higher entropy means more uniform probability distribution and thus greater unpredictability. Entropy reaches its maximum when all outcomes are equally likely. The incorrect options confuse entropy with probability or mistake it for predictability."
+    },
+    {
+      "id": "information-theory-entropy-002",
+      "q": "For a fair coin flip, what is the Shannon entropy in bits?",
+      "options": [
+        "0 bits",
+        "1 bit",
+        "2 bits",
+        "0.5 bits"
+      ],
+      "answer": 1,
+      "explanation": "H = -[0.5·log₂(0.5) + 0.5·log₂(0.5)] = -[0.5·(-1) + 0.5·(-1)] = 1 bit. This is the maximum entropy for a binary variable. A fair coin has two equally likely outcomes, creating maximum uncertainty."
+    },
+    {
+      "id": "information-theory-entropy-003",
+      "q": "What is the joint entropy H(X,Y) when X and Y are independent random variables?",
+      "options": [
+        "H(X) + H(Y)",
+        "H(X) · H(Y)",
+        "H(X) - H(Y)",
+        "H(X) / H(Y)"
+      ],
+      "answer": 0,
+      "explanation": "For independent variables, H(X,Y) = H(X) + H(Y). Independence means knowing one variable provides no information about the other. The product (option 1) would give entropy of the joint distribution only for dependent variables."
+    },
+    {
+      "id": "information-theory-entropy-004",
+      "q": "Conditional entropy H(Y|X) represents:",
+      "options": [
+        "The average uncertainty about Y given knowledge of X",
+        "The entropy of Y minus the entropy of X",
+        "The probability that Y depends on X",
+        "The maximum possible entropy Y can have"
+      ],
+      "answer": 0,
+      "explanation": "Conditional entropy H(Y|X) = H(X,Y) - H(X) is the remaining uncertainty about Y after observing X. It measures how much information about Y is not explained by X. It is always non-negative and zero only when Y is completely determined by X."
+    },
+    {
+      "id": "information-theory-entropy-005",
+      "q": "Mutual information I(X;Y) quantifies:",
+      "options": [
+        "The amount of information X and Y share in common",
+        "The total entropy of the joint distribution",
+        "The difference in probability between X and Y",
+        "How unrelated X and Y are"
+      ],
+      "answer": 0,
+      "explanation": "Mutual information I(X;Y) = H(X) + H(Y) - H(X,Y) measures how much knowing one variable reduces uncertainty about the other. It is zero for independent variables and maximum when one variable completely determines the other. Option 3 confuses it with divergence."
+    },
+    {
+      "id": "information-theory-entropy-006",
+      "q": "What is the entropy of a deterministic variable that always takes the same value?",
+      "options": [
+        "0 bits",
+        "1 bit",
+        "Infinite bits",
+        "-1 bit"
+      ],
+      "answer": 0,
+      "explanation": "A deterministic variable with one outcome having probability 1 has H = -(1·log₂(1) + 0·log₂(0)) = 0. There is no uncertainty; the outcome is completely predictable. This is the minimum possible entropy."
+    },
+    {
+      "id": "information-theory-entropy-007",
+      "q": "If H(Y|X) = 0, what does this tell us about the relationship between X and Y?",
+      "options": [
+        "Y is completely determined by X",
+        "X and Y are independent",
+        "Y has zero entropy",
+        "X has no information about Y"
+      ],
+      "answer": 0,
+      "explanation": "H(Y|X) = 0 means there is no remaining uncertainty about Y given X, so Y is a deterministic function of X. Option 1 (independence) is the opposite relationship where H(Y|X) = H(Y). Option 2 is incorrect interpretation."
+    },
+    {
+      "id": "information-theory-entropy-008",
+      "q": "For a uniform distribution over n equally likely outcomes, what is the entropy?",
+      "options": [
+        "log₂(n) bits",
+        "n bits",
+        "1/n bits",
+        "log₂(n²) bits"
+      ],
+      "answer": 0,
+      "explanation": "H = -Σ (1/n)·log₂(1/n) = log₂(n). This is the maximum entropy for n outcomes. As the number of outcomes increases, entropy increases. For n=2 we get 1 bit; for n=4 we get 2 bits."
+    },
+    {
+      "id": "information-theory-entropy-009",
+      "q": "Which property states that conditioning reduces entropy: H(X|Y) ≤ H(X)?",
+      "options": [
+        "The conditioning axiom of entropy",
+        "Information monotonicity",
+        "Probabilistic ordering",
+        "Deterministic constraint"
+      ],
+      "answer": 1,
+      "explanation": "Information monotonicity states that conditioning on additional information cannot increase uncertainty. Knowing Y can only reduce or maintain uncertainty about X, never increase it. This is a fundamental property that defines entropy as a measure of information."
+    },
+    {
+      "id": "information-theory-entropy-010",
+      "q": "What is the relationship between mutual information and entropy: I(X;Y) = H(X) - H(X|Y)?",
+      "options": [
+        "True, it shows information Y provides about X",
+        "False, it should be I(X;Y) = H(X) + H(Y)",
+        "False, mutual information is always zero",
+        "False, the correct formula is I(X;Y) = H(X)·H(Y)"
+      ],
+      "answer": 0,
+      "explanation": "True. Mutual information I(X;Y) = H(X) - H(X|Y) = H(Y) - H(Y|X) measures how much knowing Y reduces uncertainty about X. It represents the shared information between variables. This is a core identity in information theory."
+    }
+  ]
+}

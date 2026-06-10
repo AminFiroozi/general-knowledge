@@ -1,0 +1,126 @@
+{
+  "topic": "turing-machines",
+  "category": "theory-of-computation",
+  "questions": [
+    {
+      "id": "theory-of-computation-turing-machines-001",
+      "q": "A Turing machine differs from a finite automaton primarily because it has:",
+      "options": [
+        "Multiple input heads instead of one",
+        "An unbounded tape that can be read and written, allowing it to access memory arbitrarily",
+        "Probabilistic transitions instead of deterministic ones",
+        "No accepting states"
+      ],
+      "answer": 1,
+      "explanation": "A Turing machine's key distinction is its unbounded tape with a read/write head, giving it unlimited memory that a finite automaton lacks. This enables Turing machines to recognize non-regular and non-context-free languages. Multiple heads, probabilistic transitions, and the absence of accepting states do not define a standard Turing machine."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-002",
+      "q": "The Halting Problem asks: given a Turing machine M and input w, does M halt on w? Why is the Halting Problem undecidable?",
+      "options": [
+        "It is too difficult for current computers to solve",
+        "No Turing machine can solve it for all inputs, proven by diagonalization and self-reference",
+        "The input alphabet is too large",
+        "It requires non-deterministic machines to solve"
+      ],
+      "answer": 1,
+      "explanation": "Assume a decider H exists for the Halting Problem. Construct a machine D that simulates H and does the opposite of H's output. On input D, machine D creates a contradiction: if H says D halts, D loops; if H says D loops, D halts. No such decider H can exist. This diagonalization argument shows the Halting Problem is undecidable for all Turing machines."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-003",
+      "q": "A Universal Turing Machine (UTM) is a Turing machine that:",
+      "options": [
+        "Can solve every computable problem in polynomial time",
+        "Can simulate the behavior of any Turing machine given its description and input",
+        "Has multiple tapes and heads for parallel computation",
+        "Always terminates and never enters an infinite loop"
+      ],
+      "answer": 1,
+      "explanation": "A UTM takes as input a description of an arbitrary Turing machine M and input w, then simulates M on w. This universality is fundamental: it shows that a single machine can compute anything any Turing machine can compute. A UTM need not run in polynomial time and may loop indefinitely, just as the machine it simulates might."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-004",
+      "q": "When a Turing machine's tape moves right, left, or stays in place at each step, this affects:",
+      "options": [
+        "Whether the machine is deterministic or non-deterministic",
+        "Only the efficiency of the computation, not the set of languages it can recognize",
+        "The alphabet size of the machine",
+        "The number of accepting states required"
+      ],
+      "answer": 1,
+      "explanation": "Tape movement (left, right, or stay) is part of the control mechanism and does not change the computational power of Turing machines—all variants with these movements can simulate each other. Determinism versus non-determinism, and the tape alphabet, do affect recognizability, but simple head movement does not. The set of Turing-recognizable languages remains invariant."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-005",
+      "q": "A non-deterministic Turing machine can make multiple transitions from a single state-symbol pair. Compared to a deterministic Turing machine, is it more powerful?",
+      "options": [
+        "Yes, non-deterministic machines can solve the Halting Problem",
+        "Yes, they accept a strictly larger class of languages",
+        "No, deterministic and non-deterministic Turing machines accept the same class of languages",
+        "No, but they run exponentially slower"
+      ],
+      "answer": 2,
+      "explanation": "Deterministic and non-deterministic Turing machines are equivalent in power. A non-deterministic TM can be simulated by a deterministic TM using breadth-first or depth-first search on the computation tree. Both accept exactly the recursively enumerable languages. Non-determinism does not grant additional computational power at the Turing machine level, unlike in finite automata complexity discussions."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-006",
+      "q": "A Turing machine that always halts, regardless of input, is called:",
+      "options": [
+        "A recognizer",
+        "A decider",
+        "A universal machine",
+        "A non-deterministic machine"
+      ],
+      "answer": 1,
+      "explanation": "A decider is a Turing machine that halts on every input, either accepting or rejecting. A recognizer accepts strings in a language but may not halt on strings outside the language. Deciders solve decision problems completely, while recognizers only confirm membership when a string is in the language. Universal machines and non-determinism refer to different properties."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-007",
+      "q": "A language is Turing-recognizable (recursively enumerable) if and only if:",
+      "options": [
+        "It is finite",
+        "Some Turing machine accepts it (possibly looping on rejected strings)",
+        "It is the set of all strings over some alphabet",
+        "A decider for it exists"
+      ],
+      "answer": 1,
+      "explanation": "A language is Turing-recognizable if there exists a Turing machine that accepts every string in the language. The machine need not halt on strings outside the language; if it loops, we never know whether rejection will eventually occur. This is weaker than decidability, which requires halting on all inputs. Finite languages and universal sets are special cases but not the general definition."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-008",
+      "q": "The Church-Turing Thesis states that:",
+      "options": [
+        "Turing machines are the most efficient computational model ever invented",
+        "Any intuitively computable function can be computed by a Turing machine",
+        "All Turing machines have the same number of states",
+        "Non-deterministic machines are strictly more powerful than deterministic ones"
+      ],
+      "answer": 1,
+      "explanation": "The Church-Turing Thesis is a foundational conjecture (not a theorem) asserting that the informal notion of 'computable' corresponds precisely to 'Turing-computable'. It connects intuitive computation with formal Turing machines and is equivalent to other models (lambda calculus, recursive functions). It does not claim efficiency, state counts, or superiority of non-determinism."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-009",
+      "q": "If a language L is Turing-recognizable and its complement (NOT L) is also Turing-recognizable, what can be concluded about L?",
+      "options": [
+        "L must be finite",
+        "L must be undecidable",
+        "L is decidable",
+        "L must be empty or universal"
+      ],
+      "answer": 2,
+      "explanation": "If both L and its complement are Turing-recognizable, then a decider for L can be constructed: run the recognizer for L and the recognizer for complement(L) in parallel (using dovetailing). One must eventually accept, allowing us to halt with a definitive answer. Thus L is decidable. Decidability requires both the language and its complement to be recognizable."
+    },
+    {
+      "id": "theory-of-computation-turing-machines-010",
+      "q": "A Turing machine's computation on input w is said to enter an infinite loop if:",
+      "options": [
+        "It writes the same symbol repeatedly",
+        "It revisits the same state-position pair without changing the tape state",
+        "It traverses the same region of tape multiple times",
+        "It enters a state with no outgoing transitions"
+      ],
+      "answer": 0,
+      "explanation": "An infinite loop occurs when a Turing machine enters a repeating cycle of states and head positions without ever reaching a halting state, effectively never terminating. While revisiting state-position pairs strongly suggests a loop, the formal definition is non-termination. Writing the same symbol repeatedly or traversing the same tape region can occur in finite-time computations. A state with no outgoing transitions would mean the machine halts."
+    }
+  ]
+}

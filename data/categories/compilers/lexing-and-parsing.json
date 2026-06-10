@@ -1,0 +1,126 @@
+{
+  "topic": "lexing-and-parsing",
+  "category": "compilers",
+  "questions": [
+    {
+      "id": "compilers-lexing-and-parsing-001",
+      "q": "What is the primary function of a lexer (lexical analyzer) in a compiler?",
+      "options": [
+        "To convert source code into a sequence of tokens",
+        "To check for type compatibility between variables and expressions",
+        "To arrange code into abstract syntax trees",
+        "To allocate registers for intermediate values"
+      ],
+      "answer": 0,
+      "explanation": "A lexer breaks source code into tokens, the smallest meaningful units like keywords, identifiers, and operators. Type checking is semantic analysis; AST building is parsing; register allocation is code generation."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-002",
+      "q": "Which of the following best describes what a regular expression can recognize?",
+      "options": [
+        "Only regular languages, not context-free languages",
+        "All context-free languages without ambiguity",
+        "Any language that a Turing machine can recognize",
+        "Languages with nested structures like balanced parentheses"
+      ],
+      "answer": 0,
+      "explanation": "Regular expressions recognize exactly regular languages, a subset of all languages. Context-free languages (which include balanced parentheses) require context-free grammars; Turing-recognizable languages require Turing machines."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-003",
+      "q": "In an LL parser, what does 'LL' stand for?",
+      "options": [
+        "Left-to-right scan with Leftmost derivation",
+        "Linear Lexical analysis protocol",
+        "Low-Level language parsing",
+        "Lexeme Length determination"
+      ],
+      "answer": 0,
+      "explanation": "LL means Left-to-right scan with Leftmost derivation. This is contrasted with LR parsing, which uses rightmost derivation. LL(1) parsers use one lookahead token for predictive parsing."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-004",
+      "q": "What is a parse tree used for?",
+      "options": [
+        "To represent the hierarchical structure of a program according to its grammar",
+        "To store variable names and their memory addresses",
+        "To optimize loops by unrolling them",
+        "To generate machine code directly from source code"
+      ],
+      "answer": 0,
+      "explanation": "A parse tree shows how a program conforms to the grammar, with each node representing a grammar rule application. Symbol tables store variables; loop optimization happens later; machine code generation requires multiple compilation stages."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-005",
+      "q": "Which grammar type is more powerful than LL(1) and commonly used in compiler construction?",
+      "options": [
+        "LR(1) grammar",
+        "Regular grammar",
+        "Operator grammar",
+        "Ambiguous grammar"
+      ],
+      "answer": 0,
+      "explanation": "LR(1) can handle a larger class of grammars than LL(1), including left-recursive ones. Regular grammars are weaker than LL(1); operator grammars are specialized; ambiguous grammars are problematic for parsing."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-006",
+      "q": "What problem occurs when a grammar has multiple valid parse trees for the same input string?",
+      "options": [
+        "Ambiguity",
+        "Shift-reduce conflict",
+        "Left recursion",
+        "Token collision"
+      ],
+      "answer": 0,
+      "explanation": "Ambiguity means the grammar allows multiple interpretations of valid programs, making output unpredictable. Shift-reduce conflicts are a parsing implementation issue; left recursion is a grammar structure issue; token collision is not a standard compiler term."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-007",
+      "q": "Why do lexers typically skip whitespace and comments during tokenization?",
+      "options": [
+        "Because they are not syntactically significant in most programming languages",
+        "Because they require special handling in the symbol table",
+        "Because they must be converted into intermediate code",
+        "Because they prevent register allocation from working correctly"
+      ],
+      "answer": 0,
+      "explanation": "Whitespace and comments are semantically irrelevant in most languages and can be discarded after lexing. They don't affect symbol tables, intermediate code, or register allocation."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-008",
+      "q": "A context-free grammar (CFG) can specify which of the following?",
+      "options": [
+        "The syntax structure of a programming language including nested constructs",
+        "The memory layout and register assignments for a program",
+        "The optimization strategies for a particular hardware platform",
+        "The runtime behavior of dynamically typed variables"
+      ],
+      "answer": 0,
+      "explanation": "CFGs describe syntax through production rules, naturally expressing nesting and hierarchical structure. Memory layout, optimization strategies, and runtime behavior are not grammar concerns."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-009",
+      "q": "What is the relationship between lookahead and parser prediction?",
+      "options": [
+        "Lookahead tokens help parsers decide which production rule to apply next",
+        "Lookahead is only used to minimize memory consumption during parsing",
+        "Lookahead determines the target CPU architecture for code generation",
+        "Lookahead enables garbage collection during parse tree construction"
+      ],
+      "answer": 0,
+      "explanation": "Lookahead (examining upcoming tokens) allows predictive parsers to make deterministic choices about which grammar rule applies. It's fundamental to LL and LR parsing, not about memory, architecture, or garbage collection."
+    },
+    {
+      "id": "compilers-lexing-and-parsing-010",
+      "q": "Which of these statements about left recursion in grammars is true?",
+      "options": [
+        "Left recursion causes infinite loops in top-down LL parsers and must be eliminated",
+        "Left recursion is beneficial because it simplifies semantic analysis",
+        "Left recursion allows faster parsing in bottom-up LR parsers",
+        "Left recursion is preferred because it directly matches hardware instruction sequences"
+      ],
+      "answer": 0,
+      "explanation": "Top-down parsers cannot handle left recursion directly; it must be eliminated or the grammar transformed. While LR parsers can handle left recursion, left recursion is not beneficial for semantic analysis, does not speed up parsing generally, and has no hardware advantage."
+    }
+  ]
+}

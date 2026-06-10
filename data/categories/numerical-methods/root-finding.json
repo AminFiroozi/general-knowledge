@@ -1,0 +1,126 @@
+{
+  "topic": "root-finding",
+  "category": "numerical-methods",
+  "questions": [
+    {
+      "id": "numerical-methods-root-finding-001",
+      "q": "The bisection method guarantees convergence to a root if the function is continuous on [a,b] and f(a) and f(b) have opposite signs. What is the convergence rate of bisection?",
+      "options": [
+        "Quadratic (second-order)",
+        "Linear (first-order)",
+        "Superlinear",
+        "Cubic (third-order)"
+      ],
+      "answer": 1,
+      "explanation": "Bisection has linear convergence with rate 0.5 per iteration; the error is halved each step. Although guaranteed to work, it converges slowly compared to Newton-Raphson which has quadratic convergence."
+    },
+    {
+      "id": "numerical-methods-root-finding-002",
+      "q": "Which condition is NOT required for Newton-Raphson method to converge quadratically near a simple root x*?",
+      "options": [
+        "f'(x*) ≠ 0",
+        "f''(x) exists and is bounded near x*",
+        "Initial guess x₀ must be sufficiently close to x*",
+        "f(x) must be defined everywhere on ℝ"
+      ],
+      "answer": 3,
+      "explanation": "Newton-Raphson only needs f and f' to be defined in a neighborhood of the root, not on all of ℝ. The other conditions are essential: f'(x*) ≠ 0 ensures the root is simple, f'' bounds the curvature controlling convergence, and x₀ must be in the basin of attraction."
+    },
+    {
+      "id": "numerical-methods-root-finding-003",
+      "q": "In Newton-Raphson iteration x_{n+1} = x_n - f(x_n)/f'(x_n), what happens geometrically?",
+      "options": [
+        "The tangent line to f at x_n is used; x_{n+1} is where it crosses the x-axis",
+        "A secant line connects f(x_n) and f(x_{n-1})",
+        "The next iterate is the midpoint between x_n and f(x_n)",
+        "A parabola is fitted through three recent iterates"
+      ],
+      "answer": 0,
+      "explanation": "Newton-Raphson draws the tangent line at (x_n, f(x_n)) and finds its x-intercept. This geometric interpretation shows why it converges so fast for well-behaved functions. The secant method uses two prior points instead."
+    },
+    {
+      "id": "numerical-methods-root-finding-004",
+      "q": "The secant method differs from Newton-Raphson in that it:",
+      "options": [
+        "Avoids computing derivatives by approximating f'(x_n) ≈ [f(x_n) - f(x_{n-1})] / (x_n - x_{n-1})",
+        "Requires analytical derivatives but converges faster",
+        "Uses bisection to narrow the interval",
+        "Always requires an even number of iterations"
+      ],
+      "answer": 0,
+      "explanation": "The secant method uses a finite difference approximation of the derivative, making it useful when f'(x) is hard to compute. Its convergence rate is superlinear (≈1.618) but slower than Newton's quadratic rate."
+    },
+    {
+      "id": "numerical-methods-root-finding-005",
+      "q": "Which statement about convergence rates is correct?",
+      "options": [
+        "Linear convergence means |e_{n+1}| ≤ C|e_n| for some constant C < 1",
+        "Quadratic convergence requires fewer iterations than linear convergence",
+        "Both linear and quadratic convergence achieve the same final accuracy",
+        "The order of convergence is independent of the method's design"
+      ],
+      "answer": 1,
+      "explanation": "Quadratic convergence (|e_{n+1}| ≤ C|e_n|²) dramatically reduces iterations near the solution. Linear convergence (|e_{n+1}| ≤ C|e_n|) is much slower. For example, quadratic convergence can double correct digits per iteration, while linear convergence adds roughly one digit per 3-4 iterations."
+    },
+    {
+      "id": "numerical-methods-root-finding-006",
+      "q": "Why does Newton-Raphson fail or converge slowly when f'(x*) = 0 at the root x*?",
+      "options": [
+        "The root is multiple and the denominator becomes very large, causing near-singular behavior",
+        "The tangent line becomes horizontal so the x-intercept is undefined",
+        "The initial guess must be even closer to x*, losing quadratic convergence",
+        "Numerical rounding errors dominate the computation"
+      ],
+      "answer": 2,
+      "explanation": "When f'(x*) = 0, the root is multiple (multiplicity > 1). Newton-Raphson reverts to linear convergence or worse. For a double root, modified Newton-Raphson with x_{n+1} = x_n - 2f(x_n)/f'(x_n) restores quadratic convergence."
+    },
+    {
+      "id": "numerical-methods-root-finding-007",
+      "q": "The fixed-point iteration x_{n+1} = g(x_n) converges if |g'(x*)| < 1 near the root x* = g(x*). What does |g'(x*)| ≈ 0 indicate?",
+      "options": [
+        "Very fast (superlinear) convergence",
+        "The iteration is unstable and diverges",
+        "Exactly one iteration is sufficient",
+        "The method becomes a bisection step"
+      ],
+      "answer": 0,
+      "explanation": "When |g'(x*)| is very small, convergence accelerates. For Newton-Raphson written as x_{n+1} = x_n - f(x_n)/f'(x_n), g'(x*) = 1 - f''(x*)/f'(x*) near simple roots, which can be very small, yielding quadratic convergence."
+    },
+    {
+      "id": "numerical-methods-root-finding-008",
+      "q": "Starting with the interval [0, 2], how many bisection iterations are needed to reduce the error below 10^{-4}?",
+      "options": [
+        "Approximately 14 iterations",
+        "Approximately 7 iterations",
+        "Approximately 20 iterations",
+        "Approximately 4 iterations"
+      ],
+      "answer": 0,
+      "explanation": "Bisection error halves each iteration: e_n = (b-a)/2^{n+1}. With interval width 2, we need 2/2^{n+1} < 10^{-4}, so 2^{n+1} > 20000. Taking log₂: n+1 > 14.3, thus n ≈ 14 iterations."
+    },
+    {
+      "id": "numerical-methods-root-finding-009",
+      "q": "Why is the secant method considered preferable to Newton-Raphson in some practical applications?",
+      "options": [
+        "It avoids computing f'(x) which may be unavailable or expensive",
+        "It has higher convergence order than Newton-Raphson",
+        "It never requires an initial guess for x₀",
+        "It always stays within the original bracketing interval"
+      ],
+      "answer": 0,
+      "explanation": "The main advantage is avoiding derivative computation. While secant has slower superlinear convergence (≈1.618) versus Newton's quadratic, it uses only two function evaluations per step versus one function and one derivative for Newton."
+    },
+    {
+      "id": "numerical-methods-root-finding-010",
+      "q": "A root-finding algorithm fails to converge starting from x₀ = 0.1 for f(x) = x² - 1 near x = 1. Which scenario is most likely?",
+      "options": [
+        "The method was Newton-Raphson and f'(1) = 0",
+        "The method was bisection but no sign change was bracketed",
+        "The method was Newton-Raphson and initial guess was outside the basin of attraction",
+        "The function has no root near x = 1"
+      ],
+      "answer": 1,
+      "explanation": "For f(x) = x² - 1, we have f'(1) = 2 ≠ 0, so (a) is false. Newton-Raphson from x₀ = 0.1 converges to x = 1. Bisection only works if f(a) and f(b) have opposite signs; if both endpoints have the same sign, bisection fails immediately. For this function, the function values are f(a) and f(b) are both negative or positive depending on the interval."
+    }
+  ]
+}

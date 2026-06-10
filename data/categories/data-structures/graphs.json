@@ -1,0 +1,126 @@
+{
+  "topic": "graphs",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-graphs-001",
+      "q": "In an undirected graph, what is an edge?",
+      "options": [
+        "A directed connection from one vertex to another",
+        "A bidirectional connection between two vertices",
+        "A connection from a vertex to itself",
+        "A weighted path between multiple vertices"
+      ],
+      "answer": 1,
+      "explanation": "In an undirected graph, an edge connects two vertices bidirectionally (symmetric). In a directed graph, edges are one-way (asymmetric). A self-loop is an edge from a vertex to itself."
+    },
+    {
+      "id": "data-structures-graphs-002",
+      "q": "What is the adjacency matrix representation of a graph?",
+      "options": [
+        "A linked list of vertices and their neighbors",
+        "A 2D array where entry [i][j] indicates the connection between vertices i and j",
+        "A list of edges sorted by weight",
+        "A tree structure representing vertex relationships"
+      ],
+      "answer": 1,
+      "explanation": "An adjacency matrix is an n×n matrix where entry [i][j] is non-zero (typically 1 or the edge weight) if there's an edge from i to j. It's space O(n²) but enables O(1) edge lookups."
+    },
+    {
+      "id": "data-structures-graphs-003",
+      "q": "What is an adjacency list representation of a graph?",
+      "options": [
+        "A matrix of binary values indicating connectivity",
+        "An array of lists where each vertex stores its neighboring vertices",
+        "A sorted list of all edges in the graph",
+        "A queue of unvisited vertices"
+      ],
+      "answer": 1,
+      "explanation": "An adjacency list stores for each vertex a list of its adjacent vertices. It's space O(V + E), more efficient than matrices for sparse graphs. Edge lookup is O(degree) rather than O(1)."
+    },
+    {
+      "id": "data-structures-graphs-004",
+      "q": "In a directed graph, what is an in-degree of a vertex?",
+      "options": [
+        "The number of outgoing edges from the vertex",
+        "The number of incoming edges to the vertex",
+        "The total number of edges in the graph",
+        "The number of vertices the graph contains"
+      ],
+      "answer": 1,
+      "explanation": "In-degree is the count of edges entering a vertex. Out-degree is the count of edges leaving a vertex. In an undirected graph, both are the same (the degree)."
+    },
+    {
+      "id": "data-structures-graphs-005",
+      "q": "What is a strongly connected component in a directed graph?",
+      "options": [
+        "A subgraph where every vertex can reach every other vertex",
+        "A vertex with in-degree and out-degree both greater than 1",
+        "Any connected subgraph of the overall graph",
+        "A cycle that includes all vertices"
+      ],
+      "answer": 0,
+      "explanation": "A strongly connected component (SCC) is a maximal set of vertices where every vertex is reachable from every other vertex through directed paths. SCCs are important for analyzing graph structure."
+    },
+    {
+      "id": "data-structures-graphs-006",
+      "q": "What is a topological sort?",
+      "options": [
+        "Arranging vertices in a circular order",
+        "Ordering vertices such that for every directed edge u → v, u comes before v in the ordering",
+        "Sorting vertices by their degree values",
+        "Arranging vertices to minimize the sum of edge weights"
+      ],
+      "answer": 1,
+      "explanation": "A topological sort is a linear ordering of vertices in a directed acyclic graph (DAG) such that edges always go from earlier to later vertices. It's useful for task scheduling and dependency resolution."
+    },
+    {
+      "id": "data-structures-graphs-007",
+      "q": "In breadth-first search (BFS), which data structure is typically used?",
+      "options": [
+        "A stack",
+        "A priority queue",
+        "A queue",
+        "A binary tree"
+      ],
+      "answer": 2,
+      "explanation": "BFS uses a queue (FIFO) to explore vertices level by level. Depth-first search (DFS) uses a stack (LIFO) or recursion. Priority queues are used in Dijkstra's algorithm."
+    },
+    {
+      "id": "data-structures-graphs-008",
+      "q": "What is the time complexity of depth-first search on a graph with V vertices and E edges?",
+      "options": [
+        "O(V)",
+        "O(E)",
+        "O(V + E)",
+        "O(V × E)"
+      ],
+      "answer": 2,
+      "explanation": "DFS visits each vertex once (O(V)) and explores each edge once (O(E)), resulting in O(V + E) total time. This applies to both adjacency list and matrix representations, though constants differ."
+    },
+    {
+      "id": "data-structures-graphs-009",
+      "q": "What is a cycle in a graph?",
+      "options": [
+        "A path from a vertex to itself",
+        "A path that visits every vertex exactly once",
+        "A subgraph with more edges than vertices",
+        "Any closed path in the graph"
+      ],
+      "answer": 3,
+      "explanation": "A cycle is a closed path where the starting vertex is reached again. The minimum cycle has 3 vertices (in an undirected graph without multi-edges). A path visiting all vertices is a Hamiltonian path, different from a cycle."
+    },
+    {
+      "id": "data-structures-graphs-010",
+      "q": "What is the space complexity of adjacency list representation for a graph with V vertices and E edges?",
+      "options": [
+        "O(V²)",
+        "O(V + E)",
+        "O(E)",
+        "O(V × E)"
+      ],
+      "answer": 1,
+      "explanation": "An adjacency list stores V vertices and each edge appears once (or twice for undirected graphs), requiring O(V + E) space. An adjacency matrix always uses O(V²) space regardless of edge count."
+    }
+  ]
+}

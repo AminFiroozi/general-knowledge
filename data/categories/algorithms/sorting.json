@@ -36,6 +36,41 @@
       "options": ["Merge sort", "Heapsort", "Insertion sort", "Radix sort"],
       "answer": 2,
       "explanation": "Insertion sort runs in O(nk) where k is the maximum displacement of any element. For nearly-sorted arrays, k is small, making insertion sort practically very fast. It also has low overhead and excellent cache performance. For nearly-sorted inputs it often beats O(n log n) algorithms in practice."
+    },
+    {
+      "id": "algorithms-sorting-006",
+      "q": "What is the time and space complexity of heapsort?",
+      "options": ["O(n log n) time, O(n) space", "O(n²) time, O(1) space", "O(n log n) time, O(1) space", "O(n log n) time, O(log n) space"],
+      "answer": 2,
+      "explanation": "Heapsort builds a max-heap in O(n) time, then repeatedly extracts the maximum and restores the heap property, totaling O(n log n). It sorts in-place using only the input array, requiring O(1) extra space (not counting the output). It is not stable."
+    },
+    {
+      "id": "algorithms-sorting-007",
+      "q": "Radix sort has complexity O(d(n + k)). What do d and k represent?",
+      "options": ["d = number of digits, k = radix base", "d = maximum digit value, k = number of elements", "d = number of comparisons, k = recursion depth", "d = number of swaps, k = array size"],
+      "answer": 0,
+      "explanation": "Radix sort makes d passes (one per digit position, where d is the number of digits in the largest number). Each pass runs a stable counting sort taking O(n + k) where k is the radix base (typically 10 for decimal or 256 for bytes). Total: O(d(n + k))."
+    },
+    {
+      "id": "algorithms-sorting-008",
+      "q": "Why is stability important in sorting, and which algorithm guarantees it?",
+      "options": ["Stability preserves the order of equal elements; only quicksort guarantees it", "Stability preserves the order of equal elements; merge sort and insertion sort guarantee it", "Stability reduces time complexity; heapsort guarantees it", "Stability is only important for linked lists; bubble sort guarantees it"],
+      "answer": 1,
+      "explanation": "Stability means equal elements retain their relative order from the input. This matters when sorting records by multiple fields. Merge sort and insertion sort maintain stability because they preserve the relative order of equal elements during merging/insertion. Quicksort and heapsort are inherently unstable due to the way they rearrange elements."
+    },
+    {
+      "id": "algorithms-sorting-009",
+      "q": "What is the lower bound for comparison-based sorting and why?",
+      "options": ["O(n), because every element must be visited once", "O(n log n), because there are n! possible permutations and we need log₂(n!) comparisons to distinguish them", "O(1), because modern computers are fast", "O(n²), because of nested loop structures"],
+      "answer": 1,
+      "explanation": "Any comparison-based sort must distinguish between n! possible input permutations. Each comparison yields one of two outcomes, so we need at least log₂(n!) ≈ n log n comparisons in the worst case. Merge sort and heapsort are asymptotically optimal. Non-comparison sorts like radix sort can achieve O(n + k) by avoiding comparisons."
+    },
+    {
+      "id": "algorithms-sorting-010",
+      "q": "Why might a non-comparison sort like radix sort be slower than merge sort in practice despite better theoretical complexity?",
+      "options": ["Radix sort has poor cache locality and large constant factors; it requires stable counting sort subroutines", "Non-comparison sorts require more space for intermediate arrays", "Merge sort is always faster regardless of the input", "Radix sort cannot handle negative integers"],
+      "answer": 0,
+      "explanation": "Radix sort has significant constant factors: it makes multiple passes over the data, uses auxiliary arrays for counting, and may have poor cache behavior. For small n or when n log n is already small, these constants dominate. Merge sort's simpler logic and better cache performance can win in practice. Radix sort excels when d is small relative to log n and the radix base k is carefully chosen."
     }
   ]
 }

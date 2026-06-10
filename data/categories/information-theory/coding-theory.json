@@ -1,0 +1,126 @@
+{
+  "topic": "coding-theory",
+  "category": "information-theory",
+  "questions": [
+    {
+      "id": "information-theory-coding-theory-001",
+      "q": "A block code (n,k) encodes k information bits into n bits. What is the code rate?",
+      "options": [
+        "k/n (ratio of information to total bits)",
+        "n/k (total to information ratio)",
+        "n-k (parity bits)",
+        "(n-k)/k (redundancy per information bit)"
+      ],
+      "answer": 0,
+      "explanation": "Code rate R = k/n represents the information efficiency. A (7,4) code has rate 4/7 ≈ 0.57, encoding 4 bits into 7. Higher rate means more information per transmitted bit but less redundancy for error correction. Option 1 is the standard definition in coding theory."
+    },
+    {
+      "id": "information-theory-coding-theory-002",
+      "q": "The Hamming bound (sphere-packing bound) sets an upper limit on the number of codewords for a code with minimum distance d_min. What does this bound represent?",
+      "options": [
+        "Maximum possible codewords given length n and error correction capability",
+        "Minimum number of codewords required for the code",
+        "Exactly the number of codewords any optimal code achieves",
+        "The probability of undetected errors"
+      ],
+      "answer": 0,
+      "explanation": "The Hamming bound limits codeword count: M ≤ 2ⁿ / Σᵢ₌₀^t C(n,i) where t = ⌊(d_min-1)/2⌋ and C(n,i) is binomial coefficient. This counts non-overlapping error-correction spheres. Perfect codes like Hamming(7,4) achieve this bound exactly."
+    },
+    {
+      "id": "information-theory-coding-theory-003",
+      "q": "What is the difference between error detection and error correction in coding?",
+      "options": [
+        "Detection identifies errors exist; correction recovers the original data",
+        "Detection fixes errors; correction only identifies them",
+        "They are synonymous terms",
+        "Detection applies only to text; correction only to numbers"
+      ],
+      "answer": 0,
+      "explanation": "Error detection uses parity checks to identify corrupted messages but cannot fix them. Error correction uses sufficient redundancy to pinpoint and fix errors automatically. Correction requires more redundancy than detection; minimum distance must be ≥3 for single-error correction."
+    },
+    {
+      "id": "information-theory-coding-theory-004",
+      "q": "For a linear block code, the generator matrix G and parity check matrix H satisfy which fundamental relationship?",
+      "options": [
+        "H·Gᵀ = 0 (null space relationship)",
+        "H·G = Identity matrix",
+        "H + G = All ones matrix",
+        "H and G are inverses of each other"
+      ],
+      "answer": 0,
+      "explanation": "For linear codes, H·Gᵀ = 0 is the orthogonality condition: the columns of G span the null space of H. This ensures that valid codewords (c = u·G) satisfy H·cᵀ = 0 (zero syndrome). It's the cornerstone of syndrome decoding."
+    },
+    {
+      "id": "information-theory-coding-theory-005",
+      "q": "How do you construct a Hamming(7,4) code from its parity check matrix H?",
+      "options": [
+        "H has 3 rows (parity checks) and 7 columns (positions), with columns being non-zero distinct binary vectors",
+        "H must be a 4×7 matrix with all ones",
+        "H is derived by multiplying two random matrices",
+        "H is constructed by repeating a single column 7 times"
+      ],
+      "answer": 0,
+      "explanation": "Hamming(7,4) H is 3×7 where each column is a unique non-zero 3-bit binary vector. This design enables syndrome decoding: a single-bit error in position i produces syndrome equal to the binary representation of i. The systematic form places information bits first."
+    },
+    {
+      "id": "information-theory-coding-theory-006",
+      "q": "The Singleton bound states that for a code of length n and minimum distance d_min with alphabet size q: M ≤ q^(n-d_min+1). What does this imply?",
+      "options": [
+        "There's a fundamental trade-off between codeword count, length, and minimum distance",
+        "All codes can be made perfect",
+        "Minimum distance is independent of alphabet size",
+        "Codeword count grows exponentially with length"
+      ],
+      "answer": 0,
+      "explanation": "The Singleton bound shows code parameters k ≤ n - d_min + 1, revealing a trade-off: increasing d_min (error correction) reduces k (information rate). MDS codes like Reed-Solomon achieve this bound with equality. The bound is looser than Hamming bound for small distances."
+    },
+    {
+      "id": "information-theory-coding-theory-007",
+      "q": "Convolutional codes differ from block codes by incorporating memory. What is the constraint length K?",
+      "options": [
+        "Number of shifts over which a single information bit influences output",
+        "Total length of the code output",
+        "Number of information bits in each block",
+        "Maximum error the code can correct"
+      ],
+      "answer": 0,
+      "explanation": "In convolutional codes, constraint length K determines memory depth: a bit influences K successive time steps of output. Larger K provides stronger error correction but increases decoder complexity (exponentially in Viterbi decoding). A (2,1,3) code has rate 1/2 and K=3."
+    },
+    {
+      "id": "information-theory-coding-theory-008",
+      "q": "Turbo codes use a combination of convolutional codes with interleaving. What is the role of the interleaver?",
+      "options": [
+        "Breaks up burst error patterns to help parallel decoders correct independent errors",
+        "Encrypts the information",
+        "Reduces the number of parity bits needed",
+        "Increases the transmission rate"
+      ],
+      "answer": 0,
+      "explanation": "Turbo code interleavers permute bits between two parallel convolutional encoders. This breaks burst error patterns so each decoder receives scattered errors it can independently correct, enabling iterative decoding with feedback. This structure achieves near-Shannon-limit performance."
+    },
+    {
+      "id": "information-theory-coding-theory-009",
+      "q": "What does the Plotkin bound tell us about the relationship between code parameters?",
+      "options": [
+        "For a given code rate, minimum distance has an upper limit",
+        "Minimum distance always grows linearly with code length",
+        "No relationship exists between code parameters",
+        "Minimum distance can be arbitrarily large"
+      ],
+      "answer": 0,
+      "explanation": "The Plotkin bound shows that when 2d_min > n, then M ≤ 2d_min/(2d_min - n). This reveals a limit: for short codes relative to minimum distance, the number of codewords cannot grow unboundedly. It's tighter than Singleton bound in some parameter regimes."
+    },
+    {
+      "id": "information-theory-coding-theory-010",
+      "q": "LDPC (Low-Density Parity-Check) codes have which property that makes them efficient for iterative decoding?",
+      "options": [
+        "Sparse parity check matrix: few 1s per row/column enabling efficient message passing",
+        "Dense parity check matrix maximizing error correction",
+        "Non-linear encoding equations",
+        "Fixed constraint length independent of code length"
+      ],
+      "answer": 0,
+      "explanation": "LDPC codes have sparse H matrices where each variable node connects to few parity check nodes, enabling efficient belief propagation decoding. Each iteration passes soft-decision updates along the bipartite graph. Sparsity reduces complexity from exponential to polynomial while maintaining near-capacity performance."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "arrays-and-strings",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-arrays-and-strings-001",
+      "q": "In a zero-indexed array, if you want to access the element at position 5, what index do you use?",
+      "options": [
+        "4",
+        "5",
+        "6",
+        "It depends on the programming language"
+      ],
+      "answer": 1,
+      "explanation": "Zero-indexed arrays count from 0, so position 5 is at index 5. Position 1 would be at index 0. The indexing system is standard across all programming languages for arrays."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-002",
+      "q": "What is the time complexity of accessing an element in a static array by index?",
+      "options": [
+        "O(n)",
+        "O(log n)",
+        "O(1)",
+        "O(n log n)"
+      ],
+      "answer": 2,
+      "explanation": "Array access by index is constant time O(1) because the memory address can be computed directly using the base address plus the index. This is independent of the array size."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-003",
+      "q": "Which operation is most expensive in a dynamic array when it needs to resize?",
+      "options": [
+        "Searching for an element",
+        "Copying all elements to a larger memory block",
+        "Sorting the array",
+        "Finding the middle element"
+      ],
+      "answer": 1,
+      "explanation": "Resizing requires copying all existing elements to a new memory location, which takes O(n) time. While sorting is also expensive, resizing is specifically what causes the performance hit during dynamic array growth."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-004",
+      "q": "What is the average time complexity of inserting an element at the beginning of a dynamic array?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n²)"
+      ],
+      "answer": 2,
+      "explanation": "Inserting at the beginning requires shifting all existing elements one position to the right, which takes O(n) time. Insertions at the end are O(1) amortized."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-005",
+      "q": "In string manipulation, concatenating two strings of lengths m and n using naive concatenation typically has what time complexity?",
+      "options": [
+        "O(m + n)",
+        "O(max(m, n))",
+        "O(m × n)",
+        "O(log(m + n))"
+      ],
+      "answer": 0,
+      "explanation": "Concatenating strings requires copying all characters from both strings into a new location, which takes O(m + n) time. The distractor O(m × n) assumes nested operations that don't occur in concatenation."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-006",
+      "q": "What distinguishes a dynamic array from a static array?",
+      "options": [
+        "Dynamic arrays can only store integers",
+        "Dynamic arrays can grow and shrink at runtime, while static arrays have fixed size",
+        "Dynamic arrays are always faster than static arrays",
+        "Static arrays cannot be modified after creation"
+      ],
+      "answer": 1,
+      "explanation": "Dynamic arrays allocate memory dynamically and can resize at runtime (e.g., ArrayList in Java, vector in C++), while static arrays have fixed size determined at compile time. Both can store any data type and can be modified."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-007",
+      "q": "A string is stored as an array of characters. If a string has 10 characters, how much space does a null terminator add to its memory footprint?",
+      "options": [
+        "10 bytes",
+        "1 byte",
+        "0 bytes (it's not counted)",
+        "Depends on the character encoding"
+      ],
+      "answer": 1,
+      "explanation": "A null terminator is a single null character (\\0) added at the end of C-style strings to mark the end. It adds exactly 1 byte. This is separate from character encoding variations."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-008",
+      "q": "When performing a binary search on a sorted array, what is the time complexity?",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(log n)",
+        "O(n log n)"
+      ],
+      "answer": 2,
+      "explanation": "Binary search eliminates half the remaining elements with each comparison, achieving O(log n) time complexity. This is much faster than linear search O(n) and works only on sorted arrays."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-009",
+      "q": "What is the worst-case time complexity of finding a substring within a string using a naive approach?",
+      "options": [
+        "O(m)",
+        "O(n)",
+        "O(m + n)",
+        "O(m × n)"
+      ],
+      "answer": 3,
+      "explanation": "Naive substring search checks each position in the main string (n positions) and for each position compares up to m characters of the substring, resulting in O(m × n) worst case. Algorithms like KMP reduce this to O(m + n)."
+    },
+    {
+      "id": "data-structures-arrays-and-strings-010",
+      "q": "In an array of size n, how many comparisons are needed in the best case to find an element using linear search?",
+      "options": [
+        "n comparisons",
+        "n/2 comparisons",
+        "1 comparison",
+        "log n comparisons"
+      ],
+      "answer": 2,
+      "explanation": "In the best case, the element is found immediately at the first position, requiring only 1 comparison. However, the worst case requires n comparisons and average case requires n/2 comparisons."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "greedy-algorithms",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-greedy-algorithms-001",
+      "q": "What is the greedy choice property?",
+      "options": [
+        "An algorithm that runs in linear time",
+        "Making locally optimal choices at each step, hoping to find a global optimum",
+        "Choosing the largest element in the input",
+        "Using random selection to approximate a solution"
+      ],
+      "answer": 1,
+      "explanation": "The greedy choice property means that a globally optimal solution can be constructed by making locally optimal (greedy) choices without reconsidering earlier decisions. Not all problems have this property — coin change with arbitrary denominations is a classic counterexample where greedy fails."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-002",
+      "q": "What is Huffman coding and why does it use a greedy approach?",
+      "options": [
+        "An encoding that ensures all codes have equal length; it sorts characters alphabetically",
+        "A variable-length prefix-free code that minimizes average code length; greedy selection builds a binary tree by repeatedly combining the two lowest-frequency nodes",
+        "A compression algorithm that removes all vowels from text",
+        "A cipher that shifts characters by a fixed amount"
+      ],
+      "answer": 1,
+      "explanation": "Huffman coding creates optimal variable-length codes by greedily merging the two lowest-frequency characters into a subtree. Repeating this builds a tree where frequent characters get shorter codes. The greedy choice (merging lowest frequencies) is optimal because it minimizes the weighted path length. This is proven by an exchange argument."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-003",
+      "q": "In the activity selection problem, what greedy choice leads to the optimal solution?",
+      "options": [
+        "Select the activity with the earliest start time",
+        "Select the activity with the latest start time",
+        "Select the activity with the earliest end time; this leaves the most room for subsequent activities",
+        "Select the activity with the longest duration"
+      ],
+      "answer": 2,
+      "explanation": "Activity selection aims to schedule the maximum number of non-overlapping activities. Sorting by end time and greedily selecting the activity finishing earliest is optimal — it removes the least time from the remaining interval, maximizing opportunities for future selections. This achieves O(n log n) time and is provably optimal."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-004",
+      "q": "When does the greedy algorithm fail for the coin change problem?",
+      "options": [
+        "When coin denominations include 1 (which always works)",
+        "On coin sets like {1, 3, 4} with amount 6 — greedy gives 4+1+1 (3 coins) but optimal is 3+3 (2 coins)",
+        "Greedy always finds the optimal solution for coin change",
+        "When the amount is greater than the sum of all coins"
+      ],
+      "answer": 1,
+      "explanation": "Greedy coin change (always pick the largest coin that fits) is not optimal for arbitrary denominations. The counterexample {1, 3, 4} and amount 6 shows greedy fails. However, greedy is optimal for canonical coin systems (like US coins: 1, 5, 10, 25). For general denominations, dynamic programming is required."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-005",
+      "q": "What makes the fractional knapsack problem solvable by a greedy algorithm while 0/1 knapsack is not?",
+      "options": [
+        "Fractional knapsack has smaller input size",
+        "In fractional knapsack, you can split items and always fill capacity with the highest value-to-weight ratio items; 0/1 knapsack has discrete items where greedy may exclude better combinations",
+        "0/1 knapsack is always harder computationally",
+        "Fractional and 0/1 knapsack are the same problem"
+      ],
+      "answer": 1,
+      "explanation": "Fractional knapsack allows splitting items, so greedily picking by value-to-weight ratio is optimal — at capacity W, just fill with the best-ratio items (fractionally if needed). 0/1 knapsack forbids splitting. A counterexample: items (10 kg, $100) and two items (5 kg, $40) each. Greedy on ratio picks the first item and half of one other; optimal might be both 5 kg items. DP is required for 0/1."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-006",
+      "q": "What is a matroid, and why do greedy algorithms work on matroids?",
+      "options": [
+        "A mathematical object with a specific exchange property; greedy maximization on matroids is provably optimal",
+        "A type of graph with many cycles",
+        "Any problem solvable in polynomial time",
+        "A scheduling problem with precedence constraints"
+      ],
+      "answer": 0,
+      "explanation": "A matroid is a combinatorial structure with an exchange property: if set A is independent and |A| < |B|, there exists an element in B-A that can be added to A while remaining independent. Greedy algorithms — repeatedly adding the maximum-weight independent element — are optimal for matroids. MST and activity selection are matroid problems; 0/1 knapsack is not."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-007",
+      "q": "In interval scheduling for room allocation, why is earliest-deadline-first greedy?",
+      "options": [
+        "It sorts tasks by start time and processes them in order",
+        "It assigns tasks with earliest deadlines first, minimizing late completions — the greedy choice is to prevent a deadline miss",
+        "It assigns the longest tasks first",
+        "It randomly picks tasks to assign"
+      ],
+      "answer": 1,
+      "explanation": "Earliest-deadline-first (EDF) is a greedy scheduling rule that prioritizes tasks with the soonest deadlines. For minimizing missed deadlines, this is optimal — deferring a closer deadline risks missing it, so addressing closer deadlines first greedy maximizes on-time tasks. EDF is optimal for single-machine scheduling without preemption."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-008",
+      "q": "What is the difference between a greedy algorithm that is provably optimal and one that is only approximately optimal?",
+      "options": [
+        "Provably optimal algorithms are faster; approximate algorithms are slower",
+        "Provably optimal finds the true best solution; approximate may not — proven via exchange argument or matroid theory versus guaranteed approximation ratio (e.g., 2-approximation)",
+        "Approximate algorithms use randomness; optimal ones do not",
+        "There is no difference; all greedy algorithms are approximate"
+      ],
+      "answer": 1,
+      "explanation": "Some greedy algorithms provably find the global optimum (Huffman, activity selection, MST). Others guarantee only an approximation ratio: e.g., greedy set cover achieves ln(n)-approximation. Proving optimality requires an exchange argument showing that swapping any choice for another worsens the solution. Approximation ratios are proven via comparison to a lower bound on the optimal solution."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-009",
+      "q": "Why does the greedy approach work for the MST problem?",
+      "options": [
+        "MST always has the fewest edges",
+        "If you include any edge not in an MST, you create a cycle; if that edge is the minimum in the cycle, you can swap it for an MST edge without increasing weight — greedy selection of minimum edges is safe",
+        "MST is a tree so it has no cycles by definition",
+        "Greedy always works for any graph problem"
+      ],
+      "answer": 1,
+      "explanation": "MST satisfies the greedy choice property via the cut property: for any partition of vertices, the minimum-weight edge crossing the partition is in some MST. Both Kruskal and Prim exploit this: they repeatedly select a minimum edge that is safe to include (Kruskal: does not form a cycle; Prim: connects the growing tree to new vertices). This greedy strategy is provably optimal."
+    },
+    {
+      "id": "algorithms-greedy-algorithms-010",
+      "q": "What is a counterexample showing that greedy does not work for traveling salesman (TSP)?",
+      "options": [
+        "A triangle with equal edge weights",
+        "A directed graph with cycles",
+        "A path graph with 4 vertices where greedy nearest-neighbor picks the wrong starting edge and explores suboptimally, while a different tour is shorter — TSP is NP-hard, so no greedy solution is guaranteed optimal in polynomial time",
+        "Any complete graph"
+      ],
+      "answer": 2,
+      "explanation": "TSP asks for the shortest Hamiltonian cycle. Greedy nearest-neighbor (always visit the closest unvisited city) fails on many inputs: consider 4 cities in a cross pattern. Starting from one corner, nearest-neighbor may construct a long tour while a diamond pattern is shorter. TSP is NP-hard, so no known polynomial-time algorithm solves it optimally. Greedy is only a heuristic with no approximation guarantee."
+    }
+  ]
+}

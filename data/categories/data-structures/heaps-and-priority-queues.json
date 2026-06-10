@@ -1,0 +1,126 @@
+{
+  "topic": "heaps-and-priority-queues",
+  "category": "data-structures",
+  "questions": [
+    {
+      "id": "data-structures-heaps-and-priority-queues-001",
+      "q": "In a min-heap, what property does each parent node satisfy?",
+      "options": [
+        "Parent value is greater than all child values",
+        "Parent value is less than all child values",
+        "Parent value is greater than left child but less than right child",
+        "Parent value is exactly the average of child values"
+      ],
+      "answer": 1,
+      "explanation": "A min-heap requires that each parent node's value is less than or equal to its children's values. A max-heap has the opposite property. This enables efficient retrieval of the minimum element."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-002",
+      "q": "What is the time complexity of extracting the minimum element from a min-heap with n elements?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 1,
+      "explanation": "Extracting the min requires removing the root, moving the last element to the root, then heapifying down to restore the heap property. This takes O(log n) time proportional to the heap height."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-003",
+      "q": "When inserting an element into a min-heap, which direction does the element move if it violates the heap property?",
+      "options": [
+        "Down toward the leaves",
+        "Up toward the root",
+        "Left to the sibling",
+        "To a random position"
+      ],
+      "answer": 1,
+      "explanation": "New elements are inserted at the end and bubble up (heapify up) if they are smaller than their parent. This restores the min-heap property. Extracting causes elements to bubble down."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-004",
+      "q": "What is the height of a complete binary heap with n elements?",
+      "options": [
+        "n",
+        "log n",
+        "Θ(log n)",
+        "√n"
+      ],
+      "answer": 2,
+      "explanation": "A complete binary heap is a complete binary tree, which has height Θ(log n). This logarithmic height enables efficient O(log n) operations. Θ notation indicates the tight bound."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-005",
+      "q": "How can you build a heap from an unsorted array in O(n) time?",
+      "options": [
+        "Insert each element one by one using O(log n) per insertion",
+        "Apply heapify down starting from the last non-leaf node and going backward",
+        "Apply heapify up for all elements",
+        "Sort the array first, then arrange it as a heap"
+      ],
+      "answer": 1,
+      "explanation": "The buildHeap algorithm (Floyd's algorithm) works backward from the last non-leaf node, heapifying down each node. This achieves O(n) total because most nodes are leaves and most heapify operations are cheap."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-006",
+      "q": "What is a priority queue?",
+      "options": [
+        "A queue that processes elements in strict FIFO order",
+        "An abstract data type where elements are served based on their priority rather than insertion order",
+        "A queue with a maximum size limit",
+        "A queue that only stores integers"
+      ],
+      "answer": 1,
+      "explanation": "A priority queue is an abstract data type where elements with higher priority are served before those with lower priority, regardless of insertion order. Heaps are a common efficient implementation."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-007",
+      "q": "What is the time complexity of heapify down operation on a node?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(h) where h is the height of the subtree rooted at that node"
+      ],
+      "answer": 3,
+      "explanation": "Heapify down moves a node down the tree comparing with children until the heap property is restored. The time is proportional to the subtree height h. For the root, h = Θ(log n), but for lower nodes it's less."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-008",
+      "q": "In a d-ary heap, what is the relationship between the number of children and the branching factor?",
+      "options": [
+        "Each node has exactly d children",
+        "Each node has at most d children",
+        "Each node has at least d children",
+        "Each internal node has exactly d children; leaves have fewer"
+      ],
+      "answer": 1,
+      "explanation": "In a d-ary heap, each node has at most d children (the root may have fewer if n < d). A binary heap is a 2-ary heap. d-ary heaps can have different height-to-degree trade-offs."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-009",
+      "q": "What is the time complexity of decreasing a key in a min-heap if you have a pointer to the element?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 1,
+      "explanation": "Decreasing a key requires updating the value and then heapifying up, which takes O(log n) in worst case. The distractor O(1) ignores the need for heapification to restore the heap property."
+    },
+    {
+      "id": "data-structures-heaps-and-priority-queues-010",
+      "q": "In which application is a max-heap particularly useful?",
+      "options": [
+        "Dijkstra's shortest path algorithm",
+        "Heap sort in ascending order",
+        "Heap sort in descending order",
+        "Finding the k smallest elements"
+      ],
+      "answer": 2,
+      "explanation": "A max-heap is useful for heap sort in descending order because repeatedly extracting the maximum gives elements in descending order. Dijkstra uses a min-heap, and finding k smallest elements uses a max-heap of size k."
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "topic": "compression",
+  "category": "information-theory",
+  "questions": [
+    {
+      "id": "information-theory-compression-001",
+      "q": "Huffman coding achieves compression by assigning variable-length codes. What principle guides the assignment?",
+      "options": [
+        "More frequent symbols get shorter codes",
+        "More frequent symbols get longer codes",
+        "All symbols get equal-length codes",
+        "Symbols are assigned random-length codes"
+      ],
+      "answer": 0,
+      "explanation": "Huffman coding assigns shorter bit-sequences to more probable symbols, minimizing average code length. This greedy algorithm produces optimal prefix-free codes. Option 1 is the opposite and would increase average code length."
+    },
+    {
+      "id": "information-theory-compression-002",
+      "q": "What is a key property of Huffman codes?",
+      "options": [
+        "Prefix-free: no codeword is a prefix of another",
+        "All codewords have the same length",
+        "The code is unique across all inputs",
+        "Decoding requires knowledge of symbol frequencies"
+      ],
+      "answer": 0,
+      "explanation": "Huffman codes are prefix-free, enabling unambiguous decoding without delimiters. This property ensures efficient decompression. Option 1 is incorrect because codewords vary in length. Option 3 is wrong because different data with same frequencies produce different trees."
+    },
+    {
+      "id": "information-theory-compression-003",
+      "q": "Lossless compression preserves all original information, while lossy compression discards some data. Which is more suitable for compressing text documents?",
+      "options": [
+        "Lossless compression",
+        "Lossy compression",
+        "Both are equally suitable",
+        "Neither is suitable for text"
+      ],
+      "answer": 0,
+      "explanation": "Text documents require exact reconstruction; losing any characters corrupts meaning. Lossless compression is essential for text. Lossy compression is appropriate for images/audio where imperceptible quality loss is acceptable."
+    },
+    {
+      "id": "information-theory-compression-004",
+      "q": "Entropy coding bounds the average code length. What does the source entropy H(X) represent in compression?",
+      "options": [
+        "The theoretical minimum average bits per symbol",
+        "The maximum possible compression ratio",
+        "The redundancy in the source",
+        "The computational cost of compression"
+      ],
+      "answer": 0,
+      "explanation": "Shannon's source coding theorem states that average code length L ≥ H(X). Entropy is the information-theoretic lower bound: no lossless compression can exceed this limit. Huffman codes achieve close to this bound."
+    },
+    {
+      "id": "information-theory-compression-005",
+      "q": "Arithmetic coding differs from Huffman coding in that it:",
+      "options": [
+        "Can approach the entropy limit more closely with a single code string",
+        "Always requires integer codeword lengths",
+        "Assigns one bit per symbol",
+        "Is computationally simpler"
+      ],
+      "answer": 0,
+      "explanation": "Arithmetic coding encodes an entire message as a fraction in [0,1), potentially achieving compression closer to entropy than Huffman codes. It doesn't require integer-length codewords per symbol. Option 1 is incorrect and option 3 suggests fixed length."
+    },
+    {
+      "id": "information-theory-compression-006",
+      "q": "What is Kolmogorov complexity?",
+      "options": [
+        "The length of the shortest program that produces a string",
+        "The entropy of a probability distribution",
+        "The average number of bits in a Huffman code",
+        "The compression ratio of a specific algorithm"
+      ],
+      "answer": 0,
+      "explanation": "Kolmogorov complexity K(x) is the length of the shortest Turing machine program generating string x. It measures algorithmic randomness (incompressibility). It's different from entropy which applies to random variables, not individual strings."
+    },
+    {
+      "id": "information-theory-compression-007",
+      "q": "A string with high Kolmogorov complexity exhibits which property?",
+      "options": [
+        "High incompressibility; no short pattern explains it",
+        "Easy to compress with standard algorithms",
+        "Predictable structure with simple patterns",
+        "Low entropy and high redundancy"
+      ],
+      "answer": 0,
+      "explanation": "High Kolmogorov complexity indicates the string is algorithmically random with no concise description. Such strings resist compression by any algorithm. Strings with patterns or redundancy have low complexity and compress well."
+    },
+    {
+      "id": "information-theory-compression-008",
+      "q": "The compression ratio is defined as the ratio of compressed size to original size. What does a ratio less than 1 indicate?",
+      "options": [
+        "Successful compression; the output is smaller",
+        "Failed compression; the output is larger",
+        "Lossless compression was applied",
+        "The entropy was miscalculated"
+      ],
+      "answer": 0,
+      "explanation": "Compression ratio = (compressed size) / (original size). A ratio < 1 means the compressed size is smaller, indicating successful compression. A ratio > 1 means expansion rather than compression. This metric applies to both lossless and lossy methods."
+    },
+    {
+      "id": "information-theory-compression-009",
+      "q": "For an English text document with character frequencies following natural language patterns, approximately what is the entropy per character in bits?",
+      "options": [
+        "Around 4-5 bits per character",
+        "Around 8 bits per character",
+        "Around 1 bit per character",
+        "Exactly 0 bits per character"
+      ],
+      "answer": 0,
+      "explanation": "English text has non-uniform character frequencies and sequential dependencies. Entropy is roughly 4-5 bits/character (not the full 8 bits needed for uncoded ASCII). This explains why text compresses well; it contains redundancy below the information-theoretic limit."
+    },
+    {
+      "id": "information-theory-compression-010",
+      "q": "Adaptive Huffman coding adjusts the code tree as it processes input. What is its key advantage?",
+      "options": [
+        "No need to transmit frequency statistics; adapts to changing data patterns",
+        "It always produces shorter codes than static Huffman",
+        "It eliminates the need for a symbol alphabet",
+        "It guarantees polynomial-time compression"
+      ],
+      "answer": 0,
+      "explanation": "Adaptive Huffman coding dynamically builds the code tree, eliminating the need to pre-scan input or transmit a codebook. It handles varying symbol frequencies without a preprocessing pass. It doesn't always beat static Huffman but is more flexible for streaming data."
+    }
+  ]
+}

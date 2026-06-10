@@ -1,0 +1,126 @@
+{
+  "topic": "linear-systems",
+  "category": "numerical-methods",
+  "questions": [
+    {
+      "id": "numerical-methods-linear-systems-001",
+      "q": "Gaussian elimination with partial pivoting chooses pivot elements by selecting the largest absolute value in each column. Why is this important?",
+      "options": [
+        "To minimize rounding errors and prevent division by small numbers that amplify perturbations",
+        "To ensure the matrix is invertible",
+        "To reduce the number of arithmetic operations",
+        "To guarantee the solution is unique"
+      ],
+      "answer": 0,
+      "explanation": "Partial pivoting reduces growth of rounding errors during elimination. Dividing by a small pivot magnifies any floating-point errors. Choosing the largest |pivot| controls error propagation. Full pivoting (searching rows and columns) is even better but more expensive."
+    },
+    {
+      "id": "numerical-methods-linear-systems-002",
+      "q": "LU decomposition factors a matrix A as A = LU where L is lower triangular and U is upper triangular. What is a major computational advantage?",
+      "options": [
+        "Once A is factored, solving Ax = b for multiple right-hand sides requires only O(n²) operations per solve",
+        "LU factorization requires fewer operations than Gaussian elimination",
+        "LU decomposition automatically computes the determinant",
+        "It eliminates the need for pivoting strategies"
+      ],
+      "answer": 0,
+      "explanation": "LU factorization costs O(n³) once. After factoring A = LU, solving Ax = b = LUx requires forward substitution (L → y) and back substitution (U → x), each O(n²). So multiple right-hand sides amortize the factorization cost."
+    },
+    {
+      "id": "numerical-methods-linear-systems-003",
+      "q": "The condition number of a matrix A, denoted κ(A), relates perturbations in A and b to perturbations in the solution x. If κ(A) = 10^8, the system is called:",
+      "options": [
+        "Ill-conditioned; small errors in input grow by factor ≈10^8",
+        "Well-conditioned; easy to solve accurately",
+        "Singular; the matrix has determinant exactly zero",
+        "Over-determined; it has more equations than unknowns"
+      ],
+      "answer": 0,
+      "explanation": "High condition number (κ >> 1) indicates an ill-conditioned system. Relative error in x is amplified by κ: δx/‖x‖ ≈ κ(A) · (δA/‖A‖ + δb/‖b‖). For κ = 10^8 with single-precision (≈10^{-7} error), solutions lose about 8 decimal digits of significance."
+    },
+    {
+      "id": "numerical-methods-linear-systems-004",
+      "q": "Iterative methods like Jacobi and Gauss-Seidel solve Ax = b by fixed-point iteration x^{(k+1)} = Gx^{(k)} + c. When do they converge?",
+      "options": [
+        "When the spectral radius ρ(G) < 1, i.e., the largest eigenvalue magnitude of G is less than 1",
+        "Only if A is symmetric",
+        "When the matrix is diagonally dominant",
+        "Always, for any non-singular A"
+      ],
+      "answer": 0,
+      "explanation": "Convergence requires ρ(G) < 1. Gauss-Seidel converges for diagonally dominant or symmetric positive-definite matrices. Jacobi is slower, converging for diagonally dominant A. The spectral radius determines convergence rate: e^{(k)} ≈ ρ(G)^k · e^{(0)}."
+    },
+    {
+      "id": "numerical-methods-linear-systems-005",
+      "q": "Gauss-Seidel iteration typically converges faster than Jacobi because it:",
+      "options": [
+        "Uses updated values immediately in the same iteration rather than waiting for the next iteration",
+        "Requires fewer arithmetic operations per step",
+        "Automatically selects optimal relaxation parameters",
+        "Avoids storing the matrix A"
+      ],
+      "answer": 0,
+      "explanation": "In Jacobi, x_i^{(k+1)} uses all x_j^{(k)}. In Gauss-Seidel, x_i^{(k+1)} uses newly computed x_j^{(k+1)} for j < i and x_j^{(k)} for j > i. This asymmetry accelerates convergence, reducing the spectral radius ρ(G)."
+    },
+    {
+      "id": "numerical-methods-linear-systems-006",
+      "q": "For a symmetric positive-definite (SPD) matrix A, which statement is true about its condition number?",
+      "options": [
+        "κ(A) = λ_max/λ_min, the ratio of the largest to smallest eigenvalue",
+        "κ(A) is always equal to the matrix rank",
+        "κ(A) determines the determinant of A",
+        "κ(A) = 1 for all SPD matrices"
+      ],
+      "answer": 0,
+      "explanation": "For SPD matrices with eigenvalues 0 < λ_min ≤ ... ≤ λ_max, the 2-norm condition number is κ₂(A) = λ_max / λ_min. Well-conditioned SPD matrices have λ values close together; ill-conditioned ones have large spread."
+    },
+    {
+      "id": "numerical-methods-linear-systems-007",
+      "q": "The conjugate gradient (CG) method solves SPD systems Ax = b without explicitly forming A. What is its main advantage over Gaussian elimination?",
+      "options": [
+        "For sparse A, it requires only O(n²) operations and avoids fill-in; it is matrix-free",
+        "It always converges in one iteration",
+        "It requires no initial guess",
+        "It automatically computes the condition number"
+      ],
+      "answer": 0,
+      "explanation": "CG is ideal for large sparse systems because it uses only matrix-vector products (A·v), avoiding fill-in and storage of dense factors. It converges in at most n iterations for exact arithmetic, but convergence is often achieved much faster for well-conditioned systems."
+    },
+    {
+      "id": "numerical-methods-linear-systems-008",
+      "q": "Preconditioning a linear system Ax = b transforms it to Px^{−1}Ax = P^{−1}b, where P ≈ A is invertible. Why?",
+      "options": [
+        "To reduce the condition number of the system, accelerating iterative solver convergence",
+        "To make the matrix A symmetric",
+        "To eliminate the need for an initial guess in iterative methods",
+        "To guarantee convergence of Gaussian elimination"
+      ],
+      "answer": 0,
+      "explanation": "Preconditioning with P such that κ(P^{−1}A) << κ(A) dramatically improves convergence of iterative methods like CG or GMRES. Common preconditioners: Jacobi (diagonal scaling), ILU (incomplete LU), or multigrid. Better conditioning → fewer iterations."
+    },
+    {
+      "id": "numerical-methods-linear-systems-009",
+      "q": "A diagonally dominant matrix satisfies |a_{ii}| > Σ_{j≠i} |a_{ij}| for each row. Why do Jacobi and Gauss-Seidel converge for such matrices?",
+      "options": [
+        "Diagonal dominance ensures ρ(G) < 1 for the splitting matrix G, guaranteeing convergence",
+        "It makes the matrix symmetric",
+        "It ensures the matrix has all positive eigenvalues",
+        "It allows skipping pivoting in Gaussian elimination"
+      ],
+      "answer": 0,
+      "explanation": "Diagonal dominance implies the iteration matrix G = D^{−1}(D - A) (Jacobi) satisfies ρ(G) < 1. This is because the diagonal element dominates, making perturbations shrink per iteration. For Gauss-Seidel, ρ(G) is even smaller."
+    },
+    {
+      "id": "numerical-methods-linear-systems-010",
+      "q": "When solving Ax = b with A nearly singular (near-zero eigenvalues), Tikhonov regularization minimizes ‖Ax - b‖² + λ‖x‖². What does the parameter λ control?",
+      "options": [
+        "The trade-off between data fit and solution smoothness; larger λ favors smaller x",
+        "The number of iterations in an iterative solver",
+        "The accuracy of the LU factorization",
+        "The pivoting strategy in Gaussian elimination"
+      ],
+      "answer": 0,
+      "explanation": "Tikhonov regularization solves the damped normal equations (A^TA + λI)x = A^Tb. The parameter λ balances residual minimization (first term) against solution norm (second term). Larger λ biases x toward zero, stabilizing the solution for ill-posed problems."
+    }
+  ]
+}
