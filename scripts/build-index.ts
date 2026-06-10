@@ -88,15 +88,16 @@ function main() {
       validateQuestionFile(data, `${categorySlug}/${topicFile}`, seenIds)
 
       const fullSlug = `${categorySlug}/${topicSlug}`
-      topicMap[fullSlug] = data.questions
+      const questions = data.questions as Question[]
+      topicMap[fullSlug] = questions
       categories[categorySlug].topics.push({
         slug: topicSlug,
         categorySlug,
         fullSlug,
-        questionCount: data.questions.length,
+        questionCount: questions.length,
       })
 
-      console.log(`  OK  ${fullSlug} (${data.questions.length} questions)`)
+      console.log(`  OK  ${fullSlug} (${questions.length} questions)`)
     }
   }
 
