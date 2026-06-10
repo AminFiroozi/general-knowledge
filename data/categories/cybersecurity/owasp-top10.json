@@ -1,0 +1,25 @@
+{
+  "topic": "owasp-top10",
+  "category": "cybersecurity",
+  "questions": [
+    {
+      "id": "cybersecurity-owasp-top10-001",
+      "q": "Which OWASP Top 10 vulnerability occurs when untrusted data is sent to an interpreter as part of a command or query?",
+      "options": ["Broken Authentication", "Injection", "Security Misconfiguration", "Insecure Deserialization"],
+      "answer": 1,
+      "explanation": "Injection flaws (SQL, NoSQL, OS, LDAP) occur when untrusted data is sent to an interpreter. An attacker can trick the interpreter into executing unintended commands or accessing unauthorized data. Prevention: use parameterized queries, prepared statements, and ORMs that handle escaping."
+    },
+    {
+      "id": "cybersecurity-owasp-top10-002",
+      "q": "What is the primary defense against Cross-Site Request Forgery (CSRF)?",
+      "options": [
+        "Input sanitization",
+        "CSRF tokens (synchronizer token pattern)",
+        "HTTPS everywhere",
+        "Content Security Policy"
+      ],
+      "answer": 1,
+      "explanation": "CSRF exploits the browser's automatic cookie sending by tricking a user's browser into making a forged request. A CSRF token is an unpredictable value tied to the user's session and embedded in forms/headers. The server validates it on state-changing requests — attackers cannot know the token, so forged requests fail."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "topic": "dynamic-programming",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-dynamic-programming-001",
+      "q": "What are the two essential properties a problem must have for dynamic programming to apply?",
+      "options": [
+        "Greedy choice property and optimal substructure",
+        "Optimal substructure and overlapping subproblems",
+        "Divide and conquer structure and memoization",
+        "Polynomial time and polynomial space"
+      ],
+      "answer": 1,
+      "explanation": "Optimal substructure means an optimal solution to the problem contains optimal solutions to its subproblems. Overlapping subproblems means the same subproblems are solved repeatedly. DP exploits both: it stores subproblem results (memoization/tabulation) to avoid redundant computation."
+    },
+    {
+      "id": "algorithms-dynamic-programming-002",
+      "q": "What is the time complexity of the classic 0/1 knapsack problem using dynamic programming?",
+      "options": ["O(n²)", "O(n log n)", "O(nW)", "O(2ⁿ)"],
+      "answer": 2,
+      "explanation": "The DP table has n rows (items) and W+1 columns (capacities 0 to W). Filling each cell takes O(1), so the total time is O(nW). This is pseudo-polynomial — polynomial in n and W, but exponential in the number of bits needed to represent W."
+    },
+    {
+      "id": "algorithms-dynamic-programming-003",
+      "q": "What is the difference between top-down and bottom-up dynamic programming?",
+      "options": [
+        "Top-down uses iteration; bottom-up uses recursion",
+        "Top-down uses memoization with recursion; bottom-up fills a table iteratively",
+        "Top-down is always faster; bottom-up uses more space",
+        "They are the same approach with different names"
+      ],
+      "answer": 1,
+      "explanation": "Top-down DP (memoization) starts from the original problem, recurses into subproblems, and caches results. Bottom-up DP starts from the smallest subproblems, fills a table in order, and builds up to the answer. Both have the same asymptotic complexity; bottom-up typically has less function-call overhead."
+    }
+  ]
+}

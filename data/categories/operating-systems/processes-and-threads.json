@@ -1,0 +1,18 @@
+{
+  "topic": "processes-and-threads",
+  "category": "operating-systems",
+  "questions": [
+    {
+      "id": "operating-systems-processes-and-threads-001",
+      "q": "What is the key difference between a process and a thread?",
+      "options": [
+        "Threads are faster to create but use more memory",
+        "Processes share memory; threads have isolated address spaces",
+        "Threads share the process address space; processes have isolated address spaces",
+        "A process can only contain one thread"
+      ],
+      "answer": 2,
+      "explanation": "A process has its own isolated virtual address space, file handles, and resources. Threads within a process share the same address space and resources, communicating via shared memory. Thread creation is cheaper than process creation (no address space duplication), but a bug in one thread can corrupt data for all other threads."
+    }
+  ]
+}

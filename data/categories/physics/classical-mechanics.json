@@ -1,0 +1,18 @@
+{
+  "topic": "classical-mechanics",
+  "category": "physics",
+  "questions": [
+    {
+      "id": "physics-classical-mechanics-001",
+      "q": "An object in uniform circular motion has what type of acceleration?",
+      "options": [
+        "Zero acceleration",
+        "Tangential acceleration only",
+        "Centripetal acceleration directed toward the center",
+        "Centrifugal acceleration directed outward"
+      ],
+      "answer": 2,
+      "explanation": "Even at constant speed, the direction of velocity changes continuously — this constitutes acceleration. The centripetal acceleration a = v²/r is always directed toward the center of the circle (perpendicular to velocity). Centrifugal force is a fictitious force that only appears in rotating reference frames, not in inertial frames."
+    }
+  ]
+}

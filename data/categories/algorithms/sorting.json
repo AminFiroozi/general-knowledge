@@ -1,0 +1,41 @@
+{
+  "topic": "sorting",
+  "category": "algorithms",
+  "questions": [
+    {
+      "id": "algorithms-sorting-001",
+      "q": "What is the average-case time complexity of quicksort?",
+      "options": ["O(n)", "O(n log n)", "O(n²)", "O(log n)"],
+      "answer": 1,
+      "explanation": "Quicksort partitions the array recursively. On average, each partition divides the array roughly in half, yielding log n levels with O(n) work per level — O(n log n) total. Worst case O(n²) occurs when the pivot is always the smallest or largest element."
+    },
+    {
+      "id": "algorithms-sorting-002",
+      "q": "Which sorting algorithm is stable and has O(n log n) worst-case time complexity?",
+      "options": ["Quicksort", "Heapsort", "Merge sort", "Shell sort"],
+      "answer": 2,
+      "explanation": "Merge sort is stable (equal elements retain their original order) and guarantees O(n log n) in all cases. Quicksort is not stable and degrades to O(n²) in the worst case. Heapsort is O(n log n) worst-case but not stable."
+    },
+    {
+      "id": "algorithms-sorting-003",
+      "q": "What is the best-case time complexity of bubble sort?",
+      "options": ["O(n²)", "O(n log n)", "O(n)", "O(1)"],
+      "answer": 2,
+      "explanation": "With an early-exit optimization, bubble sort detects when no swaps occur in a pass and terminates. On an already-sorted array, this means only one pass is needed — O(n) comparisons, zero swaps."
+    },
+    {
+      "id": "algorithms-sorting-004",
+      "q": "Counting sort runs in O(n + k) time. What is k?",
+      "options": ["The number of comparisons", "The range of input values", "log n", "The number of unique elements"],
+      "answer": 1,
+      "explanation": "Counting sort creates a count array of size k, where k is the range of possible input values (max - min + 1). It then reconstructs the sorted array in O(n + k). It is not comparison-based, so it bypasses the O(n log n) lower bound — but only when k is small relative to n."
+    },
+    {
+      "id": "algorithms-sorting-005",
+      "q": "Which algorithm is most efficient for sorting a nearly-sorted array of 10,000 elements?",
+      "options": ["Merge sort", "Heapsort", "Insertion sort", "Radix sort"],
+      "answer": 2,
+      "explanation": "Insertion sort runs in O(nk) where k is the maximum displacement of any element. For nearly-sorted arrays, k is small, making insertion sort practically very fast. It also has low overhead and excellent cache performance. For nearly-sorted inputs it often beats O(n log n) algorithms in practice."
+    }
+  ]
+}

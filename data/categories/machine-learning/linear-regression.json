@@ -1,0 +1,30 @@
+{
+  "topic": "linear-regression",
+  "category": "machine-learning",
+  "questions": [
+    {
+      "id": "machine-learning-linear-regression-001",
+      "q": "What does the coefficient of determination (R²) measure?",
+      "options": [
+        "The slope of the regression line",
+        "The proportion of variance in the target explained by the model",
+        "The number of features in the model",
+        "The residual sum of squares"
+      ],
+      "answer": 1,
+      "explanation": "R² = 1 - (SS_res / SS_tot). It represents the proportion of variance in the dependent variable that is predictable from the independent variables. R² = 1 means a perfect fit; R² = 0 means the model explains no variance beyond the mean. It can be negative for severely misfit models."
+    },
+    {
+      "id": "machine-learning-linear-regression-002",
+      "q": "What assumption of OLS regression is violated when error terms are correlated with each other?",
+      "options": [
+        "Homoscedasticity",
+        "No multicollinearity",
+        "No autocorrelation",
+        "Normality of residuals"
+      ],
+      "answer": 2,
+      "explanation": "OLS assumes error terms are uncorrelated with each other (no autocorrelation). Autocorrelation is common in time-series data when consecutive residuals are related. It does not bias OLS coefficients but makes standard errors incorrect, invalidating hypothesis tests and confidence intervals."
+    }
+  ]
+}

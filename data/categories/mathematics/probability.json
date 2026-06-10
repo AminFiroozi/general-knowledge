@@ -1,0 +1,25 @@
+{
+  "topic": "probability",
+  "category": "mathematics",
+  "questions": [
+    {
+      "id": "mathematics-probability-001",
+      "q": "A fair coin is flipped 3 times. What is the probability of getting exactly 2 heads?",
+      "options": ["1/4", "3/8", "1/2", "1/8"],
+      "answer": 1,
+      "explanation": "Using the binomial formula: C(3,2) × (0.5)² × (0.5)¹ = 3 × 0.25 × 0.5 = 3/8. There are C(3,2)=3 ways to choose which 2 of 3 flips are heads (HHT, HTH, THH), each with probability (1/2)³ = 1/8. Total: 3 × 1/8 = 3/8."
+    },
+    {
+      "id": "mathematics-probability-002",
+      "q": "Bayes' theorem states P(A|B) equals what?",
+      "options": [
+        "P(B|A) × P(A)",
+        "P(B|A) × P(A) / P(B)",
+        "P(A) × P(B)",
+        "P(A ∩ B) / P(A)"
+      ],
+      "answer": 1,
+      "explanation": "Bayes' theorem: P(A|B) = P(B|A) × P(A) / P(B). P(B|A) is the likelihood, P(A) is the prior, P(B) is the marginal likelihood (normalizer). It allows updating a prior belief P(A) with new evidence B to get a posterior P(A|B). Fundamental to Bayesian statistics, spam filters, and medical diagnosis."
+    }
+  ]
+}

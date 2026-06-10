@@ -1,0 +1,37 @@
+{
+  "topic": "react",
+  "category": "frontend",
+  "questions": [
+    {
+      "id": "frontend-react-001",
+      "q": "Which hook should you use to avoid recreating an object reference on every render?",
+      "options": ["useCallback", "useMemo", "useRef", "useState"],
+      "answer": 1,
+      "explanation": "useMemo memoizes the computed value itself, recomputing only when dependencies change. useCallback memoizes a function reference. useRef persists a mutable value without triggering re-renders. useState causes a re-render whenever the value changes."
+    },
+    {
+      "id": "frontend-react-002",
+      "q": "When does React call the cleanup function returned by useEffect?",
+      "options": [
+        "Only when the component unmounts",
+        "Before every re-render",
+        "Before running the effect again and when the component unmounts",
+        "Only when dependencies change"
+      ],
+      "answer": 2,
+      "explanation": "React runs the cleanup before applying the next effect (if dependencies changed) and when the component unmounts. This ensures stale event listeners, subscriptions, or timers are removed before a new effect instance starts."
+    },
+    {
+      "id": "frontend-react-003",
+      "q": "What is the key purpose of React's reconciliation algorithm?",
+      "options": [
+        "Converting JSX to JavaScript",
+        "Efficiently computing the minimal set of DOM changes needed",
+        "Batching multiple setState calls",
+        "Managing the component lifecycle order"
+      ],
+      "answer": 1,
+      "explanation": "Reconciliation compares the new virtual DOM tree with the previous one (diffing) and computes the minimal set of actual DOM operations needed. It uses heuristics: same-type elements update in place, different-type elements destroy and recreate, and the key prop helps match list items across renders."
+    }
+  ]
+}
